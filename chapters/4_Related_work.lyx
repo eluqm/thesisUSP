@@ -1,0 +1,2446 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass scrbook
+\begin_preamble
+% specify here the journal
+%\journal{Journal of Web Semantics}
+
+\usepackage[hyphens]{url}
+
+\usepackage{graphicx}
+
+\usepackage{algorithmic}
+
+% use this if you need line numbers
+%\usepackage{lineno}
+\usepackage[labelfont={small}]{caption}
+ \def\and{%
+  \end{tabular}% 
+  \hfill%
+  \hspace*{\columnsep}%
+  \hfill%
+  \begin{tabular}[t]{c}}%
+ \def\@maketitle{%
+  \newpage%
+  \null%
+  \vskip 2em%
+  \begin{center}%
+  \let \footnote \thanks%
+    {\LARGE \@title \par}%
+    \vskip 1.5em%
+    {\large%
+      \lineskip .5em%
+      \hfill%
+      \begin{tabular}[t]{c}%
+        \@author%
+      \end{tabular}\hfill\null\par}%
+    \vskip 1em%
+    \vskip 1em%
+    {\large \@date}%
+  \end{center}%
+  \par%
+  \vskip 1.5em}%
+\end_preamble
+\options a4paper,titlepage
+\use_default_options false
+\maintain_unincluded_children false
+\language brazilian
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize 12
+\spacing onehalf
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 0
+\use_package esint 0
+\use_package mathdots 1
+\use_package mathtools 0
+\use_package mhchem 1
+\use_package stackrel 0
+\use_package stmaryrd 0
+\use_package undertilde 0
+\cite_engine natbib
+\cite_engine_type authoryear
+\biblio_style plainnat
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 3cm
+\topmargin 4cm
+\rightmargin 3cm
+\bottommargin 3cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation skip
+\defskip bigskip
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle fancy
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Section
+Introdução 
+\end_layout
+
+\begin_layout Standard
+In order to check the recent work in the literature in this area, a systematic
+ mapping was performed.
+ To perform this mapping, the terms "staging cancer", "semantic image annotation
+s" and ''Image metadata reasoning'' were used to search for works, as a
+ result, 120 articles were found.
+ After an analysis of the publication dates and title of the articles, 60
+ studies published, between 2003 and 2014, were selected for analysis of
+ the abstracts.
+ This number was reduced to 23 works.
+ Among these 23 articles, an analysis of the content of each was performed,
+ looking for the use of semantic annotations, ontologies, reasoning, and
+ grading cancer methods.
+ 11 works were chosen because they have similarities with the proposed work.
+ Below, these works are described and compared to the proposed work: 
+\end_layout
+
+\begin_layout Standard
+In addition.
+ These works are described briefly in 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "trabalho_relacionado"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+En 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Racoceanu2014"
+
+\end_inset
+
+ es descrito un prototipo que tiene la función de controlar todo un protocolo
+ de análisis de imágenes, este prototipo fue desarrollado sobre el framework
+ 'Cognitive Microscopy' (MICO) con el objectivo de melhorar a análise de
+ imagens histológicas Whole Slide Image (WSI) y llegar a ser una segunda
+ opinion confiable para el grading de cancer de mama.
+ El prototipo está compuesto de 2 componentes principales, un 'semantic
+ core' y un conjunto de algoritmos para procesamiento de imágenes.
+ el Semantic Core tiene dos componentes, principales que son un motor de
+ reasoning y una ontología, usando OWL y N3logic respectivamente, donde
+ N3logic es una extension del modelo de datos RDF tal que el mismo lenguaje
+ puede ser usado para representar lógica y datos.
+ pero, en el trabajo de [racoceanu] los autores utilizan algoritmos para
+ la extraccion automatica de anotaciones para describir las imagenes histologica
+s Em nossa proposta, as anotações semânticas são realizados manualmente
+ e, portanto, estão sujeitos a erros.
+ Ademas, los autores no dejan explícita la ontologia ni las reglas utilizadas
+ para realizar grading de cancer de mama, no son presentados resultados
+ explicitos, pero cabe resaltar que este trabajo es considerado en esta
+ revision bibliografica debido al enfoque de caracter general para 
+\emph on
+screaning
+\emph default
+ automatico que este describe.
+\end_layout
+
+\begin_layout Itemize
+In 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Kurtz2014"
+
+\end_inset
+
+ and 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Seifert"
+
+\end_inset
+
+ propose an image retrieval framework based on semantic annotations from
+ images of the liver, this framework incorporates the semantic correlations
+ among the terms used to describe these images.
+ The authors use the semantic similarity between terms(semantic annotations)
+ that describe the lesions of liver by using the structure of the Radlex
+ ontology to evaluate the semantic proximity between these terms of interest.
+ This automatic approach provides real-time support to radiologist by showing
+ them similar images with associated diagnoses.
+ en el trabajo de [kurttx] no se utiliza ontologias para representar un
+ sistema de staging de cancer, se utiliza similaridad entre imagenes para
+ clasificar lesiones, pero cabe resaltar que las imagenes utilizadas son
+ descritas mediante anotaciones semanticas basadas en observaciones manuales
+ realizadas por radiologistas.
+ mediante la herramienta ePAD[], esta herramienta formará parte inicial
+ de nuestro proyecto.
+\end_layout
+
+\begin_layout Itemize
+In 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Oberkampf"
+
+\end_inset
+
+ os autores propõem uma ontologia que representa formalmente doenças, sintomas
+ e seus respectivos relacionamentos.
+ ellos realizan inferencia sobre enfermedades basados en anotaciones de
+ pacientes, el articulo describe el proceso para representar conocimiento
+ medico en una ontologia llamada 'Disease symptom ontology', finalmente
+ mediante un prototipo ellos evaluan ese modelo.
+ en el trabajo de [oberkamf] no realiza staging de cancer, los autores detallan
+ apenas el proceso para modelar conocimiento mediante ontologias para interpreta
+r las anotaciones generadss por los reportes de pacientes.
+ ademas de eso, los datos utilizados pertenecen a MEDICO project por lo
+ tanto no estan disponibles para verificar sus resultados.
+\end_layout
+
+\begin_layout Itemize
+In 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Meriem2012"
+
+\end_inset
+
+ propose a methodology to improve the clinical models and usability of the
+ low-level image analysis algorithms, for example in the clinical model
+ that performs the score of breast cancer, this score is based on the Nottingham
+ Grading System (NGS).
+ It is needed to perform the breast cancer grading.
+ Firstly, they designed a breast cancer ontology (BCO) based on two languages,
+ OWL-LD and SWRL, in addition, the Wide Field Markup Language WFML was used
+ to describe annotated histopathological images.
+ Finally, the query language SPARQL is used for querying in Java.
+ Ademas de que el trabajo de [meriem2012] utiliza imagenes histopathologicas,
+ sólamente son descritos algunas reglas para reasoning necesarias para el
+ grading de cancer mama, por otra parte, los autores mencionan solo un poco
+ sobre razonamiento basado en relaciones espaciales en la imagen y sus posibles
+ aplicaciones para resolver problemas de ambiguedad en el analisis de imagenes,
+ finalmente son usados algoritmos de extraccion de caracteristicas para
+ describir las imagenes histologicas mediante anotaciones.
+ 
+\end_layout
+
+\begin_layout Itemize
+The proposed work in 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Zillner2012"
+
+\end_inset
+
+ introduces an application that uses medical image annotations and reasoning
+ technologies in order to stage lymphoma patients automatically based in
+ relative position of lymphoma.
+ Firstly, an ontology-based knowledge was used to verify or falsify the
+ spatial configurations of lymphoma, this process is known as spatio-anatomical
+ reasoning 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Manuel"
+
+\end_inset
+
+.
+ Subsequently, the authors establish alignments between concepts of RADLEX
+ and FMA in order to create the 'Patient-ontology'.
+ These ontologies are part of the MEDICO-ontology.
+ Finally, Patient ontology and the Ann Arbo staging system ontology are
+ aligned for execute the reasoning process for staging lymphoma patients.
+ The semantic annotations are stored within a dedicated annotation ontology
+ mentioned by 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "zillner:towards"
+
+\end_inset
+
+ and 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Oberkampf"
+
+\end_inset
+
+.
+ PERO las anotaciones que describen las imagenes medicas(semantic annotations)
+ se realizan de manera automatica mediante algoritmos de procesamiento de
+ imagen, y no manualmente.
+ Ademas, contradicciones fueron encontradas realizando una evaluacion clinica
+ al trabajo de [ziller] apartir de registros reales de pacientes, finalmente,
+ el sistema de staging Ann Arbo está relacionado con el cancer de linfoma,
+ al contrario de la propuesta de este trabajo que pretende integrar el sistema
+ de staging TNM , que abarca algunos tipos de cancer.
+ 
+\end_layout
+
+\begin_layout Itemize
+In 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Tutac2010"
+
+\end_inset
+
+ El proposito principal es el de guiar la exploración de imagenes dentro
+ de un microscopio virtual y ayudar en el proceso de 'grading' apartir de
+ imágenes histológicas de cancer de mama.
+ Para satisfacer esos requerimientos, los autores extendieron la ontologia
+ de cancer de mama desarrollada en (Tutac 2008) incorporándole conocimiento
+ espacial usando OWL-DL, ellos se basaron en una teoría formal para desarrollar
+ las relaciones espaciales del breast cancer grading y posteriormente ellos
+ describen como hacer reasoning apartir de esas relaciones.
+ pero el trabajo de [tutac] no realiza ninguna evaluacion de su modelo con
+ datos reales de pacientes con cancer de mama.
+ Ademas, gran parte de su contenido está orientado a describir la representacion
+ y razonamiento de las relaciones espacial incorporadas a la ontologia desarroll
+ada en [] con el proposito de resolver ambiguedades en el analisis de imagenes
+ histologicas para grading de cancer de mama.
+\end_layout
+
+\begin_layout Itemize
+In 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "zillner:towards"
+
+\end_inset
+
+ OWL-DL ontology was designed to performing automatic staging of lymphoma
+ patients using semantic annotations.
+ These annotations are stored in an ontology by the annotation tool that
+ is part of MEDICO-ontology project.
+ In addition, for classification of lymphoma patients the authors captured
+ the rules of the Ann Arbor Staging System into an ontology.
+ Pero en contraste con nuestra propuesta, el trabajo de [ziller] solamente
+ mejoró anotaciones semanticas usadas para describir imagenes medicas por
+ medio de la representacion de Ann Arbor Staging System en una ontologia,
+ apartir de esas anotaciones puede ser realizado tareas como, la clasificacion
+ de pacientes con cancer de limfoma.
+ La clasificación de pacientes apartir de anotaciones semanticas que fueron
+ mejoradas con conocimiento clinico agregado, no es descrito en [ziller],
+ ademas de eso, no son presentados resultados explícitos y tampoco una evaluació
+n con datos reales.
+ 
+\end_layout
+
+\begin_layout Itemize
+The proposed work in 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Tutac2008"
+
+\end_inset
+
+ introduces an approach that uses OWL-DL in order to generate correspondence
+ between medical concepts related to the classification of breast cancer
+ based in the Nottingham Grading System (NGS) and computer vision concepts.
+ The authors created a rule-based method to automatically generate the NGS.
+ Where, the medical concepts related to NGS are transformed into computer
+ vision concepts.
+ Subsequently, these computer vision concepts are modeled as Protegé concepts
+ to define rules which finally, are used for a semantic indexing of images
+ of cancer breast patients.
+ aunque la propuesta de de [tutac] es desarrollada en el ambito del analisis
+ de imagenes histological para indexacion y no para clasificacion de pacientes,
+ el enfoque presentado es importante en el desarrollo de este proyecto de
+ maestria por describir de manera clara las reglas utilizadas para el grading
+ de cancer de mama.
+\end_layout
+
+\begin_layout Itemize
+In 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Levy2009"
+
+\end_inset
+
+ a methodology and tools were developed for transform the Annotation and
+ Image Markup(AIM) information model into OWL instances.
+ Then, an ontology-based reasoning mechanism(OWL-SWRL) was developed to
+ work with these instances in order to automatically, classify and calculate
+ the tumor burden.
+ Although, [levy] uses AIM as model of information.
+ They do not staging of cancer.
+ but, the methodology presented in [levy] forms part of the principle the
+ our proposal.
+ 
+\end_layout
+
+\begin_layout Itemize
+[#Marquet2007] In order to grading of glioma tumors an ontology based on
+ the NCI Thesaurus ontology was developed.
+ The reference grading system used was the World Health Organization (WHO).
+ Then, class-based reasoning was used starting from pathology reports with
+ histological descriptions of patients.
+ But, en comparacion con la propuesta de este proyecto, those reports of
+ patient were filled manually, the authors do not present explicit results
+ using datos reales.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Dameron2006"
+
+\end_inset
+
+shows that the grading of tumors can be performed automatically using OWL-DL,
+ this work focuses on the grading of the lung tumors.
+ the authors use the FMA ontology to describe anatomical entities in order
+ to represent some of The TNM Classification of Malignant Tumours (TNM)
+ staging criteria and reasoning.
+ Also, the authors highlight some of the limitation of Description Logic-based
+ (DL) classification, for the task of grading.
+ Finally, patients conditions are simulated by instances of classes for
+ the experiments.
+ But, this work no present explicit results using real datasets.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Comment
+status open
+
+\begin_layout Plain Layout
+Com intuito de se verificar na literatura recente os trabalhos na área de
+ RIG que envolvem a construção e disponibilização de 
+\shape italic
+Gazetteers
+\shape default
+ semânticos e utilização de 
+\shape italic
+Volunteered Geographic Information
+\shape default
+, foi realizado um mapeamento sistemático.
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Kurtz2014"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+Para realizar o esse mapeamento, os termos 
+\shape italic
+
+\begin_inset Quotes eld
+\end_inset
+
+Semantic Gazetteer
+\begin_inset Quotes erd
+\end_inset
+
+
+\shape default
+ e 
+\shape italic
+
+\begin_inset Quotes eld
+\end_inset
+
+Volunteered Geographic Information
+\begin_inset Quotes erd
+\end_inset
+
+
+\shape default
+ foram utilizados para pesquisar os trabalhos, como resultado 143 artigos
+ foram encontrados.
+ Após uma análise entre a data de publicação e titulo do artigo, 88 trabalhos
+ publicados entre 2009 e 2014 foram selecionados para analise dos resumos.
+ Ao se verificar o resumo de cada um desses trabalhos, observando se o contexto
+ de 
+\shape italic
+Gazetteer
+\shape default
+ Semântico e VIG eram abordados, esse número foi reduzido para 38 trabalhos.
+\end_layout
+
+\begin_layout Plain Layout
+Dentre os esses 38 trabalhos, foi realizada uma análise do conteúdo abordado
+ por cada um, evidenciando a utilização de ontologias, contexto da biodiversidad
+e e práticas de VIG, sendo que sete trabalhos foram escolhidos por terem
+ similaridade com o projeto do 
+\shape italic
+Gazetteer
+\shape default
+ Colaborativo.
+ A seguir, esses trabalhos são descritos e por fim uma comparação com o
+ trabalho proposto é realizada.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Davis2013"
+
+\end_inset
+
+ propõem um 
+\shape italic
+Framework
+\shape default
+ para a criação de aplicações que lidam com o contexto de 
+\shape italic
+Volunteered Geographic Information
+\shape default
+.
+ Esse 
+\shape italic
+Framework
+\shape default
+ lista como implementar aplicações para VGIs usando interfaces Web e plataformas
+ móveis.
+ A arquitetura do 
+\shape italic
+Framework
+\shape default
+ proposto tem como objetivo encapsular uma estrutura básica em blocos que
+ podem ser facilmente estendidos e reutilizados em novos projetos com a
+ intenção de estimular novos aplicativos VGI dirigidos aos eventos do cotidiano,
+ com objetivo de motivar pessoas a contribuírem.
+\end_layout
+
+\begin_layout Itemize
+O 
+\shape italic
+Gazetteer,
+\shape default
+ proposto por 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "MouraJr:2012:NoHi"
+
+\end_inset
+
+, realiza a expansão do conteúdo de um 
+\shape italic
+Gazetteer
+\shape default
+ referente a nomes hidrográficos dos dados da Agência Nacional de Águas
+ (ANA), utilizando a mesma técnica proposta por
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Machado2011"
+
+\end_inset
+
+ para realizar a extração dos nomes e como resultado gera um corpus contendo
+ 5384 nomes de rios e 670 bacias.
+ 
+\end_layout
+
+\begin_layout Itemize
+O OntoGazetteer, proposto por 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Machado2011"
+
+\end_inset
+
+, utiliza conceitos de ontologias para mapear dados de diversas fontes de
+ dados como, por exemplo, portais de noticias (UAI-Minas) e dados geográficos
+ oficiais (IBGE).
+ O OntoGazetteer foi implementado em Java, usando PostGIS como sistema de
+ gerenciamento de bases de dados espaciais e utiliza expressões regulares
+ para extrair as localidades dos portais de noticias.
+ O 
+\shape italic
+Gazetteer
+\shape default
+ proposto por 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Machado2011"
+
+\end_inset
+
+ apenas trata a desambiguação de lugares, tendo uma taxa de acerto de 80%.
+ 
+\end_layout
+
+\begin_layout Itemize
+O FODGS, proposto por 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Peng2010"
+
+\end_inset
+
+, é um 
+\shape italic
+Gazetteer
+\shape default
+ que utiliza folksonomias e ontologias para descrever nomes de lugares por
+ meio de tags.
+ Nesse trabalho, cada nome de lugar possui um único 
+\shape italic
+footprint
+\shape default
+ e uma tag associada a ele.
+ 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Peng2010"
+
+\end_inset
+
+ utiliza os dados referentes as localidades chinesas e implementa seu 
+\shape italic
+Gazetteer
+\shape default
+ utilizando um Java Web Server para permitir ao usuário realizar buscas
+ em um sistema baseado em XML.
+ Esse sistema codifica as consultas em formato SPARQL para permitir o acesso
+ aos dados, que são armazenados de forma híbrida no 
+\shape italic
+triple store
+\shape default
+-Jena TDB e num SGDB.
+ 
+\end_layout
+
+\begin_layout Itemize
+O trabalho proposto por 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Gil2010"
+
+\end_inset
+
+ demonstra um Serviço de Anotação Geográfica para Sistemas de Biodiversidade.
+ Nesse trabalho são coletadas informações sobre a localização de armadilhas
+ posicionadas por biólogos para capturar borboletas, e então é realizada
+ uma correlação entre os dados de coletas e os locais em que os espécimens
+ foram encontrados .
+ Nesse trabalho é utilizado o SGBD PostgreSQL para armazenar as informações
+ dos espécimes.
+ Para acessar os dados, os usuários utilizam um Web Service onde é possível
+ inserir as consultas em uma interface ou utilizar mapas de navegação que
+ são implementados usando a API OpenLayers.
+\end_layout
+
+\begin_layout Itemize
+O DIGMAP, proposto por 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Manguinhas2008"
+
+\end_inset
+
+, é um Gazetteer que permite a consulta de nomes de locais históricos.
+ Para realizar as buscas, o usuário utiliza um Web Service que permite consultar
+ locais e exportá-los para XML.
+ O DIGMAP foi implementado em Java e utiliza o SGBD Apache Derby para armazenar
+ suas informações.
+ Para realizar a extração dos nomes de lugares, 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Manguinhas2008"
+
+\end_inset
+
+ utiliza repositórios como o Geonames e a Wikipédia.
+ Sua desambiguação é feita por meio de ontologias.
+\end_layout
+
+\begin_layout Itemize
+O KIDGS, proposto por 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Liu2009"
+
+\end_inset
+
+, é um Gazetter que permite que usuários consultem nomes de lugares, sendo
+ eles vagos ou não, como, por exemplo, “north of Beijing”, “airport in Beijing
+ “, “Beijing”.
+ Usuários podem montar queries utilizando arquivos XML no formato sujeito,
+ predicado, objeto e enviá-las para um Web-Service que processa essa query
+ em uma implementação interna do KIDGS.
+ Os dados do KIDGS são armazenados no SGBD PostGIS em 3 tabelas.
+ Uma tabela é encarregada de armazenar os nomes de lugares e as outras duas
+ são encarregadas de armazenar os metadados para descrever as informações
+ de cada propriedade.
+ Além disso, essas tabelas também tem como objetivo conectar o PostGIS com
+ a ontologia em OWL.
+ No entanto, os autores do KIDGS não específicam qual é a ontologia utilizada
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+que ontologia? vc nao falou de nenhuma ontologia
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Plain Layout
+Ao comparar o trabalho proposto com esses sete trabalhos, as seguintes diferença
+s foram evidenciadas:
+\end_layout
+
+\begin_layout Itemize
+O trabalho proposto 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Davis2013"
+
+\end_inset
+
+ relata apenas uma proposta para implementação de um 
+\shape italic
+Framework
+\shape default
+ para desenvolver futuros 
+\shape italic
+Gazetteers
+\shape default
+ baseados em VGI.
+ No entanto, seu 
+\shape italic
+Framework
+\shape default
+ não demonstra nenhum suporte para utilização de web semântica, seja na
+ desambiguação de lugares, realização de buscas, inserção de lugares ou
+ utilização dos princípios de
+\emph on
+ Linked Open Data
+\emph default
+.
+ Isso torna o uso do 
+\shape italic
+Framework
+\shape default
+ inviável para implementar os futuros desafios da área de RIG listados na
+ seção 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Estado-da-Arte"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+Já o trabalho proposto por 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "MouraJr:2012:NoHi"
+
+\end_inset
+
+ e o OntoGazetteer proposto por 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Machado2011"
+
+\end_inset
+
+ somente utilizam conceitos de ontologia exemplificados por 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Machado2011"
+
+\end_inset
+
+ para realizar a expansão dos nomes de um 
+\shape italic
+Gazetteer
+\shape default
+ e a extração de localidades por meio de noticias presentes em web sites.
+ Ambos não fornecem nenhuma base para aplicação de VGI, buscas semânticas
+ ou 
+\shape italic
+Linked Open Data
+\shape default
+.
+ Além disso, 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "MouraJr:2012:NoHi"
+
+\end_inset
+
+ e 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Machado2011"
+
+\end_inset
+
+ não deixam explicita a ontologia utilizada para desambiguar os nomes de
+ ambos os 
+\shape italic
+Gazetteers
+\shape default
+, somente é demonstrado seu modelo.
+\end_layout
+
+\begin_layout Itemize
+No FODGS, proposto por 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Peng2010"
+
+\end_inset
+
+, os autores definem que um lugar possui apenas um único 
+\shape italic
+footprint
+\shape default
+.
+ Esse tipo de representação limita a representação espacial de um objeto,
+ visto que diversos nomes podem ter o mesmo 
+\shape italic
+footprint
+\shape default
+.
+ Além disso, os lugares do 
+\shape italic
+Gazetteer
+\shape default
+ não contém o que eles representam, por exemplo, Cidade de São Carlos é
+ relatado no 
+\shape italic
+Gazetteer
+\shape default
+ somente como São Carlos, assim não é possível verificar se esse lugar é
+ uma cidade, um estado, um bairro ou uma rua.
+ Os autores definem esse tipo de representação pois as localidades chinesas
+ não utilizam sufixos de representação, ou seja, Cidade, Parque, Lago, entre
+ outros.
+ Outro fator limitante desse 
+\shape italic
+Gazetteer
+\shape default
+ é que suas relações espaciais, ou seja, qual ponto pertence a um determinado
+ local, são computadas 
+\shape italic
+offline
+\shape default
+, assim sempre que seus dados são atualizados é necessário refazer todo
+ o processo de relações espaciais.
+ Essa abordagem é inviável para um 
+\emph on
+Gazetteer
+\emph default
+ colaborativo, pois ele teria que ser re-estruturado a cada nova mudança.
+ Por fim, os autores ainda utilizam bancos de dados relacionais para armazenar
+ informações estatísticas tais como censo, impossibilitando que informações
+ sobre a densidade demográfica de um local fiquem disponíveis para pesquisas
+ que envolvam 
+\shape italic
+Linked Open Data
+\shape default
+.
+\end_layout
+
+\begin_layout Itemize
+O trabalho proposto por 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Gil2010"
+
+\end_inset
+
+ aborda o contexto biológico, no entanto coordenadas geográficas são manipuladas
+ em um ambiente controlado onde as informações são precisas.
+ O que não ocorre com o trabalho proposto nesta qualificação, onde as informaçõe
+s são fornecidas por usuários e sujeitas a erros, necessitando assim de
+ mecanismos para melhorar a acurácia das mesmas.
+ Além disso, o trabalho proposto por 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Gil2010"
+
+\end_inset
+
+ não fornece nenhum suporte para utilização de web semântica, seja na desambigua
+ção de lugares, realização de buscas, inserção de lugares ou utilização
+ dos princípios de Linked Open Data.
+\end_layout
+
+\begin_layout Itemize
+O DIGMAP proposto por 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Manguinhas2008"
+
+\end_inset
+
+, assim como os demais trabalhos, não possui suporte para utilização de
+ VGI.
+ A semântica empregada no DIGMAP vem da utilização da ontologia GeoNetPT
+ para a desambiguação das localidades, desse modo, o mesmo não possui suporte
+ para buscas semânticas e Linked Open Data.
+ 
+\end_layout
+
+\begin_layout Itemize
+O KIDGS utiliza ontologias para desambiguar as localidades e para o processo
+ de busca semântica, no entanto, suas buscas não trabalham com coordenadas
+ geográficas.
+ Além disso, o KIDGS não fornece suporte para utilização de VGI e Linked
+ Open Data, pois somente seus dados estão em RDF e não existe nenhuma serviço
+ SPARQL para requisitar esses dados.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset CommandInset citation
+LatexCommand citet
+key "zillner:towards"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+A tabela 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "trabalho_relacionado"
+
+\end_inset
+
+ demonstra, de forma simplificada, as diferenças relatadas entre o trabalho
+ proposto e os analisados, evidenciando quais trabalhos utilizam ontologias,
+ VGI, busca semântica e Linked Open Data.
+ A seção 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "sec:Estado-da-Arte"
+
+\end_inset
+
+ descreve o estado da arte e os principais desafios na utilização desses
+ conceitos em 
+\shape italic
+Gazetteers
+\shape default
+.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+resizebox*{0.9
+\backslash
+textwidth}{0.5
+\backslash
+totalheight}{
+\end_layout
+
+\end_inset
+
+
+\begin_inset Tabular
+<lyxtabular version="3" rows="12" columns="5">
+<features rotate="0" tabularvalignment="top">
+<column alignment="center" valignment="top" width="20text%">
+<column alignment="left" valignment="top" width="15text%">
+<column alignment="left" valignment="top" width="20text%">
+<column alignment="left" valignment="top" width="25text%">
+<column alignment="left" valignment="top" width="10text%">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Title-Author(year) 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Cancer Type
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Data Input 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+- Clinical knowledge source 
+\end_layout
+
+\begin_layout Plain Layout
+-Method of grading or staging
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Results 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Zillner2012"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Lymphoma
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-automatic tagging of medical image using OWL ontologies
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+- Ontology-based representation of Ann Arbor System
+\end_layout
+
+\begin_layout Plain Layout
+-Staging(reasoning using OWL-DL)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+- No 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset CommandInset citation
+LatexCommand citet
+key "zillner:towards"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Lymphoma
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-semantic annotation of patient records by tool support(mapped to OWL) 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-Ontology-based representation of Ann Arbor System
+\end_layout
+
+\begin_layout Plain Layout
+-Staging(reasoning using OWL-DL) 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+- No 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Tutac2008"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Breast 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+- image recognition (pathology images) - automatic tagging
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+- Ontology-based representation of Nottingham Grading System (NGS)
+\end_layout
+
+\begin_layout Plain Layout
+-Grading (reasoning using OWL-DL, SWRL)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+- Yes
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Tutac2010"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Breast
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-automatic tagging (pathology images) 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+- Ontology-based Spatial representation of Nottingham Grading System (NGS)
+\end_layout
+
+\begin_layout Plain Layout
+-Grading (reasoning using OWL-DL, SWRL) 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-No
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+ 
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Meriem2012"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Breast
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+- WFML annotations mapped to owl (pathology images)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+- Ontology-based representation of Nottingham Grading System (NGS)
+\end_layout
+
+\begin_layout Plain Layout
+-Grading (reasoning using OWL-DL, SWRL) 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-Yes 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Levy2009"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Liver
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+ - AIM image annotations mapped to owl
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-No grading or staging system 
+\end_layout
+
+\begin_layout Plain Layout
+-Reasoning using OWL, SWRL, SQWRL
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-No 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Marquet2007"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Glioma
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+- Pathologic reports (owl classes filed manually)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-Ontology-based representation of World Health Organization Grading System
+ (WHO)
+\end_layout
+
+\begin_layout Plain Layout
+-Grading (reasoning using OWL-DL)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+ -No 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Dameron2006"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Lung
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+- Simulated data patient conditions were represented using classes
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-Ontology-based representation of TNM Classification of Malignant Tumours
+ Staging System(TNM)
+\end_layout
+
+\begin_layout Plain Layout
+-Staging(reasoning using OWL -DL)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+ -No
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Oberkampf"
+
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Lymphoma
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-semantic annotations (mapped to owl)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-No grading system 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-Yes 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Kurtz2014"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-manual semantic annotations from ePAD
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-No representation of Staging System
+\end_layout
+
+\begin_layout Plain Layout
+-Classification(Ontological similarity between terms) 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-Yes
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Racoceanu2014"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Breast
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-WFML annotations mapped to owl (pathology images)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-Ontology-based representation of Nottingham Grading System (NGS)
+\end_layout
+
+\begin_layout Plain Layout
+-Grading(reasoning using OWL and N3Logic) 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-No
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{center}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+comparison between related work.
+ 
+\begin_inset CommandInset label
+LatexCommand label
+name "trabalho_relacionado"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Estado-da-Arte"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Comment
+status open
+
+\begin_layout Plain Layout
+Sistemas de Informação Geográfica (SIG
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "SIG"
+description "Sistemas de Informação Geográfica"
+
+\end_inset
+
+) são comumente utilizados para manipular dados geográficos, no entanto,
+ nem sempre é possível ou factível extrair seus dados para uso em outras
+ aplicações, ou mesmo em outros SIG.
+ Além disso, a nova forma de coleta de dados, também denominada, Informação
+ Geográfica Voluntária, abre diversas questões a serem discutidas, pois
+ são necessárias fontes de dados confiáveis.
+\end_layout
+
+\begin_layout Plain Layout
+Alguns desses problemas são abordados na literatura e a soluções propostas
+ envolvem recursos como 
+\shape italic
+Gazetteers
+\shape default
+, contribuições geográficas voluntárias e 
+\shape italic
+Linked Open Data
+\shape default
+.
+ Nesse contexto, é possível listar os desafios a serem abordados pela próxima
+ geração de 
+\shape italic
+Gazetteers
+\shape default
+.
+\end_layout
+
+\begin_layout Plain Layout
+
+\series bold
+Coleta e Integração
+\series default
+: A manutenção e atualização dos dados contidos em 
+\shape italic
+Gazetteers
+\shape default
+ são tarefas muito custosas, principalmente se alguma intervenção manual
+ é necessária.
+ Enquanto a maioria dos Gazetteers atuais são mantidos por pequenos grupos
+ bem definidos, a próxima geração de 
+\shape italic
+Gazetteers
+\shape default
+ deve também incorporar a utilização de contribuições voluntárias 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "GoodchildH08"
+
+\end_inset
+
+.
+ Atualmente, isso vem sendo possível por meio de 
+\shape italic
+Gazetteers
+\shape default
+ que incorporam a utilização de VGI, como por exemplo, Wikimapia, Geonames
+ e Open Street Maps.
+ No entanto, é preciso integrar seus dados e informações voluntárias à 
+\shape italic
+Web of Data
+\shape default
+.
+ A VGI, associada com as práticas de 
+\shape italic
+Linked Open Data,
+\shape default
+ possibilita essa integração.
+ Porém, como apresentado na Figura 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "tripla_RDF_4"
+
+\end_inset
+
+, os dados gerados por usuários ainda representam menos de 1% das triplas
+ que compõe a 
+\shape italic
+Web of Data
+\shape default
+.
+ A próxima geração de 
+\shape italic
+Gazetteers
+\shape default
+ deve alavancar a informação geográfica voluntária juntamente com 
+\shape italic
+Linked Open Data
+\shape default
+ para melhorar a frequência, completude e atualização das informações.
+ No entanto, o desafio consiste em encontrar mecanismos robustos para coleta
+ de VGI que filtrem o ruído inerente a tais informações criado na web social
+ 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "MouraDavi:2013:DeOpPe"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\series bold
+Recuperação, Busca e Navegação
+\series default
+: A utilização de listas de localidades ou 
+\shape italic
+thesaurus
+\shape default
+ semi-formais presentes na maioria dos 
+\shape italic
+Gazetteers
+\shape default
+ atuais, dificulta a descoberta, navegação e a realização de consultas complexas
+, pois não suporta inferências lógicas como, por exemplo, buscas que necessitam
+ da realizaçao de 
+\shape italic
+subsumption
+\shape default
+ (verificar se um conceito B é um subconjunto de um conceito A).
+ Além disso, o tipo de hierarquia para representar as localidades e as relações
+ entre elas são dadas de forma estática e pouco intuitiva.
+ Dessa forma, a utilização de ontologias possibilitará solucionar esse tipo
+ de problema, pois tornará possível introduzir relações arbitrárias e descobrir
+ novas relações implícitas, como, por exemplo, semelhanças entre os tipos
+ de localidades, coerência dos dados e à possibilidade de realizar consultas
+ complexas
+\begin_inset CommandInset citation
+LatexCommand citep
+key "MouraDavi:2013:DeOpPe"
+
+\end_inset
+
+.
+ Dentro desse contexto, 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "KeBler:2009:ANG:1653771.1653787"
+
+\end_inset
+
+ relata que a construção de ontologias de domínio para a próxima geração
+ de 
+\shape italic
+Gazetteers
+\shape default
+ será uma tarefa desafiadora, no entanto, as mesmas serão necessárias para
+ compor os padrões de infraestrutura semântica disponibilizados pela OGC.
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+\series bold
+Resolução de entidades e desambiguação
+\series default
+: Em diversos 
+\shape italic
+Gazetteers,
+\shape default
+ ou em problemas de pesquisa onde nomes são utilizados como referência de
+ lugares, existem problemas de desambiguação.
+ Comumente a RIG trabalha com os tipos de ambiguidade geo/geo, ou seja,
+ um lugar possui o mesmo nome que outro, geo/não-geo, lugares usam nomes
+ próprios ou de outras entidades para serem referenciados 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Gouvea2009"
+
+\end_inset
+
+.
+ Nesse contexto, a utilização de 
+\shape italic
+Gazetteers
+\shape default
+ no reconhecimento de possíveis referências a lugares, pode auxiliar a resolver
+ a ambiguidade.
+ No entanto, é necessário verificar outros fatores, como a coocorrência
+ de nomes de lugares relacionados ou a presença de termos fortemente associados
+ citados em textos.
+ Fontes, como a DBPedia, podem fornecer elementos para resolver o problema,
+ pois, a partir do seu uso, é possível ampliar o conteúdo das bases de referênci
+a, dando clareza para caracterizar os lugares citados e caracterização semântica
+ de relacionamentos expressos nas triplas RDF 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "MouraDavi:2013:DeOpPe"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Plain Layout
+
+\series bold
+Dados Temporais
+\series default
+: Atualmente os 
+\shape italic
+Gazetteers
+\shape default
+ representam uma tripla de lugares contendo nome, tipo da entidade e 
+\shape italic
+footprint
+\shape default
+.
+ No entanto, pode ser necessário o acréscimo de um atributo temporal ao
+ conjunto de dados espaciais.
+ Um exemplo representativo dessa necessidade é a associação de dados censitários
+ sobre a mudança dos polígonos referentes aos municípios brasileiros, visto
+ que suas fronteiras municipais mudam ao longo do tempo.
+ Em 
+\shape italic
+Gazetteers,
+\shape default
+ como o GeoNames, por exemplo, cidades possuem um atributo referente a população
+, mas não existe uma data indicando a validade da informação, logo esse
+ dado se torna incompleto e, dependendo do estudo que está sendo utilizado,
+ pode ser inútil.
+ A utilização de triplas em RDF é capaz de auxiliar na semântica dos relacioname
+ntos, no entanto existem limitações importantes sobre como modelar e implementar
+ séries históricas geoespaciais de dados demográficos pensando em 
+\shape italic
+Linked Open Data
+\shape default
+ 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "MouraDavi:2013:DeOpPe"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Plain Layout
+
+\series bold
+Data Fusion e redundância
+\series default
+: Um problema da 
+\shape italic
+Web of Data
+\shape default
+ é a redundância de informações sobre uma mesma entidade do mundo real.
+ Isso ocorre em situações onde diferentes conjuntos de dados criam diferentes
+ URIs para uma mesma entidade.
+ Para tentar solucionar esse problema, a 
+\shape italic
+Web of Data
+\shape default
+ possui um tipo de relacionamento que caracteriza dois objetos como iguais.
+ No entanto, é difícil estabelecer quando os objetos são similares, pois
+ mesmo que ambos correspondam a uma entidade do mundo real, suas formas
+ de representação no contexto espacial podem ser diferentes como, por exemplo,
+ a variação de escalas 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Jain2010"
+
+\end_inset
+
+.
+ Sendo assim, essa é mais uma dificuldade para se conseguir aumentar, de
+ forma segura, a quantidade de conexões entre fontes de dados na 
+\shape italic
+Web of Data
+\shape default
+ 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "MouraDavi:2013:DeOpPe"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Plain Layout
+Nesse contexto, o 
+\shape italic
+Gazetteer
+\shape default
+ proposto tenta amenizar e solucionar alguns dos desafios para a próxima
+ geração de 
+\shape italic
+Gazetteers
+\shape default
+.
+ Dentre eles, o trabalho tem o foco na coleta e integração de dados, recuperação
+, busca e navegação, resolução de entidades e desambiguação de entidades,
+ e, por fim, na manipulação de dados temporais.
+ Para tratar da qualidade das informações geográficas presentes no 
+\shape italic
+Gazetteer
+\shape default
+ é utilizado a Lei de Linus
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+
+\series bold
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Precisão-de-dados-1"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Comment
+status open
+
+\begin_layout Plain Layout
+Tendo em vista a coleta e a natureza distribuída dos dados coletados por
+ voluntários, é extremamente importante validar o quão bom é a qualidade
+ das informações que são recolhidas através das atividades geográficas voluntári
+as.
+ Realizar essa verificação é crucial para determinar a eficácia das atividades
+ de VGI e sua contribuição para diversas aplicações, que vão desde contextos
+ básicos, como aplicações de navegação em mapas, a aplicações mais sofisticadas,
+ tais como escolha e planejamento de locais para construção de industrias
+ 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Haklay2010"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Plain Layout
+Com objetivo de se verificar a qualidade de coordenadas, 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Haklay08"
+
+\end_inset
+
+ descreve em seu trabalho a avaliação de uma rede de estradas do Reino Unido
+ extraídas do Open Street Maps (OSM) comparando os valores das coordenadas
+ geográficas com uma base de teste da agência de mapeamento nacional britânica.
+ Os resultados dessa pesquisa mostram uma sobreposição de cerca de 80% das
+ coordenadas, ou seja, são similares.
+\end_layout
+
+\begin_layout Plain Layout
+Segundo 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Haklay2010"
+
+\end_inset
+
+, esses valores não são surpreendentes, pois, informações fornecidas por
+ muitos participantes em projetos de VGI como o OSM
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "OMS"
+description "Open Street Maps"
+
+\end_inset
+
+, são similares ao conjunto de dados mantidos por agencias governamentais.
+ No entanto, é necessário verificar em qual fase do processo de coleta de
+ dados a qualidade torna-se confiável.
+\end_layout
+
+\begin_layout Plain Layout
+Uma forma de explorar a questão da garantia da qualidade em projetos VGI,
+ como o OSM, é olhar para projetos semelhantes, embora não na área de informação
+ geográfica, como, por exemplo, projetos de código aberto que permitem pessoas
+ colaborarem com informações.
+ Dessa forma, avaliações paralelas podem ser traçadas entre os problemas
+ de qualidade de VIG e a qualidade de software 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Haklay2010"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Plain Layout
+No contexto da área de qualidade de software, em que a Lei de Linus tem
+ origem, diversos projetos de código livre adotam sua utilização, como,
+ por exemplo, o Apache Web Server.
+ A Lei de Linus é comumente interpretada como 
+\shape italic
+
+\begin_inset Quotes eld
+\end_inset
+
+Given enough eyeballs, all bugs are shallow
+\shape default
+
+\begin_inset Quotes erd
+\end_inset
+
+, ou seja, "Dados olhos suficientes, todos os erros são óbvios".
+ Isso significa que, em projetos de desenvolvimento de código aberto onde
+ vários programadores estão envolvidos no desenvolvimento do código, realizando
+ diferentes situações para testes e aprimoramentos do sistema, o código
+ tende a se tornar cada vez melhor, sem procedimentos e garantias formais
+ de qualidade 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Haklay2010"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Plain Layout
+Assim é possível traçar um paralelo da Lei de Linus, para verificar a precisão
+ do posicionamento de informações geográficas.
+ A lógica para esta Lei é: Se somente existe um contribuinte em uma área,
+ ele ou ela podem inserir alguns erros, por exemplo, se esquecer de demarcar
+ uma localidade ou inserir uma localização imprecisa.
+ Portanto, mais contribuintes podem notar os dados imprecisos ou erros e
+ reduzir o número de informações inválidas 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Haklay2010"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Plain Layout
+Para verificar a validade da aplicação da Lei de Linus, no contexto de VGI,
+ 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Haklay2010"
+
+\end_inset
+
+ utilizam áreas geográficas de Londres, referentes à Rede Integrada de Transport
+e (ITN 
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "ITN"
+description "Rede Integrada de Transporte"
+
+\end_inset
+
+) e os registros do OSM, com o objetivo de verificar se as coordenadas geográfic
+as de ambos são similares.
+ O resultado da pesquisa é a conclusão de que as áreas referentes às rodovias
+ utilizadas no OSM são bem precisas, chegando a 85% de acurácia ao se utilizar
+ um limiar de no máximo 8 metros de diferença .
+ 
+\end_layout
+
+\begin_layout Plain Layout
+Após uma abordagem mais detalhada sobre a viabilidade da Lei de Linus, 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Haklay2010"
+
+\end_inset
+
+ dividem as coordenadas geográficas de seu experimento num 
+\shape italic
+grid
+\shape default
+ de 1 km² e analisam o número de contribuintes e a precisão posicional das
+ coordenadas geográficas.
+ Como resultado, os autores verificaram que ter cinco ou mais contribuintes
+ é capaz de levar a qualidade das informações geográficas acima de 70%,
+ como apresentado na Figura 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "osm_linus_law"
+
+\end_inset
+
+, onde mais de 93% dos pontos têm mais de 70% de precisão.
+\end_layout
+
+\begin_layout Plain Layout
+Embora esse valor seja elevado, a qualidade não é mias dependente do número
+ de contribuintes após um determinado número.
+ As coordenadas precisas são editadas por um número de 5 a 20 colaboradores,
+ sendo que, a partir de 13 contribuintes, a precisão das coordenadas se
+ estabiliza, como apresentado na Figura 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "erro_contribuidores"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+Conforme relatado por 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Haklay2010"
+
+\end_inset
+
+, a Lei de Linus pode ser aplicada ao Open Street Map e em projetos para
+ VGI em geral, mesmo quando o número de contribuintes é relativamente pequeno.
+ No entanto, a relação entre o número de contribuintes e a qualidade dos
+ dados não é linear.
+ A partir de cinco contribuintes em uma determinada área, uma melhora na
+ qualidade das informações geográficas é notada e quando o número de contribuint
+es passa de 13 colaboradores essa melhora se estabiliza e há uma pequena
+ oscilação (ruído) da precisão posicional das coordenadas geográficas.
+ 
+\end_layout
+
+\begin_layout Plain Layout
+Conclui-se estão que é possível considerar a Lei de Linus como um indicador
+ espacial de qualidade dos dados, sem a necessidade do uso de um conjunto
+ de referência, como, por exemplo, bases de dados geográficas do IBGE, para
+ validar a qualidade dos dados fornecidos.
+\end_layout
+
+\begin_layout Plain Layout
+O 
+\shape italic
+Gazetteer
+\shape default
+ proposto neste trabalho utilizará a Lei de Linus para validar as informações
+ geográficas fornecidas pelos usuários.
+ Além disso, é proposto um método baseado na Lei de Linus que é capaz de
+ aprimorar as coordenadas geográficas imprecisas dos repositórios SpeciesLink
+ e GBIF de forma automática, descrito na seção 6.3.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Final Considerations
+\end_layout
+
+\begin_layout Standard
+In contrast with 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Zillner2012"
+
+\end_inset
+
+ that describe a systems “closed”, where their methods cannot be verified.
+ Our approach will use WHO 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Marquet2007"
+
+\end_inset
+
+ 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Zillner2008"
+
+\end_inset
+
+ classification and different metadata from images[15][13].
+ Besides that, only few tools adopting AIM have been developed to enable
+ image clasification in decision support systems [Rubin2011].
+ el modelo de datos AIM will be used such basic of proposal.
+ Also, the external knowledge used for enhancing the semantic annotation
+ and the application focus are different.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Comment
+status open
+
+\begin_layout Plain Layout
+Este capítulo abordou os principais trabalhos relacionados ao desenvolvimento
+ de Gazetteers na área de Recuperação de Informação Geográfica, descrevendo
+ as similaridades e divergências entre o trabalho proposto e os sete trabalhos
+ relacionados que foram escolhidos.
+ Além disso, foi abordado o atual estado da arte para o desenvolvimento
+ de 
+\shape italic
+Gazetteers
+\shape default
+ e como suas coordenadas geográficas podem ser qualificadas, sem o uso de
+ um conjunto de dados de referência, por meio da Lei de Linus (que é utilizada
+ na literatura como um indicador espacial de qualidade).
+\end_layout
+
+\begin_layout Plain Layout
+O 
+\shape italic
+Gazetteer
+\shape default
+ proposto tenta amenizar e solucionar alguns dos desafios para a próxima
+ geração de 
+\shape italic
+Gazetteers
+\shape default
+.
+ Dentre eles, o trabalho proposto tem foco na coleta e integração de dados
+ no padrão de 
+\shape italic
+Linked Open Data
+\shape default
+ por meio da manutenção e atualização dos dados por usuários voluntários.
+ Espera-se que, com a prática de VIG, a qualidade, completude e atualização
+ das informações sobre as localidades das coleções biológicas sejam aprimoradas.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

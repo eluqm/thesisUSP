@@ -1,0 +1,402 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass scrbook
+\begin_preamble
+\renewcommand\nomname{Lista de Abreviaturas e Siglas}
+%\KOMAoptions{BCOR=3cm}\recalctypearea
+\let\tmp\oddsidemargin
+\let\oddsidemargin\evensidemargin
+\let\evensidemargin\tmp
+\reversemarginpar
+
+
+%\usepackage{scrhack}
+%\KOMAoptions{listings=false}
+%\KOMAoptions{float=false}
+\end_preamble
+\use_default_options true
+\begin_modules
+theorems-ams
+eqs-within-sections
+\end_modules
+\maintain_unincluded_children false
+\language brazilian
+\language_package default
+\inputencoding default
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing onehalf
+\use_hyperref true
+\pdf_subject "Qualificação de Mestrado"
+\pdf_keywords "Web Semântica, gazetteer, biodiversidade"
+\pdf_bookmarks true
+\pdf_bookmarksnumbered true
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks false
+\pdf_pdfborder true
+\pdf_colorlinks false
+\pdf_backref false
+\pdf_pdfusetitle true
+\papersize a4paper
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 0
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 0
+\use_package mhchem 1
+\use_package stackrel 0
+\use_package stmaryrd 0
+\use_package undertilde 0
+\cite_engine natbib
+\cite_engine_type authoryear
+\biblio_style plainnat
+\use_bibtopic true
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 2
+\tocdepth 2
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 2
+\paperpagestyle headings
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset External
+	template PDFPages
+	filename capaicmc/capa.pdf
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage cleardoublepage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset External
+	template PDFPages
+	filename capaicmc/rosto.pdf
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage cleardoublepage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+frontmatter
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset include
+LatexCommand input
+filename "abstract/Abstract.lyx"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FloatList figure
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FloatList table
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset nomencl_print
+LatexCommand printnomenclature
+set_width "auto"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+mainmatter
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter
+Introdução 
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand input
+filename "chapters/1_introduction.lyx"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter
+Informática Biomédica
+\begin_inset CommandInset label
+LatexCommand label
+name "chap:RIG"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand input
+filename "chapters/2_RIG.lyx"
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Chapter
+Web semântica
+\begin_inset CommandInset label
+LatexCommand label
+name "chap:Web_Semantica"
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand input
+filename "chapters/3_Web Semantica.lyx"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Comment
+status collapsed
+
+\begin_layout Plain Layout
+Broadly speaking, inference on the Semantic Web can be characterized by
+ discovering new relationships.
+ On the Semantic Web, data is modeled as a set of (named) relationships
+ between resources.
+ “Inference” means that automatic procedures can generate new relationships
+ based on the data and based on some additional information in the form
+ of a vocabulary, e.g., a set of rules.
+ Whether the new relationships are explicitly added to the set of data,
+ or are returned at query time, is an implementation issue 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Oberkampf"
+
+\end_inset
+
+.
+ On the Semantic Web, the source of such extra information can be defined
+ via vocabularies or rule sets.
+\end_layout
+
+\begin_layout Plain Layout
+Both of these approaches draw upon knowledge representation techniques.
+ In general, ontologies concentrate on classification methods, putting an
+ emphasis on defining 'classes', 'subclasses', on how individual resources
+ can be associated to such classes, and characterizing the relationships
+ among classes and their instances.
+ Rules, on the other hand, concentrate on defining a general mechanism on
+ discovering and generating new relationships based on existing ones, much
+ like logic programs, like Prolog, do.
+ In the family of Semantic Web related W3C Recommendations RDFS, OWL, or
+ SKOS are the tools of choice to define ontologies, whereas RIF has been
+ developed to cover rule based approaches.
+ 
+\end_layout
+
+\begin_layout Plain Layout
+Inference on the Semantic Web is one of the tools of choice to improve the
+ quality of data integration on the Web, by discovering new relationships,
+ automatically analysing the content of the data, or managing knowledge
+ on the Web in general.
+ Inference based techniques are also important in discovering possible inconsist
+encies in the (integrated) data.
+ Examples A simple example may help.
+ The data set to be considered may include the relationship (Flipper isA
+ Dolphin).
+ An ontology may declare that “every Dolphin is also a Mammal”.
+ That means that a Semantic Web program understanding the notion of “X is
+ also Y” can add the statement (Flipper isA Mammal) to the set of relationships,
+ although that was not part of the original data.
+ One can also say that the new relationship was “discovered”.
+ Another example is to express that fact that “if two persons have the same
+ name, home page, and email address, then they are identical”.
+ In this case, the “identity” of two resources can be discovered via inferencing.
+ Usage and techniques of ontologies and rules largely overlap.
+ Very broadly speaking, ontologies optimize for taxonomic reasoning problems,
+ and rule based systems optimize for reasoning problems within the data.
+ The difference is largely a matter of style, and criteria like available
+ expertise, ease of adapting to existing data, tooling support, maturity
+ and costs, etc., should be considered as far more important when trying
+ to choose.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter
+Trabalhos Relacionados
+\begin_inset CommandInset label
+LatexCommand label
+name "chap:Trabalhos_Relacionados"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand input
+filename "chapters/4_Related_work2.lyx"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter
+Plano de Trabalho 
+\begin_inset CommandInset label
+LatexCommand label
+name "chap:conclusao"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand input
+filename "chapters/6_conclusao.lyx"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter
+Referências
+\begin_inset CommandInset label
+LatexCommand label
+name "chap:referencias"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset bibtex
+LatexCommand bibtex
+btprint "btPrintCited"
+bibfiles "references/refs"
+options "hc-de"
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

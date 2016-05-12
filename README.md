@@ -1,1 +1,4 @@
-# thesisUSP
+Qualificação
+=====
+
+Quali

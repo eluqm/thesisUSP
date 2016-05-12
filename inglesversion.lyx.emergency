@@ -1,0 +1,1612 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass article
+\begin_preamble
+\usepackage{array}
+\renewcommand{\arraystretch}{1.5}
+
+\usepackage{tocloft}
+\renewcommand\cftsecdotsep{\cftdotsep}
+%\renewcommand\cftsecleader{\cftdotfill{\cftsecdotsep}}
+
+% specify here the journal
+%\journal{Example: Nuclear Physics B}
+
+% use this if you need line numbers
+%\usepackage{lineno}
+\end_preamble
+\use_default_options false
+\begin_modules
+theorems-std
+\end_modules
+\maintain_unincluded_children false
+\language american
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans helvet
+\font_typewriter default
+\font_math auto
+\font_default_family rmdefault
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 0
+\use_package amssymb 0
+\use_package cancel 0
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 0
+\use_package mhchem 1
+\use_package stackrel 0
+\use_package stmaryrd 0
+\use_package undertilde 0
+\cite_engine natbib
+\cite_engine_type authoryear
+\biblio_style plainnat
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 2
+\paperpagestyle headings
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+
+\series bold
+A Medical Application for Automatic Classification of Cancer Tumors in Stages
+ using Image Annotations and Ontologies 
+\end_layout
+
+\begin_layout Author
+Edson Francisco Luque Mamani
+\begin_inset Newline newline
+\end_inset
+
+Instituto de Ciências Matemáticas e de Computação – ICMC
+\begin_inset Newline newline
+\end_inset
+
+Universidade de São Paulo – USP 
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace vfill
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+
+\size normal
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Abstract
+Information about the stage of cancer in a patient is crucial when doctors
+ assess the progress of this patient and decide on further steps of treatment.
+ Determining the stage of cancer (cancer staging) is a process that takes
+ into account the description, location, characteristics and possible metastasis
+ of cancerous tumors of a patient.
+ This process should follow classification standards, such as TNM Classification
+ of Malignant Tumors.
+ However, in clinical practice, the implementation of this process can be
+ tedious and error-prone thus creating uncertainty in the interpretation
+ of medical images.
+ In order to alleviate these problems, this proposal aims to assist radiologists
+ providing a second opinion in the evaluation of stage cancer patient.
+ For this, Semantic Web technologies such as ontologies and reasoning will
+ be used to automatically classify stages of cancer.
+ This classification will use semantic annotations made by radiologists
+ with the ePAD and stored in the AIM format and rules of an ontology representin
+g the standard TNM.
+ Annotations on AIM will be converted to OWL and an inference engine will
+ use them, along with the ontology and its rules to calculate the stage
+ of cancer in a patient.
+ The whole process will be validated through a proof of concept with users
+ of Rubin Lab (Radiology Dept.
+ - Stanford University).
+\end_layout
+
+\begin_layout Abstract
+
+\series bold
+Keywords:
+\series default
+ OWL, SWRL, cancer staging, ePAD, câncer.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace vfill
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace vfill
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Introdução
+\end_layout
+
+\begin_layout Standard
+Existe um interesse crescente na aplicação de tecnologias da Web Semântica
+ em biomedicina, como esses métodos podem tornar os dados de biomedicina
+ explícitos e computáveis a comunidade biomédica está em busca de ferramentas
+ para ajudar-lhes com o acesso, consulta e análise da vasta quantidade de
+ dados gerados pelos avanços do uso da tecnologia na medicina 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Marquet2007"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+O uso dessa tecnologia na medicina gera enormes quantidades de informações
+ do tipo não-texto, tais como imagens médicas.
+ As imagens médicas desempenham um papel importante nas tarefas clínicas,
+ tais como seleção, diagnóstico, planejamento do tratamento e acompanhamento
+ de pacientes com câncer 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Levy2009"
+
+\end_inset
+
+.
+ Aplicações informáticas para a interpretação de imagens médicas têm sido
+ amplamente desenvolvidas.
+\end_layout
+
+\begin_layout Standard
+A maioria destas aplicações estão focados na extração de características
+ visuais com a ajuda de algoritmos de processamento de imagem, mas, esses
+ algoritmos poderiam apresentar problemas quando uma consulta abstrata e
+ ambígua é feita 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Wennerberg2011"
+
+\end_inset
+
+.
+ Esses algoritmos estão enfrentando problemas encontrados ao manusear interpreta
+ções abstratas de imagens, como um resultado da semântica dentro da imagem
+ não ser considerada nesses algoritmos.
+ 
+\end_layout
+
+\begin_layout Standard
+Em geral, a semântica é o estudo do significado das coisas e no contexto
+ de Oncologia e Radiologia, a semântica é o estudo do significado do conteúdo
+ dos laudos de radiologia, bem como o conteúdo e o significado das imagens
+ usadas em radiologia.
+ 
+\end_layout
+
+\begin_layout Standard
+Os resultados da análise dessas imagens são essenciais na investigação e
+ na prática clínica, tal como na avaliação da resposta do paciente a um
+ tratamento de câncer pelo oncologista.
+ Neste contexto, tratamento e prognóstico do tumor do câncer dependem, em
+ grande parte, da fase em que este tumor está (
+\emph on
+cancer staging
+\emph default
+).
+ No entanto, entre a definição e descrição do estado do tumor do câncer
+ feita a partir de imagens, não é fácil determinar uma relação explícita,
+ este problema é conhecido como 
+\emph on
+semantic gap
+\emph default
+.
+\end_layout
+
+\begin_layout Standard
+Para preencher essa lacuna conhecido como 
+\emph on
+semantic gap
+\emph default
+, entre as denominações e definições dos tipos de câncer (
+\emph on
+cancer staging
+\emph default
+) do tumor, é necessário representar formalmente o conhecimento.
+ Este é naturalmente realizada quando um usuário humano (radiologista ou
+ oncologista) interpreta imagens médicas.
+ Além disso, um computador não pode executar a tarefa da mesma forma.
+ 
+\end_layout
+
+\begin_layout Standard
+O formato típico para a representação do conhecimento simbólico é uma ontologia
+ 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Dameron2006"
+
+\end_inset
+
+.
+ A partir dessa premissa, foram propostos diferentes abordagens para representar
+ o conhecimento semântico a partir de um ponto de vista formal e não-formal
+ para gerar metadados (anotações semânticas) e, em seguida, construir ontologias
+ biomédicas, uma representação formal do conhecimento tem a vantagem de
+ 
+\emph on
+reasoning
+\emph default
+ e expressividade ao mesmo tempo.
+\end_layout
+
+\begin_layout Standard
+Além disso, embora imagens médicas fornecer uma riqueza de informações para
+ os médicos as informações do seu conteúdo não pode ser integrado automaticament
+e em aplicações médicas avançadas tais como, apoio à decisão clínica para
+ tratar câncer.
+ Tendo representações formais de graus de câncer (
+\emph on
+cancer staging
+\emph default
+) são obrigatórios, esta informação é fundamental quando os médicos irão
+ avaliar o progresso individual de um paciente com câncer e decidir sobre
+ novas medidas de tratamento
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Zillner2013"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Na sequência, descrevemos mais detalhadamente os trabalhos relacionados
+ e os objetivos do trabalho, metodología, e também apresentamos um cronograma
+ de execução.
+\end_layout
+
+\begin_layout Section
+Related Words
+\end_layout
+
+\begin_layout Standard
+Semantic web technologies as ontologies and its properties to making reasoning
+ had a recent grow interest in applications such as computer-aid methods
+ to support diagnosis, prognosis in cancer research.
+ for example, the staging cancer, that is a classification process that
+ determine how much cancer there is on whole body and where it is located.
+ Research on cancer staging using ontologies and rules are described below:
+ 
+\end_layout
+
+\begin_layout Itemize
+According to 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Dameron2006"
+
+\end_inset
+
+ the tumor classification of lung tumors can be performed automatically
+ using OWL-DL and TNM.
+ Moreover, the authors point out some of limitation based on description
+ logic (DL) for these classification task.
+ 
+\end_layout
+
+\begin_layout Itemize
+In 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Marquet2007"
+
+\end_inset
+
+ the authors developed an ontology based on the NCI Thesaurus ontology and
+ WHO
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Kleihues2002"
+
+\end_inset
+
+ as reference system to grading glioma cancer.
+ Finally, class-based reasoning was used to classify patients from their
+ pathology reports.
+ 
+\end_layout
+
+\begin_layout Itemize
+for classification tumours of glioma the authors
+\end_layout
+
+\begin_layout Standard
+But, this work does not present explicit results using real data sets.
+ 
+\end_layout
+
+\begin_layout Standard
+But, compared with our proposed approach, these patients reports were manually
+ filled and the authors do not explicitly show results using real data sets.
+\end_layout
+
+\begin_layout Standard
+In [Levy2009] a methodology and tools have been developed to transform the
+ information model Annotation and Image Markup (AIM) in OWL instances.
+ Then, reasoning engine based on OWL and SWRL is developed to work with
+ these instances in order to automatically classify and calculate the tumor
+ burden.
+ 
+\end_layout
+
+\begin_layout Standard
+Although in [Levy2009] some reference system is not shown for classification
+ of cancer.
+ Its methodology is part of the principle of our proposal.
+\end_layout
+
+\begin_layout Standard
+The work in [Tutac2008] introduces an approach that uses OWL-DL to generate
+ the correlation between medical concepts -related to breast cancer classificati
+on based on Nottingham Grading System (NGS), and computer vision concepts.
+ The authors describe a rule-based method to automatically grading breast
+ cancer based on NGS.
+ Where, the medical concepts related to NGS are transformed into computer
+ vision concepts.
+ Then, these computer vision concepts are modeled such as protegé concepts
+ in order to define rules.
+ Finally, these rules are used for semantic indexing of histopathology images.
+ 
+\end_layout
+
+\begin_layout Standard
+But, although the proposal of [Tutac2008] is developed in the field of histologi
+cal image analysis for indexing.
+ The approach described by [tutac] is an important step in developing our
+ proposal, because it clearly describes the rules used for the classification
+ of cancer by OWL-DL.
+\end_layout
+
+\begin_layout Standard
+In [zillner:towards] OWL-DL ontology was designed to performing automatic
+ staging of lymphoma patients using semantic annotations.
+ These annotations are captured by the annotation tool that is part of MEDICO-on
+tology project.
+ In addition, in order to classify lymphoma patients the authors captured
+ the rules of the Ann Arbor Staging System into an ontology.
+ 
+\end_layout
+
+\begin_layout Standard
+But, in contrast to our proposal, the work of [Zillner:towards] only improves
+ the semantic annotations in order to describes medical images through the
+ representation of the Ann Arbor Staging System by ontologies.
+ These annotations could be used to perform the classification of patients
+ with lymphoma cancer.
+ However, the classification of patients by semantic annotations that have
+ been improved with additional clinical knowledge, is not described in [
+ Zillner : towards].
+ Also, are not shown explicitly assessment results with real data.
+\end_layout
+
+\begin_layout Standard
+In [Tutac2010] the main objective is to guide the exploration of images
+ within a virtual microscope and aid in the grading process of histological
+ images of breast cancer.
+ To meet these requirements, the authors extended the breast cancer ontology
+ developed in [Tutac2008] incorporating spatial knowledge using OWL-DL,
+ they based on formal theory to develop spatial relationships of grading
+ of breast cancer.
+ Then, they describe how to reasoning by these relations.
+ 
+\end_layout
+
+\begin_layout Standard
+But, the work of [Tutac2010] makes no evaluation of its model with real
+ patients' data.
+ 
+\end_layout
+
+\begin_layout Standard
+The work proposed in [Zillner2012] introduces an application that uses medical
+ image annotation and reasoning technologies in order to automatically classify
+ patients with lymphoma, based on the relative position of lymphoma.
+ A ontology-based knowledge was used to verify or falsify the spatial configurat
+ions of lymphoma, this process is known as spatio-anatomical reasoning [
+ Manuel ].
+ Then, the authors state alignments between concepts the RADLEX and FMA
+ to create a patient-ontology.
+ These ontologies are part of MEDICO - ontology.
+ Finally, the patient-ontology and the Ann-Arbor staging system ontology
+ were aligned to run the reasoning process in order to staging patients
+ with lymphoma.
+\end_layout
+
+\begin_layout Standard
+In contrast to our proposal, In [ziller2012] the annotations describing
+ medical images - semantic annotations, are determined automatically by
+ image processing algorithms.
+ In addition, inconsistencies were found by performing a clinical evaluation
+ using real patients data.
+ Finally, our proposal will integrate the TNM staging system.
+\end_layout
+
+\begin_layout Standard
+In [Meriem2012] propose a methodology to improve the clinical models and
+ usability of the low-level image analysis algorithms, for example, in the
+ clinical model that performs the score of breast cancer, this score is
+ based on the Nottingham Grading System (NGS), that is needed to grading
+ breast cancer.
+ Firstly, they designed a breast cancer ontology (BCO) based on two languages,
+ OWL-DL and SWRL.
+ In addition, the Wide Field Markup Language (WFML) was used to describe
+ annotated histopathological images.
+ Finally, the query language SPARQL is used for querying in Java.
+ 
+\end_layout
+
+\begin_layout Standard
+But, in [Meriem2012] automated algorithms are used to describe histological
+ images using annotations.
+ Only described some rules for reasoning that are required for the grading
+ of breast cancer.
+ In addition, the authors mention only a few rules based on spatial relationship
+s in the image and its possible applications to resolve ambiguity in histologica
+l image analysis.
+ 
+\end_layout
+
+\begin_layout Standard
+In [Oberkampf] the authors propose an ontology, formally represents diseases,
+ symptoms and their relationships.
+ They describes the process to represent medical knowledge in Disease-symtom
+ ontology in order to perform reasoning about diseases based on annotations
+ that reflect the descriptive content of patient data.
+ Finally, the authors tested the model using a prototype.
+ 
+\end_layout
+
+\begin_layout Standard
+But, In [Oberkampf] does not perform staging of cancer, the authors detail
+ only the process to model knowledge through ontologies in order to facilitate
+ the interpretation of annotations generated by reports of patients.
+ In addition, the data used belong to MEDICO-project.
+ Therefore, are not available to verify their results.
+\end_layout
+
+\begin_layout Standard
+In [Kurtz2014] and [Seifert] propose an image retrieval framework based
+ on semantic annotations from liver images, this framework incorporates
+ the semantic correlations between terms used to describe these images.
+ The authors use the semantic similarity of terms -semantic annotations,
+ based on the structure of the Radlex ontology in order to evaluate the
+ semantic proximity between the words of interest.
+ This automated approach provides real time support for radiologists, showing
+ them images associated with similar diagnoses.
+ 
+\end_layout
+
+\begin_layout Standard
+But, In [Kurtz2014] and [Seifert] ontologies are not used to represent a
+ specific staging system, the similarity between images is used to classify
+ lesions.
+ It is worth noting that the liver images are described by semantic annotations
+ based on manual observations made by radiologists using ePAD [Rubin2014],
+ this tool will form the initial part of our project .
+\end_layout
+
+\begin_layout Standard
+In [Racoceanu2014] describes a prototype system that controls an entire
+ histological image analysis protocol, this prototype was developed in the
+ framework "Cognitive Microscopy"(MICO) in order to improves the Whole Slide
+ Image (WSI) analysis protocol and become a reliable assessment for breast
+ cancer classification.
+ The prototype consists of two main components such as semantic core and
+ image processing algorithms.
+ The semantic core has two main components, reasoning engine -N3Logic and
+ ontology -OWL.
+ N3logic is an extension of the RDF data model such that the same language
+ can be used to represent the logic and data.
+ 
+\end_layout
+
+\begin_layout Standard
+But, in [Racoceanu2014] the authors use algorithms for automatic extraction
+ of annotations to describe histological images.
+ In our proposal, the semantic annotations are performed manually and therefore
+ are subject to errors.
+ In addition, the authors do not explicitly describe ontologies and rules
+ used for grading breast cancer, as well as, results of the clinical evaluation
+ of its prototype.
+ But, it should be noted that this work is considered in this review due
+ to its general approach to automatic screening.
+\end_layout
+
+\begin_layout Standard
+Considerations
+\end_layout
+
+\begin_layout Standard
+Based on [Dameron2006], the proposed work will use the Classification of
+ Malignant Tumours ( TNM ) and images that are described by semantic annotations
+ [Rubin2014] to stage lung cancer.
+ Will be explored a spatial representation[tutac2010] and reasoning-SWRL
+ approach for stage liver cancer in order to solve some of the limitations
+ described in [Dameron2006].
+ 
+\end_layout
+
+\begin_layout Standard
+Although, was found similar approaches such as [Zillner2012] [Ziller:towars].
+ These approaches describe a 'closed' system, where its methods can not
+ be verified.
+ Besides, only a few tools that adopt AIM were developed to allow image
+ classification and decision support systems [Rubin2011].
+ AIM data model will used as the start of the proposed work.
+ Therefore, the external knowledge(TNM) and application focus are different.
+ 
+\end_layout
+
+\begin_layout Standard
+Uma análise do conteúdo foi realizado, procurando o uso de anotações semânticas,
+ ontologias, reasoning e métodos para o classificação de câncer.
+ 11 trabalhos foram escolhidos porque têm semelhanças com o trabalho proposto.
+ A seguir, esses trabalhos são descritos e comparados com o trabalho proposto:
+\end_layout
+
+\begin_layout Itemize
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Dameron2006"
+
+\end_inset
+
+mostra que a classificação de tumores pode ser executada automaticamente
+ usando OWL-DL, este trabalho centra-se na classificação dos tumores de
+ pulmão.
+ Os autores usam a ontologia FMA para descrever entidades anatômicas a fim
+ de representar alguns critérios de 
+\emph on
+The TNM Classification of Malignant Tumours 
+\emph default
+(TNM).
+ Além disso, os autores destacam alguns da limitação de Descrição baseada
+ em Lógica (DL), para a tarefa de classificação dos tumores de pulmão.
+ Finalmente, as condições dos pacientes são simuladas por instâncias de
+ classes para os experimentos e 
+\emph on
+reasoning
+\emph default
+.
+ Mas ,este trabalho não apresentam resultados explícitos usando conjuntos
+ de dados reais.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Marquet2007"
+
+\end_inset
+
+Para classificação dos tumores de glioma uma ontologia baseada na ontologia
+ NCI Thesaurus foi desenvolvido.
+ O sistema de referência de classificação utilizado foi o 
+\emph on
+World Health Organization
+\emph default
+ (WHO).
+ Em seguida, o 
+\emph on
+reasoning
+\emph default
+ baseado em classes foi utilizado a partir de relatórios de patologia com
+ descrições histológicas de pacientes.
+ Mas em comparação com o projeto proposto, esses relatórios de paciente
+ foram preenchidos manualmente, os autores não apresentam resultados explícitos
+ usando dados reais.
+\end_layout
+
+\begin_layout Itemize
+Em 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Levy2009"
+
+\end_inset
+
+ a metodologia e as ferramentas foram desenvolvidas para transformar o modelo
+ de informações 
+\emph on
+Anotação e Imagem Markup
+\emph default
+ (AIM) em instâncias OWL.
+ Em seguida, um mecanismo de 
+\emph on
+reasoning
+\emph default
+ baseado em ontologias (OWL e SWRL) foi desenvolvido para trabalhar com
+ essas instâncias, a fim de automaticamente, classificar e calcular a carga
+ tumoral.
+ Embora, 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Levy2009"
+
+\end_inset
+
+ utiliza AIM como modelo de informação.
+ Eles não fazem 
+\emph on
+staging
+\emph default
+ de câncer.
+ Mas, a metodologia apresentada faz parte do princípio de nossa proposta.
+\end_layout
+
+\begin_layout Itemize
+O trabalho proposto em 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Tutac2008"
+
+\end_inset
+
+introduz uma abordagem que usa OWL-DL a fim de gerar a correspondência entre
+ os conceitos médicos relacionados com a classificação de câncer de mama
+ com base no sistema 
+\emph on
+Nottingham Grading System
+\emph default
+ ( NGS ) e conceitos de visão computacional.
+ Os autores criaram um método baseado em regras para gerar automaticamente
+ o NGS.
+ Onde, os conceitos médicos relacionados com NGS são transformados em conceitos
+ da visão de computador.
+ Posteriormente, esses conceitos de visão computacional são modelados como
+ conceitos Protégé para definir regras que, por fim, são utilizados para
+ a indexação semântica de imagens de pacientes de câncer da mama.
+ Embora a proposta de 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Tutac2008"
+
+\end_inset
+
+ é desenvolvido no campo da análise de imagens histológicas para a indexação
+ e não para a classificação de pacientes, a abordagem apresentada é importante
+ no desenvolvimento desta proposta, porque descreve claramente as regras
+ utilizadas para a classificação do câncer.
+\end_layout
+
+\begin_layout Itemize
+Em 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "zillner:towards"
+
+\end_inset
+
+OWL-DL ontologia foi projetado para realizar o 
+\emph on
+staging
+\emph default
+ automático de pacientes com linfoma usando anotações semânticas.
+ Estas anotações são armazenadas em uma ontologia pela ferramenta de anotação
+ que faz parte de projeto MEDICO-ontology.
+ Além disso, para a classificação dos pacientes com linfoma os autores capturou
+ as regras do Sistema 
+\emph on
+Staging Ann Arbor
+\emph default
+ em uma ontologia.
+ Mas, em contraste com a nossa proposta, o trabalho de 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "zillner:towards"
+
+\end_inset
+
+ só melhorou anotações semânticas usadas para descrever imagens médicas
+ através da representação do sistema de 
+\emph on
+Staging Ann Arbor
+\emph default
+ em uma ontologia, a partir dessas anotações podem ser realizadas tarefas,
+ tais como a classificação dos pacientes com câncer de linfoma.
+ A classificação dos pacientes a partir de anotações semânticas que foram
+ melhoradas com o conhecimento clínico adicional, não é descrito em 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "zillner:towards"
+
+\end_inset
+
+.
+ Além disso, não são mostrados de forma explícita os resultados da avaliação
+ com dados reais.
+\end_layout
+
+\begin_layout Itemize
+Em 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Tutac2010"
+
+\end_inset
+
+ O principal objetivo é orientar a exploração de imagens dentro de um microscópi
+o virtual e auxiliar no processo de 
+\emph on
+grading
+\emph default
+ de imagens histológicas de câncer de mama.
+ Para atender a esses requisitos, os autores estenderam a ontologia de câncer
+ de mama desenvolvido em 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Tutac2008"
+
+\end_inset
+
+incorporando conhecimento espacial usando OWL- DL, eles foram baseados em
+ uma teoria formal para desenvolver relações espaciais de 
+\emph on
+grading
+\emph default
+ do câncer de mama.
+ Em seguida, eles descrevem como fazer o 
+\emph on
+reasoning
+\emph default
+ a partir dessas relações.
+ Mas o trabalho de 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Tutac2008"
+
+\end_inset
+
+não faz nenhuma avaliação do modelo com dados reais de pacientes com câncer
+ de mama.
+ Além disso, grande parte do seu conteúdo é voltado para descrever a representaç
+ão e 
+\emph on
+reasoning
+\emph default
+ das relações espaciais incorporadas na ontologia desenvolvida em 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Tutac2008"
+
+\end_inset
+
+ com a finalidade de resolver ambiguidades na análise de imagens histológicas
+ para 
+\emph on
+grading
+\emph default
+ do câncer de mama.
+ 
+\end_layout
+
+\begin_layout Itemize
+O trabalho proposto em 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Zillner2012"
+
+\end_inset
+
+ introduz uma aplicação que utiliza anotações de imagens médicas e tecnologias
+ de 
+\emph on
+reasoning
+\emph default
+, a fim de classificar automaticamente pacientes com linfoma com base na
+ posição relativa de linfoma.
+ conhecimento baseado em ontologia foi utilizado para verificar ou falsificar
+ as configurações espaciais de linfoma, este processo é conhecido como
+\emph on
+ spatio-anatomical reasoning 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Manuel"
+
+\end_inset
+
+.
+ 
+\emph default
+Em seguida, os autores estabelecem alinhamentos entre conceitos de RADLEX
+ e FMA, a fim de criar o 
+\emph on
+Patient-ontology
+\emph default
+.
+ Essas ontologias são parte do 
+\emph on
+MEDICO-ontology
+\emph default
+.
+ Finalmente ,a ontologia do paciente e o sistema de 
+\emph on
+staging
+\emph default
+ Ann Arbo foram alinhados para executar o processo de 
+\emph on
+reasoning
+\emph default
+ para o 
+\emph on
+staging
+\emph default
+ de pacientes com linfoma.
+ Em contraste com a nossa proposta, anotações descrevendo imagens médicas
+ (anotações semânticas) são realizadas automaticamente por algoritmos de
+ processamento de imagem, e não manualmente, Além disso, foram encontradas
+ inconsistências através da realização de uma avaliação clínica do trabalho
+ de 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Zillner2012"
+
+\end_inset
+
+a partir de registros de pacientes reais, Finalmente, o sistema de 
+\emph on
+staging
+\emph default
+ Ann Arbo está relacionado ao câncer de linfoma, ao contrário da nossa proposta
+ que visa integrar o sistema de 
+\emph on
+sstaging
+\emph default
+ TNM, cobrindo alguns tipos de câncer.
+\end_layout
+
+\begin_layout Itemize
+Em
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Meriem2012"
+
+\end_inset
+
+ propõem uma metodologia para melhorar os modelos clínicos e usabilidade
+ dos algoritmos de análise de imagem de baixo nível, por exemplo, no modelo
+ clínico que realiza a pontuação de câncer de mama, essa pontuação é baseada
+ no Nottingham Grading System (NGS) é necessária para realizar o 
+\emph on
+grading
+\emph default
+ de cancer da mama.
+ Em primeiro lugar, eles desenvolveram uma ontologia de câncer de mama chamada
+ Breast Cancer Ontology(BCO) com base em OWL-DL e SWRL.
+ Além disso, a Wide Field Markup Language (WFML) que é específico para o
+ campo de histopatologia, foi usado para descrever imagens histopatológicas
+ usando anotações, Por fim, a linguagem de consulta SPARQL é usado para
+ consultar em Java.
+ Além do trabalho de 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Meriem2012"
+
+\end_inset
+
+ utiliza imagens histológicas, apenas são descritas algumas regras para
+ o 
+\emph on
+reasoning
+\emph default
+ que são necessários para o 
+\emph on
+grading
+\emph default
+ do câncer da mama.
+ Além disso, os autores mencionam apenas um pouco sobre o 
+\emph on
+reasoning
+\emph default
+ baseado em relações espaciais na imagem e suas possíveis aplicações para
+ resolver problemas de ambiguidade na análise de imagens histologicas.
+ Finalmente, são usados ​​algoritmos de extração de características para
+ descrever as imagens histológicas usando anotações .
+\end_layout
+
+\begin_layout Itemize
+Em 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Oberkampf"
+
+\end_inset
+
+os autores propõem uma ontologia que representa formalmente doenças, sintomas
+ e seus respectivos relacionamentos.
+ Eles realizam inferência (
+\emph on
+reasoning
+\emph default
+) sobre doenças baseando-se em anotações que reflectem o conteúdo descritivo
+ dos dados do paciente, O artigo descreve o processo para representar o
+ conhecimento médico em uma ontologia chamada Disease symtom ontology.
+ Finalmente, eles testaram o modelo usando um protótipo.
+ No trabalho de
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Oberkampf"
+
+\end_inset
+
+ não executa 
+\emph on
+staging
+\emph default
+ de câncer, o autores detalham o processo apenas para modelar conhecimento
+ através de ontologias para interpretar anotações gerado por relatorios
+ de pacientes.
+ Além disso, os dados utilizados pertencem ao projeto MEDICO, portanto,
+ não estão disponíveis para verificar seus resultados.
+\end_layout
+
+\begin_layout Itemize
+Em 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Kurtz2014"
+
+\end_inset
+
+ e 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Seifert"
+
+\end_inset
+
+ propõem um framework de recuperação de imagens baseado em anotações semânticas
+ a partir de imagens do fígado, neste 
+\emph on
+framework
+\emph default
+ incorpora as correlações semânticas entre os termos usados ​​para descrever
+ essas imagens.
+ Os autores utilizam a semelhança entre termos semânticos (anotações semânticas)
+ que descrevem as lesões do fígado utilizando a estrutura da ontologia Radlex
+ para avaliar a proximidade semântica entre estes termos de interesse.
+ Esta abordagem automática fornece suporte em tempo real para radiologistas,
+ mostrando-lhes imagens semelhantes com diagnósticos associados.
+ No trabalho de 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Kurtz2014"
+
+\end_inset
+
+ e 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Seifert"
+
+\end_inset
+
+ ontologias não são usadas para representar um sistema de 
+\emph on
+staging
+\emph default
+ de câncer, a similaridade entre as imagens é utilizada para classificar
+ as lesões, mas vale a pena notar que as imagens utilizadas são descritas
+ por anotações semânticas baseadas em observações manuais feitas por radiologist
+as 
+\emph on
+ePAD
+\emph default
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Rubin2014"
+
+\end_inset
+
+, esta ferramenta irá formar a parte inicial do nosso projeto.
+\end_layout
+
+\begin_layout Itemize
+Em 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Racoceanu2014"
+
+\end_inset
+
+ é descrito um protótipo que tem a função de controlar um protocolo de análise
+ de imagem histologica inteira, este protótipo foi desenvolvido no 
+\emph on
+framework
+\emph default
+ "Cognitive Microscopy" (MICO) a fim de melhorar a análise de imagens histológic
+as 
+\emph on
+Whole Slide Image
+\emph default
+ (WSI) e tornar-se uma avaliação confiável para a classificação de câncer
+ de mama.
+ O protótipo consiste em dois componentes principais, um "núcleo semântico"
+ e um conjunto de algoritmos de processamento de imagem.
+ O núcleo semântico tem dois componentes principais que são, um motor de
+ 
+\emph on
+reasoning
+\emph default
+ e uma ontologia usando OWL e N3logic respectivamente.
+ Onde N3logic é uma extensão do modelo de dados RDF de tal modo que a mesma
+ linguagem pode ser utilizado para representar a lógica e dados.
+ Mas no trabalho de 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Racoceanu2014"
+
+\end_inset
+
+ os autores usam algoritmos para extração automática de anotações para descrever
+ as imagens histológicas.
+ Em nossa proposta, as anotações semânticas são realizados manualmente e
+ portanto estão sujeitos a erros.
+ Além disso, os autores não descrevem explicitamente a ontologia e as regras
+ utilizadas para 
+\emph on
+grading
+\emph default
+ de câncer de mama e também não são apresentados resultados explícitos.
+ Mas deve-se notar que este trabalho é considerado nesta revisão da literatura
+ devido à abordagem de carácter geral para 
+\emph on
+screening
+\emph default
+ automático que ele descreve.
+\end_layout
+
+\begin_layout Section
+Metodologia
+\end_layout
+
+\begin_layout Standard
+Nesta seção será descrita a metodologia a ser seguida para o desenvolvimento
+ deste trabalho proposto que será baseado nas seguintes etapas:
+\end_layout
+
+\begin_layout Itemize
+Desenvolver um mecanismo para transformar as anotações semânticas a partir
+ dos documentos XML gerados pelo 
+\emph on
+AIM
+\emph default
+ e 
+\emph on
+ePAD
+\emph default
+ para instâncias no modelo OWL.
+ 
+\emph on
+ANNOTATION AND IMAGE MARKUP
+\emph default
+ (AIM) 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Rubin2014"
+
+\end_inset
+
+ que fornece um formato padronizado para a gravação de informação da imagem.
+\end_layout
+
+\begin_layout Itemize
+Desenvolver uma ontologia com foco no grau de câncer com base em critérios
+ de classificação 
+\emph on
+The TNM Classification of Malignant Tumours
+\emph default
+ (TNM).
+ No processo de 
+\emph on
+Staging
+\emph default
+ um tumor de câncer é um processo de dois passos.
+ A primeira etapa consiste em dar uma contagem ao longo de três conceitos
+ que descrevem o tumor, a propagação em gânglios linfáticos e o possível
+ metástase, estes conceitos são: 'T' tamanho do tumor Refere-se a tamanho
+ do tumor e propagação local.
+ 'N' se espalhando para nós linfáticos e 'M' se espalhando para outros órgãos
+ (metástase) 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Dameron2006"
+
+\end_inset
+
+.
+ O segundo passo consiste na determinação da fase de acordo com o pontuações.
+ Cada combinação de um marcador sobre T, N e M definem a etapa única do
+ tumor, de 0 a IV.
+ 
+\end_layout
+
+\begin_layout Itemize
+Integração de conhecimentos por meio de 
+\emph on
+reasoning
+\emph default
+.
+ O processo de 
+\emph on
+reasoning
+\emph default
+ permite a classificação de um paciente, integrando o conhecimento capturado
+ pelos ontologias médicas.
+ O modelo ontológico vai capturar o 
+\emph on
+staging
+\emph default
+ individual de paciente com câncer.
+\end_layout
+
+\begin_layout Itemize
+informações
+\emph on
+ de staging
+\emph default
+ dos pacientes em banco de dados, pode ser consultado por meio de SPARQL
+\end_layout
+
+\begin_layout Itemize
+implementar Interfaces para testes.
+\end_layout
+
+\begin_layout Standard
+A metodologia descrita acima é descrito em 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:arquitetura-proposta"
+
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{centering}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/propuesta.jpg
+	scale 20
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{centering}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+arquitetura proposta 
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:arquitetura-proposta"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Objetivos, Resultados Esperados e Validação
+\end_layout
+
+\begin_layout Standard
+Este projeto tem como objetivo gerar automaticamente classificação (
+\emph on
+staging
+\emph default
+) das lesões de câncer, em imagens médicas, utilizando tecnologias de 
+\emph on
+reasoning
+\emph default
+ e web semântica para processar metadados de anotação de imagem gerados
+ por programas, como o 
+\emph on
+ePAD
+\emph default
+
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Rubin2014"
+
+\end_inset
+
+, para fornecer aos médicos uma segunda opinião sobre classificação de pacientes
+ com câncer.
+ Atualmente, existem sistemas de classificação do câncer automáticos, no
+ entanto eles não são de código aberto, os seus métodos não pode ser verificada,
+ e eles também apresentam problemas de precisão 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Zillner2012"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Para alcançar o objetivo almejado, o trabalho prevê (a) una representação
+ formal de conhecimento -este conhecimento clínico é referido como 
+\emph on
+staging system
+\emph default
+
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Tutac2008"
+
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Dameron2006"
+
+\end_inset
+
+.
+ 
+\emph on
+Staging
+\emph default
+ é uma tarefa de classificação, onde a representação do conhecimento é necessári
+o, no caso deste trabalho , esse conhecimento será codificado em ontologias
+ (OWL) e regras (SWRL).
+ As informações sobre o grau do câncer em um paciente é fundamental quando
+ os médicos irão avaliar o progresso individual de esse paciente e decidir
+ sobre novas medidas de tratamento.
+\end_layout
+
+\begin_layout Subsection
+ePAD
+\end_layout
+
+\begin_layout Standard
+O ePAD foi desenvolvido para atender as necessidades dos radiologistas dentro
+ de um ambiente clinico padrão.
+ Ele recupera as imagens médicas a partir de servidores PACS dentro de ambiente
+ clinico, no qual deve ser utilizado.
+ Por meio de cliente baseado em RIA, o ePAD é capaz de mostrar e manipular
+ imagens médicas através da interação com os usuários, que precisam usar
+ apenas um navegador Web padrão, sem a necessidade de instalação de softwares
+ e plugins adicionais, para acessar o sistema.
+ O ePAD suporta AIM Templates para a criação de anotações AIM.
+ Os arquivos de anotação, no formato AIM XML, são armazenados separadamente
+ das imagens médicas.
+ Eles ficam ligados a elas através de identificadores únicos (DICOM UID),
+ que é utilizado para recuperá-las posteriormente
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Serique2012"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename figures/ePAD.jpg
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+interface de usuário EPAD e modelo de anotação 
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:interface-de-usuário"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+O modelo deve ser validado por meio de uma prova de conceito que faz uso
+ de ePAD 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Rubin2014"
+
+\end_inset
+
+, para captura e acesso ao conteúdo das lesões de câncer, em imagens médicas
+ e de desenvolvimento de protótipo funcional para testes com os usuários
+ do Rubin Lab.
+\end_layout
+
+\begin_layout Section
+Atividades Planejadas e Cronograma
+\end_layout
+
+\begin_layout Standard
+A etapa inicial deste projeto vai ser o estudo detalhado do problema, sua
+ pesquisa na literatura e a análise das tecnologias, padrões e ferramentas
+ já usados no ePad..
+ Uma arquitetura geral do ePad já existe e o sistema proposto neste projeto
+ deve se integrar a ela.
+ 
+\end_layout
+
+\begin_layout Standard
+Um dos problemas centrais aqui será a representação formal de conhecimento(
+\emph on
+staging
+\emph default
+).
+ Tem que ser uma solução que seja prática e confortável para os médicos
+ mas que ao mesmo tempo seja factível usando as tecnologias web que temos
+ a disposição (como GWT).
+ Para isso contaremos com o feedback dos usuários do Rubin Lab.
+ Nesse contexto, as principais atividades previstas para o restante do curso
+ de mestrado do aluno estão listadas no cronograma da Tabela 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Cronograma"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Para o cumprimento dos objetivos estabelecidos e o alcance dos resultados
+ esperados, são previstas as seguintes atividades: 
+\end_layout
+
+\begin_layout Itemize
+Cumprimento de créditos referente às disciplinas do mestrado.
+ 
+\end_layout
+
+\begin_layout Itemize
+Preparação para o exame de proficiência da língua Inglesa.
+ 
+\end_layout
+
+\begin_layout Itemize
+Análise crítica dos trabalhos relacionados.
+ 
+\end_layout
+
+\begin_layout Itemize
+Levantamento dos novos requisitos para o ePad com usuários.
+ 
+\end_layout
+
+\begin_layout Itemize
+Análise e planejamento de arquitetura do sistema e sua interação com os
+ usuários.
+ 
+\end_layout
+
+\begin_layout Itemize
+Desenvolvimento de protótipo de interface e teste com os usuários.
+ 
+\end_layout
+
+\begin_layout Itemize
+Desenvolvimento de protótipo funcional para testes com os usuários.
+ 
+\end_layout
+
+\begin_layout Itemize
+Desenvolvimento do protótipo final e realização de testes com os usuários.
+\end_layout
+
+\begin_layout Itemize
+Avaliação final do sistema e ajustes no projeto proposto.
+ 
+\end_layout
+
+\begin_layout Itemize
+Redação de artigos.
+ 
+\end_layout
+
+\begin_layout Itemize
+Redação da dissertação.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Tabular
+<lyxtabular version="3" rows="15" columns="10">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Act.
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="1" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2014
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" bottomline="true"

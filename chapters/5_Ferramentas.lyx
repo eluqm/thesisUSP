@@ -1,0 +1,1489 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass scrbook
+\options a4paper,titlepage
+\use_default_options false
+\maintain_unincluded_children false
+\begin_local_layout
+Float
+Type                  listing
+GuiName               Listing
+Placement             tbp
+Extension             lol
+NumberWithin          none
+Style                 ruled
+ListName              "List of Listings"
+LaTeXBuiltin          false
+End
+\end_local_layout
+\language brazilian
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize 12
+\spacing onehalf
+\use_hyperref false
+\pdf_bookmarks true
+\pdf_bookmarksnumbered true
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks false
+\pdf_pdfborder false
+\pdf_colorlinks false
+\pdf_backref false
+\pdf_pdfusetitle true
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 0
+\use_package esint 0
+\use_package mathdots 1
+\use_package mathtools 0
+\use_package mhchem 1
+\use_package stackrel 0
+\use_package stmaryrd 0
+\use_package undertilde 0
+\cite_engine natbib
+\cite_engine_type authoryear
+\biblio_style plainnat
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 3cm
+\topmargin 4cm
+\rightmargin 3cm
+\bottommargin 3cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation skip
+\defskip bigskip
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle fancy
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset Note Comment
+status open
+
+\begin_layout Plain Layout
+Neste capitulo, será descrito o conjunto de ferramentas para o desenvolvimento
+ do 
+\shape italic
+Gazetteer
+\shape default
+ Colaborativo que possibilitará ao usuário realizar buscas semânticas, inserir
+ e atualizar os dados no formato de 
+\shape italic
+Linked Open Data
+\shape default
+.
+ Para representar as localidades utilizaremos a ontologia LinkedGeoData
+ que será editada pela ferramenta Protégé.
+ Os locais utilizados no 
+\shape italic
+Gazetteer
+\shape default
+ serão extraídos dos repositórios, SpeciesLink, GBIF e Geonames e então
+ serão armazenados em uma
+\shape italic
+ triplestore
+\shape default
+ e disponibilizados para o usuário por meio de uma interface em GWT que
+ utilizará mapas digitais feitos com a API OpenLayers.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Protégé
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Comment
+status open
+
+\begin_layout Plain Layout
+O Protégé é um ambiente para criação e edição de ontologias desenvolvido
+ pela Universidade de Stanford.
+ Ele permite a construção de ontologias, formulários de entrada de dados
+ customizados e mecanismos de inserção de dados, com suporte para todas
+ as últimas especificações da W3C.
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Rubin2007"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Plain Layout
+Atualmente, o Protégé possui uma versão Web que permite usuários, compartilhar,
+ procurar e editar ontologias utilizando um navegador Web.
+ O WebProtégé provê um paradigma gráfico similar ao Protégé GUI.
+ A vantagem do WebProtégé é que diversos usuários podem editar a mesma ontologia
+ sem precisar realizar o download para sua máquina 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Rubin2007"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Plain Layout
+Por ser um sistema open-source, ele permite que desenvolvedores criem novos
+ plugins capazes de aumentar significativamente o conjunto de funcionalidades
+ da ferramenta.
+ As principais características do Protégé, listadas por 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Rubin2007"
+
+\end_inset
+
+, são: 
+\end_layout
+
+\begin_layout Itemize
+Utilização um mecanismo de inferência, 
+\shape italic
+reasoner
+\shape default
+, para a verificação, de ontologias e sua classificação automática.
+ Esse mecanismo é implementado pelos programas FaCT++ e HermiT, podendo
+ se acoplar outros 
+\shape italic
+reasoner
+\shape default
+s a ferramenta.
+ 
+\end_layout
+
+\begin_layout Itemize
+A versão atual do Protégé, 4.X, é baseada na biblioteca OWL-API (OWL 2),
+ que segue os padrões do propostos pelo W3C, possibilitando o desenvolvimento
+ de ontologias em conformidade com as principais regras descritas pelo W3C.
+ 
+\end_layout
+
+\begin_layout Plain Layout
+Neste trabalho, o Protégé será utilizado para criar e editar as classes,
+ propriedades e atributos da ontologia que será utilizada para representar
+ as informações referentes aos locais de coleta das coleções biológicas
+ que compõem o 
+\shape italic
+Gazetteer
+\shape default
+.
+ Esses locais serão armazenados em uma 
+\shape italic
+triplestore 
+\shape default
+para serem disponibilizados por meio de serviços SPARQL
+\shape italic
+.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Triplestore
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Comment
+status open
+
+\begin_layout Plain Layout
+Uma
+\shape italic
+ triplestore
+\shape default
+ é um banco de dados especialmente construído para o armazenamento e recuperação
+ de triplas.
+ Essas triplas podem ser consultadas e representadas em RDF.
+ Existem várias implementações de triplestores, tanto comerciais como Oracle
+ Database 12c, Franz AllegroGraph RDFStore e StarDog, como 
+\emph on
+open source
+\emph default
+, como o Virtuoso Open Source, BigData e Apache Marmotta.
+ Contudo, só foi possível encontrar três implementações 
+\emph on
+open source
+\emph default
+ que permitem trabalhar com representações geoespaciais fornecidas pela
+ linguagem de busca GeoSPARQL 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "journals/corr/abs-1305-5653"
+
+\end_inset
+
+: Parliament, Strabon e UseekM.
+ A seguir, a arquitetura dessas três 
+\shape italic
+triplestores
+\shape default
+ são descritas e comparadas.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Strabon
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Comment
+status open
+
+\begin_layout Plain Layout
+O Strabon é uma
+\shape italic
+ triplestore
+\shape default
+ de código aberto desenvolvido pelo grupo TELEIOS que permite armazenar
+ e consultar dados em stRDF/stSPARQL e GeoSPARQL.
+ Seu desenvolvimento toma como base o 
+\emph on
+triplestore
+\emph default
+ Sesame.
+ 
+\end_layout
+
+\begin_layout Plain Layout
+A utilização do Sesame como base permite implementar uma vasta gama de funcional
+idades e possibilita a utilização de SGBDs, como o PostGIS e MonetDB, como
+ backends para explorar uma variedade de funções espaciais.
+ A implementação do Strabon se dá através de camadas incluídas no pacote
+ de 
+\shape italic
+softwares
+\shape default
+ do Sesame.
+ Strabon, em sua versão 3.0, usa o Sesame 2.6.3 e compreende dois módulos básicos,
+ como mostrado na Figura 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "arquitetura_strabon-1"
+
+\end_inset
+
+, o Storage Manager e o Query Engine 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Bereta2013"
+
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename ../figures/Strabon_Arquitetura.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Arquitetura da 
+\shape italic
+triplestore
+\shape default
+ Strabon.
+ Fonte: 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Bereta2013"
+
+\end_inset
+
+ 
+\begin_inset CommandInset label
+LatexCommand label
+name "arquitetura_strabon-1"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Storage Manager: Carrega as triplas em stRDF usando Sesame e um dicionário
+ de codificação.
+ Seus dados são armazenados em uma Árvore B+ e todos os literais referentes
+ a representações geométricas são armazenados em bancos de dados como PostgreSQL
+ ou MonetDB 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Bereta2013"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+Query engine: Realiza o processamento das queries inseridas no Strabon.
+ O Motor de Busca consiste de um analisador, um otimizador, um avaliador
+ e um sistema de codificação.
+ Primeiramente, o analisador gera uma árvore de sintaxe abstrata, então
+ esta árvore é mapeada para a álgebra interna do Sesame, resultando numa
+ árvore de busca.
+ Essa árvore de busca é processada pelo otimizador que progressivamente
+ a modifica, implementando várias técnicas de otimização feitas pelo Strabon.
+ Logo após, a árvore de busca é repassada para o avaliador para produzir
+ a consulta correspondente em SQL que irá ser avaliada pelo PostgreSQL.
+ Depois que a consulta SQL foi feita, o avaliador recebe os resultados e
+ executa todas as ações de pós-processamento.
+ O passo final envolve formatar esses resultados e retorná-los para visualização
+ 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Bereta2013"
+
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+uSeekM
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Comment
+status open
+
+\begin_layout Plain Layout
+O uSeekM é uma biblioteca que pode ser adicionada a base de dados semânticas
+ que usam as 
+\shape italic
+triplestores
+\shape default
+ baseadas no Sesame.
+ O uSeekM adiciona a capacidade de indexar e realizar 
+\shape italic
+queries
+\shape default
+ geoespaciais e provê integração com outras ferramentas e 
+\shape italic
+frameworks
+\shape default
+.
+ 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Correto? Pensei que o uSeekM era uma camada sobre um backend Sesame.
+ Em todo o caso, o que é esse Open Sahra Server?
+\end_layout
+
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Open Sahra Server é um projeto da holanda que tem como objetivo analisar,
+ indexar e semanticamente enriquecer o conteúdo de documentos, sites e blogs.
+ (https://opensahara.com/en) Essa informação sobre o Open Sahra Server utilizar
+ o UseekM como backend eu retirei do site do próprio uSeekM (https://dev.opensaha
+ra.com/projects/useekm).
+ Ambas, informações, sobre ele ser uma camada sobre um backend Sesame e
+ ser utilizado no Open Sahra são validas.
+ No entanto, esta meio estranho mesmo, alterei.
+\end_layout
+
+\end_inset
+
+ A maioria das funcionalidades do uSeekM é fornecida através de 
+\shape italic
+Sail wrappers
+\shape default
+, ou seja, adaptadores que usam a funcionalidade de
+\shape italic
+ triplestores
+\shape default
+ Sesame e possuem funcionalidades adicionais
+\begin_inset CommandInset citation
+LatexCommand citet
+key "uSeekM"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Plain Layout
+O uSeekM possui os seguintes 
+\shape italic
+Sail wrappers
+\shape default
+:
+\end_layout
+
+\begin_layout Itemize
+
+\shape italic
+IndexingSail
+\shape default
+: Estende uma base de dados RDF com a capacidade para armazenamento e realização
+ de consultas SPARQL.
+ Adiciona buscas geoespaciais usando GeoSPARQL.
+ Tecnicamente a 
+\shape italic
+IndexingSail
+\shape default
+ é um 
+\shape italic
+wrapper Sesame Sail
+\shape default
+ que pode ser usado em qualquer 
+\emph on
+triplestore
+\emph default
+ compatível com o padrão 
+\emph on
+Sail wrapper
+\emph default
+ do Sesame.
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\shape italic
+SimpleTypeInferencingSail
+\shape default
+: Um componente que infere a transitividade de propiedades
+\shape italic
+ rdfs:subClassof
+\shape default
+ e 
+\shape italic
+rdf:type
+\shape default
+.
+ Ele é útil em casos onde o uso de RDFS completo é muito lento e somente
+ a inferência de subtipo é necessária.
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\shape italic
+SmartSailWrapper:
+\shape default
+ Utilizado para obter diferentes tipos de conexões a partir de um componente
+ subjacente, caso esse componente ofereça a funcionalidade de conexões.
+ Isso é útil em casos como, por exemplo, a
+\shape italic
+ triplestore Bigdata 
+\shape default
+que oferece classes de conexão no padrão Sesame em forma de componentes
+\shape italic
+ 
+\shape default
+para se comunicar com a SmartSailWrapper
+\shape italic
+.
+\end_layout
+
+\begin_layout Plain Layout
+As funcionalidades fornecidas pelo uSeekM incluem a implementação de GeoSPARQL
+ permitindo a indexação, busca e computação de geometrias, integradas dentro
+ da linguagem de consulta SPARQL, proporcionando suporte para todas 
+\shape italic
+OpenGIS Simple Features
+\shape default
+ e relações.
+ Além disso, é possível realizar buscas por texto utilizando a linguagem
+ SPARQL e integrar a 
+\shape italic
+triplestore 
+\shape default
+com o 
+\shape italic
+framework
+\shape default
+ Spring para gerenciar a inicialização, escopo de conexão e transações para
+ a 
+\shape italic
+triplestore
+\shape default
+.
+\end_layout
+
+\begin_layout Plain Layout
+Para armazenamento das triplas em RDF, o uSeekM utiliza o banco de dados
+ PostgreSQL juntamente com a extensão Postgis.
+ Isso permite ao uSeekM realizar as consultas geoespaciais 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "uSeekM"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+.
+ 
+\end_layout
+
+\begin_layout Section
+API Jena
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Comment
+status open
+
+\begin_layout Plain Layout
+Uma vez definido a 
+\shape italic
+triplestore
+\shape default
+ para armazenar e acessar as triplas em RDF é necessário prover um meio
+ de comunicação entre os dados armazenados e a interface do usuário.
+ Neste contexto, a API Jena é utilizada para requisitar dados e criar consultas
+ SPARQL.
+\end_layout
+
+\begin_layout Plain Layout
+Jena é uma API
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "API"
+description "Application Programming Interface"
+
+\end_inset
+
+ Java desenvolvida com o objetivo de permitir desenvolvedores criarem e
+ manipularem dados e recursos da Web Semântica, em conformidade com as recomenda
+ções do W3C.
+ Com a API Jena, é possível ao desenvolvedor de aplicações criar grafos
+ em RDF, realizar 
+\shape italic
+parser
+\shape default
+ de arquivos RDF/XML, utilizar a API para realizar consultas SPARQL e requisitar
+ dados de Triple Stores, acessar ontologias e processar vocabulários, dentre
+ outros recursos 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Carroll2003"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Plain Layout
+A API Jena suporta as linguagens RDF/RDFS e OWL, incluindo também um motor
+ de inferência, que pode ser construído a parte e acoplado a API.
+ Além disso, a API permite várias estratégias para armazenamento de dados
+ em triplas RDF na memória ou no disco 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Flor2014"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Plain Layout
+A Jena foi originalmente desenvolvida pela companhia Hewlett-Packard, em
+ 2000, possuindo uma licença open source para o desenvolvimento de aplicações.
+ Ela é extensivamente utilizada em um vasto número de aplicações da Web
+ Semântica 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Flor2014"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Plain Layout
+Neste trabalho, utilizaremos a Jena para construir as triplas RDF, armazená-las
+ em disco, utilizando uma 
+\shape italic
+triplestore,
+\shape default
+ e, por meio do seu motor de busca, realizar consultas para recuperar os
+ dados.
+ Essa API irá se comunicar com a interface do usuário por meio de um aplicação
+ Web desenvolvida em GWT.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+GWT
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Comment
+status open
+
+\begin_layout Plain Layout
+Dentre as ferramentas para desenvolvimento de aplicações na Web 2.0, temos
+ as Rich Internet Applications (RIAs)
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "RIA"
+description "Rich Internet Applications"
+
+\end_inset
+
+.
+ Elas são aplicações Web com alto grau de funcionalidade que possuem grande
+ similaridade com interfaces e funcionalidades de um programa desktop.
+ Diversas ferramentas já foram criadas para serem utilizadas com esse propósito,
+ como as applets Java, Adobe Flash, Microsoft Silverlight, entre outras
+ 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Shah2008"
+
+\end_inset
+
+.
+ No entanto, essas plataformas para RIAs necessitam de um programa externo
+ ao navegador, como um plugin, para funcionarem corretamente e por isso
+ não estão disponíveis em todos os navegadores e sistemas operacionais 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Serique2012"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Plain Layout
+Dentre as várias ferramentas para desenvolvimento de RIAs, escolhemos o
+ Google Web Toolkit (GWT)
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "GWT"
+description "Google Web Toolkit"
+
+\end_inset
+
+ para desenvolver a interface gráfica do usuário (GUI)
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "GUI"
+description "Interface Gráfica do Usuário"
+
+\end_inset
+
+ do 
+\shape italic
+Gazetteer
+\shape default
+ Colaborativo.
+ O GWT é uma ferramenta que permite a desenvolvedores Web criar aplicações
+ com níveis de interatividade próximos a uma aplicação desktop.
+ O desenvolvedor codifica as interfaces em linguagem Java que posteriormente
+ é compilada para Javascript que é então executado no navegador Web.
+ Isso gera um código final otimizado, em Javascript, compatível com os diversos
+ navegadores Web 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Serique2012"
+
+\end_inset
+
+.
+ Isso é possível porque o GWT gera um código Javascript para cada tipo de
+ navegador, tirando essa tarefa laboriosa e nada trivial da responsabilidade
+ dos desenvolvedores.
+ A Figura 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "GWT-1"
+
+\end_inset
+
+, demonstra as fases desse processo de compilação feitas pelo GWT.
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename ../figures/GWT.png
+	lyxscale 60
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Visão geral da abordagem de compilação realizada pelo GWT.
+ Fonte: 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Cooper2008"
+
+\end_inset
+
+ 
+\begin_inset CommandInset label
+LatexCommand label
+name "GWT-1"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+Uma das principais vantagens em se utilizar o GWT, em relação as demais
+ tecnologias de desenvolvimento de RIAs, é que o GWT é baseado em Javascript
+ e Ajax, sendo assim requer somente um navegador Web padrão para ser executado.
+ Além disso, o GWT possibilita que os programas desenvolvidos possam ser
+ executados em dispositivos móveis, como tables e smartphones, e não apenas
+ em computadores padrões 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Serique2012"
+
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+OpenLayer
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Comment
+status open
+
+\begin_layout Plain Layout
+Outra forma de acessar os dados do 
+\shape italic
+Gazetteer
+\shape default
+ é por meio de mapas digitais, onde o usuário pode navegar, marcar pontos
+ e criar polígonos.
+ Para desenvolver essa funcionalidade, a API OpenLayer será utilizada em
+ conjunto com o GWT.
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "OL"
+description "OpenLayer"
+
+\end_inset
+
+O OpenLayer (OL) é uma API desenvolvida em JavaScript usada para disponibilizar
+ e exibir mapas em navegadores Web.
+ A utilização de OL permite representar geometrias em pontos, polígonos,
+ curvas, linha de pontos, múltiplos pontos, múltipla linha de pontos e múltiplos
+ polígonos 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "OpenLayer"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Plain Layout
+A API OpenLayer possui suporte a navegação em mapas com a utilização de
+ mouse e teclado, adição de marcadores e seleção de 
+\shape italic
+layers
+\shape default
+.
+ Além disso, é possível obter dados de diversos recursos, tais como 
+\shape italic
+Web Feature Service
+\shape default
+ (WFS
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "WFS"
+description "Web Feature Service"
+
+\end_inset
+
+) como, por exemplo, 
+\shape italic
+Google Maps, OpenStreetMap, Bing Maps
+\shape default
+, dentre outros 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "OpenLayer"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Plain Layout
+Por ser desenvolvido em JavaScript, o OL possui APIs em GWT, o GWT-OpenLayers.
+ Facilitando a sua integração e programação para o desenvolvimento de interfaces
+ para manipular mapas.
+ Neste trabalho, a API OpenLayer será utilizada para criar e manipular os
+ mapas que representarão as informações geográficas do 
+\shape italic
+Gazetteer
+\shape default
+.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+LinkedGeoData
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Comment
+status open
+
+\begin_layout Plain Layout
+Uma vez definidas as ferramentas para desenvolver o 
+\shape italic
+Gazetteer
+\shape default
+ é necessário, representar as informações das entidades geográficas que
+ irão ser acessadas e armazenadas.
+ Como o 
+\shape italic
+Gazetteer
+\shape default
+ proposto utiliza ontologias para essa tarefa, escolhemos a ontologia LinkedGeoD
+ata para representar os dados do 
+\shape italic
+Gazetteer
+\shape default
+.
+\end_layout
+
+\begin_layout Plain Layout
+A ontologia LinkedGeoData (LGD) 
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "LGD"
+description "LinkedGeoData"
+
+\end_inset
+
+ foi desenvolvida com objetivo de mapear os dados do Open Street Map (OSM)
+ 
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "OSM"
+description "Open Street Map"
+
+\end_inset
+
+ para o formato RDF (utilizado pelos dados da Web Semântica), 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Auer2009"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Plain Layout
+A ontologia LGD é, em parte, derivada de um modelo de dados relacional como
+ apresentado na Figura 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "Lgd_relational-1"
+
+\end_inset
+
+ e na inclusão e reuso de classes como 
+\shape italic
+SpatialThing
+\shape default
+ e geo-WGS84, relações e propriedades como, por exemplo, 
+\shape italic
+locatedNear
+\shape default
+ e 
+\shape italic
+rdfs:tag
+\shape default
+.
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename ../figures/LGD_relational.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Modelo Relacional da base de dados do LinkedGeoData.
+ Fonte: 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Auer2009"
+
+\end_inset
+
+ 
+\begin_inset CommandInset label
+LatexCommand label
+name "Lgd_relational-1"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+No entanto, a sua estrutura principal são as tags do OSM, ou seja, as anotações
+ atributo-valor para os nodos, formas e relações feitas pelos usuários.
+ Todos os atributos são interpretados como classes e os seus valores são
+ representados como subclasses.
+ Dessa forma, 
+\shape italic
+secundary, motorway
+\shape default
+ e 
+\shape italic
+path
+\shape default
+ são subclasses da classe 
+\shape italic
+highway
+\shape default
+.
+ Como resultado desse mapeamento, a ontologia resultante contém cerca de
+ 500 classes, 50 
+\shape italic
+object properties
+\shape default
+ e cerca de 15.000 
+\shape italic
+datatype properties
+\shape default
+ 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Auer2009"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Repositórios de dados utilizados
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Comment
+status open
+
+\begin_layout Plain Layout
+Neste trabalho, a ontologia LinkedGeoData será utilizada para mapear os
+ dados das coleções biológicas de repositórios de dados, tendo como foco
+ as informações de nomes de lugares e coordenadas geográficas referentes
+ a latitude e longitude.
+ 
+\end_layout
+
+\begin_layout Plain Layout
+Nesta seção, serão descritos os repositórios de dados utilizados para o
+ desenvolvimento do 
+\shape italic
+Gazetteer
+\shape default
+, as subseções 5.7.1 e 5.7.2 descrevem os repositórios SpeciesLink e GBIF respectiva
+mente, esses repositórios foram escolhidos por disponibilizar uma grande
+ quantidade de informações geográficas de forma gratuita e serão utilizados
+ para extrair as informações dos locais das coletas biológicas.
+ Na subseção 5.7.3 é descrito o repositório Geonames que servirá como fonte
+ de dados para recuperar informações ausentes nos dados do SpeciesLink e
+ GBIF.
+ Outra fonte de dados externos, que também é utilizada no 
+\shape italic
+Gazetteer,
+\shape default
+ são os dados referente aos polígonos das reservas florestas disponibilizados
+ pelo IBGE no link 
+\begin_inset Flex URL
+status collapsed
+
+\begin_layout Plain Layout
+
+http://mapas.mma.gov.br/i3geo/datadownload.htm
+\end_layout
+
+\end_inset
+
+ .
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+SpeciesLink
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Comment
+status open
+
+\begin_layout Plain Layout
+O 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "SpeciesLink"
+
+\end_inset
+
+ é um sistema distribuído que integra, em tempo real, informações primárias
+ sobre biodiversidade de museus, herbários e coleções microbiológicas, sendo
+ possível obtê-las gratuitamente pela internet.
+\end_layout
+
+\begin_layout Plain Layout
+O repositório SpeciesLink possibilita aos curadores das coleções, ou seja
+ biólogos responsáveis pelas coleções, criarem filtros para buscar e inserir
+ dados, sendo que, nesse último caso, o curador pode escolher não tornar
+ os dados abertos de imediato por considerá-los sensíveis para futuras pesquisas
+ 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "SpeciesLink"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Plain Layout
+Diariamente, o SpeciesLink traz informações estatísticas sobre seus dados,
+ e, em 07 de junho de 2014, o mesmo registrava 6.726.878 registros on-line,
+ sendo que apenas 2.868.386 eram georreferenciados, ou seja, somente 42% de
+ todos seus dados possuíam informações geográficas
+\begin_inset CommandInset citation
+LatexCommand citep
+key "SpeciesLink"
+
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "GBIF"
+description "Global Biodiversity Information Facility"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Comment
+status open
+
+\begin_layout Subsection
+Portal de busca do GBIF
+\end_layout
+
+\begin_layout Plain Layout
+O Global Biodiversity Information Facility (GBIF) é um repositório de dados
+ que fornece acesso livre aos dados científicos sobre biodiversidade mundiais
+ através da Internet utilizando Web Services.
+\end_layout
+
+\begin_layout Plain Layout
+Atualmente, o GBIF conta com cerca de mais de 200 milhões de registros referente
+s à história natural de espécimes e coletas de campo, que são agregados,
+ indexados e armazenados em mais de 300 fontes.
+\end_layout
+
+\begin_layout Plain Layout
+Segundo 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "citeulike:8051779"
+
+\end_inset
+
+, os registros geográficos contidos no repositório GBIF contém diversas
+ coordenadas geográficas inválidas, como, por exemplo, pontos que referenciam
+ coletas no mar, sendo que esses deveriam estar representados no continente,
+ como exibido na Figura 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "GBIF_cord_error-1"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename ../figures/GBIF_error.png
+	lyxscale 50
+	scale 250
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Pontos representando coleções no repositório GBIF.
+ Fonte: 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "citeulike:8051779"
+
+\end_inset
+
+ 
+\begin_inset CommandInset label
+LatexCommand label
+name "GBIF_cord_error-1"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Note Comment
+status open
+
+\begin_layout Subsection
+Geonames
+\end_layout
+
+\begin_layout Plain Layout
+Geonames é um 
+\shape italic
+Gazetteer
+\shape default
+ que contém informações espaciais e temáticas para vários nomes de lugares
+ ao redor do mundo.
+ Seus dados estão disponíveis através de 
+\shape italic
+Web Services
+\shape default
+ e também publicados em formato RDF 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Koubarakis2012"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Plain Layout
+Contendo mais de 10 milhões de nomes geográficos e 5,5 milhões de nomes
+ alternativos de lugares, seus dados de conhecimento geográfico são relacionados
+ a bases de dados públicas dos Estados Unidos e utilizam também a DBpedia
+ e outras fontes de dados 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Koubarakis2012"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Plain Layout
+Além de nomes de lugares em várias linguagens, seus dados incluem informações
+ como latitude e longitude no padrão 
+\shape italic
+World Geodetic System
+\shape default
+ 1984 (WGS84
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "WGS84"
+description "World Geodetic System 1984"
+
+\end_inset
+
+), informações sobre elevação, população, divisão administrativa e código
+ postal 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Koubarakis2012"
+
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Final Considetarions
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Comment
+status open
+
+\begin_layout Plain Layout
+Neste capítulo, as tecnologias para desenvolvimento do 
+\shape italic
+Gazetteer
+\shape default
+ Colaborativo foram descritas.
+ Inicialmente a ferramenta Protégé para edição de ontologias foi abordada.
+ Essa ferramenta terá como objetivo editar a ontologia LinkedGeoData, descrita
+ na seção 5.6, que será utilizada para mapear os dados referentes aos locais
+ das coletas biológicas.
+ Em seguida, as 
+\shape italic
+triplestore,
+\shape default
+ que serão analisadas para testes e irão armazenar as informações do 
+\shape italic
+Gazetteer,
+\shape default
+ foram listadas e logo após, na Seção 5.3
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+seria melhor ter essas referencias relativas
+\end_layout
+
+\end_inset
+
+, a API Jena utilizada para comunicar com os mesmos foi abordada.
+\end_layout
+
+\begin_layout Plain Layout
+Para criar a GUI do usuário para utilização do 
+\shape italic
+Gazetteer
+\shape default
+ Colaborativo, as ferramentas GWT e OpenLayer foram descritas nas seções
+ 5.4 e 5.6 respectivamente.
+ Utilizando-se essas APIs, será possível criar funcionalidades de consultas
+ por meio de buscas textuais e mapas digitas que possibilitam a navegação.
+ Por fim, os repositórios SpeciesLink, GBIF e Geonames, que serão utilizados
+ como fonte de dados para o desenvolvimento deste projeto, foram abordados.
+ Os dados do SpeciesLink e GBIF irão compor o Gazetteer e os dados do Geonames
+ serão utilizados para aprimorar coordenadas geográficas imprecisas.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

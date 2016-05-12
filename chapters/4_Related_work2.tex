@@ -1,0 +1,468 @@
+%% LyX 2.1.0 created this file.  For more info, see http://www.lyx.org/.
+%% Do not edit unless you really know what you are doing.
+\documentclass[oneside,english,brazil]{scrbook}
+\usepackage[T1]{fontenc}
+\usepackage[latin9]{inputenc}
+\setcounter{secnumdepth}{3}
+\setcounter{tocdepth}{3}
+\usepackage[active]{srcltx}
+\usepackage{array}
+\usepackage{longtable}
+\usepackage{textcomp}
+\usepackage{amsmath}
+\usepackage[authoryear]{natbib}
+\usepackage{nomencl}
+% the following is useful when we have the old nomencl.sty package
+\providecommand{\printnomenclature}{\printglossary}
+\providecommand{\makenomenclature}{\makeglossary}
+\makenomenclature
+
+\makeatletter
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% LyX specific LaTeX commands.
+
+\newcommand*\LyXZeroWidthSpace{\hspace{0pt}}
+%% Because html converters don't know tabularnewline
+\providecommand{\tabularnewline}{\\}
+
+\makeatother
+
+\usepackage{babel}
+\begin{document}
+Neste capítulo apresentaremos o mapeamento sistemático realizado com
+o objetivo de investigar, catalogar e classificar os trabalhos recentes
+e relacionados com a classificação de câncer na área de bioinformática.
+
+O mapeamento sistemático é um tipo de revisão sistemática onde se
+realiza uma revisão mais ampla dos estudos primários, em busca de
+identificar quais evidências estão disponíveis e as lacunas existentes
+no conjunto dos estudos primários.
+
+Além dos resultados obtidos ao final da revisão, este capitulo também
+inclui o detalhamento das atividades intermediárias realizadas, sendo
+elas: o planejamento da revisão, a estratégia adotada para selecionar
+e utilizar as máquinas de busca, a seleção de trabalhos, entre outros
+itens.
+
+
+\section{Planeamento e Execução do Mapeamento Sistemático}
+
+O foco deste mapeamento sistemático é identificar, catalogar, e classificar
+os trabalhos recentes na literatura na área, com o intuito de contribuir
+de forma substancial no entendimento dos mesmos.
+
+As palavras-chave utilizadas como \foreignlanguage{english}{\emph{strings}}
+de busca são as seguintes: \textquotedbl{}\foreignlanguage{english}{staging
+cancer\textquotedbl{}, \textquotedbl{}semantic image annotations\textquotedbl{}
+e ''Image metadata reasoning}''. 
+
+O método utilizado para o levantamento de fontes primárias compreendeu
+a realização de buscas em bibliotecas digitais, como \foreignlanguage{english}{ACM
+Digital Library}%
+\footnote{http://dl.acm.org/%
+},\foreignlanguage{english}{ IEEE Xplore Digital Library}%
+\footnote{http://ieeexplore.ieee.org/%
+}, SciELO (\foreignlanguage{english}{Scientific Electronic Library
+Online})%
+\footnote{http://www.scielo.org/%
+}, DBLP (\foreignlanguage{english}{Computer Science Bibliography})%
+\footnote{http://dblp.uni-trier.de/%
+}, BDBComp (Biblioteca Digital Brasileira de Computação)%
+\footnote{http://www.lbd.dcc.ufmg.br/bdbcomp/%
+}, Google Acadêmico (Scholars), Springer%
+\footnote{http://www.springer.com/gp/%
+}, PubMed(\foreignlanguage{english}{US National Library of Medicine
+National Institutes of Health})%
+\footnote{http://www.ncbi.nlm.nih.gov/pubmed%
+}. 
+
+Os critérios definidos para inclusão dos estudos são apresentados
+a seguir:
+\begin{enumerate}
+\item Os estudos devem ter sido publicados nas Conferências, Journal e Workshops
+. 
+\item Os estudos devem estar escritos em inglês ou português; 
+\item Os estudos devem estar disponíveis na web; 
+\item Os estudos devem apresentar alguma das \foreignlanguage{english}{strings}
+de busca em seu título, resumo/abstract ou palavras-chave; 
+\item Os estudos devem apresentar a proposta de um ou mais sistemas do \foreignlanguage{english}{\emph{cancer
+staging}}. 
+\end{enumerate}
+Cada estudo, analisado de acordo com o método estabelecido para a
+pesquisa de fontes primárias, é avaliado de acordo com os critérios
+para inclusão. O processo de busca foi executado utilizando as palavras
+chave definidas. A consulta obteve 120 estudos publicados entre 2003
+e 2014. Esses estudos foram selecionados para uma análise mais detalhada. 
+
+Dessa forma, depois de ler o resumo e conclusões 23 estudos foram
+pré\nobreakdash-selecionados, os quais foram lidos e verificados
+através dos critérios de inclusão estabelecidos.
+
+Dos 23 estudos pré-selecionados, 11 estavam de acordo com o critério
+de qualidade previsto no protocolo de revisão e tiveram seus dados
+extraídos e analisados. 
+
+Na seção seguinte, os artigos selecionados serão descritos e comparados
+com o trabalho proposto.
+
+
+\section{Apresentação e Análise dos Resultados Obtidos no Mapeamento}
+
+Nesta seção foi realizada a catalogação bibliográfica dos 11 estudos
+selecionados no mapeamento sistemático, a qual é apresentada na Tabela
+\ref{tab:Comparativo}. Os artigos foram classificados de acordo com:
+quais tipos de câncer são considerados (\foreignlanguage{english}{Cancer
+Type}), os dados de entrada utilizados (\foreignlanguage{english}{Data
+Input}), método de classificação (\foreignlanguage{english}{\emph{Staging
+or Grading}}) e se os trabalhos têm resultados explícitos (\foreignlanguage{english}{Results}).
+
+\begin{longtable}{|>{\centering}p{0.17\columnwidth}|>{\centering}p{0.11\columnwidth}|>{\centering}p{0.21\columnwidth}|>{\centering}p{0.29\columnwidth}|>{\centering}p{0.08\columnwidth}|}
+\caption{Comparativo entre os trabalhos relacionados.\label{tab:Comparativo}}
+\tabularnewline
+\hline 
+\selectlanguage{english}%
+\textbf{\small{}Title (year)}\selectlanguage{brazil}%
+ & \selectlanguage{english}%
+\textbf{\small{}Cancer Type}\selectlanguage{brazil}%
+ & \selectlanguage{english}%
+\textbf{\small{}Data Input}\selectlanguage{brazil}%
+ & \selectlanguage{english}%
+\textbf{\small{}Knowledge source -- }{\small \par}
+
+\textbf{\small{}Grading\slash{}staging method}\selectlanguage{brazil}%
+ & \selectlanguage{english}%
+\textbf{\small{}Results}\selectlanguage{brazil}%
+\tabularnewline
+\hline 
+\hline
+\endhead
+\hline 
+\selectlanguage{english}%
+{\small{}\citet{Zillner2012}}\selectlanguage{brazil}%
+ & \selectlanguage{english}%
+{\small{}Lymphoma}\selectlanguage{brazil}%
+ & \selectlanguage{english}%
+{\small{}Automatic tagging of medical image using OWL ontologies}\selectlanguage{brazil}%
+ & \selectlanguage{english}%
+{\small{}Ontology-based representation of AAS\nomenclature{AAS}{Ann Arbor Staging}}%
+\footnote{{\small{}Ann Arbor Staging}%
+}{\small{} -- Staging (OWL-DL reasoning)}\selectlanguage{brazil}%
+ & \selectlanguage{english}%
+{\small{}No }\selectlanguage{brazil}%
+\tabularnewline
+\hline 
+\selectlanguage{english}%
+{\small{}\citet{zillner:towards}}\selectlanguage{brazil}%
+ & \selectlanguage{english}%
+{\small{}Lymphoma}\selectlanguage{brazil}%
+ & \selectlanguage{english}%
+{\small{}Semantic annotation of patient records by tool support (mapped
+to OWL) }\selectlanguage{brazil}%
+ & \selectlanguage{english}%
+{\small{}Ontology-based representation of AAS -- Staging (OWL-DL reasoning)}\selectlanguage{brazil}%
+ & \selectlanguage{english}%
+{\small{}No }\selectlanguage{brazil}%
+\tabularnewline
+\hline 
+\selectlanguage{english}%
+{\small{}\citet{Tutac2008}}\selectlanguage{brazil}%
+ & \selectlanguage{english}%
+{\small{}Breast }\selectlanguage{brazil}%
+ & \selectlanguage{english}%
+{\small{}Image recognition (pathology images) - automatic tagging}\selectlanguage{brazil}%
+ & \selectlanguage{english}%
+{\small{}Ontology-based representation of NGS\nomenclature{NGS}{Nottingham Grading System}
+}%
+\footnote{{\small{}Nottingham Grading System}%
+}{\small{} -- Grading (OWL-DL, SWRL reasoning)}\selectlanguage{brazil}%
+ & \selectlanguage{english}%
+{\small{}Yes}\selectlanguage{brazil}%
+\tabularnewline
+\hline 
+\selectlanguage{english}%
+{\small{}\citet{Tutac2010}}\selectlanguage{brazil}%
+ & \selectlanguage{english}%
+{\small{}Breast}\selectlanguage{brazil}%
+ & \selectlanguage{english}%
+{\small{}Automatic tagging (pathology images) }\selectlanguage{brazil}%
+ & \selectlanguage{english}%
+{\small{}Ontology-based Spatial representation of NGS -- Grading (OWL-DL,
+SWRL reasoning)}\selectlanguage{brazil}%
+ & \selectlanguage{english}%
+{\small{}No}\selectlanguage{brazil}%
+\tabularnewline
+\hline 
+\selectlanguage{english}%
+{\small{}\citet{Meriem2012}}\selectlanguage{brazil}%
+ & \selectlanguage{english}%
+{\small{}Breast}\selectlanguage{brazil}%
+ & \selectlanguage{english}%
+{\small{}WFML annotations mapped to OWL (pathology images)}\selectlanguage{brazil}%
+ & \selectlanguage{english}%
+{\small{}Ontology-based representation of NGS -- Grading (OWL-DL,
+SWRL reasoning)}\selectlanguage{brazil}%
+ & \selectlanguage{english}%
+{\small{}Yes }\selectlanguage{brazil}%
+\tabularnewline
+\hline 
+\selectlanguage{english}%
+{\small{}\citet{Levy2009}}\selectlanguage{brazil}%
+ & \selectlanguage{english}%
+{\small{}Liver}\selectlanguage{brazil}%
+ & \selectlanguage{english}%
+{\small{}AIM image annotations mapped to OWL}\selectlanguage{brazil}%
+ & \selectlanguage{english}%
+{\small{}No grading or staging system -- OWL, SWRL, SQWRL reasoning}\selectlanguage{brazil}%
+ & \selectlanguage{english}%
+{\small{}No }\selectlanguage{brazil}%
+\tabularnewline
+\hline 
+\selectlanguage{english}%
+{\small{}\citet{Marquet2007}}\selectlanguage{brazil}%
+ & \selectlanguage{english}%
+{\small{}Glioma}\selectlanguage{brazil}%
+ & \selectlanguage{english}%
+{\small{}Pathologic reports (OWL classes filed manually)}\selectlanguage{brazil}%
+ & \selectlanguage{english}%
+{\small{}Ontology-based representation of WHO Grading System -- Grading
+(OWL-DL reasoning)}\selectlanguage{brazil}%
+ & \selectlanguage{english}%
+{\small{} No }\selectlanguage{brazil}%
+\tabularnewline
+\hline 
+\selectlanguage{english}%
+{\small{}\citet{Dameron2006}}\selectlanguage{brazil}%
+ & \selectlanguage{english}%
+{\small{}Lung}\selectlanguage{brazil}%
+ & \selectlanguage{english}%
+{\small{}Simulated patient conditions data represented using classes}\selectlanguage{brazil}%
+ & \selectlanguage{english}%
+{\small{}Ontology-based representation of TNM}%
+\footnote{{\small{}TNM Classification of Malignant Tumors Staging}%
+}{\small{} -- Staging (OWL\nobreakdash-DL reasoning)}\selectlanguage{brazil}%
+ & \selectlanguage{english}%
+{\small{} Yes}\selectlanguage{brazil}%
+\tabularnewline
+\hline 
+\selectlanguage{english}%
+{\small{}\citet{Oberkampf}}\selectlanguage{brazil}%
+ & \selectlanguage{english}%
+{\small{}Lymphoma}\selectlanguage{brazil}%
+ & \selectlanguage{english}%
+{\small{}Semantic annotations (mapped to OWL)}\selectlanguage{brazil}%
+ & \selectlanguage{english}%
+{\small{}No grading system}\selectlanguage{brazil}%
+ & \selectlanguage{english}%
+{\small{}Yes }\selectlanguage{brazil}%
+\tabularnewline
+\hline 
+\selectlanguage{english}%
+{\small{}\citet{Kurtz2014}}\selectlanguage{brazil}%
+ &  & \selectlanguage{english}%
+{\small{}Manual semantic annotations from ePAD}\selectlanguage{brazil}%
+ & \selectlanguage{english}%
+{\small{}No representation of Staging System -- Classification (Ontological
+similarity between terms)}\selectlanguage{brazil}%
+ & \selectlanguage{english}%
+{\small{}Yes}\selectlanguage{brazil}%
+\tabularnewline
+\hline 
+\selectlanguage{english}%
+{\small{}\citet{Racoceanu2014}}\selectlanguage{brazil}%
+ & \selectlanguage{english}%
+{\small{}Breast}\selectlanguage{brazil}%
+ & \selectlanguage{english}%
+{\small{}WFML annotations mapped to OWL (pathology images)}\selectlanguage{brazil}%
+ & \selectlanguage{english}%
+{\small{}Ontology-based representation of NGS -- Grading (OWL, N3Logic
+reasoning)}\selectlanguage{brazil}%
+ & \selectlanguage{english}%
+{\small{}No}\selectlanguage{brazil}%
+\tabularnewline
+\hline 
+\end{longtable}
+
+A seguir, esses trabalhos são descritos e comparados com o trabalho
+proposto:
+\begin{itemize}
+\item \citet{Dameron2006} mostram que a classificação de tumores pode ser
+executada automaticamente usando OWL-DL. Ele se centra na classificação
+dos tumores de pulmão. Os autores usam a ontologia \foreignlanguage{english}{Foundational
+Model of Anatomy} (FMA\nomenclature{FMA}{Foundational Model of Anatomy})
+para descrever entidades anatômicas a fim de representar alguns critérios
+da\emph{ TNM }\foreignlanguage{english}{\emph{Classification of Malignant
+Tumors}}\emph{ }(TNM). Além disso, os autores destacam algumas das
+limitações da Descrição baseada em Lógica (DL), para a tarefa de classificação
+dos tumores de pulmão. Finalmente, as condições dos pacientes são
+simuladas por instâncias de classes para os experimentos. Esse trabalho
+não apresentam resultados explícitos usando conjuntos de dados reais.
+\item \citet{Marquet2007} desenvolveram uma ontologia, baseada na ontologia
+NCI \foreignlanguage{english}{Thesaurus, }para classificação dos tumores
+de glioma. O sistema de referência de classificação utilizado foi
+o da \emph{World Health Organization} (WHO\nomenclature{WHO}{World Health Organization}).
+Em seguida, \foreignlanguage{english}{\emph{reasoning}} baseado em
+classes foi utilizado, a partir de relatórios de patologia com descrições
+histológicas de pacientes (usando essa ontologia). Mas, em comparação
+com o projeto proposto, esses relatórios de pacientes foram preenchidos
+manualmente, os autores não apresentam resultados explícitos usando
+dados reais.
+\item Em \citet{Levy2009}, uma metodologia e as ferramentas foram desenvolvidas
+para transformar o modelo de informações \foreignlanguage{english}{\emph{Annotation
+and Image Markup}} (AIM) em instâncias OWL. Em seguida, um mecanismo
+de \foreignlanguage{english}{\emph{reasoning}} baseado em ontologias
+e SWRL foi desenvolvido para trabalhar com essas instâncias a fim
+de classificar e calcular a carga tumoral. Embora \citet{Levy2009}
+utilizem AIM como modelo de informação, eles não fazem \foreignlanguage{english}{\emph{staging}}
+de câncer. 
+\item O trabalho proposto em \citet{Tutac2008} introduz uma abordagem que
+usa OWL-DL a fim de gerar uma correspondência entre os conceitos médicos
+relacionados com a classificação de câncer de mama (baseados no sistema
+\foreignlanguage{english}{\emph{Nottingham Grading System}} -- \emph{NGS}),
+como, por exemplo, \foreignlanguage{english}{\emph{Cells Cluster e
+Lumina}}, para conceitos de visão computacional: \foreignlanguage{english}{\emph{Cell
+Cluster \textrightarrow{} union of cells} e Lumina \textrightarrow{}\emph{
+white compact segments}}). Os autores criaram um método baseado em
+regras para gerar automaticamente o \emph{NGS} e modelar todos esses
+conceitos  em OWL usando o Protégé (uma ferramenta para a edição
+de ontologias), com a finalidade de definir regras que são utilizadas
+para a indexação semântica das imagens de pacientes com câncer da
+mama. Embora a proposta de \citet{Tutac2008} seja desenvolvido no
+campo da análise de imagens histológicas para a indexação e não exatamente
+para uma classificação de pacientes, a abordagem apresentada é importante
+no desenvolvimento desta proposta, já que descreve claramente as regras
+utilizadas para a classificação do câncer com base num sistema de
+classificação, como \emph{o NGS}.
+\item Em \citet{zillner:towards} uma ontologia OWL-DL foi projetada para
+realizar o \foreignlanguage{english}{\emph{staging}} automático de
+pacientes com linfoma usando anotações semânticas. Essas anotações
+são armazenadas numa ontologia pela ferramenta de anotação que faz
+parte de projeto \emph{MEDICO\nobreakdash-ontology}. Além disso,
+para a classificação dos pacientes com linfoma, os autores capturaram
+as regras do sistema de classificação\emph{ }\foreignlanguage{english}{\emph{Staging
+Ann Arbor}} para linfoma numa ontologia. Mas, em contraste com a nossa
+proposta, o trabalho de \citet{zillner:towards} só melhorou as anotações
+semânticas usadas para descrever imagens médicas, através da representação
+do sistema \foreignlanguage{english}{\emph{Staging Ann Arbor}} numa
+ontologia. A classificação dos pacientes, a partir dessas anotações
+semânticas melhoradas (com o conhecimento clínico adicional), não
+é descrita em \citet{zillner:towards}. Além disso, não são mostrados,
+de forma explícita, os resultados da avaliação com dados reais.
+\item O principal objetivo em \citet{Tutac2010} é orientar a exploração
+de imagens dentro de um microscópio virtual e auxiliar no processo
+de \emph{grading} de imagens histológicas do câncer de mama. Para
+atender a esses requisitos, os autores estenderam a ontologia desenvolvida
+em seu trabalho anterior\citet{Tutac2008}, ela representa o \emph{grading
+}do câncer da mama. Nesse trabalho, eles incorporam conhecimento espacial,
+usando OWL-DL, baseando\nobreakdash-se numa teoria formal para desenvolver
+relações espaciais de \emph{grading} do câncer da mama. Em seguida,
+eles descrevem como fazer o \emph{reasoning} a partir dessas relações.
+Mas o trabalho de \citet{Tutac2008} não faz nenhuma avaliação do
+modelo com dados reais de pacientes com câncer de mama. 
+\item O trabalho proposto em \citet{Zillner2012} introduz uma aplicação
+que utiliza anotações de imagens médicas e tecnologias de \emph{reasoning}
+para classificar automaticamente pacientes com linfoma, com base na
+posição relativa do linfoma. Para verificar ou falsificar as posições
+de linfoma, conhecimento baseado em ontologia foi utilizado. Esse
+processo é conhecido como\emph{ }\foreignlanguage{english}{\emph{spatial\nobreakdash-anatomical
+reasoning}}\emph{ \citet{Manuel}. }Em seguida, os autores estabelecem
+alinhamentos entre conceitos do \emph{RADLEX e FMA} a fim de criar
+a \foreignlanguage{english}{\emph{Patient-ontology}}\emph{.} Essa
+ontologia representa as informações do paciente. Finalmente, o sistema
+de \foreignlanguage{english}{\emph{staging} \emph{Ann Arbor}} de linfoma
+e\emph{ }a \foreignlanguage{english}{\emph{Patient-ontology}} foram
+alinhados para executar um processo de \emph{reasoning}. Em contraste
+com a nossa proposta, as anotações que descrevem as imagens médicas
+(anotações semânticas) são realizadas automaticamente por algoritmos
+de processamento de imagem e não manualmente. Além disso, nesse trabalho
+foram encontradas inconsistências através da realização de uma avaliação
+clínica a partir de registros reais de pacientes.
+\item O trabalho em \citet{Meriem2012} propõe uma metodologia para melhorar
+a usabilidade dos algoritmos de análise de imagem de baixo nível,
+por exemplo, no modelo clínico que realiza a pontuação de câncer de
+mama. Essa pontuação é baseada no \emph{Nottingham Grading System
+(NGS)} e é necessária para realizar o \emph{grading} do câncer da
+mama. Eles desenvolveram uma ontologia chamada \foreignlanguage{english}{\emph{Breast
+Cancer Ontology}}\emph{ (BCO)} com base em OWL-DL e SWRL. Além disso,
+a \foreignlanguage{english}{Wide Field Markup Language} (WFML\nomenclature{WFML}{Wide Field Markup Language}),
+que é específica para o campo de histopatologia, foi usada para descrever
+imagens histopatológicas usando anotações. Por fim, a linguagem de
+consulta SPARQL é usada para consultar o sistema. Embora o trabalho
+de \citet{Meriem2012} utilize imagens histológicas, apenas são descritas
+algumas regras do \emph{reasoning} que são necessárias para o \emph{grading}
+do câncer de mama. Além disso, os autores mencionam apenas poucas
+possíveis aplicações para resolver problemas de ambiguidade na análise
+de imagens histológicas. Por exemplo, o uso de \emph{reasoning} baseado
+em relações espaciais das anotações na imagem. Finalmente, são usados
+\LyXZeroWidthSpace \LyXZeroWidthSpace algoritmos de extração de características
+para descrever as imagens histológicas usando anotações.
+\item Em \citet{Oberkampf}, os autores propõem uma ontologia que representa
+formalmente doenças, sintomas e seus respectivos relacionamentos.
+Eles realizam inferência (\emph{reasoning}) sobre doenças, baseando-se
+em anotações que refletem o conteúdo descritivo dos dados do paciente.
+Os autores descrevem o processo para representar o conhecimento médico
+em uma ontologia chamada\emph{ }\foreignlanguage{english}{\emph{Disease
+Symptom Ontology}}. Finalmente, eles testaram o modelo usando um protótipo.
+O trabalho de\citet{Oberkampf} não faz \emph{staging} de câncer,
+os autores detalham o processo apenas para modelar o conhecimento
+em ontologias para interpretar anotações, que são geradas quando são
+descritos os relatórios de pacientes. Além disso, os dados utilizados
+pertencem ao projeto \emph{MEDICO} e não estão disponíveis para verificação
+dos resultados.
+\item Em \citet{Kurtz2014} e \citet{Seifert} propõem um \foreignlanguage{english}{\emph{framework}}
+para recuperação de imagens baseado em anotações semânticas a partir
+de imagens do fígado. Esse \foreignlanguage{english}{\emph{framework}}
+incorpora as correlações semânticas, entre os termos usados, \LyXZeroWidthSpace \LyXZeroWidthSpace para
+descrever essas imagens. Os autores utilizam a semelhança entre termos
+semânticos (anotações semânticas), que descrevem as lesões do fígado,
+utilizando a estrutura da ontologia\emph{ Radlex} para avaliar a proximidade
+semântica entre os termos de interesse. Essa abordagem automática
+fornece suporte em tempo real para radiologistas, mostrando-lhes imagens
+semelhantes com diagnósticos associados. No trabalho de \citet{Kurtz2014}
+e \citet{Seifert} ontologias não são usadas para representar um sistema
+de \emph{staging} de câncer. A similaridade entre as imagens é utilizada
+para classificar as lesões, mas vale a pena notar que as imagens utilizadas
+são descritas por anotações semânticas baseadas em observações manuais
+feitas por radiologistas usando o\emph{ ePAD}\citet{Rubin2014}.
+\item Em \citet{Racoceanu2014} é descrito um protótipo que tem a função
+de controlar um protocolo de análise de imagens histológicas. Esse
+protótipo foi desenvolvido no \foreignlanguage{english}{\emph{framework}
+\textquotedbl{}Cognitive Microscopy\textquotedbl{}} (MICO) a fim de
+melhorar a análise de imagens histológicas \foreignlanguage{english}{\emph{Whole
+Slide Image}} (WSI) e tornar-se uma avaliação confiável para a classificação
+de câncer de mama. O protótipo consiste em dois componentes principais,
+um núcleo semântico e um conjunto de algoritmos de processamento de
+imagem. O núcleo semântico tem dois componentes principais que são
+um motor de \emph{reasoning} e uma ontologia usando N3logic e OWL.
+N3logic é uma extensão do modelo de dados RDF de tal modo que a mesma
+linguagem pode ser utilizada para representar lógica e dados. No trabalho
+de \citet{Racoceanu2014}, os autores usam algoritmos para extração
+automática de anotações para descrever as imagens histológicas. Além
+disso, os autores não descrevem explicitamente a ontologia e as regras
+utilizadas para \emph{grading} de câncer de mama e também não são
+apresentados resultados explícitos. 
+\end{itemize}
+
+\section{Considerações Finais }
+
+Este capítulo abordou os principais trabalhos relacionados ao desenvolvimento
+de \foreignlanguage{english}{\emph{staging systems}} com base em anotações
+semânticas de imagens, na áreas de informática radiológica e oncologia.
+Foram , descritas as similaridades e divergências entre o trabalho
+proposto e os onze trabalhos relacionados que foram escolhidos. 
+
+Na literatura, encontraram-se sistemas semelhantes onde as anotações
+semânticas são armazenados em diferentes formatos que não permitem
+a integração das mesmas para processos de \emph{reasoning} e, muitas
+vezes, esses formatos são proprietários.
+
+Alguns desses estudos também permitem a criação de anotações de imagem
+no formato AIM (na linguagem XML), mas este não é adequados para o
+raciocínio (\emph{reasoning}). O formato AIM fornece apenas um formato
+de transferência e armazenamento. 
+
+Este trabalho está focado em ajudar os especialistas em câncer na
+classificação automática de pacientes (\emph{staging}) usando anotações
+semânticas em imagens.\emph{ }Essa classificação será feita usando-se\emph{
+reasoning} semântico sobre as anotações, codificadas em AIM, feitas
+nas imagens de lesões de câncer por radiologistas. 
+\end{document}

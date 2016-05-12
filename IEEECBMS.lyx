@@ -1,0 +1,624 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass IEEEtran
+\begin_preamble
+\usepackage[hyphens]{url}
+\end_preamble
+\options 10pt, conference, compsocconf
+\use_default_options true
+\maintain_unincluded_children false
+\language american
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 2
+\papersides 2
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Automatic Classification of Cancer Tumors using Image Annotations and Ontologies
+\end_layout
+
+\begin_layout Author
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+authorblockN{Edson F.
+ Luque
+\backslash
+authorrefmark{1} } 
+\backslash
+authorblockA{Department of Computer Science
+\backslash
+
+\backslash
+ University of São Paulo
+\backslash
+
+\backslash
+ São Carlos, Brazil
+\backslash
+
+\backslash
+ Email: 
+\backslash
+authorrefmark{1}edluquem@usp.br} 
+\backslash
+and 
+\backslash
+authorblockN{Daniel L.
+ Rubin
+\backslash
+authorrefmark{2}} 
+\backslash
+authorblockA{Department of Radiology
+\backslash
+
+\backslash
+ Stanford University
+\backslash
+
+\backslash
+ Stanford, USA
+\backslash
+
+\backslash
+ Email:  
+\backslash
+authorrefmark{2}dlrubin@stanford.edu} 
+\backslash
+and 
+\backslash
+authorblockN{Dilvan A.
+ Moreira
+\backslash
+authorrefmark{3}} 
+\backslash
+authorblockA{Department of Computer Science
+\backslash
+
+\backslash
+ University of São Paulo
+\backslash
+
+\backslash
+ São Carlos, Brazil
+\backslash
+
+\backslash
+ Email:  
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+authorrefmark{3}dilvan@usp.br}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Abstract
+Information about cancer stage in a patient is crucial when clinicians assess
+ treatment progress.
+ Determining cancer stage is a process that takes into account the description,
+ location, characteristics and possible metastasis of cancerous tumors in
+ a patient.
+ It should follow classification standards, such as TNM Classification of
+ Malignant Tumors.
+ However, in clinical practice, the implementation of this process can be
+ tedious and error-prone and create uncertainty.
+ In order to alleviate these problems, we intend to assist radiologists
+ by providing a second opinion in the evaluation of cancer stage in patients.
+ For doing this, Semantic Web technologies, such as ontologies and reasoning,
+ will be used to automatically classify cancer stages.
+ This classification will use semantic annotations, made by radiologists
+ (using the ePAD tool) and stored in the AIM format, and rules of an ontology
+ representing the TNM standard.
+ The whole process will be validated through a proof of concept with users
+ from the Radiology Dept.
+ of the Stanford University.
+\end_layout
+
+\begin_layout Keywords
+OWL, SWRL, cancer staging, ePAD, cancer
+\end_layout
+
+\begin_layout Section
+Introduction
+\end_layout
+
+\begin_layout Standard
+In radiology and oncology, evaluating the response to cancer treatments
+ depends critically on the results of image analysis by experts.
+ However, the information obtained from this analysis is not easily interpreted
+ by machines.
+\end_layout
+
+\begin_layout Standard
+Medical images in clinical tasks are important as they allow specialists
+ to diagnose, plan and track patients 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Levy2009"
+
+\end_inset
+
+.
+ Thus, a considerable number of computer applications, aimed at this medical
+ field, have been developed.
+ Most of them are focused on extracting visual features with the help of
+ image processing algorithms.
+ 
+\end_layout
+
+\begin_layout Standard
+Although these algorithms can help physicians process image contents for
+ cancer treatment, they have problems when an abstract query is made in
+ the context of cancer patient classification.
+ For example, when an oncologist wants to know if a tumor is at an advanced
+ stage and it expanded to some region near the origin of cancer but not
+ for other parts of the body
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Wennerberg2011"
+
+\end_inset
+
+.
+ There are difficulties during image interpretation, because the semantic
+ information, implicit in the image reports, is not accessible to these
+ algorithms.
+ 
+\end_layout
+
+\begin_layout Section
+Objective
+\end_layout
+
+\begin_layout Standard
+The objective of this work is to automatically determine the cancer stage
+ of lesions, present in medical images, using semantic web reasoning tools
+ to process semantic annotations made by radiologists to provide clinicians
+ a second opinion on the classification of their patients.
+ This semantic annotations are made using tools, such as ePAD, and saved
+ in the AIM format.
+ Automatic cancer staging can increase the efficiency of radiologists and
+ oncologists and improve the quality and uniformity of image interpretation
+ by experts.
+\end_layout
+
+\begin_layout Standard
+In the case of this research, knowledge for determining cancer stage will
+ be encoded in ontologies (OWL) and rules (SWRL).
+\end_layout
+
+\begin_layout Section
+Related Work
+\end_layout
+
+\begin_layout Standard
+Currently, there are other cancer staging systems, however, they are not
+ open source and their classification methods cannot be analyzed or reused
+ openly.
+ In addition, they also have accuracy problems and contradictions in the
+ results of staging
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Zillner2012"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Cancer staging is a classification process to determine how much cancer
+ there is on the whole body and where it is located.
+ Prior research on cancer staging have used semantic annotations, from a
+ controlled vocabulary, for discovering implicit knowledge:
+\end_layout
+
+\begin_layout Itemize
+According to 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Dameron2006"
+
+\end_inset
+
+ the classification of lung tumors can be performed automatically using
+ OWL-DL and TNM.
+ Moreover, the authors did not this classification based on image annotations.
+ 
+\end_layout
+
+\begin_layout Itemize
+Levy et
+\begin_inset space \thinspace{}
+\end_inset
+
+al.
+ 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Levy2009"
+
+\end_inset
+
+ developed a methodology to transform the AIM information model
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+https://wiki.nci.nih.gov/display/AIM/Annotation+and+Image+Markup+-+AIM
+\end_layout
+
+\end_inset
+
+ in OWL and SWRL in order to automatically classify and calculate tumor
+ burden.
+ 
+\end_layout
+
+\begin_layout Itemize
+The work proposed by Zillner et
+\begin_inset space \thinspace{}
+\end_inset
+
+al.
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "zillner:towards,Zillner2012"
+
+\end_inset
+
+ uses medical image annotation and reasoning (spatio-anatomical reasoning
+ 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Manuel"
+
+\end_inset
+
+) technologies in order to automatically classify patients with lymphoma.
+ 
+\end_layout
+
+\begin_layout Itemize
+In Meriem et
+\begin_inset space \thinspace{}
+\end_inset
+
+al.
+ 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Meriem2012"
+
+\end_inset
+
+, the authors propose a methodology to improve the clinical model that performs
+ the score of breast cancer, based on the Nottingham Grading System (NGS).
+ They designed an OWL-DL ontology and SWRL rules based on histopathological
+ images annotations in WFML
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+A XML language produced by TRIBVN for its ICS framework
+\end_layout
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Itemize
+In Racoceano et
+\begin_inset space \thinspace{}
+\end_inset
+
+al.
+ 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Racoceanu2014"
+
+\end_inset
+
+, the authors describe a prototype that controls an entire histological
+ image analysis protocol developed in MICO
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+http://www.ipal.cnrs.fr/?q=project/mico-cognitive-virtual-microscopy
+\end_layout
+
+\end_inset
+
+ in order to improve the Whole Slide Image (WSI) analysis protocol and become
+ a reliable assessment for breast cancer classification.
+ The prototype consists of two main components, the semantic core and image
+ processing algorithms.
+\end_layout
+
+\begin_layout Standard
+These works use semantic annotations to make their observations consistent,
+ explicit, and machine-accessible.
+ Radiological tools such as the ePAD
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Rubin2014"
+
+\end_inset
+
+ have been implemented with the purpose of making these annotations facile
+ to record.
+ Recent works using ePAD 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Kurtz2014,Gimenez2011"
+
+\end_inset
+
+ propose an image retrieval framework based on semantic annotations.
+ This framework incorporates the semantic correlations between terms used
+ to describe these images.
+ This automated approach provides real time support for radiologists, showing
+ them images associated with similar diagnoses.
+\end_layout
+
+\begin_layout Standard
+In the literature, we found similar systems where semantic annotations are
+ stored in different formats that do not allow their integration for reasoning
+ processes.
+ Often these formats are also proprietary.
+ Some of these studies also allow creating image annotations in AIM format
+ (in XML), but these are not suitable for reasoning.
+ AIM format provides only a transfer and storage format.
+ 
+\end_layout
+
+\begin_layout Standard
+Our work is focused on helping cancer specialists in automatic patient classific
+ation (staging) using semantic annotations in images.
+ The classification shall be made ​​using semantic reasoning on annotations
+ encoded in AIM, these annotations, made by radiologists, describe lesions
+ in images.
+\end_layout
+
+\begin_layout Section
+Methods
+\end_layout
+
+\begin_layout Standard
+In this section we describe the methodology to be followed.
+ It is divided in the following steps:
+\end_layout
+
+\begin_layout Itemize
+Develop a mechanism to transform the semantic annotations from AIM documents,
+ generated by ePAD, to instances in the OWL model.
+\end_layout
+
+\begin_layout Itemize
+Develop (or extend) an ontology focused on the TNM classification criteria
+ (Classification of Malignant Tumors).
+\end_layout
+
+\begin_layout Itemize
+Integration of knowledge through reasoning.
+ The reasoning process allows the classification of a patient.
+ It integrates the knowledge captured by the annotations and medical ontologies.
+ The ontological model will capture the individual cancer staging of each
+ patient.
+ Information about staging of patients in the database will be queried using
+ SPARQL .
+\end_layout
+
+\begin_layout Itemize
+Implementation of ePAD interfaces, in partnership with the Dept.
+ of Radiology, Stanford University.
+\end_layout
+
+\begin_layout Itemize
+Evaluation of results with radiologists / oncologists of the Dept.
+ of Radiology, Stanford University.
+\end_layout
+
+\begin_layout Standard
+A diagram of current architecture proposal for cancer staging is shown in
+ figure
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:arquitetura-proposta"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide true
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename figures/propuestav0_1.png
+	lyxscale 30
+	scale 14
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Architecture proposed for use in cancer patient staging from images.
+ First, we use an ontology (or ontologies) that describes the standard for
+ cancer staging, for example, the TSM standard.
+ Then, we transform the image annotations, in AIM format, to OWL.
+ The annotations in AIM-OWL will allow us to make reasoning rules that represent
+ the TNM standard.
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:arquitetura-proposta"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Conclusion and Justification
+\end_layout
+
+\begin_layout Standard
+The process of cancer staging in patients by image analysis is a task performed
+ by specialists, such as oncologists and radiologists, that often entails
+ intensive work that requires precision in the interpretation of cancer
+ lesions.
+ Expert accuracy is achieved through training and experience
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Depeursinge2014"
+
+\end_inset
+
+, but variations in image interpretation is a limitation of human observes.
+ In this context, the development of an automatic classification system
+ is a strong medical need.
+ It can help experts obtain a higher accuracy rate in interpretation.
+\end_layout
+
+\begin_layout Standard
+Moreover, although systems, such as ePAD, enable the creation of image annotatio
+ns (in the AIM format), they do not represent them in a format that is directly
+ suitable for reasoning.
+ AIM is a format for data transfer and storage.
+ Other systems, such as Mint Lesion (MintMedical GmbH, Dossenheim, Germany)
+ and syngo.via (Siemens Healthcare, Malvern) are commercial software where
+ all the image data are stored internally in a proprietary format that cannot
+ be accessed by third parties 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Rubin2014"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+There is currently a lack of semantic reasonig methods to make inferences
+ about cancerous lesions from semantic annotations.
+ Thus, the main motivation for this work is the possibility of developing
+ reasoning methods, based on cancer staging standards such as TNM, for the
+ automatic staging of cancer patients (using AIM image annotations) and
+ incorporate them into open source image annotation systems, such as ePAD.
+\end_layout
+
+\begin_layout Standard
+This work is partially funded by Coordination for the Improvement of Higher
+ Education Personnel -CAPES.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset bibtex
+LatexCommand bibtex
+bibfiles "references/refs CBMS"
+options "IEEEtran"
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

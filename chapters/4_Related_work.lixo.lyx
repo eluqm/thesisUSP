@@ -1,0 +1,2477 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass scrbook
+\use_default_options true
+\maintain_unincluded_children false
+\language brazilian
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 1
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine natbib
+\cite_engine_type authoryear
+\biblio_style plainnat
+\use_bibtopic true
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+Neste capítulo apresentaremos o mapeamento sistemático realizado com o objetivo
+ de investigar, catalogar e classificar os trabalhos recentes e relacionados
+ com a classificação de câncer na área de bioinformática.
+\end_layout
+
+\begin_layout Standard
+O mapeamento sistemático é um tipo de revisão sistemática onde se realiza
+ uma revisão mais ampla dos estudos primários, em busca de identificar quais
+ evidências estão disponíveis e as lacunas existentes no conjunto dos estudos
+ primários (refXXX rev sistematica).
+\end_layout
+
+\begin_layout Standard
+Além dos resultados obtidos ao final da revisão, este capitulo também inclui
+ o detalhamento das atividades intermediárias realizadas, sendo elas: o
+ planejamento da revisão, a estratégia adotada para selecionar e utilizar
+ as máquinas de busca, a seleção de trabalhos, entre outros itens.
+\end_layout
+
+\begin_layout Section
+Planeamento e Execução do Mapeamento Sistemático
+\end_layout
+
+\begin_layout Standard
+O foco deste mapeamento sistemático é identificar, catalogar, e classificar
+ os trabalhos recentes na literatura na área, com o intuito de contribuir
+ de forma substancial no entendimento dos mesmos.
+\end_layout
+
+\begin_layout Standard
+As palavras-chave utilizadas como 
+\emph on
+\lang english
+strings
+\emph default
+\lang brazilian
+ de busca são as seguintes: "
+\lang english
+staging cancer", "semantic image annotations" e ''Image metadata reasoning
+\lang brazilian
+''.
+ 
+\end_layout
+
+\begin_layout Standard
+O método utilizado para o levantamento de fontes primárias compreendeu a
+ realização de buscas em bibliotecas digitais, como 
+\lang english
+ACM Digital Library
+\lang brazilian
+
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+http://dl.acm.org/
+\end_layout
+
+\end_inset
+
+,
+\lang english
+ IEEE Xplore Digital Library
+\lang brazilian
+
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+http://ieeexplore.ieee.org/
+\end_layout
+
+\end_inset
+
+, SciELO (
+\lang english
+Scientific Electronic Library Online
+\lang brazilian
+)
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+http://www.scielo.org/
+\end_layout
+
+\end_inset
+
+, DBLP (
+\lang english
+Computer Science Bibliography
+\lang brazilian
+)
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+http://dblp.uni-trier.de/
+\end_layout
+
+\end_inset
+
+, BDBComp (Biblioteca Digital Brasileira de Computação)
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+http://www.lbd.dcc.ufmg.br/bdbcomp/
+\end_layout
+
+\end_inset
+
+, Google Acadêmico (Scholars), Springer
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+http://www.springer.com/gp/
+\end_layout
+
+\end_inset
+
+, PubMed(
+\lang english
+US National Library of Medicine National Institutes of Health
+\lang brazilian
+)
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+http://www.ncbi.nlm.nih.gov/pubmed
+\end_layout
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Os critérios definidos para inclusão dos estudos são apresentados a seguir:
+\end_layout
+
+\begin_layout Enumerate
+Os estudos devem ter sido publicados nas Conferências, Journal e Workshops
+ .
+ 
+\end_layout
+
+\begin_layout Enumerate
+Os estudos devem estar escritos em inglês ou português; 
+\end_layout
+
+\begin_layout Enumerate
+Os estudos devem estar disponíveis na web; 
+\end_layout
+
+\begin_layout Enumerate
+Os estudos devem apresentar alguma das 
+\lang english
+strings
+\lang brazilian
+ de busca em seu título, resumo/abstract ou palavras-chave; 
+\end_layout
+
+\begin_layout Enumerate
+Os estudos devem apresentar a proposta de um ou mais sistemas do 
+\emph on
+\lang english
+cancer staging
+\emph default
+\lang brazilian
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Cada estudo, analisado de acordo com o método estabelecido para a pesquisa
+ de fontes primárias, é avaliado de acordo com os critérios para inclusão.
+ O processo de busca foi executado utilizando as palavras chave definidas.
+ A consulta obteve 120 estudos publicados entre 2003 e 2014.
+ Esses estudos foram selecionados para uma análise mais detalhada.
+ 
+\end_layout
+
+\begin_layout Standard
+Dessa forma, depois de ler o resumo e conclusões 23 estudos foram pré\SpecialChar \nobreakdash-
+selecionado
+s, os quais foram lidos e verificados através dos critérios de inclusão
+ estabelecidos.
+\end_layout
+
+\begin_layout Standard
+Dos 23 estudos pré-selecionados, 11 estavam de acordo com o critério de
+ qualidade previsto no protocolo de revisão e tiveram seus dados extraídos
+ e analisados.
+ 
+\end_layout
+
+\begin_layout Standard
+Na seção seguinte, os artigos selecionados serão descritos e comparados
+ com o trabalho proposto.
+\end_layout
+
+\begin_layout Section
+Apresentação e Análise dos Resultados Obtidos no Mapeamento
+\end_layout
+
+\begin_layout Standard
+Nesta seção foi realizada a catalogação bibliográfica dos 11 estudos selecionado
+s no mapeamento sistemático, a qual é apresentada na Tabela 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "trabalho_relacionado2"
+
+\end_inset
+
+.
+ Os artigos foram classificados de acordo com: quais tipos de câncer são
+ considerados (
+\lang english
+Cancer Type
+\lang brazilian
+), os dados de entrada utilizados (
+\lang english
+Data Input
+\lang brazilian
+), método de classificação (
+\emph on
+Staging or Grading
+\emph default
+) e se os trabalhos têm resultados explícitos (Results).
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="12" columns="5">
+<features rotate="0" islongtable="true" headBottomDL="true" longtabularalignment="center">
+<column alignment="center" valignment="top" width="17col%">
+<column alignment="center" valignment="top" width="11col%">
+<column alignment="center" valignment="top" width="21col%">
+<column alignment="center" valignment="top" width="29col%">
+<column alignment="center" valignment="top" width="8col%">
+<row caption="true">
+<cell multicolumn="1" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+hhh
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row endhead="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+jjj
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="13" columns="5">
+<features rotate="0" islongtable="true" longtabularalignment="center">
+<column alignment="center" valignment="top" width="17col%">
+<column alignment="left" valignment="top" width="11col%">
+<column alignment="left" valignment="top" width="21col%">
+<column alignment="left" valignment="top" width="29col%">
+<column alignment="left" valignment="top" width="8col%">
+<row endhead="true" endfirsthead="true" caption="true">
+<cell multicolumn="1" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size small
+\lang english
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+\size small
+\lang english
+Title (year)Cancer TypeData Input Knowledge source -- 
+\end_layout
+
+\begin_layout Plain Layout
+
+\size small
+\lang english
+Grading\SpecialChar \slash{}
+staging methodResults
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row endhead="true">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size small
+\lang english
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Zillner2012"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size small
+\lang english
+Lymphoma
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size small
+\lang english
+Automatic tagging of medical image using OWL ontologies
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size small
+\lang english
+Ontology-based representation of AAS
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+
+\size small
+\lang english
+Ann Arbor System
+\end_layout
+
+\end_inset
+
+ -- Staging (OWL-DL reasoning)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size small
+\lang english
+No 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row endhead="true" endfirsthead="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size small
+\lang english
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Zillner2012"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size small
+\lang english
+Lymphoma
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size small
+\lang english
+Automatic tagging of medical image using OWL ontologies
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size small
+\lang english
+Ontology-based representation of AAS
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+
+\size small
+\lang english
+Ann Arbor System
+\end_layout
+
+\end_inset
+
+ -- Staging (OWL-DL reasoning)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size small
+\lang english
+No 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size small
+\lang english
+\begin_inset CommandInset citation
+LatexCommand citet
+key "zillner:towards"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size small
+\lang english
+Lymphoma
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size small
+\lang english
+Semantic annotation of patient records by tool support (mapped to OWL) 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size small
+\lang english
+Ontology-based representation of AAS -- Staging (OWL-DL reasoning)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size small
+\lang english
+No 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size small
+\lang english
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Tutac2008"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size small
+\lang english
+Breast 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size small
+\lang english
+Image recognition (pathology images) - automatic tagging
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size small
+\lang english
+Ontology-based representation of NGS
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "NGS"
+description "Nottingham Grading System"
+
+\end_inset
+
+ 
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+
+\size small
+\lang english
+Nottingham Grading System
+\end_layout
+
+\end_inset
+
+ -- Grading (OWL-DL, SWRL reasoning)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size small
+\lang english
+Yes
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size small
+\lang english
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Tutac2010"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size small
+\lang english
+Breast
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size small
+\lang english
+Automatic tagging (pathology images) 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size small
+\lang english
+Ontology-based Spatial representation of NGS -- Grading (OWL-DL, SWRL reasoning)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size small
+\lang english
+No
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size small
+\lang english
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Meriem2012"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size small
+\lang english
+Breast
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size small
+\lang english
+WFML annotations mapped to OWL (pathology images)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size small
+\lang english
+Ontology-based representation of NGS -- Grading (OWL-DL, SWRL reasoning)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size small
+\lang english
+Yes 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size small
+\lang english
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Levy2009"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size small
+\lang english
+Liver
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size small
+\lang english
+AIM image annotations mapped to OWL
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size small
+\lang english
+No grading or staging system -- OWL, SWRL, SQWRL reasoning
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size small
+\lang english
+No 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size small
+\lang english
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Marquet2007"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size small
+\lang english
+Glioma
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size small
+\lang english
+Pathologic reports (OWL classes filed manually)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size small
+\lang english
+Ontology-based representation of WHO Grading System -- Grading (OWL-DL reasoning
+)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size small
+\lang english
+ No 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size small
+\lang english
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Dameron2006"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size small
+\lang english
+Lung
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size small
+\lang english
+Simulated patient conditions data represented using classes
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size small
+\lang english
+Ontology-based representation of TNM
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+
+\size small
+\lang english
+TNM Classification of Malignant Tumors Staging
+\end_layout
+
+\end_inset
+
+ -- Staging (OWL\SpecialChar \nobreakdash-
+DL reasoning)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size small
+\lang english
+ Yes
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size small
+\lang english
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Oberkampf"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size small
+\lang english
+Lymphoma
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size small
+\lang english
+Semantic annotations (mapped to OWL)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size small
+\lang english
+No grading system
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size small
+\lang english
+Yes 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size small
+\lang english
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Kurtz2014"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size small
+\lang english
+Manual semantic annotations from ePAD
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size small
+\lang english
+No representation of Staging System -- Classification (Ontological similarity
+ between terms)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size small
+\lang english
+Yes
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size small
+\lang english
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Racoceanu2014"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size small
+\lang english
+Breast
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size small
+\lang english
+WFML annotations mapped to OWL (pathology images)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size small
+\lang english
+Ontology-based representation of NGS -- Grading (OWL, N3Logic reasoning)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size small
+\lang english
+No
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Comparativo entre os trabalhos relacionados.
+\begin_inset CommandInset label
+LatexCommand label
+name "trabalho_relacionado2"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+A seguir, esses trabalhos são descritos e comparados com o trabalho proposto:
+\end_layout
+
+\begin_layout Itemize
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Dameron2006"
+
+\end_inset
+
+mostra que a classificação de tumores pode ser executada automaticamente
+ usando OWL-DL, este trabalho centra-se na classificação dos tumores de
+ pulmão.
+ Os autores usam a ontologia FMA para descrever entidades anatômicas a fim
+ de representar alguns critérios do 
+\emph on
+The TNM Classification of Malignant Tumours 
+\emph default
+(TNM).
+ Além disso, os autores destacam alguns das limitações de Descrição baseada
+ em Lógica (DL), para a tarefa de classificação dos tumores de pulmão.
+ Finalmente, as condições dos pacientes são simuladas por instâncias de
+ classes para os experimentos.
+ Mas ,este trabalho não apresentam resultados explícitos usando conjuntos
+ de dados reais.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Marquet2007"
+
+\end_inset
+
+Para classificação dos tumores de glioma, uma ontologia baseada na ontologia
+ NCI Thesaurus foi desenvolvida.
+ O sistema de referência de classificação utilizado foi o 
+\emph on
+World Health Organization
+\emph default
+ (WHO).
+ Em seguida, o 
+\emph on
+reasoning
+\emph default
+ baseado em classes foi utilizado a partir de relatórios de patologia com
+ descrições histológicas de pacientes.
+ Mas em comparação com o projeto proposto, esses relatórios de paciente
+ foram preenchidos manualmente, os autores não apresentam resultados explícitos
+ usando dados reais.
+\end_layout
+
+\begin_layout Itemize
+Em 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Levy2009"
+
+\end_inset
+
+ uma metodologia e as ferramentas foram desenvolvidas para transformar o
+ modelo de informações 
+\emph on
+Anotação e Imagem Markup
+\emph default
+ (AIM) em instâncias OWL.
+ Em seguida, um mecanismo de 
+\emph on
+reasoning
+\emph default
+ baseado em ontologias e SWRL foi desenvolvido para trabalhar com essas
+ instâncias a fim de classificar e calcular a carga tumoral.
+ Embora, 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Levy2009"
+
+\end_inset
+
+ utiliza AIM como modelo de informação.
+ Eles não fazem 
+\emph on
+staging
+\emph default
+ de câncer.
+ 
+\end_layout
+
+\begin_layout Itemize
+O trabalho proposto em 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Tutac2008"
+
+\end_inset
+
+introduz uma abordagem que usa OWL-DL a fim de gerar uma correspondência
+ entre os conceitos médicos (como por exemplo, 
+\emph on
+CellsCluster,Lumina
+\emph default
+) relacionados com classificação de câncer de mama baseados em o sistema
+ 
+\emph on
+Nottingham Grading System
+\emph default
+(
+\emph on
+NGS
+\emph default
+) e os conceitos de visão computacional (como, 
+\emph on
+Union of Cells
+\emph default
+,
+\emph on
+ White compact segments of the Image included in union of dark Cells
+\emph default
+).
+ Os autores criaram um método baseado em regras para gerar automaticamente
+ o 
+\emph on
+NGS
+\emph default
+ e modelar finalmente todos esses conceitos(como, Super class, Class inherited
+ from Image) em conceitos do Protégé.
+ Com a finalidade de definir regras que são utilizados para a indexação
+ semântica das imagens de pacientes com câncer da mama.
+ Embora a proposta de 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Tutac2008"
+
+\end_inset
+
+ é desenvolvido no campo da análise de imagens histológicas para a indexação
+ e não para a exatamente uma classificação de pacientes, o abordagem apresentada
+ é importante no desenvolvimento desta proposta, já que descreve claramente
+ as regras utilizadas para a classificação do câncer com base em um sistema
+ de classificação como 
+\emph on
+o NGS
+\emph default
+.
+\end_layout
+
+\begin_layout Itemize
+Em 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "zillner:towards"
+
+\end_inset
+
+uma ontologia OWL-DL foi projetada para realizar o 
+\emph on
+staging
+\emph default
+ automático de pacientes com linfoma usando anotações semânticas.
+ Estas anotações são armazenadas em uma ontologia pela ferramenta de anotação
+ que faz parte de projeto 
+\emph on
+MEDICO-ontology
+\emph default
+.
+ Além disso, para a classificação dos pacientes com linfoma os autores capturou
+ as regras do sistema de clasificacao
+\emph on
+ Staging Ann Arbor
+\emph default
+ do linfoma em uma ontologia.
+ Mas, em contraste com a nossa proposta, o trabalho de 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "zillner:towards"
+
+\end_inset
+
+ só melhorou anotações semânticas usadas para descrever imagens médicas
+ através da representação do sistema 
+\emph on
+Staging Ann Arbor
+\emph default
+ em uma ontologia.
+ A classificação dos pacientes a partir de essas anotações semânticas melhoradas
+ com o conhecimento clínico adicional, não é descrito em 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "zillner:towards"
+
+\end_inset
+
+.
+ Além disso, não são mostrados de forma explícita os resultados da avaliação
+ com dados reais.
+\end_layout
+
+\begin_layout Itemize
+O principal objetivo em 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Tutac2010"
+
+\end_inset
+
+, é orientar a exploração de imagens dentro de um microscópio virtual e
+ auxiliar no processo de 
+\emph on
+grading
+\emph default
+ de imagens histológicas do câncer de mama.
+ Para atender a esses requisitos, os autores estenderam a ontologia desenvolvida
+ em seu trabalho anterior
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Tutac2008"
+
+\end_inset
+
+, essa ontologia representa o 
+\emph on
+grading 
+\emph default
+do câncer do mama.
+ Neste trabalho eles incorporam conhecimento espacial usando OWL-DL baseado
+ em uma teoria formal para desenvolver relações espaciais de 
+\emph on
+grading
+\emph default
+ do câncer de mama.
+ Em seguida, eles descrevem como fazer o 
+\emph on
+reasoning
+\emph default
+ a partir dessas relações.
+ Mas o trabalho de 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Tutac2008"
+
+\end_inset
+
+não faz nenhuma avaliação do modelo com dados reais de pacientes com câncer
+ de mama.
+ 
+\end_layout
+
+\begin_layout Itemize
+O trabalho proposto em 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Zillner2012"
+
+\end_inset
+
+ introduz uma aplicação que utiliza anotações de imagens médicas e tecnologias
+ de 
+\emph on
+reasoning
+\emph default
+, a fim de, classificar automaticamente pacientes com linfoma com base na
+ posição relativa de linfoma.
+ Para verificar ou falsificar as posições de linfoma um conhecimento baseado
+ em ontologia foi utilizado.
+ Este processo é conhecido como
+\emph on
+ spatio-anatomical reasoning 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Manuel"
+
+\end_inset
+
+.
+ 
+\emph default
+Em seguida, os autores estabelecem alinhamentos entre conceitos de 
+\emph on
+RADLEX e FMA
+\emph default
+, a fim de criar o 
+\emph on
+Patient-ontology.
+
+\emph default
+ Essa ontologia representa as informações do paciente.
+ Finalmente, o sistema de 
+\emph on
+staging
+\emph default
+ 
+\emph on
+Ann Arbor
+\emph default
+ do linfoma e
+\emph on
+o Patient-ontology
+\emph default
+ foram alinhados para executar um processo de 
+\emph on
+reasoning
+\emph default
+.
+ Em contraste com a nossa proposta, as anotações que descrevem as imagens
+ médicas (anotações semânticas) são realizadas automaticamente por algoritmos
+ de processamento de imagem, e não manualmente.
+ Além disso, neste trabalho foram encontradas inconsistências através da
+ realização de uma avaliação clínica a partir de registros reais de pacientes.
+\end_layout
+
+\begin_layout Itemize
+O trabalho em 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Meriem2012"
+
+\end_inset
+
+propõe uma metodologia para melhorar a usabilidade dos algoritmos de análise
+ de imagem de baixo nível, por exemplo, no modelo clínico que realiza a
+ pontuação de câncer de mama.
+ Essa pontuação é baseada no 
+\emph on
+Nottingham Grading System(NGS)
+\emph default
+ e é necessária para realizar o 
+\emph on
+grading
+\emph default
+ do cancer da mama.
+ Eles desenvolveram uma ontologia chamada 
+\emph on
+Breast Cancer Ontology(BCO)
+\emph default
+ com base em OWL-DL e SWRL.
+ Além disso, o Wide Field Markup Language (WFML) que é específico para o
+ campo de histopatologia, foi usado para descrever imagens histopatológicas
+ usando anotações.
+ Por fim, a linguagem de consulta SPARQL é usado para consultar o sistema.
+ Embora o trabalho de 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Meriem2012"
+
+\end_inset
+
+ utiliza imagens histológicas, apenas são descritas algumas regras do 
+\emph on
+reasoning
+\emph default
+ que são necessários para o 
+\emph on
+grading
+\emph default
+ do câncer de mama.
+ Além disso, os autores mencionam apenas um pouco de possíveis aplicações
+ para resolver problemas de ambiguidade na análise de imagens histologicas.
+ Por exemplo, o uso de 
+\emph on
+reasoning
+\emph default
+ baseado em relações espaciais das anotações na imagem.
+ Finalmente, são usados ​​algoritmos de extração de características para
+ descrever as imagens histológicas usando anotações.
+\end_layout
+
+\begin_layout Itemize
+Em 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Oberkampf"
+
+\end_inset
+
+os autores propõem uma ontologia que representa formalmente doenças, sintomas
+ e seus respectivos relacionamentos.
+ Eles realizam inferência (
+\emph on
+reasoning
+\emph default
+) sobre doenças baseando-se em anotações que reflectem o conteúdo descritivo
+ dos dados do paciente.
+ Os autores descrevem o processo para representar o conhecimento médico
+ em uma ontologia chamada
+\emph on
+ Disease symtom ontology
+\emph default
+.
+ Finalmente, eles testaram o modelo usando um protótipo.
+ No trabalho de
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Oberkampf"
+
+\end_inset
+
+ não executa 
+\emph on
+staging
+\emph default
+ de câncer, o autores detalham o processo apenas para modelar conhecimento
+ em ontologias para interpretar anotações que são gerados quando são descritos
+ os relatórios de pacientes.
+ Além disso, os dados utilizados pertencem ao projeto 
+\emph on
+MEDICO
+\emph default
+, portanto, não estão disponíveis para verificar seus resultados.
+\end_layout
+
+\begin_layout Itemize
+Em 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Kurtz2014"
+
+\end_inset
+
+ e 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Seifert"
+
+\end_inset
+
+ propõem um framework de recuperação de imagens baseado em anotações semânticas
+ a partir de imagens do fígado, neste 
+\emph on
+framework
+\emph default
+ incorpora as correlações semânticas entre os termos usados ​​para descrever
+ essas imagens.
+ Os autores utilizam a semelhança entre termos semânticos (anotações semânticas)
+ que descrevem as lesões do fígado utilizando a estrutura da ontologia
+\emph on
+ Radlex
+\emph default
+ para avaliar a proximidade semântica entre estes termos de interesse.
+ Esta abordagem automática fornece suporte em tempo real para radiologistas,
+ mostrando-lhes imagens semelhantes com diagnósticos associados.
+ No trabalho de 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Kurtz2014"
+
+\end_inset
+
+ e 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Seifert"
+
+\end_inset
+
+ ontologias não são usadas para representar um sistema de 
+\emph on
+staging
+\emph default
+ de câncer, a similaridade entre as imagens é utilizada para classificar
+ as lesões, mas vale a pena notar que as imagens utilizadas são descritas
+ por anotações semânticas baseadas em observações manuais feitas por radiologist
+as usando o
+\emph on
+ ePAD
+\emph default
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Rubin2014"
+
+\end_inset
+
+, esta ferramenta irá formar a parte inicial do nosso projeto.
+\end_layout
+
+\begin_layout Itemize
+Em 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Racoceanu2014"
+
+\end_inset
+
+ é descrito um protótipo que tem a função de controlar um protocolo de análise
+ de imagem histológica.
+ Este protótipo foi desenvolvido no 
+\emph on
+framework
+\emph default
+ "Cognitive Microscopy" (MICO) a fim de melhorar a análise de imagens histológic
+as 
+\emph on
+Whole Slide Image
+\emph default
+ (WSI) e tornar-se uma avaliação confiável para a classificação de câncer
+ de mama.
+ O protótipo consiste em dois componentes principais, um núcleo semântico
+ e um conjunto de algoritmos de processamento de imagem.
+ O núcleo semântico tem dois componentes principais que são, um motor de
+ 
+\emph on
+reasoning
+\emph default
+ e uma ontologia usando OWL e N3logic respectivamente.
+ Onde N3logic é uma extensão do modelo de dados RDF de tal modo que a mesma
+ linguagem pode ser utilizado para representar a lógica e dados.
+ Mas no trabalho de 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Racoceanu2014"
+
+\end_inset
+
+ os autores usam algoritmos para extração automática de anotações para descrever
+ as imagens histológicas.
+ Além disso, os autores não descrevem explicitamente a ontologia e as regras
+ utilizadas para 
+\emph on
+grading
+\emph default
+ de câncer de mama e também não são apresentados resultados explícitos.
+ 
+\end_layout
+
+\begin_layout Section
+Considerações Finais 
+\end_layout
+
+\begin_layout Standard
+Este capítulo abordou os principais trabalhos relacionados ao desenvolvimento
+ de 
+\emph on
+staging systems
+\emph default
+ com base em anotações semânticas de imagens na área de informática radiologica
+ e oncologia, descrevendo as similaridades e divergências entre o trabalho
+ proposto e os onze trabalhos relacionados que foram escolhidos.
+ 
+\end_layout
+
+\begin_layout Standard
+Na literatura, encontraram-se sistemas semelhantes onde as anotações semânticas
+ são armazenados em diferentes formatos que não permitem a integração do
+ mesmo para processos de 
+\emph on
+reasoning
+\emph default
+ e muitas vezes têm formato do tipo proprietário.
+\end_layout
+
+\begin_layout Standard
+Outros estudos também permitem a criação de anotações de imagem no formato
+ AIM na linguagem XML, mas não é diretamente adequado para o raciocínio
+ (
+\emph on
+reasoning
+\emph default
+).
+ O formato AIM fornece apenas um formato de transferência e armazenamento.
+ 
+\end_layout
+
+\begin_layout Standard
+Nosso trabalho está focado em ajudar aos especialistas em câncer na classificaçã
+o automática de pacientes (
+\emph on
+staging
+\emph default
+) usando anotações semânticas em imagens.
+
+\emph on
+ Fazer reasoning
+\emph default
+ semântico sobre lesões de câncer utilizando anotações de imagens codificadas
+ pelo AIM e um dos objetivos de nossa proposta.
+ 
+\end_layout
+
+\begin_layout Standard
+Além disso, o conhecimento externo como o 
+\emph on
+system staging(TNM)
+\emph default
+ e o foco de aplicação são diferentes dos trabalhos descritos.
+ 
+\end_layout
+
+\end_body
+\end_document

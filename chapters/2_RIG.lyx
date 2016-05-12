@@ -1,0 +1,2004 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass scrbook
+\options a4paper,titlepage
+\use_default_options false
+\maintain_unincluded_children false
+\language brazilian
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize 12
+\spacing onehalf
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 0
+\use_package esint 0
+\use_package mathdots 1
+\use_package mathtools 0
+\use_package mhchem 1
+\use_package stackrel 0
+\use_package stmaryrd 0
+\use_package undertilde 0
+\cite_engine natbib
+\cite_engine_type authoryear
+\biblio_style plainnat
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 3cm
+\topmargin 4cm
+\rightmargin 3cm
+\bottommargin 3cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation skip
+\defskip bigskip
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle fancy
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+A Informática Biomédica tem sido, ao longo das últimas décadas, um campo
+ emergente graças aos progressos feitos nos campos da computação, microeletrônic
+a e telecomunicações.
+ No entanto, ainda não existe uma definição universal para “Informática”
+ nos campos da medicina.
+ A Informática Biomédica pode ser considerada como a ciência da informação
+ aplicada no estudo do contexto da biomedicina, que surgiu para atender
+ as aplicações da TI (Tecnologia da Informação) na área da saúde
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Bulu"
+
+\end_inset
+
+.
+ Por sua vez, a Informática Radiológica (sub\SpecialChar \nobreakdash-
+área da informática biomédica)
+ é a área da radiologia responsável pela melhoria da eficiência, precisão
+ e confiabilidade dos serviços radiológicos dentro da área médica
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Serique2012"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Embora em radiologia muitas coisas, incluindo a criação da imagem, sejam
+ bastante padronizadas, existem muitas maneiras de se descrever o conteúdo
+ de uma imagem, incluindo diferentes sinônimos de termos, vários níveis
+ de descrição e foco em atores diferentes.
+ Nesse contexto, o uso de terminologias visuais e estruturadas para anotações
+ em imagens é uma abordagem promissora, pois permite a definição precisa
+ de imagens médicas utilizando a semântica fornecida pelas anotações
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Rubin2011"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Atualmente, anotações sobre imagens médicas fornecem apenas algumas informações,
+ como, por exemplo, metadados que contém o nome do paciente, idade, médico
+ responsável, etc.
+ As imagens em si não possuem nenhuma informação semântica, por isso, não
+ podem ser processadas por máquinas.
+ Para facilitar o processamento dessas anotações por máquina, é necessário
+ adicionar informações semânticas que sejam baseadas em fontes de conhecimento,
+ como 
+\emph on
+\lang english
+staging systems
+\emph default
+\lang brazilian
+.
+ Além disso, é preciso que essas informações sejam codificadas de forma
+ compreensíveis para maquinas, utilizando-se ontologias para facilitar o
+ mapeamento entre conceitos semânticos.
+ Assim, será possível a realização de um processamento mais complexo, como
+ por exemplo, o uso
+\emph on
+ de reasoning
+\emph default
+
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Dasmahapatra2003"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Como o foco deste trabalho é a construção de um sistema para permitir o
+ uso de 
+\shape italic
+reasoning
+\shape default
+ em anotações contidas em imagens médicas.
+ Este capítulo abordará os principais conceitos referentes a Informática
+ Radiológica.
+ Na Seção 2.1 são apresentados os HISs.
+ Em seguida, na Seção 2.2, Imagens Medicas.
+ Na seção 2.3, é discutido o processo de Anotações em imagens.
+ Por fim, na seção 2.4, serão descritos os sistemas de classificação que
+ são a base de conhecimento para a classificação dos pacientes com câncer,
+ a partir de imagens radiológicas.
+\end_layout
+
+\begin_layout Section
+Sistemas de Informação Hospitalares
+\end_layout
+
+\begin_layout Standard
+Os Sistemas de Informação Hospitalares, ou Hospital Information Systems
+ (HISs
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "HIS"
+description "Hospital Information System"
+
+\end_inset
+
+), surgiram por volta da década de 60 para atender às necessidades financeiras
+ das instituições médicas
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Image"
+
+\end_inset
+
+.
+ Além disso, os HISs têm agregado várias funcionalidades como: atendimento
+ clínico, protocolos clínicos, lembretes, alertas e gestão administrativa,
+ que possibilitam incrementar o ensino e pesquisa realizados em instituições
+ hospitalares.
+\end_layout
+
+\begin_layout Standard
+A pesquisa realizada nas instituições hospitalares permite a descoberta
+ de novos conhecimentos e a descoberta de novas tendências numa população,
+ como, por exemplo, por meio da mineração de dados.
+ Outros HISs, relacionados à informações médicas, são ainda mais específicos,
+ lidando com particularidades de um determinado departamento clínico.
+ Dessa forma, esses sistemas atuam como subconjuntos das funcionalidades
+ de um HIS, como exemplos destes sistemas temos o Laboratory Information
+ System (LIS
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "LIS"
+description "Laboratory Information System"
+
+\end_inset
+
+) e o 
+\lang english
+Radiology Information System
+\lang brazilian
+ (RIS
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "RIS"
+description "Radiology Information System"
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Standard
+Os LISs trabalham com o fluxo de trabalho dos serviços laboratoriais e de
+ patologia, oferecendo interfaces de comunicação com os diversos dispositivos
+ utilizados para a realização das avaliações químicas e de imunologia, microbiol
+ogia, genética e marcadores histopatológicos.
+ Os LISs são vistos como um modelo de monitoramento, validação de resultados
+ e divulgação eletrônica dos mesmos aos médicos solicitantes.
+ 
+\end_layout
+
+\begin_layout Standard
+Já os RISs atendem ao fluxo de trabalho de um departamento de radiologia
+ 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "huang2010pacs"
+
+\end_inset
+
+.
+ Onde eles têm funcionalidades de agendamento de pacientes, gerenciamento
+ de imagens e estudos de relatórios, que podem ser revisões de resultados
+ feitos para estudos anteriores.
+ 
+\end_layout
+
+\begin_layout Standard
+Embora os RISs sejam similares aos PACSs.
+ Eles se destacam dos PACSs por, normalmente, serem sistemas restritos aos
+ dados das imagens, enquanto os PACSs estão preocupados com os aspectos
+ de armazenamento e manipulação dos dados das imagens.
+ 
+\end_layout
+
+\begin_layout Subsection
+
+\lang english
+Picture Archiving and Communication System
+\lang brazilian
+ – PACS
+\end_layout
+
+\begin_layout Standard
+Um 
+\lang english
+Picture Archiving and Communication System
+\lang brazilian
+ (PACS
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "PACS"
+description "Picture Archiving and Communication System"
+
+\end_inset
+
+) é um conjunto formado por dispositivos de captura de imagens, unidades
+ de armazenamento, processamento computacional e banco de dados de imagens
+ médicas integrados em rede 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "huang2010pacs"
+
+\end_inset
+
+.
+ Desenvolver um sistema PACS envolve diversos desafios, como, por exemplo,
+ a natureza e o tamanho dos estudos das imagens adquiridas, podendo variar
+ de 2 até mais de 1000 MB
+\begin_inset CommandInset citation
+LatexCommand citep
+key "AlexA.T.Bui2010"
+
+\end_inset
+
+.
+ Isso ocorre porque os novos equipamentos permitem gerar uma grande quantidade
+ de imagens de alta resolução
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Pilbin"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+A Figura 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "Pacs1"
+
+\end_inset
+
+ apresenta os componentes principais de um PACS e o fluxo de dados entre
+ eles.
+ Um desses componentes são os dispositivos de imagem e computadores de aquisição.
+ Exemplos desses dispositivos digitais são: tomografia computadorizada (CT),
+ ressonância magnética (RM), radiografia computadorizada (CR), tomografia
+ por emissão de pósitrons (PET), raios-X digital, mamografia e ultrassom.
+ Em muitos casos, os dispositivos de imagens são interligados a computadores
+ de aquisição, pois os dispositivos de imagens fornecem apenas sinais brutos
+ que precisam ser fatiados ou volumetrizados.
+ Os computadores de aquisição armazenam uma pequena quantidade de dados
+ localmente e, depois, enviam esses estudos (imagens) para os PACSs, através
+ de um 
+\lang english
+gateway
+\lang brazilian
+, para o armazenamento definitivo de longo prazo 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Serique2012"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+A seguir, descreveremos as características de algumas dessas tecnologias
+ de imagens e sua aplicação no estudo de pacientes com câncer.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename ../figures/PaCs.png
+	lyxscale 80
+	width 100col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Fluxos de dados e os principais componentes de um PACS.
+ Fonte: 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Serique2012"
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "Pacs1"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Tecnologias para Imagens Médicas
+\end_layout
+
+\begin_layout Standard
+A pesquisa e tratamento do câncer são ambos criticamente dependentes de
+ tecnologias de imagens.
+ Avanços em imagem já permitem uma precisão notável em detectar se um tumor
+ invadiu tecidos vitais, cresceu ou se espalhou para órgãos distantes; permitind
+o que os médicos possam monitorar o progresso do paciente sem a necessidade
+ de biópsias ou outros métodos invasivos 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Imaging2007"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Antes de analisar como é que a semântica pode melhorar ainda mais o processo
+ de monitoramento do progresso dos pacientes com câncer, é importante compreende
+r as tecnologias de imagem primárias com que iremos trabalhar em nossa proposta
+ e o que elas fazem.
+ Essas tecnologias de imagem abrangem 
+\lang english
+Computed Tomography
+\lang brazilian
+ (CT
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "CT"
+description "Computed Tomography"
+
+\end_inset
+
+) e 
+\lang english
+Positron Emission Tomography
+\lang brazilian
+ (PET
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "PET"
+description "Positron Emission Tomography"
+
+\end_inset
+
+).
+ 
+\end_layout
+
+\begin_layout Subsection
+Tomografia Computadorizada
+\end_layout
+
+\begin_layout Standard
+A tomografia computadorizada, ou 
+\lang english
+Computed Tomography
+\lang brazilian
+ (CT), usa técnicas de reconstrução intensivas por computador para criar
+ imagens 3D do corpo a partir de raios-X.
+ Devido ao uso de computadores, uma gama de densidades mais elevada pode
+ ser exibida em comparação com imagens de raios-X convencionais.
+ Esse recurso permite a diferenciação entre órgãos e patologias e detectar
+ a presença de materiais específicos, tais como gordura ou cálcio.
+ Assim como em imagens convencionais de raios-X, objetos de alta densidade
+ causam mais atenuação e, portanto, são exibidos como cinza mais claro que
+ objetos de baixa densidade.
+ 
+\end_layout
+
+\begin_layout Standard
+Por exemplo, no CT do peito uma vasta gama de densidades de tecido está
+ presente, uma boa imagem das estruturas do mediastino são mostradas em
+ detalhes do pulmão, mostrados na Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:CT1"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Tomografias estão entre as tecnologias de imagem mais comuns utilizados
+ no diagnóstico, bem como no planejamento e monitoramento do tratamento
+ de câncer; especialmente na detecção de câncer de fígado, pâncreas, pulmões
+ e ossos
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Imaging2007"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename ../figures/CTjoin.png
+	width 70col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+CT do peito, (a) anatomia do mediastino: Átrio direito (RA), Ventrículo
+ direito (RV), Válvula aórtica (AV), Aorta (A), Átrio esquerdo (LA).
+ (b) Anatomia do pulmão.
+ Fonte:
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Arnold2012"
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:CT1"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+
+\lang english
+Positron Emission Tomography
+\end_layout
+
+\begin_layout Standard
+Os exames de 
+\lang english
+Positron Emission Tomography
+\lang brazilian
+ (PET) fornecem uma ferramenta fundamental na gestão e terapia de câncer
+ para muitos tumores comuns.
+ A maioria dos estudos clínicos de PET são realizados para determinar o
+ grau de um tumor, a localização e número de metástases.
+ 
+\end_layout
+
+\begin_layout Standard
+Nesses estudos oncológicos PET, o paciente recebe uma injecção de uma substância
+ que consiste de uma pequena quantidade de um composto marcado radioativamente
+ semelhante ao açúcar comum, glicose.
+ O açúcar radioactivo pode ajudar na localização de um tumor, porque as
+ células cancerosas  utilizam glicose mais avidamente do que outros tecidos
+ no corpo
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Ziegler2005"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Por exemplo, a Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:METASTA"
+
+\end_inset
+
+ mostra um exemplo de um paciente com metástases de câncer de cólon, onde
+ a glicose no tecido canceroso é facilmente visível.
+ Por esse motivo, para muitos tumores comuns, a PET é a técnica mais precisa
+ para visualizar a propagação do tumor ou a sua resposta à terapia
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Imaging2007"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename ../figures/metastases.png
+	rotateOrigin center
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Estudo de paciente com metástase de cólon, pode ser visto que o aumento
+ da captação de glicose no tecido canceroso é facilmente visível.
+ Fonte:
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Ziegler2005"
+
+\end_inset
+
+ 
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:METASTA"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+É bom notar que, o sistema ePAD no qual vamos desenvolver nossa proposta,
+ permite a manipulação de de imagens de TC e PET
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Rubin2014"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Todas as modalidades de análise acima mencionadas fornecem uma visão detalhada
+ sobre a anatomia humana, suas funções, e associações a doenças.
+ As técnicas avançadas de análise dessas imagens geram parâmetros quantitativos
+ adicionais, abrindo assim o caminho para a melhoria da prática clínica
+ e diagnóstico
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Zillner2013"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Embora imagens não processadas (raw images) possam ser úteis em algumas
+ aplicações de processamento por computador, grande parte do conteúdo semântico
+ nas imagens e dos relatórios radiológicos associados a elas, não é explícito
+ e disponível para computadores.
+ Isso dificulta a descoberta de novas informações num grande volume de informaçã
+o.
+ Com base nisso, as aplicações médicas avançadas devem possuir descrições
+ semânticas sobre dados clínicos, como as imagens medicas.
+\end_layout
+
+\begin_layout Section
+Anotação de Imagens 
+\end_layout
+
+\begin_layout Standard
+A necessidade de anotar imagens é reconhecida em uma ampla variedade de
+ aplicações diferentes, abrangendo tanto o uso profissional quanto o pessoal
+ de dados sobre imagens.
+ Anotação de imagens é uma tarefa complexa, que tem sido amplamente estudada
+ nos domínios da visão computacional e recuperação de imagens.
+ 
+\end_layout
+
+\begin_layout Standard
+No contexto da radiologia, anotar imagens é uma tarefa que pode ser assistido
+ por computador.
+ No entanto, os radiologistas geralmente não gravam suas anotações num formato
+ estruturado, que seja acessível por máquina, impedindo assim o bom desempenho
+ dos sistemas, como os de decisão sobre diagnósticos.
+ O desempenho deste tipo de sistema baseia-se na escolha dos termos que
+ estão sendo usados para descrever o conteúdo das imagens.
+ Essa escolha é altamente dependente da aplicação, as necessidades e a experiênc
+ia do usuário.
+\end_layout
+
+\begin_layout Standard
+Tais termos podem ser diretamente derivados da terminologia fornecida pelos
+ radiologistas em seus relatórios ou automaticamente previsto a partir das
+ características das imagens
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Gimenez2011"
+
+\end_inset
+
+.
+ Eles podem ser usados para descrever uma variedade de informações sobre
+ o conteúdo de uma imagem (por exemplo, a forma da lesão de um tumor canceroso).
+ Esses termos podem representar também o conteúdo semântico da imagem, nesse
+ caso eles podem ser chamados de anotações semânticas.
+ 
+\end_layout
+
+\begin_layout Standard
+As anotações semânticas estão diretamente ligados ao alto nível de compreensão
+ e descrições do usuário sobre as características da imagem
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Rubin2011"
+
+\end_inset
+
+.
+ Com base nessas considerações, incorporar características semânticas em
+ sistemas de decisão sobre diagnóstico pode ser uma tentativa promissora
+ para preencher a lacuna semântica entre a descrição visual de uma imagem
+ e seu significado
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Ma2010"
+
+\end_inset
+
+, Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "AnnotaimagemCT"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename ../figures/imageannotation.png
+	width 80col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+A imagem CT do fígado anotada com termos semânticos.
+ Fonte : 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Kurtz2014"
+
+\end_inset
+
+.
+ 
+\begin_inset CommandInset label
+LatexCommand label
+name "AnnotaimagemCT"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Anotação Semântica
+\end_layout
+
+\begin_layout Standard
+De acordo com
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Nagarajan"
+
+\end_inset
+
+, anotação é o processo de associar metadados a recursos como áudio, vídeo,
+ texto estruturado, páginas web, imagens, etc.
+ Enquanto que anotação semântica é o processo de marcar com recursos de
+ metadados semânticos.
+ No contexto da biomedicina.
+ esse processo é conhecido como
+\emph on
+\lang english
+ 
+\emph default
+\lang brazilian
+anotação semântica de imagens médicas.
+ 
+\end_layout
+
+\begin_layout Standard
+Em radiologia, o processo de marcar imagens é um trabalho manual, lento
+ e inconsistente devido ao grande número de imagens que são geradas por
+ dia em hospitais modernos 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Depeursinge2014"
+
+\end_inset
+
+.
+ É por essa razão que várias abordagens para enfrentar o desafio da anotação
+ semântica de imagens médicas já foram estudados.
+ Por exemplo, em 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Manuel2009"
+
+\end_inset
+
+ uma abordagem para a extração de informações de 
+\emph on
+DICOM 
+\lang english
+headers
+\emph default
+\lang brazilian
+ e de relatórios estruturados
+\emph on
+ 
+\emph default
+DICOM
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "DICOM"
+description " Digital Imaging and Communications in Medicine"
+
+\end_inset
+
+ (
+\lang english
+Digital Imaging and Communications in Medicine
+\lang brazilian
+) foi apresentada, 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Seifert2009"
+
+\end_inset
+
+ introduziram um novo método para a análise automática de imagens (em anatomia
+ e com detetores de tecidos específicos).
+ Em outra frente, 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Rubin2008"
+
+\end_inset
+
+ integraram a anotação manual de imagens no fluxo de trabalho dos radiologistas
+ e
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Dasmahapatra2003"
+
+\end_inset
+
+ introduziram uma abordagem de anotação de imagens para melhorar o diagnóstico
+ do câncer da mama.
+ Todas essas abordagens fizeram uma contribuição importante para melhorar
+ o acesso às informações em imagens médicas, especificando a "semântica''
+ das regiões nas imagens.
+ 
+\end_layout
+
+\begin_layout Subsection
+Anotação de Imagens Médicas com Vocabulários Estruturados
+\end_layout
+
+\begin_layout Standard
+Embora o processo de descrição de imagens médicas utilizando conteúdo semântico
+ possa melhorar o acesso à informação médica, ele pode levar a se ter diferentes
+ descrições para uma mesma imagem.
+ Isso prejudica o bom desempenho de sistemas baseados nessas descrições,
+ como os de ajuda a decisão em diagnóstico.
+ Para lidar com esse problema, os últimos trabalhos no domínio semântico
+ usam vocabulários controlados para anotar as imagens 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Korenblum2011"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Um vocabulário controlado fornece um conjunto de termos pré-definidos para
+ descrever características em imagens médicas.
+ Esses vocabulários podem facilitar a anotação de grandes conjuntos de imagens.
+ Trabalhos recentes, como 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Napel2010"
+
+\end_inset
+
+, investigaram métodos assistidos por computador no apoio ao diagnóstico.
+ Os autores utilizaram um banco de dados de imagens onde as imagens foram
+ anotadas semanticamente.
+ O resultado do trabalho indica que as anotações semânticas, usando um vocabulár
+io controlado, podem levar a diagnósticos mais precisos.
+\end_layout
+
+\begin_layout Section
+
+\lang english
+Medical Background Knowledge
+\end_layout
+
+\begin_layout Standard
+As ontologias estão relacionadas com vocabulários controlados.
+ Elas fornecem uma maneira formal para modelar conhecimento (
+\emph on
+\lang english
+Background Knowledge
+\emph default
+\lang brazilian
+) e geralmente são construídas a partir de um consenso entre especialistas
+ de um domínio
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Guarino:1995:FOC:219666.219668"
+
+\end_inset
+
+.
+ As ontologias representam uma poderosa forma de estruturar termos semânticos
+ pertencentes a uma fonte de conhecimento particular.
+ 
+\end_layout
+
+\begin_layout Standard
+No contexto da medicina, várias ontologias estão sendo desenvolvidas para
+ organizar conceitos biomédicos de uma forma abrangente, por exemplo: 
+\emph on
+\lang english
+Medical Subject Headings (MeSH)
+\emph default
+, 
+\emph on
+International Classification of Diseases (ICD Taxonomy), Systematized Nomenclatu
+re of Medicine – Clinical Terms (SNOMED CT), Unified Language of Radiology
+ Terms (RadLex
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "RadLex"
+description "Unified Language of Radiology Terms"
+
+\end_inset
+
+)
+\emph default
+\lang brazilian
+ 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Kurtz2014"
+
+\end_inset
+
+.
+ Na Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "RADLEX1"
+
+\end_inset
+
+, vemos uma parte da ontologia RadLex.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename ../figures/RadlexOnto.png
+	lyxscale 80
+	width 100col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Um extrato da ontologia RadLex que é uma terminologia controlada em radiologia.
+ Fonte: 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Kurtz2014"
+
+\end_inset
+
+ 
+\begin_inset CommandInset label
+LatexCommand label
+name "RADLEX1"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Para classificar pacientes com câncer é necessário representar o conhecimento
+ geral do domínio 
+\emph on
+(background knowledge
+\emph default
+).
+ Nesse caso, esse conhecimento é chamado de 
+\emph on
+\lang english
+staging system
+\emph default
+\lang brazilian
+.
+ No entanto, ter representações formais das definições de um 
+\emph on
+\lang english
+staging system
+\emph default
+\lang brazilian
+ numa ontologia não é suficiente para fornecer ajuda automática na classificação
+ de tumores de câncer.
+ Esse conhecimento deve ser representado também em regras de raciocínio
+ (
+\lang english
+reasoning
+\lang brazilian
+).
+ Portanto, representar o conhecimento sobre oncologia em ontologias e regras
+ parece uma contribuição desejável para a realização da classificação automática
+ de tumores.
+ Conceitos como ontologias, regras e 
+\emph on
+reasoning
+\emph default
+ serão melhor detalhados no próximo capítulo.
+ 
+\end_layout
+
+\begin_layout Subsection
+Estágio do Câncer 
+\end_layout
+
+\begin_layout Standard
+O estágio do câncer categoriza a progressão de um câncer no corpo, em termos
+ da extensão do tumor primário e de se espalhar para alguma região próxima
+ da origem do câncer.
+ A rotina para determinar o estágio de um câncer (
+\emph on
+\lang english
+cancer staging
+\emph default
+\lang brazilian
+) em pacientes tem uma série de vantagens reconhecidas por organizações
+ relacionadas a câncer em todo o mundo.
+ O 
+\emph on
+\lang english
+cancer staging
+\emph default
+\lang brazilian
+ permite que os médicos possam determinar o tratamento mais apropriadamente,
+ avaliar os resultados de forma mais confiável e comparar as estatísticas
+ a nível local, regional e nacional com mais confiança 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Mccowan2000"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Esses benefícios têm motivado a criação de padrões internacionais para 
+\emph on
+\lang english
+cancer staging
+\emph default
+\lang brazilian
+, como, por exemplo, o padrão 
+\emph on
+TNM
+\emph default
+ definido pela 
+\emph on
+AJCC (
+\lang english
+American Joint Committee on Cancer
+\lang brazilian
+)
+\emph default
+ e 
+\emph on
+UICC (
+\lang english
+International Union Against Cancer
+\lang brazilian
+).
+\end_layout
+
+\begin_layout Subsection
+
+\emph on
+\lang english
+Cancer Staging
+\emph default
+\lang brazilian
+: O Padrão TNM
+\end_layout
+
+\begin_layout Standard
+O 
+\emph on
+cancer st
+\emph default
+aging no padrão 
+\lang english
+TNM Classification of Malignant Tumors
+\lang brazilian
+ (TNM) é um processo de duas etapas.
+ A primeira etapa consiste em dar notas para três conceitos: descrição do
+ tumor (T), difusão em nós linfáticos (N) e possível metástase (M).
+ Esses conceitos estão resumidos na Tabela 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "ResumodoprotocoloTNM"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="11" columns="3">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="center" valignment="top" width="15col%">
+<column alignment="center" valignment="top" width="6col%">
+<column alignment="center" valignment="middle" width="70col%">
+<row>
+<cell multirow="3" alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+T: 
+\lang english
+Primary Tumor
+\lang brazilian
+ 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+Tis
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+\lang english
+The cancer is found only in the layer of cells lining the air passages
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+T1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+\lang english
+The cancer is no larger than 3 cm, has not spread to the membranes that
+ surround the lungs (visceral pleura), and does not affect the main branches
+ of the bronchi.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+T2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+\lang english
+The cancer has 1 or more of: (1) It is larger than 3 cm.
+ (2) It involves a main bronchus but is not closer than 2 cm to the point
+ where the windpipe branches into the left and right main bronchi.
+ (3) It has spread to the visceral pleura.
+ (4) The cancer may partially clog the airways, but this has not caused
+ the entire lung to collapse or develop pneumonia.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+T3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+\lang english
+The cancer has 1 or more of: (1) It has spread to the chest wall, the diaphragm,
+ the membranes surrounding the space between the 2 lungs (mediastinal pleura),
+ or membranes of the sac surrounding the heart (parietal pericardium).
+ (2) It involves a main bronchus and is closer than 2 cm to the point where
+ the windpipe branches into the left and right main bronchi, but does not
+ involve this area.
+ (3) It has grown into the airways enough to cause 1 lung to entirely collapse
+ or to cause pneumonia of the entire lung
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+T4
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+\lang english
+The cancer has 1 or more of: (1) It has spread to the space behind the chest
+ bone and in front of the heart, the heart, the windpipe, the esophagus,
+ the backbone, or the point where the windpipe branches into the left and
+ right main bronchi (carina).
+ (2) Two or more separate tumor nodules are present in the same lobe.
+ (3) There is a fluid containing cancer cells in the space surrounding the
+ lung
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="3" alignment="left" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+N: 
+\lang english
+Regional Lymph Node
+\lang brazilian
+s
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+N0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+\lang english
+The cancer has not spread to lymph nodes.
+ 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+N1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+\lang english
+The cancer has spread to lymph nodes within the lung, hilar lymph nodes
+ (located around the area where the bronchus enters the lung).
+ The cancer has metastasized only to lymph nodes on the same side as the
+ cancerous lung.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+N2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+\lang english
+The cancer has spread to lymph nodes around the point where the windpipe
+ branches into the left and right bronchi or to lymph nodes in the mediastinum
+ (space behind the chest bone and in front of the heart).
+ The lymph nodes on the same side of the cancerous lung are affected.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+N3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+\lang english
+The cancer has spread to lymph nodes near the collarbone on either side,
+ to hilar or mediastinal lymph nodes on the side opposite the cancerous
+ lung.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="3" alignment="left" valignment="middle" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+M: 
+\lang english
+Distant Metastasis
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+M0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+\lang english
+The cancer has not spread to distant sites.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+M1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+\lang english
+The cancer has spread to distant sites such as other lobes of the lungs,
+ lymph nodes farther than those mentioned in N stages, and other organs
+ or tissues such as the liver, bones, or brain
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Os critérios de T, N e M para câncer de pulmão.
+ Fonte: 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Dameron2006,Dameron2006-Table"
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "ResumodoprotocoloTNM"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+A segunda etapa consiste na determinação do estagio de acordo com as pontuações
+ da fase anterior.
+ As pontuações sobre T, N e M definem um estágio único do tumor de 0 a IV.
+ Note-se que várias combinações de pontuações T, N e M podem levar ao mesmo
+ estágio
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Dameron2006"
+
+\end_inset
+
+.
+ Esses conceitos estão resumidos na Tabela 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "stageTNM"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="8" columns="2">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="center" valignment="middle">
+<column alignment="left" valignment="top" width="70col%">
+<row>
+<cell alignment="center" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+\lang english
+Stage 0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="middle" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+(Tis, N0, M0)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+\lang english
+Stage IA
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+(T1, N0, M0)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+\lang english
+Stage IB
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+(T2, N0, M0)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+\lang english
+Stage IIA
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="middle" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+(T1, N1, M0)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+\lang english
+Stage IIB
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+\lang english
+(T2, N1, M0) or (T3, N0, M0)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+\lang english
+Stage IIIA
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="middle" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+\lang english
+(T1, N2, M0) or (T2, N2, M0) or (T3, N1, M0) or (T3, N2, M0)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+\lang english
+Stage IIIB
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="middle" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+\lang english
+(T1, N3, M0) or (T2, N3, M0) or (T3, N3, M0) or (T4, N0, M0) or (T4, N1,
+ M0) or (T4, N2, M0) or (T4, N3, M0)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="middle" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+\lang english
+Stage IV
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="middle" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+\lang english
+(Any T, Any N, M1)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Definições para as diferentes estágios de tumores.
+ Fonte: 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Dameron2006,Dameron2006-Table"
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "stageTNM"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Considerações Finais 
+\end_layout
+
+\begin_layout Standard
+Este capítulo forneceu uma base teórica para compreensão de conceitos como
+ vocabulários controlados, anotações de imagem, anotação semântica e representaç
+ão do conhecimento.
+ Foi mostrado também como esses conceitos podem ser utilizados na área de
+ informática biomédica para melhorar processos como a interpretação de imagens
+ médicas em câncer.
+\end_layout
+
+\end_body
+\end_document

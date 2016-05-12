@@ -1,0 +1,802 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass article
+\begin_preamble
+\usepackage{array}
+\renewcommand{\arraystretch}{1.5}
+
+\usepackage{tocloft}
+\renewcommand\cftsecdotsep{\cftdotsep}
+%\renewcommand\cftsecleader{\cftdotfill{\cftsecdotsep}}
+
+% specify here the journal
+%\journal{Example: Nuclear Physics B}
+
+% use this if you need line numbers
+%\usepackage{lineno}
+\end_preamble
+\use_default_options false
+\begin_modules
+theorems-std
+\end_modules
+\maintain_unincluded_children false
+\language american
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans helvet
+\font_typewriter default
+\font_math auto
+\font_default_family rmdefault
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 0
+\use_package amssymb 0
+\use_package cancel 0
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 0
+\use_package mhchem 1
+\use_package stackrel 0
+\use_package stmaryrd 0
+\use_package undertilde 0
+\cite_engine natbib
+\cite_engine_type authoryear
+\biblio_style plainnat
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 2
+\paperpagestyle headings
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+
+\series bold
+A Medical Application for Automatic Classification of Cancer Tumors in Stages
+ using Image Annotations and Ontologies 
+\end_layout
+
+\begin_layout Author
+Edson Francisco Luque Mamani
+\begin_inset Newline newline
+\end_inset
+
+ Prof.
+ Dr.
+ Dilvan de Abreu Moreira 
+\begin_inset Newline newline
+\end_inset
+
+Instituto de Ciências Matemáticas e de Computação – ICMC
+\begin_inset Newline newline
+\end_inset
+
+Universidade de São Paulo – USP 
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace vfill
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+
+\size normal
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Abstract
+Information about the stage of cancer in a patient is crucial when doctors
+ access patient progress and decide on further steps of treatment.
+ Determining the cancer stage (cancer staging) is a process that takes into
+ account the description, location, characteristics and possible metastasis
+ of cancerous tumors of a patient.
+ This process should follow classification standards, such as TNM Classification
+ of Malignant Tumors.
+ However, in clinical practice, the implementation of this process can be
+ tedious and error-prone thus creating uncertainty in the interpretation
+ of medical images.
+ In order to alleviate these problems, this proposal aims to assist radiologists
+ by providing a second opinion in the evaluation of cancer stage in patients.
+ For doing this, Semantic Web technologies, such as ontologies and reasoning,
+ will be used to automatically classify cancer stages.
+ This classification will use semantic annotations made by radiologists,
+ with the ePAD and stored using the AIM format, and rules of an ontology
+ representing the TNM standard.
+ Annotations on AIM will be converted to OWL and an inference engine will
+ use them, along with the TNM ontology and its rules, to calculate the cancer
+ stage in a patient.
+ The whole process will be validated through a proof of concept with users
+ from the Rubin Lab (Radiology Dept.
+ - Stanford University).
+\end_layout
+
+\begin_layout Abstract
+
+\series bold
+Keywords:
+\series default
+ OWL, SWRL, cancer staging, ePAD, câncer.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace vfill
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace vfill
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Introduction
+\end_layout
+
+\begin_layout Standard
+In biomedicine, specifically in radiology and oncology, evaluating the response
+ to cancer treatments depends critically on the results of image analysis
+ by experts.
+ However, the information obtained from this analysis is not easily interpreted
+ by machines.
+\end_layout
+
+\begin_layout Standard
+There is no connection between the visual information in an image and its
+ interpretation.
+ For this reason technologies, such as the semantic web, generate a growing
+ interest for application in biomedicine.
+ These technologies can make biomedical data explicit and computable.
+ The biomedical community is looking for tools to help with access, query
+ and analysis of the vast amount of data generated by advances in the use
+ of technology in medicine 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Marquet2007"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+The use of images in medicine, specifically in the treatment of cancer patients,
+ generates enormous quantities of non-text-type information.
+ Medical images in clinical tasks are important as they allow specialists
+ to diagnose, plan and track patients 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Levy2009"
+
+\end_inset
+
+.
+ Thus, a considerable number of computer applications, aimed at this medical
+ field, have been developed.
+ Most of these applications are focused on extracting visual features with
+ the help of image processing algorithms.
+ 
+\end_layout
+
+\begin_layout Standard
+Although these algorithms can help physicians process image contents for
+ cancer treatment, they have problems when an abstract and ambiguous query
+ is made in the context of cancer patient classification.
+ For example, when an oncologist wants to know if a tumor is already in
+ an advanced state, close to spread to any region near the origin of the
+ cancer, but not for other parts of the body 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Wennerberg2011"
+
+\end_inset
+
+.
+ Therefore, there are some difficulties during abstract image interpretation,
+ because the semantic information from the image reports is not considered
+ in these algorithms.
+ 
+\end_layout
+
+\begin_layout Standard
+In general, semantics is the study of the meaning of things and, in the
+ context of oncology and radiology, semantics can be seen as the study of
+ the meaning of radiology reports content.
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+What are you proposing? It comes first than the related works.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Following, we describe the related work, objectives, also present the methodolog
+y.
+\end_layout
+
+\begin_layout Section
+Related Works
+\end_layout
+
+\begin_layout Standard
+Ontologies and their properties permit reasoning had a recent growing interest
+ in applications such as computer-aid methods to support diagnosis and prognosis
+ in cancer research.
+ for example, staging cancer is a classification process that determine
+ how much cancer there is on whole body and where it is located.
+ Researches on cancer staging using ontologies and rules are described below:
+ 
+\end_layout
+
+\begin_layout Itemize
+According to 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Dameron2006"
+
+\end_inset
+
+the tumor classification of lung tumors can be performed automatically using
+ OWL-DL and TNM.
+ Moreover, the authors point out some of limitation based on description
+ logic (DL) for these classification task.
+\end_layout
+
+\begin_layout Itemize
+In 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Marquet2007"
+
+\end_inset
+
+the authors developed an ontology based on the NCI Thesaurus ontology and
+ WHO
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Kleihues2002"
+
+\end_inset
+
+ as reference system to grading glioma cancer.
+ Finally, class-based reasoning was used to classify patients from their
+ pathology reports.
+ 
+\end_layout
+
+\begin_layout Itemize
+The works in 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Tutac2008"
+
+\end_inset
+
+ and 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Tutac2010"
+
+\end_inset
+
+introduce an approach that uses OWL-DL to generate the correlation between
+ medical concepts -related to breast cancer classification( based on Nottingham
+ Grading System(NGS)), for example, 
+\emph on
+\lang english
+Cells Cluster e Lumina
+\emph default
+\lang american
+, for computer vision concepts: 
+\emph on
+\lang english
+Cell Cluster → union of cells
+\emph default
+ e Lumina →
+\emph on
+ white compact segments
+\emph default
+\lang american
+, The authors describe a rule-based method to automatically grading breast
+ cancer based on NGS and model in OWL such concepts as protégé concepts
+ in order to define rules used for semantic indexing of histopathology images.
+ In 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Tutac2010"
+
+\end_inset
+
+ the author adds spatial knowledge to his previous work.
+\end_layout
+
+\begin_layout Standard
+Works above mentioned make no evaluation of its model with real patient
+ data.
+ More recent researches concern approaches towards using semantic annotations
+ from a controlled vocabulary for discovering implicit knowledge by real
+ data such as medical images, are discussed and evaluated below:
+\end_layout
+
+\begin_layout Itemize
+Early works as 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Levy2009"
+
+\end_inset
+
+ developed a methodology to transform the information model AIM
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+https://wiki.nci.nih.gov/display/AIM/Annotation+and+Image+Markup+-+AIM
+\end_layout
+
+\end_inset
+
+ in OWL and SWRL in order to automatically classify and calculate the tumor
+ burden.
+\end_layout
+
+\begin_layout Itemize
+The work proposed in 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "zillner:towards"
+
+\end_inset
+
+ and 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Zillner2012"
+
+\end_inset
+
+ uses medical image annotation and reasoning(spatio-anatomical reasoning
+ 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Manuel"
+
+\end_inset
+
+) technologies in order to automatically classify patients with lymphoma,
+ based on Staging Ann Arbor.
+ The authors state alignments between concepts the RADLEX and FMA to create
+ a patient-ontology.
+ These ontologies are part of MEDICO
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+http://www.healthcare.siemens.com/
+\end_layout
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Itemize
+In 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Meriem2012"
+
+\end_inset
+
+ propose a methodology to improve the clinical model that performs the score
+ of breast cancer(based on the Nottingham Grading System (NGS)).
+ They designed a breast cancer ontology (BCO) based on OWL-DL and SWRL.
+ In addition, the Wide Field Markup Language (WFML
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+A XML languaje produced by the company TRIBVN for its platform ICS framework
+\end_layout
+
+\end_inset
+
+) was used to describe annotated histopathological images.
+\end_layout
+
+\begin_layout Itemize
+In 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Oberkampf"
+
+\end_inset
+
+ the authors propose an ontology, formally represents diseases, symptoms
+ and their relationships.
+ They describes the process to reasoning about diseases based on annotations
+ that reflect the descriptive content of patient data.
+ Finally, the authors tested the model using a prototype.
+ 
+\end_layout
+
+\begin_layout Itemize
+In 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Racoceanu2014"
+
+\end_inset
+
+ describes a prototype that controls an entire histological image analysis
+ protocol, this prototype was developed in the framework "Cognitive Microscopy"(
+MICO) in order to improves the Whole Slide Image (WSI) analysis protocol
+ and become a reliable assessment for breast cancer classification.
+ The prototype consists of two main components such as semantic core and
+ image processing algorithms.
+ The semantic core has two main components, reasoning engine and ontology
+ using OWL and N3Logic respectively.
+ N3logic is an extension of the RDF data model such that the same language
+ can be used to represent the logic and data.
+\end_layout
+
+\begin_layout Standard
+These works above use semantic annotations to make their observations consistent
+, explicit, and machine-accessible.
+ Radiological tools such as the ePAD (formerly iPad) 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Rubin2008"
+
+\end_inset
+
+ have been implemented with the purpose of making these annotations facile
+ to record.
+ Recent works using ePAD are described on : 
+\end_layout
+
+\begin_layout Itemize
+In
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Kurtz2014"
+
+\end_inset
+
+ and
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Gimenez2011"
+
+\end_inset
+
+ propose an image retrieval framework based on semantic annotations from
+ liver images, this framework incorporates the semantic correlations between
+ terms used to describe these images.
+ The authors use the semantic similarity between semantic terms(semantic
+ annotations) that describes liver lesions based on the structure of the
+ Radlex ontology in order to evaluate the semantic proximity between these
+ words of interest.
+ This automated approach provides real time support for radiologists, showing
+ them images associated with similar diagnoses.
+\end_layout
+
+\begin_layout Standard
+In the literature, was found similar systems where semantic annotations
+ are stored in different formats that do not allow the integration of these
+ for reasoning processes and often, these formats are proprietary.
+ Some of these studies also allow creating image annotations on AIM format
+ (in XML), but this is not suitable for reasoning.
+ AIM format provides only a transfer format and storage.
+ 
+\end_layout
+
+\begin_layout Standard
+This work is focused on helping cancer specialists in automatic patient
+ classification (staging) using semantic annotations in images.
+ The classification shall be made ​​using semantic reasoning on annotations
+ encoded in AIM, these annotations describe lesions in images made by radiologis
+ts .
+\end_layout
+
+\begin_layout Section
+Objetive
+\end_layout
+
+\begin_layout Standard
+Automatically generate the cancer staging(stage of cancer) of cancerous
+ lesions present in medical images, using reasoning technologies and semantic
+ web to process metadata on image annotations generated by programs as EPAD,
+ to provide physicians a second opinion on the classification of patients.
+ This automatic generation of information , may increase the efficiency
+ of radiologists and oncologists and improve the quality and uniformity
+ of image interpretation by experts.
+\end_layout
+
+\begin_layout Standard
+The staging cancer is a classification task where the representation of
+ knowledge is required.
+ In the case of this study, this knowledge will be encoded in ontologies
+ ( OWL) and rules ( SWRL ) .
+ Currently, there are cancer staging systems, however, they are not open
+ source and its classification methods can not be analyzed or reused openly.
+ In addition, they also have accuracy problems as contradictions in the
+ results of staging
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Zillner2012"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Section
+Methods
+\end_layout
+
+\begin_layout Standard
+In this section will describe the methodology to be followed for the development
+ of this work.
+ It will be divided into the following steps:
+\end_layout
+
+\begin_layout Itemize
+Develop a mechanism to transform the semantic annotations from the XML documents
+ generated by AIM and ePAD, for instances in OWL model.
+\end_layout
+
+\begin_layout Itemize
+Develop (or extend) an ontology focused on the classification criteria TNM
+ (Classification of Malignant Tumors).
+\end_layout
+
+\begin_layout Itemize
+Integration of knowledge through reasoning.
+ The reasoning process allows the classification of a patient, integrating
+ the knowledge captured by medical ontologies.
+ The ontological model will capture the individual cancer staging of each
+ patient.
+ 
+\end_layout
+
+\begin_layout Itemize
+Information about staging of patients in the database can be queried using
+ SPARQL .
+\end_layout
+
+\begin_layout Itemize
+Implementation of interfaces in partnership with the Dept.
+ of Radiology, Stanford University.
+\end_layout
+
+\begin_layout Itemize
+Evaluation of results (staging) with rediologistas / oncologists of Dept.
+ of Radiology, Stanford University.
+\end_layout
+
+\begin_layout Subsection
+Architecture proposed for development work
+\end_layout
+
+\begin_layout Standard
+For use on cancer patients classification from imagenes (staging), firstly
+ must have an ontology (or ontologies) which describes the standards for
+ cancer staging, for example, the standard TNM.
+ In this sense, this is an ontology yet to be developed and contribute in
+ its construction on this project.
+ On the other hand, it is necessary to transform the image annotations on
+ AIM format obtained from the EPAD to a format such as OWL.
+ The AIM-OWL allow us to make reasoning rules that represent the standard
+ of TNM .
+ We will contribute to the construction of these rules.
+\end_layout
+
+\begin_layout Standard
+A diagram of the current proposal for classification, in the cancer field,
+ is shown in the figure
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:arquitetura-proposta"
+
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename figures/propuestav0_1.png
+	lyxscale 30
+	width 100col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Proposal Architecture 
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:arquitetura-proposta"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Conclusion and Justification
+\end_layout
+
+\begin_layout Standard
+The process of classification of cancer patients by image analysis, is a
+ task performed by specialists such as oncologists and radiologists, based
+ on the inspection images and can be often intensive work that requires
+ precision in the interpretation of the cancer lesions.
+ The accuracy of the expert is achieved through training and experience
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Depeursinge2014"
+
+\end_inset
+
+, but even with good training and experience may be variations in image
+ interpretation among experts.
+ In this context, the development of an automatic classification system
+ is a strong medical need which can help to obtain a higher accuracy rate
+ in interpretation.
+\end_layout
+
+\begin_layout Standard
+Moreover, although systems such as ePAD enables the creation of image annotation
+s in AIM format, they allow not represent annotations in a format that is
+ directly suitable for the reasoning.
+ AIM provides only a format for data transfer and storage.
+ An important fact is that, currently, there are no many methods of semantic
+ reasoning to make inferences about cancerous lesions using image annotations
+ encoded by the AIM
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Levy2009"
+
+\end_inset
+
+.
+ Other systems, such as mint Lesion ( MintMedical GmbH, Dossenheim, Germany
+ ) and syngo.via (Siemens Healthcare, Malvern ) are proprietary software,
+ that is, all the data on images are stored internally in a proprietary
+ format that can not be accessed by third parties 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Rubin2014"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+We can see then that there is a lack of methods for semantic reasonig to
+ make inferences about cancerous lesions from semantic annotations on AIM
+ .
+ Thus, the main motivation of this work is the possibility of developing
+ reasoning methods based on stage systems, such as TNM Classification of
+ Malignant Tumors ( TNM ), for automatic classification of cancer patients
+ from AIM annotations on these patient images and incorporate them into
+ requirements met by an image annotation systems as EPAD.
+\end_layout
+
+\begin_layout Section
+Bibliography 
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset bibtex
+LatexCommand bibtex
+bibfiles "references/refs"
+options "bibtotoc,elsarticle-harv"
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

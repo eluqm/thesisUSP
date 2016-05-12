@@ -1,0 +1,2364 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass scrbook
+\begin_preamble
+
+\end_preamble
+\options a4paper,titlepage
+\use_default_options false
+\maintain_unincluded_children false
+\begin_local_layout
+Float
+Type                  listing
+GuiName               Listing
+Placement             tbp
+Extension             lol
+NumberWithin          none
+Style                 ruled
+ListName              "List of Listings"
+LaTeXBuiltin          false
+End
+\end_local_layout
+\language brazilian
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize 12
+\spacing onehalf
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 0
+\use_package esint 0
+\use_package mathdots 1
+\use_package mathtools 0
+\use_package mhchem 1
+\use_package stackrel 0
+\use_package stmaryrd 0
+\use_package undertilde 0
+\cite_engine natbib
+\cite_engine_type authoryear
+\biblio_style plainnat
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 3cm
+\topmargin 4cm
+\rightmargin 3cm
+\bottommargin 3cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation skip
+\defskip bigskip
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle fancy
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+Este capítulo descreve os conceitos base relacionados à Web Semântica que
+ serão utilizados no trabalho, tais como: ontologias, linguagens de buscas
+ semânticas, Linked Data, dentre outros conceitos.
+ Na seção 3.1 é apresentado a definição de Web Semântica.
+ Na seção 3.2 é abordado os conceitos relacionados a ontologias.
+ Na seção 3.3 uma breve descrição sobre o conceito de Linked Data é abordada.
+ Na seção 3.4 e 3.5, as linguagens OWL e RDF serão explicadas e então o conceito
+ de 
+\shape italic
+reasoner
+\shape default
+ é elucidado na Seção 3.6.
+ Logo após a Seção 3.7 é descreve sobre a linguagem de busca semântica GeoSPARQL,
+ já na Seção 3.8 é abordado o termo WKT que é a representação de coordenadas
+ utilizadas pelo GeoSPARQL e por fim a Seção 3.9 da uma breve abordagem sobre
+ buscas semânticas geoespaciais.
+\end_layout
+
+\begin_layout Section
+Introdução
+\end_layout
+
+\begin_layout Standard
+Embora a Web tenha sido criada para possibilitar o acesso, intercâmbio e
+ recuperação de informações de maneira rápida e simples, seu crescimento
+ exponencial e caótico fez com que a mesma se tornasse hoje um gigantesco
+ repositório de documentos que deixa muito a desejar quando necessitamos
+ recuperar alguma informação que satisfaça nossas necessidades.
+ Até o momento, não existe nenhuma estratégia abrangente e satisfatória
+ para a indexação de documentos por meio de “motores de busca” que seja
+ muito eficaz 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "SOUZA2004"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+A busca realizada pelos sistemas de recuperação de informação utiliza-se
+ de palavras-chave onde apenas a similaridade e o número de ocorrências
+ de certas palavras, no conteúdo de documentos, são levados em consideração
+ e não a semântica presente naquela informação 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "SOUZA2004"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Visando melhorar a forma de representação da Web atual, também denominada
+ de Web sintática, surge a proposta da Web Semântica, projetada pelo 
+\shape italic
+World Wide Web Consortium
+\shape default
+ (W3C)
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "W3C"
+description "World Wide Web Consortium"
+
+\end_inset
+
+.
+ A Web Semântica é definida pelo W3C como a Web da nova geração onde as
+ informações podem ser usadas tanto por humanos quanto por máquinas.
+ Neste último caso, a informação não é somente utilizada pela máquina para
+ fins de apresentação de conteúdo, mas também para automação, integração,
+ inferências e reutilização em aplicativos 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Boley2001"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Para os seres humanos, compreender a semântica de alguma palavra ou sinal
+ não é uma tarefa extraordinária.
+ O cérebro humano associa os conceitos acumulados ao longo dos anos, para
+ compreender as informações repassadas.
+ No entanto, para as máquinas atuais, "semântica" não deve ser relacionada
+ à "compreensão humana", mas sim, à "inferência e dedução" de informações
+ que estão em um formato estruturado 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Flor2014"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Para atingir os objetivos da Web Semântica, onde os dados possam ser 
+\begin_inset Quotes eld
+\end_inset
+
+compreendidos
+\begin_inset Quotes erd
+\end_inset
+
+ tanto por máquinas e humanos, 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "bernerslee2001"
+
+\end_inset
+
+ propõe uma modelo em camadas para a arquitetura da Web Semântica também
+ conhecida como “bolo de noiva”, a arquitetura lógica é apresentada na Figura
+ 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "WEB1"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename ../figures/WebSemanticArchitecture.png
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Arquitetura da Web Semântica.
+ Fonte: 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "bernerslee2001"
+
+\end_inset
+
+ 
+\begin_inset CommandInset label
+LatexCommand label
+name "WEB1"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+A ideia central da arquitetura proposta por 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "bernerslee2001"
+
+\end_inset
+
+ é de que uma camada seja melhorada e adicionada gradativamente para trazer
+ novas funcionalidades, juntamente com aumento de expressividade para representa
+r os dados e possibilidades de se realizar inferências e autenticações.
+ Essa arquitetura promove o reuso utilizando algo já validado, desse modo
+ minimiza a necessidade de se criar uma nova camada a partir do início.
+ Essa abordagem se dá pelo fato da estrutura da Web permitir pequenas mudanças
+ que são fáceis de se implementar, ao contrário de modificações radicais
+ 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Serique2012"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+O modelo em camadas da arquitetura da Web Semântica pode ser descrito da
+ seguinte forma:
+\end_layout
+
+\begin_layout Itemize
+Base: Compreendida pelos padrões Unicode, permite aos computadores representar
+ e manipular caracteres e URI (
+\shape italic
+Uniform Resources Identifiers
+\shape default
+)
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "URI"
+description "Uniform Resources Identifiers"
+
+\end_inset
+
+ que permite identificar unicamente recursos disponíveis na Web.
+ Ambos padrões tem como objetivo facilitar o intercâmbio de dados na Web.
+ 
+\end_layout
+
+\begin_layout Itemize
+Camada Sintática: é formada pela linguagem XML (
+\shape italic
+Extensible Markup Language
+\shape default
+)
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "XML"
+description "Extensible Markup Language"
+
+\end_inset
+
+ que permite realizar marcações para descrever informações por meio de tags
+ que podem ser facilmente analisadas por máquinas.
+\end_layout
+
+\begin_layout Itemize
+Camada de Dados: Utiliza a camada sintática como suporte e provê um modelo
+ lógico para descrição de dados onde é possível descrever informações sobre
+ um recurso especifico.
+\end_layout
+
+\begin_layout Itemize
+Camada Ontologia: Estende a camada anterior e prove um maior nível de expressivi
+dade para a semântica das informações.
+\end_layout
+
+\begin_layout Itemize
+Camada Lógica: permite definir regras lógicas para inferir novos conhecimentos.
+\end_layout
+
+\begin_layout Itemize
+Camada de Prova e Confiança: provê mecanismos para avaliar o nível de confiabili
+dade das informações.
+\end_layout
+
+\begin_layout Itemize
+Camada de Assinatura Digital: permite incorporar mecanismos de segurança
+ para garantir a confiabilidade da informação.
+ 
+\end_layout
+
+\begin_layout Standard
+Para este trabalho, serão utilizadas as tecnologias da Web Semântica referentes
+ a: ontologias Seção 3.2, as melhores práticas para representar os dados
+ na Web Semântica (
+\shape italic
+Linked Data
+\shape default
+) Seção 3.3, linguagens de construção (OWL, XML, RDF, RDFS) Seções 3.4, 3.5
+ e 3.6, Busca Semântica GeoEspacial Seção 3.7 e GeoSPARQL Seção 3.8.
+ 
+\end_layout
+
+\begin_layout Section
+Ontologias
+\end_layout
+
+\begin_layout Standard
+O termo “ontologia” em sua origem significa o estudo da existência 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Guizzardi2010"
+
+\end_inset
+
+.
+ De acordo com 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Smith2007"
+
+\end_inset
+
+, Ontologia é um ramo da filosofia que procura compreender os tipos, propriedade
+s, estruturas dos objetos e suas relações em todas as áreas da realidade
+ .
+\end_layout
+
+\begin_layout Standard
+Embora o termo ontologia esteja bem difundido atualmente e sua importância
+ seja reconhecida, não existe um consenso sobre sua exata definição.
+ Segundo 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Gruber2005"
+
+\end_inset
+
+ uma ontologia é uma especificação formal e explicita de conceitos que compartil
+ham o mesmo domínio de informação.
+ Já 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Noy2001"
+
+\end_inset
+
+ relata que ontologias surgiram para compartilhar, organizar e especificar
+ conhecimentos de um determinado domínio.
+ 
+\end_layout
+
+\begin_layout Standard
+Uma ontologia, de forma geral pode ser descrita como uma especificação por
+ meio de componentes básicos: classes, relações, axiomas e instâncias, expressas
+ por meio de uma linguagem de construção 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Serique2012"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+O principal papel das ontologias na Web Semântica é explicitar o vocabulário
+ utilizado e servir como padrão para compartilhamento de informação ente
+ agentes, softwares e aplicações 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Serique2012"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Com intuito de fornecer mais expressividade ao contexto geográfico, será
+ abordado a seguir o conceito de Geo-Ontologias para representar um certo
+ domínio.
+ 
+\end_layout
+
+\begin_layout Subsection
+Geo-Ontologias 
+\end_layout
+
+\begin_layout Standard
+Uma ontologia geográfica ou geo-ontologia descreve entidades geográficas,
+ de duas formas distintas: como geocampo e geo-objeto.
+ Quando uma entidade relacionada está focada em dados espaciais como um
+ conjunto de distribuição contínua ela é denominada como geocampo, ao contrario
+ de um geo-objeto que trabalha com dados espaciais discretos e identificáveis
+ espalhados pelo mundo 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "conf/geoinfo/GimenezTB13"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Ao contrario das ontologias gerais, geo-ontologias devem representar relacioname
+ntos espaciais, fatores espaciais, fatos físicos, coleções de dados, modelos
+ de computação geoespacial 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "conf/geoinfo/GimenezTB13"
+
+\end_inset
+
+.
+ Unificando tais características referentes à geoinformações com conhecimento
+ de especialistas no domínio.
+ 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Wang2008"
+
+\end_inset
+
+ definem a seguinte fórmula para descrever geo-ontologias:
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+\begin_inset Formula $Geo-ontologia=\{C,R,A,X,I\}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Nessa definição proposta por 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Wang2008"
+
+\end_inset
+
+, um conjunto de conceitos referentes a um objeto geográfico é representado
+ por C, à relação e as definições desse conjunto é representado por R, os
+ atributos do objeto geográfico é representado por A, os axiomas e suas
+ regras de restrição sobre os conceitos são representados por X e as definições
+ de um objeto material é dada por I.
+\end_layout
+
+\begin_layout Standard
+Na abordagem utilizada por 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Giunchiglia2012"
+
+\end_inset
+
+ uma geo-ontologia pode ser considerada como um 
+\shape italic
+facet
+\shape default
+, ou seja, uma hierarquia homogênea de termos descrevendo um aspecto do
+ domínio, onde cada termo na hierarquia denota um diferente conceito, como
+ especificado pela formula abaixo.
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+\begin_inset Formula $Espaço=\{C,E,R,A\}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Nessa abordagem 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Giunchiglia2012"
+
+\end_inset
+
+ procura descrever o espaço em termos de objetos do mundo real, onde cada
+ conceito descreve uma classe, uma entidade, uma relação ou atributo.
+ Conforme apresentado pela formula descrita por 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Giunchiglia2012"
+
+\end_inset
+
+, C define as classes (objetos do mundo real) , E o conjunto de entidades
+ (as instancias das classes em C), R um conjunto de relações (relacionamento
+ classe entidade, por exemplo, part-of, instance-of, entre outros) e A o
+ conjunto de atributos (descrições quantitativas e qualitativas das entidades).
+\end_layout
+
+\begin_layout Standard
+Neste trabalho será utilizada a definição de espaço proposta por 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Giunchiglia2012"
+
+\end_inset
+
+ para manipular as localidades que irão compor o 
+\shape italic
+Gazetteer
+\shape default
+.
+ De modo que um tipo de lugar, por exemplo, uma reserva, será representado
+ pelas classes (C), que irão possuir um conjunto de entidades E (Egler,
+ Campina, Aldopho Ducke) contendo diversas relações R ( part-of, near-of,
+ etc) com um conjunto de atributos para descrever suas características represent
+ado por A (coordenadas geográficas como, por exemplo, pontos ou polígonos).
+\end_layout
+
+\begin_layout Standard
+O objetivo de representar o 
+\shape italic
+Gazetteer
+\shape default
+ utilizando essa abordagem de representação de Geo-ontologias, proposta
+ por 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Giunchiglia2012"
+
+\end_inset
+
+ é a disponibilização dos dados do 
+\shape italic
+Gazetteer
+\shape default
+ em um padrão de uso comum que vem sendo largamente utilizado e contribuindo
+ para 
+\shape italic
+a Web of Data
+\shape default
+.
+ Esse padrão também conhecido como 
+\shape italic
+Linked Data
+\shape default
+ é abordado na seção a seguir.
+\end_layout
+
+\begin_layout Section
+
+\shape italic
+Linked Open Data
+\end_layout
+
+\begin_layout Standard
+Tradicionalmente, os dados publicados na internet são disponibilizados em
+ documentos em diversos formatos como CSV
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "CSV"
+description "Comma-Separated Values"
+
+\end_inset
+
+, XML ou hipertextos como HTML
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "HTML"
+description "Hypertext Transfer Protocol"
+
+\end_inset
+
+.
+ Tais formatos não preservam a semântica dos dados para que os mesmos sejam
+ compreensíveis por computadores e humanos 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Heath2011"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+A estrutura convencional de hipertextos adotada pela web faz com que o relaciona
+mento entre documentos e dados contidos nos mesmos seja distinto e implícito.
+ Tal fato ocorre, pois as paginas HTML atualmente utilizadas não são suficientem
+ente expressivas para permitir a disponibilização individual de entidades,
+ descrevendo apenas um documento em particular a ser conectado por links
+ inseridos por usuários 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Heath2011"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+No entanto, atualmente a web evoluiu para um espaço global de informação
+ onde documentos e dados estão interconectados.
+ A evolução quanto ao relacionamento desses dados é conhecida como 
+\shape italic
+Linked Data
+\shape default
+ 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Heath2011"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+O termo 
+\shape italic
+Linked Data
+\shape default
+ se refere às melhores praticas para publicação e conexão estruturada de
+ dados na Web.
+ Tais práticas vêm sendo adotadas por diversos trabalhos nos últimos anos,
+ como por exemplo, 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Amanqui2013"
+
+\end_inset
+
+; 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Parundekar2010"
+
+\end_inset
+
+; 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "linkedgeodata"
+
+\end_inset
+
+ levando a criação de um espaço global de dados com bilhões de registros
+ – a 
+\shape italic
+Web of Data
+\shape default
+.
+ 
+\end_layout
+
+\begin_layout Standard
+A adoção de 
+\shape italic
+Linked Data
+\shape default
+ tem levado a extensão da Web como um espaço global de dados onde diversos
+ domínios estão interconectados, como por exemplo, pessoas, companhias,
+ livros, publicações cientificas, dados científicos, entre outros 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Heath2011"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Para conectar todas essas informações, 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Berners-Lee2006"
+
+\end_inset
+
+ define um conjunto de regras para publicar os dados na Web de forma que
+ todos os dados publicados sejam parte de um único espaço de dados.
+\end_layout
+
+\begin_layout Enumerate
+Usar URIs para nomear coisas.
+\end_layout
+
+\begin_layout Enumerate
+Usar HTTP URIs para que pessoas possam procurar coisas 
+\end_layout
+
+\begin_layout Enumerate
+Usar padrões RDF, SPARQL para estruturar os dados e consulta-los.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Incluir links para outras URIs, sendo assim possível descobrir e relacionar
+ os dados entre si
+\end_layout
+
+\begin_layout Standard
+Esse conjunto de regras também conhecido como “princípios de 
+\shape italic
+Linked Data
+\shape default
+”, provê regras básicas para publicar e conectar dados usando a infraestrutura
+ e arquitetura já existente na Web atual 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Heath2011"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Neste trabalho será seguido os padrões sugeridos por 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Berners-Lee2006"
+
+\end_inset
+
+ para publicar e acessar dados na Web esses padrões servirão para definir
+ a forma de estruturação dos dados do 
+\shape italic
+Gazetteer
+\shape default
+.
+ Utilizando esses padrões será possível contribuir para o enriquecimento
+ da 
+\shape italic
+Web of Data
+\shape default
+, além de seguir a proposta de colocar os dados referentes a coleções de
+ espécies da Amazônia em um formato utilizado pela Web Semântica, como especific
+ado em 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Laurindo2011"
+
+\end_inset
+
+ .
+ 
+\end_layout
+
+\begin_layout Standard
+Para publicar os dos no formato de 
+\shape italic
+Linked Data
+\shape default
+ é necessário utilizar tecnologias da Web Semântica como RDF/RDFS, SPARQL.
+ Desse modo a próxima seção irá descrever a linguagem RDF/RDFS.
+\end_layout
+
+\begin_layout Section
+RDF e RDF-Schema 
+\end_layout
+
+\begin_layout Standard
+Para representar dados e documentos contidos na web de forma compreensível
+ tanto para computadores quanto para humanos, o W3C órgão padronizador da
+ web, definiu linguagens RDF e RDFS.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\shape italic
+Resource Description Framework
+\shape default
+ ou RDF
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "RDF"
+description "Resource Description Framework"
+
+\end_inset
+
+ é baseado em XML e serve como base para o processamento de metadados permitindo
+ computadores representarem e compartilharem dados semânticos na Web 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Geiza2004"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+A RDF possui diversas aplicações na Web sendo utilizada na busca de recursos
+ para tornar mecanismos de busca mais eficientes, em bibliotecas virtuais
+ na descrição de conteúdos, no comércio eletrônico, em web sites particulares,
+ entre outros.
+ A RDF em si é uma linguagem simples que permite relacionamentos entre informaçõ
+es 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Geiza2004"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Os documentos RDF são compostos por triplas que são declarações do tipo
+ objeto-atributo-valor, onde cada tripla expressa os termos de um recurso
+ Web (objeto), suas propriedades (atributo) e o valor da propriedade 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Geiza2004"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+A Figura 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "WEB2"
+
+\end_inset
+
+ mostra um exemplo de código RDF utilizando XML e seu respectivo diagrama.
+ Nesse exemplo, o sujeito definido pela URI http://dme.um.pt/jcardoso/ possui
+ diversos predicados, como por exemplo, a propriedade título, que possui
+ um objeto com o valor Jorge Cardoso Web Page.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\begin_inset Graphics
+	filename ../figures/RDF_picture.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Exemplo de triplas em um documento RDF.
+ Fonte: 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Serique2012"
+
+\end_inset
+
+ 
+\begin_inset CommandInset label
+LatexCommand label
+name "WEB2"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+A RDF define um modelo para descrição de relações entre objetos em termos
+ de propriedades e valores, porém não define mecanismos para descrever tais
+ propriedades e relações entre estas propriedades com outros recursos.
+ Para preencher essa lacuna o W3C especificou a RDF Schema (RDFS)
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "RDFS"
+description "Resource Description Framework Schema"
+
+\end_inset
+
+, essa linguagem é uma extensão da RDF responsável por prover mecanismos
+ para declaração de relações entre objetos 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Geiza2004"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+O RDFS descreve regras para o uso das propriedades do RDF, definindo um
+ vocabulário de domínio onde é possível representar hierarquias entre classes
+ e relacionamentos.
+ Uma importante característica do RDFS é que suas propriedades são definidas
+ separadamente de suas classes.
+ Assim, uma propriedade pode ser declarada e usada com uma, ou múltiplas
+ classes a qualquer momento 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Geiza2004"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Neste trabalho o formato de dados RDF/RDFS será utilizado para descrever
+ os dados do 
+\shape italic
+Gazetteer.
+ 
+\shape default
+No entanto, somente a representação em RDF não fornece meios para descrever
+ classes, relacionamentos, igualdades ou desigualdades, restrições de cardinalid
+ade e características das propriedades, sendo portanto necessário utilizar
+ OWL para realizar esse tipo de descrição.
+\end_layout
+
+\begin_layout Section
+Web Ontology Language - OWL 
+\end_layout
+
+\begin_layout Standard
+A 
+\shape italic
+Web Ontology Language
+\shape default
+ (OWL)
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "OWL"
+description "Web Ontology Language "
+
+\end_inset
+
+ é uma linguagem criada pelo W3C para descrever ontologias.
+ Com a OWL, é possível criar representações de dados e documentos na web
+ semântica, representando explicitamente os vocabulários de conceitos, taxonomia
+s e relacionamentos de um domínio de conhecimento.
+ A OWL é uma extensão do vocabulário RDF/RDFS sendo assim expressiva para
+ descrever classes, relacionamentos, restrições de cardinalidade, igualdade
+ ou desigualdade de classes e características de propriedades 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "bechhofer2004"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Os dados e documentos, representados como instâncias de classes em OWL,
+ podem ser submetidos a mecanismos de inferência, onde é possível realizar
+ classificações de forma automática dos conceitos da ontologia gerada, verificar
+ inconsistências em hierarquias e heranças incorretas e checar as restrições
+ sobre os valores das propriedades e suas cardinalidades 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "bechhofer2004"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Atualmente, a OWL encontra-se em sua segunda versão (OWL 2) que é subdividida
+ em três sub-linguagens, OWL EL, OWL QL e OWL RL, cada uma com um poder
+ de expressividade diferente, porém todas permitem a criação de ontologias
+ 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "bechhofer2004"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+OWL EL é baseado na família EL++ de lógica descritiva, sendo que sua utilização
+ é particularmente útil em aplicações que contém um grande número de propriedade
+s e classes para definir uma ontologia.
+ Além disso, o OWL EL utiliza um padrão comum para ontologias com conceitos
+ e planejamento, ou seja, a combinação de conjunções e qualidades existenciais
+ 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "bechhofer2004"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Já o OWL QL, estruturado a partir da família DL-Lite de lógica de descrição
+ (
+\shape italic
+Description Logic
+\shape default
+), foi criado para permitir o raciocínio (
+\shape italic
+reasoning
+\shape default
+) eficiente de grandes quantidades de dados estruturados de acordo com esquemas
+ relativamente simples.
+ Fornecendo vários recursos para capturar modelos conceituais, tais como
+ diagramas de classe UML, diagramas de Entidade de Relacionamento, e esquemas
+ de banco de dados 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "bechhofer2004"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Por fim o OWL RL foi criado para dar suporte a aplicações que exigem raciocínio
+ escalável em troca de alguma restrição de poder expressivo.
+ Através de um subconjunto sintático é possível implementar o raciocínio
+ (
+\shape italic
+reasoning
+\shape default
+) usando tecnologias baseadas em regras.
+ O OWL RL pode ser usado para várias implementações OWL, porém existem algumas
+ restrições na forma como os axiomas e as regras de raciocínio (
+\shape italic
+reasoning
+\shape default
+) são utilizados 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "bechhofer2004"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+As linguagens da Web Semântica possuem uma semântica formal que possibilita
+ a realização de inferências usando 
+\shape italic
+reasoners
+\shape default
+ automatizados.
+ Os 
+\shape italic
+Reasoners
+\shape default
+ são uma das mais importantes ferramentas para realizar inferência em consultas
+ de dados.
+\end_layout
+
+\begin_layout Section
+
+\shape italic
+Reasoners 
+\end_layout
+
+\begin_layout Standard
+Um 
+\shape italic
+reasoner
+\shape default
+ é um programa que realiza inferências logicas a partir de um conjunto explicita
+mente afirmado de fatos ou axiomas, normalmente fornece suporte automatizado
+ para tarefas de raciocínio como, por exemplo, classificação, depuração
+ e consulta 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Dentler2011"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+A finalidade dos 
+\shape italic
+reasoners
+\shape default
+ na Web Semântica é realizar inferência dos dados utilizando tecnologias
+ baseadas em regras com o objetivo de obter novas informações.
+ Para realizar o processo de inferência os 
+\shape italic
+reasoners
+\shape default
+ utilizam um motor de inferência associado com um conjunto de regras descritas
+ em linguagens como OWL, RDF, RDFS 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Flor2014"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Geralmente 
+\shape italic
+reasoners
+\shape default
+ contém dois mecanismos internos para processar bases de conhecimento (KB,
+ 
+\shape italic
+knowledge base
+\shape default
+)
+\shape italic
+
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "KB"
+description "Knowledge Base"
+
+\end_inset
+
+
+\shape default
+, são eles Tbox e Abox 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Dentler2011"
+
+\end_inset
+
+.
+ A Figura 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "WEB4"
+
+\end_inset
+
+ apresenta ambos mecanismos associados a uma KB: 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename ../figures/reasoner.png
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Mecanismos de um 
+\shape italic
+Reasoner
+\shape default
+.
+ Fonte:
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Flor2014"
+
+\end_inset
+
+ 
+\begin_inset CommandInset label
+LatexCommand label
+name "WEB4"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+A seguir ambos mecanismos são descritos conforme 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Flor2014"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+Tbox: Também relatado como Parte Terminológica, contém um conjunto de declaraçõe
+s e axiomas para descrever a estrutura de um domínio.
+ Além disso, o Tbox contém frases que descrevem as relações entre conceitos,
+ de forma hierárquica como, por exemplo, a representação a seguir: 
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+Homem ≡ Pessoa ┌┐ Macho
+\end_layout
+
+\begin_layout Standard
+Nesse exemplo, o conceito (classe) Homem é declarado como a interseção dos
+ conceitos Pessoa e Macho, ou seja, o conceito Homem é formado por todos
+ os indivíduos que compõe as classes Pessoa e Homem simultaneamente.
+ 
+\end_layout
+
+\begin_layout Itemize
+Abox: Também relatado como Parte Declarativa, contém um conjunto de sentenças
+ assertivas sobre os indivíduos que indicam as relações entre indivíduos
+ e conceitos, ou seja, a qual hierarquia os indivíduos pertencem.
+ Um exemplo dessa relação é mostrado na seguir, onde o conceito José é um
+ individuo da classe Homem.:
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+Homem ≡ José
+\end_layout
+
+\begin_layout Standard
+Vale destacar que uma das funções dos 
+\shape italic
+Reasoners
+\shape default
+ é apoiar no processo de consultas da Web Semântica, considerando que o
+ processo de busca necessita de algum tipo de inferência.
+ No entanto, para realizar buscas é preciso utilizar alguma linguagem de
+ busca para representar qual tipo de informação é desejada.
+ 
+\end_layout
+
+\begin_layout Standard
+Nesse contexto as próximas seções 3.7 e 3.8 irão explicar o conceito de Busca
+ Semântica Geospacial e a linguagem Geo-SPARQL para realizar consultas geoespaci
+ais na Web Semântica.
+\end_layout
+
+\begin_layout Section
+Busca Semântica Geoespacial
+\end_layout
+
+\begin_layout Standard
+Segundo 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Egenhofer2002"
+
+\end_inset
+
+, a busca semântica geoespacial é a forma de processar e solicitar informações
+ envolvendo diferentes tipos de dados geoespaciais.
+\end_layout
+
+\begin_layout Standard
+Na web semântica, o processo de recuperação informações geoespaciais é definido
+ como Busca Semântica Geoespacial.
+ Esse tipo de busca permite a recuperação de informações que contenham algum
+ significado geográfico, ou seja, que represente alguma entidade ou fenômeno
+ associado a uma localização na Terra 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Egenhofer2002"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Para realizar as consultas normais, expressas por algum usuário, o mecanismo
+ de busca semântica utiliza-se de ontologias como base para realizar suas
+ inferências por meio de 
+\shape italic
+resoners
+\shape default
+, permitindo aos usuários recuperar os dados desejados utilizando a semântica
+ presente nas expressões ou termos da pesquisa 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Egenhofer2002"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Ao realizar uma busca Semântica Geoespacial, o mecanismo de geo-parsing
+ utiliza uma Geo-ontologia para desambiguar localidades com a finalidade
+ de encontrar resultados mais relevantes.
+ Dessa forma, locais ou documentos relacionados a eles são apresentados
+ como resultado, considerando o sentido do termo utilizado dentro do contexto
+ semântico do documento 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Egenhofer2002"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+A utilização de Busca Semântica Geoespacial possibilita encontrar lugares
+ ou informações que necessitam da realização de consultas complexas, ou
+ seja, que requer 
+\shape italic
+reasoning
+\shape default
+ sobre os locais, como por exemplo, Lagos próximos a Reserva Adolpho Ducke
+ 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "KeBler:2009:ANG:1653771.1653787"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Para se realizar esse tipo de buscas Semânticas Geoespaciais na Web, trabalhos
+ como 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Battle2012,Bereta2013"
+
+\end_inset
+
+ tem feito o uso de Geo-SPARQL (Uma linguagem de consulta geográfica para
+ dados RDF), tecnologia essa que será descrita na seção seguinte.
+\end_layout
+
+\begin_layout Section
+Geo-SPARQL 
+\end_layout
+
+\begin_layout Standard
+Inferência geoespacial é fundamental para inúmeros domínios como, por exemplo,
+ planejamento de transporte, hidrologia, biologia, entre outros.
+ E, nesses domínios, muitas aplicações utilizam-se de bancos de dados relacionai
+s com extensões espaciais.
+\end_layout
+
+\begin_layout Standard
+No entanto, realizar esse tipo de tarefa utilizando banco de dados relacionais
+ gera vários problemas como, por exemplo, consultas com muitas junções entre
+ as entidades, consultas com propriedades variáveis, entre outros.
+\end_layout
+
+\begin_layout Standard
+Com a popularização da web semântica e a utilização de soluções em RDF para
+ realizar junções e inferências geoespaciais entre os bancos de dados, foi
+ possível solucionar tais problemas, porém, como vários grupos criaram diversas
+ soluções com fins variados para esse tipo de tarefa, se viu necessário
+ o estabelecimento de um padrão 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Battle2012"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Devido a esse fato, em Setembro de 2012 o Open Geospatial Consortium (OGC)
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "OGC"
+description "Open Geospatial Consortium"
+
+\end_inset
+
+ lançou a especificação GeoSPARQL que é uma linguagem de busca geográfica
+ para dados RDF que define uma pequena ontologia para representar geometrias
+ e uma série de predicados e funções de consulta SPARQL 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "OCG2012"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Segundo 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "OCG2012"
+
+\end_inset
+
+ GeoSPARQL é especificado em três componentes principais:
+\end_layout
+
+\begin_layout Enumerate
+Definição de um vocabulário para representar relacionamentos, geometrias
+ e características; 
+\end_layout
+
+\begin_layout Enumerate
+Um conjunto de funções específicas de domínio, espaciais para uso em consultas
+ SPARQL
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "SPARQL"
+description "Simple Protocol and RDF Query Language"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Um conjunto de regras de transformação de consulta.
+ 
+\end_layout
+
+\begin_layout Standard
+Os relacionamentos topológicos disponíveis no GeoSPARQL estão divididos
+ em três grupos: 
+\shape italic
+Egenhofer
+\shape default
+, RCC8 e 
+\shape italic
+Simple Feature
+\shape default
+.
+ Neste ultimo podemos observar um exemplo de como ele é definido através
+ da Figura 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "WEB5"
+
+\end_inset
+
+ 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "OCG2012"
+
+\end_inset
+
+.
+ Sendo dois objetos, A e B, podemos ver se ambos se sobrepõem a partir da
+ função geo:overlaps.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename ../figures/GeoSparqlEC8.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Relacionamentos 
+\shape italic
+Simple Feature
+\shape default
+, GeoSPARQL.
+ Fonte: 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "OCG2012"
+
+\end_inset
+
+.
+ 
+\begin_inset CommandInset label
+LatexCommand label
+name "WEB5"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+A utilização de GeoSPARQL é importante, pois segue os padrões propostos
+ pela OGC.
+ A OGC é um conjunto de 472 companhias, agências governamentais e universidades
+ que tem como objetivo desenvolver e publicar padrões geoespaciais, sendo
+ os mesmos largamente utilizados em sistemas de recuperação de dados geoespaciai
+s tais como, 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Battle2012"
+
+\end_inset
+
+ e 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Bereta2013"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Conceitualmente, as consultas realizadas em Geo-SPARQL fazem a correspondência
+ de padrões em grafos.
+ Os padrões são como declarações RDF, mas podem conter nomes de variáveis
+ no lugar de alguns nós (recursos) ou links (propriedades) 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Flor2014"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Para representar as coordenadas geográficas e então permitir que consultas
+ sejam realizadas pela linguagem Geo-SPARQL a OGC define a representação
+ de geometrias por meio da especificação 
+\shape italic
+Well-Known Text.
+ 
+\shape default
+Na subseção a seguir essa forma de representação de coordenadas geográficas
+ será discutida em detalhes.
+\end_layout
+
+\begin_layout Subsection
+Well-Known Text (WKT) 
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "WKT"
+description "Well-Known Text"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\shape italic
+Well-Known Text
+\shape default
+ (WKT) é um padrão largamente utilizado pela OGC para representar geometrias.
+ WKT pode ser usado para representar sistemas de referência de coordenadas
+ geográficas, geometrias e as transformações entre os sistemas de referência
+ de coordenadas geográficas.
+ 
+\end_layout
+
+\begin_layout Standard
+A representação WKT é descrita na “
+\shape italic
+OpenGIS Simple Feature Access - Part 1: Common Architecture
+\shape default
+” como uma especificação da OGC, que segue os mesmos padrões definidos na
+ ISO 19125-1.
+ Esse padrão consiste na especificação para representar e manipular uma
+ 
+\shape italic
+Simple Feature
+\shape default
+, ou seja, uma propriedade com todos os atributos espaciais descritos por
+ partes, por uma linha reta ou uma interpolação planar entre conjuntos de
+ pontos 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Koubarakis2012"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Geometrias em WKT estão rescritas em 1 ou 2 dimensões, podendo as mesmas
+ existirem nos planos 
+\begin_inset Formula $R$
+\end_inset
+
+2, 
+\begin_inset Formula $R$
+\end_inset
+
+3 ou 
+\begin_inset Formula $R$
+\end_inset
+
+4.
+ Geometrias pertencentes ao 
+\begin_inset Formula $R$
+\end_inset
+
+2 consistem de pontos com coordenadas x e y, por exemplo, POINT (1 2) na
+ sintaxe definida pelo WKT.
+ Geometrias existentes no 
+\begin_inset Formula $R$
+\end_inset
+
+3 possuem pontos com as coordenadas x,y e z ou x, y e m onde m é um valor
+ de medida.
+ Por exemplo, o ponto POINT(-3 -60 32) pode ser usado para representar a
+ temperatura da cidade de Manaus em graus Célsius.
+ Nesse exemplo -3 é a latitude da cidade de Manaus, -60 é a longitude e
+ 32 é a temperatura.
+ As geometrias que existem no 
+\begin_inset Formula $R$
+\end_inset
+
+4 tem pontos com coordenadas x, y, z e m com semântica similar 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Koubarakis2012"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Segundo 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Koubarakis2012"
+
+\end_inset
+
+As Geometrias representadas usando WKT têm as seguintes propriedades :
+\end_layout
+
+\begin_layout Enumerate
+Todas as Geometrias são topologicamente fechadas, isso significa que todos
+ os pontos que integram o limite da Geometria são considerados pertencentes
+ à geometria, mesmo que eles não possam ser representados explicitamente
+ pela geometria.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Todas as coordenadas com uma geometria estão em um mesmo sistema de referência
+ de coordenadas geográficas.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Para objetos Geométricos existentes no 
+\begin_inset Formula $R$
+\end_inset
+
+3 e 
+\begin_inset Formula $R$
+\end_inset
+
+4, as operações espaciais apenas trabalham em seu “mapa geométrico”, isso
+ é, são projetados somente no 
+\begin_inset Formula $R$
+\end_inset
+
+2.
+ Portanto, os valores z e m não refletem nos cálculos quando são executadas
+ funções espaciais para verificar interseções, junções, ou na geração de
+ novos valores geométricos por meio das funções 
+\shape italic
+buffer
+\shape default
+, 
+\shape italic
+convexHull
+\shape default
+, entre outras.
+ Assim a especificação WKT trabalha somente com representações geométricas
+ bidimensionais, mas permite associar valores a essas geometrias.
+\end_layout
+
+\begin_layout Standard
+Para representar as coordenadas geográficas em geometrias do tipo 
+\shape italic
+Simple Feature
+\shape default
+ em WKT o padrão especificado pela OGC descreve a seguinte hierarquia de
+ classes Figura 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "WEB6"
+
+\end_inset
+
+.
+ Logo abaixo, será descrito essa especificação em detalhes para cada representaç
+ão geométrica.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename ../figures/WKT_Herarquia.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Classes das Representações espaciais em WKT.
+ Fonte: 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Koubarakis2012"
+
+\end_inset
+
+ 
+\begin_inset CommandInset label
+LatexCommand label
+name "WEB6"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Ponto
+\series default
+ : (
+\shape italic
+Point
+\shape default
+) representa uma simples localização no espaço, tendo os valores de x e
+ y para representar o espaço geográfico e podendo ter os valores de z e
+ m para representar informações adicionais dependendo do sistema de referencia
+ para associação de coordenadas.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Curva
+\series default
+: (
+\shape italic
+Curve
+\shape default
+) É uma geometria unidimensional.
+ Os subtipos da classe curva definem o tipo de interpolação que é usado
+ entre os pontos.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Linha de Pontos
+\series default
+: (
+\shape italic
+LineString
+\shape default
+) É um subtipo da classe curva que usa uma interpolação de linhas entre
+ pontos.
+ Uma linha de pontos é fechada se ela começa com um ponto e termina no mesmo
+ ponto.
+ Uma linha de pontos é simples se ela não possui auto-interseção.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Linha
+\series default
+: (
+\shape italic
+Line
+\shape default
+) É uma linha de pontos (LineString) com exatamente dois pontos.
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Anel Linear
+\series default
+.
+ (
+\shape italic
+LinearRing
+\shape default
+) É uma sequência de linha que é fechada e simples.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Superfície
+\series default
+: (
+\shape italic
+Surface
+\shape default
+) É uma geometria bidimensional.
+ Esta classe é abstrata, ou seja, não pode ser instanciada.
+ Uma superfície simples pode consistir de um simples “curso” que tem uma
+ borda exterior e zero ou mais bordas interiores como, por exemplo um polígono
+ com buracos.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Polígono
+\series default
+.
+ (
+\shape italic
+Polygon
+\shape default
+) É uma superfície simples e planar que têm exatamente uma borda exterior
+ podendo ter muitas bordas interiores sem interseção.
+ Cada polígono é topologicamente fechado e nenhuma das bordas interiores
+ e exteriores se cruzam.
+ No entanto, duas bordas podem ter um ponto de intersecção em comum, mas
+ somente como uma tangente.
+ O interior de um polígono é um conjunto de pontos conectados, no entanto
+ um polígono com falhas não possui seu exterior conectado.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Triângulo
+\series default
+: (
+\shape italic
+Triangle
+\shape default
+) É um polígono com três vértices não colineares sem bordas interiores 
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Superfície Poliédrica
+\series default
+: (
+\shape italic
+Polyhedral Surface
+\shape default
+) É uma coleção continua de polígonos que compartilham segmentos de bordas
+ em comum.
+ Cada par de polígonos que se tocam tem uma borda em comum que é expressa
+ como uma coleção finita de linhas de pontos.
+ Cada linha de pontos é uma parte da borda de dois ou mais polígonos.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Rede Irregular Triangulada
+\series default
+: (
+\shape italic
+Triangulated Irregular Network
+\shape default
+) É uma superfície poliédrica que consiste somente de triângulos.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Coleção de geometrias:
+\series default
+ (
+\shape italic
+Geometry Collection
+\shape default
+) É um conjunto distinto de geometrias.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Múltiplos Pontos
+\series default
+: (
+\shape italic
+MultiPoint
+\shape default
+) É uma coleção de geometria da qual elementos são pontos que não estão
+ conectados.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Múltiplas Curvas
+\series default
+: (
+\shape italic
+MultiCurve
+\shape default
+) É uma coleção de geometria das quais elementos são curvas
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Linhas de Pontos Múltiplas
+\series default
+: (
+\shape italic
+MultiLineString
+\shape default
+) É uma coleção de geometrias das quais elementos são linhas de pontos.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Superfícies Múltiplas
+\series default
+: (
+\shape italic
+MultiSurface
+\shape default
+) É uma coleção de geometria bidimensional onde elementos são superfícies.
+ O interior de quaisquer duas geometrias não podem se cruzar.
+ As bordas de quaisquer duas geometrias não se cruzam, mas podem se tocar
+ em um número finito de pontos.
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Polígonos Múltiplos
+\series default
+: (
+\shape italic
+MultiPolygon
+\shape default
+) É uma superfície múltipla onde os elementos são polígonos e as bordas
+ de cada polígono não podem se interceptar.
+ 
+\end_layout
+
+\begin_layout Standard
+A interpretação das coordenadas de uma geometria depende do sistema de coordenad
+as de referência que está sendo utilizado em conjunto com a geometria.
+ De acordo com o padrão WKT, o sistema de referência que está associado
+ a uma geometria não é incorporado na representação do objeto, mas é dado
+ separadamente usando a notação apropriada de coordenadas, como mostrado
+ na Figura 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "WEB6"
+
+\end_inset
+
+ 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Koubarakis2012"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+A representação do pradrão WKT na linguagem de busca geográfica GeoSPARQL
+ segue os padrões elucidados anteriormente e acrescenta algumas particuliaridade
+s como, por exemplo, a necessidade de se criar um tipo de dados juntamente
+ com a sua URI correspondente.
+ Um exemplo de como representar um WKT em Geo-SPARQL é exibido no algoritmo
+ 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "alg:RepresentaWKT"
+
+\end_inset
+
+.
+ Nesse exemplo o ponto WKT assume o tipo 
+\shape italic
+wktLiteral
+\shape default
+ para que possa ser reconhecido pelo GeoSPARQL e uma URI é inserida para
+ determinar o formato da coordenada geográfica juntamente com sua representação.
+ 
+\end_layout
+
+\begin_layout Standard
+É importante elucidar que conforme se altere essa URI, por exemplo, utilizando
+ a representação especificada pela URI: 
+\begin_inset Flex URL
+status collapsed
+
+\begin_layout Plain Layout
+
+http://www.opengis.net/def/crs/EPSG/0/4326
+\end_layout
+
+\end_inset
+
+ a representação de latitude e longitude dos pontos do polígono é alterada,
+ desse modo o exemplo descrito no algoritmo 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "alg:RepresentaWKT"
+
+\end_inset
+
+ teria as seguintes coordenadas: 
+\begin_inset Quotes eld
+\end_inset
+
+
+\shape italic
+Polygon(( 34.1 -83.6, 34.1 -83.2, 34.5 -83.2, 34.5 -83.6, 34.1 -83.6))
+\shape default
+
+\begin_inset Quotes erd
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float algorithm
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+<geo:asWKT rdf:datatype= "http://www.opengis.net/ont/geosparql#wktLiteral">
+ 
+\end_layout
+
+\begin_layout Plain Layout
+<![CDATA[ <http://www.opengis.net/def/crs/OGC/1.3/CRS84> Polygon((-83.6 34.1,
+ -83.2 34.1, -83.2 34.5, -83.6 34.5, -83.6 34.1)) ]]> 
+\end_layout
+
+\begin_layout Plain Layout
+</geo:asWKT>
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Representação de um WKT em GeoSPARQL.
+ 
+\begin_inset CommandInset label
+LatexCommand label
+name "alg:RepresentaWKT"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Alguns exemplos da representação de um WKT são mostrados na Figura 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "WEB7"
+
+\end_inset
+
+, sua sintaxe de representação detalhada pode ser encontrada em 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "OGC2011"
+
+\end_inset
+
+.
+ Neste trabalho a representação WKT será utilizada para representar as informaçõ
+es geográficas dos lugares que compõe o 
+\shape italic
+Gazetteer
+\shape default
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename ../figures/Geometry_types.png
+	scale 80
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Exemplos de representação de geometrias em WKT.
+ Fonte: 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Koubarakis2012"
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "WEB7"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Considerações Finais 
+\end_layout
+
+\begin_layout Standard
+Este capítulo apresentou os conceitos base sobre Web Semântica, para o desenvolv
+imento do 
+\shape italic
+Gazetteer
+\shape default
+ Colaborativo.
+ Inicialmente foi descrito uma breve introdução sobre Web Semântica, mostrando
+ seus objetivos e arquitetura.
+ Logo após, os conceitos referentes a ontologias e geo-ontologias foram
+ explicados, evidenciando qual tipo de formalização será adotada no trabalho.
+ Em seguida o termo 
+\shape italic
+Linked Data
+\shape default
+, seus padrões e sua aplicabilidade no trabalho foram descritos.
+\end_layout
+
+\begin_layout Standard
+Nas seções referentes as tecnologias, RDF/RDFS, OWL e 
+\shape italic
+Reasoners
+\shape default
+ foram descritos seus conceitos, com exemplos e aplicabilidade no desenvolviment
+o do trabalho.
+ Por fim, as seções referentes a Busca Semântica Geoespacial, que compreende
+ a descrição desse tipo de busca, as linguagens e representações geométricas
+ e qual o motivo de se utiliza-las no trabalho foram descritos.
+\end_layout
+
+\end_body
+\end_document
