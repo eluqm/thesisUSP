@@ -322,7 +322,7 @@ key "Pilbin"
 A Figura 
 \begin_inset CommandInset ref
 LatexCommand formatted
-reference "Pacs1"
+reference "Pacs1-1"
 
 \end_inset
 
@@ -390,7 +390,7 @@ key "Serique2012"
 
 \begin_inset CommandInset label
 LatexCommand label
-name "Pacs1"
+name "Pacs1-1"
 
 \end_inset
 
@@ -487,7 +487,7 @@ Por exemplo, no CT do peito uma vasta gama de densidades de tecido está
  detalhes do pulmão, mostrados na Figura 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "fig:CT1"
+reference "fig:CT1-1-1"
 
 \end_inset
 
@@ -544,7 +544,7 @@ key "Arnold2012"
 
 \begin_inset CommandInset label
 LatexCommand label
-name "fig:CT1"
+name "fig:CT1-1-1"
 
 \end_inset
 
@@ -600,7 +600,7 @@ key "Ziegler2005"
 Por exemplo, a Figura 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "fig:METASTA"
+reference "fig:METASTA-1-1"
 
 \end_inset
 
@@ -652,7 +652,7 @@ key "Ziegler2005"
  
 \begin_inset CommandInset label
 LatexCommand label
-name "fig:METASTA"
+name "fig:METASTA-1-1"
 
 \end_inset
 
@@ -774,7 +774,7 @@ key "Ma2010"
 , Figura 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "AnnotaimagemCT"
+reference "AnnotaimagemCT-1-1-1"
 
 \end_inset
 
@@ -815,7 +815,7 @@ key "Kurtz2014"
  
 \begin_inset CommandInset label
 LatexCommand label
-name "AnnotaimagemCT"
+name "AnnotaimagemCT-1-1-1"
 
 \end_inset
 
@@ -824,10 +824,6 @@ name "AnnotaimagemCT"
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Plain Layout
 
 \end_layout
 
@@ -1038,7 +1034,7 @@ key "Kurtz2014"
  Na Figura 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "RADLEX1"
+reference "RADLEX1-1-1-1"
 
 \end_inset
 
@@ -1077,7 +1073,7 @@ key "Kurtz2014"
  
 \begin_inset CommandInset label
 LatexCommand label
-name "RADLEX1"
+name "RADLEX1-1-1-1"
 
 \end_inset
 
@@ -1086,10 +1082,6 @@ name "RADLEX1"
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Plain Layout
 
 \end_layout
 

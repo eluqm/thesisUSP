@@ -2781,8 +2781,8 @@ sloppy
 \begin_layout Standard
 \begin_inset CommandInset bibtex
 LatexCommand bibtex
-bibfiles "references/refs"
-options "bibtotoc,elsarticle-harv"
+bibfiles "/home/edson/Documents/tesis/thesisUNSA/references/refs CBMS"
+options "plainnat"
 
 \end_inset
 
