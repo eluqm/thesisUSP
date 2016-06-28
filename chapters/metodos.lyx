@@ -1,0 +1,1143 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass scrbook
+\begin_preamble
+
+\end_preamble
+\options a4paper,titlepage
+\use_default_options false
+\maintain_unincluded_children false
+\begin_local_layout
+Float
+Type                  listing
+GuiName               Listing
+Placement             tbp
+Extension             lol
+NumberWithin          none
+Style                 ruled
+ListName              "List of Listings"
+LaTeXBuiltin          false
+End
+\end_local_layout
+\language brazilian
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize 12
+\spacing onehalf
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 0
+\use_package esint 0
+\use_package mathdots 1
+\use_package mathtools 0
+\use_package mhchem 1
+\use_package stackrel 0
+\use_package stmaryrd 0
+\use_package undertilde 0
+\cite_engine natbib
+\cite_engine_type authoryear
+\biblio_style plainnat
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 3cm
+\topmargin 4cm
+\rightmargin 3cm
+\bottommargin 3cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation skip
+\defskip bigskip
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle fancy
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset Note Comment
+status collapsed
+
+\begin_layout Plain Layout
+Visando melhorar a forma de representação da Web atual, também denominada
+ de Web sintática, surge a proposta da Web Semântica, projetada pelo 
+\shape italic
+World Wide Web Consortium
+\shape default
+ (W3C)
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "W3C"
+description "World Wide Web Consortium"
+
+\end_inset
+
+.
+ A Web Semântica é definida pelo W3C como a Web da nova geração onde as
+ informações podem ser usadas tanto por humanos quanto por máquinas.
+ Nesse último caso, a informação não é somente utilizada pela máquina para
+ fins de apresentação de conteúdo, mas também para automação, integração,
+ inferências e reutilização em aplicativos 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Boley2001"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Plain Layout
+Para os seres humanos, compreender a semântica de alguma palavra ou sinal
+ não é uma tarefa extraordinária.
+ O cérebro humano associa os conceitos acumulados ao longo dos anos, para
+ compreender as informações repassadas.
+ No entanto, para as máquinas, "semântica" não deve ser relacionada à "compreens
+ão humana", mas sim, à "inferência e dedução" de informações que estão em
+ um formato estruturado 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Flor2014"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Plain Layout
+Devido à necessidade de se abordar a semântica das localidades para o processo
+ de desambiguação e processamento das consultas, que geralmente são feitas
+ por meio de termos vagos, tecnologias da Web Semântica serão usadas no
+ 
+\shape italic
+Gazetteer.
+ 
+\emph on
+Essas tecnologias ajudarão
+\shape default
+\emph default
+ a representar entidades geográficas ao se realizar um consultas ao 
+\emph on
+Gazetteer
+\emph default
+ e fazer a desambiguação e classificação de locais.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+O objetivo fundamental da Web Semântica é fazer com que as máquinas entendam
+ o significado das informações disponíveis na Web; daí a palavra "semântica".
+ No caso de seres humanos, entender um sinal ou uma palavra não é uma tarefa
+ extraordinária, nosso cérebro associa os conceitos que acumulou ao longo
+ dos anos, portanto, nossa interpretação semântica é fornecida pelas estruturas
+ neurais.
+ Mas para as máquinas atuais, "entendimento" não deve ser relacionado à
+ "compreensão humana", mas sim, à "inferência e dedução".
+\end_layout
+
+\begin_layout Standard
+Conceitos relacionados a Web Semântica e ontologias foram mencionados no
+ capítulo anterior, neste capítulo esses conceitos vão ser apresentados
+ e discutidos.
+ O capítulo está organizado da seguinte maneira, na Seção 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Web-Semântica"
+
+\end_inset
+
+ a Web Semântica é discutida.
+ Na Seção 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Ontologias"
+
+\end_inset
+
+ serão expostos conceitos referentes à Ontologias, a Web Ontology Language
+ (OWL) é exposta na seção 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Web-Ontology-Language"
+
+\end_inset
+
+.
+ Em seguida, na seção 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Bio-Ontologies"
+
+\end_inset
+
+ apresentaremos as principais bio\SpecialChar \nobreakdash-
+ontologias e terminologias envolvidas nas
+ pesquisas deste trabalho.
+\end_layout
+
+\begin_layout Section
+Web Semântica
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Web-Semântica"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset citation
+LatexCommand citet
+key "bernerslee2001"
+
+\end_inset
+
+ propuseram em 2001 a Web semântica como uma extensão da Web atual que fornece
+ informações com significado bem definido, permitindo que computadores e
+ pessoas trabalhem em cooperação.
+ A partir dessa visão de conceitual sobre a Web semântica, Berners-Lee propôs
+ a arquitetura da Web Semântica conhecida como “bolo de noiva”, que está
+ ilustrada na Figura 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "WEBE1-1"
+
+\end_inset
+
+.
+ A idéia central dessa arquitetura é de que cada camada vai gradativamente
+ trazendo uma nova contribuição como maior expressividade, possibilidade
+ de se realizar inferências e autenticação.
+ A arquitetura da Web Semântica está categorizada nas seguintes camadas:
+ camada URI/Unicode, camada sintática, camada de dados, camada de ontologia,
+ camada lógica, camada de prova, camada de validação e camada de assinatura
+ digital.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Comment
+status collapsed
+
+\begin_layout Plain Layout
+In 2000, during a conference on XML, Tim Berners Lee proposed a model layered
+ architecture for the Semantic Web , known as the "wedding cake"
+\begin_inset CommandInset citation
+LatexCommand citep
+key "bernerslee2001"
+
+\end_inset
+
+.
+ The logical architecture is shown in 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "WEBE1"
+
+\end_inset
+
+.
+ It shows, in layers, like the semantic web core technologies should fit.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename /home/edson/Documents/drawing.svg
+	lyxscale 50
+	scale 20
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Arquitetura em camadas da Web Semântica, fonte: 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "bernerslee2001"
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "WEBE1-1"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+A base da arquitetura de camadas da Web Semântica é formada pelos padrões
+ Unicode e URIs.
+ Eles facilitam o intercâmbio de dados: o Unicode permite aos computadores
+ representar e manipular caracteres em quase todas as línguas existentes
+ e URI
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "URIs"
+description "Uniform Resources Identifiers"
+
+\end_inset
+
+s (
+\emph on
+\lang english
+Uniform Resources Identifiers
+\emph default
+\lang brazilian
+) permitem identificar unicamente recursos disponíveis na Web através de
+ uma 
+\lang english
+string
+\lang brazilian
+.
+\end_layout
+
+\begin_layout Standard
+A camada sintática é formada pela linguagem XML (
+\emph on
+\lang english
+eXtensible Markup Language
+\emph default
+\lang brazilian
+) e permite a criação de marcações para descrição de informações.
+ As sintaxes das camadas superiores são baseadas em XML.
+ A camada de dados representa conceitos e regras lógicas.
+ A linguagem RDF
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "RDF"
+description "Resource Description Framework"
+
+\end_inset
+
+ (
+\emph on
+\lang english
+Resource Description Framework
+\emph default
+\lang brazilian
+) provê um modelo de descrição lógica de dados permitindo descrever informações
+ sobre um determinado recurso e a RDF 
+\lang english
+Schema
+\lang brazilian
+ permite a criação de um vocabulário para a camada RDF; 
+\end_layout
+
+\begin_layout Standard
+A camada da ontologia estende a camada de dados, provendo um maior nível
+ de expressividade para a definição da semântica das informações.
+ A camada lógica permite definir regras lógicas para inferir novos conhecimentos.
+ A camada de prova e confiança, situadas na parte alta da pirâmide, provêm
+ um mecanismo para avaliar o nível de confiabilidade das fontes de recursos
+ e informações.
+ A camada de assinatura digital, inserida na estrutura da pirâmide, permite
+ incorporar mecanismos de segurança que garantam a confiabilidade da informação.
+\end_layout
+
+\begin_layout Section
+Ontologias
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Ontologias"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Segundo
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Smith2007"
+
+\end_inset
+
+, a Ontologia, um ramo da filosofia, é a ciência “do que é”, dos tipos e
+ estruturas dos objetos, propriedades, eventos processos e relações em todas
+ as áreas da realidade.
+ Na área das ciências de computação e informação, o termo ontologia vem
+ se tornando muito popular, principalmente nas áreas de engenharia do conhecimen
+to, processamento de linguagem natural, sistemas de informação cooperativos,
+ integração inteligente da informação e gerência do conhecimento 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Smith2003"
+
+\end_inset
+
+.
+ 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Gruber1993"
+
+\end_inset
+
+ define o termo ontologia como uma especificação formal e explicita de uma
+ conceitualização compartilhada de um domínio de interesse e de informações
+ de como os indivíduos são agrupados e se encaixam em um determinado domínio.
+ 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Noy2001"
+
+\end_inset
+
+ afirmam que as ontologias surgiram como artefatos para representar, organizar
+ e compartilhar conhecimento em um determinado domínio.
+\end_layout
+
+\begin_layout Standard
+O principal papel das ontologias na Web Semântica é explicitar o vocabulário
+ utilizado e servir como padrão para compartilhamento de informação entre
+ agentes, softwares e aplicações 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Silvio2014"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Comment
+status collapsed
+
+\begin_layout Plain Layout
+There are various definitions of an ontology.
+ Merriam Webster’s dictionary defines Ontology as a branch of philosophy
+ which studies what exists in all areas of reality.
+ In Artificial Intelligence (AI), the meaning of ontology (with a lower-case
+ “o”) can be slightly different.
+ A suitable definition is given by 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Kurtz2014"
+
+\end_inset
+
+: an ontology is a formal, explicit specification of a shared conceptualization.
+ A ‘con- ceptualization’ refers to an abstract model of some phenomenon
+ in the world by identifying the relevant concepts of that phenomenon.
+ ‘Explicit’ means that the type of concepts used and the constraints on
+ their use are explicitly defined.
+ ‘Formal’ refers to the fact that the ontology should be machine understandable,
+ which excludes natural language.
+ Concretely speaking, an ontology consists in a finite list of concepts
+ and relationships linking those concepts, formally describing a domain.
+ The concepts may be classes or instances, and the ontol- ogy may be viewed
+ as a graph.
+ Typically, the relationships include hierarchies of classes.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Web Ontology Language – OWL
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Web-Ontology-Language"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Embora a proposta inicial da Web Semântica fosse utilizar o RDF, essa linguagem
+ demonstrou limitações em poder de expressividade 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Horrocks03fromshiq"
+
+\end_inset
+
+.
+ O W3C lançou em 2004 a 
+\lang english
+Web Ontology Language 
+\lang brazilian
+(OWL
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "OWL"
+description "Web Ontology Language"
+
+\end_inset
+
+), um resultado da formação do 
+\emph on
+\lang english
+Web Ontology Working Group
+\emph default
+\lang brazilian
+.
+ Ontologias em OWL foram desenvolvidas em várias áreas, como e-Science,
+ medicina, biologia, geografia, astronomia, defesa e nas indústrias automobilíst
+ica e aeronáutica 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "j.websem156"
+
+\end_inset
+
+.
+ Apesar do sucesso da linguagem OWL foram encontradas algumas deficiências.
+ Em resposta aos comentários e requisições dos usuários da OWL, surgiram
+ a OWL 1.1, uma revisão incremental da linguagem e, depois de extensivas
+ discussões, a OWL 2 (abril de 2008)
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+http://www.w3.org/TR/owl-features/
+\end_layout
+
+\end_inset
+
+.
+ A OWL 2 foi considerada um passo substancial para a evolução da linguagem
+ 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "j.websem156"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename /media/edson/1a2a6ed2-2887-4387-8226-f76497f34156/home/edson/Documentos/drawing4.0.svg
+	lyxscale 40
+	scale 30
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+kjkkkkk
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Atualmente, a linguagem OWL encontra-se em sua segunda versão (OWL 2) que
+ é subdividida em três sub-linguagens, OWL EL, OWL QL e OWL RL, cada uma
+ com um poder de expressividade diferente, porém todas permitem a criação
+ de ontologias 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "bechhofer2004"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+A OWL EL é baseada na família EL++ de lógica descritiva, sendo que sua utilizaçã
+o é particularmente útil em aplicações que contém um grande número de propriedad
+es e classes para definir uma ontologia.
+ Além disso, a OWL EL utiliza um padrão comum em ontologias para conceitos
+ e planejamento, ou seja, a combinação de conjunções e qualidades existenciais
+ 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "bechhofer2004"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+A OWL QL é estruturada a partir da família DL-Lite de lógica de descrição
+ (
+\lang english
+Description Logic
+\lang brazilian
+).
+ Ela foi criada para permitir o raciocínio (reasoning) eficiente em grandes
+ quantidades de dados estruturados de acordo com esquemas relativamente
+ simples.
+ Ela fornece vários recursos para capturar modelos conceituais, tais como
+ diagramas de classe UML, diagramas de Entidade de Relacionamento, e esquemas
+ de banco de dados 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "bechhofer2004"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Por fim, a OWL RL foi criada para dar suporte a aplicações que exigem raciocínio
+ escalável em troca de alguma restrição de poder expressivo.
+ Através de um subconjunto sintático, é possível implementar o raciocínio
+ (
+\emph on
+reasoning
+\emph default
+) usando tecnologias baseadas em regras que geralmente são mais escaláveis
+ e fáceis de implementar 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "bechhofer2004"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Subsection
+Semantic Web Rule Language - SWRL
+\end_layout
+
+\begin_layout Standard
+Dado que a interoperabilidade é uma das metas principais da Web Semântica
+ e que as regras são uma parte fundamental dessas metas, um passo fundamental
+ para fazer essa interoperação na Web é a 
+\lang english
+Semantic Web Rule Language
+\lang brazilian
+ (SWRL
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "SWRL"
+description "Semantic Web Rule Language"
+
+\end_inset
+
+)
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+http://www.daml.org/rules/proposal/
+\end_layout
+
+\end_inset
+
+, que foi projetada para ser o idioma de regras da Web Semântica
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Connor2005"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+A SWRL é baseada numa combinação das sub\SpecialChar \nobreakdash-
+linguagens OWL-DL e OWL-Lite da
+ OWL e as sub\SpecialChar \nobreakdash-
+linguagens 
+\lang english
+Unary/Binary Datalog
+\lang brazilian
+ da 
+\emph on
+Rule Markup Language
+\emph default
+
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+http://www.ruleml.org/
+\end_layout
+
+\end_inset
+
+
+\emph on
+.
+\end_layout
+
+\begin_layout Standard
+A SWRL permite aos usuários escrever regras na forma de expressões Horn
+ e usar termos de conceitos OWL para raciocinar (
+\lang english
+to reason
+\lang brazilian
+) sobre indivíduos OWL.
+ As regras podem ser usados ​​para inferir novos conhecimentos a partir
+ de bases de conhecimento em OWL.
+\end_layout
+
+\begin_layout Standard
+A especificação da SWRL
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+http://www.w3.org/Submission/SWRL/
+\end_layout
+
+\end_inset
+
+ não impõe restrições sobre como o raciocínio deve ser realizado com regras
+ SWRL.
+ Assim, pesquisadores são livres para usar uma variedade de mecanismos de
+ regras para raciocinar com regras SWRL armazenadas em uma base de conhecimento
+ OWL.
+ Dessa forma, a SWRL fornece um ponto de partida conveniente para a integração
+ de sistemas de regras para trabalhar com a Web Semântica
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Connor2005"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Section
+Bio Ontologies
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Bio-Ontologies"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Grandes volumes de dados digitais sobre conhecimento médico e biológico
+ sobrecarregam os pesquisadores dessas áreas.
+ Eles têm a difícil tarefa de gerenciar terabytes de informação, com conteúdos
+ semânticos, em grandes repositórios de dados que usam tecnologias de gerenciame
+nto cada vez mais sofisticadas.
+ Pesquisadores da área biomédica podem trabalhar com uma enorme quantidade
+ de dados, que não pode ser interpretada sem o auxílio de computadores 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Serique2012"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Os pesquisadores também devem agregar e integrar toda estas informação.
+ Para tanto, eles precisam de ferramentas que permitam a descoberta de conhecime
+nto nesse paradigma rico em dados.
+ Portanto, eles começaram a utilizar ontologias para descrever a estrutura
+ de seus domínios complexos e relacionar seus dados para compartilhar e
+ interoperar informações Biomédicas
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Rubin2008"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Muitas ciências, a exemplo da Informática Biomédica, estão utilizando ontologias
+ para promover o entendimento, interoperabilidade e controle de entropia
+ dos dados.
+ Isso é feito através do uso e desenvolvimento de novas ferramentas semânticas,
+ capazes de recuperar e organizar dados distribuídos apoiadas, em sua grande
+ parte, por Aplicações Web
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Serique2012"
+
+\end_inset
+
+.
+ Nos campos de medicina que este trabalho se foca, radiologia e oncologia,
+ as duas mais importantes ontologias usadas são a FMA e o RadLex.
+ 
+\end_layout
+
+\begin_layout Subsection
+Foundational Model of Anatomy – FMA 
+\end_layout
+
+\begin_layout Standard
+Uma bio\SpecialChar \nobreakdash-
+ontologia importante no escopo deste estudo é a 
+\lang english
+Foundational Model of Anatomy
+\lang brazilian
+ (FMA
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "FMA"
+description "Foundational Model of Anatomy"
+
+\end_inset
+
+).
+ De modo geral, a anatomia é o estudo das estruturas físicas dos organismos
+ biológicos.
+ Descrever e capturar de forma computável as terminologias e ontologias
+ que envolvem entidades anatômicas é uma tarefa não trivial.
+ A falta de uma representação generalizada da anatomia leva os desenvolvedores
+ de terminologias e ontologias, tanto da área de medicina clínica quanto
+ de biologia, a representar a anatomia a partir dos seus próprios pontos
+ de vista.
+ Isso gera um obstáculo para correlacionar os termos anatômicos entre si,
+ devido a heterogeneidade das representações anatômicas
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Serique2012"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+A estrutura ontológica da FMA fornece uma modelo de inferência, permitindo
+ que ferramentas computacionais possam inferir informações sobre dados anatômico
+s 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Mejino2008"
+
+\end_inset
+
+.
+ Especificamente, a FMA representa um corpo coerente de conhecimentos declarativ
+os sobre a anatomia humana 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Mejino2008"
+
+\end_inset
+
+.
+ No entanto, seu quadro ontológico pode ser aplicado e estendido para outras
+ espécies.
+ A FMA tem sido desenvolvida e mantida pelo 
+\emph on
+\lang english
+Structural Informatics Group
+\lang brazilian
+ 
+\emph default
+da
+\emph on
+ 
+\lang english
+University of Washington
+\emph default
+\lang brazilian
+.
+\end_layout
+
+\begin_layout Subsection
+RadLex
+\end_layout
+
+\begin_layout Standard
+O RadLex é a mais importante bio\SpecialChar \nobreakdash-
+ontologia do escopo deste trabalho.
+ Ela surgiu da necessidade de disseminar o conhecimento radiológico entre
+ radiologistas.
+ De forma geral, os radiologistas utilizam constantemente imagens médicas,
+ relatórios de imagens e registros médicos que se encontram online.
+ Para tanto, eles necessitam de uma linguagem unificada para organizar e
+ recuperar esses dados.
+\end_layout
+
+\begin_layout Standard
+Por muitas décadas, o 
+\emph on
+\lang english
+American College of Radiology
+\emph default
+\lang brazilian
+ (ACR
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "ACR"
+description "American College of Radiology"
+
+\end_inset
+
+) desenvolveu o 
+\emph on
+Index for Radiological Diagnoses
+\emph default
+, conhecido como o Índice ACR.
+ Ele tem características atraentes para indexação de imagens.
+ Para tanto, utiliza um sistema de dois códigos numéricos, separados por
+ pontos.
+ O primeiro é para a localização da anatomia e o segundo para a entidade
+ patológica: por exemplo, o código ACR 642.3212 significa 642 = “adenocarcinoma
+ primário” e 3212 = “língula” 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "doi:10.1148/rg.266065168"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Como o Índice ACR possui apenas milhares de índices, fica fácil para as
+ pessoas se lembrarem.
+ Ttodavia, comparado às novas terminologias e ontologias, como o SNOMED-CT
+ e FMA, fica evidente que ele oferece poucos termos específicos.
+ 
+\end_layout
+
+\begin_layout Standard
+Com o surgimento do mundo digital, a necessidade de criar sistemas de indexação
+ informatizados levou a RSNA a desenvolver a ontologia RadLex (RNSA, 2012),
+ como resposta as lacunas encontradas em outras terminologias radiológicas,
+ criando assim uma única e completa terminologia.
+ A ontologia RadLex é uma forma unificada de reunir os termos usados em
+ radiologia; ela é projetada para atender às necessidade dos radiologistas
+ 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "doi:10.1148/rg.266065168"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+O RadLex está disponível para download no 
+\emph on
+National Center for Biomedical Computing’s Bioportal site
+\emph default
+ 
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+http://bioportal.bioontology.org/ontologies/40885
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection
+
+\lang english
+Annotation Imaging Markup
+\end_layout
+
+\begin_layout Standard
+As modernas imagens médicas contêm uma vasta quantidade de informação no
+ formato padrão DICOM.
+ No entanto, essas informações são relacionadas apenas a metadados sobre
+ as imagens.
+ As informações mais importantes relacionadas as imagens ficam codificadas
+ nos seus pixels.
+ Elas contêm um rico conteúdo que, porém, não está explícito ou acessível
+ às máquinas.
+ Essas informações são interpretadas por observadores humanos, como os radiologi
+stas, e não são capturadas ou relacionadas às imagens de uma forma estruturada
+ 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Rubin2008"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+O projeto 
+\lang english
+Annotation Imaging Markup
+\lang brazilian
+ (AIM), que atualmente encontra-se em sua quarta versão, trata de um modelo
+ de informação que oferece uma infra-estrutura de apoio para a criação de
+ uma coleção de anotações médicas de imagens (que podem ser lidas por máquinas).
+ Ele é resultado do cumprimento de novas exigências da comunidade de imagens
+ médicas e vem conseguindo atingir os requisitos estabelecidos pela 
+\emph on
+caBIG 
+\lang english
+In Vivo Imaging Workspace
+\emph default
+\lang brazilian
+ 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Rubin2008"
+
+\end_inset
+
+.
+ O projeto é centrado no modelo AIM de anotação e marcação de imagens DICOM.
+ As anotações e marcações de imagens são consideradas como um objeto de
+ informação da imagem, porém não estão ligadas fisicamente as mesmas.
+ Esse modelo de informação, no entanto, é compatível com outros formatos
+ de imagens além do DICOM.
+ O modelo AIM não cria nenhuma nova ontologia para descrever anotações,
+ ele usa termos do RadLex para descrever, lesões e junta a eles informações
+ numéricas, como volume ou diâmetro.
+\end_layout
+
+\begin_layout Standard
+O modelo AIM de informação, ou AIM Schema, é descrito em 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Rubin2008,Rubin2014"
+
+\end_inset
+
+ usando um diagrama de classe UML.
+ O modelo é usado para expressar a captura de informações contidas nas imagens
+ médicas através de anotações e marcações de informações relevantes.
+ Uma anotação pode ser explicativa ou uma descrição de informação, gerada
+ por seres humanos ou por máquinas, que se relaciona diretamente com o conteúdo
+ de uma imagem ou várias imagens de referência.
+ As anotações tornam-se uma coleção de descrições de conteúdo que podem
+ ser usadas para fins de mineração de dados semânticos.
+ Uma marcação de imagem é composta de símbolos gráficos ou descrições textuais
+ associados a uma imagem.
+\end_layout
+
+\begin_layout Standard
+Marcações podem ser usadas para descrever uma informação textual e as regiões
+ de interesse visual.
+ Informações nas anotações e marcações são usadas para preencher o AIM Schema,
+ através de funções da biblioteca de software AIM, com a finalidade de geração
+ de objetos DICOM SR, documentos XML AIM e documentos no formato HL7 CDA.
+\end_layout
+
+\begin_layout Section
+Considerações Finais
+\end_layout
+
+\begin_layout Standard
+A fim de melhorar a forma de trabalho na área de saúde, as tecnologias da
+ Web Semântica podem auxiliar as pesquisas médicas e encontrar soluções
+ através do auxilio de computadores, como, por exemplo, o uso dos formatos
+ OWL, SWRL e AIM para processar (reason) anotações de imagens médicas.
+ O AIM vem sendo desenvolvido e elaborado, tanto para ajudar na estruturação
+ dos relatórios radiológicos, principalmente imagens, como também para ser
+ entendido por máquinas.
+ Esses avanços vem contribuído no entendimento, interoperabilidade e compartilha
+mento de conhecimento biomédico na área de radiologia.
+\end_layout
+
+\end_body
+\end_document
