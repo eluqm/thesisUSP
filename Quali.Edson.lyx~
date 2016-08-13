@@ -356,23 +356,6 @@ filename "chapters/4_Related_work2.lyx"
 
 \begin_layout Chapter
 Metodos
-\begin_inset CommandInset label
-LatexCommand label
-name "chap:Metodos"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset CommandInset include
-LatexCommand input
-filename "chapters/metodos.lyx"
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Chapter
