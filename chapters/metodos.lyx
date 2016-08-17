@@ -164,58 +164,19 @@ Gazetteer
 \end_layout
 
 \begin_layout Standard
-O objetivo fundamental da Web Semântica é fazer com que as máquinas entendam
- o significado das informações disponíveis na Web; daí a palavra "semântica".
- No caso de seres humanos, entender um sinal ou uma palavra não é uma tarefa
- extraordinária, nosso cérebro associa os conceitos que acumulou ao longo
- dos anos, portanto, nossa interpretação semântica é fornecida pelas estruturas
- neurais.
- Mas para as máquinas atuais, "entendimento" não deve ser relacionado à
- "compreensão humana", mas sim, à "inferência e dedução".
-\end_layout
-
-\begin_layout Standard
-Conceitos relacionados a Web Semântica e ontologias foram mencionados no
- capítulo anterior, neste capítulo esses conceitos vão ser apresentados
- e discutidos.
- O capítulo está organizado da seguinte maneira, na Seção 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "sec:Web-Semântica"
-
-\end_inset
-
- a Web Semântica é discutida.
- Na Seção 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "sec:Ontologias"
-
-\end_inset
-
- serão expostos conceitos referentes à Ontologias, a Web Ontology Language
- (OWL) é exposta na seção 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "sub:Web-Ontology-Language"
-
-\end_inset
-
-.
- Em seguida, na seção 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "sec:Bio-Ontologies"
-
-\end_inset
-
- apresentaremos as principais bio\SpecialChar \nobreakdash-
-ontologias e terminologias envolvidas nas
- pesquisas deste trabalho.
-\end_layout
-
-\begin_layout Standard
-A nossa abordagem é composto por três tarefas:
+O foco deste trabalho é a construção de um sistema para permitir o uso de
+ 
+\shape italic
+reasoning
+\shape default
+ em anotações contidas em imagens médicas.
+ Este capítulo ira descrever a metodologia utilizada para alcançar esse
+ fim.
+ A nossa abordagem é composto por três tarefas: Na Seção 5.1 A transformação
+ do modelo de informação AIM, em uma representação ontológica que define
+ um modelo de informação semanticamente equivalente.
+ Em seguida, na Seção 5.2, ........
+ Na seção 5.3, ....
 \end_layout
 
 \begin_layout Section
@@ -257,7 +218,7 @@ key "Bulu"
 \end_inset
 
 .
- No entanto, esta ontologia representa a versão 3.0 do AIM 
+ No entanto, essa ontologia representa a versão 3.0 do AIM 
 \begin_inset CommandInset ref
 LatexCommand formatted
 reference "AIM3UML"
@@ -273,7 +234,61 @@ key "Rubin2014"
 
 \end_inset
 
-, Nós expandimos a ontologia do Hakan Bulu[ figura 3 e 4].( 3.0 y 4.0).
+, Nós expandimos a ontologia do Hakan Bulu 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:aim3hakan"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename /Applications/thesisUSP/figures/aim3ontologyprotege.png
+	lyxscale 20
+	scale 10
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:aim3hakan"
+
+\end_inset
+
+Ontologia do Hakan Bulu 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Bulu"
+
+\end_inset
+
+ baseada no modelo AIM 3.0
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -284,25 +299,216 @@ Esta extensão captura lesões e medidas derivadas durante os ensaios clínicos
  de Web Semântica.
 \end_layout
 
-\begin_layout Subsection
-A ontologia AIM4-O
+\begin_layout Subsubsection*
+Namespaces
 \end_layout
 
 \begin_layout Standard
-Os termos AIM4-O ( classes e propriedades ) são agrupados em dois categorias
- para fornecer uma introdução incremental para a ontologia: Starting Point
- Terms e Expanded Terms.
+Os seguintes prefixos de namespace são usados ​​ao longo deste documento.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Tabular
+<lyxtabular version="3" rows="5" columns="3">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+prefix 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Namespace IRI
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+definition
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+rdf
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+http://www.w3.org/1999/02/22-rdf-syntax-ns# 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+The RDF namespace
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+xsd
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+http://www.w3.org/2000/10/XMLSchema#
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+XML Schema Namespace 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+owl
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+http://www.w3.org/2002/07/owl#
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+The OWL namespace
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+aim
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+http://www.w3.org/ns/aim4#
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+The AIM4-O namespace 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Prefijos e Namespaces usados na ontologia AIM4-O 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Ontologia AIM4-O
+\end_layout
+
+\begin_layout Standard
+Os termos da Ontologia AIM4-O ( classes e propriedades ) são agrupados em
+ dois categorias a fim de fornecer uma introdução incremental: Basic Terms
+ e Expanded Terms.
 \end_layout
 
 \begin_layout Standard
 
 \series bold
-Starting point classes:
+Basic classes:
 \series default
- fornecem a base para capturar anotaçoes e marcação de informações relevantes
+ Fornecem a base para capturar anotaçoes e marcação de informações relevantes
  para imagens.
- Através destas classes pode ser descrita explicitamente que tipo de informação
- o modelo pode coletar, a informacao pode ser de várias disciplinas.
+ Através destas classes pode ser descrita explicitamente o tipo de informação
+ que pode coletar o modelo, a informaçào pode ser de várias disciplinas.
  O usuario pode estender o modelo para atender suas necessidades, seguindo
  os critérios descritos no 
 \begin_inset CommandInset citation
@@ -323,12 +529,74 @@ As classes base já foram definidas na ontologia fornecida por Hakan Bulu
  As classes nesta categoria estão listados abaixo:
 \end_layout
 
-\begin_layout Standard
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
 
 \series bold
-AIM:Calculation, AIM:GeometricShape, AIM:ImagingObservation, AIM:Annotation,
- AIM:ImageReference, AIM:ImageAnnotation,AIM:CalculationResult,AIM:CalculationDa
-ta,AIM:ImagingObservation,AIM:ImagingObservationCharacteristics.
+AIM:Calculation
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\series bold
+AIM:GeometricShape
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\series bold
+AIM:ImagingObservation
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\series bold
+AIM:Annotation
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\series bold
+AIM:ImageReference
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\series bold
+AIM:ImageAnnotation
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\series bold
+AIM:CalculationResult
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\series bold
+AIM:CalculationData
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\series bold
+AIM:ImagingObservation
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\series bold
+AIM:ImagingObservationCharacteristics
 \end_layout
 
 \begin_layout Standard
@@ -341,11 +609,32 @@ Expanded Terms classes:
  as classes e propriedades nesta categoria estão listados abaixo:
 \end_layout
 
-\begin_layout Standard
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
 
 \series bold
-AIM:Entity, AIM:AnnotationCollection, AIM:imageAnnotationCollection, AIM:Imaging
-PhysicalEntity
+AIM:Entity
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\series bold
+AIM:AnnotationCollection
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\series bold
+AIM:imageAnnotationCollection
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\series bold
+AIM:ImagingPhysicalEntity
 \begin_inset Foot
 status open
 
@@ -358,7 +647,21 @@ AnatomicEntity na versao 3.0 do AIM
 
 \end_inset
 
-, AIM:ImagingPhysicalCharacteristic, AIM:MarkupEntity.
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\series bold
+AIM:ImagingPhysicalCharacteristic
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\series bold
+AIM:MarkupEntity
 \end_layout
 
 \begin_layout Subsection
@@ -366,13 +669,13 @@ Descrição da Ontologia AIM4-O
 \end_layout
 
 \begin_layout Subsubsection
-Starting Point Terms 
+Basic Terms 
 \end_layout
 
 \begin_layout Standard
 Esta categoria é um pequeno conjunto de classes e propriedades que podem
  ser usados ​​para criar descrições iniciais das imagens.
- As 10 classes proporcionan uma base para o resto do AIM4-O:
+ As 9 classes proporcionan uma base para o resto do AIM4-O:
 \end_layout
 
 \begin_layout Itemize
@@ -474,15 +777,16 @@ reference "fig:classes-base"
 
 \begin_layout Standard
 \begin_inset Float figure
+placement H
 wide false
 sideways false
 status open
 
 \begin_layout Plain Layout
 \begin_inset Graphics
-	filename /media/edson/1a2a6ed2-2887-4387-8226-f76497f34156/home/edson/Documentos/thesisUSP/figures/AIM3.svg
+	filename ../figures/AIM3.pdf
 	lyxscale 40
-	scale 18
+	scale 17
 
 \end_inset
 
@@ -499,7 +803,14 @@ name "fig:classes-base"
 
 \end_inset
 
+As 9 
+\series bold
 classes base
+\series default
+ do modelo e as propiedade que se relacionam, neste documento o diagrama
+ representa entidades como ovais e retângulos.
+ As propriedades são mostrados em cor vermelho.
+ 
 \end_layout
 
 \end_inset
@@ -520,71 +831,19 @@ reference "lis:exemplo1"
 
 \end_inset
 
- AIM4-O descreve os recursos envolvidos na criação da uma anotacao sobre
- uma imagen.
- O exemplo utiliza apenas termos Starting point e serve como uma base para
- a elaboração que será descrito em secções subsequentes.
- O exemplo estabelece como uma ImageAnnotation 
+ descreve os recursos envolvidos na criação da uma anotaçao sobre uma imagen.
+ O exemplo utiliza apenas termos de tipo 
 \series bold
-
-\begin_inset Quotes eld
-\end_inset
-
-:1.2.288.3.2205383238.1512.1207945935.1
-\begin_inset Quotes erd
-\end_inset
-
-
+basic
 \series default
- captura da imagem a informação, gráfica (coordenadas espaciais), a imagem
- a ser anotada, o tamanho e da descrição da anotação feita na imagem, através
- dos indivíduos:
-\series bold
- 
-\begin_inset Quotes eld
-\end_inset
-
-:Polyline
-\begin_inset Quotes erd
-\end_inset
-
-, 
-\begin_inset Quotes eld
-\end_inset
-
-:1.3.6.1.4.1.9328.50.1.10607
-\begin_inset Quotes erd
-\end_inset
-
-, 
-\begin_inset Quotes eld
-\end_inset
-
-:1.5465798.46468.4566874
-\begin_inset Quotes erd
-\end_inset
-
-, 
-\begin_inset Quotes eld
-\end_inset
-
-:Conspicuity,Internal Structure
-\begin_inset Quotes erd
-\end_inset
-
-, 
-\series default
-respectivamente
-\series bold
-.
-
-\series default
+ e serve como uma base para a elaboração que será descrita em secções subsequent
+es.
  
 \end_layout
 
 \begin_layout Standard
 \begin_inset listings
-lstparams "language=XML,float,basicstyle={\tiny\rmfamily},breaklines=true,frame={single}"
+lstparams "language=XML,float,basicstyle={\tiny\rmfamily},breaklines=true,frame={lines}"
 inline false
 status open
 
@@ -646,7 +905,7 @@ Individual: 1.2.288.3.2205383238.1512.1207945935.1
 
 \begin_layout Plain Layout
 
-     aim:hasAnatomicEntity           :Lung,
+     aim:hasAnatomicEntity        :Lung,
 \end_layout
 
 \begin_layout Plain Layout
@@ -1006,7 +1265,62 @@ name "lis:exemplo1"
 
 \end_inset
 
-ajassadsadsadasdasdasdasdsaj
+O exemplo estabelece como uma ImageAnnotation com um identificador 
+\series bold
+
+\begin_inset Quotes eld
+\end_inset
+
+:1.2.288.3.2205383238.1512.1207945935.1
+\begin_inset Quotes erd
+\end_inset
+
+
+\series default
+ captura da uma imagem: a informação gráfica (coordenadas espaciais), o
+ tamanho, a localização e a descrição da anotação feita na imagem, através
+ dos indivíduos:
+\series bold
+ 
+\begin_inset Quotes eld
+\end_inset
+
+:Polyline
+\begin_inset Quotes erd
+\end_inset
+
+, 
+\begin_inset Quotes eld
+\end_inset
+
+:LUNG
+\begin_inset Quotes erd
+\end_inset
+
+, 
+\begin_inset Quotes eld
+\end_inset
+
+:1.5465798.46468.4566874
+\begin_inset Quotes erd
+\end_inset
+
+ cm, 
+\begin_inset Quotes eld
+\end_inset
+
+:Conspicuity,Internal Structure
+\begin_inset Quotes erd
+\end_inset
+
+, 
+\series default
+respectivamente
+\series bold
+.
+
+\series default
+ 
 \end_layout
 
 \end_inset
@@ -1020,15 +1334,18 @@ ajassadsadsadasdasdasdasdsaj
 \end_layout
 
 \begin_layout Standard
-Uma ilustração gráfica da AIM4-O no exemplo 
+Uma ilustração gráfica do exemplo 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "lis:exemplo1"
 
 \end_inset
 
-, mostra como as classes de tipo Start Point referem se uma a otra na figura
- 
+, mostra como as classes de tipo 
+\series bold
+Basic
+\series default
+ referem se uma a otra na figura 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:example1aim3"
@@ -1040,15 +1357,17 @@ reference "fig:example1aim3"
 
 \begin_layout Standard
 \begin_inset Float figure
+placement H
 wide false
 sideways false
 status open
 
 \begin_layout Plain Layout
 \begin_inset Graphics
-	filename /media/edson/1a2a6ed2-2887-4387-8226-f76497f34156/home/edson/Documentos/thesisUSP/figures/AIM3example.svg
-	lyxscale 40
-	scale 15
+	filename ../figures/AIM3example.pdf
+	lyxscale 50
+	scale 22
+	rotateAngle 270
 
 \end_inset
 
@@ -1065,7 +1384,20 @@ name "fig:example1aim3"
 
 \end_inset
 
-figura ....
+ilustração gráfica do exemplo 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "lis:exemplo1"
+
+\end_inset
+
+ onde as 9 
+\series bold
+classes base
+\series default
+ do modelo e seus individuos são mostrados.
+ Ovais e retângulos representam entidades e as propriedades são mostrados
+ em cor vermelho.
 \end_layout
 
 \end_inset
@@ -1173,13 +1505,14 @@ reference "fig:classes-extend"
 
 \begin_layout Standard
 \begin_inset Float figure
+placement H
 wide false
 sideways false
 status open
 
 \begin_layout Plain Layout
 \begin_inset Graphics
-	filename /media/edson/1a2a6ed2-2887-4387-8226-f76497f34156/home/edson/Documentos/thesisUSP/figures/AIM4.svg
+	filename ../figures/AIM4.pdf
 	lyxscale 40
 	scale 18
 
@@ -1198,9 +1531,13 @@ name "fig:classes-extend"
 
 \end_inset
 
-os termos expandidos se basan em classes de tipo starting point, este diagrama
- descreve as classes abstratas como ovais roxas envolvendo sua instância
- (imageAnnotationCollection, ImageAnnotation , geometricShape ).
+Os termos expandidos são baseados em classes de tipo 
+\series bold
+basic
+\series default
+, neste diagrama descreve-se as classes abstratas como ovais roxas envolvendo
+ sua instância (imageAnnotationCollection, ImageAnnotation , geometricShape
+ ).
  Pode-se ver que o nome de algumas classes mudaram em comparação com o modelo
  base e agora eles tem um sufixo "Entity" o que significa que essas classes
  são uma instância da classe abstrata principal 
@@ -1224,17 +1561,43 @@ Entity
 
 \end_layout
 
-\begin_layout Plain Layout
-
-\end_layout
-
 \end_inset
 
 
 \end_layout
 
 \begin_layout Standard
+O exemplo seguinte ilustra os termos 
+\series bold
+
+\begin_inset Quotes eld
+\end_inset
+
+expanded
+\begin_inset Quotes erd
+\end_inset
+
+
+\series default
+ usados para representar individuos da ontologia 
+\series bold
+AIM4-O
+\series default
+, através da representação de uma anotação sobre uma imagen como no exemplo
+ da seção anterior.
+ O exemplo 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "lis:exemplo2"
+
+\end_inset
+
+ descreve os novos recursos envolvidos na criação da uma anotaçao.
+\end_layout
+
+\begin_layout Standard
 \begin_inset listings
+lstparams "language=XML,float,basicstyle={\tiny\rmfamily},frame={single}"
 inline false
 status open
 
@@ -1335,7 +1698,7 @@ sd:string,
 
 \begin_layout Plain Layout
 
-        aim:comment                "CT / THORAX  1.0  B45F / 273"^^xsd:string,
+        aim:comment                "CT/THORAX 1.0 B45F/273"^^xsd:string,
       
 \end_layout
 
@@ -1395,6 +1758,343 @@ sd:string
 
 \begin_layout Plain Layout
 
+Individual:   jma0x979fa9y3k4cwypqjvtechwitqb3glvImageAnnotationCollectiondzjyw
+\end_layout
+
+\begin_layout Plain Layout
+
+   Types:          
+\end_layout
+
+\begin_layout Plain Layout
+
+             TwoDimensionMultiPoint
+\end_layout
+
+\begin_layout Plain Layout
+
+   Facts:       
+\end_layout
+
+\begin_layout Plain Layout
+
+  aim:type                        "TwoDimensionMultiPoint"^^xsd:string,
+\end_layout
+
+\begin_layout Plain Layout
+
+  aim:uniqueIdentifier            "jma0x979fa9y3k4cwypqjvtechwitqb3glvdzjyw"^^xs
+d:string
+\end_layout
+
+\begin_layout Plain Layout
+
+  aim:imageReferenceUid           "1.2.826.0.1.3680043"^^xsd:string,
+\end_layout
+
+\begin_layout Plain Layout
+
+  aim:includeFlag                 false,      
+\end_layout
+
+\begin_layout Plain Layout
+
+  aim:referencedFrameNumber       273
+\end_layout
+
+\begin_layout Plain Layout
+
+.
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Individual:   a4lpf1nncfbvh5dljf6gfw6r6i3om1ece6270nix
+\end_layout
+
+\begin_layout Plain Layout
+
+    Types: 
+\end_layout
+
+\begin_layout Plain Layout
+
+             CalculationEntity
+\end_layout
+
+\begin_layout Plain Layout
+
+   Facts:        
+\end_layout
+
+\begin_layout Plain Layout
+
+  aim:hasCalculationResult        :a4lpf1nncnixExtendedCalculationResult,
+\end_layout
+
+\begin_layout Plain Layout
+
+  aim:description                 "LineLength"^^xsd:string,      
+\end_layout
+
+\begin_layout Plain Layout
+
+  aim:typeCode                    "[{codeSystemName=private, codeSystem=LineLeng
+th,
+\end_layout
+
+\begin_layout Plain Layout
+
+                                  code=LineLength}]"^^xsd:string,
+\end_layout
+
+\begin_layout Plain Layout
+
+  aim:uniqueIdentifier            "a4lpf1nncfbvh5dljf6gfw6r6i3om1ece6270nix"^^xs
+d:string
+\end_layout
+
+\begin_layout Plain Layout
+
+.
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Individual:   a4lpf1nncnixExtendedCalculationResult
+\end_layout
+
+\begin_layout Plain Layout
+
+    Types:          
+\end_layout
+
+\begin_layout Plain Layout
+
+          ExtendedCalculationResult          
+\end_layout
+
+\begin_layout Plain Layout
+
+   Facts:        
+\end_layout
+
+\begin_layout Plain Layout
+
+   aim:dataType                  "[{codeSystemName=, codeSystem=, 
+\end_layout
+
+\begin_layout Plain Layout
+
+                                  code=, codeSystemVersion=}]"^^xsd:string,
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+   aim:type                        "ExtendedCalculationResult"^^xsd:string,
+     
+\end_layout
+
+\begin_layout Plain Layout
+
+   aim:unitOfMeasure               "linear"^^xsd:string,
+\end_layout
+
+\begin_layout Plain Layout
+
+   aim:values                      1.7432112f
+\end_layout
+
+\begin_layout Plain Layout
+
+.
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Individual:  hojggsv5f543pzsffj8jbijgp11thm9qdjow4idd
+\end_layout
+
+\begin_layout Plain Layout
+
+    Types:          
+\end_layout
+
+\begin_layout Plain Layout
+
+           ImagingObservationEntity          
+\end_layout
+
+\begin_layout Plain Layout
+
+   Facts:        
+\end_layout
+
+\begin_layout Plain Layout
+
+  aim:annotatorConfidence         0.0f,      
+\end_layout
+
+\begin_layout Plain Layout
+
+  aim:label                       "Lesion"^^xsd:string,
+\end_layout
+
+\begin_layout Plain Layout
+
+  aim:typeCode                    "{codeSystemName=RECIST-AMS,codeSystem=LesionB
+aseline Evaluation,
+\end_layout
+
+\begin_layout Plain Layout
+
+                                  code=S81,codeSystemVersion=}"^^xsd:string,
+      
+\end_layout
+
+\begin_layout Plain Layout
+
+  aim:uniqueIdentifier            "hojggsv5f543pzsffj8jbijgp11thm9qdjow4idd"^^xs
+d:string
+\end_layout
+
+\begin_layout Plain Layout
+
+.
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Individual:  g08jnm9ow79tijgj1br3q8wd89nq69epjdnxxo30
+\end_layout
+
+\begin_layout Plain Layout
+
+    Types:          
+\end_layout
+
+\begin_layout Plain Layout
+
+			ImagingPhysicalEntity          
+\end_layout
+
+\begin_layout Plain Layout
+
+	Facts:        
+\end_layout
+
+\begin_layout Plain Layout
+
+  aim:annotatorConfidence         0.0f,      
+\end_layout
+
+\begin_layout Plain Layout
+
+  aim:label                       "Location"^^xsd:string,      
+\end_layout
+
+\begin_layout Plain Layout
+
+  aim:typeCode                    "{codeSystemName=RadLex,codeSystem=liver,
+\end_layout
+
+\begin_layout Plain Layout
+
+                                  code=RID58,codeSystemVersion=}"^^xsd:string,
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+  aim:typeCode                    "{codeSystemName=RadLex.3.10,codeSystem=Couinaud
+hepaticsegment7,
+\end_layout
+
+\begin_layout Plain Layout
+
+                                  code=RID67, codeSystemVersion=}"^^xsd:string,
+      
+\end_layout
+
+\begin_layout Plain Layout
+
+  aim:uniqueIdentifier            "g08jnm9ow79tijgj1br3q8wd89nq69epjdnxxo30"^^xs
+d:string
+\end_layout
+
+\begin_layout Plain Layout
+
+.
+\end_layout
+
+\begin_layout Plain Layout
+
+    
+\end_layout
+
+\begin_layout Plain Layout
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "lis:exemplo2"
+
+\end_inset
+
+Como no exemplo da seção anterior uma anotação e sua representação na forma
+ de individuo 
+\series bold
+AIM4-O
+\series default
+ é descrita, mas neste exemplo podemos ver que destaca o surgimento de um
+ conceito abstrato como 
+\series bold
+ImageAnnotationCollection
+\series default
+, ele é um recipiente que reúne um tipo de anotações como ImageAnnotations
+ 
+\series bold
+(
+\begin_inset Quotes eld
+\end_inset
+
+9gs43xqj1kyl13lmega0zhoenzvgeakkprft8fw8
+\begin_inset Quotes erd
+\end_inset
+
+).
+ 
+\series default
+Entre algumas outras diferenças, podemos citar: o surgimento de alguns dataPrope
+rties como typeCode, annotatorConfidence.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
   
 \end_layout
 
@@ -1404,217 +2104,39 @@ sd:string
 \end_layout
 
 \begin_layout Standard
-\begin_inset Quotes eld
+Uma ilustração gráfica do exemplo 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "lis:exemplo2"
+
 \end_inset
 
-mejorar para el final
-\begin_inset Quotes erd
+, mostra como as classes de tipo
+\series bold
+ Extended
+\series default
+ referem se uma a otra na figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:example1aim4"
+
 \end_inset
 
- (AIM4-O é uma ontologia leve que pode ser adotado em uma ampla gama de
- aplicações.
- AIM4-O está de acordo com o perfil OWL-RL [owl2-PRIMER]???' .....
- Assim, a ontologia AIM4-O espera para ser usado directamente em aplicações,
- bem como servir como um modelo de referência para a criação de ontologias
- de domínio específico e, assim, facilita a modelagem de proveniência interoperá
-vel.
- Para demonstrar o uso de classes PROV-O e propriedades, este documento
- usa um cenário de exemplo proveniência semelhante à introduzida no PROV-Primer
- [PROV-PRIMER] .)
-\end_layout
-
-\begin_layout Subsubsection
-Namespaces
+.
 \end_layout
 
 \begin_layout Standard
-\begin_inset Float table
+\begin_inset Float figure
 wide false
 sideways false
 status open
 
 \begin_layout Plain Layout
-\begin_inset Tabular
-<lyxtabular version="3" rows="6" columns="3">
-<features rotate="0" tabularvalignment="middle">
-<column alignment="center" valignment="top">
-<column alignment="center" valignment="top">
-<column alignment="center" valignment="top">
-<row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-prefix 
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Namespace IRI
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-definition
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-rdf
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-http://www.w3.org/1999/02/22-rdf-syntax-ns# 
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-The RDF namespace
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-xsd
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-http://www.w3.org/2000/10/XMLSchema#
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-XML Schema Namespace 
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-</lyxtabular>
+\begin_inset Graphics
+	filename ../figures/AIM4example.pdf
+	lyxscale 50
+	scale 20
+	rotateAngle 270
 
 \end_inset
 
@@ -1625,24 +2147,36 @@ XML Schema Namespace
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Prefijos e Namespaces usados na ontologia AIM4-O 
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Section
-Web Semântica
 \begin_inset CommandInset label
 LatexCommand label
-name "sec:Web-Semântica"
+name "fig:example1aim4"
+
+\end_inset
+
+ilustração gráfica do exemplo 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "lis:exemplo2"
+
+\end_inset
+
+ onde as 
+\series bold
+classes de tipo extended
+\series default
+ do modelo e seus individuos são mostrados.
+ Ovais e retângulos representam entidades e as propriedades são mostrados
+ em cor vermelho.
+ A figura mostra entidades ovais cercado por linhas pontilhadas, o que significa
+ que estas entidades são classes de tipo 
+\series bold
+Entity
+\end_layout
+
+\end_inset
+
+
+\end_layout
 
 \end_inset
 
@@ -1650,63 +2184,41 @@ name "sec:Web-Semântica"
 \end_layout
 
 \begin_layout Standard
-\begin_inset CommandInset citation
-LatexCommand citet
-key "bernerslee2001"
-
-\end_inset
-
- propuseram em 2001 a Web semântica como uma extensão da Web atual que fornece
- informações com significado bem definido, permitindo que computadores e
- pessoas trabalhem em cooperação.
- A partir dessa visão de conceitual sobre a Web semântica, Berners-Lee propôs
- a arquitetura da Web Semântica conhecida como “bolo de noiva”, que está
- ilustrada na Figura 
+Neste trabalho, além de adicionar as novas classes (
+\series bold
+extended classes
+\series default
+) em representação OWL, nós também adicionamos algumas propriedades de objetos(O
+bjectProperties) e dados(DataProperties).
+ A fim de conseguir isso, decidimos criar um conjunto de novas ObjectProperties
+ como: 
+\series bold
+isImageStudyOf; isImageReferenceOf; hasAnnotations
+\series default
+; para cada critério AIM definido na ontologia do Hakan Bulu 
 \begin_inset CommandInset ref
-LatexCommand formatted
-reference "AIM3UML"
+LatexCommand ref
+reference "fig:aim3hakan"
 
+\end_inset
+
+ facilitando assim a classificação de cada anotação que depende do número
+ de lesões, tal como o critério TNM 
+\series bold
+
+\begin_inset Quotes eld
+\end_inset
+
+_MoreThanOneTumor
+\series default
+
+\begin_inset Quotes erd
 \end_inset
 
 .
- A idéia central dessa arquitetura é de que cada camada vai gradativamente
- trazendo uma nova contribuição como maior expressividade, possibilidade
- de se realizar inferências e autenticação.
- A arquitetura da Web Semântica está categorizada nas seguintes camadas:
- camada URI/Unicode, camada sintática, camada de dados, camada de ontologia,
- camada lógica, camada de prova, camada de validação e camada de assinatura
- digital.asjdaskdaskdhaslkdasdsadasdasd
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Comment
-status collapsed
-
-\begin_layout Plain Layout
-In 2000, during a conference on XML, Tim Berners Lee proposed a model layered
- architecture for the Semantic Web , known as the "wedding cake"
-\begin_inset CommandInset citation
-LatexCommand citep
-key "bernerslee2001"
-
-\end_inset
-
-.
- The logical architecture is shown in 
-\begin_inset CommandInset ref
-LatexCommand formatted
-reference "WEBE1"
-
-\end_inset
-
-.
- It shows, in layers, like the semantic web core technologies should fit.
- 
-\end_layout
-
-\end_inset
-
-
+ Cada um deles é uma propriedade funcional e inverso das propiedades: hasImageSt
+udy; hasImageReference e hasPerson respectivamente, de modo eles só pode
+ ter um valor .
 \end_layout
 
 \begin_layout Standard
@@ -1716,31 +2228,262 @@ sideways false
 status open
 
 \begin_layout Plain Layout
-\noindent
-\align center
 \begin_inset Graphics
-	filename /home/edson/Documents/drawingversion3wc.svg
-	lyxscale 30
+	filename /Applications/thesisUSP/figures/objectproperties.png
+	scale 40
+	rotateOrigin center
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:objectPropertiesAIM4"
+
+\end_inset
+
+ A figura mostra as Object Properties adicionadas à ontologia do Hakan Bulu
+ e fazem parte da nova ontologia AIM4-O, podemos ver na figura o ObjectProperty
+ 
+\series bold
+hasAnnotations
+\series default
+ como propiedade funcional inversa da propiedade 
+\series bold
+hasPerson
+\series default
+.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+AIM4-O é uma ontologia leve que foi desenvolvido com a intenção de pode
+ ser adotado em uma ampla gama de aplicações o outras disciplinas de imagem.
+ AIM4-O está de acordo com o perfil OWL-DL.
+ Assim, a ontologia AIM4-O espera para ser usado directamente em aplicações,
+ bem como servir como um modelo de referência para a criação de ontologias
+ de domínio específico como neste trabalho em radiologia.
+ Para demonstrar o uso das classes AIM4-O e propriedades, esse documento
+ usa um cenário de exemplos como acima mencionados.
+\end_layout
+
+\begin_layout Section
+Desenvolver um mecanismo para transformar as anotações no formato AIM-XML
+ para instâncias da ontologia AIM4-O.
+\end_layout
+
+\begin_layout Standard
+O segundo passo é definir um mecanismo para transformar as anotaçoes no
+ formato AIM-XML existentes às suas equivalentes codificados (individuos
+ da ontologia AIM4-O).
+ Para isso, nós desenvolvemos um script para executar esta tarefa.
+ Este script usa a linguagem Groovy para mapear automaticamente documentos
+ XML para instâncias das classes AIM, que são um conjunto de classes 
+\series bold
+Java
+\series default
+ baseada na representaçao UML do modeloAIM 4.0.
+ Posteriormente, o OWL-api ( o java API e implementação para criar, manipular
+ e serializar Ontologias) foi usada para criar instâncias OWL destes classes
+ Java, permitindo assim ao script processar fluxos de documentos XML e preencher
+ uma base de conhecimento OWL com o seu conteúdo 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:aim4individuos"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename /Applications/thesisUSP/figures/AIM4protegeindividuos.png
+	lyxscale 75
+	scale 35
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:aim4individuos"
+
+\end_inset
+
+Instâncias de anotações(individuos) AIM são mostrados no painel esquerdo,
+ e os detalhes e propriedades de uma instância são mostrados na direita.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+O objectivo da representação OWL acima, é ter as condições para desenvolver
+ mecanismos de reasoning baseados em regras e trabalhar com anotações do
+ AIM.
+ Para atingir o objetivo da classificação da lesões de câncer, usaremos
+ as subclasses, interseção, equivalência e disjunção entre as classes, object
+ properties e algumas regras como mecanismos de raciocínio.
+ Este processo será descrito na próxima etapa.
+\end_layout
+
+\begin_layout Section
+Gerar as condições para implementar o reasoning baseado em regras TNM que
+ utilizam instâncias OWL.
+\end_layout
+
+\begin_layout Standard
+A fim de classificar lesões do um tipo de cancer apartir das imagens e suas
+ anotações precisamos ter o apoio de uma ontologia capaz de especificar
+ a semântica das observações de imagem de um domínio particular, neste caso
+ o corpo humano e mais especificamente um organo que vai ser seleccionado
+ de acordo como o tipo de câncer que vão avaliar(neste trabalho vai ser
+ o câncer de figado).
+ Além disso, considerou-se necessário a inclusão de uma representação em
+ 
+\series bold
+owl
+\series default
+ de uma parte do vocabulário Radlex, a fim de faciliar o trabalho de classificaç
+ão e tratamento de indivíduos OWL4-O, estes indivíduos têm terminologias
+ de Radlex em sua estrutura.
+ Finalmente, foi adicionado à ontologia gerada o conjunto de regras baseadas
+ no sistema TNM.
+ O resultado é uma 
+\series bold
+Ontologia geral 
+\series default
+construída a partir das exigências acima mencionadas.
+\end_layout
+
+\begin_layout Subsubsection
+Ontologia geral
+\end_layout
+
+\begin_layout Standard
+A 
+\series bold
+ontologia geral
+\series default
+ é dividido em 3 ficheiros, como visto na Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:ontologiaGeral"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Description
+Os conceitos gerais do TNM
+\end_layout
+
+\begin_layout Description
+Onlira.owl: a topografia do fígado (com base na Ontologia Onlira 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Kokciyan2014"
+
+\end_inset
+
+ ) 
+\end_layout
+
+\begin_layout Description
+moduleRadlex.owl: Uma parte do vocabulário Radlex 
+\begin_inset Foot
+status open
+
+\begin_layout Description
+http://bioportal.bioontology.org/ontologies/RADLEX/classes.
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement h
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename ../figures/ontologiageral.pdf
+	lyxscale 50
 	scale 20
 
 \end_inset
 
 
+\end_layout
+
+\begin_layout Plain Layout
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Arquitetura em camadas da Web Semântica, fonte: 
 \begin_inset CommandInset label
 LatexCommand label
-name "AIM3UML"
+name "fig:ontologiaGeral"
+
+\end_inset
+
+ A figura mostra o diagrama da ontologia geral, seus TNM componentes(regras
+ e axiomas) e importações necessárias a fim de ter os mecanismos para classifica
+r imagens de câncer de figado
+\end_layout
 
 \end_inset
 
 
 \end_layout
 
-\end_inset
-
+\begin_layout Plain Layout
 
 \end_layout
 
@@ -1750,29 +2493,122 @@ name "AIM3UML"
 \end_layout
 
 \begin_layout Standard
-A base da arquitetura de camadas da Web Semântica é formada pelos padrões
- Unicode e URIs.
- Eles facilitam o intercâmbio de dados: o Unicode permite aos computadores
- representar e manipular caracteres em quase todas as línguas existentes
- e URI
-\begin_inset CommandInset nomenclature
-LatexCommand nomenclature
-symbol "URIs"
-description "Uniform Resources Identifiers"
+As seções a seguir fornecem uma descrição das ontologias utilizadas como
+ parte da Ontologia Geral.
+\end_layout
+
+\begin_layout Subsubsection
+Criando classes do conceitos do sistema TNM 
+\end_layout
+
+\begin_layout Standard
+A fim de obter uma representação OWL de cada estágio TNM, precisamos de
+ uma interpretação da sua definição.
+ Embora não seja mencionado explicitamente, os critérios TNM são exclusivos,
+ por isso as classes OWL correspondentes foram feitas disjuntas.
+ Por exemplo, o critério do staging T2 é representado pela união de duas
+ restrições que representam um único tumor (qualquer tamanho) que tem crescido
+ em vasos sanguíneos (classe 
+\series bold
+T2_a)
+\series default
+, e um único tumor não maior do que 5 cm (classe 
+\series bold
+T2_b
+\series default
+) respectivamente.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Float figure
+placement h
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename ../figures/aim4_t2.png
+	lyxscale 50
+	scale 50
+	rotateOrigin center
 
 \end_inset
 
-s (
-\emph on
-\lang english
-Uniform Resources Identifiers
-\emph default
-\lang brazilian
-) permitem identificar unicamente recursos disponíveis na Web através de
- uma 
-\lang english
-string
-\lang brazilian
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:aim_t2"
+
+\end_inset
+
+ a figura mostra o critério T2 do TNM representado por componentes da Ontologia
+ Geral e classes disjuntas
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+ONLIRA (Ontologia de figado para Radiologia)
+\end_layout
+
+\begin_layout Standard
+A ontologia ONLIRA foi desenvolvida como parte do projeto CaReRa 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Kokciyan2014"
+
+\end_inset
+
+.
+ ONLIRA
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+https://bioportal.bioontology.org/ontologies/ONLIRA 
+\end_layout
+
+\end_inset
+
+ visa modelar observações de imagem do domínio do fígado com ênfase em proprieda
+des e as relações entre o fígado, as veias hepáticas e lesões hepáticas.
+ O desenho de ONLIRA baseou-se em sessões de elicitação com radiologistas.
+ 
+\end_layout
+
+\begin_layout Standard
+Partes desta ontologia foram utilizadas para representar a topografia do
+ fígado descrito nas anotações AIM-XML gerado pelo ePAD 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Rubin2014"
+
+\end_inset
+
 .
 \end_layout
 
@@ -1784,9 +2620,9 @@ status open
 
 \begin_layout Plain Layout
 \begin_inset Graphics
-	filename /media/edson/1a2a6ed2-2887-4387-8226-f76497f34156/home/edson/Documentos/drawing41.svg
-	lyxscale 30
-	scale 18
+	filename /Applications/thesisUSP/figures/ONLIRA.pdf
+	lyxscale 50
+	scale 30
 
 \end_inset
 
@@ -1799,11 +2635,12 @@ status open
 \begin_layout Plain Layout
 \begin_inset CommandInset label
 LatexCommand label
-name "fig:AIM4UML"
+name "fig:onliraontology"
 
 \end_inset
 
-
+mostra as relações entre as classes e outros conceitos de ONLIRA utilizados
+ neste trabalho.
 \end_layout
 
 \end_inset
@@ -1816,411 +2653,174 @@ name "fig:AIM4UML"
 
 \end_layout
 
-\begin_layout Standard
-A camada sintática é formada pela linguagem XML (
-\emph on
-\lang english
-eXtensible Markup Language
-\emph default
-\lang brazilian
-) e permite a criação de marcações para descrição de informações.
- As sintaxes das camadas superiores são baseadas em XML.
- A camada de dados representa conceitos e regras lógicas.
- A linguagem RDF
-\begin_inset CommandInset nomenclature
-LatexCommand nomenclature
-symbol "RDF"
-description "Resource Description Framework"
-
-\end_inset
-
- (
-\emph on
-\lang english
-Resource Description Framework
-\emph default
-\lang brazilian
-) provê um modelo de descrição lógica de dados permitindo descrever informações
- sobre um determinado recurso e a RDF 
-\lang english
-Schema
-\lang brazilian
- permite a criação de um vocabulário para a camada RDF; 
+\begin_layout Subsubsection
+Terminologia Radlex
 \end_layout
 
 \begin_layout Standard
-A camada da ontologia estende a camada de dados, provendo um maior nível
- de expressividade para a definição da semântica das informações.
- A camada lógica permite definir regras lógicas para inferir novos conhecimentos.
- A camada de prova e confiança, situadas na parte alta da pirâmide, provêm
- um mecanismo para avaliar o nível de confiabilidade das fontes de recursos
- e informações.
- A camada de assinatura digital, inserida na estrutura da pirâmide, permite
- incorporar mecanismos de segurança que garantam a confiabilidade da informação.
+AIM fornece um esquema XML que descreve as estruturas anatômicas e observações
+ visuais em imagens utilizando a terminologia RadLex.
+ Foi usado partes de RadLex para representar essas estruturas anatômicas
+ e representar critérios de classificação TNM em OWL.
+\end_layout
+
+\begin_layout Standard
+Os critérios TNM referem-se a locais de entidades e estruturas anatômicas.
+ Em seguida, é importante que a ontologia contém não apenas as estruturas
+ anatómicas mencionados nos critérios de staging, mas também as partes ligadas
+ direta e indiretamente a eles.
+ Por exemplo, a fim de implementar os critérios N e M nós adicionamos 2
+ Super classes: 
+\series bold
+adjacentOrganGroup
+\series default
+ que descreve o conjunto de órgãos adjacentes a um órgão principal ( neste
+ caso o fígado) e 
+\series bold
+noadjacentOrganGroup
+\series default
+ que descreve órgãos com base nos locais mais comuns de disseminação do
+ tumor [ref papel classificação TNM ].
+ No caso do fígado incluímos pulmões e ossos como órgãos no adjacentes,
+ isso pode ser visto na Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:radlexmodule"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename ../figures/radlexmodule.pdf
+	scale 45
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:radlexmodule"
+
+\end_inset
+
+módulo da ontologia Radlex no protége utilizado pela 
+\series bold
+Ontologia geral
+\series default
+ e as classes que representam grupos de órgãos, tais como 
+\series bold
+adjacentOrganGroup
+\series default
+ e 
+\series bold
+noadjacentOrganGroup
+\series default
+ .
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section
-Ontologias
-\begin_inset CommandInset label
-LatexCommand label
-name "sec:Ontologias"
-
-\end_inset
-
-
+Reasoning sobre lesões de câncer
 \end_layout
 
 \begin_layout Standard
-Segundo
-\begin_inset CommandInset citation
-LatexCommand citet
-key "Smith2007"
-
-\end_inset
-
-, a Ontologia, um ramo da filosofia, é a ciência “do que é”, dos tipos e
- estruturas dos objetos, propriedades, eventos processos e relações em todas
- as áreas da realidade.
- Na área das ciências de computação e informação, o termo ontologia vem
- se tornando muito popular, principalmente nas áreas de engenharia do conhecimen
-to, processamento de linguagem natural, sistemas de informação cooperativos,
- integração inteligente da informação e gerência do conhecimento 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "Smith2003"
-
-\end_inset
-
+Nas seções anteriores, várias operações foram necessárias para melhorar
+ a 
+\series bold
+Ontologia Geral
+\series default
 .
- 
-\begin_inset CommandInset citation
-LatexCommand citet
-key "Gruber1993"
-
-\end_inset
-
- define o termo ontologia como uma especificação formal e explicita de uma
- conceitualização compartilhada de um domínio de interesse e de informações
- de como os indivíduos são agrupados e se encaixam em um determinado domínio.
- 
-\begin_inset CommandInset citation
-LatexCommand citet
-key "Noy2001"
-
-\end_inset
-
- afirmam que as ontologias surgiram como artefatos para representar, organizar
- e compartilhar conhecimento em um determinado domínio.
-\end_layout
-
-\begin_layout Standard
-O principal papel das ontologias na Web Semântica é explicitar o vocabulário
- utilizado e servir como padrão para compartilhamento de informação entre
- agentes, softwares e aplicações 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "Silvio2014"
-
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Comment
-status collapsed
-
-\begin_layout Plain Layout
-There are various definitions of an ontology.
- Merriam Webster’s dictionary defines Ontology as a branch of philosophy
- which studies what exists in all areas of reality.
- In Artificial Intelligence (AI), the meaning of ontology (with a lower-case
- “o”) can be slightly different.
- A suitable definition is given by 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "Kurtz2014"
-
-\end_inset
-
-: an ontology is a formal, explicit specification of a shared conceptualization.
- A ‘con- ceptualization’ refers to an abstract model of some phenomenon
- in the world by identifying the relevant concepts of that phenomenon.
- ‘Explicit’ means that the type of concepts used and the constraints on
- their use are explicitly defined.
- ‘Formal’ refers to the fact that the ontology should be machine understandable,
- which excludes natural language.
- Concretely speaking, an ontology consists in a finite list of concepts
- and relationships linking those concepts, formally describing a domain.
- The concepts may be classes or instances, and the ontol- ogy may be viewed
- as a graph.
- Typically, the relationships include hierarchies of classes.
- 
-\end_layout
-
-\end_inset
-
-
+ Em primeiro lugar, nós adicionamos novas classes e propriedades para preencher
+ a lacuna entre as características do tumor descritos no modelo AIM-xml
+ e as classes presentes na ontologia AIM4-O.
+ Em segundo lugar, nós fornecemos definições para todos os estagios TNM,
+ a topografia do órgãos como o fígado e parte da terminologia RadLex a fim
+ de representar os seus conhecimentos em OWL.
+ Finalmente esta seção descreve a representação formal necessária para staging
+ do câncer utilizando apenas expressividade OWL se possível (apenas OWL
+ + SWRL).
 \end_layout
 
 \begin_layout Subsection
-Web Ontology Language – OWL
-\begin_inset CommandInset label
-LatexCommand label
-name "sub:Web-Ontology-Language"
-
-\end_inset
-
-
+Representação Formal do staging do câncer
 \end_layout
 
 \begin_layout Standard
-Embora a proposta inicial da Web Semântica fosse utilizar o RDF, essa linguagem
- demonstrou limitações em poder de expressividade 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "Horrocks03fromshiq"
-
-\end_inset
-
-.
- O W3C lançou em 2004 a 
-\lang english
-Web Ontology Language 
-\lang brazilian
-(OWL
-\begin_inset CommandInset nomenclature
-LatexCommand nomenclature
-symbol "OWL"
-description "Web Ontology Language"
-
-\end_inset
-
-), um resultado da formação do 
-\emph on
-\lang english
-Web Ontology Working Group
-\emph default
-\lang brazilian
-.
- Ontologias em OWL foram desenvolvidas em várias áreas, como e-Science,
- medicina, biologia, geografia, astronomia, defesa e nas indústrias automobilíst
-ica e aeronáutica 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "j.websem156"
-
-\end_inset
-
-.
- Apesar do sucesso da linguagem OWL foram encontradas algumas deficiências.
- Em resposta aos comentários e requisições dos usuários da OWL, surgiram
- a OWL 1.1, uma revisão incremental da linguagem e, depois de extensivas
- discussões, a OWL 2 (abril de 2008)
-\begin_inset Foot
+\begin_inset Float figure
+wide false
+sideways false
 status open
 
 \begin_layout Plain Layout
-http://www.w3.org/TR/owl-features/
+\begin_inset Graphics
+	filename ../figures/TNM Staging Documentation.pdf
+	scale 80
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
 \end_layout
 
 \end_inset
 
-.
- A OWL 2 foi considerada um passo substancial para a evolução da linguagem
- 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "j.websem156"
 
-\end_inset
-
-.
- 
 \end_layout
 
-\begin_layout Standard
-Atualmente, a linguagem OWL encontra-se em sua segunda versão (OWL 2) que
- é subdividida em três sub-linguagens, OWL EL, OWL QL e OWL RL, cada uma
- com um poder de expressividade diferente, porém todas permitem a criação
- de ontologias 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "bechhofer2004"
+\begin_layout Plain Layout
+
+\end_layout
 
 \end_inset
 
-.
- 
+
 \end_layout
 
 \begin_layout Standard
-A OWL EL é baseada na família EL++ de lógica descritiva, sendo que sua utilizaçã
-o é particularmente útil em aplicações que contém um grande número de propriedad
-es e classes para definir uma ontologia.
- Além disso, a OWL EL utiliza um padrão comum em ontologias para conceitos
- e planejamento, ou seja, a combinação de conjunções e qualidades existenciais
- 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "bechhofer2004"
-
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Standard
-A OWL QL é estruturada a partir da família DL-Lite de lógica de descrição
- (
-\lang english
-Description Logic
-\lang brazilian
-).
- Ela foi criada para permitir o raciocínio (reasoning) eficiente em grandes
- quantidades de dados estruturados de acordo com esquemas relativamente
- simples.
- Ela fornece vários recursos para capturar modelos conceituais, tais como
- diagramas de classe UML, diagramas de Entidade de Relacionamento, e esquemas
- de banco de dados 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "bechhofer2004"
-
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Standard
-Por fim, a OWL RL foi criada para dar suporte a aplicações que exigem raciocínio
- escalável em troca de alguma restrição de poder expressivo.
- Através de um subconjunto sintático, é possível implementar o raciocínio
- (
-\emph on
-reasoning
-\emph default
-) usando tecnologias baseadas em regras que geralmente são mais escaláveis
- e fáceis de implementar 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "bechhofer2004"
-
-\end_inset
-
-.
- 
-\end_layout
-
-\begin_layout Subsection
-Semantic Web Rule Language - SWRL
-\end_layout
-
-\begin_layout Standard
-Dado que a interoperabilidade é uma das metas principais da Web Semântica
- e que as regras são uma parte fundamental dessas metas, um passo fundamental
- para fazer essa interoperação na Web é a 
-\lang english
-Semantic Web Rule Language
-\lang brazilian
- (SWRL
-\begin_inset CommandInset nomenclature
-LatexCommand nomenclature
-symbol "SWRL"
-description "Semantic Web Rule Language"
-
-\end_inset
-
-)
-\begin_inset Foot
+\begin_inset listings
+lstparams "language=SPARQL,float,numbers=left,basicstyle={\normalsize\rmfamily},breaklines=true,frame={lines}"
+inline false
 status open
 
 \begin_layout Plain Layout
-http://www.daml.org/rules/proposal/
+
+ImageStudy(?x) isImageStudyOf(?x,?y)  isImageStudyOf(?x,?z) DifferentFrom(?y,?z)
+ -> MoreThanOneTumor(?x)
 \end_layout
-
-\end_inset
-
-, que foi projetada para ser o idioma de regras da Web Semântica
-\begin_inset CommandInset citation
-LatexCommand citep
-key "Connor2005"
-
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Standard
-A SWRL é baseada numa combinação das sub\SpecialChar \nobreakdash-
-linguagens OWL-DL e OWL-Lite da
- OWL e as sub\SpecialChar \nobreakdash-
-linguagens 
-\lang english
-Unary/Binary Datalog
-\lang brazilian
- da 
-\emph on
-Rule Markup Language
-\emph default
-
-\begin_inset Foot
-status open
-
-\begin_layout Plain Layout
-http://www.ruleml.org/
-\end_layout
-
-\end_inset
-
-
-\emph on
-.
-\end_layout
-
-\begin_layout Standard
-A SWRL permite aos usuários escrever regras na forma de expressões Horn
- e usar termos de conceitos OWL para raciocinar (
-\lang english
-to reason
-\lang brazilian
-) sobre indivíduos OWL.
- As regras podem ser usados ​​para inferir novos conhecimentos a partir
- de bases de conhecimento em OWL.
-\end_layout
-
-\begin_layout Standard
-A especificação da SWRL
-\begin_inset Foot
-status open
-
-\begin_layout Plain Layout
-http://www.w3.org/Submission/SWRL/
-\end_layout
-
-\end_inset
-
- não impõe restrições sobre como o raciocínio deve ser realizado com regras
- SWRL.
- Assim, pesquisadores são livres para usar uma variedade de mecanismos de
- regras para raciocinar com regras SWRL armazenadas em uma base de conhecimento
- OWL.
- Dessa forma, a SWRL fornece um ponto de partida conveniente para a integração
- de sistemas de regras para trabalhar com a Web Semântica
-\begin_inset CommandInset citation
-LatexCommand citep
-key "Connor2005"
-
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Section
-Bio Ontologies
-\begin_inset CommandInset label
-LatexCommand label
-name "sec:Bio-Ontologies"
 
 \end_inset
 
@@ -2228,319 +2828,23 @@ name "sec:Bio-Ontologies"
 \end_layout
 
 \begin_layout Standard
-Grandes volumes de dados digitais sobre conhecimento médico e biológico
- sobrecarregam os pesquisadores dessas áreas.
- Eles têm a difícil tarefa de gerenciar terabytes de informação, com conteúdos
- semânticos, em grandes repositórios de dados que usam tecnologias de gerenciame
-nto cada vez mais sofisticadas.
- Pesquisadores da área biomédica podem trabalhar com uma enorme quantidade
- de dados, que não pode ser interpretada sem o auxílio de computadores 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "Serique2012"
 
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Standard
-Os pesquisadores também devem agregar e integrar toda estas informação.
- Para tanto, eles precisam de ferramentas que permitam a descoberta de conhecime
-nto nesse paradigma rico em dados.
- Portanto, eles começaram a utilizar ontologias para descrever a estrutura
- de seus domínios complexos e relacionar seus dados para compartilhar e
- interoperar informações Biomédicas
-\begin_inset CommandInset citation
-LatexCommand citep
-key "Rubin2008"
-
-\end_inset
-
-.
- 
-\end_layout
-
-\begin_layout Standard
-Muitas ciências, a exemplo da Informática Biomédica, estão utilizando ontologias
- para promover o entendimento, interoperabilidade e controle de entropia
- dos dados.
- Isso é feito através do uso e desenvolvimento de novas ferramentas semânticas,
- capazes de recuperar e organizar dados distribuídos apoiadas, em sua grande
- parte, por Aplicações Web
-\begin_inset CommandInset citation
-LatexCommand citep
-key "Serique2012"
-
-\end_inset
-
-.
- Nos campos de medicina que este trabalho se foca, radiologia e oncologia,
- as duas mais importantes ontologias usadas são a FMA e o RadLex.
- 
-\end_layout
-
-\begin_layout Subsection
-Foundational Model of Anatomy – FMA 
-\end_layout
-
-\begin_layout Standard
-Uma bio\SpecialChar \nobreakdash-
-ontologia importante no escopo deste estudo é a 
-\lang english
-Foundational Model of Anatomy
-\lang brazilian
- (FMA
-\begin_inset CommandInset nomenclature
-LatexCommand nomenclature
-symbol "FMA"
-description "Foundational Model of Anatomy"
-
-\end_inset
-
-).
- De modo geral, a anatomia é o estudo das estruturas físicas dos organismos
- biológicos.
- Descrever e capturar de forma computável as terminologias e ontologias
- que envolvem entidades anatômicas é uma tarefa não trivial.
- A falta de uma representação generalizada da anatomia leva os desenvolvedores
- de terminologias e ontologias, tanto da área de medicina clínica quanto
- de biologia, a representar a anatomia a partir dos seus próprios pontos
- de vista.
- Isso gera um obstáculo para correlacionar os termos anatômicos entre si,
- devido a heterogeneidade das representações anatômicas
-\begin_inset CommandInset citation
-LatexCommand citep
-key "Serique2012"
-
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Standard
-A estrutura ontológica da FMA fornece uma modelo de inferência, permitindo
- que ferramentas computacionais possam inferir informações sobre dados anatômico
-s 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "Mejino2008"
-
-\end_inset
-
-.
- Especificamente, a FMA representa um corpo coerente de conhecimentos declarativ
-os sobre a anatomia humana 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "Mejino2008"
-
-\end_inset
-
-.
- No entanto, seu quadro ontológico pode ser aplicado e estendido para outras
- espécies.
- A FMA tem sido desenvolvida e mantida pelo 
-\emph on
-\lang english
-Structural Informatics Group
-\lang brazilian
- 
-\emph default
-da
-\emph on
- 
-\lang english
-University of Washington
-\emph default
-\lang brazilian
-.
-\end_layout
-
-\begin_layout Subsection
-RadLex
-\end_layout
-
-\begin_layout Standard
-O RadLex é a mais importante bio\SpecialChar \nobreakdash-
-ontologia do escopo deste trabalho.
- Ela surgiu da necessidade de disseminar o conhecimento radiológico entre
- radiologistas.
- De forma geral, os radiologistas utilizam constantemente imagens médicas,
- relatórios de imagens e registros médicos que se encontram online.
- Para tanto, eles necessitam de uma linguagem unificada para organizar e
- recuperar esses dados.
-\end_layout
-
-\begin_layout Standard
-Por muitas décadas, o 
-\emph on
-\lang english
-American College of Radiology
-\emph default
-\lang brazilian
- (ACR
-\begin_inset CommandInset nomenclature
-LatexCommand nomenclature
-symbol "ACR"
-description "American College of Radiology"
-
-\end_inset
-
-) desenvolveu o 
-\emph on
-Index for Radiological Diagnoses
-\emph default
-, conhecido como o Índice ACR.
- Ele tem características atraentes para indexação de imagens.
- Para tanto, utiliza um sistema de dois códigos numéricos, separados por
- pontos.
- O primeiro é para a localização da anatomia e o segundo para a entidade
- patológica: por exemplo, o código ACR 642.3212 significa 642 = “adenocarcinoma
- primário” e 3212 = “língula” 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "doi:10.1148/rg.266065168"
-
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Standard
-Como o Índice ACR possui apenas milhares de índices, fica fácil para as
- pessoas se lembrarem.
- Ttodavia, comparado às novas terminologias e ontologias, como o SNOMED-CT
- e FMA, fica evidente que ele oferece poucos termos específicos.
- 
-\end_layout
-
-\begin_layout Standard
-Com o surgimento do mundo digital, a necessidade de criar sistemas de indexação
- informatizados levou a RSNA a desenvolver a ontologia RadLex (RNSA, 2012),
- como resposta as lacunas encontradas em outras terminologias radiológicas,
- criando assim uma única e completa terminologia.
- A ontologia RadLex é uma forma unificada de reunir os termos usados em
- radiologia; ela é projetada para atender às necessidade dos radiologistas
- 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "doi:10.1148/rg.266065168"
-
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Standard
-O RadLex está disponível para download no 
-\emph on
-National Center for Biomedical Computing’s Bioportal site
-\emph default
- 
-\begin_inset Foot
-status open
-
-\begin_layout Plain Layout
-http://bioportal.bioontology.org/ontologies/40885
-\end_layout
-
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Subsection
-
-\lang english
-Annotation Imaging Markup
-\end_layout
-
-\begin_layout Standard
-As modernas imagens médicas contêm uma vasta quantidade de informação no
- formato padrão DICOM.
- No entanto, essas informações são relacionadas apenas a metadados sobre
- as imagens.
- As informações mais importantes relacionadas as imagens ficam codificadas
- nos seus pixels.
- Elas contêm um rico conteúdo que, porém, não está explícito ou acessível
- às máquinas.
- Essas informações são interpretadas por observadores humanos, como os radiologi
-stas, e não são capturadas ou relacionadas às imagens de uma forma estruturada
- 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "Rubin2008"
-
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Standard
-O projeto 
-\lang english
-Annotation Imaging Markup
-\lang brazilian
- (AIM), que atualmente encontra-se em sua quarta versão, trata de um modelo
- de informação que oferece uma infra-estrutura de apoio para a criação de
- uma coleção de anotações médicas de imagens (que podem ser lidas por máquinas).
- Ele é resultado do cumprimento de novas exigências da comunidade de imagens
- médicas e vem conseguindo atingir os requisitos estabelecidos pela 
-\emph on
-caBIG 
-\lang english
-In Vivo Imaging Workspace
-\emph default
-\lang brazilian
- 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "Rubin2008"
-
-\end_inset
-
-.
- O projeto é centrado no modelo AIM de anotação e marcação de imagens DICOM.
- As anotações e marcações de imagens são consideradas como um objeto de
- informação da imagem, porém não estão ligadas fisicamente as mesmas.
- Esse modelo de informação, no entanto, é compatível com outros formatos
- de imagens além do DICOM.
- O modelo AIM não cria nenhuma nova ontologia para descrever anotações,
- ele usa termos do RadLex para descrever, lesões e junta a eles informações
- numéricas, como volume ou diâmetro.
-\end_layout
-
-\begin_layout Standard
-O modelo AIM de informação, ou AIM Schema, é descrito em 
-\begin_inset CommandInset citation
-LatexCommand citet
-key "Rubin2008,Rubin2014"
-
-\end_inset
-
- usando um diagrama de classe UML.
- O modelo é usado para expressar a captura de informações contidas nas imagens
- médicas através de anotações e marcações de informações relevantes.
- Uma anotação pode ser explicativa ou uma descrição de informação, gerada
- por seres humanos ou por máquinas, que se relaciona diretamente com o conteúdo
- de uma imagem ou várias imagens de referência.
- As anotações tornam-se uma coleção de descrições de conteúdo que podem
- ser usadas para fins de mineração de dados semânticos.
- Uma marcação de imagem é composta de símbolos gráficos ou descrições textuais
- associados a uma imagem.
-\end_layout
-
-\begin_layout Standard
-Marcações podem ser usadas para descrever uma informação textual e as regiões
- de interesse visual.
- Informações nas anotações e marcações são usadas para preencher o AIM Schema,
- através de funções da biblioteca de software AIM, com a finalidade de geração
- de objetos DICOM SR, documentos XML AIM e documentos no formato HL7 CDA.
 \end_layout
 
 \begin_layout Section
 Considerações Finais
+\end_layout
+
+\begin_layout Standard
+Traduzimos esse conhecimento em uma representação formal, usando uma modelagem
+ híbrida com o raciocínio baseado em regras e em classes.
+ Para conseguir isso, as regras formais para representar as anotações da
+ lesão e suas relações com critérios de pontuação TNM e staging são necessários.
+ A fim de definir essas regras e usá-los para fazer inferências sobre imagems,
+ foi utilizado o Semantic Web Rule Language (SWRL).
+ SWRL permite aos usuários escrever regras que podem ser expressas em termos
+ de conceitos OWL proporcionando mais capacidades de raciocínio dedutivo
+ que unicamente OWL.
 \end_layout
 
 \begin_layout Standard
