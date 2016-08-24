@@ -2774,6 +2774,42 @@ Representação Formal do staging do câncer
 \end_layout
 
 \begin_layout Standard
+O staging do câncer é dividido em duas etapas principais.
+ A primeira etapa consiste em dar uma contagem a partir da descrição do
+ tumor (T), a propagação em gânglios linfáticos (N) e possível metástase
+ (m); o segundo passo consiste em determinar o estágio de acordo com as
+ pontuações anteriores.
+\end_layout
+
+\begin_layout Standard
+A fim de descobrir os limites da capacidade de OWL e as capacidades fornecidas
+ pela adição de regras e axiomas, buscou-se definir formalmente e implementar
+ as condições que exige o sistema TNM, usando apenas expressividade OWL
+ + SWRL.
+\end_layout
+
+\begin_layout Standard
+Decidimos que as seguintes condições reflectiu um processo de staging desejável:
+\end_layout
+
+\begin_layout Description
+Condição 1: O staging do câncer deve considerar a existência de tumor solitário
+ ou múltiplo no mesmo site
+\end_layout
+
+\begin_layout Description
+Condição 2: Os tumores deve ser maior ou menor que 5 cm
+\end_layout
+
+\begin_layout Description
+Condição 3 : Staging deve considerar lesões em órgãos adjacentes
+\end_layout
+
+\begin_layout Subsubsection
+Representação formal das condições usando OWL
+\end_layout
+
+\begin_layout Standard
 \begin_inset Float figure
 wide false
 sideways false
@@ -2824,10 +2860,6 @@ ImageStudy(?x) isImageStudyOf(?x,?y)  isImageStudyOf(?x,?z) DifferentFrom(?y,?z)
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Standard
 
 \end_layout
 

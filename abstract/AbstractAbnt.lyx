@@ -1,0 +1,198 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass abntex2
+\begin_preamble
+\usepackage{fncychap}
+\makechapterstyle{icmc}{%
+   % Secao secundaria (Section) Caixa baixa, Negrito
+    \renewcommand*{\cftsectionfont}{\bfseries}
+    % Secao terciaria (Subsection) Caixa baixa, Negrito, italico
+    \renewcommand*{\cftsubsectionfont}{\itshape\bfseries}
+    % Secao quaternaria (Subsubsection) Caixa baixa, italico
+    \renewcommand*{\cftsubsubsectionfont}{\itshape}
+    % Secao quinquenária (Subsubsubsection) Caixa baixa
+    \renewcommand*{\cftparagraphfont}{\normalsize}
+
+   % tamanhos de fontes de chapter e part	
+   \ifthenelse{\equal{\ABNTEXisarticle}{true}}{%
+     \setlength\beforechapskip{\baselineskip}
+     \renewcommand{\chaptitlefont}{\ABNTEXsectionfont\ABNTEXsectionfontsize}
+    }{%else
+     \setlength{\beforechapskip}{0pt}
+     \renewcommand{\ABNTEXchapterfontsize}{\LARGE}
+    
+    %\renewcommand{\ABNTEXchapterfont}{\sffamily\bfseries}  %alteração da fonte dos capítulos, seções e subseções
+    \renewcommand{\chaptitlefont}    {\ABNTEXchapterfont\bfseries\ABNTEXchapterfontsize}
+  
+
+% impressao do numero do capitulo
+  \renewcommand{\chapternamenum}{}
+  
+  % impressao do nome do capitulo
+  \renewcommand{\printchaptername}{%
+   %\chaptitlefont
+   %\ifthenelse{\boolean{abntex@apendiceousecao}}{\appendixname}{\chaptername}%
+  }
+% impressao do titulo do capitulo
+  \def\printchaptertitle##1{%
+    
+    \setboolean{ABNTEXupperchapter}{true}
+    
+    \ifthenelse{\boolean{abntex@innonumchapter}}{
+        \vskip 0ex \hrulefill\chaptitlefont\bfseries\ABNTEXchapterupperifneeded{##1}
+        \vskip -0.6ex\hfill\rule{.8\textwidth}{0.5pt} 
+        \vskip -2.8ex\hfill\rule{.8\textwidth}{2pt}
+        \vskip 1.5ex
+    
+    }{%
+    % else
+        {\hrulefill
+        {\renewcommand{\arraystretch}{1.5} %  1 is the default, change whatever you need
+        \begin{tabular}{|c|}
+            \rowcolor{black}\color{white}\normalsize\ABNTEXchapterfont
+              \ifthenelse{\boolean{abntex@apendiceousecao}}{\MakeTextUppercase{\appendixname}}{\MakeTextUppercase{\chaptername}}  \\ 
+            \vspace{-1.5ex}\\ %coloquei para aumentar o espaço entre o título e o número
+            \resizebox{!}{1.1cm}{\ABNTEXchapterfont\thechapter}
+            \\[2.5ex]
+            \hline
+        \end{tabular}}} \\
+        \vskip 4.3ex \flushright\chaptitlefont\bfseries\ABNTEXchapterupperifneeded{##1} \\
+        \vskip -0.6ex\hfill\rule{.8\textwidth}{0.5pt} \\
+        \vskip -2.8ex\hfill\rule{.8\textwidth}{2pt}\\
+        \vskip 1.5ex
+}    
+        
+  }
+       
+
+
+ }
+
+}
+\chapterstyle{icmc}
+\end_preamble
+\use_default_options true
+\maintain_unincluded_children false
+\language brazilian
+\language_package default
+\inputencoding utf8
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 1
+\tocdepth 1
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 2
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Section*
+\noindent
+Resumo
+\end_layout
+
+\begin_layout Standard
+Informação sobre o estágio de câncer num paciente é fundamental quando os
+ médicos avaliam o progresso individual desse paciente e decidem sobre novas
+ medidas de tratamento.
+ A determinação do estágio de câncer (cancer staging) é um processo que
+ leva em consideração a descrição, localização, características e possíveis
+ metástases dos tumores cancerosos de um paciente.
+ Esse processo deve seguir um padrão de classificação como, por exemplo,
+ o TNM Classification of Malignant Tumors.
+ Porém, na prática clínica, a execução desse processo pode ser tediosa e
+ propensa a erros, gerando assim imprecisão na interpretação das imagens
+ médicas (com possíveis consequências danosas para os pacientes).
+ Com o intuito de amenizar esses problemas, este trabalho tem como objetivo
+ auxiliar os radiologistas fornecendo uma segunda opinião na avaliação do
+ estágio de câncer de um paciente.
+ Para isso, serão usadas tecnologias da Web Semântica, como ontologias e
+ 
+\emph on
+reasoning
+\emph default
+ para classificar automaticamente estágios de câncer.
+ Essa classificação vai usar anotações semânticas feitas por radiologistas
+ em imagens médicas no programa ePAD e armazenadas no formato AIM e regras
+ de uma ontologia representando o padrão TNM.
+
+\emph on
+ 
+\emph default
+As anotações em AIM serão convertidas para OWL e uma máquina de inferência
+ vai usá-las, juntamente com a ontologia e suas regras, para determinas
+ o estágio do câncer num paciente.
+ Todo o processo será validado por meio de uma prova de conceito com os
+ usuários do Rubin Lab (Radiology Dept.
+ -- Stanford University).
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Palavras Chave:
+\series default
+ 
+\emph on
+OWL, SWRL
+\emph default
+, estagio de câncer, 
+\emph on
+ePAD,TNM.
+\end_layout
+
+\end_body
+\end_document

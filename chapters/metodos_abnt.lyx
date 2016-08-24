@@ -2,12 +2,12 @@
 \lyxformat 474
 \begin_document
 \begin_header
-\textclass scrbook
+\textclass abntex2
 \begin_preamble
 
 \end_preamble
 \options a4paper,titlepage
-\use_default_options false
+\use_default_options true
 \maintain_unincluded_children false
 \begin_local_layout
 Float
@@ -23,7 +23,7 @@ End
 \end_local_layout
 \language brazilian
 \language_package default
-\inputencoding auto
+\inputencoding utf8
 \fontencoding global
 \font_roman default
 \font_sans default
@@ -38,13 +38,13 @@ End
 \graphics default
 \default_output_format default
 \output_sync 0
-\bibtex_command default
+\bibtex_command biber
 \index_command default
 \paperfontsize 12
 \spacing onehalf
 \use_hyperref false
 \papersize default
-\use_geometry true
+\use_geometry false
 \use_package amsmath 1
 \use_package amssymb 1
 \use_package cancel 0
@@ -57,7 +57,7 @@ End
 \use_package undertilde 0
 \cite_engine natbib
 \cite_engine_type authoryear
-\biblio_style plainnat
+\biblio_style plain
 \use_bibtopic false
 \use_indices false
 \paperorientation portrait
@@ -79,7 +79,7 @@ End
 \quotes_language english
 \papercolumns 1
 \papersides 1
-\paperpagestyle fancy
+\paperpagestyle default
 \tracking_changes false
 \output_changes false
 \html_math_output 0
@@ -210,14 +210,7 @@ Essa transformação foi realizada através da criação de classes e propriedad
 
 \begin_layout Standard
 Nós desenvolvemos este modelo OWL com base na ontologia fornecida por Hakan
- Bulu
-\begin_inset CommandInset citation
-LatexCommand citep
-key "Bulu"
-
-\end_inset
-
-.
+ Bulu(refHAKAN).
  No entanto, essa ontologia representa a versão 3.0 do AIM 
 \begin_inset CommandInset ref
 LatexCommand formatted
@@ -230,7 +223,7 @@ reference "AIM3UML"
  para armazenar anotações de imagem gerados por ferramentas como ePAD
 \begin_inset CommandInset citation
 LatexCommand citep
-key "Rubin2014"
+key "Aslam2004"
 
 \end_inset
 
@@ -271,14 +264,7 @@ name "fig:aim3hakan"
 
 \end_inset
 
-Ontologia do Hakan Bulu 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "Bulu"
-
-\end_inset
-
- baseada no modelo AIM 3.0
+Ontologia do Hakan Bulu REFHAKAN baseada no modelo AIM 3.0
 \end_layout
 
 \end_inset
@@ -297,6 +283,20 @@ Esta extensão captura lesões e medidas derivadas durante os ensaios clínicos
  4.0 para instâncias da ontologia AIM4-O.
  Essas instâncias são necessárias para o análise das anotações com tecnologias
  de Web Semântica.
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Silvio2014"
+
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Silvio2014"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsubsection*
@@ -513,12 +513,38 @@ Basic classes:
  os critérios descritos no 
 \begin_inset CommandInset citation
 LatexCommand citet
-key "Mongkolwat2014"
+key "Mongkolwat2014,Silvio2014"
 
 \end_inset
 
 .
  
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cite{Silvio2014}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cite{key-4}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -2605,7 +2631,7 @@ Partes desta ontologia foram utilizadas para representar a topografia do
  fígado descrito nas anotações AIM-XML gerado pelo ePAD 
 \begin_inset CommandInset citation
 LatexCommand citep
-key "Rubin2014"
+key "Silvio2014"
 
 \end_inset
 
@@ -2805,8 +2831,8 @@ Condição 2: Os tumores deve ser maior ou menor que 5 cm
 Condição 3 : Staging deve considerar lesões em órgãos adjacentes
 \end_layout
 
-\begin_layout Description
-
+\begin_layout Subsubsection
+Representação formal das condições usando OWL
 \end_layout
 
 \begin_layout Standard
