@@ -1,0 +1,334 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass abntex2
+\begin_preamble
+\usepackage{fncychap}
+\makechapterstyle{icmc}{%
+   % Secao secundaria (Section) Caixa baixa, Negrito
+    \renewcommand*{\cftsectionfont}{\bfseries}
+    % Secao terciaria (Subsection) Caixa baixa, Negrito, italico
+    \renewcommand*{\cftsubsectionfont}{\itshape\bfseries}
+    % Secao quaternaria (Subsubsection) Caixa baixa, italico
+    \renewcommand*{\cftsubsubsectionfont}{\itshape}
+    % Secao quinquenária (Subsubsubsection) Caixa baixa
+    \renewcommand*{\cftparagraphfont}{\normalsize}
+
+   % tamanhos de fontes de chapter e part	
+   \ifthenelse{\equal{\ABNTEXisarticle}{true}}{%
+     \setlength\beforechapskip{\baselineskip}
+     \renewcommand{\chaptitlefont}{\ABNTEXsectionfont\ABNTEXsectionfontsize}
+    }{%else
+     \setlength{\beforechapskip}{0pt}
+     \renewcommand{\ABNTEXchapterfontsize}{\LARGE}
+    
+    %\renewcommand{\ABNTEXchapterfont}{\sffamily\bfseries}  %alteração da fonte dos capítulos, seções e subseções
+    \renewcommand{\chaptitlefont}    {\ABNTEXchapterfont\bfseries\ABNTEXchapterfontsize}
+  
+
+% impressao do numero do capitulo
+  \renewcommand{\chapternamenum}{}
+  
+  % impressao do nome do capitulo
+  \renewcommand{\printchaptername}{%
+   %\chaptitlefont
+   %\ifthenelse{\boolean{abntex@apendiceousecao}}{\appendixname}{\chaptername}%
+  }
+% impressao do titulo do capitulo
+  \def\printchaptertitle##1{%
+    
+    \setboolean{ABNTEXupperchapter}{true}
+    
+    \ifthenelse{\boolean{abntex@innonumchapter}}{
+        \vskip 0ex \hrulefill\chaptitlefont\bfseries\ABNTEXchapterupperifneeded{##1}
+        \vskip -0.6ex\hfill\rule{.8\textwidth}{0.5pt} 
+        \vskip -2.8ex\hfill\rule{.8\textwidth}{2pt}
+        \vskip 1.5ex
+    
+    }{%
+    % else
+        {\hrulefill
+        {\renewcommand{\arraystretch}{1.5} %  1 is the default, change whatever you need
+        \begin{tabular}{|c|}
+            \rowcolor{black}\color{white}\normalsize\ABNTEXchapterfont
+              \ifthenelse{\boolean{abntex@apendiceousecao}}{\MakeTextUppercase{\appendixname}}{\MakeTextUppercase{\chaptername}}  \\ 
+            \vspace{-1.5ex}\\ %coloquei para aumentar o espaço entre o título e o número
+            \resizebox{!}{1.1cm}{\ABNTEXchapterfont\thechapter}
+            \\[2.5ex]
+            \hline
+        \end{tabular}}} \\
+        \vskip 4.3ex \flushright\chaptitlefont\bfseries\ABNTEXchapterupperifneeded{##1} \\
+        \vskip -0.6ex\hfill\rule{.8\textwidth}{0.5pt} \\
+        \vskip -2.8ex\hfill\rule{.8\textwidth}{2pt}\\
+        \vskip 1.5ex
+}    
+        
+  }
+       
+
+
+ }
+
+}
+\chapterstyle{icmc}
+\end_preamble
+\use_default_options true
+\maintain_unincluded_children false
+\language brazilian
+\language_package default
+\inputencoding utf8
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 1
+\tocdepth 1
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 2
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+A Informática Biomédica tem sido, ao longo das últimas décadas, um campo
+ emergente graças aos progressos feitos nos campos da computação, microeletrônic
+a e telecomunicações.
+ No entanto, ainda não existe uma definição universal para “Informática”
+ nos campos da medicina.
+ A Informática Biomédica pode ser considerada como a ciência da informação
+ aplicada no estudo do contexto da biomedicina, que surgiu para atender
+ as aplicações da TI (Tecnologia da Informação) na área da saúde
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Bulu"
+
+\end_inset
+
+.
+ Por sua vez, a Informática Radiológica (sub\SpecialChar \nobreakdash-
+área da informática biomédica)
+ é a área da radiologia responsável pela melhoria da eficiência, precisão
+ e confiabilidade dos serviços radiológicos dentro da área médica
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Serique2012"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Embora em radiologia muitas coisas, incluindo a criação da imagem, sejam
+ bastante padronizadas, existem muitas maneiras de se descrever o conteúdo
+ de uma imagem, incluindo diferentes sinônimos de termos, vários níveis
+ de descrição e foco em atores diferentes.
+ Nesse contexto, o uso de terminologias visuais e estruturadas para anotações
+ em imagens é uma abordagem promissora, pois permite a definição precisa
+ de imagens médicas utilizando a semântica fornecida pelas anotações
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Rubin2011"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Atualmente, anotações sobre imagens médicas fornecem apenas algumas informações,
+ como, por exemplo, metadados que contém o nome do paciente, idade, médico
+ responsável, etc.
+ As imagens em si não possuem nenhuma informação semântica, por isso, não
+ podem ser processadas por máquinas.
+ Para facilitar o processamento dessas anotações por máquina, é necessário
+ adicionar informações semânticas que sejam baseadas em fontes de conhecimento,
+ como 
+\emph on
+\lang english
+staging systems
+\emph default
+\lang brazilian
+.
+ Além disso, é preciso que essas informações sejam codificadas de forma
+ compreensíveis para maquinas, utilizando-se ontologias para facilitar o
+ mapeamento entre conceitos semânticos.
+ Assim, será possível a realização de um processamento mais complexo, como
+ por exemplo, o uso
+\emph on
+ de reasoning
+\emph default
+
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Dasmahapatra2003"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Como o foco deste trabalho é a construção de um sistema para permitir o
+ uso de 
+\shape italic
+reasoning
+\shape default
+ em anotações contidas em imagens médicas.
+ Este capítulo abordará os principais conceitos referentes a Informática
+ Radiológica.
+ Na Seção 2.1 são apresentados os HISs.
+ Em seguida, na Seção 2.2, Imagens Medicas.
+ Na seção 2.3, é discutido o processo de Anotações em imagens.
+ Por fim, na seção 2.4, serão descritos os sistemas de classificação que
+ são a base de conhecimento para a classificação dos pacientes com câncer,
+ a partir de imagens radiológicas.
+\end_layout
+
+\begin_layout Section
+Sistemas de Informação Hospitalares
+\end_layout
+
+\begin_layout Standard
+Os Sistemas de Informação Hospitalares, ou Hospital Information Systems
+ (HISs
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "HIS"
+description "Hospital Information System"
+
+\end_inset
+
+), surgiram por volta da década de 60 para atender às necessidades financeiras
+ das instituições médicas
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Image"
+
+\end_inset
+
+.
+ Além disso, os HISs têm agregado várias funcionalidades como: atendimento
+ clínico, protocolos clínicos, lembretes, alertas e gestão administrativa,
+ que possibilitam incrementar o ensino e pesquisa realizados em instituições
+ hospitalares.
+\end_layout
+
+\begin_layout Standard
+A pesquisa realizada nas instituições hospitalares permite a descoberta
+ de novos conhecimentos e a descoberta de novas tendências numa população,
+ como, por exemplo, por meio da mineração de dados.
+ Outros HISs, relacionados à informações médicas, são ainda mais específicos,
+ lidando com particularidades de um determinado departamento clínico.
+ Dessa forma, esses sistemas atuam como subconjuntos das funcionalidades
+ de um HIS, como exemplos destes sistemas temos o Laboratory Information
+ System (LIS
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "LIS"
+description "Laboratory Information System"
+
+\end_inset
+
+) e o 
+\lang english
+Radiology Information System
+\lang brazilian
+ (RIS
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "RIS"
+description "Radiology Information System"
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Standard
+Os LISs trabalham com o fluxo de trabalho dos serviços laboratoriais e de
+ patologia, oferecendo interfaces de comunicação com os diversos dispositivos
+ utilizados para a realização das avaliações químicas e de imunologia, microbiol
+ogia, genética e marcadores histopatológicos.
+ Os LISs são vistos como um modelo de monitoramento, validação de resultados
+ e divulgação eletrônica dos mesmos aos médicos solicitantes.
+ 
+\end_layout
+
+\begin_layout Standard
+Já os RISs atendem ao fluxo de trabalho de um departamento de radiologia
+ 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "huang2010pacs"
+
+\end_inset
+
+.
+ Onde eles têm funcionalidades de agendamento de pacientes, gerenciamento
+ de imagens e estudos de relatórios, que podem ser revisões de resultados
+ feitos para estudos anteriores.
+ 
+\end_layout
+
+\begin_layout Standard
+Embora os RISs sejam similares aos PACSs.
+ Eles se destacam dos PACSs por, normalmente, serem sistemas restritos aos
+ dados das imagens, enquanto os PACSs estão preocupados com os aspectos
+ de armazenamento e manipulação dos dados das imagens.
+ 
+\end_layout
+
+\end_body
+\end_document

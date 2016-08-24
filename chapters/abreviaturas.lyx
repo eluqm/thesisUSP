@@ -1,0 +1,708 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass abntex2
+\begin_preamble
+\usepackage{tikz, blindtext}
+\usepackage{indentfirst}
+%\let\footruleskip\undefined
+\usepackage{fancyhdr}
+\usetikzlibrary{shapes.multipart}
+
+%changing hyperref color 
+\usepackage{hyperref}
+\hypersetup{%
+    pdfborder = {0 0 0},
+    colorlinks,
+    citecolor=red,
+    filecolor=Darkgreen,
+    linkcolor=blue,
+    urlcolor=cyan!50!black!90
+}
+
+%headers and footers
+\fancyfoot[L]{My name}   % My name in Left footer
+\fancyfoot[R]{\thepage}  % Page number in Right footer
+\let\ps@plain\ps@fancy   % Plain page style = fancy page style
+
+
+%changing pagestyle
+\def\mystrut{\vrule height 1cm depth 1.5cm width 0pt} 
+\tikzset{
+ state/.style={
+       rectangle split,
+       rectangle split parts=2,
+       rectangle split part fill={black,white},
+       %rounded corners,
+       draw=black, very thick,
+       minimum height=2em,
+       text width=3cm,
+       inner sep=3pt,
+       text centered,
+       }
+}
+\renewcommand{\subsubsectionmark}[1]{\markright{\thesubsubsection\ #1}}
+
+\makechapterstyle{box}{
+  \renewcommand{\chapterheadstart}{} 
+  
+    % Secao secundaria (Section) Caixa baixa, Negrito
+    \renewcommand*{\cftsectionfont}{\bfseries}
+    % Secao terciaria (Subsection) Caixa baixa, Negrito, italico
+    \renewcommand*{\cftsubsectionfont}{\itshape\bfseries}
+    % Secao quaternaria (Subsubsection) Caixa baixa, italico
+    \renewcommand*{\cftsubsubsectionfont}{\itshape}
+    % Secao quinquenária (Subsubsubsection) Caixa baixa
+    \renewcommand*{\cftparagraphfont}{\normalsize}
+
+
+  % tamanhos de fontes de chapter e part	
+   \ifthenelse{\equal{\ABNTEXisarticle}{true}}{%
+     \setlength\beforechapskip{\baselineskip}
+     \renewcommand{\chaptitlefont}{\ABNTEXsectionfont\ABNTEXsectionfontsize}
+   }{%else
+     \setlength{\beforechapskip}{0pt}
+     \renewcommand{\ABNTEXchapterfontsize}{\LARGE}
+    
+    %\renewcommand{\ABNTEXchapterfont}{\sffamily\bfseries}  %alteração da fonte dos capítulos, seções e subseções
+    \renewcommand{\chaptitlefont}    {\ABNTEXchapterfont\bfseries\ABNTEXchapterfontsize}
+   }
+  
+  \renewcommand{\chapnumfont}{\chaptitlefont}
+  \renewcommand{\parttitlefont}{\ABNTEXpartfont\ABNTEXpartfontsize}
+  \renewcommand{\partnumfont}{\ABNTEXpartfont\ABNTEXpartfontsize}
+  \renewcommand{\partnamefont}{\ABNTEXpartfont\ABNTEXpartfontsize}
+  
+  % tamanhos de fontes de section, subsection, subsubsection e subsubsubsection
+  \setsecheadstyle{\ABNTEXsectionfont\ABNTEXsectionfontsize\bfseries\ABNTEXsectionupperifneeded}
+  \setsubsecheadstyle{\ABNTEXsubsectionfont\ABNTEXsubsectionfontsize\bfseries\itshape\ABNTEXsubsectionupperifneeded}
+  \setsubsubsecheadstyle{\ABNTEXsubsubsectionfont\ABNTEXsubsubsectionfontsize\itshape\ABNTEXsubsubsectionupperifneeded}
+  \setsubsubsubsecheadstyle{\ABNTEXsubsubsubsectionfont\ABNTEXsubsubsubsectionfontsize\ABNTEXsubsubsubsectionupperifneeded}
+ % impressao do numero do capitulo
+  \renewcommand{\chapternamenum}{}
+  
+  % impressao do nome do capitulo
+  \renewcommand{\printchaptername}{%
+   %\chaptitlefont
+   %\ifthenelse{\boolean{abntex@apendiceousecao}}{\appendixname}{\chaptername}%
+  }
+
+% impressao do titulo do capitulo
+  \def\printchaptertitle##1{%
+    
+    \setboolean{ABNTEXupperchapter}{true}
+    
+    \ifthenelse{\boolean{abntex@innonumchapter}}{
+%{\hrulefill
+%{\renewcommand{\arraystretch}{1}
+   \flushright
+     \begin{tikzpicture}
+     \node[state] {  \color{white} {\chaptername} \nodepart{two}        	\vspace{-1.5ex} \resizebox{!}{1.5cm}{\thechapter}};
+     \end{tikzpicture}
+%}}
+   %\vskip 0ex \hrulefill\chaptitlefont\bfseries\ABNTEXchapterupperifneeded{##1}
+    \vskip 4.3ex \flushright\chaptitlefont\bfseries\ABNTEXchapterupperifneeded{##1}
+    \vskip -0.6ex\hfill\rule{.8\textwidth}{0.5pt} 
+    \vskip -2.8ex\hfill\rule{.8\textwidth}{2pt}
+    \vskip 1.5ex
+    
+    }{%
+    % else
+        {\hrulefill
+        {\renewcommand{\arraystretch}{1.5} %  1 is the default, change whatever you need
+ %       \begin{tabular}{|c|}
+ %           \rowcolor{black}\color{white}\normalsize\ABNTEXchapterfont
+ %             \ifthenelse{\boolean{abntex@apendiceousecao}}{\MakeTextUppercase{\appendixname}}{\MakeTextUppercase{\chaptername}}  \\ 
+%            \vspace{-1.5ex}\\ %coloquei para aumentar o espaço entre o título e o número
+ %           \resizebox{!}{1.1cm}{\ABNTEXchapterfont\thechapter}
+  %          \\[2.5ex]
+  %          \hline
+  %      \end{tabular}
+
+%\renewcommand*{\printchapternum}{
+ %   \flushright
+%    \begin{tikzpicture}
+%    \node[state] {  \color{white}\MakeTextUppercase{\chaptername} \nodepart{two}      %\vspace{-1.5ex} \resizebox{!}{1.2cm}{\ABNTEXchapterfont\thechapter}};
+ %   \end{tikzpicture}
+%  }
+
+
+}} \\
+  %      \vskip 4.3ex %\flushright\chaptitlefont\bfseries\ABNTEXchapterupperifneeded{##1} \\
+%        \vskip -0.6ex\hfill\rule{.8\textwidth}{0.5pt} \\
+%        \vskip -2.8ex\hfill\rule{.8\textwidth}{2pt}\\
+
+%        \vskip 1.5ex
+}            
+  }
+% impressao do numero do capitulo     	
+  
+  \renewcommand{\afterchapternum}{}
+  
+  % impressao do capitulo nao numerado
+  \renewcommand\printchapternonum{%
+     \setboolean{abntex@innonumchapter}{true}%
+    }
+}
+\chapterstyle{box}
+\end_preamble
+\use_default_options true
+\maintain_unincluded_children false
+\language brazilian
+\language_package default
+\inputencoding utf8
+\fontencoding global
+\font_roman lmodern
+\font_sans default
+\font_typewriter default
+\font_math auto
+\font_default_family rmdefault
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize 12
+\spacing onehalf
+\use_hyperref false
+\papersize a4paper
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle plain
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+A classe 
+\emph on
+icmc
+\emph default
+ implementa a criação da lista de abreviaturas e siglas com o pacote 
+\emph on
+nomencl
+\emph default
+.
+ A inserção de abreviaturas e siglas na lista é realizada com o comando
+ 
+\series bold
+nsigla{ A}{B}
+\series default
+ que também insere o conteúdo da sigla no local do documento onde a mesma
+ foi definida.
+ Os parâmetros utilizados são: A que é a sigla e B que é o nome por extenso.
+ Caso deseja-se inserir a sigla apenas na lista, pode-se utilizar o comando
+\series bold
+ nsigla*{A}{B}
+\series default
+.
+\end_layout
+
+\begin_layout Standard
+Em Biomedicina, especificamente em radiologia e oncologia, avaliar a resposta
+ ao tratamento do câncer depende criticamente dos resultados da análise
+ de imagens pelos especialistas.
+ No entanto, as informações obtidas dessa análise não são facilmente interpretad
+as por máquinas.
+ 
+\end_layout
+
+\begin_layout Standard
+Pode-se ver que há uma falta de conexão entre a informação visual da imagem
+ e sua interpretação.
+ É por essa razão que tecnologias, como a web semântica, geram um interesse
+ crescente para aplicação em biomedicina.
+ Essas tecnologias podem tornar dados em biomedicina explícitos e computáveis.
+ A comunidade biomédica está em busca de ferramentas para ajudar com o acesso,
+ consulta e análise da vasta quantidade de dados gerados pelos avanços no
+ uso da tecnologia na medicina 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Marquet2007"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+O uso de imagens na medicina, especificamente no tratamento de pacientes
+ com câncer, gera enormes quantidades de informações do tipo não-texto.
+ No entanto, o uso dessas imagens médicas nas tarefas clínicas é importante,
+ pois permite aos especialistas, diagnosticar, planejar e acompanhar os
+ pacientes 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Levy2009"
+
+\end_inset
+
+.
+ Desse modo, um número considerável de aplicações informáticas, voltadas
+ para área medica, têm sido desenvolvidas.
+ Grande parte dessas aplicações estão focadas na extração de características
+ visuais com a ajuda de algoritmos de processamento de imagem.
+\end_layout
+
+\begin_layout Standard
+Embora esses algoritmos possam auxiliar a comunidade biomédica, quanto ao
+ uso de imagens no tratamento de câncer, eles apresentam problemas quando
+ uma consulta abstrata e ambígua é feita no contexto da classificação de
+ pacientes com câncer.
+ Por exemplo, quando um oncologista quer saber se um tumor já se encontra
+ em estado avançado perto de se espalhar para alguma região próxima da origem
+ do câncer, mas não para outras partes do corpo 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Wennerberg2011"
+
+\end_inset
+
+.
+ Portanto, podem haver algumas dificuldades em manipular interpretações
+ abstratas de imagens, porque a informação semântica dos laudos sobre a
+ imagem não é considerada nesses algoritmos.
+ Em geral, a semântica é o estudo do significado das coisas e, no contexto
+ de Oncologia e Radiologia, a semântica é o estudo do significado do conteúdo
+ dos laudos de radiologia, bem como o conteúdo e o significado das imagens
+ usadas.
+ 
+\end_layout
+
+\begin_layout Standard
+Em Biomedicina, especificamente em radiologia e oncologia, avaliar a resposta
+ ao tratamento do câncer depende criticamente dos resultados da análise
+ de imagens pelos especialistas.
+ No entanto, as informações obtidas dessa análise não são facilmente interpretad
+as por máquinas.
+ 
+\end_layout
+
+\begin_layout Standard
+Pode-se ver que há uma falta de conexão entre a informação visual da imagem
+ e sua interpretação.
+ É por essa razão que tecnologias, como a web semântica, geram um interesse
+ crescente para aplicação em biomedicina.
+ Essas tecnologias podem tornar dados em biomedicina explícitos e computáveis.
+ A comunidade biomédica está em busca de ferramentas para ajudar com o acesso,
+ consulta e análise da vasta quantidade de dados gerados pelos avanços no
+ uso da tecnologia na medicina 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Marquet2007"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+O uso de imagens na medicina, especificamente no tratamento de pacientes
+ com câncer, gera enormes quantidades de informações do tipo não-texto.
+ No entanto, o uso dessas imagens médicas nas tarefas clínicas é importante,
+ pois permite aos especialistas, diagnosticar, planejar e acompanhar os
+ pacientes 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Levy2009"
+
+\end_inset
+
+.
+ Desse modo, um número considerável de aplicações informáticas, voltadas
+ para área medica, têm sido desenvolvidas.
+ Grande parte dessas aplicações estão focadas na extração de características
+ visuais com a ajuda de algoritmos de processamento de imagem.
+\end_layout
+
+\begin_layout Standard
+Embora esses algoritmos possam auxiliar a comunidade biomédica, quanto ao
+ uso de imagens no tratamento de câncer, eles apresentam problemas quando
+ uma consulta abstrata e ambígua é feita no contexto da classificação de
+ pacientes com câncer.
+ Por exemplo, quando um oncologista quer saber se um tumor já se encontra
+ em estado avançado perto de se espalhar para alguma região próxima da origem
+ do câncer, mas não para outras partes do corpo 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Wennerberg2011"
+
+\end_inset
+
+.
+ Portanto, podem haver algumas dificuldades em manipular interpretações
+ abstratas de imagens, porque a informação semântica dos laudos sobre a
+ imagem não é considerada nesses algoritmos.
+ Em geral, a semântica é o estudo do significado das coisas e, no contexto
+ de Oncologia e Radiologia, a semântica é o estudo do significado do conteúdo
+ dos laudos de radiologia, bem como o conteúdo e o significado das imagens
+ usadas.
+ 
+\end_layout
+
+\begin_layout Standard
+Em Biomedicina, especificamente em radiologia e oncologia, avaliar a resposta
+ ao tratamento do câncer depende criticamente dos resultados da análise
+ de imagens pelos especialistas.
+ No entanto, as informações obtidas dessa análise não são facilmente interpretad
+as por máquinas.
+ 
+\end_layout
+
+\begin_layout Standard
+Pode-se ver que há uma falta de conexão entre a informação visual da imagem
+ e sua interpretação.
+ É por essa razão que tecnologias, como a web semântica, geram um interesse
+ crescente para aplicação em biomedicina.
+ Essas tecnologias podem tornar dados em biomedicina explícitos e computáveis.
+ A comunidade biomédica está em busca de ferramentas para ajudar com o acesso,
+ consulta e análise da vasta quantidade de dados gerados pelos avanços no
+ uso da tecnologia na medicina 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Marquet2007"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+O uso de imagens na medicina, especificamente no tratamento de pacientes
+ com câncer, gera enormes quantidades de informações do tipo não-texto.
+ No entanto, o uso dessas imagens médicas nas tarefas clínicas é importante,
+ pois permite aos especialistas, diagnosticar, planejar e acompanhar os
+ pacientes 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Levy2009"
+
+\end_inset
+
+.
+ Desse modo, um número considerável de aplicações informáticas, voltadas
+ para área medica, têm sido desenvolvidas.
+ Grande parte dessas aplicações estão focadas na extração de características
+ visuais com a ajuda de algoritmos de processamento de imagem.
+\end_layout
+
+\begin_layout Standard
+Embora esses algoritmos possam auxiliar a comunidade biomédica, quanto ao
+ uso de imagens no tratamento de câncer, eles apresentam problemas quando
+ uma consulta abstrata e ambígua é feita no contexto da classificação de
+ pacientes com câncer.
+ Por exemplo, quando um oncologista quer saber se um tumor já se encontra
+ em estado avançado perto de se espalhar para alguma região próxima da origem
+ do câncer, mas não para outras partes do corpo 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Wennerberg2011"
+
+\end_inset
+
+.
+ Portanto, podem haver algumas dificuldades em manipular interpretações
+ abstratas de imagens, porque a informação semântica dos laudos sobre a
+ imagem não é considerada nesses algoritmos.
+ Em geral, a semântica é o estudo do significado das coisas e, no contexto
+ de Oncologia e Radiologia, a semântica é o estudo do significado do conteúdo
+ dos laudos de radiologia, bem como o conteúdo e o significado das imagens
+ usadas.
+ 
+\end_layout
+
+\begin_layout Standard
+Em Biomedicina, especificamente em radiologia e oncologia, avaliar a resposta
+ ao tratamento do câncer depende criticamente dos resultados da análise
+ de imagens pelos especialistas.
+ No entanto, as informações obtidas dessa análise não são facilmente interpretad
+as por máquinas.
+ 
+\end_layout
+
+\begin_layout Standard
+Pode-se ver que há uma falta de conexão entre a informação visual da imagem
+ e sua interpretação.
+ É por essa razão que tecnologias, como a web semântica, geram um interesse
+ crescente para aplicação em biomedicina.
+ Essas tecnologias podem tornar dados em biomedicina explícitos e computáveis.
+ A comunidade biomédica está em busca de ferramentas para ajudar com o acesso,
+ consulta e análise da vasta quantidade de dados gerados pelos avanços no
+ uso da tecnologia na medicina 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Marquet2007"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+O uso de imagens na medicina, especificamente no tratamento de pacientes
+ com câncer, gera enormes quantidades de informações do tipo não-texto.
+ No entanto, o uso dessas imagens médicas nas tarefas clínicas é importante,
+ pois permite aos especialistas, diagnosticar, planejar e acompanhar os
+ pacientes 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Levy2009"
+
+\end_inset
+
+.
+ Desse modo, um número considerável de aplicações informáticas, voltadas
+ para área medica, têm sido desenvolvidas.
+ Grande parte dessas aplicações estão focadas na extração de características
+ visuais com a ajuda de algoritmos de processamento de imagem.
+\end_layout
+
+\begin_layout Standard
+Embora esses algoritmos possam auxiliar a comunidade biomédica, quanto ao
+ uso de imagens no tratamento de câncer, eles apresentam problemas quando
+ uma consulta abstrata e ambígua é feita no contexto da classificação de
+ pacientes com câncer.
+ Por exemplo, quando um oncologista quer saber se um tumor já se encontra
+ em estado avançado perto de se espalhar para alguma região próxima da origem
+ do câncer, mas não para outras partes do corpo 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Wennerberg2011"
+
+\end_inset
+
+.
+ Portanto, podem haver algumas dificuldades em manipular interpretações
+ abstratas de imagens, porque a informação semântica dos laudos sobre a
+ imagem não é considerada nesses algoritmos.
+ Em geral, a semântica é o estudo do significado das coisas e, no contexto
+ de Oncologia e Radiologia, a semântica é o estudo do significado do conteúdo
+ dos laudos de radiologia, bem como o conteúdo e o significado das imagens
+ usadas.
+ 
+\end_layout
+
+\begin_layout Standard
+Em Biomedicina, especificamente em radiologia e oncologia, avaliar a resposta
+ ao tratamento do câncer depende criticamente dos resultados da análise
+ de imagens pelos especialistas.
+ No entanto, as informações obtidas dessa análise não são facilmente interpretad
+as por máquinas.
+ 
+\end_layout
+
+\begin_layout Standard
+Pode-se ver que há uma falta de conexão entre a informação visual da imagem
+ e sua interpretação.
+ É por essa razão que tecnologias, como a web semântica, geram um interesse
+ crescente para aplicação em biomedicina.
+ Essas tecnologias podem tornar dados em biomedicina explícitos e computáveis.
+ A comunidade biomédica está em busca de ferramentas para ajudar com o acesso,
+ consulta e análise da vasta quantidade de dados gerados pelos avanços no
+ uso da tecnologia na medicina 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Marquet2007"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+O uso de imagens na medicina, especificamente no tratamento de pacientes
+ com câncer, gera enormes quantidades de informações do tipo não-texto.
+ No entanto, o uso dessas imagens médicas nas tarefas clínicas é importante,
+ pois permite aos especialistas, diagnosticar, planejar e acompanhar os
+ pacientes 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Levy2009"
+
+\end_inset
+
+.
+ Desse modo, um número considerável de aplicações informáticas, voltadas
+ para área medica, têm sido desenvolvidas.
+ Grande parte dessas aplicações estão focadas na extração de características
+ visuais com a ajuda de algoritmos de processamento de imagem.
+\end_layout
+
+\begin_layout Standard
+Embora esses algoritmos possam auxiliar a comunidade biomédica, quanto ao
+ uso de imagens no tratamento de câncer, eles apresentam problemas quando
+ uma consulta abstrata e ambígua é feita no contexto da classificação de
+ pacientes com câncer.
+ Por exemplo, quando um oncologista quer saber se um tumor já se encontra
+ em estado avançado perto de se espalhar para alguma região próxima da origem
+ do câncer, mas não para outras partes do corpo 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Wennerberg2011"
+
+\end_inset
+
+.
+ Portanto, podem haver algumas dificuldades em manipular interpretações
+ abstratas de imagens, porque a informação semântica dos laudos sobre a
+ imagem não é considerada nesses algoritmos.
+ Em geral, a semântica é o estudo do significado das coisas e, no contexto
+ de Oncologia e Radiologia, a semântica é o estudo do significado do conteúdo
+ dos laudos de radiologia, bem como o conteúdo e o significado das imagens
+ usadas.
+ 
+\end_layout
+
+\begin_layout Standard
+Para se gerar a lista de siglas na parte pre-textual do documento é preciso
+ incluir o comando 
+\series bold
+
+\backslash
+incluidelistasiglas
+\series default
+ antes do início do documento.
+ Além disto, a compilação do documento deve conter o comando 
+\emph on
+makeindex
+\emph default
+ após duas compilações com o 
+\emph on
+pdflatex.
+
+\emph default
+ Por exemplo, supondo que o documento principal tenha o nome de thesis,
+ podemos usar a seguinte sequência de comandos:
+\end_layout
+
+\begin_layout Itemize
+pdflatex thesis.texpdflatex 
+\end_layout
+
+\begin_layout Itemize
+thesis.texmakeindex 
+\end_layout
+
+\begin_layout Itemize
+thesis.nlo -s nomencl.ist -o thesis.nlspdflatex thesis.tex
+\end_layout
+
+\begin_layout Section
+Abreviaturas e Siglas
+\end_layout
+
+\begin_layout Standard
+A classe icmc implementa a criação da lista de abreviaturas e siglas com
+ o pacote nomencl.
+ A inserção de abreviaturas e siglas na lista é realizada com o comando
+ nsigla{ A}{B} que também insere o conteúdo da sigla no local do documento
+ onde a mesma foi definida.
+ Os parâmetros utilizados são: A que é a sigla e B que é o nome por extenso.
+ Caso deseja-se inserir a sigla apenas na lista, pode-se utilizar o comando
+ nsigla*{A}{B}.
+ Para se gerar a lista de siglas na parte pre-textual do documento é preciso
+ incluir o comando nincluidelistasiglas antes do início do documento.
+ Além disto, a compilação do documento deve conter o comando makeindex após
+ duas compilações com o pdflatex.
+ Por exemplo, supondo que o documento principal tenha o nome de thesis,
+ podemos usar a seguinte sequência de comandos:
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language={C++},float,numbers=left,numberstyle={\normalsize},basicstyle={\normalsize\rmfamily},breaklines=true"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+public static String Leitura (){ 
+\end_layout
+
+\begin_layout Plain Layout
+
+BufferedReader reader = new BufferedReader(new InputStreamReader( System.in));
+\end_layout
+
+\begin_layout Plain Layout
+
+try { 
+\end_layout
+
+\begin_layout Plain Layout
+
+return reader.readLine (); // Lê uma linha pelo teclado 
+\end_layout
+
+\begin_layout Plain Layout
+
+} catch (IOException e) { 
+\end_layout
+
+\begin_layout Plain Layout
+
+e.printStackTrace (); 
+\end_layout
+
+\begin_layout Plain Layout
+
+return ""; 
+\end_layout
+
+\begin_layout Plain Layout
+
+} 
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document
