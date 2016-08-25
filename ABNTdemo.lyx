@@ -11,8 +11,10 @@
 \usepackage{color, colortbl}
 \usepackage{graphicx}
 \usepackage[brazil]{babel}
+\usepackage[brazilian,hyperpageref]{backref} 
 %\usepackage[style=authoryear,natbib=true,backend=biber]{biblatex}
 \usepackage[alf]{abntex2cite}
+%\usepackage[num]{abntex2cite}  
 %\addbibresource{/Applications/thesisUSP/references/refsabnt.bib}
 %\usepackage[backend=biber]{biblatex}
 %\usepackage[backend=biber, style=abnt]{biblatex}
@@ -21,7 +23,7 @@
 \hypersetup{%     
 pdfborder = {0 0 0},     
 colorlinks,     
-citecolor=red,     
+citecolor=blue,     
 filecolor=Darkgreen,     
 linkcolor=blue,     
 urlcolor=cyan!50!black!90 
@@ -92,7 +94,7 @@ EndPreamble
 \graphics default
 \default_output_format default
 \output_sync 0
-\bibtex_command biber
+\bibtex_command default
 \index_command default
 \paperfontsize 12
 \spacing onehalf
@@ -109,9 +111,9 @@ EndPreamble
 \use_package stackrel 1
 \use_package stmaryrd 1
 \use_package undertilde 1
-\cite_engine natbib
-\cite_engine_type authoryear
-\biblio_style plain
+\cite_engine basic
+\cite_engine_type default
+\biblio_style abnt
 \use_bibtopic false
 \use_indices false
 \paperorientation portrait
@@ -145,148 +147,112 @@ status open
 
 \begin_layout Plain Layout
 
-%
-\backslash
-makechapterstyle{box}{ 
+%======================================
 \end_layout
 
 \begin_layout Plain Layout
 
-%
-\backslash
-renewcommand{
-\backslash
-chapterheadstart}{} 
+%Pacotesdecitações 
 \end_layout
 
 \begin_layout Plain Layout
 
-% impressao do titulo do capitulo   
+%======================================
 \end_layout
 
 \begin_layout Plain Layout
 
-%
+
 \backslash
 renewcommand*{
 \backslash
-printchaptername}{}   
+backref}[1]{} 
 \end_layout
 
 \begin_layout Plain Layout
 
-%
+
 \backslash
-def
+renewcommand*{
 \backslash
-printchaptertitle##1{%          
+backrefalt}[4]{     
 \end_layout
 
 \begin_layout Plain Layout
 
-     
+	
+\backslash
+ifcase #1 (No citado.)           
 \end_layout
 
 \begin_layout Plain Layout
 
-%
+		
 \backslash
-flushright      
+or (Citado na página~#2.)           
 \end_layout
 
 \begin_layout Plain Layout
 
-%
+		
 \backslash
-begin{tikzpicture}        
+else (Citado nas páginas #2.)     
 \end_layout
 
 \begin_layout Plain Layout
 
-%	
+	
 \backslash
-node[state]{
-\backslash
-color{white}{
-\backslash
-chaptername}
-\backslash
-nodepart{two}
-\backslash
-vspace{-1.5ex}
-\backslash
-resizebox{!}{1.5cm}{
-\backslash
-thechapter}}; 
+fi% 
 \end_layout
 
 \begin_layout Plain Layout
 
-%
-\backslash
-end{tikzpicture}  
+} 
 \end_layout
 
 \begin_layout Plain Layout
 
+
+\backslash
+renewcommand*{
+\backslash
+backrefsep}{, } 
 \end_layout
 
 \begin_layout Plain Layout
 
-%
+
 \backslash
-vskip 4.3ex 
+renewcommand*{
 \backslash
-flushright
-\backslash
-chaptitlefont
-\backslash
-bfseries
-\backslash
-ABNTEXchapterupperifneeded{##1}     
+backreftwosep}{e~} 
 \end_layout
 
 \begin_layout Plain Layout
 
-%
+
 \backslash
-vskip -0.6ex
+renewcommand*{
 \backslash
-hfill
-\backslash
-rule{.8
-\backslash
-textwidth}{0.5pt}      
+backreflastsep}{e~}
 \end_layout
 
 \begin_layout Plain Layout
 
-%
-\backslash
-vskip -2.8ex
-\backslash
-hfill
-\backslash
-rule{.8
-\backslash
-textwidth}{2pt}     
+%===============================================================================
+= 
 \end_layout
 
 \begin_layout Plain Layout
 
-%
-\backslash
-vskip 1.5ex          
+% Configuração dos Estilo dos Capítulo 
 \end_layout
 
 \begin_layout Plain Layout
 
-%}
-\end_layout
-
-\begin_layout Plain Layout
-
-%}
+%===============================================================================
+=
 \end_layout
 
 \begin_layout Plain Layout
@@ -302,95 +268,270 @@ makechapterstyle{box}{
 
 \begin_layout Plain Layout
 
-%
-\backslash
-def
-\backslash
-printchaptertitle##1{
-\backslash
-hrulefill{
+\end_layout
+
+\begin_layout Plain Layout
+
+
 \backslash
 renewcommand{
 \backslash
-arraystretch}{2}
+chapterheadstart}{}         
+\end_layout
+
+\begin_layout Plain Layout
+
+% Secao secundaria (Section) Caixa baixa, Negrito     
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+renewcommand*{
+\backslash
+cftsectionfont}{
+\backslash
+bfseries}     
+\end_layout
+
+\begin_layout Plain Layout
+
+% Secao terciaria (Subsection) Caixa baixa, Negrito, italico     
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+renewcommand*{
+\backslash
+cftsubsectionfont}{
+\backslash
+itshape
+\backslash
+bfseries}     
+\end_layout
+
+\begin_layout Plain Layout
+
+% Secao quaternaria (Subsubsection) Caixa baixa, italico     
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+renewcommand*{
+\backslash
+cftsubsubsectionfont}{
+\backslash
+itshape}     
+\end_layout
+
+\begin_layout Plain Layout
+
+% Secao quinquenária (Subsubsubsection) Caixa baixa     
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+renewcommand*{
+\backslash
+cftparagraphfont}{
+\backslash
+normalsize}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+% tamanhos de fontes de chapter e part	    
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+ifthenelse{
+\backslash
+equal{
+\backslash
+ABNTEXisarticle}{true}}{%      
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+setlength
+\backslash
+beforechapskip{
+\backslash
+baselineskip}      
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+renewcommand{
+\backslash
+chaptitlefont}{
+\backslash
+ABNTEXsectionfont
+\backslash
+ABNTEXsectionfontsize}    
+\end_layout
+
+\begin_layout Plain Layout
+
+}{%else      
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+setlength{
+\backslash
+beforechapskip}{0pt}      
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+renewcommand{
+\backslash
+ABNTEXchapterfontsize}{
+\backslash
+LARGE}          
 \end_layout
 
 \begin_layout Plain Layout
 
 %
 \backslash
-begin{tabular}{|c|}
+renewcommand{
+\backslash
+ABNTEXchapterfont}{
+\backslash
+sffamily
+\backslash
+bfseries}  
 \end_layout
 
 \begin_layout Plain Layout
 
-%
+%alteração da fonte dos capítulos, seções e subseções     
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
 \backslash
-rowcolor{black}
+renewcommand{
 \backslash
-color{white}
-\backslash
-normalsize
+chaptitlefont}{
 \backslash
 ABNTEXchapterfont
 \backslash
-MakeTextUppercase{
+bfseries
 \backslash
-chaptername}
-\backslash
+ABNTEXchapterfontsize}    
+\end_layout
 
-\backslash
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
 
 \end_layout
 
 \begin_layout Plain Layout
 
-%
-\backslash
-vspace{-1.5ex}
-\backslash
 
 \backslash
+renewcommand{
+\backslash
+chapnumfont}{
+\backslash
+chaptitlefont}   
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+renewcommand{
+\backslash
+parttitlefont}{
+\backslash
+ABNTEXpartfont
+\backslash
+ABNTEXpartfontsize}   
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+renewcommand{
+\backslash
+partnumfont}{
+\backslash
+ABNTEXpartfont
+\backslash
+ABNTEXpartfontsize}   
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+renewcommand{
+\backslash
+partnamefont}{
+\backslash
+ABNTEXpartfont
+\backslash
+ABNTEXpartfontsize}      
+\end_layout
+
+\begin_layout Plain Layout
 
 \end_layout
 
 \begin_layout Plain Layout
 
-%
-\backslash
-resizebox{!}{1.1cm}{
-\backslash
-ABNTEXchapterfont
-\backslash
-thechapter}
 \end_layout
 
 \begin_layout Plain Layout
 
-%
-\backslash
-
-\backslash
-[2.5ex]
 \end_layout
 
 \begin_layout Plain Layout
 
-%
-\backslash
-hline
 \end_layout
 
 \begin_layout Plain Layout
 
-%
-\backslash
-end{tabular}
 \end_layout
 
 \begin_layout Plain Layout
 
-%}}
+\end_layout
+
+\begin_layout Plain Layout
+
 \end_layout
 
 \begin_layout Plain Layout
@@ -426,45 +567,6 @@ bfseries}
 renewcommand*{
 \backslash
 printchapternum}{     
-\end_layout
-
-\begin_layout Plain Layout
-
-%
-\backslash
-flushright     
-\end_layout
-
-\begin_layout Plain Layout
-
-%
-\backslash
-begin{tikzpicture}       
-\end_layout
-
-\begin_layout Plain Layout
-
-%
-\backslash
-draw[fill,color=white,draw=black] (0,0) rectangle (2cm,2cm);       
-\end_layout
-
-\begin_layout Plain Layout
-
-%
-\backslash
-draw[color=black] (1cm,1cm) node { 
-\backslash
-chapnumfont
-\backslash
-thechapter };     
-\end_layout
-
-\begin_layout Plain Layout
-
-%
-\backslash
-end{tikzpicture}   
 \end_layout
 
 \begin_layout Plain Layout
@@ -563,10 +665,6 @@ end{tabular}
 
 \begin_layout Plain Layout
 
-\end_layout
-
-\begin_layout Plain Layout
-
 
 \backslash
 renewcommand*{
@@ -648,10 +746,6 @@ vskip 1.5ex
 
 \begin_layout Plain Layout
 
-\end_layout
-
-\begin_layout Plain Layout
-
 }
 \end_layout
 
@@ -687,17 +781,17 @@ chapterstyle{box}
 
 \begin_layout Plain Layout
 
-%
-\backslash
-chapterstyle{veelo}
+%=================================
 \end_layout
 
 \begin_layout Plain Layout
 
+%Configurações do estilo da pagina
 \end_layout
 
 \begin_layout Plain Layout
 
+%==================================
 \end_layout
 
 \begin_layout Plain Layout
@@ -843,6 +937,597 @@ pagestyle{ruled}
 
 \begin_layout Plain Layout
 
+%===============================================================================
+=
+\end_layout
+
+\begin_layout Plain Layout
+
+% Configuração da fonte utilizada na capa exigida pelo ICMC
+\end_layout
+
+\begin_layout Plain Layout
+
+%===============================================================================
+=
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+%
+\backslash
+newcommand{
+\backslash
+@icmcFont}[2][]{
+\backslash
+fontsize{#2}{#2}
+\backslash
+ifthenelse{
+\backslash
+isempty{#1}}{}{
+\backslash
+fontspec[Mapping = tex-text, Path = packages/fonts/]{#1}}}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+ifxetex % Configuração da fonte para a compilação por XETEX
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+RequirePackage{fontspec}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+RequirePackage{xltxtra}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+newfontfamily{
+\backslash
+arial}[
+\end_layout
+
+\begin_layout Plain Layout
+
+Ligatures=TeX, % recommended
+\end_layout
+
+\begin_layout Plain Layout
+
+Mapping         = tex-text,
+\end_layout
+
+\begin_layout Plain Layout
+
+Path            = packages/fonts/,
+\end_layout
+
+\begin_layout Plain Layout
+
+BoldFont        = *bd,
+\end_layout
+
+\begin_layout Plain Layout
+
+ItalicFont      = *i,
+\end_layout
+
+\begin_layout Plain Layout
+
+BoldItalicFont  = *bi]{arial}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+newcommand
+\backslash
+@icmcTitulo{
+\backslash
+@icmcFont{18}
+\backslash
+arial}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+newcommand
+\backslash
+@icmcAutorCapa{
+\backslash
+@icmcFont{13}
+\backslash
+arial
+\backslash
+bfseries
+\backslash
+itshape}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+newcommand
+\backslash
+@icmcAutorFolhaRosto{
+\backslash
+@icmcFont{13}
+\backslash
+arial
+\backslash
+bfseries}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+newcommand
+\backslash
+@icmcTituloFolhaRosto{
+\backslash
+@icmcFont{17}
+\backslash
+arial}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+newcommand
+\backslash
+@icmcOrientador{
+\backslash
+@icmcFont{10}
+\backslash
+arial}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+newcommand
+\backslash
+@icmcPreambulo{
+\backslash
+@icmcFont{10}
+\backslash
+arial}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+newcommand
+\backslash
+@icmcLocalData{
+\backslash
+@icmcFont{11}
+\backslash
+arial
+\backslash
+bfseries}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+newcommand
+\backslash
+@icmcCarimbo{
+\backslash
+@icmcFont{11}
+\backslash
+arial}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+newcommand
+\backslash
+@icmcSVPG{
+\backslash
+@icmcFont{8}
+\backslash
+arial}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+else
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+ifluatex % Configuração da fonte para a compilação por LUATEX
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+RequirePackage{fontspec}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+newfontfamily{
+\backslash
+arial}[
+\end_layout
+
+\begin_layout Plain Layout
+
+Ligatures=TeX, % recommended
+\end_layout
+
+\begin_layout Plain Layout
+
+Mapping         = tex-text,
+\end_layout
+
+\begin_layout Plain Layout
+
+Path            = packages/fonts/,
+\end_layout
+
+\begin_layout Plain Layout
+
+BoldFont        = *bd,
+\end_layout
+
+\begin_layout Plain Layout
+
+ItalicFont      = *i,
+\end_layout
+
+\begin_layout Plain Layout
+
+BoldItalicFont  = *bi]{arial}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+newcommand
+\backslash
+@icmcTitulo{
+\backslash
+@icmcFont{18}
+\backslash
+arial}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+newcommand
+\backslash
+@icmcAutorCapa{
+\backslash
+@icmcFont{13}
+\backslash
+arial
+\backslash
+bfseries
+\backslash
+itshape}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+newcommand
+\backslash
+@icmcAutorFolhaRosto{
+\backslash
+@icmcFont{13}
+\backslash
+arial
+\backslash
+bfseries}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+newcommand
+\backslash
+@icmcTituloFolhaRosto{
+\backslash
+@icmcFont{17}
+\backslash
+arial}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+newcommand
+\backslash
+@icmcOrientador{
+\backslash
+@icmcFont{10}
+\backslash
+arial}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+newcommand
+\backslash
+@icmcPreambulo{
+\backslash
+@icmcFont{10}
+\backslash
+arial}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+newcommand
+\backslash
+@icmcLocalData{
+\backslash
+@icmcFont{11}
+\backslash
+arial
+\backslash
+bfseries}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+newcommand
+\backslash
+@icmcCarimbo{
+\backslash
+@icmcFont{11}
+\backslash
+arial}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+newcommand
+\backslash
+@icmcSVPG{
+\backslash
+@icmcFont{8}
+\backslash
+arial}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+else % Configuração da fonte para a compilação por PDFLATEX
+\end_layout
+
+\begin_layout Plain Layout
+
+%
+\backslash
+RequirePackage[T1]{fontenc}	    	% Selecao de codigos de fonte.
+\end_layout
+
+\begin_layout Plain Layout
+
+%
+\backslash
+RequirePackage[utf8]{inputenc}		% Codificacao do documento (conversão automática
+ dos acentos)
+\end_layout
+
+\begin_layout Plain Layout
+
+%
+\backslash
+newcommand
+\backslash
+@icmcTitulo{
+\backslash
+fontsize{18pt}{1em}
+\backslash
+selectfont
+\backslash
+usefont{T1}{phv}{m}{n}}
+\end_layout
+
+\begin_layout Plain Layout
+
+%
+\backslash
+newcommand
+\backslash
+@icmcAutorCapa{
+\backslash
+fontsize{13pt}{1em}
+\backslash
+selectfont
+\backslash
+usefont{T1}{phv}{b}{it}}
+\end_layout
+
+\begin_layout Plain Layout
+
+%
+\backslash
+newcommand
+\backslash
+@icmcAutorFolhaRosto{
+\backslash
+fontsize{13pt}{1em}
+\backslash
+selectfont
+\backslash
+usefont{T1}{phv}{b}{n}}
+\end_layout
+
+\begin_layout Plain Layout
+
+%
+\backslash
+newcommand
+\backslash
+@icmcTituloFolhaRosto{
+\backslash
+fontsize{17pt}{1em}
+\backslash
+selectfont
+\backslash
+usefont{T1}{phv}{m}{n}}
+\end_layout
+
+\begin_layout Plain Layout
+
+%
+\backslash
+newcommand
+\backslash
+@icmcOrientador{
+\backslash
+fontsize{10pt}{1em}
+\backslash
+selectfont
+\backslash
+usefont{T1}{phv}{m}{n}}
+\end_layout
+
+\begin_layout Plain Layout
+
+%
+\backslash
+newcommand
+\backslash
+@icmcPreambulo{
+\backslash
+fontsize{10pt}{1em}
+\backslash
+selectfont
+\backslash
+usefont{T1}{phv}{m}{n}}
+\end_layout
+
+\begin_layout Plain Layout
+
+%
+\backslash
+newcommand
+\backslash
+@icmcLocalData{
+\backslash
+fontsize{11pt}{1em}
+\backslash
+selectfont
+\backslash
+usefont{T1}{phv}{b}{n}}
+\end_layout
+
+\begin_layout Plain Layout
+
+%
+\backslash
+newcommand
+\backslash
+@icmcCarimbo{
+\backslash
+fontsize{11pt}{1em}
+\backslash
+selectfont
+\backslash
+usefont{T1}{phv}{m}{n}}
+\end_layout
+
+\begin_layout Plain Layout
+
+%
+\backslash
+newcommand
+\backslash
+@icmcSVPG{
+\backslash
+fontsize{8pt}{1em}
+\backslash
+selectfont
+\backslash
+usefont{T1}{phv}{m}{n}}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+fi
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+fi
 \end_layout
 
 \end_inset
@@ -984,7 +1669,7 @@ conasdasasd
 \begin_layout Standard
 \begin_inset CommandInset include
 LatexCommand input
-filename "/Users/edson/Documents/introducao.lyx"
+filename "chapters/introducao.lyx"
 
 \end_inset
 
@@ -998,7 +1683,7 @@ Informatica biomedica
 \begin_layout Standard
 \begin_inset CommandInset include
 LatexCommand input
-filename "/Users/edson/Documents/marco.lyx"
+filename "chapters/marco.lyx"
 
 \end_inset
 
@@ -1012,7 +1697,7 @@ Listas
 \begin_layout Standard
 \begin_inset CommandInset include
 LatexCommand input
-filename "/Users/edson/Documents/abreviaturas.lyx"
+filename "chapters/abreviaturas.lyx"
 
 \end_inset
 
@@ -1031,56 +1716,13 @@ filename "chapters/metodos_abnt.lyx"
 \end_inset
 
 
-\begin_inset Note Comment
-status open
-
-\begin_layout Plain Layout
-\begin_inset CommandInset bibtex
-LatexCommand bibtex
-btprint "btPrintCited"
-bibfiles "references/refsabnt"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Bibliography
-\begin_inset CommandInset bibitem
-LatexCommand bibitem
-key "key-4"
-
-\end_inset
-
-
-\begin_inset CommandInset citation
-LatexCommand citet
-key "Silvio2014"
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-nocite{*}
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
+\begin_inset CommandInset bibtex
+LatexCommand bibtex
+bibfiles "references/refsabnt"
+options "abntex2-alf"
 
 \end_inset
 

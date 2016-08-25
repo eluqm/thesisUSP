@@ -25,11 +25,11 @@ End
 \language_package default
 \inputencoding utf8
 \fontencoding global
-\font_roman default
+\font_roman lmodern
 \font_sans default
 \font_typewriter default
 \font_math auto
-\font_default_family default
+\font_default_family rmdefault
 \use_non_tex_fonts false
 \font_sc false
 \font_osf false
@@ -248,7 +248,7 @@ status open
 \noindent
 \align center
 \begin_inset Graphics
-	filename /Applications/thesisUSP/figures/aim3ontologyprotege.png
+	filename ../figures/aim3ontologyprotege.png
 	lyxscale 20
 	scale 10
 
@@ -283,20 +283,6 @@ Esta extensão captura lesões e medidas derivadas durante os ensaios clínicos
  4.0 para instâncias da ontologia AIM4-O.
  Essas instâncias são necessárias para o análise das anotações com tecnologias
  de Web Semântica.
-\begin_inset CommandInset citation
-LatexCommand citep
-key "Silvio2014"
-
-\end_inset
-
-
-\begin_inset CommandInset citation
-LatexCommand citep
-key "Silvio2014"
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Subsubsection*
@@ -512,8 +498,8 @@ Basic classes:
  O usuario pode estender o modelo para atender suas necessidades, seguindo
  os critérios descritos no 
 \begin_inset CommandInset citation
-LatexCommand citet
-key "Mongkolwat2014,Silvio2014"
+LatexCommand citep
+key "4549145"
 
 \end_inset
 
@@ -532,15 +518,9 @@ cite{Silvio2014}
 \end_inset
 
 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-cite{key-4}
-\end_layout
+\begin_inset CommandInset citation
+LatexCommand citet
+key "abntex2classe"
 
 \end_inset
 
@@ -869,7 +849,7 @@ es.
 
 \begin_layout Standard
 \begin_inset listings
-lstparams "language=XML,float,basicstyle={\tiny\rmfamily},breaklines=true,frame={lines}"
+lstparams "basicstyle={\tiny\rmfamily},breaklines=true,float,frame={lines},language=XML"
 inline false
 status open
 
@@ -1623,7 +1603,7 @@ reference "lis:exemplo2"
 
 \begin_layout Standard
 \begin_inset listings
-lstparams "language=XML,float,basicstyle={\tiny\rmfamily},frame={single}"
+lstparams "basicstyle={\tiny\rmfamily},float,frame={single},language=XML"
 inline false
 status open
 
@@ -2255,7 +2235,7 @@ status open
 
 \begin_layout Plain Layout
 \begin_inset Graphics
-	filename /Applications/thesisUSP/figures/objectproperties.png
+	filename ../figures/objectproperties.png
 	scale 40
 	rotateOrigin center
 
@@ -2350,7 +2330,7 @@ status open
 
 \begin_layout Plain Layout
 \begin_inset Graphics
-	filename /Applications/thesisUSP/figures/AIM4protegeindividuos.png
+	filename ../figures/AIM4protegeindividuos.png
 	lyxscale 75
 	scale 35
 
@@ -2646,7 +2626,7 @@ status open
 
 \begin_layout Plain Layout
 \begin_inset Graphics
-	filename /Applications/thesisUSP/figures/ONLIRA.pdf
+	filename ../figures/ONLIRA.pdf
 	lyxscale 50
 	scale 30
 
@@ -2874,7 +2854,7 @@ status open
 
 \begin_layout Standard
 \begin_inset listings
-lstparams "language=SPARQL,float,numbers=left,basicstyle={\normalsize\rmfamily},breaklines=true,frame={lines}"
+lstparams "basicstyle={\normalsize\rmfamily},breaklines=true,float,frame={lines},language=SPARQL,numbers=left"
 inline false
 status open
 
@@ -2903,6 +2883,20 @@ Traduzimos esse conhecimento em uma representação formal, usando uma modelagem
  SWRL permite aos usuários escrever regras que podem ser expressas em termos
  de conceitos OWL proporcionando mais capacidades de raciocínio dedutivo
  que unicamente OWL.
+\begin_inset CommandInset citation
+LatexCommand citep
+key "usp:logo"
+
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand citep
+key "usp:logo"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -2915,6 +2909,13 @@ A fim de melhorar a forma de trabalho na área de saúde, as tecnologias da
  entendido por máquinas.
  Esses avanços vem contribuído no entendimento, interoperabilidade e compartilha
 mento de conhecimento biomédico na área de radiologia.
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Aslam2004"
+
+\end_inset
+
+
 \end_layout
 
 \end_body
