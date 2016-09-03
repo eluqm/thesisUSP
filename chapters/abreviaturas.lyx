@@ -153,11 +153,11 @@
 \language_package default
 \inputencoding utf8
 \fontencoding global
-\font_roman lmodern
+\font_roman default
 \font_sans default
 \font_typewriter default
 \font_math auto
-\font_default_family rmdefault
+\font_default_family default
 \use_non_tex_fonts false
 \font_sc false
 \font_osf false
@@ -168,7 +168,7 @@
 \output_sync 0
 \bibtex_command default
 \index_command default
-\paperfontsize 12
+\paperfontsize default
 \spacing onehalf
 \use_hyperref false
 \papersize a4paper
@@ -650,7 +650,7 @@ A classe icmc implementa a criação da lista de abreviaturas e siglas com
 
 \begin_layout Standard
 \begin_inset listings
-lstparams "language={C++},float,numbers=left,numberstyle={\normalsize},basicstyle={\normalsize\rmfamily},breaklines=true"
+lstparams "basicstyle={\normalsize\rmfamily},breaklines=true,float,language={C++},numbers=left,numberstyle={\normalsize}"
 inline false
 status open
 

@@ -1718,6 +1718,20 @@ filename "chapters/metodos_abnt.lyx"
 
 \end_layout
 
+\begin_layout Chapter
+probando
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand input
+filename "chapters/temp.lyx"
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Standard
 \begin_inset CommandInset bibtex
 LatexCommand bibtex
