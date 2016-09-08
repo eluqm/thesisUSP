@@ -174,7 +174,7 @@ reasoning
  fim.
  A nossa abordagem é composto por três tarefas: Na Seção 5.1 A transformação
  do modelo de informação AIM, em uma representação ontológica que define
- um modelo de informação semanticamente equivalente.
+ um modelo de informação semânticamente equivalente.
  Em seguida, na Seção 5.2, ........
  Na seção 5.3, ....
 \end_layout
@@ -194,47 +194,76 @@ name "sec:step1"
 A fim de executar inferência e classificação a partir de anotações e os
  metadados de marcação de imagem baseados no modelo AIM, nos precisamos
  de uma línguagem equipado com uma semântica formal.
- Usando essa semântica as inferências sobre ontologias e os indivíduos podem
- ser feitas.
- Neste contexto a OWL Web Ontology Language descreve uma linguagem para
- construcao de uma representação ontológica semanticamente equivalente de
- um modelo de informação, tal como o modelo AIM.
- Com base no exposto, neste trabalho transformamos o modelo de dados AIM
- em uma representação ontológica equivalente usando OWL2.
-\end_layout
+ Usando essa semântica, as inferências sobre ontologias e seus indivíduos
+ podem ser feitas.
+ Neste contexto a 
+\emph on
+Web Ontology Language 
+\emph default
+OWL 
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "OWL"
+description "Ontology Web Languaje"
 
-\begin_layout Standard
-Essa transformação foi realizada através da criação de classes e propriedades
- no OWL, resultando assim compreensível pelo usuário e adequado para inferência.
-\end_layout
+\end_inset
 
-\begin_layout Standard
-Nós desenvolvemos este modelo OWL com base na ontologia fornecida por Hakan
- Bulu(refHAKAN).
- No entanto, essa ontologia representa a versão 3.0 do AIM 
-\begin_inset CommandInset ref
-LatexCommand formatted
-reference "AIM3UML"
+ descreve uma linguagem para construção de uma representação ontológica
+ semanticamente equivalente de um modelo de informação, tal como por exemplo
+ o modelo de informação 
+\emph on
+Annotation and Image Markup
+\emph default
+ AIM 
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "AIM"
+description "Annotation and Image Markup"
 
 \end_inset
 
 .
- Portanto, a fim de representar o modelo AIM 4.0, que é a versão utilizada
- para armazenar anotações de imagem gerados por ferramentas como ePAD
-\begin_inset CommandInset citation
-LatexCommand citep
-key "Aslam2004"
+ Com base no exposto, neste trabalho transformamos o modelo de dados AIM
+ em uma representação ontológica equivalente, usando OWL2.
+\end_layout
+
+\begin_layout Standard
+Essa transformação foi realizada através da criação de classes e propriedades
+ no OWL 
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "OWL"
+description "Ontology Web Languaje"
 
 \end_inset
 
-, Nós expandimos a ontologia do Hakan Bulu 
+, resultando assim compreensível pelo usuário e adequado para inferência.
+ Nós desenvolvemos uma ontologia com base no trabalho do Hakan Bulu
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Bulu"
+
+\end_inset
+
+, ele desenvolveu uma ontologia.
+ No entanto, essa ontologia representa a versão 3.0 do AIM.
+ Portanto, a fim de representar o modelo AIM na sua versão 4.0, que é a versão
+ utilizada para armazenar anotações de imagem gerados por ferramentas como
+ ePAD
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Rubin2008"
+
+\end_inset
+
+, Nós expandimos a ontologia do Hakan Bulu mostrada na figura 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:aim3hakan"
 
 \end_inset
 
-.
+ a seguir:
 \end_layout
 
 \begin_layout Standard
@@ -247,14 +276,6 @@ status open
 \begin_layout Plain Layout
 \noindent
 \align center
-\begin_inset Graphics
-	filename ../figures/aim3ontologyprotege.png
-	lyxscale 20
-	scale 10
-
-\end_inset
-
-
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
@@ -264,7 +285,43 @@ name "fig:aim3hakan"
 
 \end_inset
 
-Ontologia do Hakan Bulu REFHAKAN baseada no modelo AIM 3.0
+Ontologia do Hakan Bulu 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Bulu"
+
+\end_inset
+
+ baseada no modelo AIM 3.0
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename ../figures/aim3ontologyprotege.png
+	lyxscale 20
+	scale 11
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+fautor
 \end_layout
 
 \end_inset
@@ -279,13 +336,66 @@ Ontologia do Hakan Bulu REFHAKAN baseada no modelo AIM 3.0
 
 \begin_layout Standard
 Esta extensão captura lesões e medidas derivadas durante os ensaios clínicos
- com base em imagens e posteriormente converte as anotações em formato AIM
- 4.0 para instâncias da ontologia AIM4-O.
+ com base em imagens e posteriormente converte as anotações para instâncias
+ da ontologia 
+\series bold
+AIM4-O
+\series default
+.
  Essas instâncias são necessárias para o análise das anotações com tecnologias
  de Web Semântica.
+ Aseguir, é descrito em detalhe a ontologia 
+\series bold
+AIM4-O
+\series default
+.
 \end_layout
 
-\begin_layout Subsubsection*
+\begin_layout Subsection
+Ontologia AIM4-O
+\end_layout
+
+\begin_layout Standard
+A ontologia 
+\series bold
+AIM4-O
+\series default
+ (Ontologia do AIM versão 4.0), foi desenvolvido como uma extensão da ontologia
+ do Hakan Bulu 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:aim3hakan"
+
+\end_inset
+
+ e define a codificação OWL2 do modelo de dados AIM 4.0 com o objectivo de
+ apoiar as ferramentas de anotação de imagens 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+como o ePAD 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Rubin2014"
+
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+
+especificando a semântica das observações feitas por especialistas e, por
+ conseguinte melhorar a precisão interpretativa dos dados é integrar assistência
+ baseado em computador no processo de interpretação de imagens.
+ As subseções a seguir descrevem o conjunto de classes, propriedades e restriçõe
+s que constituem a ontologia 
+\series bold
+AIM4-O.
+\end_layout
+
+\begin_layout Subsubsection
 Namespaces
 \end_layout
 
@@ -301,6 +411,24 @@ sideways false
 status open
 
 \begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Prefijos e Namespaces usados na ontologia 
+\series bold
+AIM4-O
+\series default
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align center
 \begin_inset Tabular
 <lyxtabular version="3" rows="5" columns="3">
 <features rotate="0" tabularvalignment="middle">
@@ -312,7 +440,9 @@ status open
 \begin_inset Text
 
 \begin_layout Plain Layout
-prefix 
+
+\series bold
+Prefix 
 \end_layout
 
 \end_inset
@@ -321,6 +451,8 @@ prefix
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\series bold
 Namespace IRI
 \end_layout
 
@@ -330,7 +462,9 @@ Namespace IRI
 \begin_inset Text
 
 \begin_layout Plain Layout
-definition
+
+\series bold
+Definition
 \end_layout
 
 \end_inset
@@ -460,51 +594,6 @@ The AIM4-O namespace
 \end_layout
 
 \begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Prefijos e Namespaces usados na ontologia AIM4-O 
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Subsection
-Ontologia AIM4-O
-\end_layout
-
-\begin_layout Standard
-Os termos da Ontologia AIM4-O ( classes e propriedades ) são agrupados em
- dois categorias a fim de fornecer uma introdução incremental: Basic Terms
- e Expanded Terms.
-\end_layout
-
-\begin_layout Standard
-
-\series bold
-Basic classes:
-\series default
- Fornecem a base para capturar anotaçoes e marcação de informações relevantes
- para imagens.
- Através destas classes pode ser descrita explicitamente o tipo de informação
- que pode coletar o modelo, a informaçào pode ser de várias disciplinas.
- O usuario pode estender o modelo para atender suas necessidades, seguindo
- os critérios descritos no 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "4549145"
-
-\end_inset
-
-.
- 
 \begin_inset ERT
 status open
 
@@ -512,15 +601,13 @@ status open
 
 
 \backslash
-cite{Silvio2014}
+fautor
 \end_layout
 
 \end_inset
 
 
-\begin_inset CommandInset citation
-LatexCommand citet
-key "abntex2classe"
+\end_layout
 
 \end_inset
 
@@ -528,116 +615,120 @@ key "abntex2classe"
 \end_layout
 
 \begin_layout Standard
-As classes base já foram definidas na ontologia fornecida por Hakan Bulu
- que mapeia a versão 3.0 do modelo de dados AIM, em alguns casos, as classes
- só mudaram seus nomes adicionando o sufixo "Entity" em comparacao com versões
- 4.0 e fundation model do AIM.
+Dependendo de suas necessidades e de acordo com a quantidade de detalhes
+ que deseja incluir na sua anotação da imagen, o usuário do AIM4-O as vezes
+ só pode precisar usar partes de toda a ontologia.
+ Por esta razão os termos da ontologia AIM4-O (classes e propriedades) são
+ agrupados em dois categorias a fim de fornecer uma descrição incremental:
+ 
+\series bold
+Basic Terms
+\series default
+ e 
+\series bold
+Expanded Terms.
+\end_layout
+
+\begin_layout Description
+
+\series bold
+Basic Terms:
+\series default
+ Fornecem a base para capturar anotaçoes e marcação de informações relevantes
+ para imagens.
+ Através destas classes pode ser descrita explicitamente o tipo de informação
+ que pode coletar o modelo, a informaçào pode ser de várias disciplinas.
+ O usuario pode estender o modelo para atender suas necessidades, seguindo
+ os critérios descritos no seguinte link 
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+https://wiki.nci.nih.gov/display/AIM/Extending+the+AIM+Model#ExtendingtheAIMModel-F
+romAIM3.0totheAIMFoundationModel
+\end_layout
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+As classes tipo 
+\series bold
+Basic Term
+\series default
+ já foram definidas na ontologia fornecida por Hakan Bulu 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Bulu"
+
+\end_inset
+
+, em alguns casos, essas classes só mudaram seus nomes adicionando o sufixo
+ "Entity" em comparação com as versões 4.0 e 
+\emph on
+fundation model
+\emph default
+ FM do AIM.
  As classes nesta categoria estão listados abaixo:
 \end_layout
 
-\begin_layout Labeling
-\labelwidthstring 00.00.0000
+\begin_layout Description
 
 \series bold
-AIM:Calculation
+AIM:Calculation, AIM:GeometricShape, AIM:ImagingObservation, AIM:Annotation,
+ AIM:ImageReference, AIM:ImageAnnotation, AIM:CalculationResult
 \end_layout
 
-\begin_layout Labeling
-\labelwidthstring 00.00.0000
-
-\series bold
-AIM:GeometricShape
-\end_layout
-
-\begin_layout Labeling
-\labelwidthstring 00.00.0000
-
-\series bold
-AIM:ImagingObservation
-\end_layout
-
-\begin_layout Labeling
-\labelwidthstring 00.00.0000
-
-\series bold
-AIM:Annotation
-\end_layout
-
-\begin_layout Labeling
-\labelwidthstring 00.00.0000
-
-\series bold
-AIM:ImageReference
-\end_layout
-
-\begin_layout Labeling
-\labelwidthstring 00.00.0000
-
-\series bold
-AIM:ImageAnnotation
-\end_layout
-
-\begin_layout Labeling
-\labelwidthstring 00.00.0000
-
-\series bold
-AIM:CalculationResult
-\end_layout
-
-\begin_layout Labeling
-\labelwidthstring 00.00.0000
+\begin_layout Description
 
 \series bold
 AIM:CalculationData
 \end_layout
 
-\begin_layout Labeling
-\labelwidthstring 00.00.0000
+\begin_layout Description
 
 \series bold
 AIM:ImagingObservation
 \end_layout
 
-\begin_layout Labeling
-\labelwidthstring 00.00.0000
+\begin_layout Description
 
 \series bold
 AIM:ImagingObservationCharacteristics
 \end_layout
 
-\begin_layout Standard
+\begin_layout Description
 
 \series bold
-Expanded Terms classes:
+Expanded Terms:
 \series default
- As classes são uma extensão que representam explicitamente resultados de
- lesão e medidas derivadas durante os ensaios clínicos com base em imagens,
+ As classes deste tipo são uma extensão que representam explicitamente resultado
+s de lesão e medidas derivadas durante os ensaios clínicos com base em imagens,
  as classes e propriedades nesta categoria estão listados abaixo:
 \end_layout
 
-\begin_layout Labeling
-\labelwidthstring 00.00.0000
+\begin_layout Itemize
 
 \series bold
 AIM:Entity
 \end_layout
 
-\begin_layout Labeling
-\labelwidthstring 00.00.0000
+\begin_layout Itemize
 
 \series bold
 AIM:AnnotationCollection
 \end_layout
 
-\begin_layout Labeling
-\labelwidthstring 00.00.0000
+\begin_layout Itemize
 
 \series bold
 AIM:imageAnnotationCollection
 \end_layout
 
-\begin_layout Labeling
-\labelwidthstring 00.00.0000
+\begin_layout Itemize
 
 \series bold
 AIM:ImagingPhysicalEntity
@@ -656,25 +747,19 @@ AnatomicEntity na versao 3.0 do AIM
 
 \end_layout
 
-\begin_layout Labeling
-\labelwidthstring 00.00.0000
+\begin_layout Itemize
 
 \series bold
 AIM:ImagingPhysicalCharacteristic
 \end_layout
 
-\begin_layout Labeling
-\labelwidthstring 00.00.0000
+\begin_layout Itemize
 
 \series bold
 AIM:MarkupEntity
 \end_layout
 
 \begin_layout Subsection
-Descrição da Ontologia AIM4-O
-\end_layout
-
-\begin_layout Subsubsection
 Basic Terms 
 \end_layout
 
@@ -687,9 +772,9 @@ Esta categoria é um pequeno conjunto de classes e propriedades que podem
 \begin_layout Itemize
 
 \series bold
-AIM:Calculation: 
+AIM:Calculation:
 \series default
-representa os resultados do cálculo de uma anotação AIM.
+ Representa os resultados do cálculo de uma anotação AIM.
  Os resultados dos cálculos podem ser o não ser diretamente associado com
  símbolos gráficos ou marcações.
 \end_layout
@@ -783,21 +868,10 @@ reference "fig:classes-base"
 
 \begin_layout Standard
 \begin_inset Float figure
-placement H
+placement h
 wide false
 sideways false
 status open
-
-\begin_layout Plain Layout
-\begin_inset Graphics
-	filename ../figures/AIM3.pdf
-	lyxscale 40
-	scale 17
-
-\end_inset
-
-
-\end_layout
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -817,6 +891,33 @@ classes base
  representa entidades como ovais e retângulos.
  As propriedades são mostrados em cor vermelho.
  
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\paragraph_spacing onehalf
+\noindent
+\align center
+\begin_inset Graphics
+	filename ../figures/AIM3.pdf
+	lyxscale 40
+	scale 20
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+fautor
 \end_layout
 
 \end_inset
@@ -849,7 +950,7 @@ es.
 
 \begin_layout Standard
 \begin_inset listings
-lstparams "basicstyle={\tiny\rmfamily},breaklines=true,float,frame={lines},language=XML"
+lstparams "backgroundcolor={\color{yellow!20}},basicstyle={\tiny\ttfamily},breaklines=true,float,fontadjust=true,frame={topline},language=XSLT,numbers=left,numberstyle={\tiny},showstringspaces=false,tabsize=6"
 inline false
 status open
 
@@ -872,21 +973,12 @@ status open
 
 \begin_layout Plain Layout
 
-\end_layout
-
-\begin_layout Plain Layout
-
 Individual: 1.2.288.3.2205383238.1512.1207945935.1
 \end_layout
 
 \begin_layout Plain Layout
 
-    Types:
-\end_layout
-
-\begin_layout Plain Layout
-
-         	ImageAnnotation          
+    Types:                        ImageAnnotation          
 \end_layout
 
 \begin_layout Plain Layout
@@ -916,12 +1008,7 @@ Individual: 1.2.288.3.2205383238.1512.1207945935.1
 
 \begin_layout Plain Layout
 
-     aim:hasImagingObservation    :Conspicuity,
-\end_layout
-
-\begin_layout Plain Layout
-
-     aim:hasImagingObservation    :Internal Structure,      		
+     aim:hasImagingObservation    :Conspicuity,      		
 \end_layout
 
 \begin_layout Plain Layout
@@ -932,13 +1019,7 @@ Individual: 1.2.288.3.2205383238.1512.1207945935.1
 
 \begin_layout Plain Layout
 
-     aim:dateTime                 "2008-04-11T15:32:15"^^xsd:dateTime, 
-     
-\end_layout
-
-\begin_layout Plain Layout
-
-     aim:name                     "0022"^^xsd:string
+     aim:dateTime                 "2008-04-11T15:32:15"^^xsd:dateTime,
 \end_layout
 
 \begin_layout Plain Layout
@@ -948,21 +1029,12 @@ Individual: 1.2.288.3.2205383238.1512.1207945935.1
 
 \begin_layout Plain Layout
 
-\end_layout
-
-\begin_layout Plain Layout
-
 Individual: Polyline
 \end_layout
 
 \begin_layout Plain Layout
 
-    Types:
-\end_layout
-
-\begin_layout Plain Layout
-
-            GeometricShape
+    Types:                         GeometricShape
 \end_layout
 
 \begin_layout Plain Layout
@@ -977,12 +1049,7 @@ Individual: 1.3.6.1.4.1.9328.50.1.10607
 
 \begin_layout Plain Layout
 
-    Types:
-\end_layout
-
-\begin_layout Plain Layout
-
-            ImageReference
+    Types:						 ImageReference
 \end_layout
 
 \begin_layout Plain Layout
@@ -1002,21 +1069,12 @@ Individual: 1.3.6.1.4.1.9328.50.1.10607
 
 \begin_layout Plain Layout
 
-\end_layout
-
-\begin_layout Plain Layout
-
 Individual: 1.5465798.46468.4566874
 \end_layout
 
 \begin_layout Plain Layout
 
-    Types:
-\end_layout
-
-\begin_layout Plain Layout
-
-            Calculation
+    Types:						Calculation
 \end_layout
 
 \begin_layout Plain Layout
@@ -1047,21 +1105,12 @@ Individual: 1.5465798.46468.4566874
 
 \begin_layout Plain Layout
 
-\end_layout
-
-\begin_layout Plain Layout
-
 Individual: 1.5465798.46468
 \end_layout
 
 \begin_layout Plain Layout
 
-    Types:
-\end_layout
-
-\begin_layout Plain Layout
-
-            ExtendedCalculationResult
+    Types:						ExtendedCalculationResult
 \end_layout
 
 \begin_layout Plain Layout
@@ -1087,21 +1136,12 @@ Individual: 1.5465798.46468
 
 \begin_layout Plain Layout
 
-\end_layout
-
-\begin_layout Plain Layout
-
 Individual: 1.5465798
 \end_layout
 
 \begin_layout Plain Layout
 
-    Types:
-\end_layout
-
-\begin_layout Plain Layout
-
-            CalculationData
+    Types:						CalculationData
 \end_layout
 
 \begin_layout Plain Layout
@@ -1121,21 +1161,12 @@ Individual: 1.5465798
 
 \begin_layout Plain Layout
 
-\end_layout
-
-\begin_layout Plain Layout
-
 Indivual: Lung
 \end_layout
 
 \begin_layout Plain Layout
 
-	Type:
-\end_layout
-
-\begin_layout Plain Layout
-
-           AnatomicEntity
+	Type:						 AnatomicEntity
 \end_layout
 
 \begin_layout Plain Layout
@@ -1165,21 +1196,12 @@ Indivual: Lung
 
 \begin_layout Plain Layout
 
-\end_layout
-
-\begin_layout Plain Layout
-
 Indivual: Conspicuity
 \end_layout
 
 \begin_layout Plain Layout
 
-	Type:
-\end_layout
-
-\begin_layout Plain Layout
-
-           ImagingObservation
+	Type:						 ImagingObservation
 \end_layout
 
 \begin_layout Plain Layout
@@ -1214,21 +1236,12 @@ Indivual: Conspicuity
 
 \begin_layout Plain Layout
 
-\end_layout
-
-\begin_layout Plain Layout
-
 Indivual: LIDC Soft Tissue
 \end_layout
 
 \begin_layout Plain Layout
 
-	Type:
-\end_layout
-
-\begin_layout Plain Layout
-
-           ImagingObservationCharacteristic
+	Type:						   ImagingObservationCharacteristic
 \end_layout
 
 \begin_layout Plain Layout
@@ -1258,10 +1271,6 @@ Indivual: LIDC Soft Tissue
 
 \begin_layout Plain Layout
 
-\end_layout
-
-\begin_layout Plain Layout
-
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
@@ -1271,6 +1280,32 @@ name "lis:exemplo1"
 
 \end_inset
 
+O exemplo estabelece como uma ImageAnnotation com um identificador 
+\series bold
+
+\begin_inset Quotes eld
+\end_inset
+
+:1.2.288.3.2205383238.1512.1207945935.1
+\begin_inset Quotes erd
+\end_inset
+
+
+\series default
+ captura da uma imagem
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 O exemplo estabelece como uma ImageAnnotation com um identificador 
 \series bold
 
@@ -1326,21 +1361,7 @@ respectivamente
 .
 
 \series default
- 
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Uma ilustração gráfica do exemplo 
+ Uma ilustração gráfica do exemplo 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "lis:exemplo1"
@@ -1369,6 +1390,8 @@ sideways false
 status open
 
 \begin_layout Plain Layout
+\noindent
+\align center
 \begin_inset Graphics
 	filename ../figures/AIM3example.pdf
 	lyxscale 50
@@ -1390,7 +1413,7 @@ name "fig:example1aim3"
 
 \end_inset
 
-ilustração gráfica do exemplo 
+Ilustração gráfica do exemplo 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "lis:exemplo1"
@@ -1416,10 +1439,10 @@ classes base
 
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Subsection
 
 \series bold
-Extended Terms:
+Extended Terms
 \end_layout
 
 \begin_layout Standard
@@ -1517,6 +1540,8 @@ sideways false
 status open
 
 \begin_layout Plain Layout
+\noindent
+\align center
 \begin_inset Graphics
 	filename ../figures/AIM4.pdf
 	lyxscale 40
@@ -1603,9 +1628,20 @@ reference "lis:exemplo2"
 
 \begin_layout Standard
 \begin_inset listings
-lstparams "basicstyle={\tiny\rmfamily},float,frame={single},language=XML"
+lstparams "backgroundcolor={\color{yellow!20}},basicstyle={\tiny\ttfamily},breaklines=true,float,fontadjust=true,frame={topline},language=XSLT,numbers=left,numberstyle={\tiny},showstringspaces=false,tabsize=6"
 inline false
 status open
+
+\begin_layout Plain Layout
+
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+@prefix aim:  <http://www.w3.org/ns/aim4#> .
+\end_layout
 
 \begin_layout Plain Layout
 
@@ -1614,12 +1650,7 @@ Individual: 8ixmtfhbiqujozezrep1r90t1n0po8wxyfy5svzs
 
 \begin_layout Plain Layout
 
-     Types:
-\end_layout
-
-\begin_layout Plain Layout
-
-           ImageAnnotationCollection          
+     Types:						 ImageAnnotationCollection          
 \end_layout
 
 \begin_layout Plain Layout
@@ -1629,7 +1660,7 @@ Individual: 8ixmtfhbiqujozezrep1r90t1n0po8wxyfy5svzs
 
 \begin_layout Plain Layout
 
-	  aim:hasImageAnnotations     :9gs43xqj1kyl13lmega0zhoenzvgeakkprft8fw8,
+	    aim:hasImageAnnotations     :9gs43xqj1kyl13lmega0zhoenzvgeakkprft8fw8,
 \end_layout
 
 \begin_layout Plain Layout
@@ -1639,21 +1670,12 @@ Individual: 8ixmtfhbiqujozezrep1r90t1n0po8wxyfy5svzs
 
 \begin_layout Plain Layout
 
-\end_layout
-
-\begin_layout Plain Layout
-
 Individual: 9gs43xqj1kyl13lmega0zhoenzvgeakkprft8fw8
 \end_layout
 
 \begin_layout Plain Layout
 
-     Types:
-\end_layout
-
-\begin_layout Plain Layout
-
-           ImageAnnotation
+     Types:						 ImageAnnotation
 \end_layout
 
 \begin_layout Plain Layout
@@ -1694,12 +1716,7 @@ Individual: 9gs43xqj1kyl13lmega0zhoenzvgeakkprft8fw8
 \begin_layout Plain Layout
 
         aim:uniqueIdentifier       "9gs43xqj1kyl13lmega0zhoenzvgeakkprft8fw8"^^x
-sd:string,      
-\end_layout
-
-\begin_layout Plain Layout
-
-        aim:hasLesionBool          true,      
+sd:string,            
 \end_layout
 
 \begin_layout Plain Layout
@@ -1720,21 +1737,12 @@ sd:string,
 
 \begin_layout Plain Layout
 
+Individual: sj19n9gf050ap9uzkc2h98ye4l3rxd71jac28g3g
 \end_layout
 
 \begin_layout Plain Layout
 
-Individual:   sj19n9gf050ap9uzkc2h98ye4l3rxd71jac28g3g
-\end_layout
-
-\begin_layout Plain Layout
-
-     Types:
-\end_layout
-
-\begin_layout Plain Layout
-
-             DicomImageReferenceEntity
+     Types:						DicomImageReferenceEntity
 \end_layout
 
 \begin_layout Plain Layout
@@ -1760,21 +1768,12 @@ sd:string
 
 \begin_layout Plain Layout
 
+Individual: jma0x979fa9y3k4cwypqjvtechwitqb3glvImageAnnotationCollectiondzjyw
 \end_layout
 
 \begin_layout Plain Layout
 
-Individual:   jma0x979fa9y3k4cwypqjvtechwitqb3glvImageAnnotationCollectiondzjyw
-\end_layout
-
-\begin_layout Plain Layout
-
-   Types:          
-\end_layout
-
-\begin_layout Plain Layout
-
-             TwoDimensionMultiPoint
+   Types:						  TwoDimensionMultiPoint
 \end_layout
 
 \begin_layout Plain Layout
@@ -1795,12 +1794,7 @@ d:string
 
 \begin_layout Plain Layout
 
-  aim:imageReferenceUid           "1.2.826.0.1.3680043"^^xsd:string,
-\end_layout
-
-\begin_layout Plain Layout
-
-  aim:includeFlag                 false,      
+  aim:imageReferenceUid           "1.2.826.0.1.3680043"^^xsd:string,      
 \end_layout
 
 \begin_layout Plain Layout
@@ -1815,21 +1809,12 @@ d:string
 
 \begin_layout Plain Layout
 
-\end_layout
-
-\begin_layout Plain Layout
-
 Individual:   a4lpf1nncfbvh5dljf6gfw6r6i3om1ece6270nix
 \end_layout
 
 \begin_layout Plain Layout
 
-    Types: 
-\end_layout
-
-\begin_layout Plain Layout
-
-             CalculationEntity
+    Types:						CalculationEntity
 \end_layout
 
 \begin_layout Plain Layout
@@ -1839,38 +1824,29 @@ Individual:   a4lpf1nncfbvh5dljf6gfw6r6i3om1ece6270nix
 
 \begin_layout Plain Layout
 
-  aim:hasCalculationResult        :a4lpf1nncnixExtendedCalculationResult,
+      aim:hasCalculationResult        :a4lpf1nncnixExtendedCalculationResult,
 \end_layout
 
 \begin_layout Plain Layout
 
-  aim:description                 "LineLength"^^xsd:string,      
+      aim:description                 "LineLength"^^xsd:string,      
 \end_layout
 
 \begin_layout Plain Layout
 
-  aim:typeCode                    "[{codeSystemName=private, codeSystem=LineLeng
-th,
+      aim:typeCode                    "[{codeSystemName=private, codeSystem=Line
+Length,                          
 \end_layout
 
 \begin_layout Plain Layout
 
-                                  code=LineLength}]"^^xsd:string,
-\end_layout
-
-\begin_layout Plain Layout
-
-  aim:uniqueIdentifier            "a4lpf1nncfbvh5dljf6gfw6r6i3om1ece6270nix"^^xs
-d:string
+      aim:uniqueIdentifier            "a4lpf1nncfbvh5dljf6gfw6r6i3om1ece6270nix"
+^^xsd:string
 \end_layout
 
 \begin_layout Plain Layout
 
 .
-\end_layout
-
-\begin_layout Plain Layout
-
 \end_layout
 
 \begin_layout Plain Layout
@@ -1880,12 +1856,7 @@ Individual:   a4lpf1nncnixExtendedCalculationResult
 
 \begin_layout Plain Layout
 
-    Types:          
-\end_layout
-
-\begin_layout Plain Layout
-
-          ExtendedCalculationResult          
+    Types:						ExtendedCalculationResult          
 \end_layout
 
 \begin_layout Plain Layout
@@ -1895,38 +1866,29 @@ Individual:   a4lpf1nncnixExtendedCalculationResult
 
 \begin_layout Plain Layout
 
-   aim:dataType                  "[{codeSystemName=, codeSystem=, 
+      aim:dataType                   "[{codeSystemName=, codeSystem}]"^^xsd:stri
+ng, 
 \end_layout
 
 \begin_layout Plain Layout
 
-                                  code=, codeSystemVersion=}]"^^xsd:string,
- 
-\end_layout
-
-\begin_layout Plain Layout
-
-   aim:type                        "ExtendedCalculationResult"^^xsd:string,
+      aim:type                        "ExtendedCalculationResult"^^xsd:string,
      
 \end_layout
 
 \begin_layout Plain Layout
 
-   aim:unitOfMeasure               "linear"^^xsd:string,
+      aim:unitOfMeasure               "linear"^^xsd:string,
 \end_layout
 
 \begin_layout Plain Layout
 
-   aim:values                      1.7432112f
+      aim:values                      1.7432112f
 \end_layout
 
 \begin_layout Plain Layout
 
 .
-\end_layout
-
-\begin_layout Plain Layout
-
 \end_layout
 
 \begin_layout Plain Layout
@@ -1936,12 +1898,7 @@ Individual:  hojggsv5f543pzsffj8jbijgp11thm9qdjow4idd
 
 \begin_layout Plain Layout
 
-    Types:          
-\end_layout
-
-\begin_layout Plain Layout
-
-           ImagingObservationEntity          
+    Types:						 ImagingObservationEntity          
 \end_layout
 
 \begin_layout Plain Layout
@@ -1951,39 +1908,35 @@ Individual:  hojggsv5f543pzsffj8jbijgp11thm9qdjow4idd
 
 \begin_layout Plain Layout
 
-  aim:annotatorConfidence         0.0f,      
+  	aim:annotatorConfidence       0.0f,
 \end_layout
 
 \begin_layout Plain Layout
 
-  aim:label                       "Lesion"^^xsd:string,
+      aim:label                     "Lesion"^^xsd:string, 
 \end_layout
 
 \begin_layout Plain Layout
 
-  aim:typeCode                    "{codeSystemName=RECIST-AMS,codeSystem=LesionB
-aseline Evaluation,
+      aim:typeCode                  "{codeSystemName=RECIST-AMS,codeSystem=Lesio
+nBaseline,
 \end_layout
 
 \begin_layout Plain Layout
 
-                                  code=S81,codeSystemVersion=}"^^xsd:string,
-      
+                                     Evaluation,code=S81,codeSystemVersion=}"^^x
+sd:string,       	
 \end_layout
 
 \begin_layout Plain Layout
 
-  aim:uniqueIdentifier            "hojggsv5f543pzsffj8jbijgp11thm9qdjow4idd"^^xs
-d:string
+      aim:uniqueIdentifier          "hojggsv5f543pzsffj8jbijgp11thm9qdjow4idd"^^
+xsd:string
 \end_layout
 
 \begin_layout Plain Layout
 
 .
-\end_layout
-
-\begin_layout Plain Layout
-
 \end_layout
 
 \begin_layout Plain Layout
@@ -1993,12 +1946,7 @@ Individual:  g08jnm9ow79tijgj1br3q8wd89nq69epjdnxxo30
 
 \begin_layout Plain Layout
 
-    Types:          
-\end_layout
-
-\begin_layout Plain Layout
-
-			ImagingPhysicalEntity          
+    Types:						  ImagingPhysicalEntity          
 \end_layout
 
 \begin_layout Plain Layout
@@ -2008,51 +1956,45 @@ Individual:  g08jnm9ow79tijgj1br3q8wd89nq69epjdnxxo30
 
 \begin_layout Plain Layout
 
-  aim:annotatorConfidence         0.0f,      
+  	aim:annotatorConfidence        0.0f,      
 \end_layout
 
 \begin_layout Plain Layout
 
-  aim:label                       "Location"^^xsd:string,      
+  	aim:label                      "Location"^^xsd:string,      
 \end_layout
 
 \begin_layout Plain Layout
 
-  aim:typeCode                    "{codeSystemName=RadLex,codeSystem=liver,
+  	aim:typeCode                   "{codeSystemName=RadLex,codeSystem=liver,
 \end_layout
 
 \begin_layout Plain Layout
 
-                                  code=RID58,codeSystemVersion=}"^^xsd:string,
- 
+                                      code=RID58,codeSystemVersion=}"^^xsd:strin
+g, 
 \end_layout
 
 \begin_layout Plain Layout
 
-  aim:typeCode                    "{codeSystemName=RadLex.3.10,codeSystem=Couinaud
-hepaticsegment7,
+  	aim:typeCode                   "{codeSystemName=RadLex.3.10,codeSystem=
 \end_layout
 
 \begin_layout Plain Layout
 
-                                  code=RID67, codeSystemVersion=}"^^xsd:string,
-      
+                                      Couinaudhepaticsegment7,code=RID67}"^^xsd:
+string,      
 \end_layout
 
 \begin_layout Plain Layout
 
-  aim:uniqueIdentifier            "g08jnm9ow79tijgj1br3q8wd89nq69epjdnxxo30"^^xs
+  	aim:uniqueIdentifier           "g08jnm9ow79tijgj1br3q8wd89nq69epjdnxxo30"^^xs
 d:string
 \end_layout
 
 \begin_layout Plain Layout
 
 .
-\end_layout
-
-\begin_layout Plain Layout
-
-    
 \end_layout
 
 \begin_layout Plain Layout
@@ -2068,8 +2010,28 @@ name "lis:exemplo2"
 
 Como no exemplo da seção anterior uma anotação e sua representação na forma
  de individuo 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Como no exemplo da seção anterior uma anotação e sua representação na forma
+ de individuo
 \series bold
-AIM4-O
+ AIM4-O
 \series default
  é descrita, mas neste exemplo podemos ver que destaca o surgimento de um
  conceito abstrato como 
@@ -2092,21 +2054,7 @@ ImageAnnotationCollection
 \series default
 Entre algumas outras diferenças, podemos citar: o surgimento de alguns dataPrope
 rties como typeCode, annotatorConfidence.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-
-  
-\end_layout
-
-\end_inset
-
-
+ 
 \end_layout
 
 \begin_layout Standard
@@ -2138,6 +2086,8 @@ sideways false
 status open
 
 \begin_layout Plain Layout
+\noindent
+\align center
 \begin_inset Graphics
 	filename ../figures/AIM4example.pdf
 	lyxscale 50
@@ -2234,6 +2184,8 @@ sideways false
 status open
 
 \begin_layout Plain Layout
+\noindent
+\align center
 \begin_inset Graphics
 	filename ../figures/objectproperties.png
 	scale 40
@@ -2329,6 +2281,8 @@ sideways false
 status open
 
 \begin_layout Plain Layout
+\noindent
+\align center
 \begin_inset Graphics
 	filename ../figures/AIM4protegeindividuos.png
 	lyxscale 75
@@ -2422,11 +2376,11 @@ reference "fig:ontologiaGeral"
  
 \end_layout
 
-\begin_layout Description
+\begin_layout Enumerate
 Os conceitos gerais do TNM
 \end_layout
 
-\begin_layout Description
+\begin_layout Enumerate
 Onlira.owl: a topografia do fígado (com base na Ontologia Onlira 
 \begin_inset CommandInset citation
 LatexCommand citep
@@ -2437,8 +2391,8 @@ key "Kokciyan2014"
  ) 
 \end_layout
 
-\begin_layout Description
-moduleRadlex.owl: Uma parte do vocabulário Radlex 
+\begin_layout Enumerate
+ModuleRadlex.owl: Uma parte do vocabulário Radlex 
 \begin_inset Foot
 status open
 
@@ -2457,17 +2411,6 @@ placement h
 wide false
 sideways false
 status open
-
-\begin_layout Plain Layout
-\begin_inset Graphics
-	filename ../figures/ontologiageral.pdf
-	lyxscale 50
-	scale 20
-
-\end_inset
-
-
-\end_layout
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -2490,6 +2433,15 @@ r imagens de câncer de figado
 \end_layout
 
 \begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename ../figures/ontologiageral.pdf
+	lyxscale 50
+	scale 20
+
+\end_inset
+
 
 \end_layout
 
@@ -2582,7 +2534,7 @@ ONLIRA (Ontologia de figado para Radiologia)
 \end_layout
 
 \begin_layout Standard
-A ontologia ONLIRA foi desenvolvida como parte do projeto CaReRa 
+A ontologia ONLIRA foi desenvolvida como parte do projeto CaReRa
 \begin_inset CommandInset citation
 LatexCommand citep
 key "Kokciyan2014"
@@ -2625,6 +2577,8 @@ sideways false
 status open
 
 \begin_layout Plain Layout
+\noindent
+\align center
 \begin_inset Graphics
 	filename ../figures/ONLIRA.pdf
 	lyxscale 50
@@ -2705,6 +2659,8 @@ sideways false
 status open
 
 \begin_layout Plain Layout
+\noindent
+\align center
 \begin_inset Graphics
 	filename ../figures/radlexmodule.pdf
 	scale 45
@@ -2822,28 +2778,26 @@ sideways false
 status open
 
 \begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+jjljlksjlds
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align center
 \begin_inset Graphics
 	filename ../figures/TNM Staging Documentation.pdf
 	scale 80
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
 
 \end_layout
 

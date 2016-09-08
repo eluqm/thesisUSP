@@ -4,74 +4,7 @@
 \begin_header
 \textclass abntex2
 \begin_preamble
-\usepackage{fncychap}
-\makechapterstyle{icmc}{%
-   % Secao secundaria (Section) Caixa baixa, Negrito
-    \renewcommand*{\cftsectionfont}{\bfseries}
-    % Secao terciaria (Subsection) Caixa baixa, Negrito, italico
-    \renewcommand*{\cftsubsectionfont}{\itshape\bfseries}
-    % Secao quaternaria (Subsubsection) Caixa baixa, italico
-    \renewcommand*{\cftsubsubsectionfont}{\itshape}
-    % Secao quinquenária (Subsubsubsection) Caixa baixa
-    \renewcommand*{\cftparagraphfont}{\normalsize}
 
-   % tamanhos de fontes de chapter e part	
-   \ifthenelse{\equal{\ABNTEXisarticle}{true}}{%
-     \setlength\beforechapskip{\baselineskip}
-     \renewcommand{\chaptitlefont}{\ABNTEXsectionfont\ABNTEXsectionfontsize}
-    }{%else
-     \setlength{\beforechapskip}{0pt}
-     \renewcommand{\ABNTEXchapterfontsize}{\LARGE}
-    
-    %\renewcommand{\ABNTEXchapterfont}{\sffamily\bfseries}  %alteração da fonte dos capítulos, seções e subseções
-    \renewcommand{\chaptitlefont}    {\ABNTEXchapterfont\bfseries\ABNTEXchapterfontsize}
-  
-
-% impressao do numero do capitulo
-  \renewcommand{\chapternamenum}{}
-  
-  % impressao do nome do capitulo
-  \renewcommand{\printchaptername}{%
-   %\chaptitlefont
-   %\ifthenelse{\boolean{abntex@apendiceousecao}}{\appendixname}{\chaptername}%
-  }
-% impressao do titulo do capitulo
-  \def\printchaptertitle##1{%
-    
-    \setboolean{ABNTEXupperchapter}{true}
-    
-    \ifthenelse{\boolean{abntex@innonumchapter}}{
-        \vskip 0ex \hrulefill\chaptitlefont\bfseries\ABNTEXchapterupperifneeded{##1}
-        \vskip -0.6ex\hfill\rule{.8\textwidth}{0.5pt} 
-        \vskip -2.8ex\hfill\rule{.8\textwidth}{2pt}
-        \vskip 1.5ex
-    
-    }{%
-    % else
-        {\hrulefill
-        {\renewcommand{\arraystretch}{1.5} %  1 is the default, change whatever you need
-        \begin{tabular}{|c|}
-            \rowcolor{black}\color{white}\normalsize\ABNTEXchapterfont
-              \ifthenelse{\boolean{abntex@apendiceousecao}}{\MakeTextUppercase{\appendixname}}{\MakeTextUppercase{\chaptername}}  \\ 
-            \vspace{-1.5ex}\\ %coloquei para aumentar o espaço entre o título e o número
-            \resizebox{!}{1.1cm}{\ABNTEXchapterfont\thechapter}
-            \\[2.5ex]
-            \hline
-        \end{tabular}}} \\
-        \vskip 4.3ex \flushright\chaptitlefont\bfseries\ABNTEXchapterupperifneeded{##1} \\
-        \vskip -0.6ex\hfill\rule{.8\textwidth}{0.5pt} \\
-        \vskip -2.8ex\hfill\rule{.8\textwidth}{2pt}\\
-        \vskip 1.5ex
-}    
-        
-  }
-       
-
-
- }
-
-}
-\chapterstyle{icmc}
 \end_preamble
 \use_default_options true
 \maintain_unincluded_children false
@@ -138,6 +71,102 @@
 \end_header
 
 \begin_body
+
+\begin_layout Standard
+Este documento explica brevemente como trabalhar com a classe LATEX icmc
+ para confeccionar trabalhos acadêmicos seguindo as normas da Associação
+ Brasileira de Normas Técnicas (ABNT) e as “
+\shape italic
+Diretrizes para apresentação de dissertações e teses da USP: documento eletrônic
+o e impresso.
+
+\shape default
+ 
+\shape italic
+Parte I (ABNT)
+\shape default
+”, publicado pelo Sistema Integrado de Bibliotecas (SIBi) USP.
+ O presente manual também atende as exigências prevista no regimento do
+ Programa de Pós-graduação em Ciências da Computação e Matemática Computacional
+ (CCMC) do Instituto de Ciências Matemáticas e de Computação (ICMC) da Universid
+ade de São Paulo (USP).
+ 
+\end_layout
+
+\begin_layout Standard
+A classe 
+\emph on
+icmc
+\emph default
+ foi construída com base na última versão da classe 
+\emph on
+abntex2
+\emph default
+ e do pacote abntex2cite.
+ Portanto, este documento exemplifica a elaboração de trabalho acadêmico
+ (tese, dissertação e outros do gênero) produzido conforme a ABNT NBR 14724:2011
+ 
+\emph on
+Informação e documentação - Trabalhos acadêmicos - Apresentação.
+
+\emph default
+ 
+\end_layout
+
+\begin_layout Standard
+Assim, é altamente recomendável que seja consultada a documentação do abntex2
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+https://code.google.com/p/abntex2/downloads/list
+\end_layout
+
+\end_inset
+
+.
+ A classe abntex2 foi desenvolvida para facilitar a escrita de documentos
+ seguindo as normas da ABNT no ambiente LATEX (FRASSON; WEBER, 2005).
+\end_layout
+
+\begin_layout Standard
+Todo o trabalho de pesquisa e ajustes da presente classe LATEX icmc foram
+ feitos pelo aluno mestrado do Programa de Pós-graduação em Ciência da Computaçã
+o e Matemática Computacional, Humberto Lidio Antonelli, durante a confecção
+ da sua monografia de qualificação.
+\end_layout
+
+\begin_layout Standard
+O requisito básico para utilização da classe icmc é criar um documento desta
+ classe com o comando 
+\series bold
+
+\backslash
+documentclass[@parameters]{icmc}
+\series default
+ e ter, no diretório de trabalho, o arquivo 
+\emph on
+icmc.cls
+\emph default
+ presente.
+ Entretanto, recomenda-se fortemente manter a estrutura de diretório inicial
+ fornecida por este modelo.
+ Além disso, para que o documento esteja em conformidade com as normas exigidas
+ pelo programa de Pós-Graduação, o 
+\series bold
+projeto deve ser compilado utilizando XeLaTeX ou LuaLaTeX.
+ 
+\series default
+Esse processo de compilação é necessário para que as fontes externas utilizadas
+ para gerar a capa sejam incluídas.
+ 
+\end_layout
+
+\begin_layout Standard
+Os parâmetros possíveis utilizados pelo 
+\backslash
+documentclass são:
+\end_layout
 
 \begin_layout Standard
 Em Biomedicina, especificamente em radiologia e oncologia, avaliar a resposta
@@ -341,7 +370,7 @@ key "Rubin2014"
 
 \begin_layout Standard
 \begin_inset Note Comment
-status open
+status collapsed
 
 \begin_layout Plain Layout
 La mayoría de los aplicaciones existentes se centran en la extracción de

@@ -5,6 +5,10 @@
 \textclass abntex2
 \begin_preamble
 \usepackage{indentfirst}
+\usepackage{float}
+%\usepackage{helvet}
+%\usepackage[scaled]{uarial}
+\usepackage{titlesec}
 \usepackage{tikz, blindtext}
 \usetikzlibrary{shapes.multipart}
 \usepackage{calc,soul,fourier}
@@ -12,6 +16,9 @@
 \usepackage{graphicx}
 \usepackage[brazil]{babel}
 \usepackage[brazilian,hyperpageref]{backref} 
+\setlength{\parindent}{48pt}
+%\usepackage{fontspec}
+%\setmainfont{Arial}
 %\usepackage[style=authoryear,natbib=true,backend=biber]{biblatex}
 \usepackage[alf]{abntex2cite}
 %\usepackage[num]{abntex2cite}  
@@ -24,10 +31,21 @@
 pdfborder = {0 0 0},     
 colorlinks,     
 citecolor=blue,     
-filecolor=Darkgreen,     
+filecolor=blue,     
 linkcolor=blue,     
 urlcolor=cyan!50!black!90 
 }
+
+
+\titleformat{\section}
+  {\normalfont\fontsize{16pt}{18pt}\selectfont\bfseries}{\thesection}{1em}{}
+\titleformat{\subsection}
+  {\normalfont\fontsize{14pt}{16pt}\selectfont\bfseries}{\thesubsection}{1em}{}
+
+
+
+
+
 \def\mystrut{\vrule height 1cm depth 1.5cm width 0pt} 
 \tikzset{
  state/.style={
@@ -42,6 +60,118 @@ urlcolor=cyan!50!black!90
        text centered,
        }
 }
+
+%================================================================================
+
+%\renewcommand{\familydefault}{\sfdefault}
+\renewcommand*\familydefault{\sfdefault} 
+%======================================
+%Pacotesdecitações 
+%======================================
+\renewcommand*{\backref}[1]{} 
+\renewcommand*{\backrefalt}[4]{     
+\ifcase #1 (No citado.)           
+\or (Citado na página~#2.)           
+\else (Citado nas páginas #2.)     
+\fi% 
+} 
+\renewcommand*{\backrefsep}{, } 
+\renewcommand*{\backreftwosep}{e~} 
+\renewcommand*{\backreflastsep}{e~}
+%================================================================================ 
+% Configuração dos Estilo dos Capítulo 
+%================================================================================
+
+\makechapterstyle{box}{   
+
+\renewcommand{\chapterheadstart}{}         
+% Secao secundaria (Section) Caixa baixa, Negrito     
+\renewcommand*{\cftsectionfont}{\bfseries}     
+% Secao terciaria (Subsection) Caixa baixa, Negrito, italico     
+\renewcommand*{\cftsubsectionfont}{\itshape\bfseries}     
+% Secao quaternaria (Subsubsection) Caixa baixa, italico     
+\renewcommand*{\cftsubsubsectionfont}{\itshape}     
+% Secao quinquenária (Subsubsubsection) Caixa baixa     
+\renewcommand*{\cftparagraphfont}{\normalsize}
+
+% tamanhos de fontes de chapter e part	    
+\ifthenelse{\equal{\ABNTEXisarticle}{true}}{%      
+ \setlength\beforechapskip{\baselineskip}      
+ \renewcommand{\chaptitlefont}{\ABNTEXsectionfont\ABNTEXsectionfontsize}    
+}{%else      
+ \setlength{\beforechapskip}{0pt}      
+ \renewcommand{\ABNTEXchapterfontsize}{\LARGE}          
+%\renewcommand{\ABNTEXchapterfont}{\sffamily\bfseries}  
+%alteração da fonte dos capítulos, seções e subseções     
+ \renewcommand{\chaptitlefont}{\ABNTEXchapterfont\bfseries\ABNTEXchapterfontsize}    
+}
+
+\renewcommand{\chapnumfont}{\chaptitlefont}   
+\renewcommand{\parttitlefont}{\ABNTEXpartfont\ABNTEXpartfontsize}   
+\renewcommand{\partnumfont}{\ABNTEXpartfont\ABNTEXpartfontsize}   
+\renewcommand{\partnamefont}{\ABNTEXpartfont\ABNTEXpartfontsize}      
+
+
+
+
+
+
+
+\renewcommand*{\printchaptername}{}  
+\renewcommand*{\chapnumfont}{\normalfont\sffamily\huge\bfseries}   
+\renewcommand*{\printchapternum}{     
+\hrulefill{\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{|c|}
+ \rowcolor{black}\color{white}\normalsize\ABNTEXchapterfont\MakeTextUppercase{\chaptername}\\
+ \vspace{-1.5ex}\\
+ \resizebox{!}{1.1cm}{\ABNTEXchapterfont\thechapter}
+ \\[2.5ex]
+ \hline
+\end{tabular}
+}
+}
+\renewcommand*{\chaptitlefont}{\normalfont\sffamily\Huge\bfseries}   
+\renewcommand*{\printchaptertitle}[1]{
+\flushright\chaptitlefont##1
+\vskip -0.6ex\hfill\rule{.8\textwidth}{0.5pt} \\         
+\vskip -2.8ex\hfill\rule{.8\textwidth}{2pt}\\         
+\vskip 1.5ex
+} 
+}
+%\vskip 4.3ex \flushright\chaptitlefont\bfseries\ABNTEXchapterupperifneeded{##1} \\         
+\chapterstyle{box}
+
+%=================================
+%Configurações do estilo da pagina
+%==================================
+
+\makepagestyle{ruled}
+\makeoddfoot{ruled}{}{}{}  
+\makeevenfoot{ruled}{}{}{}  
+\makeheadrule{ruled}{\textwidth}{\normalrulethickness}  
+\makeevenhead{ruled}{\thepage}{}{\small\itshape\leftmark}  
+\makeoddhead{ruled}{\small\itshape\rightmark}{}{\thepage}
+\makeatletter % because of \@chapapp     
+\makepsmarks  {ruled}{ 
+\nouppercaseheads
+\createmark	{chapter} 	{both} {shownumber}{\@chapapp\ }{. \ }
+\createmark	{section} 	{right} {shownumber}{}		  {. \ }
+\createplainmark {toc}		{both}{\contentsname}
+}
+\makeatother
+\pagestyle{ruled}
+%================================================================================
+% Configuração da fonte utilizada na capa exigida pelo ICMC
+%================================================================================
+
+%\newcommand{\@icmcFont}[2][]{\fontsize{#2}{#2}\ifthenelse{\isempty{#1}}{}{\fontspec[Mapping = tex-text, Path = packages/fonts/]{#1}}}
+
+% Legendas utilizadas em Figuras / Tabelas / Etc.
+% Legendas utilizadas em Figuras / Tabelas / Etc.
+\newcommand{\fautor}{\legend{Fonte: Elaborada pelo autor.}}
+\newcommand{\fadaptada}[2][]{\legend{Fonte: Adaptada de \citeonline[#1]{#2}.}}
+\newcommand{\fdireta}[2][]{\legend{Fonte: \citeonline[#1]{#2}.}}
+\newcommand{\fdadospesquisa}{\legend{Fonte: Dados da pesquisa.}}
 \end_preamble
 \use_default_options true
 \begin_modules
@@ -81,11 +211,11 @@ EndPreamble
 \language_package default
 \inputencoding utf8
 \fontencoding global
-\font_roman lmodern
+\font_roman default
 \font_sans default
 \font_typewriter default
 \font_math auto
-\font_default_family rmdefault
+\font_default_family default
 \use_non_tex_fonts false
 \font_sc false
 \font_osf false
@@ -100,7 +230,7 @@ EndPreamble
 \spacing onehalf
 \use_hyperref false
 \papersize custom
-\use_geometry false
+\use_geometry true
 \use_package amsmath 1
 \use_package amssymb 1
 \use_package cancel 1
@@ -124,6 +254,10 @@ EndPreamble
 \shortcut idx
 \color #008000
 \end_index
+\leftmargin 3cm
+\topmargin 3cm
+\rightmargin 2cm
+\bottommargin 2cm
 \secnumdepth 3
 \tocdepth 3
 \paragraph_separation indent
@@ -142,1394 +276,138 @@ EndPreamble
 \begin_body
 
 \begin_layout Standard
-\begin_inset ERT
-status open
+\begin_inset External
+	template PDFPages
+	filename /Users/edson/Documents/rosto1.pdf
 
-\begin_layout Plain Layout
+\end_inset
 
-%======================================
-\end_layout
-
-\begin_layout Plain Layout
-
-%Pacotesdecitações 
-\end_layout
-
-\begin_layout Plain Layout
-
-%======================================
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-renewcommand*{
-\backslash
-backref}[1]{} 
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-renewcommand*{
-\backslash
-backrefalt}[4]{     
-\end_layout
-
-\begin_layout Plain Layout
-
-	
-\backslash
-ifcase #1 (No citado.)           
-\end_layout
-
-\begin_layout Plain Layout
-
-		
-\backslash
-or (Citado na página~#2.)           
-\end_layout
-
-\begin_layout Plain Layout
-
-		
-\backslash
-else (Citado nas páginas #2.)     
-\end_layout
-
-\begin_layout Plain Layout
-
-	
-\backslash
-fi% 
-\end_layout
-
-\begin_layout Plain Layout
-
-} 
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-renewcommand*{
-\backslash
-backrefsep}{, } 
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-renewcommand*{
-\backslash
-backreftwosep}{e~} 
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-renewcommand*{
-\backslash
-backreflastsep}{e~}
-\end_layout
-
-\begin_layout Plain Layout
-
-%===============================================================================
-= 
-\end_layout
-
-\begin_layout Plain Layout
-
-% Configuração dos Estilo dos Capítulo 
-\end_layout
-
-\begin_layout Plain Layout
-
-%===============================================================================
-=
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-makechapterstyle{box}{   
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-renewcommand{
-\backslash
-chapterheadstart}{}         
-\end_layout
-
-\begin_layout Plain Layout
-
-% Secao secundaria (Section) Caixa baixa, Negrito     
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-renewcommand*{
-\backslash
-cftsectionfont}{
-\backslash
-bfseries}     
-\end_layout
-
-\begin_layout Plain Layout
-
-% Secao terciaria (Subsection) Caixa baixa, Negrito, italico     
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-renewcommand*{
-\backslash
-cftsubsectionfont}{
-\backslash
-itshape
-\backslash
-bfseries}     
-\end_layout
-
-\begin_layout Plain Layout
-
-% Secao quaternaria (Subsubsection) Caixa baixa, italico     
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-renewcommand*{
-\backslash
-cftsubsubsectionfont}{
-\backslash
-itshape}     
-\end_layout
-
-\begin_layout Plain Layout
-
-% Secao quinquenária (Subsubsubsection) Caixa baixa     
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-renewcommand*{
-\backslash
-cftparagraphfont}{
-\backslash
-normalsize}
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-% tamanhos de fontes de chapter e part	    
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-ifthenelse{
-\backslash
-equal{
-\backslash
-ABNTEXisarticle}{true}}{%      
-\end_layout
-
-\begin_layout Plain Layout
-
- 
-\backslash
-setlength
-\backslash
-beforechapskip{
-\backslash
-baselineskip}      
-\end_layout
-
-\begin_layout Plain Layout
-
- 
-\backslash
-renewcommand{
-\backslash
-chaptitlefont}{
-\backslash
-ABNTEXsectionfont
-\backslash
-ABNTEXsectionfontsize}    
-\end_layout
-
-\begin_layout Plain Layout
-
-}{%else      
-\end_layout
-
-\begin_layout Plain Layout
-
- 
-\backslash
-setlength{
-\backslash
-beforechapskip}{0pt}      
-\end_layout
-
-\begin_layout Plain Layout
-
- 
-\backslash
-renewcommand{
-\backslash
-ABNTEXchapterfontsize}{
-\backslash
-LARGE}          
-\end_layout
-
-\begin_layout Plain Layout
-
-%
-\backslash
-renewcommand{
-\backslash
-ABNTEXchapterfont}{
-\backslash
-sffamily
-\backslash
-bfseries}  
-\end_layout
-
-\begin_layout Plain Layout
-
-%alteração da fonte dos capítulos, seções e subseções     
-\end_layout
-
-\begin_layout Plain Layout
-
- 
-\backslash
-renewcommand{
-\backslash
-chaptitlefont}{
-\backslash
-ABNTEXchapterfont
-\backslash
-bfseries
-\backslash
-ABNTEXchapterfontsize}    
-\end_layout
-
-\begin_layout Plain Layout
-
-}
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-renewcommand{
-\backslash
-chapnumfont}{
-\backslash
-chaptitlefont}   
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-renewcommand{
-\backslash
-parttitlefont}{
-\backslash
-ABNTEXpartfont
-\backslash
-ABNTEXpartfontsize}   
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-renewcommand{
-\backslash
-partnumfont}{
-\backslash
-ABNTEXpartfont
-\backslash
-ABNTEXpartfontsize}   
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-renewcommand{
-\backslash
-partnamefont}{
-\backslash
-ABNTEXpartfont
-\backslash
-ABNTEXpartfontsize}      
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-renewcommand*{
-\backslash
-printchaptername}{}  
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-renewcommand*{
-\backslash
-chapnumfont}{
-\backslash
-normalfont
-\backslash
-sffamily
-\backslash
-huge
-\backslash
-bfseries}   
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-renewcommand*{
-\backslash
-printchapternum}{     
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-hrulefill{
-\backslash
-renewcommand{
-\backslash
-arraystretch}{1.5}
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-begin{tabular}{|c|}
-\end_layout
-
-\begin_layout Plain Layout
-
- 
-\backslash
-rowcolor{black}
-\backslash
-color{white}
-\backslash
-normalsize
-\backslash
-ABNTEXchapterfont
-\backslash
-MakeTextUppercase{
-\backslash
-chaptername}
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
- 
-\backslash
-vspace{-1.5ex}
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
- 
-\backslash
-resizebox{!}{1.1cm}{
-\backslash
-ABNTEXchapterfont
-\backslash
-thechapter}
-\end_layout
-
-\begin_layout Plain Layout
-
- 
-\backslash
-
-\backslash
-[2.5ex]
-\end_layout
-
-\begin_layout Plain Layout
-
- 
-\backslash
-hline
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-end{tabular}
-\end_layout
-
-\begin_layout Plain Layout
-
-}
-\end_layout
-
-\begin_layout Plain Layout
-
-}
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-renewcommand*{
-\backslash
-chaptitlefont}{
-\backslash
-normalfont
-\backslash
-sffamily
-\backslash
-Huge
-\backslash
-bfseries}   
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-renewcommand*{
-\backslash
-printchaptertitle}[1]{
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-flushright
-\backslash
-chaptitlefont##1
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-vskip -0.6ex
-\backslash
-hfill
-\backslash
-rule{.8
-\backslash
-textwidth}{0.5pt} 
-\backslash
-
-\backslash
-         
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-vskip -2.8ex
-\backslash
-hfill
-\backslash
-rule{.8
-\backslash
-textwidth}{2pt}
-\backslash
-
-\backslash
-         
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-vskip 1.5ex
-\end_layout
-
-\begin_layout Plain Layout
-
-} 
-\end_layout
-
-\begin_layout Plain Layout
-
-}
-\end_layout
-
-\begin_layout Plain Layout
-
-%
-\backslash
-vskip 4.3ex 
-\backslash
-flushright
-\backslash
-chaptitlefont
-\backslash
-bfseries
-\backslash
-ABNTEXchapterupperifneeded{##1} 
-\backslash
-
-\backslash
-         
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-chapterstyle{box}
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-%=================================
-\end_layout
-
-\begin_layout Plain Layout
-
-%Configurações do estilo da pagina
-\end_layout
-
-\begin_layout Plain Layout
-
-%==================================
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-makepagestyle{ruled}
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-makeoddfoot{ruled}{}{}{}  
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-makeevenfoot{ruled}{}{}{}  
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-makeheadrule{ruled}{
-\backslash
-textwidth}{
-\backslash
-normalrulethickness}  
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-makeevenhead{ruled}{
-\backslash
-thepage}{}{
-\backslash
-small
-\backslash
-itshape
-\backslash
-leftmark}  
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-makeoddhead{ruled}{
-\backslash
-small
-\backslash
-itshape
-\backslash
-rightmark}{}{
-\backslash
-thepage}
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-makeatletter % because of 
-\backslash
-@chapapp     
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-makepsmarks  {ruled}{ 
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-nouppercaseheads
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-createmark	{chapter} 	{both} {shownumber}{
-\backslash
-@chapapp
-\backslash
- }{.
- 
-\backslash
- }
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-createmark	{section} 	{right} {shownumber}{}		  {.
- 
-\backslash
- }
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-createplainmark {toc}		{both}{
-\backslash
-contentsname}
-\end_layout
-
-\begin_layout Plain Layout
-
-}
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-makeatother
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-pagestyle{ruled}
-\end_layout
-
-\begin_layout Plain Layout
-
-%===============================================================================
-=
-\end_layout
-
-\begin_layout Plain Layout
-
-% Configuração da fonte utilizada na capa exigida pelo ICMC
-\end_layout
-
-\begin_layout Plain Layout
-
-%===============================================================================
-=
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-%
-\backslash
-newcommand{
-\backslash
-@icmcFont}[2][]{
-\backslash
-fontsize{#2}{#2}
-\backslash
-ifthenelse{
-\backslash
-isempty{#1}}{}{
-\backslash
-fontspec[Mapping = tex-text, Path = packages/fonts/]{#1}}}
-\end_layout
 
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-ifxetex % Configuração da fonte para a compilação por XETEX
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-RequirePackage{fontspec}
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-RequirePackage{xltxtra}
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-newfontfamily{
-\backslash
-arial}[
-\end_layout
-
-\begin_layout Plain Layout
-
-Ligatures=TeX, % recommended
-\end_layout
-
-\begin_layout Plain Layout
-
-Mapping         = tex-text,
-\end_layout
-
-\begin_layout Plain Layout
-
-Path            = packages/fonts/,
-\end_layout
-
-\begin_layout Plain Layout
-
-BoldFont        = *bd,
-\end_layout
-
-\begin_layout Plain Layout
-
-ItalicFont      = *i,
-\end_layout
-
-\begin_layout Plain Layout
-
-BoldItalicFont  = *bi]{arial}
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-newcommand
-\backslash
-@icmcTitulo{
-\backslash
-@icmcFont{18}
-\backslash
-arial}
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-newcommand
-\backslash
-@icmcAutorCapa{
-\backslash
-@icmcFont{13}
-\backslash
-arial
-\backslash
-bfseries
-\backslash
-itshape}
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-newcommand
-\backslash
-@icmcAutorFolhaRosto{
-\backslash
-@icmcFont{13}
-\backslash
-arial
-\backslash
-bfseries}
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-newcommand
-\backslash
-@icmcTituloFolhaRosto{
-\backslash
-@icmcFont{17}
-\backslash
-arial}
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-newcommand
-\backslash
-@icmcOrientador{
-\backslash
-@icmcFont{10}
-\backslash
-arial}
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-newcommand
-\backslash
-@icmcPreambulo{
-\backslash
-@icmcFont{10}
-\backslash
-arial}
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-newcommand
-\backslash
-@icmcLocalData{
-\backslash
-@icmcFont{11}
-\backslash
-arial
-\backslash
-bfseries}
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-newcommand
-\backslash
-@icmcCarimbo{
-\backslash
-@icmcFont{11}
-\backslash
-arial}
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-newcommand
-\backslash
-@icmcSVPG{
-\backslash
-@icmcFont{8}
-\backslash
-arial}
 \end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-else
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-ifluatex % Configuração da fonte para a compilação por LUATEX
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-RequirePackage{fontspec}
-\end_layout
-
-\begin_layout Plain Layout
-
 
-\backslash
-newfontfamily{
-\backslash
-arial}[
-\end_layout
+\begin_layout Standard
+\begin_inset Newpage cleardoublepage
+\end_inset
 
-\begin_layout Plain Layout
 
-Ligatures=TeX, % recommended
 \end_layout
 
-\begin_layout Plain Layout
+\begin_layout Standard
+\begin_inset External
+	template PDFPages
+	filename /Users/edson/Documents/rosto2.pdf
 
-Mapping         = tex-text,
-\end_layout
+\end_inset
 
-\begin_layout Plain Layout
 
-Path            = packages/fonts/,
 \end_layout
-
-\begin_layout Plain Layout
 
-BoldFont        = *bd,
-\end_layout
+\begin_layout Standard
+\begin_inset Newpage cleardoublepage
+\end_inset
 
-\begin_layout Plain Layout
 
-ItalicFont      = *i,
 \end_layout
 
-\begin_layout Plain Layout
+\begin_layout Standard
+\begin_inset External
+	template PDFPages
+	filename /Users/edson/Documents/epigrafe.pdf
 
-BoldItalicFont  = *bi]{arial}
-\end_layout
+\end_inset
 
-\begin_layout Plain Layout
 
 \end_layout
-
-\begin_layout Plain Layout
-
 
-\backslash
-newcommand
-\backslash
-@icmcTitulo{
-\backslash
-@icmcFont{18}
-\backslash
-arial}
-\end_layout
+\begin_layout Standard
+\begin_inset Newpage cleardoublepage
+\end_inset
 
-\begin_layout Plain Layout
-
-
-\backslash
-newcommand
-\backslash
-@icmcAutorCapa{
-\backslash
-@icmcFont{13}
-\backslash
-arial
-\backslash
-bfseries
-\backslash
-itshape}
-\end_layout
 
-\begin_layout Plain Layout
-
-
-\backslash
-newcommand
-\backslash
-@icmcAutorFolhaRosto{
-\backslash
-@icmcFont{13}
-\backslash
-arial
-\backslash
-bfseries}
 \end_layout
-
-\begin_layout Plain Layout
 
+\begin_layout Standard
+\begin_inset External
+	template PDFPages
+	filename /Users/edson/Documents/afterepigrafe.pdf
 
-\backslash
-newcommand
-\backslash
-@icmcTituloFolhaRosto{
-\backslash
-@icmcFont{17}
-\backslash
-arial}
-\end_layout
-
-\begin_layout Plain Layout
+\end_inset
 
 
-\backslash
-newcommand
-\backslash
-@icmcOrientador{
-\backslash
-@icmcFont{10}
-\backslash
-arial}
 \end_layout
 
-\begin_layout Plain Layout
+\begin_layout Standard
+\begin_inset Newpage cleardoublepage
+\end_inset
 
 
-\backslash
-newcommand
-\backslash
-@icmcPreambulo{
-\backslash
-@icmcFont{10}
-\backslash
-arial}
 \end_layout
 
-\begin_layout Plain Layout
-
-
-\backslash
-newcommand
-\backslash
-@icmcLocalData{
-\backslash
-@icmcFont{11}
-\backslash
-arial
-\backslash
-bfseries}
-\end_layout
+\begin_layout Standard
+\begin_inset External
+	template PDFPages
+	filename /Users/edson/Documents/dedicatoria.pdf
 
-\begin_layout Plain Layout
+\end_inset
 
 
-\backslash
-newcommand
-\backslash
-@icmcCarimbo{
-\backslash
-@icmcFont{11}
-\backslash
-arial}
 \end_layout
-
-\begin_layout Plain Layout
 
+\begin_layout Standard
+\begin_inset Newpage cleardoublepage
+\end_inset
 
-\backslash
-newcommand
-\backslash
-@icmcSVPG{
-\backslash
-@icmcFont{8}
-\backslash
-arial}
-\end_layout
 
-\begin_layout Plain Layout
-
 \end_layout
-
-\begin_layout Plain Layout
 
+\begin_layout Standard
+\begin_inset External
+	template PDFPages
+	filename /Users/edson/Documents/agradecimiento.pdf
 
-\backslash
-else % Configuração da fonte para a compilação por PDFLATEX
-\end_layout
+\end_inset
 
-\begin_layout Plain Layout
 
-%
-\backslash
-RequirePackage[T1]{fontenc}	    	% Selecao de codigos de fonte.
 \end_layout
-
-\begin_layout Plain Layout
 
-%
-\backslash
-RequirePackage[utf8]{inputenc}		% Codificacao do documento (conversão automática
- dos acentos)
-\end_layout
+\begin_layout Standard
+\begin_inset Newpage cleardoublepage
+\end_inset
 
-\begin_layout Plain Layout
-
-%
-\backslash
-newcommand
-\backslash
-@icmcTitulo{
-\backslash
-fontsize{18pt}{1em}
-\backslash
-selectfont
-\backslash
-usefont{T1}{phv}{m}{n}}
-\end_layout
 
-\begin_layout Plain Layout
-
-%
-\backslash
-newcommand
-\backslash
-@icmcAutorCapa{
-\backslash
-fontsize{13pt}{1em}
-\backslash
-selectfont
-\backslash
-usefont{T1}{phv}{b}{it}}
 \end_layout
 
-\begin_layout Plain Layout
-
-%
-\backslash
-newcommand
-\backslash
-@icmcAutorFolhaRosto{
-\backslash
-fontsize{13pt}{1em}
-\backslash
-selectfont
-\backslash
-usefont{T1}{phv}{b}{n}}
-\end_layout
+\begin_layout Resumo
+\begin_inset CommandInset include
+LatexCommand input
+filename "abstract/AbstractAbnt.lyx"
 
-\begin_layout Plain Layout
-
-%
-\backslash
-newcommand
-\backslash
-@icmcTituloFolhaRosto{
-\backslash
-fontsize{17pt}{1em}
-\backslash
-selectfont
-\backslash
-usefont{T1}{phv}{m}{n}}
-\end_layout
+\end_inset
 
-\begin_layout Plain Layout
-
-%
-\backslash
-newcommand
-\backslash
-@icmcOrientador{
-\backslash
-fontsize{10pt}{1em}
-\backslash
-selectfont
-\backslash
-usefont{T1}{phv}{m}{n}}
-\end_layout
 
-\begin_layout Plain Layout
-
-%
-\backslash
-newcommand
-\backslash
-@icmcPreambulo{
-\backslash
-fontsize{10pt}{1em}
-\backslash
-selectfont
-\backslash
-usefont{T1}{phv}{m}{n}}
 \end_layout
 
-\begin_layout Plain Layout
-
-%
-\backslash
-newcommand
-\backslash
-@icmcLocalData{
-\backslash
-fontsize{11pt}{1em}
-\backslash
-selectfont
-\backslash
-usefont{T1}{phv}{b}{n}}
-\end_layout
+\begin_layout Standard
+\begin_inset Newpage cleardoublepage
+\end_inset
 
-\begin_layout Plain Layout
-
-%
-\backslash
-newcommand
-\backslash
-@icmcCarimbo{
-\backslash
-fontsize{11pt}{1em}
-\backslash
-selectfont
-\backslash
-usefont{T1}{phv}{m}{n}}
-\end_layout
 
-\begin_layout Plain Layout
-
-%
-\backslash
-newcommand
-\backslash
-@icmcSVPG{
-\backslash
-fontsize{8pt}{1em}
-\backslash
-selectfont
-\backslash
-usefont{T1}{phv}{m}{n}}
 \end_layout
 
-\begin_layout Plain Layout
+\begin_layout Resumo
 
-
-\backslash
-fi
-\end_layout
+\lang english
+\begin_inset CommandInset include
+LatexCommand input
+filename "abstract/AbstractAbntIngles.lyx"
 
-\begin_layout Plain Layout
+\end_inset
 
 
-\backslash
-fi
 \end_layout
 
+\begin_layout Standard
+\begin_inset Newpage cleardoublepage
 \end_inset
 
 
@@ -1545,45 +423,6 @@ status open
 \backslash
 frontmatter
 \end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset CommandInset include
-LatexCommand input
-filename "abstract/AbstractAbnt.lyx"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-clearpage
-\backslash
-null
-\backslash
-newpage
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset CommandInset toc
-LatexCommand tableofcontents
 
 \end_inset
 
@@ -1654,6 +493,153 @@ status open
 
 
 \backslash
+clearpage
+\backslash
+null
+\backslash
+newpage
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FloatList algorithm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+clearpage
+\backslash
+null
+\backslash
+newpage
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+renewcommand{
+\backslash
+lstlistingname}{C{
+\backslash
+'o}digo-fonte}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+renewcommand{
+\backslash
+lstlistlistingname}{Lista De C{
+\backslash
+'o}digos-Fonte}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset toc
+LatexCommand lstlistoflistings
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+clearpage
+\backslash
+null
+\backslash
+newpage
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+renewcommand{
+\backslash
+nomname}{Lista De Abreviaturas e Siglas}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset nomencl_print
+LatexCommand printnomenclature
+set_width "auto"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+clearpage
+\backslash
+null
+\backslash
+newpage
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
 mainmatter
 \end_layout
 
@@ -1663,7 +649,7 @@ mainmatter
 \end_layout
 
 \begin_layout Chapter
-conasdasasd
+Introdução
 \end_layout
 
 \begin_layout Standard
@@ -1691,6 +677,24 @@ filename "chapters/marco.lyx"
 \end_layout
 
 \begin_layout Chapter
+Web Semântica
+\end_layout
+
+\begin_layout Chapter
+Trabalhos Relacionados
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand input
+filename "chapters/4_Related_workABNT.lyx"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter
 Listas
 \end_layout
 
@@ -1705,7 +709,7 @@ filename "chapters/abreviaturas.lyx"
 \end_layout
 
 \begin_layout Chapter
-metodologia
+Metodologia
 \end_layout
 
 \begin_layout Standard

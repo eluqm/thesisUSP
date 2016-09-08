@@ -140,6 +140,8 @@
 \begin_body
 
 \begin_layout Standard
+
+\lang english
 Informação sobre o estágio de câncer num paciente é fundamental quando os
  médicos avaliam o progresso individual desse paciente e decidem sobre novas
  medidas de tratamento.
@@ -178,6 +180,7 @@ As anotações em AIM serão convertidas para OWL e uma máquina de inferência
 \begin_layout Standard
 
 \series bold
+\lang english
 Palavras Chave:
 \series default
  
