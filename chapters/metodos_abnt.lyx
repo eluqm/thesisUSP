@@ -679,25 +679,8 @@ fundation model
 
 \series bold
 AIM:Calculation, AIM:GeometricShape, AIM:ImagingObservation, AIM:Annotation,
- AIM:ImageReference, AIM:ImageAnnotation, AIM:CalculationResult
-\end_layout
-
-\begin_layout Description
-
-\series bold
-AIM:CalculationData
-\end_layout
-
-\begin_layout Description
-
-\series bold
-AIM:ImagingObservation
-\end_layout
-
-\begin_layout Description
-
-\series bold
-AIM:ImagingObservationCharacteristics
+ AIM:ImageReference, AIM:ImageAnnotation, AIM:CalculationResult, AIM:Calculation
+Data, AIM:ImagingObservation, AIM:ImagingObservationCharacteristics
 \end_layout
 
 \begin_layout Description
@@ -710,28 +693,11 @@ s de lesão e medidas derivadas durante os ensaios clínicos com base em imagens
  as classes e propriedades nesta categoria estão listados abaixo:
 \end_layout
 
-\begin_layout Itemize
+\begin_layout Description
 
 \series bold
-AIM:Entity
-\end_layout
-
-\begin_layout Itemize
-
-\series bold
-AIM:AnnotationCollection
-\end_layout
-
-\begin_layout Itemize
-
-\series bold
-AIM:imageAnnotationCollection
-\end_layout
-
-\begin_layout Itemize
-
-\series bold
-AIM:ImagingPhysicalEntity
+AIM:Entity, AIM:AnnotationCollection, AIM:imageAnnotationCollection, AIM:Imaging
+PhysicalEntity
 \begin_inset Foot
 status open
 
@@ -744,29 +710,21 @@ AnatomicEntity na versao 3.0 do AIM
 
 \end_inset
 
-
+, AIM:ImagingPhysicalCharacteristic, AIM:MarkupEntity
 \end_layout
 
-\begin_layout Itemize
-
-\series bold
-AIM:ImagingPhysicalCharacteristic
-\end_layout
-
-\begin_layout Itemize
-
-\series bold
-AIM:MarkupEntity
-\end_layout
-
-\begin_layout Subsection
+\begin_layout Subsubsection
 Basic Terms 
 \end_layout
 
 \begin_layout Standard
-Esta categoria é um pequeno conjunto de classes e propriedades que podem
+Esta categoria é um pequenho conjunto de classes e propriedades que podem
  ser usados ​​para criar descrições iniciais das imagens.
- As 9 classes proporcionan uma base para o resto do AIM4-O:
+ As 9 classes proporcionan uma base para o resto do 
+\series bold
+AIM4-O, 
+\series default
+A seguir encontra-se uma descrição mais detalhada destas classes:
 \end_layout
 
 \begin_layout Itemize
@@ -883,12 +841,7 @@ name "fig:classes-base"
 
 \end_inset
 
-As 9 
-\series bold
-classes base
-\series default
- do modelo e as propiedade que se relacionam, neste documento o diagrama
- representa entidades como ovais e retângulos.
+O diagrama representa as entidades como ovais e retângulos.
  As propriedades são mostrados em cor vermelho.
  
 \end_layout
@@ -905,7 +858,8 @@ classes base
 \begin_inset Graphics
 	filename ../figures/AIM3.pdf
 	lyxscale 40
-	scale 20
+	scale 25
+	rotateAngle 270
 
 \end_inset
 
@@ -1439,7 +1393,7 @@ classes base
 
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Subsubsection
 
 \series bold
 Extended Terms
