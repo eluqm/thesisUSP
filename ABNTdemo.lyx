@@ -276,10 +276,7 @@ EndPreamble
 \begin_body
 
 \begin_layout Standard
-\begin_inset External
-	template PDFPages
-	filename /Users/edson/Documents/rosto1.pdf
-
+\begin_inset Newpage cleardoublepage
 \end_inset
 
 
@@ -293,10 +290,7 @@ EndPreamble
 \end_layout
 
 \begin_layout Standard
-\begin_inset External
-	template PDFPages
-	filename /Users/edson/Documents/rosto2.pdf
-
+\begin_inset Newpage cleardoublepage
 \end_inset
 
 
@@ -310,61 +304,7 @@ EndPreamble
 \end_layout
 
 \begin_layout Standard
-\begin_inset External
-	template PDFPages
-	filename /Users/edson/Documents/epigrafe.pdf
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
 \begin_inset Newpage cleardoublepage
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset External
-	template PDFPages
-	filename /Users/edson/Documents/afterepigrafe.pdf
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Newpage cleardoublepage
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset External
-	template PDFPages
-	filename /Users/edson/Documents/dedicatoria.pdf
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Newpage cleardoublepage
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset External
-	template PDFPages
-	filename /Users/edson/Documents/agradecimiento.pdf
-
 \end_inset
 
 
