@@ -2115,7 +2115,7 @@ Entity.
 \begin_inset Graphics
 	filename ../figures/AIM4example.pdf
 	lyxscale 50
-	scale 20
+	scale 19
 	rotateAngle 270
 
 \end_inset
@@ -2263,7 +2263,7 @@ hasPerson
 \begin_inset Graphics
 	filename ../figures/inversefunctional.pdf
 	lyxscale 50
-	scale 20
+	scale 22
 	rotateOrigin center
 
 \end_inset
@@ -2902,6 +2902,13 @@ Condição 3 : Staging deve considerar lesões em órgãos adjacentes
 Representação formal das condições usando OWL
 \end_layout
 
+\begin_layout Subsubsection*
+
+\series bold
+Condição 1: "O staging do câncer deve considerar a existência de tumor solitário
+ ou múltiplo no mesmo site"
+\end_layout
+
 \begin_layout Standard
 A ontologia 
 \series bold
@@ -2918,45 +2925,11 @@ AIM4-O
 \end_layout
 
 \begin_layout Standard
-\begin_inset Float figure
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-jjljlksjlds
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\noindent
-\align center
-\begin_inset Graphics
-	filename ../figures/TNM Staging Documentation.pdf
-	scale 80
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
 \begin_inset Formula 
-\[
-ImageStudy(?X)\land isImageStudyOf(?x,?y)\land isImageStudyOf(?x,?z)\land DifferentFrom(?y,?z)\rightarrow MoreThanOneTumor(?x)
-\]
+\begin{multline*}
+ImageStudy(?X)\land isImageStudyOf(?x,?y)\land isImageStudyOf(?x,?z)\land\\
+DifferentFrom(?y,?z)\rightarrow MoreThanOneTumor(?x)
+\end{multline*}
 
 \end_inset
 
@@ -3052,7 +3025,7 @@ mundo aberto
 \series bold
 hasImagingObservation
 \series default
-" como uma classe, e não como uma relação ObjectProperty, como actualmente
+" como uma classe, e não como uma relação ObjectProperty como actualmente
  na ontologia 
 \series bold
 AIM4-O
@@ -3081,8 +3054,8 @@ singleLesion { true}
  OWL
 \series default
 .
- Em vez disso, utilizou-se uma estrutura de dados, como a mostrada na Figura
- 1.
+ Em vez disso, utilizou-se uma estrutura de dados como referencia, a estrutura
+ de dados e mostrada na Figura 1.
  Esta estrutura de dados foi gerado como parte do processo de 
 \emph on
 parsing
@@ -3090,6 +3063,1121 @@ parsing
  das anotacoes de imagem no formato XML para criar indivíduos da ontologia
  AIM4-O.
  
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+é apresentada a definição da estrutura de dados gerado na etapa de 
+\emph on
+parsing 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename ../figures/TNM Staging Documentation.pdf
+	scale 80
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\paragraph_spacing onehalf
+\noindent
+\align center
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+fautor
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Finalmente, para classificar anotações que descrevem uma única lesão, construímo
+s a regra 
+\series bold
+"Tumor Single
+\series default
+" (em notação SWRL):
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+ImageStudy(?X)\land singleLesion(?X,?val)\land equal(?val,true)\rightarrow singleTumor(?X)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+Condição 2: "Os tumores deve ser maior ou menor que 5 cm"
+\end_layout
+
+\begin_layout Standard
+Esta condição é facilmente implementado, obtendo o valor da propiedade "
+\emph on
+values
+\emph default
+" pertenecente à entidade
+\series bold
+ CalculationResult.
+
+\series default
+ Esta entidade está relacionado com outra entidade de tipo 
+\series bold
+ImageAnnotation
+\series default
+ através da propriedade 
+\series bold
+hasCalculationEntity
+\series default
+.
+ A fim de satisfazer esta condição de medição, formulamos as seguintes regras
+ (na notação SWRL): 
+\end_layout
+
+\begin_layout Description
+LessThan5cmTumor 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{multline*}
+ImageAnnotation(?x)\land hasCalculationEntity(?x,?y)\land hasCalculationResult(?y,?z)\land\\
+values(?z,?val)\land lessThan(?val,5)\rightarrow lessThan5cmTumor(?x)
+\end{multline*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+MoreThan5cmTumor 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{multline*}
+ImageAnnotation(?x)\land hasCalculationEntity(?x,?y)\land hasCalculationResult(?y,?z)\land\\
+values(?z,?val)\land greaterThan(?val,5)\rightarrow MoreThan5cmTumor(?x)
+\end{multline*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+Condição 3 : "Staging deve considerar lesões em órgãos adjacentes"
+\end_layout
+
+\begin_layout Standard
+Para satisfazer o critério mais complicado de classificação tivemos que
+ considerar o fato de que uma lesão pode espalhar-se no corpo.
+ Para isso, foi necessário criar um novo conceito baseado na classe 
+\series bold
+Lesion
+\series default
+ da ontologia 
+\series bold
+Onlira
+\series default
+
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:onliraontology"
+
+\end_inset
+
+.
+ Enquanto a classe 
+\series bold
+Lesion
+\series default
+ lida com muitas características importantes de uma lesão tais como: a composiçã
+o, densidade, tamanho, forma, etc, infelizmente isso não é suficiente para
+ satisfazer os criterios da classificação TNM.
+ Por esta razão, foram adicionados 3 propriedades a ele e, como resultado
+ definimos un novo conceito, a subclasse 
+\series bold
+OutsideLesion
+\series default
+, As 3 novas propriedades são:
+\end_layout
+
+\begin_layout Description
+hasLocation ObjectProperty: Esta propriedade indica a localização das lesões
+ com base na taxonomia 
+\series bold
+Radlex
+\series default
+.
+ A propiedade 
+\series bold
+hasLocation
+\series default
+ relaciona as instâncias da classe 
+\series bold
+Lesion
+\series default
+ da Ontologia Onlira aos membros da classe 
+\series bold
+AnatomicalEntity
+\series default
+ do modulo Radlex usado neste trabalho.
+\end_layout
+
+\begin_layout Description
+isRegionalLymphNodeAffected ObjectProperty: Especifica se uma lesão está
+ localizada em algum nódulo linfático.
+ Esse conceito foi útil para os critérios de classificação como N0 e N1.
+\end_layout
+
+\begin_layout Description
+isAdjacentOrgan object property: Indica se a lesão presente no local "X"
+ está perto de órgão "Y".
+ De acordo com o critério de classificação TNM do cancer de fígado, considerou-s
+e como órgãos adjacentes ao fígado: o pâncreas, estômago, duodeno, fígado,
+ cólon, etc.
+ (ver figura 2).
+ Nós agrupamos esses conceitos(usando a taxonomia radlex), criando duas
+ novas classes 
+\series bold
+"AdjacentOrganGroup"
+\series default
+ e "
+\series bold
+NoAdjacentOrganGroup"
+\series default
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $ $
+\end_inset
+
+
+\begin_inset Formula 
+\begin{multline*}
+AdjacentOrganGroup\subseteq RadlexEntity.Organ
+\end{multline*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{multline*}
+NoAdjacentOrganGroup\subseteq RadlexEntity.Organ
+\end{multline*}
+
+\end_inset
+
+
+\begin_inset Formula 
+\begin{multline*}
+\end{multline*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+AdjacentOrganGroup
+\emph default
+ e 
+\emph on
+NoAdjacentOrganGroup
+\emph default
+, indicam se um órgão é considerado adjacente ou não em referência ao órgão
+ pai.
+ O órgão pai representa o tipo do
+\series bold
+\emph on
+ 
+\series default
+staging
+\emph default
+ de cancer, para o nosso estudo de caso o órgão pai é o fígado.
+ Finalmente, construímos a seguinte regra (em notação SWRL) para classificar
+ se uma lesao fora do figado 
+\series bold
+(
+\series default
+representado pelo conceito
+\series bold
+ 
+\series default
+\emph on
+OutsideLesion
+\series bold
+\emph default
+)
+\series default
+ está localizada em um órgão adjacente:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+Lesion(?x)\land adjacentOrganGroup(?y)\land hasLocation(?x,?y)\rightarrow isAdjacentOrgan(?x,true)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Neste ponto, uma vez formulados os criterios acima adequadamente usando
+ 
+\series bold
+OWL e SWRL
+\series default
+, nós usamos eles para construir os seguintes axiomas e regras, a fim de
+ ser capaz de classificar automaticamente lesões cancerosas utilizando o
+ sistema TNM (ver Tabela xx).
+ Notamos que a maneira que nós modelamos as coisas importava.
+ Por exemplo, foi mais fácil para definir 
+\series bold
+N1a, N0
+\series default
+ e reutilizar suas definições para 
+\series bold
+M0
+\series default
+, ao invés de começar com a definição de
+\series bold
+ M0
+\series default
+ através da manipulação de closures complexos.
+\end_layout
+
+\begin_layout Standard
+Com a utilização da ontologia 
+\series bold
+AIM4-O
+\series default
+, os conceitos podem ser facilmente relacionados uns com os outros como
+ foi demonstrado anteriormente.
+ Além disso, os requisitos de integridade e de cardinalidade pode ser especifica
+da e executada com fins de
+\emph on
+ 
+\series bold
+reasoning
+\series default
+\emph default
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways true
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+American Joint Committee on Cancer/International Union against cancer TNM
+ classification system and formal representation 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+resizebox{0.7
+\backslash
+textwidth}{!}{
+\end_layout
+
+\end_inset
+
+
+\begin_inset Tabular
+<lyxtabular version="3" rows="11" columns="2">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="center" valignment="top" width="7cm">
+<column alignment="center" valignment="top" width="16cm">
+<row>
+<cell multicolumn="1" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Primary tumor (T)
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Medical representation for T1 criterion:
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Solitary tumor (any size) without vascular invasion 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Formal representation for T1 in OWL-DL
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula 
+\begin{multline*}
+\equiv NoVascularInvadedTumor\land\\
+\ni hasImageReference.ImageReferenceEntity\land\\
+ImageReferenceEntity\land\ni hasImageStudy.ImageStudy\land SingleTumor
+\end{multline*}
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Medical representation for T2a criterion : 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Solitary tumor (any size) with vascular invasion
+\series default
+ 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Formal representation for T2a in OWL-DL
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula 
+\begin{multline*}
+\equiv VascularInvadedTumor\land\\
+\ni hasImageReference.ImageReferenceEntity\land\\
+ImageReferenceEntity\land\ni hasImageStudy.ImageStudy\land SingleTumor
+\end{multline*}
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Medical representation for T2b criterion :
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+multiple tumors none < 5cm
+\series default
+ 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Formal representation for T2b in OWL-DL
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula 
+\begin{multline*}
+\equiv LessThan5cmTumor\land\\
+\ni hasImageReference.ImageReferenceEntity\land\\
+ImageReferenceEntity\land\ni hasImageStudy.ImageStudy\land MoreThanOneTumor
+\end{multline*}
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Medical representation for T3a criterion : 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Multiple tumors, with at least one tumor > 5cm
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Formal representation for T3b in OWL-DL 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula 
+\begin{multline*}
+\equiv MoreThan5cmTumor\land\\
+\ni hasImageReference.ImageReferenceEntity\land\\
+ImageReferenceEntity\land\ni hasImageStudy.ImageStudy\land MoreThanOneTumor
+\end{multline*}
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Medical representation for T4a criterion : 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Tumors with direct invasion of adjacent organs other than the gallbladder
+ 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Formal representation for T4a in SWRL 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula 
+\begin{multline*}
+outsideLesion(?x)\land hasLocation(?x,?y)\land\\
+isAdjacentOrgan(?x,true)\rightarrow T4a(?x)
+\end{multline*}
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways true
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+American Joint Committee on Cancer/International Union against cancer TNM
+ classification system and formal representation 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+resizebox{0.9
+\backslash
+textwidth}{!}{
+\end_layout
+
+\end_inset
+
+
+\begin_inset Tabular
+<lyxtabular version="3" rows="7" columns="2">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="center" valignment="top" width="7cm">
+<column alignment="center" valignment="top" width="14cm">
+<row>
+<cell multicolumn="1" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Regional lymph nodes (N) 
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Medical representation for N0 criterion : 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Solitary tumor (any size) without vascular invasion 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Formal representation for N0a in SWRL
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula 
+\begin{multline*}
+Lesion(?x)\land isRegionalLymphNodeAffected(?x,false)\rightarrow N0a(?x)
+\end{multline*}
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Formal representation for N0 in OWL-DL 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula 
+\begin{multline*}
+\equiv ImageAnnotation.hasLesion\land\ni N0a
+\end{multline*}
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Medical representation for N1 criterion : 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Regional lymph node metastasis
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Formal representation for N1a in SWRL
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula 
+\begin{multline*}
+Lesion(?x)\land organcomponentofymphatitree(?y)\land\\
+outsideLesion(?x)\land hasLocation(?x,?y)\rightarrow N1a(?x)
+\end{multline*}
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Formal representation for N1a in OWL-DL 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula 
+\begin{multline*}
+\equiv ImageAnnotation.hasLesion\land\ni N1a
+\end{multline*}
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways true
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+American Joint Committee on Cancer/International Union against cancer TNM
+ classification system and formal representation 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+resizebox{0.9
+\backslash
+textwidth}{!}{
+\end_layout
+
+\end_inset
+
+
+\begin_inset Tabular
+<lyxtabular version="3" rows="5" columns="2">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="center" valignment="top" width="7cm">
+<column alignment="center" valignment="top" width="14cm">
+<row>
+<cell multicolumn="1" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Distant metastasis (M) 
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Medical representation for M0 criterion : 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+No distant metastasis
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Formal representation for M0 in OWL-DL 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula 
+\begin{multline*}
+\equiv ImageAnnotation.hasLesion\land\ni N0\lor N1a
+\end{multline*}
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Medical representation for M1 criterion : 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Distant metastasis 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Formal representation for M1 in OWL-DL 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula 
+\begin{multline*}
+\equiv ImageAnnotaion.hasLesion\land\ni Onlira.Lesion\land\\
+Lesion.hasLocation\land\ni Organ.noadjacentOrganGroup
+\end{multline*}
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section
