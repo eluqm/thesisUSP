@@ -41,7 +41,8 @@ urlcolor=cyan!50!black!90
   {\normalfont\fontsize{16pt}{18pt}\selectfont\bfseries}{\thesection}{1em}{}
 \titleformat{\subsection}
   {\normalfont\fontsize{14pt}{16pt}\selectfont\bfseries}{\thesubsection}{1em}{}
-
+\titleformat{\subsubsection}
+  {\normalfont\fontsize{12pt}{14pt}\selectfont\bfseries}{\thesubsection}{1em}{}
 
 
 
@@ -226,6 +227,7 @@ EndPreamble
 \output_sync 0
 \bibtex_command default
 \index_command default
+\float_placement h
 \paperfontsize 12
 \spacing onehalf
 \use_hyperref false
@@ -266,6 +268,7 @@ EndPreamble
 \papercolumns 1
 \papersides 2
 \paperpagestyle myheadings
+\listings_params "frame=tb"
 \tracking_changes false
 \output_changes false
 \html_math_output 0

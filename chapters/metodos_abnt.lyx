@@ -681,7 +681,7 @@ fundation model
 A seguir encontra-se uma descrição mais detalhada destas classes:
 \end_layout
 
-\begin_layout Itemize
+\begin_layout Enumerate
 
 \series bold
 AIM:Calculation:
@@ -691,7 +691,7 @@ AIM:Calculation:
  símbolos gráficos ou marcações.
 \end_layout
 
-\begin_layout Itemize
+\begin_layout Enumerate
 
 \series bold
 AIM:GeometricShape: 
@@ -700,7 +700,7 @@ captura informações e representação gráfica para coordenadas espaciais de
  tipo bi e tri dimensionais, respectivamente.
 \end_layout
 
-\begin_layout Itemize
+\begin_layout Enumerate
 
 \series bold
 AIM:ImagingObservation: 
@@ -708,7 +708,7 @@ AIM:ImagingObservation:
 é a descrição de coisas que são vistos em uma imagem.
 \end_layout
 
-\begin_layout Itemize
+\begin_layout Enumerate
 
 \series bold
 AIM:ImagingObservationCharacteristics: 
@@ -716,7 +716,7 @@ AIM:ImagingObservationCharacteristics:
 a classe contém descritores da classe ImagingObservation.
 \end_layout
 
-\begin_layout Itemize
+\begin_layout Enumerate
 
 \series bold
 AIM:Annotation: 
@@ -726,7 +726,7 @@ captura o nome, uma descrição geral da anotação AIM, o tipo de anotação
  versão ao modelo AIM usado.
 \end_layout
 
-\begin_layout Itemize
+\begin_layout Enumerate
 
 \series bold
 AIM:ImageReference: 
@@ -736,7 +736,7 @@ representa uma imagem ou uma coleção de imagens que estão sendo anotada.
  (URI).
 \end_layout
 
-\begin_layout Itemize
+\begin_layout Enumerate
 
 \series bold
 AIM:ImageAnnotation:
@@ -746,7 +746,7 @@ AIM:ImageAnnotation:
  Ele descreve uma única coisa encontrada.
 \end_layout
 
-\begin_layout Itemize
+\begin_layout Enumerate
 
 \series bold
 AIM:CalculationResult: 
@@ -758,7 +758,7 @@ classe abstrata contém o tipo de resultado (por exemplo , binário, escalar,
 .
 \end_layout
 
-\begin_layout Itemize
+\begin_layout Enumerate
 
 \series bold
 AIM:CalculationData: 
@@ -812,8 +812,7 @@ O diagrama representa as entidades como ovais e retângulos.
 \begin_inset Graphics
 	filename ../figures/AIM3.pdf
 	lyxscale 40
-	scale 23
-	rotateAngle 270
+	scale 21
 
 \end_inset
 
@@ -1393,7 +1392,7 @@ reference "fig:classes-extend"
 : 
 \end_layout
 
-\begin_layout Itemize
+\begin_layout Enumerate
 
 \series bold
 AIM:Entity:
@@ -1402,7 +1401,7 @@ AIM:Entity:
  observação, cálculo, medição e desenho gráfico no AIM.
 \end_layout
 
-\begin_layout Itemize
+\begin_layout Enumerate
 
 \series bold
 AIM:AnnotationCollection: 
@@ -1414,7 +1413,7 @@ que é um conceito abstrato de um recipiente que reúne um tipo de anotações
  
 \end_layout
 
-\begin_layout Itemize
+\begin_layout Enumerate
 
 \series bold
 AIM:imageAnnotationCollection: 
@@ -1423,7 +1422,7 @@ armazena instâncias de ImagenAnnotation.
  Se associa com a classe Person que contém informação demográfica do paciente.
 \end_layout
 
-\begin_layout Itemize
+\begin_layout Enumerate
 
 \series bold
 AIM:ImagingPhysicalEntity
@@ -1447,7 +1446,7 @@ AnatomicEntity na versao 3.0 do AIM
  (UMLS).
 \end_layout
 
-\begin_layout Itemize
+\begin_layout Enumerate
 
 \series bold
 AIM:ImagingPhysicalCharacteristic: 
@@ -1458,7 +1457,7 @@ descreve ImagingPhysicalEntity tais como termo codificado.
  
 \end_layout
 
-\begin_layout Itemize
+\begin_layout Enumerate
 
 \series bold
 AIM:MarkupEntity: 
@@ -1532,8 +1531,7 @@ Entity
 \begin_inset Graphics
 	filename ../figures/AIM4.pdf
 	lyxscale 40
-	scale 21
-	rotateAngle 270
+	scale 19
 
 \end_inset
 
@@ -2926,10 +2924,11 @@ AIM4-O
 
 \begin_layout Standard
 \begin_inset Formula 
-\begin{multline*}
-ImageStudy(?X)\land isImageStudyOf(?x,?y)\land isImageStudyOf(?x,?z)\land\\
+\begin{gather*}
+\hline ImageStudy(?X)\land isImageStudyOf(?x,?y)\land isImageStudyOf(?x,?z)\land\\
 DifferentFrom(?y,?z)\rightarrow MoreThanOneTumor(?x)
-\end{multline*}
+\\\hline 
+\end{gather*}
 
 \end_inset
 
@@ -3055,7 +3054,14 @@ singleLesion { true}
 \series default
 .
  Em vez disso, utilizou-se uma estrutura de dados como referencia, a estrutura
- de dados e mostrada na Figura 1.
+ de dados e mostrada na Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:estrutura"
+
+\end_inset
+
+.
  Esta estrutura de dados foi gerado como parte do processo de 
 \emph on
 parsing
@@ -3076,6 +3082,12 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:estrutura"
+
+\end_inset
+
 é apresentada a definição da estrutura de dados gerado na etapa de 
 \emph on
 parsing 
@@ -3091,7 +3103,7 @@ parsing
 \align center
 \begin_inset Graphics
 	filename ../figures/TNM Staging Documentation.pdf
-	scale 80
+	scale 70
 
 \end_inset
 
@@ -3133,9 +3145,11 @@ s a regra
 
 \begin_layout Standard
 \begin_inset Formula 
-\[
-ImageStudy(?X)\land singleLesion(?X,?val)\land equal(?val,true)\rightarrow singleTumor(?X)
-\]
+\begin{gather*}
+\hline ImageStudy(?X)\land singleLesion(?X,?val)\land\\
+equal(?val,true)\rightarrow singleTumor(?X)
+\\\hline 
+\end{gather*}
 
 \end_inset
 
@@ -3169,32 +3183,50 @@ hasCalculationEntity
  (na notação SWRL): 
 \end_layout
 
-\begin_layout Description
-LessThan5cmTumor 
+\begin_layout Standard
+\noindent
+\align center
+
+\series bold
+LessThan5cmTumor
+\series default
+ 
 \end_layout
 
 \begin_layout Standard
+\noindent
+\align center
 \begin_inset Formula 
-\begin{multline*}
-ImageAnnotation(?x)\land hasCalculationEntity(?x,?y)\land hasCalculationResult(?y,?z)\land\\
+\begin{gather*}
+\hline ImageAnnotation(?x)\land hasCalculationEntity(?x,?y)\land hasCalculationResult(?y,?z)\land\\
 values(?z,?val)\land lessThan(?val,5)\rightarrow lessThan5cmTumor(?x)
-\end{multline*}
+\\\hline 
+\end{gather*}
 
 \end_inset
 
 
 \end_layout
 
-\begin_layout Description
-MoreThan5cmTumor 
+\begin_layout Standard
+\noindent
+\align center
+
+\series bold
+MoreThan5cmTumor
+\series default
+ 
 \end_layout
 
 \begin_layout Standard
+\noindent
+\align center
 \begin_inset Formula 
-\begin{multline*}
-ImageAnnotation(?x)\land hasCalculationEntity(?x,?y)\land hasCalculationResult(?y,?z)\land\\
+\begin{gather*}
+\hline ImageAnnotation(?x)\land hasCalculationEntity(?x,?y)\land hasCalculationResult(?y,?z)\land\\
 values(?z,?val)\land greaterThan(?val,5)\rightarrow MoreThan5cmTumor(?x)
-\end{multline*}
+\\\hline 
+\end{gather*}
 
 \end_inset
 
@@ -3287,32 +3319,14 @@ NoAdjacentOrganGroup"
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula $ $
-\end_inset
-
-
+\noindent
+\align center
 \begin_inset Formula 
-\begin{multline*}
+\begin{gather*}
+\hline NoAdjacentOrganGroup\subseteq RadlexEntity.Organ\\
 AdjacentOrganGroup\subseteq RadlexEntity.Organ
-\end{multline*}
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\begin{multline*}
-NoAdjacentOrganGroup\subseteq RadlexEntity.Organ
-\end{multline*}
-
-\end_inset
-
-
-\begin_inset Formula 
-\begin{multline*}
-\end{multline*}
+\\\hline 
+\end{gather*}
 
 \end_inset
 
@@ -3357,10 +3371,14 @@ OutsideLesion
 \end_layout
 
 \begin_layout Standard
+\noindent
+\align center
 \begin_inset Formula 
-\[
-Lesion(?x)\land adjacentOrganGroup(?y)\land hasLocation(?x,?y)\rightarrow isAdjacentOrgan(?x,true)
-\]
+\begin{gather*}
+\hline Lesion(?x)\land adjacentOrganGroup(?y)\land\\
+hasLocation(?x,?y)\rightarrow isAdjacentOrgan(?x,true)
+\\\hline 
+\end{gather*}
 
 \end_inset
 
@@ -3375,7 +3393,28 @@ OWL e SWRL
 \series default
 , nós usamos eles para construir os seguintes axiomas e regras, a fim de
  ser capaz de classificar automaticamente lesões cancerosas utilizando o
- sistema TNM (ver Tabela xx).
+ sistema TNM (ver Tabelas 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Tcriteria"
+
+\end_inset
+
+, 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Ncriteria"
+
+\end_inset
+
+, 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Mcriteria"
+
+\end_inset
+
+).
  Notamos que a maneira que nós modelamos as coisas importava.
  Por exemplo, foi mais fácil para definir 
 \series bold
@@ -3412,6 +3451,7 @@ reasoning
 
 \begin_layout Standard
 \begin_inset Float table
+placement H
 wide false
 sideways true
 status open
@@ -3424,6 +3464,12 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Tcriteria"
+
+\end_inset
+
 American Joint Committee on Cancer/International Union against cancer TNM
  classification system and formal representation 
 \end_layout
@@ -3760,6 +3806,7 @@ status open
 
 \begin_layout Standard
 \begin_inset Float table
+placement H
 wide false
 sideways true
 status open
@@ -3768,6 +3815,12 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Ncriteria"
+
+\end_inset
+
 American Joint Committee on Cancer/International Union against cancer TNM
  classification system and formal representation 
 \end_layout
@@ -3998,6 +4051,7 @@ status open
 
 \begin_layout Standard
 \begin_inset Float table
+placement H
 wide false
 sideways true
 status open
@@ -4006,6 +4060,12 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Mcriteria"
+
+\end_inset
+
 American Joint Committee on Cancer/International Union against cancer TNM
  classification system and formal representation 
 \end_layout
@@ -4185,44 +4245,43 @@ Considerações Finais
 \end_layout
 
 \begin_layout Standard
-Traduzimos esse conhecimento em uma representação formal, usando uma modelagem
- híbrida com o raciocínio baseado em regras e em classes.
- Para conseguir isso, as regras formais para representar as anotações da
- lesão e suas relações com critérios de pontuação TNM e staging são necessários.
- A fim de definir essas regras e usá-los para fazer inferências sobre imagems,
- foi utilizado o Semantic Web Rule Language (SWRL).
- SWRL permite aos usuários escrever regras que podem ser expressas em termos
- de conceitos OWL proporcionando mais capacidades de raciocínio dedutivo
- que unicamente OWL.
+Neste capitulo, foram descritas as etapas necessárias para alcançar a implementa
+ção de um sistema de classificação de cancer baseado em anotações contidas
+ em imagens médicas.
+ Para conseguir isso, foi necessário uma representação formal híbrida baseado
+ em regras SWRL e exiomas dos criterios de classificação TNM.
+ Alem disso, o sistema foi suportado pelas ontologias AIM4-O(extensão do
+ trabalho de 
 \begin_inset CommandInset citation
-LatexCommand citep
-key "usp:logo"
+LatexCommand citet
+key "Bulu"
 
 \end_inset
 
-
-\begin_inset CommandInset citation
-LatexCommand citep
-key "usp:logo"
-
-\end_inset
-
-
+), ONLIRA e Radlex.
+ No processo de implementação foram encontrados problemas como o mundo aberto
+ (Open World) , embora houvesse muitas alternativas para resolver o problema,
+ nosso grupo de pesqeuisa escolheu por utilizar a mais simple usando uma
+ estruturas de dados.
 \end_layout
 
 \begin_layout Standard
+O próximo capitulo conlui a dissertação consolidando os resultados obtidos
+ nas avaliações e resaltando as principais contribuções e limitações desta
+ pesquisa.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
 A fim de melhorar a forma de trabalho na área de saúde, as tecnologias da
  Web Semântica podem auxiliar as pesquisas médicas e encontrar soluções
  através do auxilio de computadores, como, por exemplo, o uso dos formatos
  OWL, SWRL e AIM para processar (reason) anotações de imagens médicas.
- O AIM vem sendo desenvolvido e elaborado, tanto para ajudar na estruturação
- dos relatórios radiológicos, principalmente imagens, como também para ser
- entendido por máquinas.
- Esses avanços vem contribuído no entendimento, interoperabilidade e compartilha
-mento de conhecimento biomédico na área de radiologia.
-\begin_inset CommandInset citation
-LatexCommand citep
-key "Aslam2004"
+ 
+\end_layout
 
 \end_inset
 
