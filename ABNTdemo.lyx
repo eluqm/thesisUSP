@@ -26,7 +26,7 @@
 %\usepackage[backend=biber]{biblatex}
 %\usepackage[backend=biber, style=abnt]{biblatex}
 %changing hyperref color  
-\usepackage{uarial}
+%\usepackage{uarial}
 \usepackage{hyperref} 
 \hypersetup{%     
 pdfborder = {0 0 0},     
@@ -66,7 +66,10 @@ urlcolor=cyan!50!black!90
 %================================================================================
 
 %\renewcommand{\familydefault}{\sfdefault}
-\renewcommand*\familydefault{\sfdefault} 
+%\renewcommand*\familydefault{\sfdefault} 
+%\renewcommand\sffamily\bfseries.
+%\renewcommand*\sectfont{\normalcolor\bfseries}
+%\renewcommand{\rmfamily}
 %======================================
 %Pacotesdecitações 
 %======================================
@@ -206,12 +209,12 @@ EndPreamble
 \language brazilian
 \language_package default
 \inputencoding utf8
-\fontencoding global
+\fontencoding default
 \font_roman default
-\font_sans default
+\font_sans lmss
 \font_typewriter default
 \font_math auto
-\font_default_family default
+\font_default_family sfdefault
 \use_non_tex_fonts false
 \font_sc false
 \font_osf false

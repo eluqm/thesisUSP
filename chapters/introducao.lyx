@@ -25,7 +25,7 @@
 \graphics default
 \default_output_format default
 \output_sync 0
-\bibtex_command default
+\bibtex_command biber
 \index_command default
 \paperfontsize default
 \spacing single
@@ -42,8 +42,8 @@
 \use_package stackrel 1
 \use_package stmaryrd 1
 \use_package undertilde 1
-\cite_engine basic
-\cite_engine_type default
+\cite_engine natbib
+\cite_engine_type authoryear
 \biblio_style plain
 \use_bibtopic false
 \use_indices false
@@ -73,102 +73,6 @@
 \begin_body
 
 \begin_layout Standard
-Este documento explica brevemente como trabalhar com a classe LATEX icmc
- para confeccionar trabalhos acadêmicos seguindo as normas da Associação
- Brasileira de Normas Técnicas (ABNT) e as “
-\shape italic
-Diretrizes para apresentação de dissertações e teses da USP: documento eletrônic
-o e impresso.
-
-\shape default
- 
-\shape italic
-Parte I (ABNT)
-\shape default
-”, publicado pelo Sistema Integrado de Bibliotecas (SIBi) USP.
- O presente manual também atende as exigências prevista no regimento do
- Programa de Pós-graduação em Ciências da Computação e Matemática Computacional
- (CCMC) do Instituto de Ciências Matemáticas e de Computação (ICMC) da Universid
-ade de São Paulo (USP).
- 
-\end_layout
-
-\begin_layout Standard
-A classe 
-\emph on
-icmc
-\emph default
- foi construída com base na última versão da classe 
-\emph on
-abntex2
-\emph default
- e do pacote abntex2cite.
- Portanto, este documento exemplifica a elaboração de trabalho acadêmico
- (tese, dissertação e outros do gênero) produzido conforme a ABNT NBR 14724:2011
- 
-\emph on
-Informação e documentação - Trabalhos acadêmicos - Apresentação.
-
-\emph default
- 
-\end_layout
-
-\begin_layout Standard
-Assim, é altamente recomendável que seja consultada a documentação do abntex2
-\begin_inset Foot
-status open
-
-\begin_layout Plain Layout
-https://code.google.com/p/abntex2/downloads/list
-\end_layout
-
-\end_inset
-
-.
- A classe abntex2 foi desenvolvida para facilitar a escrita de documentos
- seguindo as normas da ABNT no ambiente LATEX (FRASSON; WEBER, 2005).
-\end_layout
-
-\begin_layout Standard
-Todo o trabalho de pesquisa e ajustes da presente classe LATEX icmc foram
- feitos pelo aluno mestrado do Programa de Pós-graduação em Ciência da Computaçã
-o e Matemática Computacional, Humberto Lidio Antonelli, durante a confecção
- da sua monografia de qualificação.
-\end_layout
-
-\begin_layout Standard
-O requisito básico para utilização da classe icmc é criar um documento desta
- classe com o comando 
-\series bold
-
-\backslash
-documentclass[@parameters]{icmc}
-\series default
- e ter, no diretório de trabalho, o arquivo 
-\emph on
-icmc.cls
-\emph default
- presente.
- Entretanto, recomenda-se fortemente manter a estrutura de diretório inicial
- fornecida por este modelo.
- Além disso, para que o documento esteja em conformidade com as normas exigidas
- pelo programa de Pós-Graduação, o 
-\series bold
-projeto deve ser compilado utilizando XeLaTeX ou LuaLaTeX.
- 
-\series default
-Esse processo de compilação é necessário para que as fontes externas utilizadas
- para gerar a capa sejam incluídas.
- 
-\end_layout
-
-\begin_layout Standard
-Os parâmetros possíveis utilizados pelo 
-\backslash
-documentclass são:
-\end_layout
-
-\begin_layout Standard
 Em Biomedicina, especificamente em radiologia e oncologia, avaliar a resposta
  ao tratamento do câncer depende criticamente dos resultados da análise
  de imagens pelos especialistas.
@@ -180,12 +84,19 @@ as por máquinas.
 \begin_layout Standard
 Pode-se ver que há uma falta de conexão entre a informação visual da imagem
  e sua interpretação.
- É por essa razão que tecnologias, como a web semântica, geram um interesse
+ É por essa razão que as tecnologias, como a web semântica, geram um interesse
  crescente para aplicação em biomedicina.
  Essas tecnologias podem tornar dados em biomedicina explícitos e computáveis.
  A comunidade biomédica está em busca de ferramentas para ajudar com o acesso,
  consulta e análise da vasta quantidade de dados gerados pelos avanços no
  uso da tecnologia na medicina 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "marquet2007"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
@@ -193,8 +104,15 @@ O uso de imagens na medicina, especificamente no tratamento de pacientes
  com câncer, gera enormes quantidades de informações do tipo não-texto.
  No entanto, o uso dessas imagens médicas nas tarefas clínicas é importante,
  pois permite aos especialistas, diagnosticar, planejar e acompanhar os
- pacientes Desse modo, um número considerável de aplicações informáticas,
- voltadas para área medica, têm sido desenvolvidas.
+ pacientes 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "levy2009"
+
+\end_inset
+
+.Desse modo, um número considerável de aplicações informáticas, voltadas
+ para área medica, têm sido desenvolvidas.
  Grande parte dessas aplicações estão focadas na extração de características
  visuais com a ajuda de algoritmos de processamento de imagem.
 \end_layout
@@ -206,14 +124,17 @@ Embora esses algoritmos possam auxiliar a comunidade biomédica, quanto ao
  pacientes com câncer.
  Por exemplo, quando um oncologista quer saber se um tumor já se encontra
  em estado avançado perto de se espalhar para alguma região próxima da origem
- do câncer, mas não para outras partes do corpo Portanto, podem haver algumas
- dificuldades em manipular interpretações abstratas de imagens, porque a
- informação semântica dos laudos sobre a imagem não é considerada nesses
- algoritmos.
- Em geral, a semântica é o estudo do significado das coisas e, no contexto
- de Oncologia e Radiologia, a semântica é o estudo do significado do conteúdo
- dos laudos de radiologia, bem como o conteúdo e o significado das imagens
- usadas.
+ do câncer, mas não para outras partes do corpo 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Wennerberg2011155"
+
+\end_inset
+
+.
+ Portanto, podem haver algumas dificuldades em manipular interpretações
+ abstratas de imagens, porque a informação semântica dos laudos sobre a
+ imagem não é considerada nesses algoritmos.
  
 \end_layout
 
@@ -544,7 +465,7 @@ O processo de classificação dos pacientes com câncer, através da análise
  e radiologistas, com base na inspeção de imagens e pode ser, muitas vezes,
  um trabalho intensivo que exige precisão na interpretação das lesões de
  câncer.
- A precisão do especialista é obtida através de formação e experiência
+ A precisão do especialista é obtida através de formação e experiência 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "Depeursinge2014"
@@ -576,7 +497,7 @@ reasoning
  anotações sobre imagens médicas codificadas pelo AIM 
 \begin_inset CommandInset citation
 LatexCommand citep
-key "Levy2009"
+key "levy2009"
 
 \end_inset
 
@@ -585,6 +506,7 @@ key "Levy2009"
  and syngo.via (Siemens Healthcare, Malvern) são softwares proprietários,
  ou seja, todos os dados sobre imagens que estão armazenados internamente
  estão em um formato proprietário que não pode ser acessado por terceiros
+ 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "Rubin2014"
@@ -621,10 +543,11 @@ description "TNM Classification of Malignant Tumors"
 
 \end_inset
 
-), para a classificação automática de pacientes com câncer, a partir de
+).
+ A fim de classificar automáticamente pacientes com câncer, a partir de
  anotações AIM sobre imagens desses pacientes.
- e incorporá-los aos requisitos atendidos por sistemas de anotação de imagens,
- como ePAD.
+ E finalmente incorporá-los aos requisitos atendidos por sistemas de anotação
+ de imagens, como ePAD.
 \end_layout
 
 \begin_layout Standard
@@ -716,6 +639,12 @@ ePAD
 \begin_layout Standard
 
 \emph on
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\emph on
 O cancer staging
 \emph default
  é uma tarefa de classificação onde é necessária a representação de conhecimento.
@@ -743,6 +672,11 @@ key "Zillner2012"
 
 .
  
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
