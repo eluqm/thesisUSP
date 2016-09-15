@@ -26,6 +26,7 @@
 %\usepackage[backend=biber]{biblatex}
 %\usepackage[backend=biber, style=abnt]{biblatex}
 %changing hyperref color  
+\usepackage{uarial}
 \usepackage{hyperref} 
 \hypersetup{%     
 pdfborder = {0 0 0},     
@@ -111,12 +112,6 @@ urlcolor=cyan!50!black!90
 \renewcommand{\parttitlefont}{\ABNTEXpartfont\ABNTEXpartfontsize}   
 \renewcommand{\partnumfont}{\ABNTEXpartfont\ABNTEXpartfontsize}   
 \renewcommand{\partnamefont}{\ABNTEXpartfont\ABNTEXpartfontsize}      
-
-
-
-
-
-
 
 \renewcommand*{\printchaptername}{}  
 \renewcommand*{\chapnumfont}{\normalfont\sffamily\huge\bfseries}   
@@ -231,6 +226,15 @@ EndPreamble
 \paperfontsize 12
 \spacing onehalf
 \use_hyperref false
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks false
+\pdf_pdfborder false
+\pdf_colorlinks true
+\pdf_backref false
+\pdf_pdfusetitle true
 \papersize custom
 \use_geometry true
 \use_package amsmath 1
