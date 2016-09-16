@@ -612,28 +612,72 @@ Objetivo
 \end_layout
 
 \begin_layout Standard
-Gerar automaticamente o
+Este trabalho tem como objetivo gerar automaticamente o
 \emph on
  
 \lang english
-cancer staging
+Cancer Staging
 \emph default
 \lang brazilian
- (estágio do câncer) de lesões cancerígenas, presentes em imagens médicas,
+(estágios do câncer) de lesões cancerígenas presentes em imagens médicas,
  utilizando tecnologias de 
 \emph on
 reasoning
 \emph default
  e web semântica para processar metadados sobre anotações dessas imagens
- gerados por programas como o 
+ gerados por ferramentas que utilizan um esquema XML como AIM para descrever
+ a estrutura anatômica e observações visuais em imagens.
+ A fim de fornecer aos médicos uma segunda opinião sobre a classificação
+ dos pacientes com um determinado tipo de câncer e obter uma maior taxa
+ de precisão na interpretação das lesões.
+\end_layout
+
+\begin_layout Standard
+Para atingir o objetivo proposto, são necessários os seguintes objetivos
+ específicos:
+\end_layout
+
+\begin_layout Enumerate
+A expansão da representação ontológica do modelo de informação AIM 3.0 para
+ a sua versão 4.0 que é usada por ferramentas como ePAD.
+\end_layout
+
+\begin_layout Enumerate
+Representar apropriadamente o criterio de classificação(
 \emph on
-ePAD
+staging
 \emph default
-, para fornecer aos médicos uma segunda opinião sobre a classificação dos
- pacientes.
- Essa geração automática de informação, poderá aumentar a eficiência de
- radiologistas e oncologistas e garantir uma melhor qualidade e uniformidade
- na interpretação de imagens por especialistas.
+) do câncer TNM.
+ Esse conhecimento tem que ser codificado em OWL e regras SWRL.
+\end_layout
+
+\begin_layout Enumerate
+Procura e Análise de dados com informações do 
+\emph on
+staging
+\emph default
+ TNM, como relatórios de diagnóstico clínico com as suas respectivas imagens
+ CT (foram usados os repositórios 
+\emph on
+The NCI's Genomic Data Commons
+\emph default
+ (GDC) e 
+\emph on
+The Cancer Imaging Archive
+\emph default
+).
+\end_layout
+
+\begin_layout Enumerate
+Disponibilização de um protótipo do sistema de classificação automática
+ do câncer no ePAD.
+\end_layout
+
+\begin_layout Standard
+Com os objetivos acima traçados, demostramos que a utilização de tecnologias
+ da Web Semântica pode obter uma boa taxa de precisão na classificação das
+ lesões e, por tanto pode aumentar a qualidade e uniformidade na interpretação
+ de imagens por especialistas.
 \end_layout
 
 \begin_layout Standard
@@ -769,9 +813,22 @@ Capítulo 4: Esse capítulo apresenta os trabalhos relacionados, evidenciando
 \end_layout
 
 \begin_layout Standard
-Capítulo 5: Esse capítulo mostra o cronograma a ser seguido e o plano de
- trabalho futuro.
+Capítulo 5: Esse capítulo apresenta a metodologia utilizada para a expansão
+ do AIM, a codificação(SWRL e OWL) do criterio TNM, para finalmente permitir
+ o 
+\emph on
+staging
+\emph default
+ dos pacientes como base em suas imagens.
  
+\end_layout
+
+\begin_layout Standard
+Capítulo 6: .....
+\end_layout
+
+\begin_layout Standard
+Capítulo 7: .....
 \end_layout
 
 \end_body
