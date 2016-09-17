@@ -92,7 +92,7 @@
 \graphics default
 \default_output_format default
 \output_sync 0
-\bibtex_command default
+\bibtex_command biber
 \index_command default
 \paperfontsize default
 \spacing single
@@ -109,8 +109,8 @@
 \use_package stackrel 1
 \use_package stmaryrd 1
 \use_package undertilde 1
-\cite_engine basic
-\cite_engine_type default
+\cite_engine natbib
+\cite_engine_type authoryear
 \biblio_style plain
 \use_bibtopic false
 \use_indices false
@@ -147,7 +147,7 @@ a e telecomunicações.
  nos campos da medicina.
  A Informática Biomédica pode ser considerada como a ciência da informação
  aplicada no estudo do contexto da biomedicina, que surgiu para atender
- as aplicações da TI (Tecnologia da Informação) na área da saúde
+ as aplicações da TI (Tecnologia da Informação) na área da saúde 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "Bulu"
@@ -158,7 +158,7 @@ key "Bulu"
  Por sua vez, a Informática Radiológica (sub\SpecialChar \nobreakdash-
 área da informática biomédica)
  é a área da radiologia responsável pela melhoria da eficiência, precisão
- e confiabilidade dos serviços radiológicos dentro da área médica
+ e confiabilidade dos serviços radiológicos dentro da área médica 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "Serique2012"
@@ -176,10 +176,10 @@ Embora em radiologia muitas coisas, incluindo a criação da imagem, sejam
  de descrição e foco em atores diferentes.
  Nesse contexto, o uso de terminologias visuais e estruturadas para anotações
  em imagens é uma abordagem promissora, pois permite a definição precisa
- de imagens médicas utilizando a semântica fornecida pelas anotações
+ de imagens médicas utilizando a semântica fornecida pelas anotações 
 \begin_inset CommandInset citation
 LatexCommand citep
-key "Rubin2011"
+key "Channin2010"
 
 \end_inset
 
@@ -190,8 +190,9 @@ key "Rubin2011"
 Atualmente, anotações sobre imagens médicas fornecem apenas algumas informações,
  como, por exemplo, metadados que contém o nome do paciente, idade, médico
  responsável, etc.
- As imagens em si não possuem nenhuma informação semântica, por isso, não
- podem ser processadas por máquinas.
+ As imagens em si não possuem nenhuma informação semântica, por isso, essas
+ anotações não podem ser automaticamente integrados em aplicações médicas
+ avançadas, tais como aquelas para o apoio à decisão clínica.
  Para facilitar o processamento dessas anotações por máquina, é necessário
  adicionar informações semânticas que sejam baseadas em fontes de conhecimento,
  como 
@@ -209,10 +210,10 @@ staging systems
 \emph on
  de reasoning
 \emph default
-
+ 
 \begin_inset CommandInset citation
 LatexCommand citep
-key "Dasmahapatra2003"
+key "Dasmahapatra"
 
 \end_inset
 
@@ -220,14 +221,18 @@ key "Dasmahapatra2003"
 \end_layout
 
 \begin_layout Standard
-Como o foco deste trabalho é a construção de um sistema para permitir o
- uso de 
+Como o foco deste trabalho é a construção de um sistema de classificação
+ automática que faz uso de 
 \shape italic
 reasoning
 \shape default
- em anotações contidas em imagens médicas.
- Este capítulo abordará os principais conceitos referentes a Informática
- Radiológica.
+ baseados em sistemas de notação como TNM.
+ Este capítulo abordará os principais conceitos referentes a
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+ Informática Radiológica.
  Na Seção 2.1 são apresentados os HISs.
  Em seguida, na Seção 2.2, Imagens Medicas.
  Na seção 2.3, é discutido o processo de Anotações em imagens.
@@ -236,8 +241,14 @@ reasoning
  a partir de imagens radiológicas.
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
 \begin_layout Section
-Sistemas de Informação Hospitalares
+Informática Biomédica para sistemas de suporte à decisão assistido por computado
+r
 \end_layout
 
 \begin_layout Standard
