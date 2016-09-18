@@ -227,7 +227,13 @@ Como o foco deste trabalho é a construção de um sistema de classificação
 reasoning
 \shape default
  baseados em sistemas de notação como TNM.
- Este capítulo abordará os principais conceitos referentes a
+ Este capítulo abordará os principais conceitos referentes a Sistemas de
+ suporte à decisão assistido por computador, em seguida, na seção 2.2 Informática
+ Radiológica, em seguida, na Seção 2.2, Imagens Medicas.
+ Na seção 2.3, é discutido o processo de Anotações em imagens.
+ Por fim, na seção 2.4, serão descritos os sistemas de classificação que
+ são a base de conhecimento para a classificação dos pacientes com câncer,
+ a partir de imagens radiológicas.
 \begin_inset Note Note
 status open
 
@@ -251,93 +257,106 @@ Informática Biomédica para sistemas de suporte à decisão assistido por compu
 r
 \end_layout
 
-\begin_layout Standard
-Os Sistemas de Informação Hospitalares, ou Hospital Information Systems
- (HISs
-\begin_inset CommandInset nomenclature
-LatexCommand nomenclature
-symbol "HIS"
-description "Hospital Information System"
-
-\end_inset
-
-), surgiram por volta da década de 60 para atender às necessidades financeiras
- das instituições médicas
+\begin_layout Quotation
+Nao é que até os anos 70 que os sistemas de suporte à decisão influenciadas
+ pela informática biomédica foram vistos.
+ Trabalhos como 
 \begin_inset CommandInset citation
-LatexCommand citet
-key "Image"
+LatexCommand citep
+key "dombal"
 
 \end_inset
 
-.
- Além disso, os HISs têm agregado várias funcionalidades como: atendimento
- clínico, protocolos clínicos, lembretes, alertas e gestão administrativa,
- que possibilitam incrementar o ensino e pesquisa realizados em instituições
- hospitalares.
-\end_layout
-
-\begin_layout Standard
-A pesquisa realizada nas instituições hospitalares permite a descoberta
- de novos conhecimentos e a descoberta de novas tendências numa população,
- como, por exemplo, por meio da mineração de dados.
- Outros HISs, relacionados à informações médicas, são ainda mais específicos,
- lidando com particularidades de um determinado departamento clínico.
- Dessa forma, esses sistemas atuam como subconjuntos das funcionalidades
- de um HIS, como exemplos destes sistemas temos o Laboratory Information
- System (LIS
-\begin_inset CommandInset nomenclature
-LatexCommand nomenclature
-symbol "LIS"
-description "Laboratory Information System"
+ com seu sistema chamado INTERNIST-I e 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Myers:1987:BII:41526.41543"
 
 \end_inset
 
-) e o 
-\lang english
-Radiology Information System
-\lang brazilian
- (RIS
-\begin_inset CommandInset nomenclature
-LatexCommand nomenclature
-symbol "RIS"
-description "Radiology Information System"
-
-\end_inset
-
-).
-\end_layout
-
-\begin_layout Standard
-Os LISs trabalham com o fluxo de trabalho dos serviços laboratoriais e de
- patologia, oferecendo interfaces de comunicação com os diversos dispositivos
- utilizados para a realização das avaliações químicas e de imunologia, microbiol
-ogia, genética e marcadores histopatológicos.
- Os LISs são vistos como um modelo de monitoramento, validação de resultados
- e divulgação eletrônica dos mesmos aos médicos solicitantes.
- 
-\end_layout
-
-\begin_layout Standard
-Já os RISs atendem ao fluxo de trabalho de um departamento de radiologia
+ que desenvolveu um sistema baseado en regras para diagnóstico, representam
+ desenvolvimentos iniciais importantes de sistemas de informática biomédica
  
 \begin_inset CommandInset citation
 LatexCommand citep
-key "huang2010pacs"
+key "pmid23431259"
 
 \end_inset
 
 .
- Onde eles têm funcionalidades de agendamento de pacientes, gerenciamento
- de imagens e estudos de relatórios, que podem ser revisões de resultados
- feitos para estudos anteriores.
- 
+ Mais tarde houve toda uma evolução significativa com grande reconhecimento
+ de seu sucesso na melhoria de desempenho destos sistemas, que é descrito
+ por 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Pearson2009"
+
+\end_inset
+
+.
+ Esta evolução permitiu o nascimento de mais subgêneros específicos de métodos
+ de informática biomédica e suas implementações na forma de sistemas de
+ diagnóstico assistido por computador.
+ Nesse contexto o apoio à decisão na prática radiológica clínica 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Stivaros"
+
+\end_inset
+
+ é um exemplo de subgénero.
 \end_layout
 
-\begin_layout Standard
-Embora os RISs sejam similares aos PACSs.
- Eles se destacam dos PACSs por, normalmente, serem sistemas restritos aos
- dados das imagens, enquanto os PACSs estão preocupados com os aspectos
- de armazenamento e manipulação dos dados das imagens.
+\begin_layout Quotation
+há uma série de áreas de aplicação na medicina para que os sistemas de apoio
+ à decisão auxiliada por computador tornaram-se implementados.
+ Algumas das principais áreas de aplicação são : Medicina de Emergência
+ e Unidades de Terapia Intensiva, Medicina cardiovascular, Aplicações dentárias,
+ Medicina Pediátrica, Radiologia e Câncer.
+\end_layout
+
+\begin_layout Quotation
+No caso de câncer, a informática biomédica começou a desempenhar um papel
+ importante na detecção e tratamento do câncer, muitos estudos aplicararam
+ metodos como redes neurales, sistemas híbridos através da combinação de
+ informações heterogêneas, o uso de ferramentas de diagnóstico auxiliado
+ por computador tem o potencial para reduzir a variabilidade entre as opiniões
+ de especialistas, bem como melhorar a precisão diagnóstica para a interpretação
+ do classificação de cancer 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Jiang"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Quotation
+No caso de Radiologia.
+ Aqui, o processamento de imagem baseado em computador e análise ter sido
+ uma area de pesquisa ativa.
+ A visualização combinando com o processamento de imagem, e aprendizagem
+ de maquina para a tomada de decisões tem proporcionado uma mais-valia para
+ aplicações clínicas.
+ Com múltiplas tecnologias de imagens médicas: como a tomografia computadorizada
+ (CT), raios-X, ressonância magnética (MRI), ressonância magnética funcional
+ e (FMRI), métodos biomédicos numerosos jforam concebidos como soluções
+ de aplicacoes especificas.
+\end_layout
+
+\begin_layout Quotation
+...............
+\end_layout
+
+\begin_layout Quotation
+Recentemente pode ser visto que houve uma escalada da complexidade na recolação
+ dos dados médicos pelo fato dos avanços em tecnologias relacionadas com
+ aquisição de imagem.
+ As novas tecnologias como dispositivos médicos e sistemas de mediçao geran
+ grandes volumes de imagens como tambem outros dados por paciente que torna
+ difícil para os médicos analisar e fornecer diagnóstico, prognósticos na
+ hora.
  
 \end_layout
 
