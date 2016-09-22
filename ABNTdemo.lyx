@@ -27,6 +27,7 @@
 %\usepackage[backend=biber, style=abnt]{biblatex}
 %changing hyperref color  
 %\usepackage{uarial}
+\usepackage{lmodern}
 \usepackage{hyperref} 
 \hypersetup{%     
 pdfborder = {0 0 0},     
@@ -43,7 +44,7 @@ urlcolor=cyan!50!black!90
 \titleformat{\subsection}
   {\normalfont\fontsize{14pt}{16pt}\selectfont\bfseries}{\thesubsection}{1em}{}
 \titleformat{\subsubsection}
-  {\normalfont\fontsize{12pt}{14pt}\selectfont\bfseries}{\thesubsection}{1em}{}
+  {\normalfont\fontsize{12pt}{14pt}\selectfont\bfseries}{\thesubsubsection}{1em}{}
 
 
 
@@ -110,7 +111,7 @@ urlcolor=cyan!50!black!90
 %alteração da fonte dos capítulos, seções e subseções     
  \renewcommand{\chaptitlefont}{\ABNTEXchapterfont\bfseries\ABNTEXchapterfontsize}    
 }
-
+%\renewcommand{\chapter}{\chaptertitlename\ \thechapter}{0pt}{\Large\uppercase} 
 \renewcommand{\chapnumfont}{\chaptitlefont}   
 \renewcommand{\parttitlefont}{\ABNTEXpartfont\ABNTEXpartfontsize}   
 \renewcommand{\partnumfont}{\ABNTEXpartfont\ABNTEXpartfontsize}   
@@ -129,14 +130,17 @@ urlcolor=cyan!50!black!90
 \end{tabular}
 }
 }
-\renewcommand*{\chaptitlefont}{\normalfont\sffamily\Huge\bfseries}   
+
+\renewcommand*{\chaptitlefont}{\normalfont\sffamily\Huge\bfseries}
 \renewcommand*{\printchaptertitle}[1]{
 \flushright\chaptitlefont##1
 \vskip -0.6ex\hfill\rule{.8\textwidth}{0.5pt} \\         
 \vskip -2.8ex\hfill\rule{.8\textwidth}{2pt}\\         
 \vskip 1.5ex
 } 
+
 }
+
 %\vskip 4.3ex \flushright\chaptitlefont\bfseries\ABNTEXchapterupperifneeded{##1} \\         
 \chapterstyle{box}
 
@@ -209,12 +213,12 @@ EndPreamble
 \language brazilian
 \language_package default
 \inputencoding utf8
-\fontencoding default
+\fontencoding global
 \font_roman default
-\font_sans lmss
+\font_sans default
 \font_typewriter default
 \font_math auto
-\font_default_family sfdefault
+\font_default_family default
 \use_non_tex_fonts false
 \font_sc false
 \font_osf false
@@ -628,6 +632,16 @@ filename "chapters/marco.lyx"
 
 \begin_layout Chapter
 Web Semântica
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand input
+filename "chapters/3_WebSemanticaABNT.lyx"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Chapter
