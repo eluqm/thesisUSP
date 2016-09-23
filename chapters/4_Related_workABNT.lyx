@@ -79,13 +79,10 @@ Neste capítulo apresentaremos o mapeamento sistemático realizado com o objetiv
 O mapeamento sistemático é um tipo de revisão sistemática onde se realiza
  uma revisão mais ampla dos estudos primários, em busca de identificar quais
  evidências estão disponíveis e as lacunas existentes no conjunto dos estudos
- primários
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-(refXXX rev sistematica)
-\end_layout
+ primários 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Kitchenham07guidelinesfor"
 
 \end_inset
 
@@ -261,7 +258,7 @@ cancer staging
 Cada estudo, analisado de acordo com o método estabelecido para a pesquisa
  de fontes primárias, é avaliado de acordo com os critérios para inclusão.
  O processo de busca foi executado utilizando as palavras chave definidas.
- A consulta obteve 120 estudos publicados entre 2003 e 2014.
+ A consulta obteve 120 estudos publicados entre 2003 e 2016.
  Esses estudos foram selecionados para uma análise mais detalhada.
  
 \end_layout
@@ -274,7 +271,7 @@ s, os quais foram lidos e verificados através dos critérios de inclusão
 \end_layout
 
 \begin_layout Standard
-Dos 23 estudos pré-selecionados, 11 estavam de acordo com o critério de
+Dos 23 estudos pré-selecionados, 12 estavam de acordo com o critério de
  qualidade previsto no protocolo de revisão e tiveram seus dados extraídos
  e analisados.
  
@@ -294,7 +291,7 @@ Nesta seção foi realizada a catalogação bibliográfica dos 11 estudos seleci
 s no mapeamento sistemático, a qual é apresentada na Tabela 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "tab:Comparativo-1"
+reference "tab:Comparativo-entre-os"
 
 \end_inset
 
@@ -328,6 +325,26 @@ sideways true
 status open
 
 \begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Comparativo entre os trabalhos relacionados.
+ 
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Comparativo-entre-os"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
 \align center
 \begin_inset ERT
 status open
@@ -336,7 +353,7 @@ status open
 
 
 \backslash
-resizebox{0.7
+resizebox{0.65
 \backslash
 textwidth}{!}{
 \end_layout
@@ -345,7 +362,7 @@ textwidth}{!}{
 
 
 \begin_inset Tabular
-<lyxtabular version="3" rows="11" columns="5">
+<lyxtabular version="3" rows="12" columns="5">
 <features rotate="0" tabularvalignment="middle">
 <column alignment="center" valignment="middle" width="12col%">
 <column alignment="center" valignment="middle" width="12col%">
@@ -421,7 +438,7 @@ Results
 
 \begin_layout Plain Layout
 \begin_inset CommandInset citation
-LatexCommand citep
+LatexCommand citet
 key "Zillner2012"
 
 \end_inset
@@ -507,6 +524,15 @@ No
 
 \begin_layout Plain Layout
 
+\size small
+\lang english
+\begin_inset CommandInset citation
+LatexCommand citet
+key "zillner:towards"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -565,6 +591,12 @@ No
 \begin_inset Text
 
 \begin_layout Plain Layout
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Tutac2008"
+
+\end_inset
+
 
 \end_layout
 
@@ -645,6 +677,12 @@ Yes
 \begin_inset Text
 
 \begin_layout Plain Layout
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Tutac2010"
+
+\end_inset
+
 
 \end_layout
 
@@ -704,6 +742,12 @@ No
 \begin_inset Text
 
 \begin_layout Plain Layout
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Meriem2012"
+
+\end_inset
+
 
 \end_layout
 
@@ -763,6 +807,12 @@ Yes
 \begin_inset Text
 
 \begin_layout Plain Layout
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Levy2009"
+
+\end_inset
+
 
 \end_layout
 
@@ -808,7 +858,7 @@ No grading or staging system -- OWL, SWRL, SQWRL reasoning
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+No
 \end_layout
 
 \end_inset
@@ -819,6 +869,12 @@ No grading or staging system -- OWL, SWRL, SQWRL reasoning
 \begin_inset Text
 
 \begin_layout Plain Layout
+\begin_inset CommandInset citation
+LatexCommand citet
+key "marquet2007"
+
+\end_inset
+
 
 \end_layout
 
@@ -865,7 +921,7 @@ Ontology-based representation of WHO Grading System -- Grading (OWL-DL reasoning
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+No
 \end_layout
 
 \end_inset
@@ -876,6 +932,12 @@ Ontology-based representation of WHO Grading System -- Grading (OWL-DL reasoning
 \begin_inset Text
 
 \begin_layout Plain Layout
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Dameron2006Table"
+
+\end_inset
+
 
 \end_layout
 
@@ -900,7 +962,7 @@ Lung
 
 \size small
 \lang english
-Semantic annotations (mapped to OWL)
+Simulated patient conditions data represented using classes
 \end_layout
 
 \end_inset
@@ -935,7 +997,7 @@ DL reasoning)
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Yes
 \end_layout
 
 \end_inset
@@ -947,8 +1009,8 @@ DL reasoning)
 
 \begin_layout Plain Layout
 \begin_inset CommandInset citation
-LatexCommand citep
-key "Racoceanu20152"
+LatexCommand citet
+key "Oberkampf"
 
 \end_inset
 
@@ -965,6 +1027,68 @@ key "Racoceanu20152"
 \size small
 \lang english
 Lymphoma
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size small
+\lang english
+Semantic annotations (mapped to OWL)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size small
+\lang english
+No grading system
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size small
+\lang english
+Yes
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Kurtz20141082"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
 \end_layout
 
 \end_inset
@@ -998,9 +1122,6 @@ No representation of Staging System -- Classification (Ontological similarity
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size small
-\lang english
 Yes
 \end_layout
 
@@ -1012,6 +1133,12 @@ Yes
 \begin_inset Text
 
 \begin_layout Plain Layout
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Racoceanu2014"
+
+\end_inset
+
 
 \end_layout
 
@@ -1077,18 +1204,6 @@ status open
 \begin_layout Plain Layout
 
 }
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-vamo a ponernos tranquilos
 \end_layout
 
 \end_inset
@@ -2076,8 +2191,8 @@ A seguir, esses trabalhos são descritos e comparados com o trabalho proposto:
 
 \begin_layout Itemize
 \begin_inset CommandInset citation
-LatexCommand cite
-key "Dameron2006"
+LatexCommand citet
+key "Dameron2006Table"
 
 \end_inset
 
@@ -2116,8 +2231,8 @@ Classification of Malignant Tumors
 
 \begin_layout Itemize
 \begin_inset CommandInset citation
-LatexCommand cite
-key "Marquet2007"
+LatexCommand citet
+key "marquet2007"
 
 \end_inset
 
@@ -2417,8 +2532,8 @@ anatomical reasoning
 \lang brazilian
  
 \begin_inset CommandInset citation
-LatexCommand cite
-key "Manuel"
+LatexCommand citep
+key "Moller2013"
 
 \end_inset
 
@@ -2590,15 +2705,15 @@ MEDICO
 \begin_layout Itemize
 Em 
 \begin_inset CommandInset citation
-LatexCommand cite
-key "Kurtz2014"
+LatexCommand citet
+key "Kurtz20141082"
 
 \end_inset
 
  e 
 \begin_inset CommandInset citation
-LatexCommand cite
-key "Seifert"
+LatexCommand citet
+key "seifer2009"
 
 \end_inset
 
@@ -2628,15 +2743,15 @@ framework
  mostrando-lhes imagens semelhantes com diagnósticos associados.
  No trabalho de 
 \begin_inset CommandInset citation
-LatexCommand cite
-key "Kurtz2014"
+LatexCommand citet
+key "Kurtz20141082"
 
 \end_inset
 
  e 
 \begin_inset CommandInset citation
-LatexCommand cite
-key "Seifert"
+LatexCommand citet
+key "seifer2009"
 
 \end_inset
 

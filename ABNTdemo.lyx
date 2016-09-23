@@ -160,6 +160,7 @@ urlcolor=cyan!50!black!90
 \createmark	{chapter} 	{both} {shownumber}{\@chapapp\ }{. \ }
 \createmark	{section} 	{right} {shownumber}{}		  {. \ }
 \createplainmark {toc}		{both}{\contentsname}
+\createplainmark {bib}		{both}{\bibname}
 }
 \makeatother
 \pagestyle{ruled}
@@ -652,20 +653,6 @@ Trabalhos Relacionados
 \begin_inset CommandInset include
 LatexCommand input
 filename "chapters/4_Related_workABNT.lyx"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Chapter
-Listas
-\end_layout
-
-\begin_layout Standard
-\begin_inset CommandInset include
-LatexCommand input
-filename "chapters/abreviaturas.lyx"
 
 \end_inset
 

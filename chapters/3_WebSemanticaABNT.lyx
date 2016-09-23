@@ -123,6 +123,13 @@ reference "sub:Web-Ontology-Language"
 
 \end_inset
 
+, asim como a Semantic Web Rule Language (SWRL) na seção 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Semantic-Web-Rule"
+
+\end_inset
+
 .
  Em seguida, na seção 
 \begin_inset CommandInset ref
@@ -134,6 +141,15 @@ reference "sec:Bio-Ontologies"
  apresentaremos as principais bio\SpecialChar \nobreakdash-
 ontologias e terminologias envolvidas nas
  pesquisas deste trabalho.
+ Finalmente na seção 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Annotation-Imaging-Markup(AIM)"
+
+\end_inset
+
+ serão exposto a infraestruturas de dados AIM, e sua interação com ferramentas
+ de anotação como ePAD.
 \end_layout
 
 \begin_layout Section
@@ -523,6 +539,13 @@ horn rules
 
 \begin_layout Section
 Semantic Web Rule Language - SWRL
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Semantic-Web-Rule"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -622,7 +645,8 @@ As regras são escritas em termos de classes, propiedades, individuos, e
 \begin_layout Standard
 \begin_inset Formula 
 \begin{gather*}
-\hline pessoa(?x)\land temLesao(?x,?y)\land localizadoEm(?y,?z)\land figado(?z)\rightarrow TemCancer(?x)\\\hline 
+\hline pessoa(?x)\land temLesao(?x,?y)\land localizadoEm(?y,?z)\land figado(?z)\rightarrow TemCancer(?x)\\
+\hline 
 \end{gather*}
 
 \end_inset
@@ -642,8 +666,8 @@ que torna ele como uma linguagem muito rica em recursos de representação.
 \end_layout
 
 \begin_layout Standard
-Para a realização de inferências tais como a regra acima, as linguagens
- da Web Semântica usam 
+Para a execução de regras tais como a regra acima, as linguagens da Web
+ Semântica usam 
 \emph on
 reasoners 
 \emph default
@@ -695,6 +719,12 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Mecanismos-de-Reasoners"
+
+\end_inset
+
 Mecanismos de 
 \emph on
 Reasoners, baseados em lógica de descripção
@@ -710,7 +740,7 @@ Reasoners, baseados em lógica de descripção
 \begin_inset Graphics
 	filename ../figures/knowledbase.pdf
 	lyxscale 50
-	scale 50
+	scale 40
 
 \end_inset
 
@@ -751,8 +781,14 @@ reasoners
 \emph on
 knowledge base
 \emph default
-), essos mecanismo são TBOX e ABOX a Figura () apresenta esses mecanismos
- associados a uma base de conhecimento(
+), essos mecanismo são TBOX e ABOX a Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Mecanismos-de-Reasoners"
+
+\end_inset
+
+ apresenta esses mecanismos associados a uma base de conhecimento(
 \emph on
 knowledge base
 \emph default
@@ -778,7 +814,8 @@ TBox: armazena um conjunto de afirmações universalmente quantificadas para
 \begin_layout Standard
 \begin_inset Formula 
 \begin{gather*}
-\hline Homem\sqsubseteq Pessoa\\\hline 
+\hline Homem\sqsubseteq Pessoa\\
+\hline 
 \end{gather*}
 
 \end_inset
@@ -809,7 +846,8 @@ um indivíduo da classe Homem:
 \begin_layout Standard
 \begin_inset Formula 
 \begin{gather*}
-\hline Homem\equiv joaquin\\\hline 
+\hline Homem\equiv joaquin\\
+\hline 
 \end{gather*}
 
 \end_inset
@@ -1051,12 +1089,19 @@ http://bioportal.bioontology.org/ontologies/40885
 \begin_layout Standard
 Ferramentas como ePAD tentan atender às necessidades dos radiologistas,
  essa ferramenta utiliza o Radlex como a terminologia para descrever imagens
- em forma de anotações e a sua vez uma infraestrutura de tipo AIM.
+ em forma de anotações e a sua vez a infraestrutura de tipo AIM.
  
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Section
 Annotation Imaging Markup(AIM)
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Annotation-Imaging-Markup(AIM)"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1131,13 +1176,164 @@ key "Rubin2008,Rubin2014"
 \begin_layout Standard
 Marcações podem ser usadas para descrever uma informação textual e as regiões
  de interesse visual.
- Informações nas anotações e marcações são usadas para preencher o AIM Schema,
- através de funções da biblioteca de software AIM, com a finalidade de geração
- de objetos DICOM SR, documentos XML AIM e documentos no formato HL7 CDA.
+ As informações nas anotações e marcações são usadas para preencher o AIM
+ Schema, através de funções da biblioteca de software AIM, com a finalidade
+ de geração de objetos DICOM SR, documentos XML AIM e documentos no formato
+ HL7 CDA.
 \end_layout
 
 \begin_layout Section
 AIM e ePad
+\end_layout
+
+\begin_layout Standard
+A ferramenta ePAD usa um vocabulário controlado radiológico como RadLex
+ para definir observações, e impõe a descrição completa dos aspectos necessários
+ da lesão visualizada 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Gimenez2011"
+
+\end_inset
+
+.
+ Para estudos do câncer, as observações incluem indentificação da imagem,
+ momento de obtenção de imagem, nome da lesão, localização anatômica, tipo
+ de lesão, comprimento do segmento de marcação visual da lesão na imagem.
+ Na figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:AIMandEpad"
+
+\end_inset
+
+ podemos ver os dados de uma anotação(observação) AIM que a ferramenta ePAD
+ armazena normalmente.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:AIMandEpad"
+
+\end_inset
+
+AIM.
+ Anotações de imagem que descreve, localizações anatômicas, medidas e tipos
+ de lesões
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename ../figures/AIM.jpg
+	scale 75
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+fadaptada{HAGE2014}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Para garantir que as informações sob marcação mínimas são recolhidos, ePAD
+ usa um mecanismo chamado "
+\emph on
+AIM templates
+\emph default
+".
+ AIM 
+\emph on
+templates
+\emph default
+ especifica um formulário de coleta de dados eletrônicos, análogo a um formulári
+o eletrônico de relatório do caso, contendo elementos de dados cujos valores
+ são especificados pelo usuário durante a visualização das imagens.
+ Os elementos de dados em 
+\emph on
+AIM templates
+\emph default
+ especifica os tipos de valores válidos, a cardinalidade, e que valores
+ são necessários.
+ Cada 
+\emph on
+template
+\emph default
+ é usado para garantir que o mínimo exigido de dados são coletados para
+ um determinado tipo de anotação.
+ 
+\emph on
+Templates
+\emph default
+ como RECIST
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+http://www.irrecist.com/
+\end_layout
+
+\end_inset
+
+ (
+\emph on
+Response Evaluation Criteria In Solid Tumors
+\emph default
+) por exemplo, definem quando pacientes de câncer melhoram, ficam na misma
+ ou pioram.
+ Atualmente nao existe uma representação ontologica da infraestrutua AIM
+ que permita inferir e classificar marcações armazenadas por ferramentas
+ como ePAD.
+ Alem disso, atualmente não existe o 
+\emph on
+template
+\emph default
+ general para o sistema de staging
+\emph on
+ TNM.
+ 
 \end_layout
 
 \begin_layout Section
@@ -1148,12 +1344,22 @@ Considerações Finais
 A fim de melhorar a forma de trabalho na área de saúde, as tecnologias da
  Web Semântica podem auxiliar as pesquisas médicas e encontrar soluções
  através do auxilio de computadores, como, por exemplo, o uso dos formatos
- OWL, SWRL e AIM para processar (reason) anotações de imagens médicas.
+ OWL, SWRL e AIM para processar (
+\emph on
+reasoning
+\emph default
+) anotações de imagens médicas.
  O AIM vem sendo desenvolvido e elaborado, tanto para ajudar na estruturação
  dos relatórios radiológicos, principalmente imagens, como também para ser
  entendido por máquinas.
  Esses avanços vem contribuído no entendimento, interoperabilidade e compartilha
 mento de conhecimento biomédico na área de radiologia.
+ No caso de radiologia, os padroes como o Radlex e o AIM são utilizados
+ por ferramentas como o ePAD para gerar relatorios diretamente processáveis
+ por máquinas.
+ O próximo capítulo tem como objetivo listar os principales trabalhos que
+ abordam os conceitos de web semântica na classificação de câncer na área
+ de bioinformática.
 \end_layout
 
 \end_body
