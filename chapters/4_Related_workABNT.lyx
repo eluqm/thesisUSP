@@ -321,7 +321,7 @@ Results
 \begin_layout Standard
 \begin_inset Float table
 wide false
-sideways true
+sideways false
 status open
 
 \begin_layout Plain Layout
@@ -353,7 +353,7 @@ status open
 
 
 \backslash
-resizebox{0.65
+resizebox{0.8
 \backslash
 textwidth}{!}{
 \end_layout
@@ -2211,7 +2211,7 @@ description "Foundational Model of Anatomy"
 
 \end_inset
 
-) para descrever entidades anatômicas a fim de representar alguns critérios
+) para descrever entidades anatômicas a fim de representar os critérios
  da
 \emph on
  TNM 
@@ -2230,6 +2230,7 @@ Classification of Malignant Tumors
 \end_layout
 
 \begin_layout Itemize
+Em 
 \begin_inset CommandInset citation
 LatexCommand citet
 key "marquet2007"
@@ -2241,7 +2242,8 @@ key "marquet2007"
 Thesaurus, 
 \lang brazilian
 para classificação dos tumores de glioma.
- O sistema de referência de classificação utilizado foi o da 
+ Neste trabalho o sistema de referência de classificação utilizado foi o
+ da 
 \emph on
 World Health Organization
 \emph default
@@ -2260,11 +2262,12 @@ description "World Health Organization"
 reasoning
 \emph default
 \lang brazilian
- baseado em classes foi utilizado, a partir de relatórios de patologia com
- descrições histológicas de pacientes (usando essa ontologia).
+ baseado em classes foi utilizado, o trabalho consegue classificar corretamente
+ dez relatórios clínicos simulados dos onze utilizados no teste.
  Mas, em comparação com o projeto proposto, esses relatórios de pacientes
  foram preenchidos manualmente, os autores não apresentam resultados explícitos
  usando dados reais.
+ que 
 \end_layout
 
 \begin_layout Itemize
@@ -2346,7 +2349,7 @@ Cell Cluster → union of cells
 \lang brazilian
 
 \begin_inset Note Note
-status collapsed
+status open
 
 \begin_layout Plain Layout
 Esse conceito não está muito grande: 
@@ -2365,7 +2368,7 @@ NGS
 \emph default
  e modelar todos esses conceitos 
 \begin_inset Note Note
-status collapsed
+status open
 
 \begin_layout Plain Layout
 Nao enetndi: (como, 
