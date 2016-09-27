@@ -2264,10 +2264,9 @@ reasoning
 \lang brazilian
  baseado em classes foi utilizado, o trabalho consegue classificar corretamente
  dez relatórios clínicos simulados dos onze utilizados no teste.
- Mas, em comparação com o projeto proposto, esses relatórios de pacientes
- foram preenchidos manualmente, os autores não apresentam resultados explícitos
- usando dados reais.
- que 
+ Finalmente os autores não apresentam resultados explícitos usando dados
+ reais.
+ 
 \end_layout
 
 \begin_layout Itemize
@@ -2285,15 +2284,16 @@ key "Levy2009"
 Annotation and Image Markup
 \emph default
 \lang brazilian
- (AIM) em instâncias OWL.
+ (AIM) na sua versao 3.0 em instâncias OWL.
  Em seguida, um mecanismo de 
 \emph on
 \lang english
 reasoning
 \emph default
 \lang brazilian
- baseado em ontologias e SWRL foi desenvolvido para trabalhar com essas
- instâncias a fim de classificar e calcular a carga tumoral.
+ baseado em OWL e sua linguagem de regras associada SWRL, foi desenvolvido
+ para trabalhar com essas instâncias a fim de classificar e calcular a carga
+ tumoral RECIST(REF).
  Embora 
 \begin_inset CommandInset citation
 LatexCommand cite
@@ -2301,14 +2301,17 @@ key "Levy2009"
 
 \end_inset
 
- utilizem AIM como modelo de informação, eles não fazem 
+ permite a inferência automatizada de informação semântica sobre lesões
+ de câncer em imagens, as tarefa mais complexas como de avaliar automaticamente
+ 
 \emph on
 \lang english
-staging
+o staging
 \emph default
 \lang brazilian
- de câncer.
- 
+ de câncer(a resposta do tumor ao tratamento) não são suportadas.
+ .(demostramos que recist mediante nuestra propuesta ...puede ser implementado
+ de la misma manera) 
 \end_layout
 
 \begin_layout Itemize

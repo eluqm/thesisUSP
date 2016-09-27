@@ -491,7 +491,7 @@ name "fig:CT1"
 \noindent
 \align center
 \begin_inset Graphics
-	filename ../../../EdsonMamani/figures/CTjoin.png
+	filename ../figures/CTjoin.png
 	width 70col%
 
 \end_inset
@@ -606,7 +606,7 @@ name "fig:METASTA"
 \noindent
 \align center
 \begin_inset Graphics
-	filename ../../../EdsonMamani/figures/metastases.png
+	filename ../figures/metastases.png
 	rotateOrigin center
 
 \end_inset
@@ -777,7 +777,7 @@ name "AnnotaimagemCT"
 \noindent
 \align center
 \begin_inset Graphics
-	filename ../../../EdsonMamani/figures/imageannotation.png
+	filename ../figures/imageannotation.png
 	width 80col%
 
 \end_inset
@@ -1050,7 +1050,7 @@ name "RADLEX1"
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename ../../../EdsonMamani/figures/RadlexOnto.png
+	filename ../figures/RadlexOnto.png
 	lyxscale 80
 	width 100col%
 
