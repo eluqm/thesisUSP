@@ -2277,8 +2277,8 @@ key "Levy2009"
 
 \end_inset
 
-, uma metodologia e as ferramentas foram desenvolvidas para transformar
- o modelo de informações 
+, uma metodologia e ferramentas foram desenvolvidas para transformar o modelo
+ de informações 
 \emph on
 \lang english
 Annotation and Image Markup
@@ -2293,7 +2293,14 @@ reasoning
 \lang brazilian
  baseado em OWL e sua linguagem de regras associada SWRL, foi desenvolvido
  para trabalhar com essas instâncias a fim de classificar e calcular a carga
- tumoral RECIST(REF).
+ tumoral RECIST 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Recist"
+
+\end_inset
+
+.
  Embora 
 \begin_inset CommandInset citation
 LatexCommand cite
@@ -2302,7 +2309,7 @@ key "Levy2009"
 \end_inset
 
  permite a inferência automatizada de informação semântica sobre lesões
- de câncer em imagens, as tarefa mais complexas como de avaliar automaticamente
+ de câncer em imagens, as tarefas mais complexas como de avaliar automaticamente
  
 \emph on
 \lang english
@@ -2310,8 +2317,6 @@ o staging
 \emph default
 \lang brazilian
  de câncer(a resposta do tumor ao tratamento) não são suportadas.
- .(demostramos que recist mediante nuestra propuesta ...puede ser implementado
- de la misma manera) 
 \end_layout
 
 \begin_layout Itemize
@@ -2334,13 +2339,7 @@ Nottingham Grading System
 \emph on
 NGS
 \emph default
-), como, por exemplo, 
-\emph on
-\lang english
-Cells Cluster e Lumina
-\emph default
-\lang brazilian
-, para conceitos de visão computacional: 
+), para conceitos de visão computacional: Como, por exemplo, 
 \emph on
 \lang english
 Cell Cluster → union of cells
@@ -2352,7 +2351,7 @@ Cell Cluster → union of cells
 \lang brazilian
 
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Plain Layout
 Esse conceito não está muito grande: 
@@ -2371,7 +2370,7 @@ NGS
 \emph default
  e modelar todos esses conceitos 
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Plain Layout
 Nao enetndi: (como, 
@@ -2416,7 +2415,7 @@ key "zillner:towards"
 staging
 \emph default
 \lang brazilian
- automático de pacientes com linfoma usando anotações semânticas.
+ automático de pacientes com linfoma, usando anotações semânticas.
  Essas anotações são armazenadas numa ontologia pela ferramenta de anotação
  que faz parte de projeto 
 \emph on
@@ -2432,7 +2431,7 @@ ontology
 Staging Ann Arbor
 \emph default
 \lang brazilian
- para linfoma numa ontologia.
+ para numa ontologia.
  Mas, em contraste com a nossa proposta, o trabalho de 
 \begin_inset CommandInset citation
 LatexCommand cite
@@ -2502,8 +2501,8 @@ reasoning
  a partir dessas relações.
  Mas o trabalho de 
 \begin_inset CommandInset citation
-LatexCommand cite
-key "Tutac2008"
+LatexCommand citet
+key "Tutac2010"
 
 \end_inset
 
@@ -2528,7 +2527,7 @@ reasoning
  para classificar automaticamente pacientes com linfoma, com base na posição
  relativa do linfoma.
  Para verificar ou falsificar as posições de linfoma, conhecimento baseado
- em ontologia foi utilizado.
+ em oncologia foi utilizado.
  Esse processo é conhecido como
 \emph on
  
@@ -2589,6 +2588,9 @@ reasoning
  de processamento de imagem e não manualmente.
  Além disso, nesse trabalho foram encontradas inconsistências através da
  realização de uma avaliação clínica a partir de registros reais de pacientes.
+ reasoning baseado em individuos e como é que fiz frente a OWA , a ontologia
+ con as regras e propietario.
+ 
 \end_layout
 
 \begin_layout Itemize
@@ -2834,6 +2836,39 @@ grading
 \emph default
  de câncer de mama e também não são apresentados resultados explícitos.
  
+\end_layout
+
+\begin_layout Itemize
+(demostramos que recist mediante nuestra propuesta ...puede ser implementado
+ de la misma manera) , (OWA primeros trabajos)
+\end_layout
+
+\begin_layout Standard
+una visao general dos trabalhos acima descritos podemos decir que por exemplo
+ los primeros dos trabajos realizan reasoning basado en classes, cosa que
+ teoricamente esta correcta pero en la practica tiene limitaciones como
+ por ejemplo el aumento de incontrolado de clases de una ontologia, nuestro
+ trabajo realiza reasoning sobre individuos de la ontologia AIM4-O, o problema
+ de OWA é un fator muito importante que os trablahos mensionados solucionam
+ evitando o reasoning baseado em individuos.
+ 
+\end_layout
+
+\begin_layout Standard
+el tranajo mas parecio es el de ziller , y aunq os dados utilizados pertenecem
+ ao projeto MEDICO e nao estao disponiveis para toda a verificacao necessaria,
+ el sistema de clasificacion de linfoma es relativamente mas simple que
+ el sistema TNM de classificaion que es un sistema mas generaal, el trabajo
+ de ziller no considera la dimension de una lesion como factor importante
+ , que es todo lo contraio en TNM, alem disso podemos nós verificar que
+ el mapeamento de todas las ontologias generas en ziller no son claramente
+ explicados.neste trabalho o uso de AIM tem o beneficio da nossa abordagem
+ é que estabelece um fluxo de trabalho automatizado, onde as anotações da
+ imagens AIM XML produzido por um sistema de imagem, sao transformandas
+ á OWL, e essas anotações sao utilizadas para gerar reasoning necessárias
+ para a tarefa de diferentes dominios.
+ Além disso, o nosso trabalho é extensível ao estender a nossa ontologia
+ ou regras.
 \end_layout
 
 \begin_layout Section
