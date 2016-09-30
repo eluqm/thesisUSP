@@ -2423,41 +2423,20 @@ MEDICO\SpecialChar \nobreakdash-
 ontology
 \emph default
 .
- Além disso, para a classificação dos pacientes com linfoma, os autores
- capturaram as regras do sistema de classificação
-\emph on
- 
-\lang english
-Staging Ann Arbor
-\emph default
-\lang brazilian
- para numa ontologia.
- Mas, em contraste com a nossa proposta, o trabalho de 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "zillner:towards"
-
-\end_inset
-
- só melhorou as anotações semânticas usadas para descrever imagens médicas,
- através da representação do sistema 
+ A fim de classificar os pacientes com linfoma, os autores capturaram as
+ regras do sistema de classificação
 \emph on
 \lang english
-Staging Ann Arbor
+ Ann Arbor
 \emph default
 \lang brazilian
- numa ontologia.
- A classificação dos pacientes, a partir dessas anotações semânticas melhoradas
- (com o conhecimento clínico adicional), não é descrita em 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "zillner:towards"
-
-\end_inset
-
-.
- Além disso, não são mostrados, de forma explícita, os resultados da avaliação
- com dados reais.
+ em numa ontologia.
+ Os dados utilizados pertencem ao projeto 
+\emph on
+privativo
+\emph default
+ por tanto não estão disponíveis para verificação dos resultados e não são
+ mostrados de forma explícita.
 \end_layout
 
 \begin_layout Itemize
@@ -2506,9 +2485,8 @@ key "Tutac2010"
 
 \end_inset
 
- não faz nenhuma avaliação do modelo com dados reais de pacientes com câncer
- de mama.
- 
+ não faz nenhuma avaliação do modelo e os dados não estão disponíveis para
+ verificação dos resultados.
 \end_layout
 
 \begin_layout Itemize
@@ -2526,9 +2504,8 @@ reasoning
 \emph default
  para classificar automaticamente pacientes com linfoma, com base na posição
  relativa do linfoma.
- Para verificar ou falsificar as posições de linfoma, conhecimento baseado
- em oncologia foi utilizado.
- Esse processo é conhecido como
+ A fim de verificar ou falsificar as posições de linfoma, conhecimento baseado
+ em oncologia foi utilizado
 \emph on
  
 \lang english
@@ -2608,7 +2585,7 @@ key "Meriem2012"
 \emph on
 Nottingham Grading System (NGS)
 \emph default
- e é necessária para realizar o 
+ para realizar o 
 \emph on
 grading
 \emph default
@@ -2621,9 +2598,10 @@ Breast Cancer Ontology
  (BCO)
 \emph default
  com base em OWL-DL e SWRL.
- Além disso, a 
+ Além disso, a fim de descrever as imagens histopatológicas usando anotações
+ semânticas, os autores usaram a 
 \lang english
-Wide Field Markup Language
+ferramenta Wide Field Markup Language
 \lang brazilian
  (WFML
 \begin_inset CommandInset nomenclature
@@ -2633,9 +2611,9 @@ description "Wide Field Markup Language"
 
 \end_inset
 
-), que é específica para o campo de histopatologia, foi usada para descrever
- imagens histopatológicas usando anotações.
- Por fim, a linguagem de consulta SPARQL é usada para consultar o sistema.
+), que é específica para o campo de histopatologia.
+ Por fim, a linguagem de consulta SPARQL é usado para acessar as informações
+ disponíveis no sistema.
  Embora o trabalho de 
 \begin_inset CommandInset citation
 LatexCommand cite
@@ -2643,7 +2621,8 @@ key "Meriem2012"
 
 \end_inset
 
- utilize imagens histológicas, apenas são descritas algumas regras do 
+ utiliza anotações semânticas em imagens e executa uma classificação baseada
+ no NGS apenas são descritas algumas regras do 
 \emph on
 reasoning
 \emph default
@@ -2659,8 +2638,7 @@ grading
 reasoning
 \emph default
  baseado em relações espaciais das anotações na imagem.
- Finalmente, são usados ​​algoritmos de extração de características para
- descrever as imagens histológicas usando anotações.
+ Finalmente.
 \end_layout
 
 \begin_layout Itemize
@@ -2839,6 +2817,14 @@ grading
 \end_layout
 
 \begin_layout Itemize
+Com o objetivo de avaliar falta de informações em bancos de dados CS A.
+ C.
+ Camargo Cancer Center, em ___ desenvolveu-se uma ontologia aberta para
+ representar conceitos TNM e regras para inferência do eStagio clinico .
+ Ele foi projetado para ser facilmente expansível e rápido para computar
+\end_layout
+
+\begin_layout Itemize
 (demostramos que recist mediante nuestra propuesta ...puede ser implementado
  de la misma manera) , (OWA primeros trabajos)
 \end_layout
@@ -2851,6 +2837,16 @@ una visao general dos trabalhos acima descritos podemos decir que por exemplo
  trabajo realiza reasoning sobre individuos de la ontologia AIM4-O, o problema
  de OWA é un fator muito importante que os trablahos mensionados solucionam
  evitando o reasoning baseado em individuos.
+ 
+\end_layout
+
+\begin_layout Standard
+os trabalhos como 1 , 2 ,3 cream ontologias em owl-dl para TNM pero creemos
+ que la idea de hacer una ontologia para cada uno de los sistemas de tipo
+ TNM resulta no deseable.
+ creemos que la idea de tener una ontologia que represente directamentamente
+ las caracteristicas encontradas en una imagen y que la clasificacion y
+ reglas esté guiadas por reglas y axiomas.
  
 \end_layout
 
