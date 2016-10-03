@@ -2811,18 +2811,19 @@ staging
 International Classification of Diseases for Oncology
 \emph default
  (ICD-O) e as classes que representam conceitos T, N, M.
- Fundamentalmente os autores criaram um script para analisar um arquivo
- de texto e criar um arquivo no formato RDF/XML com a definição de classes
- e axiomas para inferência do 
+ Fundamentalmente os autores criaram um script para analisar arquivos de
+ texto e criar arquivos no formato RDF/XML com a definição de classes e
+ axiomas para inferência do 
 \series bold
 \emph on
-staging 
+staging
 \emph default
-específico, 
+, 
 \series default
 esses arquivos contêm informações como os pares do valores T, N ou M e uma
  topografia (descrição e representação do órgão afetado pelo câncer).
- Eles criaram manualmente arquivos de texto com base nas definições TNM.
+ Eles criaram manualmente esses arquivos de texto com base nas definições
+ TNM.
  Embora 
 \begin_inset CommandInset citation
 LatexCommand citet
@@ -2835,6 +2836,11 @@ key "Massicano2015AnOF"
  da definicacao do cada criterio do TNM, como por exemplo o criterio T que
  é diferente para cada topografia.
  
+\end_layout
+
+\begin_layout Standard
+Ao comparar o trabalho proposto como os trabalho acima, as seguintes diferenca
+ foram evidenciadas:
 \end_layout
 
 \begin_layout Itemize
@@ -2892,20 +2898,49 @@ key "Meriem2012"
 \end_layout
 
 \begin_layout Standard
-el tranajo mas parecio es el de ziller , y aunq os dados utilizados pertenecem
- ao projeto MEDICO e nao estao disponiveis para toda a verificacao necessaria,
- el sistema de clasificacion de linfoma es relativamente mas simple que
- el sistema TNM de classificaion que es un sistema mas generaal, el trabajo
- de ziller no considera la dimension de una lesion como factor importante
- , que es todo lo contraio en TNM, alem disso podemos nós verificar que
- el mapeamento de todas las ontologias generas en ziller no son claramente
- explicados.neste trabalho o uso de AIM tem o beneficio da nossa abordagem
- é que estabelece um fluxo de trabalho automatizado, onde as anotações da
- imagens AIM XML produzido por um sistema de imagem, sao transformandas
- á OWL, e essas anotações sao utilizadas para gerar reasoning necessárias
- para a tarefa de diferentes dominios.
- Além disso, o nosso trabalho é extensível ao estender a nossa ontologia
- ou regras.
+Na literatura o trabalho mais parecido com a nossa proposta 
+\emph on
+é 
+\emph default
+do 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Zillner2012"
+
+\end_inset
+
+, mas ignorando o fato que os dados utilizados nao estao disponíveis para
+ toda a verificacao necessaria, o sistema de classificação de linfoma é
+ relativamente mais simples do que um sistema de classificaion mais geral
+ tipo TNM.
+ Por exemplo, pode-se dizer que, em 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Zillner2012"
+
+\end_inset
+
+ não considerou a dimensão de uma lesão como um factor importante, por outro
+ lado, esse fato é muito importante em sistemas de 
+\emph on
+staging
+\emph default
+ de cancer um pouco mais complexos como TNM.
+ Alem disso, podemos ver que o processo de alinhamento de todas as ontologias
+ geradas em 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Zillner2012"
+
+\end_inset
+
+ não são descritos de forma explícita.
+ Finalmente, no nosso trabalho o uso do modelo AIM estabelece um fluxo de
+ trabalho automatizado, onde as anotações da imagens produzido por um sistema
+ de imagem(qualquer que gera AIM), sao transformandas á OWL, em seguida
+ essas anotações sao utilizadas para gerar reasoning necessárias para tarefa
+ de diferentes dominios.
+ 
 \end_layout
 
 \begin_layout Section
