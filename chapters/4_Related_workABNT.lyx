@@ -2560,14 +2560,7 @@ Patient-ontology
 reasoning
 \emph default
 .
- Em contraste com a nossa proposta, as anotações que descrevem as imagens
- médicas (anotações semânticas) são realizadas automaticamente por algoritmos
- de processamento de imagem e não manualmente.
- Além disso, nesse trabalho foram encontradas inconsistências através da
- realização de uma avaliação clínica a partir de registros reais de pacientes.
- reasoning baseado em individuos e como é que fiz frente a OWA , a ontologia
- con as regras e propietario.
- 
+ Os dados utilizados não estão disponíveis para verificação dos resultados.
 \end_layout
 
 \begin_layout Itemize
@@ -2597,11 +2590,18 @@ Breast Cancer Ontology
 \lang brazilian
  (BCO)
 \emph default
- com base em OWL-DL e SWRL.
- Além disso, a fim de descrever as imagens histopatológicas usando anotações
- semânticas, os autores usaram a 
+ com base em OWL-DL e SWRL 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Tutac2008"
+
+\end_inset
+
+.
+ Mais tarde, a fim de descrever as imagens histopatológicas usando anotações
+ semânticas, os autores usaram 
 \lang english
-ferramenta Wide Field Markup Language
+o formato Wide Field Markup Language
 \lang brazilian
  (WFML
 \begin_inset CommandInset nomenclature
@@ -2611,34 +2611,11 @@ description "Wide Field Markup Language"
 
 \end_inset
 
-), que é específica para o campo de histopatologia.
+), que é um formato em XML específica para o campo de histopatologia.
+ Esses arquivos no WFML foram traduzidos em OWL.
  Por fim, a linguagem de consulta SPARQL é usado para acessar as informações
  disponíveis no sistema.
- Embora o trabalho de 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "Meriem2012"
-
-\end_inset
-
- utiliza anotações semânticas em imagens e executa uma classificação baseada
- no NGS apenas são descritas algumas regras do 
-\emph on
-reasoning
-\emph default
- que são necessárias para o 
-\emph on
-grading
-\emph default
- do câncer de mama.
- Além disso, os autores mencionam apenas poucas possíveis aplicações para
- resolver problemas de ambiguidade na análise de imagens histológicas.
- Por exemplo, o uso de 
-\emph on
-reasoning
-\emph default
- baseado em relações espaciais das anotações na imagem.
- Finalmente.
+ 
 \end_layout
 
 \begin_layout Itemize
@@ -2817,16 +2794,64 @@ grading
 \end_layout
 
 \begin_layout Itemize
-Com o objetivo de avaliar falta de informações em bancos de dados CS A.
- C.
- Camargo Cancer Center, em ___ desenvolveu-se uma ontologia aberta para
- representar conceitos TNM e regras para inferência do eStagio clinico .
- Ele foi projetado para ser facilmente expansível e rápido para computar
+Em 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Massicano2015AnOF"
+
+\end_inset
+
+ desenvolveu-se uma ontologia para representar conceitos e axiomas para
+ inferência do 
+\emph on
+staging
+\emph default
+ clinico de tumores de um modo generalizado, baseado no 
+\emph on
+International Classification of Diseases for Oncology
+\emph default
+ (ICD-O) e as classes que representam conceitos T, N, M.
+ Fundamentalmente os autores criaram um script para analisar um arquivo
+ de texto e criar um arquivo no formato RDF/XML com a definição de classes
+ e axiomas para inferência do 
+\series bold
+\emph on
+staging 
+\emph default
+específico, 
+\series default
+esses arquivos contêm informações como os pares do valores T, N ou M e uma
+ topografia (descrição e representação do órgão afetado pelo câncer).
+ Eles criaram manualmente arquivos de texto com base nas definições TNM.
+ Embora 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Massicano2015AnOF"
+
+\end_inset
+
+ tenta generalizar o sistema de classificaçao como o TNM representado numa
+ ontologia, ele faz inferencia so com conceitos de stagio clinico e nao
+ da definicacao do cada criterio do TNM, como por exemplo o criterio T que
+ é diferente para cada topografia.
+ 
 \end_layout
 
 \begin_layout Itemize
 (demostramos que recist mediante nuestra propuesta ...puede ser implementado
  de la misma manera) , (OWA primeros trabajos)
+\end_layout
+
+\begin_layout Itemize
+.Além disso, nesse trabalho foram encontradas inconsistências através da
+ realização de uma avaliação clínica a partir de registros reais de pacientes.
+ reasoning baseado em individuos e como é que fiz frente a OWA , a ontologia
+ con as regras e propietario.
+ os dados utilizados pertencem ao projeto 
+\emph on
+MEDICO
+\emph default
+ e não estão disponíveis para verificação dos resultados.
 \end_layout
 
 \begin_layout Standard
@@ -2847,6 +2872,22 @@ os trabalhos como 1 , 2 ,3 cream ontologias em owl-dl para TNM pero creemos
  creemos que la idea de tener una ontologia que represente directamentamente
  las caracteristicas encontradas en una imagen y que la clasificacion y
  reglas esté guiadas por reglas y axiomas.
+ 
+\end_layout
+
+\begin_layout Itemize
+Embora o trabalho de 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Meriem2012"
+
+\end_inset
+
+ utiliza anotações semânticas em imagens e executa uma classificação baseada
+ no NGS utilizando OWL e SWRL, este trabajo esta limitado a crear una nueva
+ ontologia dependiendo de la patalogia que se quiera analisar.
+ nuestro proyecto contruyó una ontologia basada en un modelo tipo AIM que
+ fue desarrollado de manera mas robusta.
  
 \end_layout
 
