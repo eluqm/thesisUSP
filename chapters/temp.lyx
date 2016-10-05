@@ -69,92 +69,20 @@
 
 \begin_body
 
-\begin_layout Section
-Consulte o manual da classe abntex2 
-\end_layout
-
 \begin_layout Standard
-Consulte o manual da classe abntex2 (ABNTEX2; ARAUJO, 2012) para uma referência
- completa das macros e ambientes disponíveis.
- 
-\end_layout
-
-\begin_layout Standard
-Além disso, o manual possui informações adicionais sobre as normas ABNT
- obser- vadas pelo abnTEX2 e considerações sobre eventuais requisitos específico
-s, como o caso da ABNT (2011, seção 5.2.2), que especifica o espaçamento entre
- os capítulos e o início do texto.
- 
+Neste capítulo, serão apresentados os resultados que foram alcançados .....
 \end_layout
 
 \begin_layout Section
-Precisa de ajuda? 
-\end_layout
-
-\begin_layout Standard
-Consulte a FAQ com perguntas frequentes e comuns no portal do abnTEX2: 
-\begin_inset Flex URL
-status open
-
-\begin_layout Plain Layout
-
-<https: //code.google.com/p/abntex2/wiki/FAQ>
-\end_layout
-
-\end_inset
-
-.
- Inscreva-senogrupodeusuários LATEX: 
-\begin_inset Flex URL
-status open
-
-\begin_layout Plain Layout
-
-<http://groups.google.com/group/latex-br>
-\end_layout
-
-\end_inset
-
-, tire suas dúvidas e ajude outros usuários.
- 
-\end_layout
-
-\begin_layout Standard
-Participe também do grupo de desenvolvedores do abnTEX2: 
-\begin_inset Flex URL
-status open
-
-\begin_layout Plain Layout
-
-<http://groups.google.
- com/group/abntex2>
-\end_layout
-
-\end_inset
-
- e faça sua contribuição à ferramenta.
- 
+Experimentos
 \end_layout
 
 \begin_layout Section
-Você pode ajudar?
+a
 \end_layout
 
-\begin_layout Standard
-Sua contribuição é muito importante! Você pode ajudar na divulgação, desenvolvim
-ento, aprimoramento e de várias outras formas.
- Veja como contribuir com a classe icmc em 
-\begin_inset Flex URL
-status open
-
-\begin_layout Plain Layout
-
-<https://github.com/lordantonelli/thesis-model-icmc>
-\end_layout
-
-\end_inset
-
- e faça sua contribuição.
+\begin_layout Section
+b
 \end_layout
 
 \end_body

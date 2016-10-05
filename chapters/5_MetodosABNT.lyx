@@ -1,0 +1,4218 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass abntex2
+\begin_preamble
+
+\end_preamble
+\options a4paper,titlepage
+\use_default_options true
+\maintain_unincluded_children false
+\begin_local_layout
+Float
+Type                  listing
+GuiName               Listing
+Placement             tbp
+Extension             lol
+NumberWithin          none
+Style                 ruled
+ListName              "List of Listings"
+LaTeXBuiltin          false
+End
+\end_local_layout
+\language brazilian
+\language_package default
+\inputencoding utf8
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command biber
+\index_command default
+\paperfontsize default
+\spacing onehalf
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 0
+\use_package esint 0
+\use_package mathdots 1
+\use_package mathtools 0
+\use_package mhchem 1
+\use_package stackrel 0
+\use_package stmaryrd 0
+\use_package undertilde 0
+\cite_engine natbib
+\cite_engine_type authoryear
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 3cm
+\topmargin 4cm
+\rightmargin 3cm
+\bottommargin 3cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation skip
+\defskip bigskip
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+O foco deste trabalho é a construção de um sistema para permitir o uso de
+ 
+\shape italic
+reasoning
+\shape default
+ em anotações contidas em imagens médicas.
+ Este capítulo ira descrever a metodologia utilizada para alcançar esse
+ fim.
+ A nossa abordagem é composto por três tarefas: Na Seção 5.1 A transformação
+ do modelo de informação AIM, em uma representação ontológica que define
+ um modelo de informação semânticamente equivalente.
+ Em seguida, na Seção 5.2, ........
+ Na seção 5.3, ....
+\end_layout
+
+\begin_layout Section
+Representação ontológica do modelo de informação AIM
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:step1"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+A fim de executar inferência e classificação a partir de anotações e os
+ metadados de marcação de imagem baseados no modelo AIM, nos precisamos
+ de uma línguagem equipado com uma semântica formal.
+ Usando essa semântica, as inferências sobre ontologias e seus indivíduos
+ podem ser feitas.
+ Neste contexto a 
+\emph on
+Web Ontology Language 
+\emph default
+OWL 
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "OWL"
+description "Ontology Web Languaje"
+
+\end_inset
+
+ descreve uma linguagem para construção de uma representação ontológica
+ semanticamente equivalente de um modelo de informação, tal como por exemplo
+ o modelo de informação 
+\emph on
+Annotation and Image Markup
+\emph default
+ AIM 
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "AIM"
+description "Annotation and Image Markup"
+
+\end_inset
+
+.
+ Com base no exposto, neste trabalho transformamos o modelo de dados AIM
+ em uma representação ontológica equivalente, usando OWL2.
+\end_layout
+
+\begin_layout Standard
+Essa transformação foi realizada através da criação de classes e propriedades
+ no OWL 
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "OWL"
+description "Ontology Web Languaje"
+
+\end_inset
+
+, resultando assim compreensível pelo usuário e adequado para inferência.
+ Nós desenvolvemos uma ontologia com base no trabalho do Hakan Bulu
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Bulu"
+
+\end_inset
+
+, ele desenvolveu uma ontologia.
+ No entanto, essa ontologia representa a versão 3.0 do AIM.
+ Portanto, a fim de representar o modelo AIM na sua versão 4.0, que é a versão
+ utilizada para armazenar anotações de imagem gerados por ferramentas como
+ ePAD
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Rubin2008"
+
+\end_inset
+
+, Nós expandimos a ontologia do Hakan Bulu mostrada na figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:aim3hakan"
+
+\end_inset
+
+ a seguir:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:aim3hakan"
+
+\end_inset
+
+Ontologia do Hakan Bulu 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Bulu"
+
+\end_inset
+
+ baseada no modelo AIM 3.0
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename ../figures/aim3ontologyprotege.png
+	lyxscale 20
+	scale 11
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+fautor
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Esta extensão captura lesões e medidas derivadas durante os ensaios clínicos
+ com base em imagens e posteriormente converte as anotações para instâncias
+ da ontologia 
+\series bold
+AIM4-O
+\series default
+.
+ Essas instâncias são necessárias para o análise das anotações com tecnologias
+ de Web Semântica.
+ Aseguir, é descrito em detalhe a ontologia 
+\series bold
+AIM4-O
+\series default
+.
+\end_layout
+
+\begin_layout Subsection
+Ontologia AIM4-O
+\end_layout
+
+\begin_layout Standard
+A ontologia 
+\series bold
+AIM4-O
+\series default
+ (Ontologia do AIM versão 4.0), foi desenvolvido como uma extensão da ontologia
+ do Hakan Bulu 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:aim3hakan"
+
+\end_inset
+
+ e define a codificação OWL2 do modelo de dados AIM 4.0 com o objectivo de
+ apoiar as ferramentas de anotação de imagens 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+como o ePAD 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Rubin2014"
+
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+
+especificando a semântica das observações feitas por especialistas e, por
+ conseguinte melhorar a precisão interpretativa dos dados é integrar assistência
+ baseado em computador no processo de interpretação de imagens.
+ As subseções a seguir descrevem o conjunto de classes, propriedades e restriçõe
+s que constituem a ontologia 
+\series bold
+AIM4-O.
+\end_layout
+
+\begin_layout Subsubsection
+Namespaces
+\end_layout
+
+\begin_layout Standard
+Os seguintes prefixos de namespace são usados ​​ao longo deste documento.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Prefijos e Namespaces usados na ontologia 
+\series bold
+AIM4-O
+\series default
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="5" columns="3">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Prefix 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Namespace IRI
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Definition
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+rdf
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+http://www.w3.org/1999/02/22-rdf-syntax-ns# 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+The RDF namespace
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+xsd
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+http://www.w3.org/2000/10/XMLSchema#
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+XML Schema Namespace 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+owl
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+http://www.w3.org/2002/07/owl#
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+The OWL namespace
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+aim
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+http://www.w3.org/ns/aim4#
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+The AIM4-O namespace 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+fautor
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Dependendo de suas necessidades e de acordo com a quantidade de detalhes
+ que deseja incluir na sua anotação da imagen, o usuário do AIM4-O as vezes
+ só pode precisar usar partes de toda a ontologia.
+ Por esta razão os termos da ontologia AIM4-O (classes e propriedades) são
+ agrupados neste documento em dois categorias a fim de fornecer uma descrição
+ incremental: 
+\series bold
+Basic Terms
+\series default
+ e 
+\series bold
+Expanded Terms.
+\end_layout
+
+\begin_layout Subsubsection
+
+\series bold
+Basic Terms
+\end_layout
+
+\begin_layout Standard
+Fornecem a base para capturar anotaçoes e marcação de informações relevantes
+ para imagens.
+ Através destas classes pode ser descrita explicitamente o tipo de informação
+ que pode coletar o modelo, a informaçào pode ser de várias disciplinas.
+ O usuario pode estender o modelo para atender suas necessidades, seguindo
+ os critérios descritos no seguinte link 
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+https://wiki.nci.nih.gov/display/AIM/Extending+the+AIM+Model#ExtendingtheAIMModel-F
+romAIM3.0totheAIMFoundationModel
+\end_layout
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+As classes tipo 
+\series bold
+Basic Term
+\series default
+ já foram definidas na ontologia fornecida por Hakan Bulu 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Bulu"
+
+\end_inset
+
+, em alguns casos, essas classes só mudaram seus nomes adicionando o sufixo
+ "Entity" em comparação com as versões 4.0 e 
+\emph on
+fundation model
+\emph default
+ FM do AIM.
+
+\series bold
+ 
+\series default
+A seguir encontra-se uma descrição mais detalhada destas classes:
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+AIM:Calculation:
+\series default
+ Representa os resultados do cálculo de uma anotação AIM.
+ Os resultados dos cálculos podem ser o não ser diretamente associado com
+ símbolos gráficos ou marcações.
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+AIM:GeometricShape: 
+\series default
+captura informações e representação gráfica para coordenadas espaciais de
+ tipo bi e tri dimensionais, respectivamente.
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+AIM:ImagingObservation: 
+\series default
+é a descrição de coisas que são vistos em uma imagem.
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+AIM:ImagingObservationCharacteristics: 
+\series default
+a classe contém descritores da classe ImagingObservation.
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+AIM:Annotation: 
+\series default
+captura o nome, uma descrição geral da anotação AIM, o tipo de anotação
+ via terminologia controlada, a data de criação, e uma referência para a
+ versão ao modelo AIM usado.
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+AIM:ImageReference: 
+\series default
+representa uma imagem ou uma coleção de imagens que estão sendo anotada.
+ Os dois tipos possíveis de referências são DICOM e Uniform Resource Identifier
+ (URI).
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+AIM:ImageAnnotation:
+\series default
+ captura informações sobre o significado da informação do pixel em imagens.
+ É usado para anotar uma imagem ou imagens.
+ Ele descreve uma única coisa encontrada.
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+AIM:CalculationResult: 
+\series default
+classe abstrata contém o tipo de resultado (por exemplo , binário, escalar,
+ vetor, histograma, array ou matriz) ,unidade de medida e tipo de dados
+ codificados
+\series bold
+.
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+AIM:CalculationData: 
+\series default
+classe é usada para armazenar um valor de resultado.
+\end_layout
+
+\begin_layout Standard
+As 9 classes se relacionam entre si utilizando as propriedades mostradas
+ na figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:classes-base"
+
+\end_inset
+
+ a seguir:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:classes-base"
+
+\end_inset
+
+O diagrama representa as entidades como ovais e retângulos.
+ As propriedades são mostrados em cor vermelho.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\paragraph_spacing onehalf
+\noindent
+\align center
+\begin_inset Graphics
+	filename ../figures/AIM3.pdf
+	lyxscale 40
+	scale 21
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+fautor
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+No seguinte exemplo 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "lis:exemplo1"
+
+\end_inset
+
+ descreve os recursos envolvidos na criação da uma anotaçao sobre uma imagen.
+ O exemplo utiliza apenas termos de tipo 
+\series bold
+Basic
+\series default
+ e serve como ponto para começar a elaboração que será descrita em secções
+ subsequentes.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "backgroundcolor={\color{yellow!20}},basicstyle={\tiny\ttfamily},breaklines=true,float,fontadjust=true,frame={topline},language=XSLT,numbers=left,numberstyle={\tiny},showstringspaces=false,tabsize=6"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+@prefix aim:  <http://www.w3.org/ns/aim4#> .
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+@prefix :     <http://example.org#> .
+\end_layout
+
+\begin_layout Plain Layout
+
+Individual: 1.2.288.3.2205383238.1512.1207945935.1
+\end_layout
+
+\begin_layout Plain Layout
+
+    Types:                        ImageAnnotation          
+\end_layout
+
+\begin_layout Plain Layout
+
+    Facts:        
+\end_layout
+
+\begin_layout Plain Layout
+
+     aim:hasGeometricShape        :Polyline,      	
+\end_layout
+
+\begin_layout Plain Layout
+
+     aim:hasCalculation           :1.5465798.46468.4566874,      
+\end_layout
+
+\begin_layout Plain Layout
+
+     aim:hasImageReference        :1.3.6.1.4.1.9328.50.1.10607,
+\end_layout
+
+\begin_layout Plain Layout
+
+     aim:hasAnatomicEntity        :Lung,
+\end_layout
+
+\begin_layout Plain Layout
+
+     aim:hasImagingObservation    :Conspicuity,      		
+\end_layout
+
+\begin_layout Plain Layout
+
+     aim:uniqueIdentifier         "1.2.288.3.2205383238.1512.1207945935.1"^^xsd:string,
+      
+\end_layout
+
+\begin_layout Plain Layout
+
+     aim:dateTime                 "2008-04-11T15:32:15"^^xsd:dateTime,
+\end_layout
+
+\begin_layout Plain Layout
+
+.
+\end_layout
+
+\begin_layout Plain Layout
+
+Individual: Polyline
+\end_layout
+
+\begin_layout Plain Layout
+
+    Types:                         GeometricShape
+\end_layout
+
+\begin_layout Plain Layout
+
+.
+\end_layout
+
+\begin_layout Plain Layout
+
+Individual: 1.3.6.1.4.1.9328.50.1.10607
+\end_layout
+
+\begin_layout Plain Layout
+
+    Types:						 ImageReference
+\end_layout
+
+\begin_layout Plain Layout
+
+    Facts:
+\end_layout
+
+\begin_layout Plain Layout
+
+     type                         "DICOMImageReference"^^xsd:string
+\end_layout
+
+\begin_layout Plain Layout
+
+.
+\end_layout
+
+\begin_layout Plain Layout
+
+Individual: 1.5465798.46468.4566874
+\end_layout
+
+\begin_layout Plain Layout
+
+    Types:						Calculation
+\end_layout
+
+\begin_layout Plain Layout
+
+    Facts:
+\end_layout
+
+\begin_layout Plain Layout
+
+     aim:hasCalculationResult     :1.5465798.46468,
+\end_layout
+
+\begin_layout Plain Layout
+
+     aim:description              "Linear Measurement"^^xsd:string,
+\end_layout
+
+\begin_layout Plain Layout
+
+     aim:uid                      "1.5465798.46468.4566874"^^xsd:string,  
+    
+\end_layout
+
+\begin_layout Plain Layout
+
+.
+\end_layout
+
+\begin_layout Plain Layout
+
+Individual: 1.5465798.46468
+\end_layout
+
+\begin_layout Plain Layout
+
+    Types:						ExtendedCalculationResult
+\end_layout
+
+\begin_layout Plain Layout
+
+    Facts:
+\end_layout
+
+\begin_layout Plain Layout
+
+     aim:hasCalculationData       :1.5465798,
+\end_layout
+
+\begin_layout Plain Layout
+
+     aim:type                     "ExtendedCalculationResult"^^xsd:string
+\end_layout
+
+\begin_layout Plain Layout
+
+.
+     
+\end_layout
+
+\begin_layout Plain Layout
+
+Individual: 1.5465798
+\end_layout
+
+\begin_layout Plain Layout
+
+    Types:						CalculationData
+\end_layout
+
+\begin_layout Plain Layout
+
+    Facts:
+\end_layout
+
+\begin_layout Plain Layout
+
+     aim:values                     3.3422492f^^xsd:float,      
+\end_layout
+
+\begin_layout Plain Layout
+
+.
+\end_layout
+
+\begin_layout Plain Layout
+
+Indivual: Lung
+\end_layout
+
+\begin_layout Plain Layout
+
+	Type:						 AnatomicEntity
+\end_layout
+
+\begin_layout Plain Layout
+
+    Facts:
+\end_layout
+
+\begin_layout Plain Layout
+
+     aim:codeMeaning                 "LUNG"^^xsd:string, 
+\end_layout
+
+\begin_layout Plain Layout
+
+     aim:codeValue                   "REX0001"^^xsd:string, 
+\end_layout
+
+\begin_layout Plain Layout
+
+     aim:codingSchemeDesignator      "RADLEX"^^xsd:string,
+\end_layout
+
+\begin_layout Plain Layout
+
+.
+\end_layout
+
+\begin_layout Plain Layout
+
+Indivual: Conspicuity
+\end_layout
+
+\begin_layout Plain Layout
+
+	Type:						 ImagingObservation
+\end_layout
+
+\begin_layout Plain Layout
+
+    Facts:
+\end_layout
+
+\begin_layout Plain Layout
+
+     aim:ImagingObservationCharacteristic :LIDC Soft Tissue
+\end_layout
+
+\begin_layout Plain Layout
+
+	 aim:codeMeaning                   "Conspicuity"^^xsd:string, 
+\end_layout
+
+\begin_layout Plain Layout
+
+	 aim:codeValue                     "REX4001"^^xsd:string, 
+\end_layout
+
+\begin_layout Plain Layout
+
+	 aim:codingSchemeDesignator        "RADLEX"^^xsd:string,
+\end_layout
+
+\begin_layout Plain Layout
+
+.
+\end_layout
+
+\begin_layout Plain Layout
+
+Indivual: LIDC Soft Tissue
+\end_layout
+
+\begin_layout Plain Layout
+
+	Type:						   ImagingObservationCharacteristic
+\end_layout
+
+\begin_layout Plain Layout
+
+    Facts:
+\end_layout
+
+\begin_layout Plain Layout
+
+     aim:codeMeaning                   "LIDC Soft Tissue"^^xsd:string, 
+\end_layout
+
+\begin_layout Plain Layout
+
+     aim:codeValue                     "REX4021"^^xsd:string, 
+\end_layout
+
+\begin_layout Plain Layout
+
+     aim:codingSchemeDesignator        "RADLEX"^^xsd:string,
+\end_layout
+
+\begin_layout Plain Layout
+
+.
+\end_layout
+
+\begin_layout Plain Layout
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "lis:exemplo1"
+
+\end_inset
+
+Representação em sintaxe Manchester do individuo "1.2.288.3.." que representa
+ uma anotação semântica em uma imagem
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+O exemplo 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "lis:exemplo1"
+
+\end_inset
+
+ descreve uma anotação semântica
+\series bold
+ 
+\series default
+representado como um individuo 
+\series bold
+
+\begin_inset Quotes eld
+\end_inset
+
+:1.2.288.3...
+\begin_inset Quotes erd
+\end_inset
+
+
+\series default
+ da classe
+\series bold
+ "AIM:ImageAnnotation"
+\series default
+ que captura da imagem; A informação gráfica (coordenadas espaciais), o
+ tamanho, a localização e a descrição da anotação feita na imagem, através
+ dos indivíduos:
+\series bold
+ 
+\begin_inset Quotes eld
+\end_inset
+
+:Polyline
+\begin_inset Quotes erd
+\end_inset
+
+, 
+\begin_inset Quotes eld
+\end_inset
+
+:LUNG
+\begin_inset Quotes erd
+\end_inset
+
+, 
+\begin_inset Quotes eld
+\end_inset
+
+:1.5465798.46468.4566874
+\begin_inset Quotes erd
+\end_inset
+
+ cm, 
+\begin_inset Quotes eld
+\end_inset
+
+:Conspicuity,Internal Structure
+\begin_inset Quotes erd
+\end_inset
+
+, 
+\series default
+respectivamente
+\series bold
+.
+
+\series default
+ A ilustração na Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:example1aim3"
+
+\end_inset
+
+, mostra como esses indivíduos do exemplo 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "lis:exemplo1"
+
+\end_inset
+
+ se relacionam uns com os outros.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:example1aim3"
+
+\end_inset
+
+Ilustração gráfica do exemplo 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "lis:exemplo1"
+
+\end_inset
+
+ onde as 9 
+\series bold
+classes base
+\series default
+ do modelo e seus individuos são mostrados.
+ Ovais e retângulos representam entidades e as propriedades são mostrados
+ em cor vermelho.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename ../figures/AIM3example.pdf
+	lyxscale 50
+	scale 21
+	rotateAngle 270
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\paragraph_spacing onehalf
+\noindent
+\align center
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+fautor
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+
+\series bold
+Expanded Terms
+\end_layout
+
+\begin_layout Standard
+As classes deste tipo são uma extensão que representam explicitamente resultados
+ de lesão e medidas derivadas durante os ensaios clínicos com base em imagens,
+ as classes nesta categoria estão listados abaixo:
+\end_layout
+
+\begin_layout Standard
+Os termos apresentados nesta seção fornecem as classes adicionais que são
+ necessárias para representar o modelo "AIM 4.0", esse modelo representa
+ explicitamente resultados de lesão e medidas derivadas durante os ensaios
+ clínicos.
+ As classes adicionais encontram-se ilustrados na figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:classes-extend"
+
+\end_inset
+
+: 
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+AIM:Entity:
+\series default
+ é uma classe abstrata que representa a existência de uma coisa, conceito,
+ observação, cálculo, medição e desenho gráfico no AIM.
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+AIM:AnnotationCollection: 
+\series default
+que é um conceito abstrato de um recipiente que reúne um tipo de anotações
+ como ImageAnnotation ou AnnotationOfAnnotation.
+
+\series bold
+ 
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+AIM:imageAnnotationCollection: 
+\series default
+armazena instâncias de ImagenAnnotation.
+ Se associa com a classe Person que contém informação demográfica do paciente.
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+AIM:ImagingPhysicalEntity
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+A unica clase no modelo que foi alterada em totalidade do seu nome para
+ 
+\series bold
+AnatomicEntity na versao 3.0 do AIM
+\end_layout
+
+\end_inset
+
+:
+\series default
+ a classe armazena uma localização anatômica como um termo codificado (por
+ exemplo, RID2662 , fêmur, RadLex ) a partir de um vocabulário controlado
+ reconhecido como RadLex®, SNOMED CT®, Sistema Único de linguagem médica
+ (UMLS).
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+AIM:ImagingPhysicalCharacteristic: 
+\series default
+descreve ImagingPhysicalEntity tais como termo codificado.
+
+\series bold
+ 
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+AIM:MarkupEntity: 
+\series default
+captura informações textuais e representação gráfica como DICOM-SR e SCOORD3D
+ para coordenadas espaciais tri e bi-dimensionais.
+\end_layout
+
+\begin_layout Standard
+As novas classes se relacionam entre si utilizando as propriedades mostradas
+ na figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:classes-extend"
+
+\end_inset
+
+ a seguir:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:classes-extend"
+
+\end_inset
+
+Neste diagrama descreve-se as classes abstratas como ovais roxas envolvendo
+ sua instância (imageAnnotationCollection, ImageAnnotation , geometricShape
+ ).
+ Pode-se ver que o nome de algumas classes mudaram em comparação com o modelo
+ 
+\series bold
+basic
+\series default
+ e agora eles tem um sufixo "Entity" o que significa que essas classes são
+ uma instância da classe abstrata principal 
+\series bold
+
+\begin_inset Quotes eld
+\end_inset
+
+Entity
+\series default
+
+\begin_inset Quotes erd
+\end_inset
+
+.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename ../figures/AIM4.pdf
+	lyxscale 40
+	scale 19
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\paragraph_spacing onehalf
+\noindent
+\align center
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+fautor
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+O exemplo seguinte ilustra os termos 
+\series bold
+
+\begin_inset Quotes eld
+\end_inset
+
+Expanded
+\begin_inset Quotes erd
+\end_inset
+
+
+\series default
+ e mostra a codificação 
+\series bold
+OWL 
+\series default
+(em sintaxe Manchester) de um individuo da ontologia 
+\series bold
+AIM4-O
+\series default
+ que representa uma anotação sobre uma imagen.
+ Como no exemplo da seção anterior o exemplo 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "lis:exemplo2"
+
+\end_inset
+
+ descreve os novos recursos de tipo 
+\series bold
+Expanded Term
+\series default
+ usados na criação da uma anotaçao.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "backgroundcolor={\color{yellow!20}},basicstyle={\tiny\ttfamily},breaklines=true,float,fontadjust=true,frame={topline},language=XSLT,numbers=left,numberstyle={\tiny},showstringspaces=false,tabsize=6"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+@prefix aim:  <http://www.w3.org/ns/aim4#> .
+\end_layout
+
+\begin_layout Plain Layout
+
+Individual: 8ixmtfhbiqujozezrep1r90t1n0po8wxyfy5svzs
+\end_layout
+
+\begin_layout Plain Layout
+
+     Types:						 ImageAnnotationCollection          
+\end_layout
+
+\begin_layout Plain Layout
+
+     Facts:
+\end_layout
+
+\begin_layout Plain Layout
+
+	    aim:hasImageAnnotations     :9gs43xqj1kyl13lmega0zhoenzvgeakkprft8fw8,
+\end_layout
+
+\begin_layout Plain Layout
+
+.
+\end_layout
+
+\begin_layout Plain Layout
+
+Individual: 9gs43xqj1kyl13lmega0zhoenzvgeakkprft8fw8
+\end_layout
+
+\begin_layout Plain Layout
+
+     Types:						 ImageAnnotation
+\end_layout
+
+\begin_layout Plain Layout
+
+     Facts:        
+\end_layout
+
+\begin_layout Plain Layout
+
+        aim:hasImageReference      :sj19n9gf050ap9uzkc2h98ye4l3rxd71jac28g3g,
+\end_layout
+
+\begin_layout Plain Layout
+
+        aim:hasMarkupEntity        :jma0x979fa9y3k4cwypqjvtechwitqb3glvdzjyw,
+\end_layout
+
+\begin_layout Plain Layout
+
+        aim:hasCalculationEntity   :a4lpf1nncfbvh5dljf6gfw6r6i3om1ece6270nix,
+\end_layout
+
+\begin_layout Plain Layout
+
+        aim:hasImagingObservation  :hojggsv5f543pzsffj8jbijgp11thm9qdjow4idd,
+\end_layout
+
+\begin_layout Plain Layout
+
+        aim:hasPhysicalEntity      :g08jnm9ow79tijgj1br3q8wd89nq69epjdnxxo30,
+\end_layout
+
+\begin_layout Plain Layout
+
+        aim:dateTime               "2014-10-05T22:15:43"^^xsd:dateTime,
+\end_layout
+
+\begin_layout Plain Layout
+
+        aim:uniqueIdentifier       "9gs43xqj1kyl13lmega0zhoenzvgeakkprft8fw8"^^x
+sd:string,            
+\end_layout
+
+\begin_layout Plain Layout
+
+        aim:comment                "CT/THORAX 1.0 B45F/273"^^xsd:string,
+      
+\end_layout
+
+\begin_layout Plain Layout
+
+        aim:name                   "Liver2"^^xsd:string
+\end_layout
+
+\begin_layout Plain Layout
+
+.
+\end_layout
+
+\begin_layout Plain Layout
+
+Individual: sj19n9gf050ap9uzkc2h98ye4l3rxd71jac28g3g
+\end_layout
+
+\begin_layout Plain Layout
+
+     Types:						DicomImageReferenceEntity
+\end_layout
+
+\begin_layout Plain Layout
+
+   Facts:
+\end_layout
+
+\begin_layout Plain Layout
+
+  aim:type                         "DicomImageReferenceEntity"^^xsd:string,
+\end_layout
+
+\begin_layout Plain Layout
+
+  aim:uniqueIdentifier             "sj19n9gf050ap9uzkc2h98ye4l3rxd71jac28g3g"^^x
+sd:string
+\end_layout
+
+\begin_layout Plain Layout
+
+.
+\end_layout
+
+\begin_layout Plain Layout
+
+Individual: jma0x979fa9y3k4cwypqjvtechwitqb3glvImageAnnotationCollectiondzjyw
+\end_layout
+
+\begin_layout Plain Layout
+
+   Types:						  TwoDimensionMultiPoint
+\end_layout
+
+\begin_layout Plain Layout
+
+   Facts:       
+\end_layout
+
+\begin_layout Plain Layout
+
+  aim:type                        "TwoDimensionMultiPoint"^^xsd:string,
+\end_layout
+
+\begin_layout Plain Layout
+
+  aim:uniqueIdentifier            "jma0x979fa9y3k4cwypqjvtechwitqb3glvdzjyw"^^xs
+d:string
+\end_layout
+
+\begin_layout Plain Layout
+
+  aim:imageReferenceUid           "1.2.826.0.1.3680043"^^xsd:string,      
+\end_layout
+
+\begin_layout Plain Layout
+
+  aim:referencedFrameNumber       273
+\end_layout
+
+\begin_layout Plain Layout
+
+.
+\end_layout
+
+\begin_layout Plain Layout
+
+Individual:   a4lpf1nncfbvh5dljf6gfw6r6i3om1ece6270nix
+\end_layout
+
+\begin_layout Plain Layout
+
+    Types:						CalculationEntity
+\end_layout
+
+\begin_layout Plain Layout
+
+   Facts:        
+\end_layout
+
+\begin_layout Plain Layout
+
+      aim:hasCalculationResult        :a4lpf1nncnixExtendedCalculationResult,
+\end_layout
+
+\begin_layout Plain Layout
+
+      aim:description                 "LineLength"^^xsd:string,      
+\end_layout
+
+\begin_layout Plain Layout
+
+      aim:typeCode                    "[{codeSystemName=private, codeSystem=Line
+Length,                          
+\end_layout
+
+\begin_layout Plain Layout
+
+      aim:uniqueIdentifier            "a4lpf1nncfbvh5dljf6gfw6r6i3om1ece6270nix"
+^^xsd:string
+\end_layout
+
+\begin_layout Plain Layout
+
+.
+\end_layout
+
+\begin_layout Plain Layout
+
+Individual:   a4lpf1nncnixExtendedCalculationResult
+\end_layout
+
+\begin_layout Plain Layout
+
+    Types:						ExtendedCalculationResult          
+\end_layout
+
+\begin_layout Plain Layout
+
+   Facts:        
+\end_layout
+
+\begin_layout Plain Layout
+
+      aim:dataType                   "[{codeSystemName=, codeSystem}]"^^xsd:stri
+ng, 
+\end_layout
+
+\begin_layout Plain Layout
+
+      aim:type                        "ExtendedCalculationResult"^^xsd:string,
+     
+\end_layout
+
+\begin_layout Plain Layout
+
+      aim:unitOfMeasure               "linear"^^xsd:string,
+\end_layout
+
+\begin_layout Plain Layout
+
+      aim:values                      1.7432112f
+\end_layout
+
+\begin_layout Plain Layout
+
+.
+\end_layout
+
+\begin_layout Plain Layout
+
+Individual:  hojggsv5f543pzsffj8jbijgp11thm9qdjow4idd
+\end_layout
+
+\begin_layout Plain Layout
+
+    Types:						 ImagingObservationEntity          
+\end_layout
+
+\begin_layout Plain Layout
+
+   Facts:        
+\end_layout
+
+\begin_layout Plain Layout
+
+  	aim:annotatorConfidence       0.0f,
+\end_layout
+
+\begin_layout Plain Layout
+
+      aim:label                     "Lesion"^^xsd:string, 
+\end_layout
+
+\begin_layout Plain Layout
+
+      aim:typeCode                  "{codeSystemName=RECIST-AMS,codeSystem=Lesio
+nBaseline,
+\end_layout
+
+\begin_layout Plain Layout
+
+                                     Evaluation,code=S81,codeSystemVersion=}"^^x
+sd:string,       	
+\end_layout
+
+\begin_layout Plain Layout
+
+      aim:uniqueIdentifier          "hojggsv5f543pzsffj8jbijgp11thm9qdjow4idd"^^
+xsd:string
+\end_layout
+
+\begin_layout Plain Layout
+
+.
+\end_layout
+
+\begin_layout Plain Layout
+
+Individual:  g08jnm9ow79tijgj1br3q8wd89nq69epjdnxxo30
+\end_layout
+
+\begin_layout Plain Layout
+
+    Types:						  ImagingPhysicalEntity          
+\end_layout
+
+\begin_layout Plain Layout
+
+	Facts:        
+\end_layout
+
+\begin_layout Plain Layout
+
+  	aim:annotatorConfidence        0.0f,      
+\end_layout
+
+\begin_layout Plain Layout
+
+  	aim:label                      "Location"^^xsd:string,      
+\end_layout
+
+\begin_layout Plain Layout
+
+  	aim:typeCode                   "{codeSystemName=RadLex,codeSystem=liver,
+\end_layout
+
+\begin_layout Plain Layout
+
+                                      code=RID58,codeSystemVersion=}"^^xsd:strin
+g, 
+\end_layout
+
+\begin_layout Plain Layout
+
+  	aim:typeCode                   "{codeSystemName=RadLex.3.10,codeSystem=
+\end_layout
+
+\begin_layout Plain Layout
+
+                                      Couinaudhepaticsegment7,code=RID67}"^^xsd:
+string,      
+\end_layout
+
+\begin_layout Plain Layout
+
+  	aim:uniqueIdentifier           "g08jnm9ow79tijgj1br3q8wd89nq69epjdnxxo30"^^xs
+d:string
+\end_layout
+
+\begin_layout Plain Layout
+
+.
+\end_layout
+
+\begin_layout Plain Layout
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "lis:exemplo2"
+
+\end_inset
+
+Representação em sintaxe Manchester de um individuo "8ixmtfhbiqujoz.." da
+ ontologia 
+\series bold
+AIM4-O,
+\series default
+ que representa uma anotação semântica em uma imagem
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Como no exemplo da seção anterior, uma anotação e sua representação na forma
+ de individuo
+\series bold
+ AIM4-O
+\series default
+ foi descrita, mas neste exemplo podemos ver que destaca o surgimento de
+ um novo conceito abstrato chamado 
+\series bold
+"ImageAnnotationCollection
+\series default
+", ele é um recipiente que armazena instâncias AIM (ImageAnnotations) a
+ partir do mesmo estudo de imagem
+\series bold
+.
+ 
+\series default
+Entre algumas outras diferenças em contraste com o exemplo da seção anterior,
+ podemos citar: o surgimento de dataProperties como 
+\series bold
+typeCode
+\series default
+, que é um atributo que pode capturar informações sobre terminologia controloda
+ em um esquema de codificação simplificado (codeSystemName=
+\series bold
+RadLex
+\series default
+, codeSystem=
+\series bold
+liver
+\series default
+, code=
+\series bold
+RID58
+\series default
+,codeSystemVersion=).
+ 
+\end_layout
+
+\begin_layout Standard
+Uma ilustração gráfica do exemplo 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "lis:exemplo2"
+
+\end_inset
+
+, mostra como as classes de tipo
+\series bold
+ Extended
+\series default
+ referem se uma a otra na figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:example1aim4"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:example1aim4"
+
+\end_inset
+
+ilustração gráfica do exemplo 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "lis:exemplo2"
+
+\end_inset
+
+ onde as classes de tipo
+\series bold
+ Extended
+\series default
+ e seus individuos são mostrados.
+ Ovais e retângulos representam entidades e as propriedades são mostrados
+ em cor vermelho.
+ A figura mostra entidades ovais cercado por linhas pontilhadas, o que significa
+ que estas entidades são classes abstratas de tipo 
+\series bold
+Entity.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename ../figures/AIM4example.pdf
+	lyxscale 50
+	scale 19
+	rotateAngle 270
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\paragraph_spacing onehalf
+\noindent
+\align center
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+fautor
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Neste trabalho, além de adicionar as novas classes, nós também adicionamos
+ algumas propriedades de objetos "
+\series bold
+ObjectProperties
+\series default
+" e de dados "
+\series bold
+DataProperties
+\series default
+".
+ A fim de conseguir isso, decidimos criar um conjunto de novas relações
+ como: 
+\series bold
+isImageStudyOf; isImageReferenceOf; hasAnnotations
+\series default
+; que foram adicionados à ontologia do Hakan Bulu 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:aim3hakan"
+
+\end_inset
+
+ e fazem parte da nova ontologia 
+\series bold
+AIM4-O
+\series default
+.
+ O objectivo destas relações é para adicionar à AIM4-O a maior expressividade
+ em tarefas de classificação complexas, tal como os critérios do clasificação
+ TNM 
+\series bold
+
+\begin_inset Quotes eld
+\end_inset
+
+_MoreThanOneTumor
+\series default
+
+\begin_inset Quotes erd
+\end_inset
+
+.
+ Cada um de essas relações é uma propriedade inverso funcional das propiedades:
+ 
+\series bold
+hasImageStudy
+\series default
+; 
+\series bold
+hasImageReference
+\series default
+ e
+\series bold
+ hasPerson
+\series default
+ respectivamente, de modo eles só pode ter um valor.
+ Mais formalmente, se estabelecermos que 
+\emph on
+hasAnnotations
+\emph default
+ é 
+\emph on
+:inverseFunctionalProperty
+\emph default
+ de 
+\emph on
+hasPerson
+\emph default
+ podemos dizer que não pode haver duas pessoas diferentes, com a mesma anotação.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement h
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:objectPropertiesAIM4"
+
+\end_inset
+
+ A figura mostra as Object Properties adicionadas à ontologia do Hakan Bulu
+ e fazem parte da nova ontologia 
+\series bold
+AIM4-O
+\series default
+, podemos ver na figura o ObjectProperty 
+\series bold
+hasAnnotations
+\series default
+ como propiedade funcional inversa da propiedade 
+\series bold
+hasPerson
+\series default
+.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename ../figures/inversefunctional.pdf
+	lyxscale 50
+	scale 22
+	rotateOrigin center
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\paragraph_spacing onehalf
+\noindent
+\align center
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+fautor
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+AIM4-O
+\series default
+ é uma ontologia leve que foi desenvolvido com a intenção de ser adotado
+ em uma gama de aplicações o outras disciplinas relacionadas ao processamento
+ de metadados de imagem.
+ 
+\series bold
+AIM4-O
+\series default
+ está de acordo com o perfil 
+\series bold
+OWL-DL
+\series default
+.
+ Assim, a ontologia espera para ser usado directamente em aplicações, bem
+ como servir como um modelo de referência para a criação de ontologias de
+ domínio específico como por exemplo em radiologia.
+ Para demonstrar o uso das classes AIM4-O e suas propriedades, esse documento
+ usa um cenário de exemplos como acima mencionados.
+\end_layout
+
+\begin_layout Section
+Desenvolver um mecanismo para transformar as anotações no formato AIM-XML
+ para instâncias da ontologia AIM4-O.
+\end_layout
+
+\begin_layout Standard
+O segundo passo foi definir um mecanismo para transformar as anotaçoes no
+ formato AIM-XML às suas equivalentes codificados en OWL(individuos da ontologia
+ AIM4-O).
+ Para isso, desenvolvemos um script para executar esta tarefa.
+ O script usa a linguagem Groovy para mapear automaticamente documentos
+ XML para instâncias das classes java
+\series bold
+-AIM
+\series default
+.
+ As classes tipo java-AIM representan o conjunto de classes 
+\series bold
+Java
+\series default
+ baseada na representaçao UML do modeloAIM 4.0.
+ Posteriormente, o 
+\series bold
+OWL-api 
+\series default
+(o java API e implementação para criar, manipular e serializar Ontologias)
+ foi usada para criar instâncias 
+\series bold
+OWL
+\series default
+ destes classes Java, permitindo assim ao script processar fluxos de documentos
+ XML e preencher uma base de conhecimento OWL com o seu conteúdo 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:aim4individuos"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:aim4individuos"
+
+\end_inset
+
+Instâncias de anotações(individuos) AIM são mostrados no painel esquerdo,
+ e os detalhes e propriedades de uma instância são mostrados na direita.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename ../figures/AIM4protegeindividuos.png
+	lyxscale 75
+	scale 35
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\paragraph_spacing onehalf
+\noindent
+\align center
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+fautor
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+O objectivo da representação OWL acima, é ter as condições para desenvolver
+ mecanismos de reasoning baseados em regras e trabalhar com anotações do
+ AIM.
+ Para atingir o objetivo da classificação da lesões de câncer, usamos as
+ subclasses, interseção, equivalência e disjunção entre as classes, object
+ properties e algumas regras como mecanismos de raciocínio.
+ Este processo será descrito na próxima etapa.
+\end_layout
+
+\begin_layout Section
+Gerar as condições para implementar o reasoning baseado em regras TNM que
+ utilizam instâncias OWL.
+\end_layout
+
+\begin_layout Standard
+A fim de classificar lesões do um tipo de cancer apartir das imagens e suas
+ anotações precisamos ter o apoio de uma ontologia capaz de especificar
+ a semântica das observações de imagem de um domínio particular, neste caso
+ o corpo humano e mais especificamente um organo que vai ser seleccionado
+ de acordo como o tipo de câncer que vão avaliar(neste trabalho vai ser
+ o câncer de figado).
+ Além disso, considerou-se necessário a inclusão de uma representação em
+ 
+\series bold
+owl
+\series default
+ de uma parte do vocabulário Radlex, a fim de faciliar o trabalho de classificaç
+ão e tratamento de indivíduos, estes indivíduos têm terminologias de Radlex
+ em sua estrutura.
+ Finalmente, foi adicionado à ontologia gerada o conjunto de regras baseadas
+ no sistema TNM.
+ O resultado é uma 
+\series bold
+Ontologia geral 
+\series default
+construída a partir das exigências acima mencionadas.
+\end_layout
+
+\begin_layout Subsubsection
+Ontologia geral
+\end_layout
+
+\begin_layout Standard
+A 
+\series bold
+ontologia geral
+\series default
+ é dividido em 3 arquivo, como motra a Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:ontologiaGeral"
+
+\end_inset
+
+.
+ Os Arquivos contêm as seguintes informações:
+\end_layout
+
+\begin_layout Enumerate
+Os conceitos gerais do 
+\series bold
+TNM(
+\series default
+regras SWRL e axiomas
+\series bold
+)
+\end_layout
+
+\begin_layout Enumerate
+Onlira.owl: a topografia do fígado (com base na Ontologia Onlira 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Kokciyan2014"
+
+\end_inset
+
+ ) 
+\end_layout
+
+\begin_layout Enumerate
+ModuleRadlex.owl: Uma parte do vocabulário Radlex 
+\begin_inset Foot
+status open
+
+\begin_layout Description
+http://bioportal.bioontology.org/ontologies/RADLEX/classes.
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:ontologiaGeral"
+
+\end_inset
+
+ O diagrama da ontologia geral, seus componentes TNM (regras e axiomas)
+ e importações necessárias a fim de ter os mecanismos para classificar imagens
+ de câncer de figado.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename ../figures/ontologiageral.pdf
+	lyxscale 50
+	scale 20
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\paragraph_spacing onehalf
+\noindent
+\align center
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+fautor
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+As seções a seguir fornecem uma descrição das ontologias utilizadas como
+ parte da 
+\series bold
+Ontologia Geral
+\series default
+.
+\end_layout
+
+\begin_layout Subsubsection
+Criando classes do conceitos do sistema TNM 
+\end_layout
+
+\begin_layout Standard
+A fim de obter uma representação OWL de cada estágio TNM, precisamos de
+ uma interpretação da sua definição.
+ Embora não seja mencionado explicitamente, os critérios TNM são exclusivos,
+ por isso as classes OWL correspondentes foram feitas disjuntas.
+ Por exemplo, o critério do staging T2 é representado pela união de duas
+ restrições: a primeira, representa um único tumor (de qualquer tamanho)
+ que tem crescido em vasos sanguíneos (classe 
+\series bold
+T2_a)
+\series default
+, ea segunda representa um único tumor não maior do que 5 cm (classe 
+\series bold
+T2_b
+\series default
+) respectivamente.
+\end_layout
+
+\begin_layout Subsubsection
+ONLIRA (Ontologia de figado para Radiologia)
+\end_layout
+
+\begin_layout Standard
+A ontologia ONLIRA foi desenvolvida como parte do projeto CaReRa
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Kokciyan2014"
+
+\end_inset
+
+.
+ ONLIRA
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+https://bioportal.bioontology.org/ontologies/ONLIRA 
+\end_layout
+
+\end_inset
+
+ visa modelar observações de imagem do domínio do fígado com ênfase em proprieda
+des e as relações entre o fígado, as veias hepáticas e lesões hepáticas.
+ O desenho de ONLIRA baseou-se em sessões de elicitação com radiologistas.
+ 
+\end_layout
+
+\begin_layout Standard
+Partes desta ontologia foram utilizadas para representar a topografia do
+ fígado descrito nas anotações AIM-XML gerado pelo ePAD 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Silvio2014"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:onliraontology"
+
+\end_inset
+
+mostra as relações entre as classes e outros conceitos de ONLIRA utilizados
+ neste trabalho.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename ../figures/ONLIRA.pdf
+	lyxscale 50
+	scale 30
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\paragraph_spacing onehalf
+\noindent
+\align center
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+fautor
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Terminologia Radlex
+\end_layout
+
+\begin_layout Standard
+AIM fornece um esquema XML que descreve as estruturas anatômicas e observações
+ visuais em imagens utilizando a terminologia RadLex.
+ Foi usado partes de RadLex para representar essas estruturas anatômicas
+ e representar critérios de classificação TNM em OWL.
+\end_layout
+
+\begin_layout Standard
+Os critérios TNM referem-se a locais de entidades e estruturas anatômicas.
+ Em seguida, é importante que a ontologia contém não apenas as estruturas
+ anatómicas mencionados nos critérios de staging, mas também as partes ligadas
+ direta e indiretamente a eles.
+ Por exemplo, a fim de implementar os critérios N e M do TNM, nós adicionamos
+ 2 Super classes: 
+\series bold
+adjacentOrganGroup
+\series default
+ que descreve o conjunto de órgãos adjacentes a um órgão principal ( neste
+ caso o fígado) e 
+\series bold
+noadjacentOrganGroup
+\series default
+ que descreve órgãos com base nos locais mais comuns de disseminação do
+ tumor, conforme ao trabalho do 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Faria2014"
+
+\end_inset
+
+.
+ Como neste trabalho foi tomado como caso de estudo a classificacao do cancer
+ de fígado, incluímos pulmões e ossos como órgãos no adjacentes, isso pode
+ ser visto na Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:radlexmodule"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:radlexmodule"
+
+\end_inset
+
+módulo da ontologia Radlex e as classes que representam grupos de órgãos,
+ tais como 
+\series bold
+adjacentOrganGroup
+\series default
+ e 
+\series bold
+noadjacentOrganGroup
+\series default
+.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename ../figures/radlexmodule.pdf
+	scale 45
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\paragraph_spacing onehalf
+\noindent
+\align center
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+fautor
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Reasoning sobre lesões de câncer
+\end_layout
+
+\begin_layout Standard
+Nas seções anteriores, várias operações foram necessárias para melhorar
+ a 
+\series bold
+Ontologia Geral
+\series default
+.
+ Em primeiro lugar, nós adicionamos novas classes e propriedades para preencher
+ a lacuna entre as características do tumor descritos no modelo AIM-xml
+ e as classes presentes na ontologia AIM4-O.
+ Em segundo lugar, nós fornecemos definições para: todos os estagios TNM;
+ a topografia do órgãos como o fígado; parte da terminologia RadLex, a fim
+ de representar os seus conhecimentos em OWL.
+ Finalmente esta seção descreve a representação formal necessária para 
+\emph on
+staging 
+\emph default
+do câncer utilizando apenas expressividade OWL se possível (apenas OWL +
+ SWRL).
+\end_layout
+
+\begin_layout Subsection
+Representação Formal do 
+\emph on
+staging
+\emph default
+ do câncer
+\end_layout
+
+\begin_layout Standard
+O staging do câncer é dividido em duas etapas principais: A primeira etapa
+ consiste em dar uma contagem a partir da descrição do tumor (T); a propagação
+ em gânglios linfáticos (N) e possível metástase (M).
+ O segundo passo consiste em determinar o estágio de acordo com as pontuações
+ anteriores.
+\end_layout
+
+\begin_layout Standard
+A fim de descobrir os limites da capacidade de OWL e as capacidades fornecidas
+ pela adição de regras e axiomas, buscou-se definir formalmente e implementar
+ as condições que exige o sistema TNM, usando apenas expressividade OWL
+ + SWRL.
+\end_layout
+
+\begin_layout Standard
+Decidimos que as seguintes condições reflectiu um processo de staging desejável:
+\end_layout
+
+\begin_layout Description
+Condição 1: O staging do câncer deve considerar a existência de tumor solitário
+ ou múltiplo no mesmo site
+\end_layout
+
+\begin_layout Description
+Condição 2: Os tumores deve ser maior ou menor que 5 cm
+\end_layout
+
+\begin_layout Description
+Condição 3 : Staging deve considerar lesões em órgãos adjacentes
+\end_layout
+
+\begin_layout Subsubsection
+Representação formal das condições usando OWL
+\end_layout
+
+\begin_layout Subsubsection*
+
+\series bold
+Condição 1: "O staging do câncer deve considerar a existência de tumor solitário
+ ou múltiplo no mesmo site"
+\end_layout
+
+\begin_layout Standard
+A ontologia 
+\series bold
+AIM4-O
+\series default
+, previamente desenvolvida, não tem mecanismos tais como classes, subclasses
+ ou propriedades que nos permitem inferir se um paciente tem tumores simples
+ ou múltiplos explicitamente.
+ No caso de tumores múltiplos, construímos a seguinte regra 
+\series bold
+"MoreThanOneTumor " 
+\series default
+(em notação SWRL ) :
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{gather*}
+\hline ImageStudy(?X)\land isImageStudyOf(?x,?y)\land isImageStudyOf(?x,?z)\land\\
+DifferentFrom(?y,?z)\rightarrow MoreThanOneTumor(?x)\\
+\hline 
+\end{gather*}
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+Esta regra classifica um individuo como membro da classe 
+\series bold
+MorethanOneTumor
+\series default
+, se um estudo de imagem 
+\begin_inset Quotes eld
+\end_inset
+
+X
+\begin_inset Quotes erd
+\end_inset
+
+ é referenciado por mais de uma anotaçao da imagem.
+ Para classificar algo tão 
+\series bold
+MorethanOneTumor
+\series default
+, precisávamos criar um novo conceito chamado: 
+\series bold
+isImageStudyOf
+\series default
+.
+ Este conceito é a inversa da Objectproperty 
+\series bold
+hasImageStudy
+\series default
+.
+ A propriedade 
+\series bold
+hasImageStudy 
+\series default
+relaciona uma entidade de tipo 
+\series bold
+ImageAnnotation 
+\series default
+a uma entidade 
+\series bold
+ImageStudy
+\series default
+.
+\end_layout
+
+\begin_layout Standard
+A fim de classificar os pacientes com exatamente um tumor identificado.
+ Nós não conseguimos encontrar axiomas ou regras que satisfazem esta exigência,
+ porque 
+\series bold
+OWL 
+\series default
+tem uma pressuposição de mundo aberto
+\series bold
+ 
+\series default
+ou
+\series bold
+ Open World
+\series default
+.
+ 
+\begin_inset Quotes eld
+\end_inset
+
+O mundo aberto significa que só porque nós não dizer algo, isso não significa
+ que não é verdade
+\begin_inset Quotes erd
+\end_inset
+
+.
+ Por exemplo, pode-se dizer que nós podemos descrever uma lesão de cancer
+ em uma imagen usando a entidade de tipo 
+\emph on
+ImagingObservation
+\emph default
+ do modelo AIM, mas, a menos que eu diga explicitamente que não há outras
+ lesões nessa imagen, presume-se que pode haver outra lesão que eu não mencionei
+ explicitamente.
+\end_layout
+
+\begin_layout Standard
+Para resolver o problema de 
+\series bold
+mundo aberto
+\series default
+(Open World), consideramos algumas alternativas como por exemplo: A necessidade
+ de reformular a nossa ontologia para modelar "
+\series bold
+hasImagingObservation
+\series default
+" como uma classe, e não como uma relação ObjectProperty como actualmente
+ na ontologia 
+\series bold
+AIM4-O
+\series default
+.
+ Mas, isso não parece intuitivo para nós.
+ Em vez disso, decidimos indicar o número de lesões de forma explícita através
+ da criação de um novo conceito chamado: 
+\series bold
+singleLesion
+\series default
+, como uma ObjectProperty da entidade 
+\series bold
+ImageStudy
+\series default
+.
+ Este conceito indica se o estudo descreve apenas uma lesão do câncer na
+ imagen.
+ Assumiu-se que o estudo descreve exatamente uma lesão câncer (" 
+\series bold
+singleLesion { true}
+\series default
+"), se ele é referenciado por uma única anotação na imagem.
+ Mas, Não foi possível formular o pressuposto acima usando apenas
+\series bold
+ OWL
+\series default
+.
+ Em vez disso, utilizou-se uma estrutura de dados como referencia, a estrutura
+ de dados e mostrada na Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:estrutura"
+
+\end_inset
+
+.
+ Esta estrutura de dados foi gerado como parte do processo de 
+\emph on
+parsing
+\emph default
+ das anotacoes de imagem no formato XML para criar indivíduos da ontologia
+ AIM4-O.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:estrutura"
+
+\end_inset
+
+é apresentada a definição da estrutura de dados gerado na etapa de 
+\emph on
+parsing 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename ../figures/TNM Staging Documentation.pdf
+	scale 70
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\paragraph_spacing onehalf
+\noindent
+\align center
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+fautor
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Finalmente, para classificar anotações que descrevem uma única lesão, construímo
+s a regra 
+\series bold
+"Tumor Single
+\series default
+" (em notação SWRL):
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{gather*}
+\hline ImageStudy(?X)\land singleLesion(?X,?val)\land\\
+equal(?val,true)\rightarrow singleTumor(?X)\\
+\hline 
+\end{gather*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+Condição 2: "Os tumores deve ser maior ou menor que 5 cm"
+\end_layout
+
+\begin_layout Standard
+Esta condição é facilmente implementado, obtendo o valor da propiedade "
+\emph on
+values
+\emph default
+" pertenecente à entidade
+\series bold
+ CalculationResult.
+
+\series default
+ Esta entidade está relacionado com outra entidade de tipo 
+\series bold
+ImageAnnotation
+\series default
+ através da propriedade 
+\series bold
+hasCalculationEntity
+\series default
+.
+ A fim de satisfazer esta condição de medição, formulamos as seguintes regras
+ (na notação SWRL): 
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+
+\series bold
+LessThan5cmTumor
+\series default
+ 
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+\begin_inset Formula 
+\begin{gather*}
+\hline ImageAnnotation(?x)\land hasCalculationEntity(?x,?y)\land hasCalculationResult(?y,?z)\land\\
+values(?z,?val)\land lessThan(?val,5)\rightarrow lessThan5cmTumor(?x)\\
+\hline 
+\end{gather*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+
+\series bold
+MoreThan5cmTumor
+\series default
+ 
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+\begin_inset Formula 
+\begin{gather*}
+\hline ImageAnnotation(?x)\land hasCalculationEntity(?x,?y)\land hasCalculationResult(?y,?z)\land\\
+values(?z,?val)\land greaterThan(?val,5)\rightarrow MoreThan5cmTumor(?x)\\
+\hline 
+\end{gather*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+Condição 3 : "Staging deve considerar lesões em órgãos adjacentes"
+\end_layout
+
+\begin_layout Standard
+Para satisfazer o critério mais complicado de classificação tivemos que
+ considerar o fato de que uma lesão pode espalhar-se no corpo.
+ Para isso, foi necessário criar um novo conceito baseado na classe 
+\series bold
+Lesion
+\series default
+ da ontologia 
+\series bold
+Onlira
+\series default
+
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:onliraontology"
+
+\end_inset
+
+.
+ Enquanto a classe 
+\series bold
+Lesion
+\series default
+ lida com muitas características importantes de uma lesão tais como: a composiçã
+o, densidade, tamanho, forma, etc, infelizmente isso não é suficiente para
+ satisfazer os criterios da classificação TNM.
+ Por esta razão, foram adicionados 3 propriedades a ele e, como resultado
+ definimos un novo conceito, a subclasse 
+\series bold
+OutsideLesion
+\series default
+, As 3 novas propriedades são:
+\end_layout
+
+\begin_layout Description
+hasLocation ObjectProperty: Esta propriedade indica a localização das lesões
+ com base na taxonomia 
+\series bold
+Radlex
+\series default
+.
+ A propiedade 
+\series bold
+hasLocation
+\series default
+ relaciona as instâncias da classe 
+\series bold
+Lesion
+\series default
+ da Ontologia Onlira aos membros da classe 
+\series bold
+AnatomicalEntity
+\series default
+ do modulo Radlex usado neste trabalho.
+\end_layout
+
+\begin_layout Description
+isRegionalLymphNodeAffected ObjectProperty: Especifica se uma lesão está
+ localizada em algum nódulo linfático.
+ Esse conceito foi útil para os critérios de classificação como N0 e N1.
+\end_layout
+
+\begin_layout Description
+isAdjacentOrgan object property: Indica se a lesão presente no local "X"
+ está perto de órgão "Y".
+ De acordo com o critério de classificação TNM do cancer de fígado, considerou-s
+e como órgãos adjacentes ao fígado: o pâncreas, estômago, duodeno, fígado,
+ cólon, etc.
+ (ver figura 2).
+ Nós agrupamos esses conceitos(usando a taxonomia radlex), criando duas
+ novas classes 
+\series bold
+"AdjacentOrganGroup"
+\series default
+ e "
+\series bold
+NoAdjacentOrganGroup"
+\series default
+:
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+\begin_inset Formula 
+\begin{gather*}
+\hline NoAdjacentOrganGroup\subseteq RadlexEntity.Organ\\
+AdjacentOrganGroup\subseteq RadlexEntity.Organ\\
+\hline 
+\end{gather*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+AdjacentOrganGroup
+\emph default
+ e 
+\emph on
+NoAdjacentOrganGroup
+\emph default
+, indicam se um órgão é considerado adjacente ou não em referência ao órgão
+ pai.
+ O órgão pai representa o tipo do
+\series bold
+\emph on
+ 
+\series default
+staging
+\emph default
+ de cancer, para o nosso estudo de caso o órgão pai é o fígado.
+ Finalmente, construímos a seguinte regra (em notação SWRL) para classificar
+ se uma lesao fora do figado 
+\series bold
+(
+\series default
+representado pelo conceito
+\series bold
+ 
+\series default
+\emph on
+OutsideLesion
+\series bold
+\emph default
+)
+\series default
+ está localizada em um órgão adjacente:
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+\begin_inset Formula 
+\begin{gather*}
+\hline Lesion(?x)\land adjacentOrganGroup(?y)\land\\
+hasLocation(?x,?y)\rightarrow isAdjacentOrgan(?x,true)\\
+\hline 
+\end{gather*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Neste ponto, uma vez formulados os criterios acima adequadamente usando
+ 
+\series bold
+OWL e SWRL
+\series default
+, nós usamos eles para construir os seguintes axiomas e regras, a fim de
+ ser capaz de classificar automaticamente lesões cancerosas utilizando o
+ sistema TNM (ver Tabelas 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Tcriteria"
+
+\end_inset
+
+, 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Ncriteria"
+
+\end_inset
+
+, 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Mcriteria"
+
+\end_inset
+
+).
+ Notamos que a maneira que nós modelamos as coisas importava.
+ Por exemplo, foi mais fácil para definir 
+\series bold
+N1a, N0
+\series default
+ e reutilizar suas definições para 
+\series bold
+M0
+\series default
+, ao invés de começar com a definição de
+\series bold
+ M0
+\series default
+ através da manipulação de closures complexos.
+\end_layout
+
+\begin_layout Standard
+Com a utilização da ontologia 
+\series bold
+AIM4-O
+\series default
+, os conceitos podem ser facilmente relacionados uns com os outros como
+ foi demonstrado anteriormente.
+ Além disso, os requisitos de integridade e de cardinalidade pode ser especifica
+da e executada com fins de
+\emph on
+ 
+\series bold
+reasoning
+\series default
+\emph default
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways true
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Tcriteria"
+
+\end_inset
+
+American Joint Committee on Cancer/International Union against cancer TNM
+ classification system and formal representation 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+resizebox{0.7
+\backslash
+textwidth}{!}{
+\end_layout
+
+\end_inset
+
+
+\begin_inset Tabular
+<lyxtabular version="3" rows="11" columns="2">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="center" valignment="top" width="7cm">
+<column alignment="center" valignment="top" width="16cm">
+<row>
+<cell multicolumn="1" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Primary tumor (T)
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Medical representation for T1 criterion:
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Solitary tumor (any size) without vascular invasion 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Formal representation for T1 in OWL-DL
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula 
+\begin{multline*}
+\equiv NoVascularInvadedTumor\land\\
+\ni hasImageReference.ImageReferenceEntity\land\\
+ImageReferenceEntity\land\ni hasImageStudy.ImageStudy\land SingleTumor
+\end{multline*}
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Medical representation for T2a criterion : 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Solitary tumor (any size) with vascular invasion
+\series default
+ 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Formal representation for T2a in OWL-DL
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula 
+\begin{multline*}
+\equiv VascularInvadedTumor\land\\
+\ni hasImageReference.ImageReferenceEntity\land\\
+ImageReferenceEntity\land\ni hasImageStudy.ImageStudy\land SingleTumor
+\end{multline*}
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Medical representation for T2b criterion :
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+multiple tumors none < 5cm
+\series default
+ 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Formal representation for T2b in OWL-DL
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula 
+\begin{multline*}
+\equiv LessThan5cmTumor\land\\
+\ni hasImageReference.ImageReferenceEntity\land\\
+ImageReferenceEntity\land\ni hasImageStudy.ImageStudy\land MoreThanOneTumor
+\end{multline*}
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Medical representation for T3a criterion : 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Multiple tumors, with at least one tumor > 5cm
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Formal representation for T3b in OWL-DL 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula 
+\begin{multline*}
+\equiv MoreThan5cmTumor\land\\
+\ni hasImageReference.ImageReferenceEntity\land\\
+ImageReferenceEntity\land\ni hasImageStudy.ImageStudy\land MoreThanOneTumor
+\end{multline*}
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Medical representation for T4a criterion : 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Tumors with direct invasion of adjacent organs other than the gallbladder
+ 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Formal representation for T4a in SWRL 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula 
+\begin{multline*}
+outsideLesion(?x)\land hasLocation(?x,?y)\land\\
+isAdjacentOrgan(?x,true)\rightarrow T4a(?x)
+\end{multline*}
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways true
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Ncriteria"
+
+\end_inset
+
+American Joint Committee on Cancer/International Union against cancer TNM
+ classification system and formal representation 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+resizebox{0.9
+\backslash
+textwidth}{!}{
+\end_layout
+
+\end_inset
+
+
+\begin_inset Tabular
+<lyxtabular version="3" rows="7" columns="2">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="center" valignment="top" width="7cm">
+<column alignment="center" valignment="top" width="14cm">
+<row>
+<cell multicolumn="1" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Regional lymph nodes (N) 
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Medical representation for N0 criterion : 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Solitary tumor (any size) without vascular invasion 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Formal representation for N0a in SWRL
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula 
+\begin{multline*}
+Lesion(?x)\land isRegionalLymphNodeAffected(?x,false)\rightarrow N0a(?x)
+\end{multline*}
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Formal representation for N0 in OWL-DL 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula 
+\begin{multline*}
+\equiv ImageAnnotation.hasLesion\land\ni N0a
+\end{multline*}
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Medical representation for N1 criterion : 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Regional lymph node metastasis
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Formal representation for N1a in SWRL
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula 
+\begin{multline*}
+Lesion(?x)\land organcomponentofymphatitree(?y)\land\\
+outsideLesion(?x)\land hasLocation(?x,?y)\rightarrow N1a(?x)
+\end{multline*}
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Formal representation for N1a in OWL-DL 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula 
+\begin{multline*}
+\equiv ImageAnnotation.hasLesion\land\ni N1a
+\end{multline*}
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways true
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Mcriteria"
+
+\end_inset
+
+American Joint Committee on Cancer/International Union against cancer TNM
+ classification system and formal representation 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+resizebox{0.9
+\backslash
+textwidth}{!}{
+\end_layout
+
+\end_inset
+
+
+\begin_inset Tabular
+<lyxtabular version="3" rows="5" columns="2">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="center" valignment="top" width="7cm">
+<column alignment="center" valignment="top" width="14cm">
+<row>
+<cell multicolumn="1" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Distant metastasis (M) 
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Medical representation for M0 criterion : 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+No distant metastasis
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Formal representation for M0 in OWL-DL 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula 
+\begin{multline*}
+\equiv ImageAnnotation.hasLesion\land\ni N0\lor N1a
+\end{multline*}
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Medical representation for M1 criterion : 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Distant metastasis 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Formal representation for M1 in OWL-DL 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula 
+\begin{multline*}
+\equiv ImageAnnotaion.hasLesion\land\ni Onlira.Lesion\land\\
+Lesion.hasLocation\land\ni Organ.noadjacentOrganGroup
+\end{multline*}
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Considerações Finais
+\end_layout
+
+\begin_layout Standard
+Neste capitulo, foram descritas as etapas necessárias para alcançar a implementa
+ção de um sistema de classificação de cancer baseado em anotações contidas
+ em imagens médicas.
+ Para conseguir isso, foi necessário uma representação formal híbrida baseado
+ em regras SWRL e exiomas dos criterios de classificação TNM.
+ Alem disso, o sistema foi suportado pelas ontologias AIM4-O(extensão do
+ trabalho de 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Bulu"
+
+\end_inset
+
+), ONLIRA e Radlex.
+ No processo de implementação foram encontrados problemas como o mundo aberto
+ (Open World) , embora houvesse muitas alternativas para resolver o problema,
+ nosso grupo de pesqeuisa escolheu por utilizar a mais simple usando uma
+ estruturas de dados.
+\end_layout
+
+\begin_layout Standard
+O próximo capitulo conlui a dissertação consolidando os resultados obtidos
+ nas avaliações e resaltando as principais contribuções e limitações desta
+ pesquisa.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+A fim de melhorar a forma de trabalho na área de saúde, as tecnologias da
+ Web Semântica podem auxiliar as pesquisas médicas e encontrar soluções
+ através do auxilio de computadores, como, por exemplo, o uso dos formatos
+ OWL, SWRL e AIM para processar (reason) anotações de imagens médicas.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

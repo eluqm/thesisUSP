@@ -6,8 +6,6 @@
 \begin_preamble
 \usepackage{indentfirst}
 \usepackage{float}
-%\usepackage{helvet}
-%\usepackage[scaled]{uarial}
 \usepackage{titlesec}
 \usepackage{tikz, blindtext}
 \usetikzlibrary{shapes.multipart}
@@ -17,27 +15,23 @@
 \usepackage[brazil]{babel}
 \usepackage[brazilian,hyperpageref]{backref} 
 \setlength{\parindent}{48pt}
-%\usepackage{fontspec}
-%\setmainfont{Arial}
-%\usepackage[style=authoryear,natbib=true,backend=biber]{biblatex}
 \usepackage[alf]{abntex2cite}
-%\usepackage[num]{abntex2cite}  
-%\addbibresource{/Applications/thesisUSP/references/refsabnt.bib}
-%\usepackage[backend=biber]{biblatex}
-%\usepackage[backend=biber, style=abnt]{biblatex}
-%changing hyperref color  
-%\usepackage{uarial}
 \usepackage{lmodern}
 \usepackage{hyperref} 
 \hypersetup{%     
 pdfborder = {0 0 0},     
-colorlinks,     
+colorlinks ,     
 citecolor=blue,     
 filecolor=blue,     
 linkcolor=blue,     
-urlcolor=cyan!50!black!90 
+urlcolor=blue 
 }
 
+
+%================================================================================
+%======================================
+%estilo do section, subsection e subsubsection
+%======================================
 
 \titleformat{\section}
   {\normalfont\fontsize{16pt}{18pt}\selectfont\bfseries}{\thesection}{1em}{}
@@ -47,30 +41,7 @@ urlcolor=cyan!50!black!90
   {\normalfont\fontsize{12pt}{14pt}\selectfont\bfseries}{\thesubsubsection}{1em}{}
 
 
-
-
-\def\mystrut{\vrule height 1cm depth 1.5cm width 0pt} 
-\tikzset{
- state/.style={
-       rectangle split,
-       rectangle split parts=2,
-       rectangle split part fill={black,white},
-       %rounded corners,
-       draw=black, very thick,
-       minimum height=2em,
-       text width=3cm,
-       inner sep=3pt,
-       text centered,
-       }
-}
-
 %================================================================================
-
-%\renewcommand{\familydefault}{\sfdefault}
-%\renewcommand*\familydefault{\sfdefault} 
-%\renewcommand\sffamily\bfseries.
-%\renewcommand*\sectfont{\normalcolor\bfseries}
-%\renewcommand{\rmfamily}
 %======================================
 %Pacotesdecitações 
 %======================================
@@ -140,8 +111,7 @@ urlcolor=cyan!50!black!90
 } 
 
 }
-
-%\vskip 4.3ex \flushright\chaptitlefont\bfseries\ABNTEXchapterupperifneeded{##1} \\         
+        
 \chapterstyle{box}
 
 %=================================
@@ -164,14 +134,11 @@ urlcolor=cyan!50!black!90
 }
 \makeatother
 \pagestyle{ruled}
+
 %================================================================================
-% Configuração da fonte utilizada na capa exigida pelo ICMC
+% Configuração das legendas nas figuras e tabelas
 %================================================================================
 
-%\newcommand{\@icmcFont}[2][]{\fontsize{#2}{#2}\ifthenelse{\isempty{#1}}{}{\fontspec[Mapping = tex-text, Path = packages/fonts/]{#1}}}
-
-% Legendas utilizadas em Figuras / Tabelas / Etc.
-% Legendas utilizadas em Figuras / Tabelas / Etc.
 \newcommand{\fautor}{\legend{Fonte: Elaborada pelo autor.}}
 \newcommand{\fadaptada}[2][]{\legend{Fonte: Adaptada de \citeonline[#1]{#2}.}}
 \newcommand{\fdireta}[2][]{\legend{Fonte: \citeonline[#1]{#2}.}}
@@ -291,7 +258,10 @@ EndPreamble
 \begin_body
 
 \begin_layout Standard
-\begin_inset Newpage cleardoublepage
+\begin_inset External
+	template PDFPages
+	filename capaicmc/rosto1.pdf
+
 \end_inset
 
 
@@ -305,7 +275,10 @@ EndPreamble
 \end_layout
 
 \begin_layout Standard
-\begin_inset Newpage cleardoublepage
+\begin_inset External
+	template PDFPages
+	filename capaicmc/rosto2.pdf
+
 \end_inset
 
 
@@ -319,7 +292,61 @@ EndPreamble
 \end_layout
 
 \begin_layout Standard
+\begin_inset External
+	template PDFPages
+	filename capaicmc/afterepigrafe.pdf
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 \begin_inset Newpage cleardoublepage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset External
+	template PDFPages
+	filename capaicmc/dedicatoria.pdf
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage cleardoublepage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset External
+	template PDFPages
+	filename capaicmc/agradecimiento.pdf
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage cleardoublepage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset External
+	template PDFPages
+	filename capaicmc/afteragradecimiento.pdf
+
 \end_inset
 
 
@@ -362,49 +389,6 @@ filename "abstract/AbstractAbntIngles.lyx"
 \end_layout
 
 \begin_layout Standard
-\begin_inset Newpage cleardoublepage
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-frontmatter
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-clearpage
-\backslash
-null
-\backslash
-newpage
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
 \begin_inset FloatList figure
 
 \end_inset
@@ -413,20 +397,7 @@ newpage
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-clearpage
-\backslash
-null
-\backslash
-newpage
-\end_layout
-
+\begin_inset Newpage newpage
 \end_inset
 
 
@@ -434,26 +405,6 @@ newpage
 
 \begin_layout Standard
 \begin_inset FloatList table
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-clearpage
-\backslash
-null
-\backslash
-newpage
-\end_layout
 
 \end_inset
 
@@ -471,17 +422,6 @@ newpage
 \begin_layout Standard
 \begin_inset ERT
 status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-clearpage
-\backslash
-null
-\backslash
-newpage
-\end_layout
 
 \begin_layout Plain Layout
 
@@ -527,17 +467,6 @@ status open
 
 
 \backslash
-clearpage
-\backslash
-null
-\backslash
-newpage
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
 renewcommand{
 \backslash
 nomname}{Lista De Abreviaturas e Siglas}
@@ -559,20 +488,7 @@ set_width "auto"
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-clearpage
-\backslash
-null
-\backslash
-newpage
-\end_layout
-
+\begin_inset Newpage newpage
 \end_inset
 
 
@@ -587,22 +503,6 @@ LatexCommand tableofcontents
 
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-mainmatter
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
 \begin_layout Chapter
 Introdução
 \end_layout
@@ -610,7 +510,7 @@ Introdução
 \begin_layout Standard
 \begin_inset CommandInset include
 LatexCommand input
-filename "chapters/introducao.lyx"
+filename "chapters/1_introducaoABNT.lyx"
 
 \end_inset
 
@@ -618,13 +518,13 @@ filename "chapters/introducao.lyx"
 \end_layout
 
 \begin_layout Chapter
-Informatica biomedica
+Informática biomédica
 \end_layout
 
 \begin_layout Standard
 \begin_inset CommandInset include
 LatexCommand input
-filename "chapters/marco.lyx"
+filename "chapters/2_Inform_biomedicaABNT.lyx"
 
 \end_inset
 
@@ -666,7 +566,7 @@ Metodologia
 \begin_layout Standard
 \begin_inset CommandInset include
 LatexCommand input
-filename "chapters/metodos_abnt.lyx"
+filename "chapters/5_MetodosABNT.lyx"
 
 \end_inset
 
@@ -674,7 +574,7 @@ filename "chapters/metodos_abnt.lyx"
 \end_layout
 
 \begin_layout Chapter
-probando
+Experimentos
 \end_layout
 
 \begin_layout Standard
