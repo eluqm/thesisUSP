@@ -98,11 +98,43 @@ reasoning
  em anotações contidas em imagens médicas.
  Este capítulo ira descrever a metodologia utilizada para alcançar esse
  fim.
- A nossa abordagem é composto por três tarefas: Na Seção 5.1 A transformação
- do modelo de informação AIM, em uma representação ontológica que define
- um modelo de informação semânticamente equivalente.
- Em seguida, na Seção 5.2, ........
- Na seção 5.3, ....
+ A nossa abordagem é composto por três tarefas: Na Seção 5.1 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:step1"
+
+\end_inset
+
+A transformação do modelo de informação AIM em uma representação ontológica
+ que define um modelo de informação semânticamente equivalente.
+ Em seguida, na Seção 5.2 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:step2"
+
+\end_inset
+
+, se descreve o mecanismo para transformar as anotações AIM-XML para instâncias
+ da ontologia AIM4-O, a seguir na seção 5.3 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:step3"
+
+\end_inset
+
+, é criado as condições para implementar o reasoning baseado em regras TNM
+ que utilizam instâncias OWL, finalmente a secao 5.4 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:step4"
+
+\end_inset
+
+ descreve a representação formal necessária para 
+\emph on
+staging 
+\emph default
+utilizando apenas expressividade OWL + SWRL.
 \end_layout
 
 \begin_layout Section
@@ -2187,7 +2219,7 @@ hasPerson
 \begin_inset Graphics
 	filename ../figures/inversefunctional.pdf
 	lyxscale 50
-	scale 22
+	scale 25
 	rotateOrigin center
 
 \end_inset
@@ -2246,6 +2278,13 @@ OWL-DL
 \begin_layout Section
 Desenvolver um mecanismo para transformar as anotações no formato AIM-XML
  para instâncias da ontologia AIM4-O.
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:step2"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -2360,6 +2399,13 @@ O objectivo da representação OWL acima, é ter as condições para desenvolver
 \begin_layout Section
 Gerar as condições para implementar o reasoning baseado em regras TNM que
  utilizam instâncias OWL.
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:step3"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -2759,6 +2805,13 @@ fautor
 
 \begin_layout Section
 Reasoning sobre lesões de câncer
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:step4"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -2771,8 +2824,8 @@ Ontologia Geral
  Em primeiro lugar, nós adicionamos novas classes e propriedades para preencher
  a lacuna entre as características do tumor descritos no modelo AIM-xml
  e as classes presentes na ontologia AIM4-O.
- Em segundo lugar, nós fornecemos definições para: todos os estagios TNM;
- a topografia do órgãos como o fígado; parte da terminologia RadLex, a fim
+ Em segundo lugar, fornecemos definições para: todos os estagios TNM; a
+ topografia do órgãos como o fígado; parte da terminologia RadLex, a fim
  de representar os seus conhecimentos em OWL.
  Finalmente esta seção descreve a representação formal necessária para 
 \emph on
@@ -3381,10 +3434,6 @@ placement H
 wide false
 sideways true
 status open
-
-\begin_layout Plain Layout
-
-\end_layout
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -4195,23 +4244,6 @@ key "Bulu"
 O próximo capitulo conlui a dissertação consolidando os resultados obtidos
  nas avaliações e resaltando as principais contribuções e limitações desta
  pesquisa.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-A fim de melhorar a forma de trabalho na área de saúde, as tecnologias da
- Web Semântica podem auxiliar as pesquisas médicas e encontrar soluções
- através do auxilio de computadores, como, por exemplo, o uso dos formatos
- OWL, SWRL e AIM para processar (reason) anotações de imagens médicas.
- 
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \end_body

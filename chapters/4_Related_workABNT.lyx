@@ -353,9 +353,11 @@ status open
 
 
 \backslash
-resizebox{0.8
+resizebox*{0.8
 \backslash
-textwidth}{!}{
+textwidth}{
+\backslash
+textheight}{
 \end_layout
 
 \end_inset
@@ -1285,7 +1287,7 @@ key "Dameron2006Table"
 
  mostram que a classificação de tumores pode ser executada automaticamente
  usando OWL-DL.
- Ele se centra na classificação dos tumores de pulmão.
+ Ele concentra-se na classificação dos tumores de pulmão.
  Os autores usam a ontologia 
 \lang english
 Foundational Model of Anatomy
@@ -1301,15 +1303,15 @@ description "Foundational Model of Anatomy"
 ) para descrever entidades anatômicas a fim de representar os critérios
  da
 \emph on
- TNM 
-\lang english
-Classification of Malignant Tumors
-\lang brazilian
- 
+ TNM
 \emph default
-(TNM).
- Além disso, os autores destacam algumas das limitações da Descrição baseada
- em Lógica (DL), para a tarefa de classificação dos tumores de pulmão.
+.
+ Além disso, os autores destacam algumas das limitações da Lógica de Descrição
+ (
+\emph on
+DL
+\emph default
+), para a tarefa de classificação dos tumores de pulmão.
  Finalmente, as condições dos pacientes são simuladas por instâncias de
  classes para os experimentos.
  Esse trabalho não apresentam resultados explícitos usando conjuntos de
@@ -1346,7 +1348,7 @@ description "World Health Organization"
  Em seguida, 
 \emph on
 \lang english
-reasoning
+o reasoning
 \emph default
 \lang brazilian
  baseado em classes foi utilizado, o trabalho consegue classificar corretamente
@@ -1436,40 +1438,16 @@ Cell Cluster → union of cells
  white compact segments
 \emph default
 \lang brazilian
-
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Plain Layout
-Esse conceito não está muito grande: 
-\emph on
-\lang english
-white compact segments of the Image included in union of dark Cells
-\end_layout
-
-\end_inset
-
 ).
  Os autores criaram um método baseado em regras para gerar automaticamente
  o 
 \emph on
 NGS
 \emph default
- e modelar todos esses conceitos 
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Plain Layout
-Nao enetndi: (como, 
-\lang english
-super class, class inherited from Image
-\end_layout
-
-\end_inset
-
- em OWL usando o Protégé (uma ferramenta para a edição de ontologias), com
- a finalidade de definir regras que são utilizadas para a indexação semântica
- das imagens de pacientes com câncer da mama.
+ e modelar todos esses conceitos em OWL usando o Protégé (uma ferramenta
+ para a edição de ontologias), com a finalidade de definir regras que são
+ utilizadas para a indexação semântica das imagens de pacientes com câncer
+ da mama.
  Embora a proposta de 
 \begin_inset CommandInset citation
 LatexCommand cite
@@ -1485,7 +1463,7 @@ key "Tutac2008"
 \emph on
 o NGS
 \emph default
-.
+ similar do TNM.
 \end_layout
 
 \begin_layout Itemize
@@ -1953,8 +1931,8 @@ reasonig
  como a criação de classes desnecessárias, aumentando a complexidade de
  uma ontologia.
  Acompanhando a limitação acima mencionado aparece outra, chamada Open World
- Assuntion (OWA) que é uma fundamento da OWL que os trablahos mensionados
- solucionam evitando o reasoning baseado em individuos.
+ Assuntion (OWA) que é um fundamento da OWL que os essos trablahos solucionam
+ evitando o reasoning baseado em individuos.
  No entanto, é possível realizar o 
 \emph on
 reasoning
@@ -1964,14 +1942,14 @@ reasoning
 \end_layout
 
 \begin_layout Standard
-os trabalhos como 
+Os trabalhos como 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Tutac2008"
 
 \end_inset
 
-, 
+ e 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "zillner:towards"
@@ -1982,11 +1960,11 @@ key "zillner:towards"
  ontologia para cada tipo de topografia(órgão do corpo) é indesejável.
  Nós acreditamos na abordagem de ter uma ontologia que representa directamentame
 nte as características encontradas em uma imagem (como a ontologia do modelo
- AIM) e, além disso, que a classificação(
+ AIM) e, além disso, que o 
 \emph on
-staging
+staging 
 \emph default
- do TNM) é guiado por só regras e axiomas.
+deve ser guiado apenas por regras e axiomas.
  
 \end_layout
 
@@ -2034,8 +2012,11 @@ staging
 \emph on
  
 \emph default
-é relativamente mais simples do que um sistema de classificação(staging)
- mais geral como TNM.
+é relativamente mais simples do que um sistema de classificação(
+\emph on
+staging
+\emph default
+) mais geral como TNM.
  Por exemplo, pode-se dizer que, 
 \begin_inset CommandInset citation
 LatexCommand citet
@@ -2043,8 +2024,12 @@ key "Zillner2012"
 
 \end_inset
 
- não considerou a dimensão de uma lesão como um factor importante, por outro
- lado, esse fato é muito importante em sistemas de 
+ não considera a dimensão de uma lesão como um factor importante.
+ No entanto
+\emph on
+,
+\emph default
+ esse fato é muito importante em sistemas de 
 \emph on
 staging
 \emph default
@@ -2079,8 +2064,8 @@ Este capítulo abordou os principais trabalhos relacionados ao desenvolvimento
 staging systems
 \emph default
 \lang brazilian
- com base em anotações semânticas de imagens, na áreas de informática radiológic
-a e oncologia.
+ com base em anotações semânticas de imagens, nas áreas de informática radiológi
+ca e oncologia.
  Foram , descritas as similaridades e divergências entre o trabalho proposto
  e os 12 trabalhos relacionados que foram escolhidos.
  
@@ -2123,9 +2108,7 @@ Essa classificação será feita usando-se
 \emph on
  reasoning
 \emph default
- semântico sobre as anotações, codificadas em AIM, feitas nas imagens de
- lesões de câncer por radiologistas.
- 
+ semântico sobre as anotações, codificadas em AIM.
 \end_layout
 
 \end_body
