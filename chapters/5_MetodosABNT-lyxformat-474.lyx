@@ -1,9 +1,7 @@
-#LyX 2.2 created this file. For more info see http://www.lyx.org/
-\lyxformat 508
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
 \begin_document
 \begin_header
-\save_transient_properties true
-\origin unavailable
 \textclass abntex2
 \begin_preamble
 
@@ -27,16 +25,16 @@ End
 \language_package default
 \inputencoding utf8
 \fontencoding global
-\font_roman "default" "default"
-\font_sans "default" "default"
-\font_typewriter "default" "default"
-\font_math "auto" "auto"
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_math auto
 \font_default_family default
 \use_non_tex_fonts false
 \font_sc false
 \font_osf false
-\font_sf_scale 100 100
-\font_tt_scale 100 100
+\font_sf_scale 100
+\font_tt_scale 100
 \graphics default
 \default_output_format default
 \output_sync 0
@@ -391,7 +389,7 @@ AIM4-O
 \align center
 \begin_inset Tabular
 <lyxtabular version="3" rows="5" columns="3">
-<features tabularvalignment="middle">
+<features rotate="0" tabularvalignment="middle">
 <column alignment="center" valignment="top">
 <column alignment="center" valignment="top">
 <column alignment="center" valignment="top">
@@ -772,7 +770,7 @@ O diagrama representa as entidades como ovais e retângulos.
 \begin_inset Graphics
 	filename ../figures/AIM3.pdf
 	lyxscale 40
-	scale 20
+	scale 21
 
 \end_inset
 
@@ -800,12 +798,12 @@ fautor
 \begin_layout Standard
 No seguinte exemplo 
 \begin_inset CommandInset ref
-LatexCommand ref
-reference "lis:Representação-em-sintaxe"
+LatexCommand formatted
+reference "lis:exemplo1"
 
 \end_inset
 
-descreve os recursos envolvidos na criação da uma anotaçao sobre uma imagen.
+ descreve os recursos envolvidos na criação da uma anotaçao sobre uma imagen.
  O exemplo utiliza apenas termos de tipo 
 \series bold
 Basic
@@ -817,7 +815,7 @@ Basic
 
 \begin_layout Standard
 \begin_inset listings
-lstparams "language=XSLT,float,numbers=left,numberstyle={\tiny},basicstyle={\tiny\ttfamily},breaklines=true,showstringspaces=false,tabsize=6,backgroundcolor={\color{yellow!20}},fontadjust=true,frame={topline}"
+lstparams "backgroundcolor={\color{yellow!20}},basicstyle={\tiny\ttfamily},breaklines=true,float,fontadjust=true,frame={topline},language=XSLT,numbers=left,numberstyle={\tiny},showstringspaces=false,tabsize=6"
 inline false
 status open
 
@@ -1141,15 +1139,14 @@ Indivual: LIDC Soft Tissue
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Representação em sintaxe Manchester do individuo 1.2.288.3..
- que representa uma anotação semântica em uma imagem 
 \begin_inset CommandInset label
 LatexCommand label
-name "lis:Representação-em-sintaxe"
+name "lis:exemplo1"
 
 \end_inset
 
-
+Representação em sintaxe Manchester do individuo "1.2.288.3.." que representa
+ uma anotação semântica em uma imagem
 \end_layout
 
 \end_inset
@@ -1166,7 +1163,7 @@ name "lis:Representação-em-sintaxe"
 O exemplo 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "lis:Representação-em-sintaxe"
+reference "lis:exemplo1"
 
 \end_inset
 
@@ -1270,7 +1267,7 @@ name "fig:example1aim3"
 Ilustração gráfica do exemplo 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "lis:Representação-em-sintaxe"
+reference "lis:exemplo1"
 
 \end_inset
 
@@ -1547,8 +1544,8 @@ AIM4-O
  que representa uma anotação sobre uma imagen.
  Como no exemplo da seção anterior o exemplo 
 \begin_inset CommandInset ref
-LatexCommand ref
-reference "lis:Representação-em-sintaxe-2"
+LatexCommand formatted
+reference "lis:exemplo2"
 
 \end_inset
 
@@ -1936,16 +1933,18 @@ d:string
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Representação em sintaxe Manchester de um individuo 8ixmtfhbiqujoz..
- da ontologia AIM4-O, que representa uma anotação semântica em uma imagem
- 
 \begin_inset CommandInset label
 LatexCommand label
-name "lis:Representação-em-sintaxe-2"
+name "lis:exemplo2"
 
 \end_inset
 
-
+Representação em sintaxe Manchester de um individuo "8ixmtfhbiqujoz.." da
+ ontologia 
+\series bold
+AIM4-O,
+\series default
+ que representa uma anotação semântica em uma imagem
 \end_layout
 
 \end_inset
@@ -2006,7 +2005,7 @@ RID58
 Uma ilustração gráfica do exemplo 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "lis:Representação-em-sintaxe-2"
+reference "lis:exemplo2"
 
 \end_inset
 
@@ -2044,7 +2043,7 @@ name "fig:example1aim4"
 ilustração gráfica do exemplo 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "lis:Representação-em-sintaxe-2"
+reference "lis:exemplo2"
 
 \end_inset
 
@@ -2220,7 +2219,7 @@ hasPerson
 \begin_inset Graphics
 	filename ../figures/inversefunctional.pdf
 	lyxscale 50
-	scale 26
+	scale 25
 	rotateOrigin center
 
 \end_inset
@@ -3161,10 +3160,6 @@ hasCalculationEntity
 .
  A fim de satisfazer esta condição de medição, formulamos as seguintes regras
  (na notação SWRL): 
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_layout Standard
@@ -3352,10 +3347,6 @@ OutsideLesion
 )
 \series default
  está localizada em um órgão adjacente:
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_layout Standard
@@ -3483,7 +3474,7 @@ textwidth}{!}{
 
 \begin_inset Tabular
 <lyxtabular version="3" rows="11" columns="2">
-<features tabularvalignment="middle">
+<features rotate="0" tabularvalignment="middle">
 <column alignment="center" valignment="top" width="7cm">
 <column alignment="center" valignment="top" width="16cm">
 <row>
@@ -3834,7 +3825,7 @@ textwidth}{!}{
 
 \begin_inset Tabular
 <lyxtabular version="3" rows="7" columns="2">
-<features tabularvalignment="middle">
+<features rotate="0" tabularvalignment="middle">
 <column alignment="center" valignment="top" width="7cm">
 <column alignment="center" valignment="top" width="14cm">
 <row>
@@ -4079,7 +4070,7 @@ textwidth}{!}{
 
 \begin_inset Tabular
 <lyxtabular version="3" rows="5" columns="2">
-<features tabularvalignment="middle">
+<features rotate="0" tabularvalignment="middle">
 <column alignment="center" valignment="top" width="7cm">
 <column alignment="center" valignment="top" width="14cm">
 <row>

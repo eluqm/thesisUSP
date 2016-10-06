@@ -1,9 +1,7 @@
-#LyX 2.2 created this file. For more info see http://www.lyx.org/
-\lyxformat 508
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
 \begin_document
 \begin_header
-\save_transient_properties true
-\origin unavailable
 \textclass abntex2
 \begin_preamble
 \usepackage{indentfirst}
@@ -18,7 +16,7 @@
 \usepackage[brazilian,hyperpageref]{backref} 
 \setlength{\parindent}{48pt}
 \usepackage[alf]{abntex2cite}
-%\usepackage{lmodern}
+\usepackage{lmodern}
 \usepackage{hyperref} 
 \hypersetup{%     
 pdfborder = {0 0 0},     
@@ -153,46 +151,47 @@ customHeadersFooters
 \maintain_unincluded_children false
 \begin_local_layout
 Provides natbib 1
+
 Preamble
 % adaptação do suporte ao natbib do LyX para uso do abntex2cite
-\AtBeginDocument{%                % garante que este código será carregado após
-% \usepackage[alf]{abntex2cite} ou
-% \usepackage[num]{abntex2cite}
-% no preâmbulo latex.
-\RequirePackage{abntex2cite}   % previne o não carregamento do abntex2cite,
-% mas não define se as citações serão do
-% tipo 'alf' ou 'num'.
-\renewcommand{\citeauthor}[1]{\citeauthoronline{#1}}
-\def\citep{\cite}
-\newcommand{\citeyearpar}[1]{(\citeyear{#1})}
-\ifx\AbntCitetype\AbntCitetypeALF
-\def\citet{\citeonline} % alf
-\newcommand{\citealt}[1]{\citeauthoronline{#1}~\citeyear{#1}}
-\newcommand{\citealp}[1]{\citeauthoronline{#1},~\citeyear{#1}}
-\else
-\def\citet{\@ifnextchar[{\citet@with}{\citet@without}} % num
-\def\citet@with[#1]#2{\citeauthoronline{#2}~\cite[#1]{#2}}
-\def\citet@without#1{\citeauthoronline{#1}~\cite{#1}}
-\newcommand{\citealt}[1]{\citeauthoronline{#1}~\citeonline{#1}}
-\def\citealp{\citeonline}
-\fi
-}
+   \AtBeginDocument{%                % garante que este código será carregado após
+                                     % \usepackage[alf]{abntex2cite} ou
+                                     % \usepackage[num]{abntex2cite}
+                                     % no preâmbulo latex.
+      \RequirePackage{abntex2cite}   % previne o não carregamento do abntex2cite,
+                                     % mas não define se as citações serão do
+                                     % tipo 'alf' ou 'num'.
+      \renewcommand{\citeauthor}[1]{\citeauthoronline{#1}}
+      \def\citep{\cite} 
+      \newcommand{\citeyearpar}[1]{(\citeyear{#1})}
+      \ifx\AbntCitetype\AbntCitetypeALF
+         \def\citet{\citeonline} % alf
+         \newcommand{\citealt}[1]{\citeauthoronline{#1}~\citeyear{#1}}
+         \newcommand{\citealp}[1]{\citeauthoronline{#1},~\citeyear{#1}}
+      \else 
+         \def\citet{\@ifnextchar[{\citet@with}{\citet@without}} % num
+         \def\citet@with[#1]#2{\citeauthoronline{#2}~\cite[#1]{#2}}
+         \def\citet@without#1{\citeauthoronline{#1}~\cite{#1}}
+         \newcommand{\citealt}[1]{\citeauthoronline{#1}~\citeonline{#1}}
+         \def\citealp{\citeonline}
+      \fi
+   }
 EndPreamble
 \end_local_layout
 \language brazilian
 \language_package default
 \inputencoding utf8
 \fontencoding global
-\font_roman "default" "default"
-\font_sans "lmss" "default"
-\font_typewriter "default" "default"
-\font_math "auto" "auto"
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_math auto
 \font_default_family default
 \use_non_tex_fonts false
 \font_sc false
 \font_osf false
-\font_sf_scale 100 100
-\font_tt_scale 100 100
+\font_sf_scale 100
+\font_tt_scale 100
 \graphics default
 \default_output_format default
 \output_sync 0

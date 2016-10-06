@@ -1,9 +1,7 @@
-#LyX 2.2 created this file. For more info see http://www.lyx.org/
-\lyxformat 508
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
 \begin_document
 \begin_header
-\save_transient_properties true
-\origin unavailable
 \textclass abntex2
 \use_default_options true
 \maintain_unincluded_children false
@@ -11,16 +9,16 @@
 \language_package default
 \inputencoding utf8
 \fontencoding global
-\font_roman "default" "default"
-\font_sans "default" "default"
-\font_typewriter "default" "default"
-\font_math "auto" "auto"
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_math auto
 \font_default_family default
 \use_non_tex_fonts false
 \font_sc false
 \font_osf false
-\font_sf_scale 100 100
-\font_tt_scale 100 100
+\font_sf_scale 100
+\font_tt_scale 100
 \graphics default
 \default_output_format default
 \output_sync 1
@@ -266,7 +264,7 @@ Cada estudo, analisado de acordo com o método estabelecido para a pesquisa
 \end_layout
 
 \begin_layout Standard
-Dessa forma, depois de ler o resumo e conclusões 23 estudos foram pré\SpecialChar nobreakdash
+Dessa forma, depois de ler o resumo e conclusões 23 estudos foram pré\SpecialChar \nobreakdash-
 selecionado
 s, os quais foram lidos e verificados através dos critérios de inclusão
  estabelecidos.
@@ -323,7 +321,7 @@ Results
 \begin_layout Standard
 \begin_inset Float table
 wide false
-sideways true
+sideways false
 status open
 
 \begin_layout Plain Layout
@@ -347,9 +345,27 @@ name "tab:Comparativo-entre-os"
 \end_layout
 
 \begin_layout Plain Layout
+\align center
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+resizebox*{0.8
+\backslash
+textwidth}{
+\backslash
+textheight}{
+\end_layout
+
+\end_inset
+
+
 \begin_inset Tabular
 <lyxtabular version="3" rows="13" columns="5">
-<features tabularvalignment="middle">
+<features rotate="0" tabularvalignment="middle">
 <column alignment="center" valignment="middle" width="12col%">
 <column alignment="center" valignment="middle" width="12col%">
 <column alignment="center" valignment="middle" width="13col%">
@@ -399,7 +415,7 @@ Data Input
 \begin_layout Plain Layout
 
 \series bold
-Knowledge source – Grading / Staging method
+Knowledge source -- Grading / Staging method
 \end_layout
 
 \end_inset
@@ -486,7 +502,7 @@ Ann Arbor Staging
 
 \end_inset
 
- – Staging (OWL-DL reasoning)
+ -- Staging (OWL-DL reasoning)
 \end_layout
 
 \end_inset
@@ -554,7 +570,7 @@ Semantic annotation of patient records by tool support (mapped to OWL)
 
 \size small
 \lang english
-Ontology-based representation of AAS – Staging (OWL-DL reasoning)
+Ontology-based representation of AAS -- Staging (OWL-DL reasoning)
 \end_layout
 
 \end_inset
@@ -640,7 +656,7 @@ Nottingham Grading System
 
 \end_inset
 
- – Grading (OWL-DL, SWRL reasoning)
+ -- Grading (OWL-DL, SWRL reasoning)
 \end_layout
 
 \end_inset
@@ -705,7 +721,7 @@ Automatic tagging (pathology images)
 
 \size small
 \lang english
-Ontology-based Spatial representation of NGS – Grading (OWL-DL, SWRL reasoning)
+Ontology-based Spatial representation of NGS -- Grading (OWL-DL, SWRL reasoning)
 \end_layout
 
 \end_inset
@@ -770,7 +786,7 @@ WFML annotations mapped to OWL (pathology images)
 
 \size small
 \lang english
-Ontology-based representation of NGS – Grading (OWL-DL, SWRL reasoning)
+Ontology-based representation of NGS -- Grading (OWL-DL, SWRL reasoning)
 \end_layout
 
 \end_inset
@@ -835,7 +851,7 @@ AIM image annotations mapped to OWL
 
 \size small
 \lang english
-No grading or staging system – OWL, SWRL, SQWRL reasoning
+No grading or staging system -- OWL, SWRL, SQWRL reasoning
 \end_layout
 
 \end_inset
@@ -897,7 +913,8 @@ Pathologic reports (OWL classes filed manually)
 
 \size small
 \lang english
-Ontology-based representation of WHO Grading System – Grading (OWL-DL reasoning)
+Ontology-based representation of WHO Grading System -- Grading (OWL-DL reasoning
+)
 \end_layout
 
 \end_inset
@@ -972,7 +989,7 @@ TNM Classification of Malignant Tumors Staging
 
 \end_inset
 
- – Staging (OWL\SpecialChar nobreakdash
+ -- Staging (OWL\SpecialChar \nobreakdash-
 DL reasoning)
 \end_layout
 
@@ -1097,7 +1114,7 @@ Manual semantic annotations from ePAD
 
 \size small
 \lang english
-No representation of Staging System – Classification (Ontological similarity
+No representation of Staging System -- Classification (Ontological similarity
  between terms)
 \end_layout
 
@@ -1160,7 +1177,7 @@ WFML annotations mapped to OWL (pathology images)
 
 \size small
 \lang english
-Ontology-based representation of NGS – Grading (OWL, N3Logic reasoning)
+Ontology-based representation of NGS -- Grading (OWL, N3Logic reasoning)
 \end_layout
 
 \end_inset
@@ -1235,6 +1252,17 @@ Yes
 </cell>
 </row>
 </lyxtabular>
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
 
 \end_inset
 
@@ -1396,16 +1424,16 @@ key "Tutac2008"
 Nottingham Grading System
 \emph default
 \lang brazilian
- – 
+ -- 
 \emph on
 NGS
 \emph default
 ), para conceitos de visão computacional: Como, por exemplo, 
 \emph on
 \lang english
-Cell Cluster –> union of cells
+Cell Cluster → union of cells
 \emph default
- e Lumina –>
+ e Lumina →
 \emph on
  white compact segments
 \emph default
@@ -1428,7 +1456,7 @@ key "Tutac2008"
 \end_inset
 
  seja desenvolvido no campo da análise de imagens histológicas para a indexação
- e não exatamente para uma classificação d pacientes, a abordagem apresentada
+ e não exatamente para uma classificação de pacientes, a abordagem apresentada
  é importante no desenvolvimento desta proposta, já que descreve claramente
  as regras utilizadas para a classificação do câncer com base num sistema
  de classificação, como 
@@ -1456,7 +1484,7 @@ staging
  Essas anotações são armazenadas numa ontologia pela ferramenta de anotação
  que faz parte de projeto 
 \emph on
-MEDICO\SpecialChar nobreakdash
+MEDICO\SpecialChar \nobreakdash-
 ontology
 \emph default
 .
@@ -1503,7 +1531,7 @@ key "Tutac2008"
 grading 
 \emph default
 do câncer da mama.
- Nesse trabalho, eles incorporam conhecimento espacial, usando OWL-DL, baseando\SpecialChar nobreakdash
+ Nesse trabalho, eles incorporam conhecimento espacial, usando OWL-DL, baseando\SpecialChar \nobreakdash-
 s
 e numa teoria formal para desenvolver relações espaciais de 
 \emph on
@@ -1546,7 +1574,7 @@ reasoning
 \emph on
  
 \lang english
-spatial\SpecialChar nobreakdash
+spatial\SpecialChar \nobreakdash-
 anatomical reasoning
 \lang brazilian
  
