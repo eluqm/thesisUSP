@@ -72,7 +72,7 @@ Amsterdam, Netherlands}
 \use_package undertilde 1
 \cite_engine basic
 \cite_engine_type default
-\biblio_style plain
+\biblio_style plainnat
 \use_bibtopic false
 \use_indices false
 \paperorientation portrait
@@ -100,15 +100,47 @@ Amsterdam, Netherlands}
 
 \begin_body
 
-\begin_layout Title
+\begin_layout Standard
+\begin_inset ERT
+status open
 
-\lang american
-Automatic Classification of Cancer Tumors using Image Annotations and Ontologies
+\begin_layout Plain Layout
+
+
+\backslash
+begin{frontmatter}
 \end_layout
 
-\begin_layout Abstract
+\end_inset
 
-\lang american
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+title{Automatic Classification of Cancer Tumors using Image Annotations
+ and Ontologies}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{abstract}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
 Information about cancer stage in a patient is crucial when clinicians assess
  treatment progress.
  Determining cancer stage is a process that takes into account the description,
@@ -130,15 +162,44 @@ Information about cancer stage in a patient is crucial when clinicians assess
  of the Stanford University.
 \end_layout
 
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{abstract}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{frontmatter}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Section
 nao sei que stou fazendo
 \end_layout
 
 \begin_layout Standard
-If the document class elsarticle is not available on your computer, you
- can download and install the system package texlive-publishers (Linux)
- or install the LATEX package elsarticle using the package manager of your
- TEX 5 installation, which is typically TEX Live or MikTEX.
+If the document class elsarticle is not available on 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "AMANQUI2014"
+
+\end_inset
+
+your computer, you can download and install the system package texlive-publisher
+s (Linux) or install the LATEX package elsarticle using the package manager
+ of your TEX 5 installation, which is typically TEX Live or MikTEX.
 \end_layout
 
 \begin_layout Enumerate
@@ -163,6 +224,18 @@ asdasdasdasdasd
 
 \begin_layout Enumerate
 dasdasdasdasdasd
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset bibtex
+LatexCommand bibtex
+btprint "btPrintCited"
+bibfiles "references/refsabnt"
+options "elsarticle-num-names"
+
+\end_inset
+
+
 \end_layout
 
 \end_body
