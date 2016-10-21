@@ -10,13 +10,13 @@
 \tnotetext[t2]{The second title footnote which is a longer
 longer than the first one and with an intention to fill
 in up more than one line while formatting.}
-\author[rvt]{C.V.~Radhakrishnan\corref{cor1}\fnref{fn1}}
-\ead{cvr@river-valley.com}
+\author[rvt]{E.F.~Luque\corref{cor1}\fnref{fn1}}
+\ead{edluquem@usp.br.com}
 
 \author[rvt,focal]{K.~Bazargan\fnref{fn2}}
 \ead{kaveh@river-valley.com}
 
-\author[els]{S.~Pepping\corref{cor2}\fnref{fn1,fn3}}
+\author[els]{S.~Moreira\corref{cor2}\fnref{fn1,fn3}}
 \ead[url]{http://www.elsevier.com}
 \cortext[cor1]{Corresponding author}
 \cortext[cor2]{Principal corresponding author}
@@ -130,13 +130,13 @@ title{Automatic Classification of Cancer Tumors using Image Annotations
 
 \begin_layout Plain Layout
 
-
-\backslash
-begin{abstract}
 \end_layout
 
 \begin_layout Plain Layout
 
+
+\backslash
+begin{abstract}
 \end_layout
 
 \begin_layout Plain Layout
@@ -164,13 +164,33 @@ Information about cancer stage in a patient is crucial when clinicians assess
 
 \begin_layout Plain Layout
 
+
+\backslash
+end{abstract}
 \end_layout
 
 \begin_layout Plain Layout
 
 
 \backslash
-end{abstract}
+begin{keyword}
+\end_layout
+
+\begin_layout Plain Layout
+
+Reasoning,
+\end_layout
+
+\begin_layout Plain Layout
+
+Image Annotations
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{keyword}
 \end_layout
 
 \begin_layout Plain Layout
@@ -186,7 +206,7 @@ end{frontmatter}
 \end_layout
 
 \begin_layout Section
-nao sei que stou fazendo
+Introduction
 \end_layout
 
 \begin_layout Standard
@@ -202,28 +222,16 @@ s (Linux) or install the LATEX package elsarticle using the package manager
  of your TEX 5 installation, which is typically TEX Live or MikTEX.
 \end_layout
 
-\begin_layout Enumerate
-asda
+\begin_layout Section
+Related work
 \end_layout
 
-\begin_layout Enumerate
-asd
+\begin_layout Section
+Methods
 \end_layout
 
-\begin_layout Enumerate
-asdasdsadsad
-\end_layout
-
-\begin_layout Enumerate
-asdasdsadasda
-\end_layout
-
-\begin_layout Enumerate
-asdasdasdasdasd
-\end_layout
-
-\begin_layout Enumerate
-dasdasdasdasdasd
+\begin_layout Section
+Results
 \end_layout
 
 \begin_layout Standard
