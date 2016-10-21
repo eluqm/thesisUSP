@@ -14,7 +14,7 @@
 \usepackage{calc,soul,fourier}
 \usepackage{color, colortbl}
 \usepackage{graphicx}
-\usepackage[brazil]{babel}
+%\usepackage[brazil]{babel}
 \usepackage[brazilian,hyperpageref]{backref} 
 \setlength{\parindent}{48pt}
 \usepackage[alf]{abntex2cite}

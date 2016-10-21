@@ -1,0 +1,169 @@
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass elsarticle
+\begin_preamble
+\tnotetext[t1]{This document is a collaborative effort.}
+\tnotetext[t2]{The second title footnote which is a longer
+longer than the first one and with an intention to fill
+in up more than one line while formatting.}
+\author[rvt]{C.V.~Radhakrishnan\corref{cor1}\fnref{fn1}}
+\ead{cvr@river-valley.com}
+
+\author[rvt,focal]{K.~Bazargan\fnref{fn2}}
+\ead{kaveh@river-valley.com}
+
+\author[els]{S.~Pepping\corref{cor2}\fnref{fn1,fn3}}
+\ead[url]{http://www.elsevier.com}
+\cortext[cor1]{Corresponding author}
+\cortext[cor2]{Principal corresponding author}
+\fntext[fn1]{This is the specimen author footnote.}
+\fntext[fn2]{Another author footnote, but a little more
+longer.}
+\fntext[fn3]{Yet another author footnote. Indeed, you can have
+any number of author footnotes.}
+
+\address[rvt]{River Valley Technologies, SJP Building,
+Cotton Hills, Trivandrum, Kerala, India 695014}
+\address[focal]{River Valley Technologies, 9, Browns Court,
+Kennford, Exeter, United Kingdom}
+\address[els]{Central Application Management,
+Elsevier, Radarweg 29, 1043 NX\\
+Amsterdam, Netherlands}
+\end_preamble
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding utf8
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+
+\lang american
+Automatic Classification of Cancer Tumors using Image Annotations and Ontologies
+\end_layout
+
+\begin_layout Abstract
+
+\lang american
+Information about cancer stage in a patient is crucial when clinicians assess
+ treatment progress.
+ Determining cancer stage is a process that takes into account the description,
+ location, characteristics and possible metastasis of cancerous tumors in
+ a patient.
+ It should follow classification standards, such as TNM Classification of
+ Malignant Tumors.
+ However, in clinical practice, the implementation of this process can be
+ tedious and error-prone and create uncertainty.
+ In order to alleviate these problems, we intend to assist radiologists
+ by providing a second opinion in the evaluation of cancer stage in patients.
+ For doing this, Semantic Web technologies, such as ontologies and reasoning,
+ will be used to automatically classify cancer stages.
+ This classification will use semantic annotations, made by radiologists
+ (using the ePAD tool) and stored in the AIM format, and rules of an ontology
+ representing the TNM standard.
+ The whole process will be validated through a proof of concept with users
+ from the Radiology Dept.
+ of the Stanford University.
+\end_layout
+
+\begin_layout Section
+nao sei que stou fazendo
+\end_layout
+
+\begin_layout Standard
+If the document class elsarticle is not available on your computer, you
+ can download and install the system package texlive-publishers (Linux)
+ or install the LATEX package elsarticle using the package manager of your
+ TEX 5 installation, which is typically TEX Live or MikTEX.
+\end_layout
+
+\begin_layout Enumerate
+asda
+\end_layout
+
+\begin_layout Enumerate
+asd
+\end_layout
+
+\begin_layout Enumerate
+asdasdsadsad
+\end_layout
+
+\begin_layout Enumerate
+asdasdsadasda
+\end_layout
+
+\begin_layout Enumerate
+asdasdasdasdasd
+\end_layout
+
+\begin_layout Enumerate
+dasdasdasdasdasd
+\end_layout
+
+\end_body
+\end_document
