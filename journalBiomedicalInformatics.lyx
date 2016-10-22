@@ -292,7 +292,8 @@ Condition 1 : Cancer staging should consider the existence of solitary or
 \end_layout
 
 \begin_layout Itemize
-Condition 2 : Tumors should be either bigger or minor than 5 cm 
+Condition 2 : Staging should consider if tumors are either bigger or minor
+ than certain size X in cm 
 \end_layout
 
 \begin_layout Itemize
@@ -306,8 +307,10 @@ Asserting Conditions using OWL
 \begin_layout Description
 
 \series bold
-Condition 1 : Cancer staging should consider the existence of solitary or
- multiple tumor in the same site
+Condition 1 : 
+\series default
+Cancer staging should consider the existence of solitary or multiple tumor
+ in the same site
 \end_layout
 
 \begin_layout Standard
@@ -432,16 +435,373 @@ singleLesion
 \emph default
  entity.
  This concept indicates if the image study describes only one cancer lesion.
- We assumed that the image study describes exactly one cancer lesion (“singleLes
-ion {true}”), if it is referenced by only one image annotation.
- It was not possible to formulate with only OWL .
- Instead, we used the data structure shown in the Figure 1 that was generated
- as part of the process of parsing the XML image annotations to create owl
- individuals.
+ We assumed that image studies describe exactly one cancer lesion (“singleLesion
+ {true}”), if it is referenced by only one image annotation.
+ It was not possible to formulate with only OWL.
+ Instead, this information was provided by the data structure shown in the
+ Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:AIMDataStructure"
+
+\end_inset
+
+, this structure was generated as part of the process of parsing the XML
+ image annotations to create AIM4-O individuals.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename figures/TNM Staging Documentation.pdf
+	scale 45
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:AIMDataStructure"
+
+\end_inset
+
+ Data Structure generated as part of parsing XML files to individuals AIM4-O
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Finally, to classify annotations that describe a single lesion, we constructed
+ the rule 
+\series bold
+\emph on
+:SingleTumor
+\series default
+\emph default
+ (in SWRL notation): 
 \end_layout
 
 \begin_layout Standard
 
+\lang brazilian
+\begin_inset Formula 
+\begin{gather*}
+\hline ImageStudy(?X)\land singleLesion(?X,?val)\land\\
+equal(?val,true)\rightarrow singleTumor(?X)\\
+\hline 
+\end{gather*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+Condition 2: Staging should consider if tumors are either bigger or minor
+ than certain size X in cm.
+\end_layout
+
+\begin_layout Standard
+This condition is easily implemented by getting the value from the data
+ property "
+\series bold
+\emph on
+values
+\series default
+\emph default
+" on the 
+\series bold
+\emph on
+:CalculationResult
+\series default
+\emph default
+ entity.
+ This entity is related to the 
+\series bold
+\emph on
+:ImageAnnotation
+\series default
+\emph default
+ entity through the 
+\series bold
+\emph on
+hasCalculationEntity
+\series default
+\emph default
+ object property.
+ In order to satisfy this measurement condition, we formulate the following
+ rules taking 5cm as measure just as TNM for liver (in SWRL notation): 
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+
+\series bold
+\lang brazilian
+LessThan5cmTumor:
+\series default
+ 
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+
+\lang brazilian
+\begin_inset Formula 
+\begin{gather*}
+\hline ImageAnnotation(?x)\land hasCalculationEntity(?x,?y)\land hasCalculationResult(?y,?z)\land\\
+values(?z,?val)\land lessThan(?val,5)\rightarrow lessThan5cmTumor(?x)\\
+\hline 
+\end{gather*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+
+\series bold
+\lang brazilian
+MoreThan5cmTumor:
+\series default
+ 
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+
+\lang brazilian
+\begin_inset Formula 
+\begin{gather*}
+\hline ImageAnnotation(?x)\land hasCalculationEntity(?x,?y)\land hasCalculationResult(?y,?z)\land\\
+values(?z,?val)\land greaterThan(?val,5)\rightarrow MoreThan5cmTumor(?x)\\
+\hline 
+\end{gather*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+Condition 3: Staging should consider lesions in adjacent organs 
+\end_layout
+
+\begin_layout Standard
+We have to consider the fact that a lesion has to spread out to satisfy
+ more complicated criterion of classification.
+ For that, we needed to create one new concept based on the 
+\series bold
+\emph on
+:Lesion
+\series default
+\emph default
+ class from the Onlira ontology[ref to onlira].
+ While 
+\series bold
+\emph on
+:Lesion
+\series default
+\emph default
+ class handles important characteristics of a lesion, such as composition,
+ density, size, shape, etc, unfortunately this is not enough for TNM classificat
+ion and reasoning.
+ For this reason, we added 3 properties to it and createed the subclass
+ 
+\series bold
+:OutsideLesion
+\series default
+, these properties are :
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\emph on
+hasLocation
+\series default
+\emph default
+ (object property): This property indicates the location of lesions based
+ on Radlex taxonomy.
+ this property relates Onlira Lesion Classes members to Radlex AnatomicalEntity
+ Class members.
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\emph on
+isRegionalLymphNodeAffected
+\series default
+\emph default
+ (data property): This property specifies whether the lesion is located
+ in some lymph node.
+ It was useful to enable classification criteria such as N0 and N1.
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\emph on
+isAdjacentOrgan
+\series default
+\emph default
+ (object property): It indicates whether the lesion with location "X" is
+ close to organ "Y".
+ According to the TNM liver classification criterion (case of study in this
+ work), we considered as adjacent organs to the liver: the pancreas, duodenum,
+ liver, colon etc.
+ (see figure 2).
+ We group these concepts as organs in radlex representation creating two
+ new classes ":
+\series bold
+\emph on
+AdjacentOrganGroup
+\series default
+\emph default
+" and ":
+\series bold
+\emph on
+NoAdjacentOrganGroup
+\series default
+\emph default
+":
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+
+\lang brazilian
+\begin_inset Formula 
+\begin{gather*}
+\hline NoAdjacentOrganGroup\subseteq RadlexEntity.Organ\\
+AdjacentOrganGroup\subseteq RadlexEntity.Organ\\
+\hline 
+\end{gather*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+\emph on
+\lang brazilian
+:AdjacentOrganGroup
+\series default
+\emph default
+ and 
+\series bold
+\emph on
+:NoAdjacentOrganGroup
+\series default
+\emph default
+ classes indicate whether an organ is considered adjacent or not in reference
+ to the parent organ.
+ The parent organ represents the type of staging, for our case study the
+ parent organ was the liver.
+ Finally, we constructed the following rule (in SWRL notation) to indicates
+ whether an 
+\series bold
+\emph on
+:OutsideLesion
+\series default
+\emph default
+ is located in an adjacent organ:
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+
+\lang brazilian
+\begin_inset Formula 
+\begin{gather*}
+\hline Lesion(?x)\land adjacentOrganGroup(?y)\land\\
+hasLocation(?x,?y)\rightarrow isAdjacentOrgan(?x,true)\\
+\hline 
+\end{gather*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+At this point, once we covered the above requirements adequately using OWL
+ and SWRL, we used them to construct the following axioms and rules in order
+ to be able to automatically classify cancer lesions using the TNM system
+ (see Table 1) .
+ 
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+We noticed that the way we modeled things mattered.
+ For example, it was easier to define N1a, N0 and to reuse their definitions
+ for M0, rather than to start with the definition of M0 handling complex
+ closures.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+With the use of the AIM4-O ontology, concepts can easily be related to each
+ other as demonstrated previously.
+ Furthermore, integrity and cardinality requirements can be specified and
+ enforced for reasoning purposes.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+Finally, we present a synthesis (see Table 2) of the properties added in
+ our model (AIM ontology) that allow the TNM classification task.
+ 
 \end_layout
 
 \begin_layout Section
