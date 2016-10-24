@@ -2277,8 +2277,8 @@ OWL-DL
 \end_layout
 
 \begin_layout Section
-Desenvolver um mecanismo para transformar as anotações no formato AIM-XML
- para instâncias da ontologia AIM4-O.
+Desenvolver o mecanismo para transformar as anotações em XML para instâncias
+ da ontologia AIM4-O.
 \begin_inset CommandInset label
 LatexCommand label
 name "sec:step2"
@@ -2398,8 +2398,7 @@ O objectivo da representação OWL acima, é ter as condições para desenvolver
 \end_layout
 
 \begin_layout Section
-Gerar as condições para implementar o reasoning baseado em regras TNM que
- utilizam instâncias OWL.
+Gerar as condições para implementar o reasoning baseado em regras TNM.
 \begin_inset CommandInset label
 LatexCommand label
 name "sec:step3"
@@ -2442,7 +2441,7 @@ A
 \series bold
 ontologia geral
 \series default
- é dividido em 3 arquivo, como motra a Figura 
+ é dividido em 3 arquivo, como mostra a Figura 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:ontologiaGeral"
