@@ -406,7 +406,7 @@ dateTime
 \series default
 \emph default
  data property and assigned a date value.
- Therefore we can say that the statement
+ Therefore, we can say that the statement
 \series bold
 \emph on
  :imageAnnotation1 dateTime {"2014-09-26T17:07:58ˆˆdatetime"}
@@ -414,9 +414,9 @@ dateTime
 \emph default
  states that an annotation that is referred as imageAnnotation1 it was created
  at 2014-09-26T17:07:58.
- Similary to the above other relationship of Image Annotation to other concepts,
- such as physical location of lesions or observations, can be specified
- using relationship in OWL.
+ Similary to the above, other relationship of Image Annotation to other
+ concepts, such as physical location of lesions or observations, can be
+ specified using relationship in OWL.
  Finally, The other classes were related to each other using the properties
  shown in Figure 
 \begin_inset CommandInset ref
@@ -437,7 +437,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename figures/AIM4example.pdf
+	filename figures/AIM4.pdf
 	lyxscale 30
 	scale 13
 
@@ -457,6 +457,574 @@ name "fig:AIM4example"
 \end_inset
 
 
+\lang brazilian
+This diagram describes the abstract classes as purple oval involving your
+ instance (imageAnnotationCollection, ImageAnnotation, geometricShape) and
+ relationships as red arrows
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The following example illustrates and shows the OWL encoding (in Manchester
+ syntax) of an AIM4-O individual that represents image findings.
+ This example highlights the difference between Xml (as a serialization
+ format) and OWL (as data model) in representation of image anntotation.
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="4" columns="1">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+XML 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset listings
+lstparams "language=XML,basicstyle={\tiny\ttfamily},tabsize=4"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+<imageAnnotations> 
+\end_layout
+
+\begin_layout Plain Layout
+
+<ImageAnnotation> 
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+<UNIQUEIDENTIFIER root="f3fftpf6wsinx4o17il0t3a9o7fr1x7gyr9uye82"/> 
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+<dateTime value="2014-10-05T22:33:47"/> 
+\end_layout
+
+\begin_layout Plain Layout
+
+<name value="Liver1"/> <comment value="CT / RECON 2: LIVER 2 PHASE (AP)
+ / 37"/> 
+\end_layout
+
+\begin_layout Plain Layout
+
+.
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+.
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Manchester syntax
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset listings
+lstparams "language=XML,basicstyle={\tiny\ttfamily},tabsize=4"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+@prefix aim:  <http://www.w3.org/ns/aim4#> .
+\end_layout
+
+\begin_layout Plain Layout
+
+Individual: 8ixmtfhbiqujozezrep1r90t1n0po8wxyfy5svzs
+\end_layout
+
+\begin_layout Plain Layout
+
+     Types:						 ImageAnnotationCollection          
+\end_layout
+
+\begin_layout Plain Layout
+
+     Facts:
+\end_layout
+
+\begin_layout Plain Layout
+
+	    aim:hasImageAnnotations     :9gs43xqj1kyl13lmega0zhoenzvgeakkprft8fw8,
+\end_layout
+
+\begin_layout Plain Layout
+
+.
+\end_layout
+
+\begin_layout Plain Layout
+
+Individual: f3fftpf6wsinx4o17il0t3a9o7fr1x7gyr9uye82
+\end_layout
+
+\begin_layout Plain Layout
+
+     Types:						 ImageAnnotation
+\end_layout
+
+\begin_layout Plain Layout
+
+     Facts:        
+\end_layout
+
+\begin_layout Plain Layout
+
+        aim:hasImageReference      :sj1...,
+\end_layout
+
+\begin_layout Plain Layout
+
+        aim:hasMarkupEntity        :jma...,
+\end_layout
+
+\begin_layout Plain Layout
+
+        aim:hasCalculationEntity   :a4l...,
+\end_layout
+
+\begin_layout Plain Layout
+
+        aim:hasImagingObservation  :hoj...,
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+        AIM:HASPHYSICALENTITY      :1A5GZINZFTM1OXC45SHO8GOK2J8YRL7YEBO7WXX0,
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+        aim:dateTime               "2014-10-05T22:33:47"^^xsd:dateTime,
+\end_layout
+
+\begin_layout Plain Layout
+
+        aim:uniqueIdentifier       "f3fftpf6wsinx4o17il0t3a9o7fr1x7gyr9uye82"^^x
+sd:string,            
+\end_layout
+
+\begin_layout Plain Layout
+
+        aim:comment                "CT / RECON 2: LIVER 2 PHASE (AP) / 37"^^xsd:
+string,      
+\end_layout
+
+\begin_layout Plain Layout
+
+        aim:name                   "Liver1"^^xsd:string
+\end_layout
+
+\begin_layout Plain Layout
+
+.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:sample-of-Image"
+
+\end_inset
+
+sample of Image Annotations in XML and OWL format
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+The table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:sample-of-Image"
+
+\end_inset
+
+ shows syntax of a sample AIM ImageAnnotation with 
+\series bold
+\emph on
+uniqueIdentifier
+\series default
+\emph default
+ "f3fftpf6wsinx4o17il0t3a9o7fr1x7gyr9uye82" instance in AIM 4.0 XML format,
+ the same shows the OWL manchester syntax of the same AIM 
+\series bold
+\emph on
+:ImageAnnotation
+\series default
+\emph default
+ instance in an AIM 4.0 OWL file.
+ We can see, in table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:sample-of-Image"
+
+\end_inset
+
+, the concept of PhysicalEntity with 
+\series bold
+\emph on
+uniqueIdentifier
+\series default
+\emph default
+ "1a5gzinzftm1oxc45sho8gok2j8yrl7yebo7wxx0", related to the Image Annotation
+ by 
+\series bold
+hasPhysicalEntity
+\series default
+ Object Property.
+ The table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Sample-of-AIM"
+
+\end_inset
+
+ shows the syntax of a sample 
+\series bold
+\emph on
+:PhysicalEntity
+\series default
+\emph default
+ instance in AIM 4.0 XML.
+ the same shows the OWL manchester syntax of the same 
+\series bold
+\emph on
+:PhysicalEntity
+\series default
+\emph default
+ instance in an AIM 4.0 OWL file.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="4" columns="1">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+XML
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset listings
+lstparams "language=XML,basicstyle={\tiny\ttfamily},tabsize=5"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+<imagingPhysicalEntityCollection> 
+\end_layout
+
+\begin_layout Plain Layout
+
+ <ImagingPhysicalEntity> 
+\end_layout
+
+\begin_layout Plain Layout
+
+   <uniqueIdentifier root="1a5gzinzftm1oxc45sho8gok2j8yrl7yebo7wxx0"/> 
+\end_layout
+
+\begin_layout Plain Layout
+
+   <typeCode code="RID58" codeSystem="liver" 
+\end_layout
+
+\begin_layout Plain Layout
+
+                          codeSystemName="RadLex" codeSystemVersion=""/>
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+   <typeCode code="RID67" codeSystem="Couinaud hepatic segment 7" 
+\end_layout
+
+\begin_layout Plain Layout
+
+                          codeSystemName="RadLex.3.10" codeSystemVersion=""/>
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+   <annotatorConfidence value="0.0"/> 
+\end_layout
+
+\begin_layout Plain Layout
+
+   <label value="Location"/> 
+\end_layout
+
+\begin_layout Plain Layout
+
+ </ImagingPhysicalEntity> 
+\end_layout
+
+\begin_layout Plain Layout
+
+</imagingPhysicalEntityCollection> 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Manchester syntax
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset listings
+lstparams "language=XML,basicstyle={\tiny\ttfamily},tabsize=5"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+Individual:  1a5gzinzftm1oxc45sho8gok2j8yrl7yebo7wxx0
+\end_layout
+
+\begin_layout Plain Layout
+
+    Types:						  ImagingPhysicalEntity          
+\end_layout
+
+\begin_layout Plain Layout
+
+	Facts:        
+\end_layout
+
+\begin_layout Plain Layout
+
+  	aim:annotatorConfidence     0.0f,      
+\end_layout
+
+\begin_layout Plain Layout
+
+  	aim:label                   "Location"^^xsd:string,      
+\end_layout
+
+\begin_layout Plain Layout
+
+  	aim:typeCode                
+\end_layout
+
+\begin_layout Plain Layout
+
+            "{codeSystemName=RadLex,codeSystem=liver,code=RID58,codeSystemVersio
+n=}"^^xsd:string, 
+\end_layout
+
+\begin_layout Plain Layout
+
+  	aim:typeCode                
+\end_layout
+
+\begin_layout Plain Layout
+
+            "{codeSystemName=RadLex.3.10,codeSystem=Couinaudhepaticsegment7,code=R
+ID67}"^^xsd:string,      
+\end_layout
+
+\begin_layout Plain Layout
+
+  	aim:uniqueIdentifier        "1a5gzinzftm1oxc45sho8gok2j8yrl7yebo7wxx0"^^xsd:s
+tring
+\end_layout
+
+\begin_layout Plain Layout
+
+.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Sample-of-AIM"
+
+\end_inset
+
+Sample of AIM PhysicalEntity in XML and OWL format
 \end_layout
 
 \end_inset
