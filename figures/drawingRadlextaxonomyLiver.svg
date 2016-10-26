@@ -11,9 +11,9 @@
    xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="2507.6907"
-   height="1036.911"
-   viewBox="0 0 2507.6907 1036.911"
+   width="2506.1057"
+   height="814.42426"
+   viewBox="0 0 2506.1057 814.42425"
    id="svg2"
    version="1.1"
    inkscape:version="0.48.5 r10040"
@@ -26,8 +26,8 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.49497475"
-     inkscape:cx="1281.6559"
-     inkscape:cy="535.78436"
+     inkscape:cx="1280.0709"
+     inkscape:cy="499.59698"
      inkscape:document-units="px"
      inkscape:current-layer="g4220"
      showgrid="false"
@@ -211,7 +211,7 @@
      id="layer1"
      inkscape:groupmode="layer"
      inkscape:label="Layer 1"
-     transform="translate(1422.6422,877.00883)">
+     transform="translate(1421.0572,690.70942)">
     <g
        transform="translate(-1224.0502,-737.10998)"
        id="g4220">
@@ -229,24 +229,32 @@
          y="67.494225"
          sodipodi:linespacing="125%"
          id="text2221"
-         style="font-size:26.78141986px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial"
+         style="font-size:26.78141975px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial"
          transform="scale(0.96199246,1.0395092)"><tspan
            sodipodi:role="line"
-           id="tspan8003">Lymph nodes</tspan><tspan
+           id="tspan8003"
+           x="335.03088"
+           y="67.494225">Lymph nodes</tspan><tspan
            sodipodi:role="line"
-           id="tspan8005"></tspan></text>
+           id="tspan8005"
+           x="335.03088"
+           y="100.971" /></text>
       <text
          xml:space="preserve"
          x="466.68677"
          y="518.91833"
          sodipodi:linespacing="125%"
          id="text2240"
-         style="font-size:26.78141986px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial"
+         style="font-size:26.78141975px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial"
          transform="scale(0.96199246,1.0395092)"><tspan
            sodipodi:role="line"
-           id="tspan8017">Pancreas</tspan><tspan
+           id="tspan8017"
+           x="466.68677"
+           y="518.91833">Pancreas</tspan><tspan
            sodipodi:role="line"
-           id="tspan8019"></tspan></text>
+           id="tspan8019"
+           x="466.68677"
+           y="552.39508" /></text>
       <image
          height="149.63748"
          x="-364.55981"
@@ -262,12 +270,16 @@
          y="225.38185"
          sodipodi:linespacing="125%"
          id="text2404"
-         style="font-size:26.78141986px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial"
+         style="font-size:26.78141975px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial"
          transform="scale(0.96199246,1.0395092)"><tspan
            sodipodi:role="line"
-           id="tspan7995">Spleen</tspan><tspan
+           id="tspan7995"
+           x="418.4566"
+           y="225.38185">Spleen</tspan><tspan
            sodipodi:role="line"
-           id="tspan7997"></tspan></text>
+           id="tspan7997"
+           x="418.4566"
+           y="258.85861" /></text>
       <path
          inkscape:connector-curvature="0"
          id="path3466"
@@ -280,12 +292,16 @@
          y="369.91257"
          sodipodi:linespacing="125%"
          id="text3474"
-         style="font-size:26.78141986px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial"
+         style="font-size:26.78141975px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial"
          transform="scale(0.96199246,1.0395092)"><tspan
            sodipodi:role="line"
-           id="tspan7999">Stomach</tspan><tspan
+           id="tspan7999"
+           x="425.59369"
+           y="369.91257">Stomach</tspan><tspan
            sodipodi:role="line"
-           id="tspan8001"></tspan></text>
+           id="tspan8001"
+           x="425.59369"
+           y="403.38934" /></text>
       <g
          transform="matrix(2.5,0,0,2.5,1442.5901,57.70938)"
          id="g695-2"
@@ -311,34 +327,44 @@
          y="585.45709"
          sodipodi:linespacing="125%"
          id="text2295"
-         style="font-size:26.78141986px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial"
+         style="font-size:26.78141975px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial"
          transform="scale(0.96199246,1.0395092)"><tspan
            sodipodi:role="line"
-           id="tspan8013">Intestines</tspan><tspan
+           id="tspan8013"
+           x="-207.28822"
+           y="585.45709">Intestines</tspan><tspan
            sodipodi:role="line"
-           id="tspan8015"></tspan></text>
+           id="tspan8015"
+           x="-207.28822"
+           y="618.93384" /></text>
       <text
          xml:space="preserve"
          x="-182.24266"
          y="266.54718"
          sodipodi:linespacing="125%"
          id="text2255"
-         style="font-size:26.78141986px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial"
+         style="font-size:26.78141975px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial"
          transform="scale(0.96199246,1.0395092)"><tspan
            sodipodi:role="line"
-           id="tspan8007">Liver</tspan></text>
+           id="tspan8007"
+           x="-182.24266"
+           y="266.54718">Liver</tspan></text>
       <text
          xml:space="preserve"
          x="-188.44641"
          y="347.24124"
          sodipodi:linespacing="125%"
          id="text2447"
-         style="font-size:26.78141986px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial"
+         style="font-size:26.78141975px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial"
          transform="scale(0.96199246,1.0395092)"><tspan
            sodipodi:role="line"
-           id="tspan8009">Gallbladder</tspan><tspan
+           id="tspan8009"
+           x="-188.44641"
+           y="347.24124">Gallbladder</tspan><tspan
            sodipodi:role="line"
-           id="tspan8011"></tspan></text>
+           id="tspan8011"
+           x="-188.44641"
+           y="380.71802" /></text>
       <path
          inkscape:connector-curvature="0"
          id="path3468"
@@ -565,7 +591,7 @@
          transform="matrix(1,0,-0.51505752,0.85715562,0,0)"
          ry="0.60412067" />
       <rect
-         style="fill:#0007fd;fill-opacity:0.2177778;stroke:none"
+         style="fill:#0007fd;fill-opacity:0.21777781;stroke:none"
          id="rect3851"
          width="643.1026"
          height="163.71648"
@@ -666,11 +692,11 @@
            sodipodi:role="line"
            id="tspan5829"
            x="1452.6183"
-           y="354.57047"></tspan><tspan
+           y="354.57047" /><tspan
            sodipodi:role="line"
            id="tspan5831"
            x="1452.6183"
-           y="389.57047"></tspan></text>
+           y="389.57047" /></text>
       <path
          sodipodi:type="arc"
          style="fill:#7d0005;fill-opacity:0.21777781;stroke:none"
@@ -730,7 +756,7 @@
            sodipodi:role="line"
            id="tspan3945"
            x="1108.8685"
-           y="550.56659"></tspan></text>
+           y="550.56659" /></text>
       <text
          xml:space="preserve"
          x="1368.2871"
@@ -750,7 +776,7 @@
            id="tspan3931"
            sodipodi:role="line"
            x="1368.2871"
-           y="550.8855"></tspan></text>
+           y="550.8855" /></text>
       <text
          xml:space="preserve"
          x="1734.6843"
@@ -770,7 +796,7 @@
            sodipodi:role="line"
            id="tspan3993"
            x="1734.6843"
-           y="546.80096"></tspan></text>
+           y="546.80096" /></text>
       <text
          transform="scale(0.98126597,1.0190917)"
          style="font-size:22px;font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial Italic"
@@ -790,7 +816,7 @@
            sodipodi:role="line"
            id="tspan3959"
            x="1318.7914"
-           y="665.55042"></tspan></text>
+           y="665.55042" /></text>
       <text
          xml:space="preserve"
          x="1514.3845"
@@ -810,7 +836,7 @@
            sodipodi:role="line"
            id="tspan3987"
            x="1514.3845"
-           y="751.94141"></tspan></text>
+           y="751.94141" /></text>
       <text
          transform="scale(0.98126597,1.0190917)"
          style="font-size:24px;font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial Italic"
@@ -830,7 +856,7 @@
            sodipodi:role="line"
            id="tspan3981"
            x="1637.917"
-           y="658.65576"></tspan></text>
+           y="658.65576" /></text>
       <path
          sodipodi:type="arc"
          style="fill:#7d0005;fill-opacity:0.21777781;stroke:none"
@@ -860,7 +886,7 @@
            sodipodi:role="line"
            id="tspan4009"
            x="1035.1418"
-           y="663.88556"></tspan></text>
+           y="663.88556" /></text>
       <path
          style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow2Lend)"
          d="M 156.52288,-419.97104 C 81.588592,-374.10393 39.357605,-313.52034 2.0203051,-250.73459"
@@ -894,7 +920,7 @@
          sodipodi:nodetypes="cc" />
       <text
          transform="matrix(0.84070177,0.50606663,-0.52557443,0.87310905,0,0)"
-         style="font-size:24.0000002px;font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial Italic"
+         style="font-size:24px;font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial Italic"
          id="text5609"
          sodipodi:linespacing="125%"
          y="-440.66455"
@@ -907,7 +933,7 @@
            sodipodi:role="line"
            id="tspan5835"
            x="1486.1389"
-           y="-415.66455"></tspan></text>
+           y="-410.66455" /></text>
       <path
          transform="matrix(1,0,-0.22222224,1,906.09447,864.36889)"
          d="m 303.04575,-171.94269 c 0,10.04205 -10.85425,18.18275 -24.24366,18.18275 -13.3894,0 -24.24366,-8.1407 -24.24366,-18.18275 0,-10.04205 10.85426,-18.18274 24.24366,-18.18274 13.38941,0 24.24366,8.14069 24.24366,18.18274 z"
@@ -937,7 +963,7 @@
            sodipodi:role="line"
            id="tspan5851"
            x="1090.9795"
-           y="747.14874"></tspan></text>
+           y="747.14874" /></text>
       <path
          sodipodi:nodetypes="cc"
          style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow2Lend)"
@@ -973,7 +999,7 @@
            sodipodi:role="line"
            id="tspan5875"
            x="1368.0021"
-           y="180.3587"></tspan></text>
+           y="180.3587" /></text>
       <path
          sodipodi:type="arc"
          style="fill:#0006fd;fill-opacity:0.21960784;stroke:none"
@@ -1003,7 +1029,7 @@
            sodipodi:role="line"
            id="tspan5891"
            x="1653.1569"
-           y="142.79974"></tspan></text>
+           y="142.79974" /></text>
       <path
          style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow2Lend)"
          d="M 1372.6216,281.47217 C 1258.871,198.51329 1263.8873,172.2386 1265.4787,144.32932"
@@ -1018,7 +1044,7 @@
          sodipodi:nodetypes="cc" />
       <text
          transform="scale(0.98126597,1.0190917)"
-         style="font-size:40.00000031px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial Bold"
+         style="font-size:40px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial Bold"
          id="text7975"
          sodipodi:linespacing="125%"
          y="832.29523"
@@ -1030,7 +1056,7 @@
            y="832.29523">Anatomical Representation</tspan></text>
       <text
          transform="scale(0.98126597,1.0190917)"
-         style="font-size:40.00000031px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial Bold"
+         style="font-size:40px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial Bold"
          id="text7981"
          sodipodi:linespacing="125%"
          y="836.28009"

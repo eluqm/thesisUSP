@@ -485,7 +485,6 @@ The following example illustrates and shows the OWL encoding (in Manchester
 \end_layout
 
 \begin_layout Standard
-
 \begin_inset Float table
 placement H
 wide false
@@ -726,7 +725,6 @@ string,
 \end_layout
 
 \begin_layout Plain Layout
-
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
@@ -754,7 +752,6 @@ sample of Image Annotations in XML and OWL format
 \end_layout
 
 \begin_layout Standard
-
 The table 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -820,7 +817,6 @@ reference "tab:Sample-of-AIM"
 \end_layout
 
 \begin_layout Standard
-
 \begin_inset Float table
 placement H
 wide false
@@ -1014,7 +1010,6 @@ tring
 \end_layout
 
 \begin_layout Plain Layout
-
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
@@ -1625,6 +1620,463 @@ name "fig:radlexclass"
 
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Experimental Study
+\end_layout
+
+\begin_layout Standard
+In this section we evaluate firstly the expressivity the our ontology, followed
+ by performance achieved by our classification approach, starting with Recist
+ criteria and finished with more complex task classification as TNM, which
+ is the objective of this study, and finally making a quantitative evaluation
+ of TNM classifier using precision and recall.
+ 
+\end_layout
+
+\begin_layout Subsection
+Data sets
+\end_layout
+
+\begin_layout Standard
+BC....busca en journal 
+\end_layout
+
+\begin_layout Standard
+While the evaluation of classification could be applied to stage other cancers,
+ this work focuses on staging liver cancer for reasons of data availability.
+ For a given patient, the input to the system consists of a variable number
+ of textual reports describing the results of histology tests.
+ The objective of the system is to determine T, N, and M stage values for
+ the patient.
+ The system aims to achieve this by applying machine learning text categorisatio
+n techniques [6].
+\end_layout
+
+\begin_layout Standard
+Finally, using concrete examples, we clarified how ERGO annotations could
+ be used with a description logic reasoner and a relational database to
+ satisfy the three use cases enumerated in Section 3
+\end_layout
+
+\begin_layout Subsection
+Quantitative assesment of AIM4-O ontology
+\end_layout
+
+\begin_layout Standard
+This study was performed ...
+\end_layout
+
+\begin_layout Standard
+However, both data sets have a significant number of unclassified findings
+ that occur when the anatomical entities are not covered by the knowledge
+ model
+\end_layout
+
+\begin_layout Subsection
+Classification of image findings with AIM4-O using Recist Criteria
+\end_layout
+
+\begin_layout Standard
+The RECIST (Response Evaluation Criteria In Solid Tumors) guideline allows
+ a standardized assessment of tumor burden and tumor response during therapy.
+ Here, a sum of the diameters for all target lesions is calculated and reported
+ as the baseline for follow-up and indicates therapy response/failure[ref.....].
+ 
+\end_layout
+
+\begin_layout Standard
+A considerable part of guidelines on Recist criteria can be automated and
+ improved using the AIM4-O ontology model.
+ However, this is not done by defining logical axioms and SWRL rules in
+ OWL, as we do with other types classification (such as TNM).
+ That happens because Recist is based on value comparisons and OWL uses
+ an open world assumption.
+ Instead, we use SPARQL to retrieve relevant data to classify findings by
+ comparing their measurement values to size specifications provided by Recist.
+ 
+\end_layout
+
+\begin_layout Description
+Recist specifications:
+\end_layout
+
+\begin_layout Standard
+Baseline documentation of “Target” and “Non-Target” lesions
+\end_layout
+
+\begin_layout Itemize
+All measurable lesions, up to a maximum of 2 lesions per organ and 5 lesions
+ in total, representative of all involved organs should be identified as
+ target lesions, recorded and measured at baseline.
+ 
+\end_layout
+
+\begin_layout Itemize
+A sum of the Longest Diameter (LD), for all target lesions, will be calculated
+ and reported as the baseline sum LD.
+ The baseline sum LD will be used as reference by which to characterize
+ the objective tumor response.
+ 
+\end_layout
+
+\begin_layout Itemize
+All other lesions (or sites of disease) should be identified as non-target
+ lesions and should also be recorded at baseline.
+ Measurements of these lesions are not required, but the presence or absence
+ of each should be noted throughout follow-up.
+\end_layout
+
+\begin_layout Description
+Response Criteria evaluation of target lesions
+\end_layout
+
+\begin_layout Itemize
+Complete Response (CR): Disappearance of all target lesions 
+\end_layout
+
+\begin_layout Itemize
+Partial Response (PR): At least a 30% decrease in the LD sum of the target
+ lesions, taking as reference the baseline LD sum.
+ 
+\end_layout
+
+\begin_layout Itemize
+Stable Disease (SD): Neither sufficient shrinkage to qualify for PR nor
+ sufficient increase to qualify for PD, taking as reference the smallest
+ LD sum since the treatment started.
+ 
+\end_layout
+
+\begin_layout Itemize
+Progressive Disease (PD): At least a 20% increase in the LD sum of the target
+ lesions, taking as reference the smallest LD sum recorded since the treatment
+ started or the appearance of one or more new lesions 
+\end_layout
+
+\begin_layout Subsubsection
+Asserting Recist guidelines using OWL and SPARQL
+\end_layout
+
+\begin_layout Standard
+The guidelines above represent rules and most of them were implemented using
+ SPARQL (rules related to non-target lesions were not implemented)
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Selection of target lesions
+\series default
+:The selection of final target lesions, from the set of potential lesions,
+ is performed by the radiologist.
+ However, this selection can also be implement using the following rule
+ (in SWRL notation):
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \space{}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\series bold
+Srwl rule that classifies potential target lesions based on tumor size (<15mm):
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+
+\lang brazilian
+\begin_inset Formula 
+\begin{gather*}
+\hline ImageAnnotation(?x)\land hasCalculationEntity(?x,?y)\land hasCalculationResult(?y,?z),\\
+values(?z,?val)\land greaterThan(?val,1.5)\rightarrow isAdjacentOrgan(?x,true)\\
+\hline 
+\end{gather*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+\lang brazilian
+Verification of target lesions:
+\series default
+ It is verified that there are at most five target lesions selected and
+ that each organ appears at most twice as the lesion location.
+ This is done by the following SPARQL ASK queries: 
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="4" columns="1">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Sparql query that verifies that there are at most five target lesions
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang brazilian
+\begin_inset listings
+lstparams "language=XML,basicstyle={\tiny\rmfamily},tabsize=5"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+PREFIX owl: <http://www.w3.org/2002/07/owl#>     	
+\end_layout
+
+\begin_layout Plain Layout
+
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>     	
+\end_layout
+
+\begin_layout Plain Layout
+
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>     
+\end_layout
+
+\begin_layout Plain Layout
+
+PREFIX onto: <http://www.owl-ontologies.com/Ontology1311106921.owl#>     	
+\end_layout
+
+\begin_layout Plain Layout
+
+ASK where { Select (count(?lesion) as ?log) where {     		
+\end_layout
+
+\begin_layout Plain Layout
+
+		?anotation onto:hasPerson onto:Xindividual.
+     		
+\end_layout
+
+\begin_layout Plain Layout
+
+		?anotation onto:hasImageAnnotations ?imageanotation.
+     		
+\end_layout
+
+\begin_layout Plain Layout
+
+		?imageanotation onto:hasImagingObservation ?observation.
+     		
+\end_layout
+
+\begin_layout Plain Layout
+
+		?observation onto:typeCode ?typeCode.
+     		
+\end_layout
+
+\begin_layout Plain Layout
+
+		FILTER regex(str(?typeCode),'Lesion Baseline Evaluation')     		
+\end_layout
+
+\begin_layout Plain Layout
+
+		?imageanotation onto:hasLesion ?lesion.
+     		
+\end_layout
+
+\begin_layout Plain Layout
+
+		} 
+\end_layout
+
+\begin_layout Plain Layout
+
+	having (?log <= 5 ) 
+\end_layout
+
+\begin_layout Plain Layout
+
+}; 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Sparql query that verifies that there are at most five target lesions
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang brazilian
+\begin_inset listings
+lstparams "language=XML,basicstyle={\tiny\rmfamily},tabsize=5"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+\end_layout
+
+\begin_layout Plain Layout
+
+PREFIX owl: <http://www.w3.org/2002/07/owl#> 
+\end_layout
+
+\begin_layout Plain Layout
+
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>       	
+\end_layout
+
+\begin_layout Plain Layout
+
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>       
+\end_layout
+
+\begin_layout Plain Layout
+
+PREFIX onto:<http://www.owl-ontologies.com/Ontology1311106921.owl#> 
+\end_layout
+
+\begin_layout Plain Layout
+
+ASK where {  
+\end_layout
+
+\begin_layout Plain Layout
+
+	SELECT (count(?location) as ?log) where {         		
+\end_layout
+
+\begin_layout Plain Layout
+
+      ?anotation onto:hasPerson onto:Xindividual.
+         		
+\end_layout
+
+\begin_layout Plain Layout
+
+      ?anotation onto:hasImageAnnotations ?imageanotation.
+          		
+\end_layout
+
+\begin_layout Plain Layout
+
+      ?imageanotation onto:hasImagingObservation ?observation.
+          	
+\end_layout
+
+\begin_layout Plain Layout
+
+	  ?observation onto:typeCode ?typeCode.
+          	
+\end_layout
+
+\begin_layout Plain Layout
+
+	  FILTER regex(str(?typeCode),'Lesion Baseline Evaluation').
+         	
+\end_layout
+
+\begin_layout Plain Layout
+
+	  ?imageanotation onto:hasLesion ?lesion.
+         	
+\end_layout
+
+\begin_layout Plain Layout
+
+	  ?lesion onto:hasLocation ?location.
+         		
+\end_layout
+
+\begin_layout Plain Layout
+
+      ?location rdf:type onto:Xorgan.
+         
+\end_layout
+
+\begin_layout Plain Layout
+
+	} 
+\end_layout
+
+\begin_layout Plain Layout
+
+having (?log <= 2) 
+\end_layout
+
+\begin_layout Plain Layout
+
+} 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Plain Layout
 
 \end_layout
@@ -1632,6 +2084,438 @@ name "fig:radlexclass"
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+\lang brazilian
+Calculation of RECIST sum:
+\series default
+ This operation is easily implemented by getting the values from the value
+ property on the CalculationResult entity.
+ This entity is related to the ImageAnnotation entity through the hasCalculation
+Entity object property (AIM4-O ontology), as shown in Fig.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:AIM4example"
+
+\end_inset
+
+.
+ The shortest axis (lymph nodes) and longest axis (other lesions) are summed
+ for all target lesions by the follow SPARQL queries: 
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="2" columns="1">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top" width="0pt">
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Sparql query that sums shorest and longest axis of all target lesion.
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\end_inset
+
+The “
+\series bold
+Xdatatime
+\series default
+” variable can be “Lesion Baseline Evaluation” or “Follow Up”
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang brazilian
+\begin_inset listings
+lstparams "language=XML,basicstyle={\tiny\rmfamily},tabsize=5"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>     
+\end_layout
+
+\begin_layout Plain Layout
+
+PREFIX owl: <http://www.w3.org/2002/07/owl#>     	
+\end_layout
+
+\begin_layout Plain Layout
+
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>     	
+\end_layout
+
+\begin_layout Plain Layout
+
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>     	
+\end_layout
+
+\begin_layout Plain Layout
+
+PREFIX onto:<http://www.owl-ontologies.com/Ontology1311106921.owl#>     	
+\end_layout
+
+\begin_layout Plain Layout
+
+SELECT ( SUM(?values) as ?sum) where {     	
+\end_layout
+
+\begin_layout Plain Layout
+
+	?anotation onto:hasPerson onto:Xindividual.
+     	
+\end_layout
+
+\begin_layout Plain Layout
+
+	?anotation onto:hasImageAnnotations ?imageanotation.
+      
+\end_layout
+
+\begin_layout Plain Layout
+
+	?imageanotation onto:hasImagingObservation ?observation.
+      
+\end_layout
+
+\begin_layout Plain Layout
+
+	?observation onto:typeCode ?typeCode.
+      	
+\end_layout
+
+\begin_layout Plain Layout
+
+	FILTER regex(str(?typeCode),'Xdatatime').
+     
+\end_layout
+
+\begin_layout Plain Layout
+
+	?imageanotation onto:hasCalculationEntity ?calculation.
+     	
+\end_layout
+
+\begin_layout Plain Layout
+
+	?calculation onto:hasCalculationResult ?calcresult.
+     	
+\end_layout
+
+\begin_layout Plain Layout
+
+	?calcresult onto:values ?values.
+     
+\end_layout
+
+\begin_layout Plain Layout
+
+} 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+\lang brazilian
+Classification of response:
+\series default
+ Finally, the classification of complete response(CP), partial response
+ (PR) or stable disease (SD) is carried out in figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:ShowsRecist"
+
+\end_inset
+
+: 
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename figures/recistResult.jpg
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\lang brazilian
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:ShowsRecist"
+
+\end_inset
+
+Shows the response classification PD (Progressive Disease: at least a 20%
+ increase in the LD sum of target lesions) of a patient with one lesion
+ in the liver “liver2” , with studies on dates october 31 and september
+ 26.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+The reasoning, based on the four guidelines above, provide an automated
+ estimate of the tumor burden, according to the RECIST criteria, on imaging
+ studies at baseline and follow-up.
+ This information will enable oncologists to calculate and classify patients
+ response.
+ 
+\end_layout
+
+\begin_layout Subsection
+TNM Staging
+\end_layout
+
+\begin_layout Standard
+Here we describe the evaluation of our TNM classifier, for this purpose
+ we firstly created a template named "TNM template" to provide the radiologist
+ with a pre-specified set of semantic terms for image annotation.
+ All image annotations are compatible by ePAD and were stored in the AIM
+ standard format 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Rubin2014"
+
+\end_inset
+
+.
+ An example of an annotated image is presented in Fig 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:TNMtemplate"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename figures/templateTNM.pdf
+	lyxscale 50
+	scale 25
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:TNMtemplate"
+
+\end_inset
+
+A CT image of the liver annotated with TNM template on the right of the
+ image 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Subsequently, we generated image annotations, in AIM-XML, and classified
+ automatically them using the TNM criteria, this process was duly evaluated
+ and correctly acepted by an experienced radiologist, he visually analyzed
+ the validity of the generated annotations in terms of semantic.
+ The process we followed was:
+\end_layout
+
+\begin_layout Itemize
+The data set used came from the following open databases:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+The NCI's Genomic Data Commons (GDC)
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+https://gdc.cancer.gov/
+\end_layout
+
+\end_inset
+
+ .
+\end_layout
+
+\begin_layout Itemize
+The Cancer Imaging Archive (TCIA)
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+https://public.cancerimagingarchive.net/ncia/login.jsf
+\end_layout
+
+\end_inset
+
+ (that contains only images, number of series and studies): As we working
+ with TNM classification from liver, we searched for "LIHC - Liver hepatocellula
+r carcinoma" obtaining 52 patients with information available in both databases
+ (images and reports).
+ However, information about tumor size was obtained by manual review of
+ the medical reports.
+ These reports are also available in the The NCI's Genomic Data Commons.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+After reading the medical reports, we generated excel spreadsheet files
+ with lesion size and other information about medical findings.
+\end_layout
+
+\begin_layout Itemize
+Using this excel file and data from the Genomic Data GDC we created the
+ AIM XML annotations.
+\end_layout
+
+\begin_layout Itemize
+The AIM files were used as input to our TNM classifier.
+ We compared the results with the TNM values the physicians reported.
+ I created a confusion matrix showing the precision and recall values.
+\end_layout
+
+\begin_layout Standard
+We automatically classificated all image findings, i.e.
+ the pairs (measurement, anatomical entity), were automatically classified
+ and for each data set, the radiologist was provided with an Excel spreadsheet
+ that provided each classified finding, the sentence, the ‘measurement,
+ anatomical entity’ pair and the classifier result (normal, abnormal or
+ unclassified).
+ Then the radiologist evaluated the classified finding as correct or incorrect.
+ All unclassified findings were evaluated as incorrect.
+ Accuracy was 96.4 % for oncologic re- ports and 92.9 % for mixed reports.
+ Detailed evaluation results are summarized in Table 2.
+ For both data sets, the number of incorrect classifications (i.e.
+ false positives and false negatives) was very small (Table 2).
+ However, both data sets have a significant number of unclassified findings
+ that occur when the anatomical entities are not covered by the knowledge
+ model
+\end_layout
+
+\begin_layout Standard
+To evaluate the ability
+\end_layout
+
+\begin_layout Standard
+Image classification based on TNM criteria 
 \end_layout
 
 \begin_layout Section
@@ -1663,6 +2547,58 @@ dard format for image metadata [50].
 Finally, using concrete examples, we clarified how ERGO annotations could
  be used with a description logic reasoner and a relational database to
  satisfy the three use cases enumerated in Section 3
+\end_layout
+
+\begin_layout Section
+Conclusion
+\end_layout
+
+\begin_layout Standard
+Imaging observations recorded as free text are difficult to relate to their
+ corresponding image locations.
+ Free text is also very difficult to process and query accurately even by
+ the state-of-the-art natural language processing programs such as caTIES
+ [10] and MetaMap [11].
+ Here are examples of free text observations and queries: 1.
+ There is a nodule in the upper lobe of the left lung measuring 25 mm×30
+ mm, best seen on series 5, image 51.
+ 2.
+ Find all patients that have one or more nodules that are larger than 2
+ cm×2 cm.
+ 3.
+ Find all patients that have a cancerous lung nodule or nodules decreasing
+ in volume by 50%after radiation and/ or chemotherapy treatment
+\end_layout
+
+\begin_layout Standard
+for achieved this , a ontology developed can overap such queries , and opening
+ apprach for more complex task such a classification
+\end_layout
+
+\begin_layout Standard
+The logical and computational feasibility of reusing (por- tions of) existing
+ ontologies such as the NCI Thesaurus, the Foundational Model of Anatomy
+ and possibly bioinformatics ontologies [7] remains to be studied.
+ We also highlighted some of the limitations of description logics-based
+ clas- sification for this task of tumor staging
+\end_layout
+
+\begin_layout Standard
+Although we have not actually done it, we assume that our approach could
+ be applied to other kinds of tumors and that similar conclusions would
+ have been reached.
+ The
+\end_layout
+
+\begin_layout Standard
+asdsad 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Kurtz20141082"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
