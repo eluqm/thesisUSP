@@ -1557,24 +1557,12 @@ hasLocation(?x,?y)\rightarrow isAdjacentOrgan(?x,true)\\
 At this point, once we covered the above requirements adequately using OWL
  and SWRL, we constructed the axioms and rules in order to be able to automatica
 lly classify cancer lesions based on the TNM system.
- 
-\end_layout
-
-\begin_layout Standard
-
-\lang brazilian
-We noticed that the way we modeled things mattered.
+ We noticed that the way we modeled things mattered.
  For example, it was easier to define N1a, N0 and to reuse their definitions
  for M0, rather than to start with the definition of M0 handling complex
  closures.
- 
-\end_layout
-
-\begin_layout Standard
-
-\lang brazilian
-With the use of the AIM4-O ontology, concepts can easily be related to each
- other as demonstrated previously.
+ With the use of the AIM4-O ontology, concepts can easily be related to
+ each other as demonstrated previously.
  Furthermore, integrity and cardinality requirements can be specified and
  enforced for reasoning purposes.
  
@@ -1612,7 +1600,7 @@ name "fig:radlexclass"
 
 \end_inset
 
-
+Getting the subclass-hierarchy from established ontologies.
 \end_layout
 
 \end_inset
@@ -1630,11 +1618,12 @@ Experimental Study
 \end_layout
 
 \begin_layout Standard
-In this section we evaluate firstly the expressivity the our ontology, followed
- by performance achieved by our classification approach, starting with Recist
- criteria and finished with more complex task classification as TNM, which
- is the objective of this study, and finally making a quantitative evaluation
- of TNM classifier using precision and recall.
+In this section we evaluated firstly the expressivity of AIM4-O ontology,
+ followed by, how our classifier is used to automatically classify image
+ findings, starting with Recist criteria and finished with more complex
+ classification task as TNM, which is the objective of this work.
+ Finally the quantitative evaluation of TNM classifier was made using precision
+ and recall.
  
 \end_layout
 
@@ -1702,10 +1691,14 @@ A considerable part of guidelines on Recist criteria can be automated and
 \end_layout
 
 \begin_layout Description
+\begin_inset Note Note
+status open
+
+\begin_layout Description
 Recist specifications:
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 Baseline documentation of “Target” and “Non-Target” lesions
 \end_layout
 
@@ -1758,13 +1751,18 @@ Progressive Disease (PD): At least a 20% increase in the LD sum of the target
  started or the appearance of one or more new lesions 
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
 \begin_layout Subsubsection
 Asserting Recist guidelines using OWL and SPARQL
 \end_layout
 
 \begin_layout Standard
-The guidelines above represent rules and most of them were implemented using
- SPARQL (rules related to non-target lesions were not implemented)
+The guidelines of Recist[ref,,,] represent rules and most of them were implement
+ed using SPARQL (rules related to non-target lesions were not implemented)
 \end_layout
 
 \begin_layout Standard
@@ -2303,7 +2301,7 @@ status open
 \align center
 \begin_inset Graphics
 	filename figures/recistResult.jpg
-	scale 50
+	scale 45
 
 \end_inset
 
@@ -2359,9 +2357,9 @@ TNM Staging
 \end_layout
 
 \begin_layout Standard
-Here we describe the evaluation of our TNM classifier, for this purpose
- we firstly created a template named "TNM template" to provide the radiologist
- with a pre-specified set of semantic terms for image annotation.
+To evaluate the ability of our TNM classifier, we firstly created a template
+ named "TNM template" to provide the radiologist with a pre-specified set
+ of semantic terms for image annotation.
  All image annotations are compatible by ePAD and were stored in the AIM
  standard format 
 \begin_inset CommandInset citation
@@ -2393,7 +2391,7 @@ status open
 \begin_inset Graphics
 	filename figures/templateTNM.pdf
 	lyxscale 50
-	scale 25
+	scale 23
 
 \end_inset
 
@@ -2477,56 +2475,103 @@ r carcinoma" obtaining 52 patients with information available in both databases
 
 \end_deeper
 \begin_layout Itemize
-After reading the medical reports, we generated excel spreadsheet files
- with lesion size and other information about medical findings.
+After reading the medical reports, the radiologist was provided with an
+ excel spreadsheet that provided information about medical findings as lesion
+ size, vascular invasion and others.
 \end_layout
 
 \begin_layout Itemize
 Using this excel file and data from the Genomic Data GDC we created the
- AIM XML annotations.
+ AIM XML annotations and integrated it into our knowledge base(as individuals
+ of AIM4-O).
 \end_layout
 
 \begin_layout Itemize
-The AIM files were used as input to our TNM classifier.
- We compared the results with the TNM values the physicians reported.
- I created a confusion matrix showing the precision and recall values.
+The AIM files were used as input TNM classifier.
+ We compared the results with the TNM values that physicians reported.
+ 
 \end_layout
 
 \begin_layout Standard
-We automatically classificated all image findings, i.e.
- the pairs (measurement, anatomical entity), were automatically classified
- and for each data set, the radiologist was provided with an Excel spreadsheet
- that provided each classified finding, the sentence, the ‘measurement,
- anatomical entity’ pair and the classifier result (normal, abnormal or
- unclassified).
- Then the radiologist evaluated the classified finding as correct or incorrect.
- All unclassified findings were evaluated as incorrect.
- Accuracy was 96.4 % for oncologic re- ports and 92.9 % for mixed reports.
- Detailed evaluation results are summarized in Table 2.
- For both data sets, the number of incorrect classifications (i.e.
- false positives and false negatives) was very small (Table 2).
- However, both data sets have a significant number of unclassified findings
- that occur when the anatomical entities are not covered by the knowledge
- model
+We automatically classificated all image annotations based on 52 different
+ clinical reports, in order to analyze the potencial of the automatic TNM
+ staging approach we discussed the patient staging scenarios with the help
+ of our expert and project partner at the Stanford University, the response
+ was positive.
+ The precision was 84.3 % and the recall 74.4%, the evaluation results are
+ summarized in the matrix of confusion in Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:matrixconfusion"
+
+\end_inset
+
+.
+ For initial stages such as I,II,IIIA, the number of incorrect classifications
+ (i.e.
+ false positives and false negatives) was very small.
+ Because, the stages more advanced are described by concepts more complex
+ relatively, for example we can see in Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:matrixconfusion"
+
+\end_inset
+
+ that the number of true positives in Stage IVA is less than minor stages.
+ In addition, the classifier reveals the fact that there are some clinical
+ reports cases with staging diagnosis inacurate in Genomic Data common,
+ for example In the context of one particular patient with ID "asdasda"
+ the automated staging results was correct after verification by our expert.
+ The stage predicted was "" in contrast with the information present in
+ "".
+ The patient examples show the impact of the automatic processing of image
+ metadata to improve clinical decision support systems.
 \end_layout
 
 \begin_layout Standard
-To evaluate the ability
+This fault can be avoided by ex- tending the knowledge model with more granular
+ size descriptions.
 \end_layout
 
 \begin_layout Standard
-Image classification based on TNM criteria 
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename figures/confusionmatrix.pdf
+	scale 35
+
+\end_inset
+
+
 \end_layout
 
-\begin_layout Section
-Results
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:matrixconfusion"
+
+\end_inset
+
+
 \end_layout
 
-\begin_layout Standard
-asdsad 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "Kurtz20141082"
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
 
 \end_inset
 
@@ -2534,19 +2579,53 @@ key "Kurtz20141082"
 \end_layout
 
 \begin_layout Standard
-We created a template named TNM template to provide the radiologist with
- a pre-specified set semantic terms for image annotation.
- All image annotations created by ePAD are stored in compliance with standards
- developed by the National Cancer Institute’s Annotationand ImageMarkup(AIM)stan
-dard format for image metadata [50].
- An example of a segmented and annotated image is presented in Fig.
- 1
+asdasdasd
 \end_layout
 
 \begin_layout Standard
-Finally, using concrete examples, we clarified how ERGO annotations could
- be used with a description logic reasoner and a relational database to
- satisfy the three use cases enumerated in Section 3
+asdasdasdadasd
+\end_layout
+
+\begin_layout Standard
+asdasdasdasdasd
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename figures/classhistogram.pdf
+	scale 30
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section
@@ -2599,6 +2678,56 @@ key "Kurtz20141082"
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+Finally, using concrete examples, we clarified how ERGO annotations could
+ be used with a description logic reasoner and a relational database to
+ satisfy the three use cases enumerated in Section 3
+\end_layout
+
+\begin_layout Standard
+It is important to note that the automatic reasoning procedure does not
+ give the clinician new information that he or she would not know after
+ (re)examining the CT images—yet the doctors acknowledged the relevance
+ of inferred staging knowledge for the purposes of quality control in clinical
+ diagnosis, e.g.
+ the analysis of real patient records often reveals the fact that there
+ are patient cases with a clini- cian’s diagnosis in the discharge letter
+ that contradicts the automated staging result based on the image annotation.
+\end_layout
+
+\begin_layout Standard
+Image classification based on TNM criteria 
+\end_layout
+
+\begin_layout Standard
+asdsad 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Kurtz20141082"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We evaluate the system using 40 randomly-chosen radiology reports containing
+ 1294 sentences.
+ We compare results of the sentence classification us- ing the initial linguisti
+c resource and the extended one.
+ Table 3 shows the classification results for the two evaluated cases.
+\end_layout
+
+\begin_layout Standard
+We created a template named TNM template to provide the radiologist with
+ a pre-specified set semantic terms for image annotation.
+ All image annotations created by ePAD are stored in compliance with standards
+ developed by the National Cancer Institute’s Annotationand ImageMarkup(AIM)stan
+dard format for image metadata [50].
+ An example of a segmented and annotated image is presented in Fig.
+ 1
 \end_layout
 
 \begin_layout Standard
