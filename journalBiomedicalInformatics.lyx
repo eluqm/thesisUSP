@@ -1797,7 +1797,8 @@ Srwl rule that classifies potential target lesions based on tumor size (<15mm):
 \lang brazilian
 \begin_inset Formula 
 \begin{gather*}
-\hline ImageAnnotation(?x)\land hasCalculationEntity(?x,?y)\land hasCalculationResult(?y,?z),\\
+\hline ImageAnnotation(?x)\land hasCalculationEntity(?x,?y)\\
+\land hasCalculationResult(?y,?z)\\
 values(?z,?val)\land greaterThan(?val,1.5)\rightarrow isAdjacentOrgan(?x,true)\\
 \hline 
 \end{gather*}
@@ -2360,8 +2361,8 @@ TNM Staging
 To evaluate the ability of our TNM classifier, we firstly created a template
  named "TNM template" to provide the radiologist with a pre-specified set
  of semantic terms for image annotation.
- All image annotations are compatible by ePAD and were stored in the AIM
- standard format 
+ All image annotations were stored in the AIM standard format and are compatible
+ by ePAD 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Rubin2014"
@@ -2509,29 +2510,17 @@ reference "fig:matrixconfusion"
 .
  For initial stages such as I,II,IIIA, the number of incorrect classifications
  (i.e.
- false positives and false negatives) was very small.
+ false positives and false negatives) was very small .
  Because, the stages more advanced are described by concepts more complex
  relatively, for example we can see in Figure 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "fig:matrixconfusion"
+reference "fig:histogram"
 
 \end_inset
 
  that the number of true positives in Stage IVA is less than minor stages.
- In addition, the classifier reveals the fact that there are some clinical
- reports cases with staging diagnosis inacurate in Genomic Data common,
- for example In the context of one particular patient with ID "asdasda"
- the automated staging results was correct after verification by our expert.
- The stage predicted was "" in contrast with the information present in
- "".
- The patient examples show the impact of the automatic processing of image
- metadata to improve clinical decision support systems.
-\end_layout
-
-\begin_layout Standard
-This fault can be avoided by ex- tending the knowledge model with more granular
- size descriptions.
+ 
 \end_layout
 
 \begin_layout Standard
@@ -2579,15 +2568,20 @@ name "fig:matrixconfusion"
 \end_layout
 
 \begin_layout Standard
-asdasdasd
+In addition, the classifier reveals the fact that there are some clinical
+ reports cases with staging diagnosis inacurate in Genomic Data common,
+ for example In the context of particular patients such as the patient with
+ ID "asdasda" the automated staging result was correct after validation
+ by our expert.
+ The stage predicted was "" in contrast with the information present in
+ "".
+ Such patient examples show the importace of the automatic processing of
+ image metadata to improve clinical decision support systems.
 \end_layout
 
 \begin_layout Standard
-asdasdasdadasd
-\end_layout
-
-\begin_layout Standard
-asdasdasdasdasd
+This fault can be avoided by ex- tending the knowledge model with more granular
+ size descriptions.
 \end_layout
 
 \begin_layout Standard
@@ -2611,6 +2605,12 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:histogram"
+
+\end_inset
+
 
 \end_layout
 
