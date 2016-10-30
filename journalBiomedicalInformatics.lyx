@@ -217,6 +217,19 @@ Methods
 Our approach comprises three tasks:
 \end_layout
 
+\begin_layout Itemize
+The ontological representation of AIM 4.0 model.
+ 
+\end_layout
+
+\begin_layout Itemize
+Reasoning based on TNM rules that use these OWL instances
+\end_layout
+
+\begin_layout Itemize
+Formal Representation of Cancer Staging
+\end_layout
+
 \begin_layout Subsection
 The ontological representation of AIM model.
  
@@ -252,8 +265,7 @@ https://wiki.nci.nih.gov/display/AIM/Extending+the+AIM+Model
 
 \end_inset
 
-.
- [figure 3 and 4] and named this new ontology such as AIM4-O.
+ and named this new ontology such as AIM4-O.
  
 \end_layout
 
@@ -1037,11 +1049,77 @@ Sample of AIM PhysicalEntity in XML and OWL format
 \end_layout
 
 \begin_layout Subsection
-turn the notes on xml format for instances of AIM4-The ontology
+Reasoning based on TNM rules that use these OWL instances
+\end_layout
+
+\begin_layout Subsubsection
+Transforming AIM-XML Annotations to OWL Instances 
+\end_layout
+
+\begin_layout Standard
+The second step is to define a mechanism to transform existing AIM-XML documents
+ to their equivalent annotations encoded using OWL as AIM4-O individuals.
+ We developed a script to perform this task.
+ This script uses the groovy language to automatically map XML documents
+ to AIM classes, which are represented as a set of java classes based on
+ the AIM 4.0 UML model.
+ Subsequently, the OWL-api (a Java API and reference implementation for
+ creating, manipulating and serialising OWL Ontologies) was used to create
+ OWL Instances from these AIM java classes, thus allowing the script to
+ process streams of XML documents and populate an OWL knowledge base with
+ their content.
+ 
+\end_layout
+
+\begin_layout Standard
+With the above AIM in OWL representation, we are in a position to develop
+ ontology-based and rule-based reasoning mechanisms to work with AIM annotations.
+ To achieve the goal of cancer staging from image annotations, we used subclass,
+ intersection, equivalence, disjunction between classes, object properties
+ and some rules as reasoning mechanisms.
+ This process will be described below.
+\end_layout
+
+\begin_layout Subsubsection
+Reasoning and TNM classifier(General Ontology)
+\end_layout
+
+\begin_layout Standard
+In order to staging of a type of cancer starting images and image annotations
+ we must have the support of a capable ontology to specify the semantics
+ of image observations of a particular domain..........
+\end_layout
+
+\begin_layout Subsubsection
+General Ontology 
+\end_layout
+
+\begin_layout Standard
+The ontology is divided in 3 files, as seen on Figure ....
+ 
+\end_layout
+
+\begin_layout Standard
+The main AIM ontology (with individuals obtained using the above processes),
+ 
+\end_layout
+
+\begin_layout Standard
+the general TNM concepts, 
+\end_layout
+
+\begin_layout Standard
+the liver topography (based on the Onlira ontology [ref paper]), 
+\end_layout
+
+\begin_layout Standard
+and a part of the radlex lexicon (taken from http://bioportal.bioontology.org/onto
+logies/RADLEX/classes).
+ 
 \end_layout
 
 \begin_layout Subsection
-Formal Representation of Cancer Staging 
+Formal Representation of TNM Cancer Staging 
 \end_layout
 
 \begin_layout Standard
@@ -1614,14 +1692,13 @@ Getting the subclass-hierarchy from established ontologies.
 \end_layout
 
 \begin_layout Section
-Experimental Study
+Experimental Study and Results
 \end_layout
 
 \begin_layout Standard
 In this section we evaluated firstly the expressivity of AIM4-O ontology,
  followed by, how our classifier is used to automatically classify image
- findings, starting with Recist criteria and finished with more complex
- classification task as TNM, which is the objective of this work.
+ findings based on TNM criteria, which is the objective of this work.
  Finally the quantitative evaluation of TNM classifier was made using precision
  and recall.
  
@@ -1632,24 +1709,36 @@ Data sets
 \end_layout
 
 \begin_layout Standard
-BC....busca en journal 
+Our first dataset is a set of real clinical reports of hepatocellular carcinoma
+ (HCC) patients from The NCI's Genomic Data Commons (GDC).
+ In this work all experiments were supported by the GDC data.
+ On the other hand and more important for image metadata classification
+ was the requirement to have a dataset of images to validate the results
+ of GDC clinical reports, The TCIA 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Blomqvist2012"
+
+\end_inset
+
+ is a service which de-identifies and hosts a large archive of medical images
+ of cancer accessible for public download and also it is related with GDC
+ by 
+\emph on
+a patient Subject ID
+\emph default
+.
+ The imaging modality selected was computed tomography (CT), then, those
+ images were loaded into the annotation tool ePAD.
+ 
 \end_layout
 
 \begin_layout Standard
-While the evaluation of classification could be applied to stage other cancers,
- this work focuses on staging liver cancer for reasons of data availability.
- For a given patient, the input to the system consists of a variable number
- of textual reports describing the results of histology tests.
- The objective of the system is to determine T, N, and M stage values for
- the patient.
- The system aims to achieve this by applying machine learning text categorisatio
-n techniques [6].
-\end_layout
-
-\begin_layout Standard
-Finally, using concrete examples, we clarified how ERGO annotations could
- be used with a description logic reasoner and a relational database to
- satisfy the three use cases enumerated in Section 3
+While the evaluation of cancer staging could be applied to other cancer,
+ this work focuses on staging liver cancer (HCC) for reasons of clinical
+ data and image availability.
+ For a given patient, the input to the system consists of AIM files(image
+ annotations ) and the output, consist of the Cancer Staging for this patient.
 \end_layout
 
 \begin_layout Subsection
@@ -1657,32 +1746,998 @@ Quantitative assesment of AIM4-O ontology
 \end_layout
 
 \begin_layout Standard
-This study was performed ...
+According to 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Blomqvist2012"
+
+\end_inset
+
+ 
+\emph on
+Ontological evaluation is the process of assessing an ontology with respect
+ to certain criteria, using certain measures
+\emph default
+.
+ In this work, we undertook the evaluation of the AIM4-O ontology from the
+ functional point of view [2].
+ In order to evaluate the functionality of the ontology, we describe ontology
+ assessment as a task-focused evaluation of ontologies against their ontological
+ requirements such as competency questions (CQs) and inference requirements
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Kokciyan2014"
+
+\end_inset
+
+.
+ 
 \end_layout
 
 \begin_layout Standard
-However, both data sets have a significant number of unclassified findings
- that occur when the anatomical entities are not covered by the knowledge
- model
+In order to evaluate the AIM4-O ontology, we studied and evaluated how it
+ could help in searching clinical reports that describe image findings (reports
+ about cancer ), for this purpose, were compared two different approaches
+ (CQs): 
 \end_layout
+
+\begin_layout Itemize
+Based on ontologies (semantic search): If reports on image findings are
+ described as AIM4-O ontology individuals, the reports can be searched using
+ description logic query languages, such as DL query 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Kokciyan2014"
+
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Itemize
+Based keyword search: Clinical reports and image findings are usually written
+ in natural language, therefore, an method for searching can be keyword
+ search.
+\end_layout
+
+\begin_layout Standard
+In order to highlight the differences between these two approaches, we describe
+ four queries expressed both in DL (DL query) and keywords (see Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:queries"
+
+\end_inset
+
+):
+\end_layout
+
+\begin_layout Enumerate
+Q1 - Find all reports related to an image observation (tumor observation)
+ 
+\end_layout
+
+\begin_layout Enumerate
+Q2 - Find all reports that describe multiple tumors 
+\end_layout
+
+\begin_layout Enumerate
+Q3 - Find all reports that contain a tumor observation that has a size greater
+ than 8 cm 
+\end_layout
+
+\begin_layout Enumerate
+Q4 - Find all reports that contain a tumor observation with descriptors
+ (i.e invasion, mass, vascular) 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="5" columns="3">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top" width="1.5cm">
+<column alignment="center" valignment="top" width="7cm">
+<column alignment="center" valignment="top" width="2.5cm">
+<row>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Query ID
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+DL query
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Keyword query
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Q1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+hasAnnotations some (hasImageAnnotations some (hasImagingObservation some
+ (ImagingObservationEntity and label value "Lesion type "))) 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Tumor 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Q2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+hasAnnotations min 2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Multiple tumor 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Q3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+hasAnnotations some (hasImageAnnotations some (hasCalculationEntity some
+ (hasCalculationResult some (some values float [> 8.0f])))) 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Tumor size greater than 8 cm 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Q4
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+hasImagingObservationCharacteristic 1 min
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Vascular tumor invasion mass 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:queries"
+
+\end_inset
+
+Description logic and keyword representation for four queries
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We have considered the following points in order to evaluate both approaches:
+ 
+\end_layout
+
+\begin_layout Itemize
+The evaluation is based on a data set of GDC reports: We took 15 random
+ radiology reports of different patients written in natural language and
+ converted them into AIM4-O instances.
+ 
+\end_layout
+
+\begin_layout Itemize
+A report was retrieved if it satisfied the DL query or if it contained all
+ of the keywords in the search query.
+ 
+\end_layout
+
+\begin_layout Itemize
+Finally, we compared precision and recall against the gold standard.
+ The gold standard was determined by a radiologist manually.
+ 
+\end_layout
+
+\begin_layout Standard
+The four queries with corresponding precision and recall results are shown
+ in Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:prexrecallontology"
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="6" columns="10">
+<features tabularvalignment="middle">
+<column alignment="left" valignment="top" width="1.2cm">
+<column alignment="left" valignment="top" width="0pt">
+<column alignment="left" valignment="top" width="0.8cm">
+<column alignment="left" valignment="top" width="0.9cm">
+<column alignment="left" valignment="top" width="0.7cm">
+<column alignment="left" valignment="top" width="0.9cm">
+<column alignment="left" valignment="top" width="0.8cm">
+<column alignment="left" valignment="top" width="0.9cm">
+<column alignment="left" valignment="top" width="0.7cm">
+<column alignment="left" valignment="top" width="0.8cm">
+<row>
+<cell multicolumn="1" alignment="left" valignment="top" rightline="true" usebox="none" width="1.8cm">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Query ID
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="1" alignment="center" valignment="top" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Q1
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="1" alignment="center" valignment="top" rightline="true" usebox="none" width="1.5cm">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Q2
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="1" alignment="center" valignment="top" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Q3
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="1" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Q4
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multicolumn="1" alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+DL-Query
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Key-Query
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+DL-Query
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Key-Query
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+DL-Query
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Key-Query
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+DL-Query
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Key-Query
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="3" alignment="left" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Semantic Search
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+P
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.9
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.67
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+R
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.9
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="3" alignment="left" valignment="middle" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Keyword Search
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+P
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.4
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+R
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.8
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.4
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.7
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:prexrecallontology"
+
+\end_inset
+
+R=recall and P=precision values for four queries 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+Observations 
+\end_layout
+
+\begin_layout Standard
+By analyzing the four queries we can see that the semantic search has the
+ greatest number of relevant documents retrieved: 
+\end_layout
+
+\begin_layout Standard
+Q1: With the semantic approach, 15 reports were retrieved with a precision
+ and recall of 1 (15/15).
+ With the keyword search, 12 reports were retrieved with a precision of
+ 1 (12/12) and recall of 0.8 (12/15).
+ Q2: With the semantic approach, 5 reports were retrieved with a precision
+ and recall of 1 (5/5).
+ With the keyword search, 5 reports were retrieved with a precision and
+ recall of 0.4 (2/5).
+ Q3: With the semantic search, 10 reports were retrieved with a precision
+ of 0.9 (9/10) and recall of 0.9 (9/10).
+ With the keyword search no reports were retrieved, because there were not
+ any reports that contained all the query words (i.e., lesion size greater
+ than 8 cm).
+ Q4: With the semantic search, 15 reports were retrieved with a precision
+ of 0.67 (10/15) and recall of 1 (10/10).
+ With the keyword search, 7 reports were retrieved with a precision of 1
+ (7/7) and recall of 0.7 (7/10).
+\end_layout
+
+\begin_layout Standard
+The semantic search performed better, with recall values close to 1 and
+ always better than the keyword search.
+ Also, in all but one case, precision values were better for the semantic
+ search.
+ The keyword search had 0 precision and recall for the query 3, which is
+ a very bad result.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status collapsed
 
 \begin_layout Subsection
 Classification of image findings with AIM4-O using Recist Criteria
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 The RECIST (Response Evaluation Criteria In Solid Tumors) guideline allows
  a standardized assessment of tumor burden and tumor response during therapy.
  Here, a sum of the diameters for all target lesions is calculated and reported
- as the baseline for follow-up and indicates therapy response/failure[ref.....].
+ as the baseline for follow-up and indicates therapy response/failure
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Recist"
+
+\end_inset
+
+.
  
 \end_layout
 
-\begin_layout Standard
-A considerable part of guidelines on Recist criteria can be automated and
- improved using the AIM4-O ontology model.
+\begin_layout Plain Layout
+A considerable part of guidelines on Recist criteria can be automated using
+ the AIM4-O ontology model and image annotations.
  However, this is not done by defining logical axioms and SWRL rules in
- OWL, as we do with other types classification (such as TNM).
+ OWL, as we do with other types classification such as TNM.
  That happens because Recist is based on value comparisons and OWL uses
  an open world assumption.
  Instead, we use SPARQL to retrieve relevant data to classify findings by
@@ -1690,9 +2745,14 @@ A considerable part of guidelines on Recist criteria can be automated and
  
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
 \begin_layout Description
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Description
 Recist specifications:
@@ -1756,16 +2816,27 @@ Progressive Disease (PD): At least a 20% increase in the LD sum of the target
 
 \end_layout
 
+\begin_layout Standard
+\begin_inset Note Note
+status collapsed
+
 \begin_layout Subsubsection
 Asserting Recist guidelines using OWL and SPARQL
 \end_layout
 
-\begin_layout Standard
-The guidelines of Recist[ref,,,] represent rules and most of them were implement
-ed using SPARQL (rules related to non-target lesions were not implemented)
+\begin_layout Plain Layout
+The guidelines of Recist in detail in 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Recist"
+
+\end_inset
+
+, represent rules and most of them were implemented using SPARQL (rules
+ related to non-target lesions were not implemented):
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 \series bold
 Selection of target lesions
@@ -1776,21 +2847,21 @@ Selection of target lesions
  (in SWRL notation):
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset space \space{}
 \end_inset
 
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 \align center
 
 \series bold
 Srwl rule that classifies potential target lesions based on tumor size (<15mm):
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 \noindent
 \align center
 
@@ -1808,7 +2879,7 @@ values(?z,?val)\land greaterThan(?val,1.5)\rightarrow isAdjacentOrgan(?x,true)\\
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 \series bold
 \lang brazilian
@@ -1819,7 +2890,7 @@ Verification of target lesions:
  This is done by the following SPARQL ASK queries: 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 \lang brazilian
 \begin_inset Float table
@@ -2076,16 +3147,12 @@ having (?log <= 2)
 
 \end_layout
 
-\begin_layout Plain Layout
-
-\end_layout
-
 \end_inset
 
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 \series bold
 \lang brazilian
@@ -2107,7 +3174,7 @@ reference "fig:AIM4example"
  for all target lesions by the follow SPARQL queries: 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 \lang brazilian
 \begin_inset Float table
@@ -2263,16 +3330,12 @@ SELECT ( SUM(?values) as ?sum) where {
 
 \end_layout
 
-\begin_layout Plain Layout
-
-\end_layout
-
 \end_inset
 
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 \series bold
 \lang brazilian
@@ -2289,7 +3352,7 @@ reference "fig:ShowsRecist"
 : 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 \lang brazilian
 \begin_inset Float figure
@@ -2302,7 +3365,7 @@ status open
 \align center
 \begin_inset Graphics
 	filename figures/recistResult.jpg
-	scale 45
+	scale 40
 
 \end_inset
 
@@ -2333,16 +3396,12 @@ Shows the response classification PD (Progressive Disease: at least a 20%
 
 \end_layout
 
-\begin_layout Plain Layout
-
-\end_layout
-
 \end_inset
 
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 \lang brazilian
 The reasoning, based on the four guidelines above, provide an automated
@@ -2351,6 +3410,11 @@ The reasoning, based on the four guidelines above, provide an automated
  This information will enable oncologists to calculate and classify patients
  response.
  
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection
@@ -2500,7 +3564,7 @@ We automatically classificated all image annotations based on 52 different
  of our expert and project partner at the Stanford University, the response
  was positive.
  The precision was 84.3 % and the recall 74.4%, the evaluation results are
- summarized in the matrix of confusion in Figure 
+ summarized in the color scale matrix in Figure 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:matrixconfusion"
@@ -2508,18 +3572,27 @@ reference "fig:matrixconfusion"
 \end_inset
 
 .
- For initial stages such as I,II,IIIA, the number of incorrect classifications
- (i.e.
- false positives and false negatives) was very small .
- Because, the stages more advanced are described by concepts more complex
- relatively, for example we can see in Figure 
+ This represents a confusion matrix for a multi cancer stage classification,
+ For initial cancer stage such as I,II,IIIA, the number of incorrect classificat
+ions (i.e.
+ false positives and false negatives) was very small.
+ It is represented by the highlighted diagonal of the matrix in Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:matrixconfusion"
+
+\end_inset
+
+.
+ This is because, the cancer stages such IIIB or IVA are described by concepts
+ more complex relatively, for example we can see in Figure 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:histogram"
 
 \end_inset
 
- that the number of true positives in Stage IVA is less than minor stages.
+ that, the number of true positives in Stage IIIB is less than StageIVA.
  
 \end_layout
 
@@ -2532,7 +3605,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename figures/confusionmatrix.pdf
+	filename figures/confusionmatrix2.pdf
 	scale 35
 
 \end_inset
@@ -2550,7 +3623,7 @@ name "fig:matrixconfusion"
 
 \end_inset
 
-
+Confusion matrix for TNM multi-stage classification
 \end_layout
 
 \end_inset
@@ -2568,20 +3641,42 @@ name "fig:matrixconfusion"
 \end_layout
 
 \begin_layout Standard
-In addition, the classifier reveals the fact that there are some clinical
- reports cases with staging diagnosis inacurate in Genomic Data common,
- for example In the context of particular patients such as the patient with
- ID "asdasda" the automated staging result was correct after validation
- by our expert.
- The stage predicted was "" in contrast with the information present in
- "".
- Such patient examples show the importace of the automatic processing of
- image metadata to improve clinical decision support systems.
+In addition, the classifier revealed the fact that there are some clinical
+ reports cases with staging diagnosis inaccurate, presents in The NCI's
+ Genomic Data Common
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+https://gdc.cancer.gov/
 \end_layout
 
-\begin_layout Standard
-This fault can be avoided by ex- tending the knowledge model with more granular
- size descriptions.
+\end_inset
+
+, for example, in the context of particular patients such as the patient
+ with Subject 
+\emph on
+ID TCGA-DD-A1EJ,
+\emph default
+ the staging result of our TNM classifier was correct after validation by
+ our expert.
+ The stage predicted was 
+\emph on
+Stage I
+\emph default
+ in contrast with the information present in 
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+https://gdc-portal.nci.nih.gov/cases/52292ffc-0902-4d97-b461-20723987a177
+\end_layout
+
+\end_inset
+
+.
+ Such patient examples show the importace of improve clinical decision support
+ systems by processing of image metadata in cancer assessment.
 \end_layout
 
 \begin_layout Standard
@@ -2611,15 +3706,12 @@ name "fig:histogram"
 
 \end_inset
 
-
+Summary of Histograms for each class-stage, before automatic TNM classification
+ of image metadata of 52 reports
 \end_layout
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Plain Layout
 
 \end_layout
 
@@ -2728,6 +3820,12 @@ We created a template named TNM template to provide the radiologist with
 dard format for image metadata [50].
  An example of a segmented and annotated image is presented in Fig.
  1
+\end_layout
+
+\begin_layout Standard
+Finally, using concrete examples, we clarified how ERGO annotations could
+ be used with a description logic reasoner and a relational database to
+ satisfy the three use cases enumerated in Section 3
 \end_layout
 
 \begin_layout Standard

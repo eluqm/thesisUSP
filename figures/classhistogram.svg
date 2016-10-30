@@ -9,8 +9,8 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="684.29077"
-   height="420.48843"
+   width="728.32678"
+   height="456.46008"
    id="svg2"
    version="1.1"
    inkscape:version="0.48.5 r10040"
@@ -106,8 +106,8 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="1.0076756"
-     inkscape:cx="639.76232"
-     inkscape:cy="236.63961"
+     inkscape:cx="449.19165"
+     inkscape:cy="278.99895"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -136,7 +136,7 @@
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(-30.312773,-36.434544)">
+     transform="translate(13.723296,-36.434544)">
     <g
        style="text-align:left;color:#4b4966"
        id="g5258"
@@ -669,5 +669,28 @@
          id="tspan5356"
          x="687.62988"
          y="135.88794">FP</tspan></text>
+    <text
+       sodipodi:linespacing="125%"
+       id="text3481"
+       y="-4.1190939"
+       x="-308.52505"
+       style="font-size:20px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans;-inkscape-font-specification:Sans"
+       xml:space="preserve"
+       transform="matrix(-0.02378439,-0.99971711,0.99971711,-0.02378439,0,0)"><tspan
+         sodipodi:role="line"
+         id="tspan3485"
+         x="-308.52505"
+         y="-4.1190939">Cancer Stages</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:20px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans;-inkscape-font-specification:Sans"
+       x="249.98909"
+       y="488.73447"
+       id="text3487"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3491"
+         x="249.98909"
+         y="488.73447">Clinical Reports</tspan></text>
   </g>
 </svg>

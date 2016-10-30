@@ -2409,12 +2409,12 @@ name "sec:step3"
 \end_layout
 
 \begin_layout Standard
-A fim de classificar lesões do um tipo de cancer apartir das imagens e suas
- anotações precisamos ter o apoio de uma ontologia capaz de especificar
- a semântica das observações de imagem de um domínio particular, neste caso
- o corpo humano e mais especificamente um organo que vai ser seleccionado
- de acordo como o tipo de câncer que vão avaliar(neste trabalho vai ser
- o câncer de figado).
+A fim de staging de um tipo de cancer apartir das imagens e suas anotações
+ precisamos ter o apoio de uma ontologia capaz de especificar a semântica
+ das observações de imagem de um domínio particular, neste caso o corpo
+ humano e mais especificamente um organo que vai ser seleccionado de acordo
+ como o tipo de câncer que vão avaliar(neste trabalho vai ser o câncer de
+ figado).
  Além disso, considerou-se necessário a inclusão de uma representação em
  
 \series bold
