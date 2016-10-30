@@ -223,7 +223,7 @@ The ontological representation of AIM 4.0 model.
 \end_layout
 
 \begin_layout Itemize
-Reasoning based on TNM rules that use these OWL instances
+Generate conditions to implement the TNM classifier(General Ontology)
 \end_layout
 
 \begin_layout Itemize
@@ -1049,7 +1049,7 @@ Sample of AIM PhysicalEntity in XML and OWL format
 \end_layout
 
 \begin_layout Subsection
-Reasoning based on TNM rules that use these OWL instances
+Generate conditions to implement the TNM classifier
 \end_layout
 
 \begin_layout Subsubsection
@@ -1058,36 +1058,48 @@ Transforming AIM-XML Annotations to OWL Instances
 
 \begin_layout Standard
 The second step is to define a mechanism to transform existing AIM-XML documents
- to their equivalent annotations encoded using OWL as AIM4-O individuals.
+ to their equivalent encoded using OWL ( AIM4-O individuals).
  We developed a script to perform this task.
  This script uses the groovy language to automatically map XML documents
  to AIM classes, which are represented as a set of java classes based on
  the AIM 4.0 UML model.
- Subsequently, the OWL-api (a Java API and reference implementation for
- creating, manipulating and serialising OWL Ontologies) was used to create
- OWL Instances from these AIM java classes, thus allowing the script to
- process streams of XML documents and populate an OWL knowledge base with
- their content.
  
 \end_layout
 
 \begin_layout Standard
-With the above AIM in OWL representation, we are in a position to develop
- ontology-based and rule-based reasoning mechanisms to work with AIM annotations.
- To achieve the goal of cancer staging from image annotations, we used subclass,
- intersection, equivalence, disjunction between classes, object properties
- and some rules as reasoning mechanisms.
- This process will be described below.
-\end_layout
-
-\begin_layout Subsubsection
-Reasoning and TNM classifier(General Ontology)
+Subsequently, the OWL-api (a Java API and reference implementation for creating,
+ manipulating and serialising OWL Ontologies) was used to create OWL Instances
+ from those AIM java classes, thus allowing the script to process streams
+ of XML documents and populate an OWL knowledge base with their content.
+ 
 \end_layout
 
 \begin_layout Standard
-In order to staging of a type of cancer starting images and image annotations
- we must have the support of a capable ontology to specify the semantics
- of image observations of a particular domain..........
+With the above, we are in a position to develop ontology-based and rule-based
+ reasoning mechanisms to work with AIM annotations.
+ 
+\end_layout
+
+\begin_layout Subsubsection
+TNM classifier(General Ontology)
+\end_layout
+
+\begin_layout Standard
+In order to staging automatically the cancer, our approach must have the
+ support of capable ontology to specify the semantics of image observations
+ of a particular domain, in this case, this ontology should be able to represent
+ the topology of a human body organ, this organ in which the cancer starts
+ growing and has its own TNM system, in this work this organ was the liver.
+ Furthermore, it is considered necessary to include an OWL representation
+ of Radlex vocabulary in order to facilite handling AIM4-O individuals,
+ because these individuals have terminology Radlex in its structure.
+ Finally, it was added to the ontology the set of rules based on the TNM
+ liver system.
+ The result was 
+\series bold
+the general ontology
+\series default
+ constructed from the above-mentioned requirements.
 \end_layout
 
 \begin_layout Subsubsection
@@ -1116,6 +1128,13 @@ the liver topography (based on the Onlira ontology [ref paper]),
 and a part of the radlex lexicon (taken from http://bioportal.bioontology.org/onto
 logies/RADLEX/classes).
  
+\end_layout
+
+\begin_layout Standard
+To achieve the goal of staging cancer from image annotations, we used subclass,
+ intersection, equivalence, disjunction between classes, object properties
+ and some rules as reasoning mechanisms.
+ This process will be described below.
 \end_layout
 
 \begin_layout Subsection
@@ -1657,7 +1676,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename figures/drawingRadlextaxonomyLiver.pdf
+	filename figures/drawingRadlextaxonomyLiver.svg
 	lyxscale 50
 	scale 17
 

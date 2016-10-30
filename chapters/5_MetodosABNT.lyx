@@ -2409,20 +2409,15 @@ name "sec:step3"
 \end_layout
 
 \begin_layout Standard
-A fim de staging de um tipo de cancer apartir das imagens e suas anotações
- precisamos ter o apoio de uma ontologia capaz de especificar a semântica
- das observações de imagem de um domínio particular, neste caso o corpo
- humano e mais especificamente um organo que vai ser seleccionado de acordo
- como o tipo de câncer que vão avaliar(neste trabalho vai ser o câncer de
- figado).
+A fim de fazer automaticamente o staging de um tipo de cancer apartir das
+ imagens e suas anotações precisamos ter o apoio de uma ontologia capaz
+ de especificar um domínio particular, neste caso o organo baseline afectado
+ pelo cancer, que vai ser seleccionado de acordo como o tipo de câncer que
+ vão avaliar(neste trabalho vai ser o câncer de figado).
  Além disso, considerou-se necessário a inclusão de uma representação em
- 
-\series bold
-owl
-\series default
- de uma parte do vocabulário Radlex, a fim de faciliar o trabalho de classificaç
-ão e tratamento de indivíduos, estes indivíduos têm terminologias de Radlex
- em sua estrutura.
+ OWL de uma parte do vocabulário Radlex, a fim de faciliar o trabalho de
+ classificação e tratamento dos indivíduos da ontologya AIM4-O, estes indivíduos
+ têm terminologias de Radlex em sua estrutura.
  Finalmente, foi adicionado à ontologia gerada o conjunto de regras baseadas
  no sistema TNM.
  O resultado é uma 
@@ -2613,14 +2608,7 @@ des e as relações entre o fígado, as veias hepáticas e lesões hepáticas.
 
 \begin_layout Standard
 Partes desta ontologia foram utilizadas para representar a topografia do
- fígado descrito nas anotações AIM-XML gerado pelo ePAD 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "Silvio2014"
-
-\end_inset
-
-.
+ fígado descrito nas anotações AIM-XML gerado pelo ePAD.
 \end_layout
 
 \begin_layout Standard
