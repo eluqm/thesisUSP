@@ -150,14 +150,20 @@ Information about cancer stage in a patient is crucial when clinicians assess
  However, in clinical practice, the implementation of this process can be
  tedious and error-prone and create uncertainty.
  In order to alleviate these problems, we intend to assist radiologists
- by providing a second opinion in the evaluation of cancer stage in patients
- a TNM classifier.
+ by providing a second opinion in the evaluation of cancer stage in patients.
  For doing this, Semantic Web technologies, such as ontologies and reasoning,
  were used to automatically classify cancer stages.
  This classification used semantic annotations, made by radiologists using
- the ePAD tool and stored it in the AIM format, and rules of an ontology
+ the ePAD tool and stored it in the standard AIM format, then these xml
+ documents were transformed in AIM4-O ontology individuals, rules and axioms
  representing the TNM standard.
- The whole process was validated with users from the Radiology Dept.
+ the TNM classifier was evaluated with real patients cases from The NCI's
+ Genomic Data Commons (GDC) in term of presicion and recall, with 84.3
+\backslash
+% and 74.4
+\backslash
+% respectively,The whole process was validated with users from the Radiology
+ Dept.
  of the Stanford University.
 \end_layout
 
@@ -182,7 +188,7 @@ Reasoning,
 
 \begin_layout Plain Layout
 
-Image Annotations, Cancer Staging, ePAD, OWl
+Image Annotations, Cancer Staging, ePAD, OWl, SWRL
 \end_layout
 
 \begin_layout Plain Layout
@@ -788,7 +794,7 @@ dateTime
  Therefore, we can say that the statement
 \series bold
 \emph on
- :imageAnnotation1 dateTime {"2014-09-26T17:07:58ˆˆdatetime"}
+ :imageAnnotation1 dateTime {2014-09-26T17:07:58ˆˆdatetime}
 \series default
 \emph default
  states that an annotation that is referred as imageAnnotation1 it was created
@@ -1141,18 +1147,25 @@ reference "tab:sample-of-Image"
  shows syntax of a sample AIM ImageAnnotation with 
 \series bold
 \emph on
-uniqueIdentifier
+uniqueIdentifier:
 \series default
 \emph default
- "f3fftpf6wsinx4o17il0t3a9o7fr1x7gyr9uye82" instance in AIM 4.0 XML format,
- the same shows the OWL manchester syntax of the same AIM 
+ 
+\series bold
+f3fftpf6wsinx4o17il0t3a9o7fr1x7gyr9uye82 
+\series default
+instance in AIM 4.0 XML format, the same shows the OWL manchester syntax
+ of the same AIM 
 \series bold
 \emph on
 :ImageAnnotation
 \series default
 \emph default
  instance in an AIM 4.0 OWL file.
- We can see, in table 
+\end_layout
+
+\begin_layout Standard
+We can see, in table 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "tab:sample-of-Image"
@@ -1165,8 +1178,11 @@ reference "tab:sample-of-Image"
 uniqueIdentifier
 \series default
 \emph default
- "1a5gzinzftm1oxc45sho8gok2j8yrl7yebo7wxx0", related to the Image Annotation
- by 
+:
+\series bold
+1a5gzinzftm1oxc45sho8gok2j8yrl7yebo7wxx0
+\series default
+, related to the Image Annotation by 
 \series bold
 hasPhysicalEntity
 \series default
@@ -1191,7 +1207,7 @@ reference "tab:Sample-of-AIM"
 :PhysicalEntity
 \series default
 \emph default
- instance in an AIM 4.0 OWL file.
+ instance in an AIM4-O OWL file.
  
 \end_layout
 
@@ -1991,7 +2007,8 @@ LessThan5cmTumor:
 \lang brazilian
 \begin_inset Formula 
 \begin{gather*}
-\hline ImageAnnotation(?x)\land hasCalculationEntity(?x,?y)\land hasCalculationResult(?y,?z)\land\\
+\hline ImageAnnotation(?x)\land hasCalculationEntity(?x,?y)\land\\
+hasCalculationResult(?y,?z)\land\\
 values(?z,?val)\land lessThan(?val,5)\rightarrow lessThan5cmTumor(?x)\\
 \hline 
 \end{gather*}
@@ -2019,7 +2036,8 @@ MoreThan5cmTumor:
 \lang brazilian
 \begin_inset Formula 
 \begin{gather*}
-\hline ImageAnnotation(?x)\land hasCalculationEntity(?x,?y)\land hasCalculationResult(?y,?z)\land\\
+\hline ImageAnnotation(?x)\land hasCalculationEntity(?x,?y)\land\\
+hasCalculationResult(?y,?z)\land\\
 values(?z,?val)\land greaterThan(?val,5)\rightarrow MoreThan5cmTumor(?x)\\
 \hline 
 \end{gather*}
@@ -4294,8 +4312,6 @@ Conclusion
 \end_layout
 
 \begin_layout Standard
-
-\lang american
 The process of cancer staging in patients by image analysis is a task performed
  by specialists, such as oncologists and radiologists, that often entails
  intensive work that requires precision in the interpretation of cancer
@@ -4356,8 +4372,6 @@ Some limitations to this work is that our dataset is small.
 \end_layout
 
 \begin_layout Standard
-
-\lang american
 Other systems, such as mint Lesion (MintMedical GmbH, Dossenheim, Germany)
  and syngo.via (Siemens Healthcare, Malvern) are proprietary software, i.e,
  all data on images that are stored internally are in a proprietary format
@@ -4372,8 +4386,6 @@ key "Rubin2011"
 \end_layout
 
 \begin_layout Standard
-
-\lang american
 Finally, we believe our approach can be generalized to other cases of reasoning
  based on image findings, using the AIM model establishes an automated workflow
  where image annotations produced by an imaging system, whatever that generates
