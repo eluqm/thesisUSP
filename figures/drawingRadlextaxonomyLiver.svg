@@ -16,8 +16,8 @@
    viewBox="0 0 2525.7673 866.06323"
    id="svg2"
    version="1.1"
-   inkscape:version="0.91 r"
-   sodipodi:docname="drawingRadlextaxonomyLiver.svg">
+   inkscape:version="0.48.5 r10040"
+   sodipodi:docname="drawingRadlextaxonomyLiver.pdf">
   <sodipodi:namedview
      id="base"
      pagecolor="#ffffff"
@@ -26,15 +26,15 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.49497475"
-     inkscape:cx="1889.8403"
+     inkscape:cx="1314.6224"
      inkscape:cy="452.00848"
      inkscape:document-units="px"
      inkscape:current-layer="g4220"
      showgrid="false"
-     inkscape:window-width="1366"
-     inkscape:window-height="744"
-     inkscape:window-x="0"
-     inkscape:window-y="24"
+     inkscape:window-width="1680"
+     inkscape:window-height="1028"
+     inkscape:window-x="1920"
+     inkscape:window-y="0"
      inkscape:window-maximized="1"
      fit-margin-top="0"
      fit-margin-left="0"
@@ -689,7 +689,8 @@
          cx="278.80209"
          cy="-171.94269"
          rx="24.24366"
-         ry="18.182745" />
+         ry="18.182745"
+         d="m 303.04575,-171.94269 c 0,10.04205 -10.85425,18.18275 -24.24366,18.18275 -13.3894,0 -24.24366,-8.1407 -24.24366,-18.18275 0,-10.04205 10.85426,-18.18274 24.24366,-18.18274 13.38941,0 24.24366,8.14069 24.24366,18.18274 z" />
       <ellipse
          transform="matrix(1,0,-0.21693047,0.97618706,0,0)"
          id="path3855"
@@ -697,7 +698,8 @@
          cx="1274.6436"
          cy="500.30954"
          rx="24.24366"
-         ry="18.626291" />
+         ry="18.626291"
+         d="m 1298.8872,500.30954 c 0,10.28702 -10.8542,18.62629 -24.2436,18.62629 -13.3894,0 -24.2437,-8.33927 -24.2437,-18.62629 0,-10.28702 10.8543,-18.62629 24.2437,-18.62629 13.3894,0 24.2436,8.33927 24.2436,18.62629 z" />
       <ellipse
          transform="matrix(1,0,-0.22222224,1,1116.2062,664.35869)"
          id="path3857"
@@ -705,7 +707,8 @@
          cx="278.80209"
          cy="-171.94269"
          rx="24.24366"
-         ry="18.182745" />
+         ry="18.182745"
+         d="m 303.04575,-171.94269 c 0,10.04205 -10.85425,18.18275 -24.24366,18.18275 -13.3894,0 -24.24366,-8.1407 -24.24366,-18.18275 0,-10.04205 10.85426,-18.18274 24.24366,-18.18274 13.38941,0 24.24366,8.14069 24.24366,18.18274 z" />
       <text
          transform="scale(0.98126597,1.0190917)"
          style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:35px;line-height:125%;font-family:Arial;-inkscape-font-specification:'Arial, Italic';text-align:start;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none"
@@ -747,8 +750,8 @@
       <path
          sodipodi:nodetypes="ccc"
          inkscape:connector-curvature="0"
-         style="fill:none;stroke:#000000;stroke-width:0.99253273;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
-         d="m 1944.3644,203.96513 -100.2495,0 -44.8398,-27.76888"
+         style="fill:none;stroke:#000000;stroke-width:0.99253273;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
+         d="m 1944.3644,195.96513 -100.2495,0 -44.8398,-27.76888"
          id="path3883" />
       <text
          transform="scale(0.98126597,1.0190917)"
@@ -781,7 +784,8 @@
          cx="278.80209"
          cy="-171.94269"
          rx="24.24366"
-         ry="18.182745" />
+         ry="18.182745"
+         d="m 303.04575,-171.94269 c 0,10.04205 -10.85425,18.18275 -24.24366,18.18275 -13.3894,0 -24.24366,-8.1407 -24.24366,-18.18275 0,-10.04205 10.85426,-18.18274 24.24366,-18.18274 13.38941,0 24.24366,8.14069 24.24366,18.18274 z" />
       <ellipse
          style="fill:#7d0005;fill-opacity:0.21777781;stroke:none"
          id="path3899"
@@ -789,7 +793,8 @@
          cx="278.80209"
          cy="-171.94269"
          rx="24.24366"
-         ry="18.182745" />
+         ry="18.182745"
+         d="m 303.04575,-171.94269 c 0,10.04205 -10.85425,18.18275 -24.24366,18.18275 -13.3894,0 -24.24366,-8.1407 -24.24366,-18.18275 0,-10.04205 10.85426,-18.18274 24.24366,-18.18274 13.38941,0 24.24366,8.14069 24.24366,18.18274 z" />
       <ellipse
          style="fill:#7d0005;fill-opacity:0.21777781;stroke:none"
          id="path3901"
@@ -797,7 +802,8 @@
          cx="278.80209"
          cy="-171.94269"
          rx="24.24366"
-         ry="18.182745" />
+         ry="18.182745"
+         d="m 303.04575,-171.94269 c 0,10.04205 -10.85425,18.18275 -24.24366,18.18275 -13.3894,0 -24.24366,-8.1407 -24.24366,-18.18275 0,-10.04205 10.85426,-18.18274 24.24366,-18.18274 13.38941,0 24.24366,8.14069 24.24366,18.18274 z" />
       <ellipse
          transform="matrix(1,0,-0.22222224,1,1359.4651,666.50084)"
          id="path3915"
@@ -805,7 +811,8 @@
          cx="278.80209"
          cy="-171.94269"
          rx="24.24366"
-         ry="18.182745" />
+         ry="18.182745"
+         d="m 303.04575,-171.94269 c 0,10.04205 -10.85425,18.18275 -24.24366,18.18275 -13.3894,0 -24.24366,-8.1407 -24.24366,-18.18275 0,-10.04205 10.85426,-18.18274 24.24366,-18.18274 13.38941,0 24.24366,8.14069 24.24366,18.18274 z" />
       <text
          xml:space="preserve"
          x="1008.9965"
@@ -933,7 +940,8 @@
          cx="1252.4415"
          cy="618.29688"
          rx="24.24366"
-         ry="18.626291" />
+         ry="18.626291"
+         d="m 1276.6852,618.29687 c 0,10.28702 -10.8543,18.6263 -24.2437,18.6263 -13.3894,0 -24.2436,-8.33928 -24.2436,-18.6263 0,-10.28701 10.8542,-18.62629 24.2436,-18.62629 13.3894,0 24.2437,8.33928 24.2437,18.62629 z" />
       <text
          transform="scale(0.98126597,1.0190917)"
          style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:27.5px;line-height:125%;font-family:Arial;-inkscape-font-specification:'Arial, Italic';text-align:start;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none"
@@ -1008,7 +1016,8 @@
          cx="278.80209"
          cy="-171.94269"
          rx="24.24366"
-         ry="18.182745" />
+         ry="18.182745"
+         d="m 303.04575,-171.94269 c 0,10.04205 -10.85425,18.18275 -24.24366,18.18275 -13.3894,0 -24.24366,-8.1407 -24.24366,-18.18275 0,-10.04205 10.85426,-18.18274 24.24366,-18.18274 13.38941,0 24.24366,8.14069 24.24366,18.18274 z" />
       <text
          xml:space="preserve"
          x="1023.7186"
@@ -1042,7 +1051,8 @@
          cx="1219.4954"
          cy="132.51944"
          rx="69.07148"
-         ry="38.813923" />
+         ry="38.813923"
+         d="m 1288.5668,132.51944 c 0,21.43634 -30.9243,38.81392 -69.0714,38.81392 -38.1472,0 -69.0715,-17.37758 -69.0715,-38.81392 0,-21.43634 30.9243,-38.813923 69.0715,-38.813923 38.1471,0 69.0714,17.377583 69.0714,38.813923 z" />
       <text
          xml:space="preserve"
          x="1278.3209"
@@ -1070,7 +1080,8 @@
          cx="278.80209"
          cy="-171.94269"
          rx="24.24366"
-         ry="18.182745" />
+         ry="18.182745"
+         d="m 303.04575,-171.94269 c 0,10.04205 -10.85425,18.18275 -24.24366,18.18275 -13.3894,0 -24.24366,-8.1407 -24.24366,-18.18275 0,-10.04205 10.85426,-18.18274 24.24366,-18.18274 13.38941,0 24.24366,8.14069 24.24366,18.18274 z" />
       <text
          transform="scale(0.98126597,1.0190917)"
          style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:27.5px;line-height:125%;font-family:Arial;-inkscape-font-specification:'Arial, Italic';text-align:start;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none"

@@ -1903,7 +1903,7 @@ reasonig
  como a criação de classes desnecessárias, aumentando a complexidade de
  uma ontologia.
  Acompanhando a limitação acima mencionado aparece outra, chamada Open World
- Assuntion (OWA) que é um fundamento da OWL que os essos trablahos solucionam
+ Assuntion (OWA) que é um fundamento da OWL que os trabalhos solucionam
  evitando o reasoning baseado em individuos.
  No entanto, é possível realizar o 
 \emph on
@@ -1921,6 +1921,13 @@ key "Tutac2008"
 
 \end_inset
 
+, 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Massicano2015AnOF"
+
+\end_inset
+
  e 
 \begin_inset CommandInset citation
 LatexCommand cite
@@ -1929,10 +1936,25 @@ key "zillner:towards"
 \end_inset
 
 , eles criam ontologias em OWL-DL para TNM, no entanto a ideia de ter uma
- ontologia para cada tipo de topografia(órgão do corpo) é indesejável.
+ ontologia para cada tipo de topografia(órgão do corpo) é indesejável como
+ no caso dos trabalhos de 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Tutac2008"
+
+\end_inset
+
+e 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "zillner:towards"
+
+\end_inset
+
+.
  Nós acreditamos na abordagem de ter uma ontologia que representa directamentame
 nte as características encontradas em uma imagem (como a ontologia do modelo
- AIM) e, além disso, que o 
+ AIM) e além disso que o 
 \emph on
 staging 
 \emph default
