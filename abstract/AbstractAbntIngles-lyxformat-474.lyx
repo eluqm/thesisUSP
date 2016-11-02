@@ -1,9 +1,7 @@
-#LyX 2.2 created this file. For more info see http://www.lyx.org/
-\lyxformat 508
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
 \begin_document
 \begin_header
-\save_transient_properties true
-\origin unavailable
 \textclass abntex2
 \begin_preamble
 \usepackage{fncychap}
@@ -81,16 +79,16 @@
 \language_package default
 \inputencoding utf8
 \fontencoding global
-\font_roman "default" "default"
-\font_sans "default" "default"
-\font_typewriter "default" "default"
-\font_math "auto" "auto"
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_math auto
 \font_default_family default
 \use_non_tex_fonts false
 \font_sc false
 \font_osf false
-\font_sf_scale 100 100
-\font_tt_scale 100 100
+\font_sf_scale 100
+\font_tt_scale 100
 \graphics default
 \default_output_format default
 \output_sync 0
@@ -144,28 +142,39 @@
 \begin_layout Standard
 
 \lang english
-Information about cancer stage in a patient is crucial when clinicians assess
- treatment progress.
- Determining cancer stage is a process that takes into account the description,
- location, characteristics and possible metastasis of cancerous tumors in
- a patient.
- It should follow classification standards, such as TNM Classification of
- Malignant Tumors.
- However, in clinical practice, the implementation of this process can be
- tedious and error-prone and create uncertainty.
- In order to alleviate these problems, we intend to assist radiologists
- by providing a second opinion in the evaluation of cancer stage in patients.
- For doing this, Semantic Web technologies, such as ontologies and reasoning,
- were used to automatically classify cancer stages.
- This classification used semantic annotations, made by radiologists using
- the ePAD tool and stored it in the standard AIM format, then these xml
- documents were transformed in AIM4-O ontology individuals, rules and axioms
- representing the TNM standard.
- the TNM classifier was evaluated with real patients cases from The NCI's
- Genomic Data Commons (GDC) in term of presicion and recall, with 84.3% and
- 74.4% respectively,The whole process was validated with users from the Radiology
- Dept.
- of the Stanford University.
+Informação sobre o estágio de câncer num paciente é fundamental quando os
+ médicos avaliam o progresso individual desse paciente e decidem sobre novas
+ medidas de tratamento.
+ A determinação do estágio de câncer (cancer staging) é um processo que
+ leva em consideração a descrição, localização, características e possíveis
+ metástases dos tumores cancerosos de um paciente.
+ Esse processo deve seguir um padrão de classificação como, por exemplo,
+ o TNM Classification of Malignant Tumors.
+ Porém, na prática clínica, a execução desse processo pode ser tediosa e
+ propensa a erros, gerando assim imprecisão na interpretação das imagens
+ médicas (com possíveis consequências danosas para os pacientes).
+ Com o intuito de amenizar esses problemas, este trabalho tem como objetivo
+ auxiliar os radiologistas fornecendo uma segunda opinião na avaliação do
+ estágio de câncer de um paciente.
+ Para isso, serão usadas tecnologias da Web Semântica, como ontologias e
+ 
+\emph on
+reasoning
+\emph default
+ para classificar automaticamente estágios de câncer.
+ Essa classificação vai usar anotações semânticas feitas por radiologistas
+ em imagens médicas no programa ePAD e armazenadas no formato AIM e regras
+ de uma ontologia representando o padrão TNM.
+
+\emph on
+ 
+\emph default
+As anotações em AIM serão convertidas para OWL e uma máquina de inferência
+ vai usá-las, juntamente com a ontologia e suas regras, para determinas
+ o estágio do câncer num paciente.
+ Todo o processo será validado por meio de uma prova de conceito com os
+ usuários do Rubin Lab (Radiology Dept.
+ -- Stanford University).
 \end_layout
 
 \begin_layout Standard
