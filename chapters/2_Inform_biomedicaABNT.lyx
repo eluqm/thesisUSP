@@ -1244,7 +1244,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Os critérios de T, N e M para câncer de pulmão.
+Os critérios de T, N e M para câncer de figado.
  
 \begin_inset CommandInset label
 LatexCommand label
@@ -1264,13 +1264,13 @@ name "ResumodoprotocoloTNM"
 \noindent
 \align center
 \begin_inset Tabular
-<lyxtabular version="3" rows="11" columns="3">
-<features tabularvalignment="middle">
+<lyxtabular version="3" rows="12" columns="3">
+<features booktabs="true" tabularvalignment="middle">
 <column alignment="center" valignment="top" width="15col%">
 <column alignment="center" valignment="top" width="6col%">
 <column alignment="center" valignment="middle" width="70col%">
 <row>
-<cell multirow="3" alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+<cell multirow="3" alignment="left" valignment="middle" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -1303,7 +1303,41 @@ Tis
 
 \size footnotesize
 \lang english
-The cancer is found only in the layer of cells lining the air passages
+Primary tumor cannot be assessed
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+T0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+\lang english
+No evidence of primary tumor
 \end_layout
 
 \end_inset
@@ -1337,9 +1371,7 @@ T1
 
 \size footnotesize
 \lang english
-The cancer is no larger than 3 cm, has not spread to the membranes that
- surround the lungs (visceral pleura), and does not affect the main branches
- of the bronchi.
+Solitary tumor without vascular invasion
 \end_layout
 
 \end_inset
@@ -1373,53 +1405,7 @@ T2
 
 \size footnotesize
 \lang english
-The cancer has 1 or more of: (1) It is larger than 3 cm.
- (2) It involves a main bronchus but is not closer than 2 cm to the point
- where the windpipe branches into the left and right main bronchi.
- (3) It has spread to the visceral pleura.
- (4) The cancer may partially clog the airways, but this has not caused
- the entire lung to collapse or develop pneumonia.
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell multirow="4" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="middle" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\size footnotesize
-T3
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="middle" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\size footnotesize
-\lang english
-The cancer has 1 or more of: (1) It has spread to the chest wall, the diaphragm,
- the membranes surrounding the space between the 2 lungs (mediastinal pleura),
- or membranes of the sac surrounding the heart (parietal pericardium).
- (2) It involves a main bronchus and is closer than 2 cm to the point where
- the windpipe branches into the left and right main bronchi, but does not
- involve this area.
- (3) It has grown into the airways enough to cause 1 lung to entirely collapse
- or to cause pneumonia of the entire lung
+Solitary tumor with vascular invasion or multiple tumors, none > 5 cm
 \end_layout
 
 \end_inset
@@ -1441,7 +1427,7 @@ The cancer has 1 or more of: (1) It has spread to the chest wall, the diaphragm,
 \begin_layout Plain Layout
 
 \size footnotesize
-T4
+T3a
 \end_layout
 
 \end_inset
@@ -1453,13 +1439,67 @@ T4
 
 \size footnotesize
 \lang english
-The cancer has 1 or more of: (1) It has spread to the space behind the chest
- bone and in front of the heart, the heart, the windpipe, the esophagus,
- the backbone, or the point where the windpipe branches into the left and
- right main bronchi (carina).
- (2) Two or more separate tumor nodules are present in the same lobe.
- (3) There is a fluid containing cancer cells in the space surrounding the
- lung
+Multiple tumors > 5 cm
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+T3b
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Single tumor or multiple tumors of any size involving a major branch of
+ the portal or hepatic vein
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+T4
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Tumor(s) with direct invasion of adjacent organs other than gallbladder
+ or with visceral peritoneum
 \end_layout
 
 \end_inset
@@ -1477,6 +1517,37 @@ N:
 Regional Lymph Node
 \lang brazilian
 s
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+NX
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+Regional lymph nodes cannot be assessed
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="left" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
 \end_layout
 
 \end_inset
@@ -1534,83 +1605,8 @@ N1
 
 \size footnotesize
 \lang english
-The cancer has spread to lymph nodes within the lung, hilar lymph nodes
- (located around the area where the bronchus enters the lung).
- The cancer has metastasized only to lymph nodes on the same side as the
- cancerous lung.
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell multirow="4" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="middle" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\size footnotesize
-N2
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="middle" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\size footnotesize
-\lang english
-The cancer has spread to lymph nodes around the point where the windpipe
- branches into the left and right bronchi or to lymph nodes in the mediastinum
- (space behind the chest bone and in front of the heart).
- The lymph nodes on the same side of the cancerous lung are affected.
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell multirow="4" alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\size footnotesize
-N3
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\size footnotesize
-\lang english
-The cancer has spread to lymph nodes near the collarbone on either side,
- to hilar or mediastinal lymph nodes on the side opposite the cancerous
- lung.
+The cancer has metastasized only to lymph nodes on the same side as the
+ cancerous liver.
 \end_layout
 
 \end_inset
@@ -1682,9 +1678,9 @@ M1
 
 \size footnotesize
 \lang english
-The cancer has spread to distant sites such as other lobes of the lungs,
- lymph nodes farther than those mentioned in N stages, and other organs
- or tissues such as the liver, bones, or brain
+The cancer has spread to distant sites such as lymph nodes farther than
+ those mentioned in N stages, and other organs or tissues such as the bones,
+ or brain
 \end_layout
 
 \end_inset
@@ -1771,8 +1767,8 @@ name "stageTNM"
 \noindent
 \align center
 \begin_inset Tabular
-<lyxtabular version="3" rows="8" columns="2">
-<features tabularvalignment="middle">
+<lyxtabular version="3" rows="7" columns="2">
+<features booktabs="true" tabularvalignment="middle">
 <column alignment="center" valignment="middle" width="5col%">
 <column alignment="center" valignment="top" width="30col%">
 <row>
@@ -1808,7 +1804,7 @@ Stage 0
 
 \size footnotesize
 \lang english
-Stage IA
+Stage I
 \end_layout
 
 \end_inset
@@ -1833,7 +1829,7 @@ Stage IA
 
 \size footnotesize
 \lang english
-Stage IB
+Stage I
 \end_layout
 
 \end_inset
@@ -1858,7 +1854,7 @@ Stage IB
 
 \size footnotesize
 \lang english
-Stage IIA
+Stage IIIA
 \end_layout
 
 \end_inset
@@ -1869,7 +1865,7 @@ Stage IIA
 \begin_layout Plain Layout
 
 \size footnotesize
-(T1, N1, M0)
+(T3a, N0, M0)
 \end_layout
 
 \end_inset
@@ -1883,7 +1879,7 @@ Stage IIA
 
 \size footnotesize
 \lang english
-Stage IIB
+Stage IIIB
 \end_layout
 
 \end_inset
@@ -1895,60 +1891,30 @@ Stage IIB
 
 \size footnotesize
 \lang english
-(T2, N1, M0) or (T3, N0, M0)
+(T3b, N0, M0)
 \end_layout
 
 \end_inset
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="middle" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
-\lang english
-Stage IIIA
+StageIIIC
 \end_layout
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="middle" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
 
 \size footnotesize
 \lang english
-(T1, N2, M0) or (T2, N2, M0) or (T3, N1, M0) or (T3, N2, M0)
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="middle" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\size footnotesize
-\lang english
-Stage IIIB
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="middle" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\size footnotesize
-\lang english
-(T1, N3, M0) or (T2, N3, M0) or (T3, N3, M0) or (T4, N0, M0) or (T4, N1,
- M0) or (T4, N2, M0) or (T4, N3, M0)
+(T4, N0, M0)
 \end_layout
 
 \end_inset
@@ -1962,7 +1928,7 @@ Stage IIIB
 
 \size footnotesize
 \lang english
-Stage IV
+Stage IVA
 \end_layout
 
 \end_inset
@@ -1974,7 +1940,7 @@ Stage IV
 
 \size footnotesize
 \lang english
-(Any T, Any N, M1)
+(Any T, any N, M1)
 \end_layout
 
 \end_inset

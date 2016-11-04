@@ -2313,7 +2313,7 @@ key "Blomqvist2012"
 a patient Subject ID
 \emph default
 .
- The imaging modality selected was computed tomography (CT), then, those
+ The imaging modality selected was computed tomography (CT), then, these
  images were loaded into the annotation tool ePAD.
  
 \end_layout
@@ -2327,7 +2327,7 @@ While the evaluation of cancer staging could be applied to other cancer,
 \end_layout
 
 \begin_layout Subsection
-Quantitative assesment of AIM4-O ontology
+Quantitative assessment of AIM4-O ontology
 \end_layout
 
 \begin_layout Standard
@@ -2345,7 +2345,7 @@ Ontological evaluation is the process of assessing an ontology with respect
 \emph default
 .
  In this work, we undertook the evaluation of the AIM4-O ontology from the
- functional point of view [2].
+ functional point of view.
  In order to evaluate the functionality of the ontology, we describe ontology
  assessment as a task-focused evaluation of ontologies against their ontological
  requirements such as competency questions (CQs) and inference requirements
@@ -2363,8 +2363,8 @@ key "Kokciyan2014"
 \begin_layout Standard
 In order to evaluate the AIM4-O ontology, we studied and evaluated how it
  could help in searching clinical reports that describe image findings (reports
- about cancer ), for this purpose, were compared two different approaches
- (CQs): 
+ about cancer ), for this purpose, were compared two different approaches:
+ 
 \end_layout
 
 \begin_layout Itemize
@@ -4131,9 +4131,8 @@ After reading the medical reports, the radiologist was provided with an
 \end_layout
 
 \begin_layout Itemize
-Using this excel file and data from the Genomic Data GDC we created the
- AIM XML annotations and integrated it into our knowledge base(as individuals
- of AIM4-O).
+Using this excel file and data from the GDC we created the AIM XML annotations
+ and integrated it into our knowledge base(as individuals of AIM4-O).
 \end_layout
 
 \begin_layout Itemize
@@ -4143,10 +4142,10 @@ The AIM files were used as input TNM classifier.
 \end_layout
 
 \begin_layout Standard
-We automatically classificated all image annotations based on 52 different
+The classifier classificated all image annotations based on 52 different
  clinical reports, in order to analyze the potencial of the automatic TNM
  staging approach we discussed the patient staging scenarios with the help
- of our expert and project partner at the Stanford University, the response
+ of our expert and project partner of the Stanford University, the response
  was positive.
  The precision was 84.3 % and the recall 74.4%, the evaluation results are
  summarized in the color scale matrix in Figure 
@@ -4228,8 +4227,8 @@ Confusion matrix for TNM multi-stage classification
 
 \begin_layout Standard
 In addition, the classifier revealed the fact that there are some clinical
- reports cases with staging diagnosis inaccurate, presents in The NCI's
- Genomic Data Common
+ reports cases with staging diagnosis inaccurate presents in The NCI's Genomic
+ Data Common
 \begin_inset Foot
 status open
 
@@ -4261,8 +4260,8 @@ https://gdc-portal.nci.nih.gov/cases/52292ffc-0902-4d97-b461-20723987a177
 \end_inset
 
 .
- Such patient examples show the importace of improve clinical decision support
- systems by processing of image metadata in cancer assessment.
+ Such patient examples show the importance of improve clinical decision
+ support systems by processing of image metadata in cancer assessment.
 \end_layout
 
 \begin_layout Standard

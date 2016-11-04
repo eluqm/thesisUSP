@@ -598,7 +598,21 @@ Experimentos
 \begin_layout Standard
 \begin_inset CommandInset include
 LatexCommand input
-filename "chapters/temp.lyx"
+filename "chapters/6_ExperimentosABNT.lyx"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter
+Conclusão
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand input
+filename "chapters/7_conclusoesABNT.lyx"
 
 \end_inset
 
