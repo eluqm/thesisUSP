@@ -97,7 +97,14 @@ Dados utilizados
 
 \begin_layout Standard
 Nosso primeiro conjunto de dados é um conjunto de relatórios clínicos de
- pacientes com carcinoma hepatocelular (HCC) do NCI Genomic Data Commons
+ pacientes com carcinoma hepatocelular (HCC) do
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "GDC"
+description " NCI Genomic Data Commons"
+
+\end_inset
+
  (GDC)
 \begin_inset Foot
 status open
@@ -1203,7 +1210,15 @@ https://gdc.cancer.gov/.
 \end_layout
 
 \begin_layout Standard
-- O Cancer Imaging Archive (TCIA) 
+- O Cancer Imaging Archive 
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "TCIA"
+description "Cancer Imaging Archive"
+
+\end_inset
+
+ (TCIA) 
 \begin_inset Foot
 status open
 
@@ -1245,17 +1260,37 @@ Os arquivos AIM foram usados como entrada do classificador TNM.
 \end_layout
 
 \begin_layout Standard
-Nós classificamos automaticamente todas as anotações de imagens com base
- em 52 diferentes relatórios clínicos, a fim de analisar o potencial da
- abordagem do staging automático do TNM, discutimos os cenários de staging
- do paciente com a ajuda do nosso especialista e parceiro do projeto da
- Universidade de Stanford, a resposta foi positiva.
- A precisão foi 84,3% eo revocação 74,4%, os resultados da avaliação são
- resumidos na matriz de escala de cores na Figura [fig: matrixconfusion].
- Isto representa uma matriz de confusão para uma classificação de estádio
+Foram classificadas automaticamente todas as anotações de imagens com base
+ em 52 diferentes relatórios clínicos, a fim de analisar o potencial de
+ nosso abordagem do 
+\emph on
+staging
+\emph default
+ automático do TNM, discutimos os cenários de 
+\emph on
+staging
+\emph default
+ dos pacientes com a ajuda do nosso especialista e parceiro do projeto do
+ departamento de Radiologia da Universidade de Stanford, a resposta foi
+ positiva.
+ A precisão foi 84,3% eo revocação 74,4%, O que significa que para a precisão,
+ deixando de lado as vezes que os Stages I,II,III,IV foram previstos, o
+ 84.3% das vezes o sistema foi de fato correto.
+ E para revocação, isso significa que de todas as vezes que os Stages deveriam
+ ter sido previstos apenas o 74.4% dos casos foram corretamente previstos.
+\end_layout
+
+\begin_layout Standard
+Os resultados da avaliação são resumidos na matriz de escala de cores na
+ Figura [fig: matrixconfusion].
+ Isto representa uma matriz de confusão para uma classificação de stage
  multicêntrico.
- Para o staging inicial de câncer como I, II, IIIA, o número de classificações
- incorrectas (i.e., falsos positivos e falsos negativos) foi muito pequeno.
+ Para o 
+\emph on
+staging
+\emph default
+ inicial de câncer como I, II, IIIA, o número de classificações incorrectas
+ (i.e., falsos positivos e falsos negativos) foi muito pequeno.
  Ela é representada pela diagonal realçada da matriz na Figura [fig: matrixconfu
 sion].
  Isto porque, os estádios de câncer tais como IIIB ou IVA são descritos
@@ -1307,11 +1342,11 @@ Matriz de Confusão da TNM multi-stage
 
 \begin_layout Standard
 Além disso, o classificador revelou o fato de que existem alguns relatorios
- clínicos com diagnósticos que não pordem ser avaliados o imprecisos que
- estão presentes no Genomic Data Common GDC, por exemplo, no contexto de
- pacientes particulares: como o paciente com Subject ID TCGA-DD-A1EJ, o
- resultado do nosso classificador TNM foi correta após validação pelo nosso
- especialista.
+ clínicos com diagnósticos que não podem ser avaliados ou eles são imprecisos
+ e estão presentes no Genomic Data Common GDC, por exemplo, no contexto
+ de pacientes particulares: como o paciente com Subject ID TCGA-DD-A1EJ,
+ o resultado do nosso classificador TNM foi correta após validação pelo
+ nosso especialista.
  O stagio previsto pelo classificador foi "Stage I" em contraste com a informaçã
 o presente em 
 \begin_inset Foot
@@ -1323,10 +1358,26 @@ https://gdc-portal.nci.nih.gov/cases/52292ffc-0902-4d97-b461-20723987a177
 
 \end_inset
 
- Stagio IIIB.
- Tais exemplos de pacientes mostram a importância de melhorar os sistemas
- de suporte à decisão clínica pelo processamento de metadados de imagem
- na avaliação do câncer.
+ que foi Stagio III.
+ Podemos dezir asim, que as condicões de saúde não foram bem documentadas
+ nessos casos ou que a alta do médico chegou a uma conclusão diferente,
+ Tais incidentes não são excepcionais, porque o processo de 
+\emph on
+staging
+\emph default
+ dos pacientes com câncer através da análise de imagens, é uma tarefa com
+ base na inspeção de imagens e podem ocorrer variações na interpretação
+ de imagens entre especialistas.
+\end_layout
+
+\begin_layout Standard
+Com ajuda de sistemas de suporte à decisão clínica (classificador TNM) baseados
+ em metadados de imagens podem ser detectados casos clínicos especiais com
+ estagio errôneo e por conseguinte erros de tratamento médico podem ser
+ reduzidos.
+ Tais exemplos de pacientes como os acima mencionados mostram a importância
+ de melhorar essos sistemas de suporte à decisão clínica pelo processamento
+ de metadados de imagem na avaliação do câncer.
 \end_layout
 
 \begin_layout Standard
@@ -1371,8 +1422,82 @@ Resumo dos Histogramas para cada estágio após da clasificação TNM dos metada
 
 \end_layout
 
+\begin_layout Standard
+Segundo [ref...] o sistema de 
+\emph on
+staging
+\emph default
+ TNM tornou-se um dos sistemas de 
+\emph on
+staging
+\emph default
+ patológico mais amplamente utilizados para Hepato celular carcinoma e foi
+ validado para prever resultados pós-cirúrgicos em pacientes.
+ Onde as taxas de sobrevivência de pacientes con câncer de figado a 5 anos,
+ com base no sistema TNM, foram no stage I, 55%; stage II, 37%; E stage
+ III, 16% [ref 8].
+ Portanto, podemos ver que existe uma relação entre o número de casos clínicos(c
+linical reports) e as taxas de sobrevivência, como pode-se ver na Figura
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:histogram"
+
+\end_inset
+
+, o número de casos clínicos nos 
+\emph on
+stages
+\emph default
+ iniciais é maior do que os últimos 
+\emph on
+stages
+\emph default
+.
+ A seguir são mostrados alguns exemplos de classificação correta de câncer.
+\end_layout
+
 \begin_layout Section
 Considerações Finais
+\end_layout
+
+\begin_layout Standard
+Neste capítulo foram descritos os resultados obtidos com o desenvolvimento
+ do classificador TNM, Inicialmente usamos e comparamos duas abordagens
+ como a busca semântica e a busca por palavra-chave para avaliar a ontologia
+ AIM4-O, nessa análise nossos resultados mostraram como a busca semântica
+ obteve melhores resultados, isto
+\emph on
+ 
+\emph default
+é devido que quando os relatórios clinicos são baseados em ontologias, as
+ informações podem ser procuradas com maior precisão e revocação.
+\end_layout
+
+\begin_layout Standard
+Após de demonstrar como a ontologia AIM4-O pode ser benéfica para o processament
+o semântico, 
+\emph on
+nós 
+\emph default
+discutimos com os especialistas os cenários de 
+\emph on
+cancer staging
+\emph default
+ de 52 pacientes e a capacidade do Classificador TNM, dessa discução 
+\lang brazilian
+p
+\lang english
+odemos destacar além dos bons indicadores de presição e revocação obtidos
+ pelo classificador ( 84.3% e 74,4% respetivamente), que podem ser detectados
+ casos clínicos especiais com estagio errôneo e por conseguinte potenciais
+ erros de tratamento médico podem ser reduzidos.
+\end_layout
+
+\begin_layout Standard
+O próximo capítulo conclui a dissertação consolidando os resultados obtidos
+ na avaliação, Alem disso, ressalta-se as principais contribuições e limitações
+ da pesquisa,  finalizando com o trabalho futuros.
 \end_layout
 
 \end_body

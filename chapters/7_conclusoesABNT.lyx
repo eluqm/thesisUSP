@@ -95,5 +95,61 @@ reasoning
 DSL....
 \end_layout
 
+\begin_layout Standard
+
+\lang brazilian
+In the biomedical domain, there is much work on structured representation
+ of measurements from a wide variety of examinations.(ref Oberkampf)
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+The proposed MCI enables an accurate integrated representation of re- ported
+ measurements and medical knowledge.
+ Thus, measurements can be automatically classified and integrated in different
+ clinical decision processes.
+ The structured representation is suitable for better integration of clinical
+ findings during decision-making.
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+By highlighting clinical contradictions, the quality of medical care can
+ be improved.
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+Ao destacar tais resultados contraditórios, casos clínicos especiais podem
+ ser detectados e potenciais erros de tratamento médico podem ser reduzidos
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+The TNM system is only based on tumor character- istics and invasion extent;
+ it does not account for underlying hepatic function.
+ However, because of the prognostic significance of underlying liver disease,
+ the histopathologic analysis results of the liver should be considered
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+Currently, automatic image segmentation algorithms are already used to detect
+ lesions and lymph nodes in CT or MRI images (see e.g.
+ [29–34]).
+ Thus, automatic extraction of structured representations of lesion and
+ lymph node size from images is within reach.
+ With structured representations (e.g.
+ in Fig.
+ 7), large parts of the RECIST criteria can be automated and improved.
+ Indeed, the guidelines represent rules and most of them are easily implemented
+ using OWL SWRL
+\end_layout
+
 \end_body
 \end_document
