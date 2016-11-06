@@ -7,7 +7,7 @@
 \textclass abntex2
 \use_default_options true
 \maintain_unincluded_children false
-\language english
+\language brazilian
 \language_package default
 \inputencoding utf8
 \fontencoding global
@@ -41,8 +41,8 @@
 \use_package stackrel 1
 \use_package stmaryrd 1
 \use_package undertilde 1
-\cite_engine basic
-\cite_engine_type default
+\cite_engine natbib
+\cite_engine_type authoryear
 \biblio_style plain
 \use_bibtopic false
 \use_indices false
@@ -72,83 +72,319 @@
 \begin_body
 
 \begin_layout Standard
-Nesta dissertação de mestrado, 
-\lang brazilian
-geramos automaticamente o
+Nesta dissertação de mestrado, geramos automaticamente o
 \emph on
- 
-\lang english
-Cancer Staging
+ Cancer Staging
 \emph default
-\lang brazilian
 (estágios do câncer) de lesões cancerígenas presentes em imagens médicas,
  utilizando tecnologias de 
 \emph on
 reasoning
 \emph default
- e web semântica
+ e web semântica.
+ O processo de 
+\emph on
+staging
+\emph default
+ em pacientes por análise de imagem é uma tarefa realizada por especialistas,
+ como os oncologistas e radiologistas e muitas vezes envolve trabalho intensivo
+ que exige precisão na interpretação de lesões de câncer.
+ Essa precisão de especialistas é alcançada através do treinamento e da
+ experiência, mas as variações na interpretação de imagens são uma limitação
+ das observações humanas.
+ Nesse contexto, desenvolvemos uma abordagem de 
+\emph on
+staging
+\emph default
+ automático (classificador TNM) baseado em metadados da imagen que é uma
+ forte necessidade médica dos especialistas á obter uma maior precisão na
+ interpretação.
+\end_layout
+
+\begin_layout Section
+Contribuições 
 \end_layout
 
 \begin_layout Standard
+As principais contribuições deste trabalho são detalhadas a seguir: 
+\end_layout
 
+\begin_layout Itemize
+Uma abordagem (ou classificador TNM) para gerar automaticamente o estagio
+ de um paciente com câncer, baseado no standard TMN e os metadados da imagen
+ a fim de fornecer aos médicos uma maior taxa de precisão na interpretação
+ das lesões cancerosas.
+\end_layout
+
+\begin_layout Itemize
+Evidencia, da capacidade do Classificador TNM desenvolvido, através da análise
+ quantitativa e discussão
+\lang english
+ com especialistas dos cenários 
 \lang brazilian
-DSL....
+reais 
+\lang english
+de 
+\emph on
+cancer staging
+\emph default
+\lang brazilian
+ que foram avaliados, nessa discução podemos destacar além dos bons indicadores
+ de presição e revocação obtidos pelo classificador ( 84.3% e 74,4%), que
+ podem ser detectados casos clínicos especiais com estagio errôneo e por
+ conseguinte potenciais erros de tratamento médico podem ser reduzidos.
+\end_layout
+
+\begin_layout Itemize
+Uma nova ontologia 
+\series bold
+AIM4-O
+\series default
+ baseados no trabalho de 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Bulu"
+
+\end_inset
+
+, que fornece uma representação semantica do modelo de dados AIM 4.0.
+ 
+\series bold
+AIM4-O
+\series default
+ é uma ontologia leve que foi desenvolvido com a intenção de ser adotado
+ em uma gama de aplicações o outras disciplinas relacionadas ao processamento
+ de metadados de imagem.
+ 
+\series bold
+AIM4-O
+\series default
+ está de acordo com o perfil 
+\series bold
+OWL-DL
+\series default
+.
+ Assim, a ontologia espera para ser usado directamente em aplicações, bem
+ como servir como um modelo de referência para a criação de ontologias de
+ domínio específico como por exemplo em radiologia.
+ 
+\end_layout
+
+\begin_layout Itemize
+Evidencias, através da análise quantitativa dos resultados das avaliações
+ e seus resultados, que, quando as observações da imagem(metadados) no contexto
+ do 
+\emph on
+staging
+\emph default
+ de câncer são baseados em ontologias como por exemplo em instâncias do
+ AIM4-O, as informações podem ser procuradas com maior precisão e revocação
+ do que uma busca por palavras-chave.
+\end_layout
+
+\begin_layout Itemize
+O método de mapeamento para transformar automaticamente as anotações em
+ formato AIM-XML para instâncias da ontologia AIM4-O.
+ Permitindo assim processar fluxos de documentos XML e preencher uma base
+ de conhecimento OWL com o seu conteúdo.
+ Além disso, as anotações podem ser obtidos de qualqer ferramenta de marcação
+ que usa o AIM padrão, neste trabalho a ferramenta utilizada foi o ePAD
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Rubin2008"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+Alinhamento do modelo AIM com ontologias médicas como: uma parte do vocabulário
+ Radlex
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+https://bioportal.bioontology.org/ontologies/RADLEX
+\end_layout
+
+\end_inset
+
+ e Onlira
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+https://bioportal.bioontology.org/ontologies/ONLIRA
+\end_layout
+
+\end_inset
+
+, a fim de faciliar o trabalho de classificação e tratamento dos indivíduos
+ da ontologia AIM4-O debido a que estes indivíduos têm terminologias de
+ Radlex em sua estrutura.
+ 
+\end_layout
+
+\begin_layout Itemize
+Representação formal com base na lógica de primeira ordem de: regras, axiomas
+ e procedimentos de raciocínio automático a fim de automaticamente fazer
+ o 
+\emph on
+cancer staging
+\emph default
+ baseado em TNM.
+\end_layout
+
+\begin_layout Itemize
+Destacou-se algumas das limitações da lógica de descrição nas tarefas 
+\emph on
+classificação
+\emph default
+, por exemplo 
+\emph on
+Open World Assumption
+\emph default
+.
+ Isso foi parcialmente resolvido usando uma estrutura de dados simples gerado
+ no mapeamento dos documentos AIM-XML para instâncias do AIM4-O.
 \end_layout
 
 \begin_layout Standard
+Em suma, O resultado foi o classificador TNM e foi usado em casos reais
+ de câncer, nossos experimentos demonstraram a importância de melhorar os
+ sistemas de apoio à decisão clínica pelo processamento de imagens e metadados
+ na avaliação do câncer de figado com 84,3% de presisão e 74,4% de revocação.
+ Além disso, contrastando o resultado de 
+\emph on
+staging
+\emph default
+ automatizado de nosso classificador com os relatorios existentes no GDC,
+ revelou-se o fato de que existem casos de pacientes com diagnóstico inexacto.
+ 
+\series bold
+Mas, é importante notar que o procedimento de 
+\emph on
+staging
+\emph default
+ automático não dá ao médico novas informações, isto, pode ser visto como
+ uma segunda opinião para fins de qualidade no diagnóstico clínico
+\series default
+, portanto a qualidade dos diagnósticos médicos pode ser melhorada.
+\end_layout
 
-\lang brazilian
-In the biomedical domain, there is much work on structured representation
- of measurements from a wide variety of examinations.(ref Oberkampf)
+\begin_layout Section
+Produção Científica
 \end_layout
 
 \begin_layout Standard
+Este projeto de mestrado resultou na publicação de alguns artigos em eventos
+ cien- tíficos que são listadas a seguir:
+\end_layout
 
-\lang brazilian
-The proposed MCI enables an accurate integrated representation of re- ported
- measurements and medical knowledge.
- Thus, measurements can be automatically classified and integrated in different
- clinical decision processes.
- The structured representation is suitable for better integration of clinical
- findings during decision-making.
+\begin_layout Itemize
+E.
+ F.
+ Luque, D.
+ L.
+ Rubin and D.
+ A.
+ Moreira, "Automatic Classification of Cancer Tumors Using Image Annotations
+ and Ontologies," 2015 IEEE 28th International Symposium on Computer-Based
+ Medical Systems, Sao Carlos, 2015, pp.
+ 368-369.
+ doi: 10.1109/CBMS.2015.83.
+\end_layout
+
+\begin_layout Itemize
+D.
+ A.
+ Moreira, C.
+ Hage, E.
+ F.
+ Luque, D.
+ Willrett and D.
+ L.
+ Rubin, "3D Markup of Radiological Images in ePAD, a Web-Based Image Annotation
+ Tool," 2015 IEEE 28th International Symposium on Computer-Based Medical
+ Systems, Sao Carlos, 2015, pp.
+ 97-102.
+ doi: 10.1109/CBMS.2015.46
+\end_layout
+
+\begin_layout Section
+Dificuldades e Limitações 
 \end_layout
 
 \begin_layout Standard
+O presente trabalho apresentou algumas dificuldades e limitações durante
+ seu projeto e implementação:
+\end_layout
 
-\lang brazilian
-By highlighting clinical contradictions, the quality of medical care can
- be improved.
+\begin_layout Itemize
+Algumas limitações a este trabalho é que nosso conjunto de dados é pequeno.
+ Devido que, para fazer uma validação ideal de um paciente suas imagens
+ médicas e relatórios clínicos ambas têm que estar presentes.
+ 
+\end_layout
+
+\begin_layout Itemize
+Um fator limitante encontrado diz respeito a pouca disponibilidade de tempo
+ dos especialistas para realizar os testes.
+\end_layout
+
+\begin_layout Section
+Trabalhos Futuros
 \end_layout
 
 \begin_layout Standard
-
-\lang brazilian
-Ao destacar tais resultados contraditórios, casos clínicos especiais podem
- ser detectados e potenciais erros de tratamento médico podem ser reduzidos
+Como trabalhos futuros decorrentes dessa dissertação destacam-se: 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Itemize
+Atualmente, algoritmos automáticos de segmentação de imagem Já são utilizados
+ para detectar lesões em imagens de CT ou MRI (por exemplo 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Oberkampf2016"
 
-\lang brazilian
-The TNM system is only based on tumor character- istics and invasion extent;
- it does not account for underlying hepatic function.
- However, because of the prognostic significance of underlying liver disease,
- the histopathologic analysis results of the liver should be considered
+\end_inset
+
+).
+ Assim, a extração automática de representações estruturadas de lesão e
+ seu tamanho em imagens está ao alcance.
+ Com representações estruturadas (por exemplo, na Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:classes-extend"
+
+\end_inset
+
+), grandes partes dos critérios TNM como da anotação de imagens podem ser
+ automatizadas e melhoradas nos trabalhos futuros.
+ 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Itemize
+Embora não tenhamos realmente feito isso, assumimos que nossa abordagem
+ poderia ser aplicada a outros tipos de câncer como cólon, pulmões, e outros
+ criterios de classificação como Recist, etc, unicamente modificando as
+ regras e axiomas que representam os critérios TNM, evitando assim criar
+ uma nova ontologia.
+\end_layout
 
-\lang brazilian
-Currently, automatic image segmentation algorithms are already used to detect
- lesions and lymph nodes in CT or MRI images (see e.g.
- [29–34]).
- Thus, automatic extraction of structured representations of lesion and
- lymph node size from images is within reach.
- With structured representations (e.g.
- in Fig.
- 7), large parts of the RECIST criteria can be automated and improved.
- Indeed, the guidelines represent rules and most of them are easily implemented
- using OWL SWRL
+\begin_layout Itemize
+A integração de uma DSL ou Linguagens de Domínio Específico, como ferramenta
+ de comunicação entre os médicos e a representação formal dos critérios
+ TNM.
+\end_layout
+
+\begin_layout Itemize
+O trabalho futuro incluirá, conjuntos de dados mais variados para avaliação,
+ expansão do classificador para outros locais de tumor e incorporação em
+ sistemas de informação existentes.
+ O classificador TNM aplicação mostra o potencial de ser integrado em sistemas
+ de software maiores.
 \end_layout
 
 \end_body

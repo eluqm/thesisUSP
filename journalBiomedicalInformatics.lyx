@@ -145,25 +145,25 @@ Information about cancer stage in a patient is crucial when clinicians assess
  Determining cancer stage is a process that takes into account the description,
  location, characteristics and possible metastasis of cancerous tumors in
  a patient.
- It should follow classification standards, such as TNM Classification of
- Malignant Tumors.
+ It should follow classification standards, such as Tumor-Node-Metastasis
+ TNM Classification of Malignant Tumors.
  However, in clinical practice, the implementation of this process can be
  tedious and error-prone and create uncertainty.
  In order to alleviate these problems, we intend to assist radiologists
  by providing a second opinion in the evaluation of cancer stage in patients.
  For doing this, Semantic Web technologies, such as ontologies and reasoning,
  were used to automatically classify cancer stages.
- This classification used semantic annotations, made by radiologists using
+ This classification used semantic annotations made by radiologists using
  the ePAD tool and stored it in the standard AIM format, then these xml
  documents were transformed in AIM4-O ontology individuals, rules and axioms
  representing the TNM standard.
- the TNM classifier was evaluated with real patients cases from The NCI's
+ The TNM classifier was evaluated with real patients cases from The NCI's
  Genomic Data Commons (GDC) in term of presicion and recall, with 84.3
 \backslash
 % and 74.4
 \backslash
-% respectively,The whole process was validated with users from the Radiology
- Dept.
+% respectively,The whole process was validated by comparing results of automatic
+ classification and experts results from the Radiology Dept.
  of the Stanford University.
 \end_layout
 
@@ -2302,11 +2302,11 @@ Our first dataset is a set of real clinical reports of hepatocellular carcinoma
  of GDC clinical reports, The TCIA 
 \begin_inset CommandInset citation
 LatexCommand cite
-key "Blomqvist2012"
+key "Clark2013"
 
 \end_inset
 
- is a service which de-identifies and hosts a large archive of medical images
+is a service which de-identifies and hosts a large archive of medical images
  of cancer accessible for public download and also it is related with GDC
  by 
 \emph on
@@ -4142,11 +4142,11 @@ The AIM files were used as input TNM classifier.
 \end_layout
 
 \begin_layout Standard
-The classifier classificated all image annotations based on 52 different
- clinical reports, in order to analyze the potencial of the automatic TNM
- staging approach we discussed the patient staging scenarios with the help
- of our expert and project partner of the Stanford University, the response
- was positive.
+In this paper, the 7th edition of TNM [ref....] has been employed.
+ All image annotations based on 52 different clinical reports were classificated
+, in order to analyze the potencial of the automatic TNM staging approach
+ we discussed the patient staging scenarios with the help of our expert
+ and project partner of the Stanford University, the response was positive.
  The precision was 84.3 % and the recall 74.4%, the evaluation results are
  summarized in the color scale matrix in Figure 
 \begin_inset CommandInset ref
@@ -4227,7 +4227,7 @@ Confusion matrix for TNM multi-stage classification
 
 \begin_layout Standard
 In addition, the classifier revealed the fact that there are some clinical
- reports cases with staging diagnosis inaccurate presents in The NCI's Genomic
+ reports cases with staging diagnosis inaccurate present in The NCI's Genomic
  Data Common
 \begin_inset Foot
 status open
@@ -4347,11 +4347,12 @@ The result was the TNM classifier and using real cancer cases our experiments
  by processing of image finding and metadata in cancer assessment with 84.3
  % presicion and 74.4% recall.
  In addition, the analysis of real patient reports contrasting the automated
- staging result, revealed the fact that there are patient cases with a diagnosis
- inacurate.
+ staging result, revealed the fact that there are patient cases with inconsisten
+cies in diagnosis.
  But, it is important to note that the automatic staging procedure does
  not give the clinician new information, as it was said above, it can be
  seen as a second opinion for the purposes of quality in clinical diagnosis.
+ 
 \end_layout
 
 \begin_layout Standard

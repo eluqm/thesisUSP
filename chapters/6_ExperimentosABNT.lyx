@@ -41,8 +41,8 @@
 \use_package stackrel 1
 \use_package stmaryrd 1
 \use_package undertilde 1
-\cite_engine basic
-\cite_engine_type default
+\cite_engine natbib
+\cite_engine_type authoryear
 \biblio_style plain
 \use_bibtopic false
 \use_indices false
@@ -120,7 +120,14 @@ https://gdc.cancer.gov/
  Por outro lado e mais importante para a classificação de metadados de imagem
  foi a exigência de ter um conjunto de dados de imagens para validar os
  resultados de relatórios clínicos.
- O The Cancer Imaging Archive (TCIA) [# ref...] 
+ O The Cancer Imaging Archive (TCIA)
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Clark2013"
+
+\end_inset
+
+ 
 \begin_inset Foot
 status open
 
@@ -156,6 +163,7 @@ staging
  Para um dado paciente, a entrada para o classificador consiste em arquivos
  AIM (anotações de imagem) e a saída consistem no estágio de câncer para
  este paciente.
+ Neste trabalho, a 7ª edição do TNM tem sido empregada.
 \end_layout
 
 \begin_layout Section
@@ -163,7 +171,14 @@ Avaliação quantitativa da ontologia AIM4-O
 \end_layout
 
 \begin_layout Standard
-De acordo com [# ref...] 
+De acordo com 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Blomqvist2012"
+
+\end_inset
+
+ 
 \emph on
 A avaliação ontológica é o processo de avaliação de uma ontologia com respeito
  a determinados critérios, usando certas medidas
@@ -173,7 +188,7 @@ A avaliação ontológica é o processo de avaliação de uma ontologia com resp
  vista funcional.
  Descrevemos a avaliação da ontologia como uma avaliação centrada em tarefas
  contra suas necessidades ontológicas, tais como questões de competência
- (CQs) e requisitos de inferência [# ref..].
+ (CQs) e requisitos de inferência.
 \end_layout
 
 \begin_layout Standard
@@ -189,7 +204,14 @@ image findings
 \emph default
  são descritos como indivíduos da ontologia AIM4-O, os relatórios podem
  ser recuperados usando linguagens de consulta de lógica de descrição, como
- consulta DL [# ref...]:
+ consulta DL 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Kokciyan2014"
+
+\end_inset
+
+:
 \end_layout
 
 \begin_layout Itemize
@@ -1133,9 +1155,22 @@ Para avaliar a capacidade de nosso classificador TNM, primeiro criamos um
  template chamado "template TNM" para fornecer ao radiologista um conjunto
  de termos semânticos pré-especificados para anotação de imagens.
  Todas essas anotações de imagem foram armazenadas no formato padrão AIM
- e são compatíveis com ePAD [# Rubin2014].
- Um exemplo de uma anotação é apresentado na Fig.
- [Fig: TNMtemplate].
+ e são compatíveis com ePAD 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Rubin2008"
+
+\end_inset
+
+.
+ Um exemplo de uma anotação é apresentado na Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:TNMtemplate"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
@@ -1282,7 +1317,14 @@ staging
 
 \begin_layout Standard
 Os resultados da avaliação são resumidos na matriz de escala de cores na
- Figura [fig: matrixconfusion].
+ Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:matrixconfusion"
+
+\end_inset
+
+.
  Isto representa uma matriz de confusão para uma classificação de stage
  multicêntrico.
  Para o 
@@ -1291,12 +1333,24 @@ staging
 \emph default
  inicial de câncer como I, II, IIIA, o número de classificações incorrectas
  (i.e., falsos positivos e falsos negativos) foi muito pequeno.
- Ela é representada pela diagonal realçada da matriz na Figura [fig: matrixconfu
-sion].
+ Ela é representada pela diagonal realçada da matriz na Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:matrixconfusion"
+
+\end_inset
+
  Isto porque, os estádios de câncer tais como IIIB ou IVA são descritos
  por conceitos mais complexos relativamente, por exemplo podemos ver na
- Figura [fig: histograma] que, o número de verdadeiros positivos no Estágio
- IIIB é menor que o Estágio IVA.
+ Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:histogram"
+
+\end_inset
+
+ que, o número de verdadeiros positivos no Estágio IIIB é menor que o Estágio
+ IVA.
 \end_layout
 
 \begin_layout Standard
@@ -1423,7 +1477,14 @@ Resumo dos Histogramas para cada estágio após da clasificação TNM dos metada
 \end_layout
 
 \begin_layout Standard
-Segundo [ref...] o sistema de 
+Segundo 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Faria2014"
+
+\end_inset
+
+ o sistema de 
 \emph on
 staging
 \emph default
@@ -1435,7 +1496,7 @@ staging
  validado para prever resultados pós-cirúrgicos em pacientes.
  Onde as taxas de sobrevivência de pacientes con câncer de figado a 5 anos,
  com base no sistema TNM, foram no stage I, 55%; stage II, 37%; E stage
- III, 16% [ref 8].
+ III, 16%.
  Portanto, podemos ver que existe uma relação entre o número de casos clínicos(c
 linical reports) e as taxas de sobrevivência, como pode-se ver na Figura
  
@@ -1454,7 +1515,8 @@ stages
 stages
 \emph default
 .
- A seguir são mostrados alguns exemplos de classificação correta de câncer.
+ A seguir são mostrados alguns exemplos de classificação correta obtidos
+ pelo classificador TNM que foi desenvolvido.
 \end_layout
 
 \begin_layout Section
