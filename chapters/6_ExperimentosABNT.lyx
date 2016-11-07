@@ -1361,17 +1361,6 @@ sideways false
 status open
 
 \begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename ../figures/confusionmatrix2.pdf
-	scale 65
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
@@ -1383,6 +1372,17 @@ name "fig:matrixconfusion"
 
 Matriz de Confusão da TNM multi-stage
 \end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename ../figures/confusionmatrix2.pdf
+	scale 65
 
 \end_inset
 
@@ -1442,17 +1442,6 @@ sideways false
 status open
 
 \begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename ../figures/classhistogram.pdf
-	scale 60
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
@@ -1465,6 +1454,17 @@ name "fig:histogram"
 Resumo dos Histogramas para cada estágio após da clasificação TNM dos metadados
  dos 52 pacientes 
 \end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename ../figures/classhistogram.pdf
+	scale 60
 
 \end_inset
 
@@ -1515,8 +1515,178 @@ stages
 stages
 \emph default
 .
- A seguir são mostrados alguns exemplos de classificação correta obtidos
- pelo classificador TNM que foi desenvolvido.
+ A seguir são mostrados alguns exemplos nas Figuras 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:examploIIIA"
+
+\end_inset
+
+ e 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:exampleIIA"
+
+\end_inset
+
+ de classificação correta obtidos pelo classificador TNM que foi desenvolvido.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:examploIIIA"
+
+\end_inset
+
+A) Uma imagem axial CT, contrastada, apresenta múltiplos tumores HCC, identifica
+das e anotadas utilizando a ferramenta ePAD; B)O diagrama do stagio IIIA,
+ mostra múltiplos HCCs; Pelo menos uma > 5 cm.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename ../figures/exemploIIIA.pdf
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\lang brazilian
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+fadaptada{Faria2014}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Na Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:examploIIIA"
+
+\end_inset
+
+ se mostra múltiplos tumores de HCC, (linhas verdes); Pelo menos uma delas
+ > 5 cm.
+ Não houve envolvimento linfonodal regional ou metástase.
+ Este paciente foi classificado corretamente com estágio TNM 
+\series bold
+IIIA 
+\series default
+(T3a, N0, M0) pelo nosso classificador.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:exampleIIA"
+
+\end_inset
+
+ A) Uma imagem axial CT, contrastada, apresenta um tumor HCC, identificado
+ e anotado utilizando a ferramenta ePAD; B) O diagrama do stagio II, mostra
+ um tumor HCC solitário com invasão vascular.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /home/edson/Documents/tesis/thesisUSP/figures/exemploII.pdf
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\lang brazilian
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+fadaptada{Faria2014}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Na figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:exampleIIA"
+
+\end_inset
+
+, se mostra um único tumor de HCC (linha verde) com micro invasão vascular,
+ sem envolvimento de linfonodos regionais ou metástases.
+ Este paciente foi classificado corretamente com estágio TNM 
+\series bold
+II 
+\series default
+(T2, N0, M0) pelo nosso classificador.
 \end_layout
 
 \begin_layout Section
