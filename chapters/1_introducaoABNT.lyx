@@ -77,21 +77,28 @@
 \begin_layout Standard
 Em Biomedicina, especificamente em radiologia e oncologia, avaliar a resposta
  ao tratamento do câncer depende criticamente dos resultados da análise
- de imagens pelos especialistas.
+ de imagens médicas pelos especialistas.
  No entanto, as informações obtidas dessa análise não são facilmente interpretad
 as por máquinas.
  
 \end_layout
 
 \begin_layout Standard
-Pode-se ver que há uma falta de conexão entre a informação visual da imagem
- e sua interpretação.
+Isso acontece, pois há uma falta de conexão entre a informação visual da
+ imagem e sua interpretação
+\begin_inset CommandInset citation
+LatexCommand citep
+key "HaoMa"
+
+\end_inset
+
+.
  É por essa razão que as tecnologias, como a web semântica, geram um interesse
  crescente para aplicação em biomedicina.
  Essas tecnologias podem tornar dados em biomedicina explícitos e computáveis.
  A comunidade biomédica está em busca de ferramentas para ajudar com o acesso,
- consulta e análise da vasta quantidade de dados gerados pelos avanços no
- uso da tecnologia na medicina 
+ consulta e análise da vasta quantidade de dados gerados devido aos avanços
+ no uso da tecnologia na medicina 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "marquet2007"
@@ -103,10 +110,10 @@ key "marquet2007"
 
 \begin_layout Standard
 O uso de imagens na medicina, especificamente no tratamento de pacientes
- com câncer, gera enormes quantidades de informações do tipo não-texto.
+ com câncer, gera enormes quantidades de informações não textuais.
  No entanto, o uso dessas imagens médicas nas tarefas clínicas é importante,
- pois permite aos especialistas, diagnosticar, planejar e acompanhar os
- pacientes 
+ pois permite aos especialistas, diagnosticar, planejar e acompanhar o quadro
+ clínico dos pacientes 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "Levy2009"
@@ -121,10 +128,11 @@ key "Levy2009"
 \end_layout
 
 \begin_layout Standard
-Embora esses algoritmos possam auxiliar a comunidade biomédica, quanto ao
- uso de imagens no tratamento de câncer, eles apresentam problemas quando
- uma consulta abstrata e ambígua é feita no contexto da classificação de
- pacientes com câncer.
+Embora esses algoritmos como os algoritmos automáticos de segmentação de
+ imagem para detectar lesões em imagens médicas, possam auxiliar a comunidade
+ biomédica, quanto ao uso de imagens no tratamento de câncer, eles apresentam
+ problemas quando uma consulta abstrata e ambígua é feita no contexto da
+ classificação de pacientes com câncer.
  Por exemplo, quando um oncologista quer saber se um tumor já se encontra
  em estado avançado, perto de se espalhar para alguma região próxima da
  origem do câncer, mas não para outras partes do corpo 
@@ -134,7 +142,7 @@ key "Wennerberg2011155"
 
 \end_inset
 
-.
+, esses algoritmos não possuem uma boa precisão do contenido semántico.
  Portanto, podem haver algumas dificuldades em manipular interpretações
  abstratas de imagens, porque a informação semântica dos laudos sobre a
  imagem não é considerada nesses algoritmos.
@@ -151,24 +159,20 @@ Embora imagens médicas forneçam uma quantidade relevante de informações
  em aplicações médicas avançadas tais como, sistemas de apoio à decisão
  clínica para tratar pacientes com câncer.
  Especificamente quando os médicos vão avaliar o progresso individual de
- um paciente para decidir sobre novas medidas de tratamento
+ um paciente, no fluxo de trabalho para avaliar o progresso individual de
+ um paciente com câncer, o radiologista identifica as lesões cancerígenas
+ por meio de imagens e grava as medições detalhadas sobre as lesões utilizando
+ anotações.
+ Em seguida, o oncologista analisa e extrai as informações sobre a localização
+ e o tamanho das lesões tumorais a partir das anotações feitas pelo radiologista
+ e registra as informações em uma folha de fluxo
 \begin_inset CommandInset citation
 LatexCommand citep
-key "Zillner2013"
+key "Rubin2014"
 
 \end_inset
 
 .
- 
-\end_layout
-
-\begin_layout Standard
-No fluxo de trabalho para avaliar o progresso individual de um paciente
- com câncer, o radiologista identifica as lesões cancerígenas por meio de
- imagens e grava as medições detalhadas sobre as lesões utilizando anotações.
- Em seguida, o oncologista analisa e extrai as informações sobre a localização
- e o tamanho das lesões tumorais a partir das anotações feitas pelo radiologista
- e registra as informações em uma folha de fluxo.
  
 \end_layout
 
@@ -192,8 +196,7 @@ cancer staging
  Portanto, obter informações sobre o estágio do câncer é importante para
  identificar as possíveis opções de tratamento adequadas.
  Esse processo de classificação poderia ser automatizado, a fim de otimizar
- o trabalho dos médicos que pode se tornar pesado e propenso a erros, quando
- o número de pacientes é consideravelmente grande 
+ o trabalho dos médicos que pode se tornar pesado e propenso a erros
 \begin_inset CommandInset citation
 LatexCommand citep
 key "Zillner2010"
@@ -265,8 +268,8 @@ description " eXtensible Markup Language"
 
 \end_inset
 
- para descrever a estruturaanatômica e observações visuais em imagens utilizando
- a ontologia RadLex 
+ para descrever a estrutura anatômica e observações visuais em imagens utilizand
+o a ontologia RadLex 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "Kundu2009"
@@ -274,7 +277,7 @@ key "Kundu2009"
 \end_inset
 
 .
- Ele permite uma representação, armazenamento e transferência consistentes
+ Ela permite uma representação, armazenamento e transferência consistentes
  de significados semânticos sobre imagens.
  Ferramentas, como por exemplo o ePAD 
 \begin_inset CommandInset citation
@@ -283,11 +286,10 @@ key "Rubin2014"
 
 \end_inset
 
-, usam o formato AIM.
- O ePAD permite aos pesquisadores e clínicos criar anotações semânticas
- em imagens radiológicas.
- Ferramentas, como o ePAD, podem ajudar a reduzir o esforço de se recolher
- informação semântica estruturada sobre imagens.
+, usam o formato AIM que permite aos pesquisadores e clínicos criar anotações
+ semânticas em imagens radiológicas.
+ Tais ferramentas, podem ajudar a reduzir o esforço de se recolher informação
+ semântica estruturada sobre imagens.
  No entanto é necessário fazer inferências sobre essas informacões (lesões
  de câncer) usando as relações biológicas e fisiológicas entre as anotações.
 \end_layout
@@ -298,7 +300,7 @@ Motivação
 
 \begin_layout Standard
 O processo de classificação dos pacientes com câncer, através da análise
- de imagens, é uma tarefa executada por especialistas, como oncologistas
+ de imagens, é uma tarefa executada por especialistas, tais como oncologistas
  e radiologistas, com base na inspeção de imagens e pode ser, muitas vezes,
  um trabalho intensivo que exige precisão na interpretação das lesões de
  câncer.
@@ -312,15 +314,15 @@ key "Depeursinge2014"
 , mas mesmo com boa formação e experiência podem ocorrer variações na interpreta
 ção de imagens entre especialistas.
  Nesse contexto, o desenvolvimento de um sistema de classificação automática
- representa uma forte necessidade médica que pode ajudar a se obter uma
- maior taxa de precisão na interpretação.
+ representa um forte auxilio a comunidade médica que pode ajudar a se obter
+ uma maior taxa de precisão na interpretação.
 \end_layout
 
 \begin_layout Standard
-Por outro lado, embora sistemas como o ePAD permitam a criação de anotações
- de imagem no formato AIM, facilitando assim a manipulação e consulta de
- metadados de imagens em AIM, eles não permitem representar anotações em
- um formato que seja diretamente adequado para o raciocínio (
+Embora sistemas como o ePAD permitam a criação de anotações como meta-dados
+ das imagens no formato AIM, para facilitar a sua consulta, eles não permitem
+ representar anotações em um formato que seja diretamente adequado para
+ o uso de raciocínio lógico computacional(
 \emph on
 reasoning
 \emph default
@@ -330,8 +332,8 @@ reasoning
 \emph on
 reasoning
 \emph default
- semântico para se fazer inferências sobre lesões cancerígenas utilizando
- anotações sobre imagens médicas codificadas pelo AIM 
+ semântico com capacidade de se fazer inferências sobre lesões cancerígenas
+ utilizando anotações sobre imagens médicas codificadas pelo AIM 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "Levy2009"
@@ -359,10 +361,9 @@ Podemos ver então que existe uma carência de métodos de
 reasonig
 \emph default
  semântico para fazer inferências sobre lesões cancerígenas a partir de
- anotações semânticas sobre imagens, baseadas no meios padrão (como AIM)
- de adição de informação e conhecimento para uma imagem.
+ anotações semânticas sobre imagens, utilizando o padrão AIM.
  Sendo assim, a principal motivação deste trabalho é a possibilidade de
- desenvolver essos métodos de 
+ desenvolver métodos de 
 \emph on
 reasoning
 \emph default
@@ -381,11 +382,8 @@ description "TNM Classification of Malignant Tumors"
 
 \end_inset
 
-).
- A fim de classificar automáticamente pacientes com câncer, a partir de
- anotações AIM sobre imagens desses pacientes.
- E finalmente incorporar esses métodos aos requisitos atendidos por sistemas
- de anotação de imagens, como ePAD.
+) a fim de classificar automáticamente pacientes com câncer, a partir de
+ anotações AIM incorporadas em sistemas como ePAD.
 \end_layout
 
 \begin_layout Section
@@ -393,21 +391,24 @@ Objetivo
 \end_layout
 
 \begin_layout Standard
-Este trabalho tem como objetivo gerar automaticamente o
+Este trabalho tem como objetivo identificar automaticamente os
 \emph on
  
+\emph default
+estágios do câncer(
+\emph on
 \lang english
 Cancer Staging
 \emph default
 \lang brazilian
-(estágios do câncer) de lesões cancerígenas presentes em imagens médicas,
- utilizando tecnologias de 
+) de lesões cancerígenas presentes em imagens médicas, utilizando tecnologias
+ de 
 \emph on
 reasoning
 \emph default
- e web semântica para processar metadados sobre anotações dessas imagens
- gerados por ferramentas que utilizan um esquema XML como AIM(ePAD), para
- descrever a estrutura anatômica e observações visuais em imagens.
+ e web semântica para processar metadados sobre anotações de imagens geradas
+ por ferramentas que utilizan um esquema XML como AIM(ePAD), para descrever
+ a estrutura anatômica e observações visuais em imagens.
  A fim de fornecer aos médicos uma segunda opinião sobre a classificação
  dos pacientes com um determinado tipo de câncer e obter uma maior taxa
  de precisão na interpretação das lesões.
@@ -434,7 +435,7 @@ Representar apropriadamente o criterio de classificação(
 staging
 \emph default
 ) do câncer TNM.
- Esse conhecimento tem que ser codificado em OWL e regras SWRL.
+ Esse conhecimento será formalizado em OWL e regras SWRL.
 \end_layout
 
 \begin_layout Enumerate
