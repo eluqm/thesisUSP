@@ -7,6 +7,7 @@
 \textclass abntex2
 \begin_preamble
 \input{pagestyle.tex}
+\usepackage{lmodern}
 \end_preamble
 \use_default_options true
 \begin_modules
