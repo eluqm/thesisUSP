@@ -5,6 +5,10 @@
 \save_transient_properties true
 \origin unavailable
 \textclass abntex2
+\begin_preamble
+\input{../pagestyle.tex}
+\usepackage{lmodern}
+\end_preamble
 \use_default_options true
 \maintain_unincluded_children false
 \language english
@@ -1382,6 +1386,7 @@ Matriz de Confusão da TNM multi-stage
 \align center
 \begin_inset Graphics
 	filename ../figures/confusionmatrix2.pdf
+	lyxscale 70
 	scale 65
 
 \end_inset
@@ -1464,6 +1469,7 @@ Resumo dos Histogramas para cada estágio após da clasificação TNM dos metada
 \align center
 \begin_inset Graphics
 	filename ../figures/classhistogram.pdf
+	lyxscale 70
 	scale 60
 
 \end_inset
@@ -1563,6 +1569,7 @@ das e anotadas utilizando a ferramenta ePAD; B)O diagrama do stagio IIIA,
 \align center
 \begin_inset Graphics
 	filename ../figures/exemploIIIA.pdf
+	lyxscale 50
 	scale 50
 
 \end_inset
@@ -1641,7 +1648,8 @@ name "fig:exampleIIA"
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename /home/edson/Documents/tesis/thesisUSP/figures/exemploII.pdf
+	filename ../figures/exemploII.pdf
+	lyxscale 50
 	scale 50
 
 \end_inset
