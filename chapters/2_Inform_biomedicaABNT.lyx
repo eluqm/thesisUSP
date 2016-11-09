@@ -414,7 +414,7 @@ Antes de analisar como é que a semântica pode ser adicionada ao processo
 r as tecnologias de imagem primárias com que iremos trabalhar em nossa proposta
  e o que elas fazem.
  Essas tecnologias de imagem abrangem a Tomografia Computadorizada e a Tomografi
-a poe Emissão de Pósitrons.
+a por Emissão de Pósitrons.
  
 \end_layout
 
@@ -562,7 +562,7 @@ description "Positron Emission Tomography"
 \begin_layout Standard
 Nesses estudos oncológicos PET, o paciente recebe uma injecção do açúcar
  radioactivo que pode ajudar na localização de um tumor, porque as células
- cancerosas  utilizam o açucar (glicose) mais avidamente do que outros tecidos
+ cancerosas  utilizam o açúcar (glicose) mais avidamente do que outros tecidos
  no corpo
 \begin_inset CommandInset citation
 LatexCommand citep
@@ -1132,7 +1132,7 @@ reasoning
 \emph on
 staging
 \emph default
- de cancer, como o TNM, em ontologias e regras é uma contribuição desejável
+ de câncer, como o TNM, em ontologias e regras é uma contribuição desejável
  para a realização da classificação automática de tumores em imagens médicas,
  e, por conseguinte, uma contribuição aos sistemas de apoio à decisão auxiliada
  por computador.
