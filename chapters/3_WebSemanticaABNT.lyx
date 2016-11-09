@@ -1,7 +1,9 @@
-#LyX 2.1 created this file. For more info see http://www.lyx.org/
-\lyxformat 474
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
 \begin_document
 \begin_header
+\save_transient_properties true
+\origin unavailable
 \textclass abntex2
 \use_default_options true
 \maintain_unincluded_children false
@@ -9,16 +11,16 @@
 \language_package default
 \inputencoding utf8
 \fontencoding global
-\font_roman default
-\font_sans default
-\font_typewriter default
-\font_math auto
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
 \font_default_family default
 \use_non_tex_fonts false
 \font_sc false
 \font_osf false
-\font_sf_scale 100
-\font_tt_scale 100
+\font_sf_scale 100 100
+\font_tt_scale 100 100
 \graphics default
 \default_output_format default
 \output_sync 0
@@ -72,7 +74,7 @@
 \begin_layout Standard
 O objetivo fundamental da Web Semântica é fazer com que as máquinas entendam
  o significado das informações disponíveis na Web; daí a palavra "semântica".
- No caso de seres humanos, entender uma sinal ou uma palavra não é uma tarefa
+ No caso de seres humanos, entender um sinal ou uma palavra não é uma tarefa
  extraordinária, nosso cérebro associa os conceitos que acumulou ao longo
  dos anos, portanto, nossa interpretação semântica é fornecida pelas estruturas
  neurais.
@@ -81,15 +83,16 @@ O objetivo fundamental da Web Semântica é fazer com que as máquinas entendam
 \end_layout
 
 \begin_layout Standard
-Tendo em conta que, os dados de entrada para realizar o processo de 
+Os dados de entrada para realizar o processo de 
 \emph on
 staging
 \emph default
- de câncer neste trabalho são basicamente terminologias que descrevem imagens
- usando o formato XML, é vital abordar a semântica destes termos com as
- tecnologias de Web Semantica.
- Tecnologias como as Ontologias, OWL-SWRL e reasoners são essenciais para
- realizar tarefas complexas de inferencia como o 
+ de câncer, neste trabalho, são basicamente terminologias que descrevem
+ imagens, usando o formato XML.
+ Tendo em conta isso, é vital abordar como associar e processar a semântica
+ destes termos usando, neste caso, as tecnologias da Web Semântica.
+ Tecnologias como ontologias, linguagens OWL-SWRL e reasoners são essenciais
+ para realizar tarefas complexas de inferência exigidas pelo 
 \emph on
 staging
 \emph default
@@ -98,58 +101,56 @@ staging
 
 \begin_layout Standard
 Conceitos relacionados a Web Semântica e ontologias foram mencionados no
- capítulo anterior, neste capítulo esses conceitos vão ser apresentados
- e discutidos.
- O capítulo está organizado da seguinte maneira, na Seção 
+ capítulo anterior.
+ Neste capítulo, esses conceitos serão apresentados e discutidos, incluindo
+ uma introdução à Web Semântica (Seção 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "sec:Web-Semântica"
 
 \end_inset
 
- a Web Semântica é discutida.
- Na Seção 
+), ontologias (Seção 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "sec:Ontologias"
 
 \end_inset
 
- serão expostos conceitos referentes à Ontologias.
- A Web Ontology Language (OWL) é exposta na seção 
+), a Web Ontology Language - OWL (Seção 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "sub:Web-Ontology-Language"
+reference "subsec:Web-Ontology-Language"
 
 \end_inset
 
-, asim como a Semantic Web Rule Language (SWRL) na seção 
+) e a Semantic Web Rule Language - SWRL (seção 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "sec:Semantic-Web-Rule"
 
 \end_inset
 
-.
- Em seguida, na seção 
+).
+ Na Seção 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "sec:Bio-Ontologies"
 
 \end_inset
 
- apresentaremos as principais bio\SpecialChar \nobreakdash-
-ontologias e terminologias envolvidas nas
- pesquisas deste trabalho.
- Finalmente na seção 
+, serão apresentadas as principais bio\SpecialChar nobreakdash
+ontologias e terminologias envolvidas
+ nas pesquisas deste trabalho.
+ Finalmente, na Seção 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "sec:Annotation-Imaging-Markup(AIM)"
 
 \end_inset
 
- serão exposto a infraestruturas de dados AIM, e sua interação com ferramentas
- de anotação como ePAD.
+, serão discutidas a linguagem de dados AIM e sua interação com ferramentas
+ de anotação, como o ePAD.
 \end_layout
 
 \begin_layout Section
@@ -173,9 +174,9 @@ key "bernerslee2001"
  propuseram em 2001 a Web semântica como uma extensão da Web atual que fornece
  informações com significado bem definido, permitindo que computadores e
  pessoas trabalhem em cooperação.
- A partir dessa visão conceitual sobre a Web semântica, Berners-Lee propôs
- a arquitetura da Web Semântica conhecida como “bolo de noiva”, que está
- ilustrada na Figura 
+ A partir dessa visão conceitual sobre a Web, Berners-Lee propôs a arquitetura
+ da Web Semântica, conhecida como “bolo de noiva”, que está ilustrada na
+ Figura 
 \begin_inset CommandInset ref
 LatexCommand formatted
 reference "WEBE1-1"
@@ -184,7 +185,7 @@ reference "WEBE1-1"
 
 .
  A idéia central dessa arquitetura é de que cada camada vai gradativamente
- trazendo uma nova contribuição como maior expressividade, possibilidade
+ trazendo uma nova contribuição com maior expressividade, possibilidade
  de se realizar inferências e autenticação.
  A arquitetura da Web Semântica está categorizada nas seguintes camadas:
  camada URI/Unicode, camada sintática, camada de dados, camada de ontologia,
@@ -231,7 +232,7 @@ name "WEBE1-1"
 
 \begin_layout Plain Layout
 \begin_inset ERT
-status open
+status collapsed
 
 \begin_layout Plain Layout
 
@@ -251,8 +252,7 @@ fadaptada{bernerslee2001}
 \end_layout
 
 \begin_layout Standard
-A base da arquitetura de camadas da Web Semântica é formada pelos padrões
- Unicode e URIs.
+A base dessa arquitetura de camadas é formada pelos padrões Unicode e URIs.
  Eles facilitam o intercâmbio de dados: o Unicode permite aos computadores
  representar e manipular caracteres em quase todas as línguas existentes
  e URI
@@ -308,14 +308,14 @@ A camada da ontologia estende a camada de dados, provendo um maior nível
 \end_layout
 
 \begin_layout Standard
-A expressividade neste trabalho é o fator muito importante, ela permite
- a modelagem de 
+A expressividade, neste trabalho, é um fator muito importante, ela permite
+ a modelagem do 
 \emph on
 reasoning
 \emph default
- para responder a questões complexas automaticamente, por essa razão o trabalho
- desenvolvido engloba até a camada lógica da arquitetura da Web Semântica
- (ver na Figura 
+ para responder a questões complexas automaticamente,.
+ Por essa razão, o trabalho desenvolvido engloba até a camada lógica da
+ arquitetura da Web Semântica (Figura 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "WEBE1-1"
@@ -324,8 +324,8 @@ reference "WEBE1-1"
 
 ).
  Nas seções seguintes iremos detalhar as tecnologias da Web Semântica que
- serão utilizadas para este trabalho, como: Ontologias, linguagens de construção
-: OWL, XML , linguagens de regras: SWRL, Reasoners, Terminologias.
+ serão utilizadas neste trabalho: Ontologias, linguagens de construção:
+ OWL, XML , linguagens de regras: SWRL, Reasoners e Terminologias.
 \end_layout
 
 \begin_layout Section
@@ -390,7 +390,7 @@ key "Silvio2014"
 \end_layout
 
 \begin_layout Standard
-A fim de representar ontologias para que elas possam ser consumidas por
+A fim de representar ontologias, para que elas possam ser consumidas por
  computadores, a representação formal é usada.
  Segundo 
 \begin_inset CommandInset citation
@@ -399,9 +399,19 @@ key "Patel-schneider05buildingthe"
 
 \end_inset
 
- quanto a representação formal, existem linguagens para representação de
- ontologias.
- Normalmente, usa-se lógica de predicados, lógica descritiva.
+, quanto a representação formal, existem linguagens para representação de
+ ontologias
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+frase sem sentido
+\end_layout
+
+\end_inset
+
+.
+ Normalmente, usa-se lógica de predicados ou lógica descritiva.
  Atualmente, as linguagens mais populares para descrever ontologias são
  RDF /RDF-S e OWL.
 \end_layout
@@ -410,7 +420,7 @@ key "Patel-schneider05buildingthe"
 Web Ontology Language – OWL
 \begin_inset CommandInset label
 LatexCommand label
-name "sub:Web-Ontology-Language"
+name "subsec:Web-Ontology-Language"
 
 \end_inset
 
@@ -427,7 +437,7 @@ key "Horrocks03fromshiq"
 \end_inset
 
 .
- O W3C lançou em 2004 a Web Ontology Language (OWL
+ O W3C lançou, em 2004, a Web Ontology Language (OWL
 \begin_inset CommandInset nomenclature
 LatexCommand nomenclature
 symbol "OWL"
@@ -450,7 +460,7 @@ key "j.websem156"
 \end_inset
 
 .
- Apesar do sucesso da linguagem OWL foram encontradas algumas deficiências.
+ Apesar do sucesso da linguagem OWL, foram encontradas algumas deficiências.
  Em resposta aos comentários e requisições dos usuários da OWL, atualmente,
  a linguagem OWL encontra-se em sua segunda versão (OWL 2) que é subdividida
  em três sub-linguagens, OWL EL, OWL QL e OWL RL, cada uma com um poder
@@ -516,11 +526,11 @@ key "bechhofer2004"
 
 \end_inset
 
- como o caso do SWRL.
+.
 \end_layout
 
 \begin_layout Standard
-Infelizmente a expressividade de OWL nem sempre é suficiente para modelar
+Infelizmente, a expressividade de OWL nem sempre é suficiente para modelar
  os tipos de problemas na área biomédica e na Web Semântica 
 \begin_inset CommandInset citation
 LatexCommand citep
@@ -534,7 +544,7 @@ key "ORLANDO"
 horn rules
 \emph default
  que OWL não suporta) usadas em regras para sistemas de decisão na área
- médica, levou para criar SWRL.
+ médica, levou a criação da linguagem SWRL.
 \end_layout
 
 \begin_layout Section
@@ -550,8 +560,18 @@ name "sec:Semantic-Web-Rule"
 
 \begin_layout Standard
 Dado que a interoperabilidade é uma das metas principais da Web Semântica
- e que as regras são uma parte fundamental dessas metas, um passo fundamental
- para fazer essa interoperação na Web é a Semantic Web Rule Language (SWRL
+ e que as regras são uma parte fundamental dessas metas
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+não entendi, como as regras sao parte fundamental?
+\end_layout
+
+\end_inset
+
+, um passo fundamental para dar suporte a interoperabilidade na Web foi
+ a criação da linguagem Semantic Web Rule Language (SWRL
 \begin_inset CommandInset nomenclature
 LatexCommand nomenclature
 symbol "SWRL"
@@ -569,7 +589,9 @@ http://www.daml.org/rules/proposal/
 
 \end_inset
 
-, que foi projetada para ser o idioma de regras da Web Semântica 
+.
+ Essa linguagem foi projetada para ser o idioma de regras da Web Semântica
+ 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "Connor2005"
@@ -580,9 +602,9 @@ key "Connor2005"
 \end_layout
 
 \begin_layout Standard
-A SWRL é baseada numa combinação das sub\SpecialChar \nobreakdash-
+A SWRL é baseada numa combinação das sub\SpecialChar nobreakdash
 linguagens OWL-DL e OWL-Lite da
- OWL e as sub\SpecialChar \nobreakdash-
+ OWL e as sub\SpecialChar nobreakdash
 linguagens Unary/Binary Datalog da 
 \emph on
 Rule Markup Language
@@ -621,13 +643,12 @@ http://www.w3.org/Submission/SWRL/
 
 \end_inset
 
- não impõe restrições sobre como o raciocínio deve ser realizado com regras
- SWRL.
+ não impõe restrições sobre como o raciocínio, com as regras, deve ser realizado.
  Assim, pesquisadores são livres para usar uma variedade de mecanismos de
  regras para raciocinar com regras SWRL armazenadas em uma base de conhecimento
  OWL.
  Dessa forma, a SWRL fornece um ponto de partida conveniente para a integração
- de sistemas de regras para trabalhar com a Web Semântica
+ de sistemas de regras com a Web Semântica
 \begin_inset CommandInset citation
 LatexCommand citep
 key "Connor2005"
@@ -638,7 +659,7 @@ key "Connor2005"
 \end_layout
 
 \begin_layout Standard
-As regras são escritas em termos de classes, propiedades, individuos, e
+As regras são escritas em termos de classes, propriedades, indivíduos, e
  valores de dados OWL, por exemplo:
 \end_layout
 
@@ -655,18 +676,18 @@ As regras são escritas em termos de classes, propiedades, individuos, e
 \end_layout
 
 \begin_layout Standard
-O efeito da regra acima, seria classificar todos os indivíduos da classe
- pessoa que possuissem uma lesão hepática como tambén pertencentes à classe
+O efeito da regra acima seria classificar todos os indivíduos da classe
+ pessoa que possuem uma lesão hepática como também pertencentes à classe
  de pessoas com câncer.
  SWRL também permite o uso de 
 \emph on
 built-ins 
 \emph default
-que torna ele como uma linguagem muito rica em recursos de representação.
+que tornam a linguagem muito rica em recursos de representação.
 \end_layout
 
 \begin_layout Standard
-Para a execução de regras tais como a regra acima, as linguagens da Web
+Para a execução de regras, tais como a regra acima, as linguagens da Web
  Semântica usam 
 \emph on
 reasoners 
@@ -684,12 +705,23 @@ Reasoners
 \begin_layout Standard
 Segundo 
 \begin_inset CommandInset citation
-LatexCommand citep
+LatexCommand citet
 key "AMANQUI2014"
 
 \end_inset
 
- a finalidade dos 
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Essa ref está diferent.
+ Está ok?
+\end_layout
+
+\end_inset
+
+, a finalidade dos 
 \emph on
 reasoners na 
 \emph default
@@ -700,7 +732,7 @@ Web Semântica é realizar inferência sobre os dados, com o objetivo de obter
 reasoners 
 \emph default
 utilizam um motor de inferência associado com um conjunto de regras descritas
- em linguagens como OWL,RDF
+ em linguagens como OWL e RDF
 \emph on
 (S).
 \end_layout
@@ -710,10 +742,6 @@ utilizam um motor de inferência associado com um conjunto de regras descritas
 wide false
 sideways false
 status open
-
-\begin_layout Plain Layout
-
-\end_layout
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -727,7 +755,9 @@ name "fig:Mecanismos-de-Reasoners"
 
 Mecanismos de 
 \emph on
-Reasoners, baseados em lógica de descripção
+Reasoners
+\emph default
+, baseados em lógica de descrição.
 \end_layout
 
 \end_inset
@@ -749,7 +779,7 @@ Reasoners, baseados em lógica de descripção
 
 \begin_layout Plain Layout
 \begin_inset ERT
-status open
+status collapsed
 
 \begin_layout Plain Layout
 
@@ -779,20 +809,17 @@ reasoners
 \emph default
  comtêm dois mecanismos internos para processar bases de conhecimento (
 \emph on
-knowledge base
+knowledge bases
 \emph default
-), essos mecanismo são TBOX e ABOX a Figura 
+), esses mecanismo são as TBOX e ABOX.
+ A Figura 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:Mecanismos-de-Reasoners"
 
 \end_inset
 
- apresenta esses mecanismos associados a uma base de conhecimento(
-\emph on
-knowledge base
-\emph default
-).
+ apresenta esses mecanismos associados a uma base de conhecimento.
  Ambos são descritos conforme 
 \begin_inset CommandInset citation
 LatexCommand citet
@@ -804,11 +831,21 @@ key "AMANQUI2014"
 \end_layout
 
 \begin_layout Description
-TBox: armazena um conjunto de afirmações universalmente quantificadas para
+TBox: Armazena um conjunto de afirmações universalmente quantificadas para
  descrever a estrutura de um domínio.
- Além disso, comtém frases que descrevem as relações entre conceitos.
- por exemplo, uma afirmação deste tipo é a que refere que um conceito representa
- uma especialização de um outro conceito:
+ Além disso, contém frases que descrevem as relações entre conceitos.
+ Por exemplo, uma afirmação desse tipo pode se referir a um conceito que
+ representa uma especialização de um outro conceito
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Cheque: é isso mesmo que vc quiz dizer?
+\end_layout
+
+\end_inset
+
+:
 \end_layout
 
 \begin_layout Standard
@@ -824,8 +861,8 @@ TBox: armazena um conjunto de afirmações universalmente quantificadas para
 \end_layout
 
 \begin_layout Standard
-Nesse exemplo, a classe (conceito) Homem é declarado como uma Pessoa com
- especialização.
+Nesse exemplo, a classe (conceito) Homem é declarada como uma especialização
+ de Pessoa.
 \end_layout
 
 \begin_layout Description
@@ -834,8 +871,8 @@ ABox: Compreende afirmações em objetos individuais (
 instant assertions
 \emph default
 ).
- A afirmação típica na Abox é a que refere que um indivíduo é uma instância
- de um certo conceito, como no exemplo a seguir onde é afirmado que o joaquin
+ A afirmação típica na Abox é a que diz que um indivíduo é uma instância
+ de um certo conceito, como no exemplo a seguir onde é afirmado que joaquin
  
 \emph on
 é 
@@ -856,13 +893,13 @@ Vale destacar que parte da base de conhecimento utilizado pelo
 \emph on
 reasoner
 \emph default
- neste projeto, é representado por ontologias em OWL destinadas às áreas
- de medicina e biologia, essas ontologias são chamados Bio Ontologias.
+ neste projeto, é representada por ontologias em OWL destinadas às áreas
+ de medicina e biologia, essas ontologias são chamados Bio-ontologias.
  
 \end_layout
 
 \begin_layout Section
-Bio Ontologies
+Bio-Ontologias
 \begin_inset CommandInset label
 LatexCommand label
 name "sec:Bio-Ontologies"
@@ -890,12 +927,12 @@ key "Serique2012"
 \end_layout
 
 \begin_layout Standard
-Os pesquisadores também devem agregar e integrar toda estas informação.
+Os pesquisadores também devem agregar e integrar toda essa informação.
  Para tanto, eles precisam de ferramentas que permitam a descoberta de conhecime
 nto nesse paradigma rico em dados.
  Portanto, eles começaram a utilizar ontologias para descrever a estrutura
  de seus domínios complexos e relacionar seus dados para compartilhar e
- interoperar informações Biomédicas 
+ interoperar informações biomédicas 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "Rubin2014"
@@ -911,8 +948,8 @@ Muitas áreas, a exemplo da Informática Biomédica, estão utilizando ontologia
  para promover o entendimento, interoperabilidade e controle de entropia
  dos dados.
  Isso é feito através do uso e desenvolvimento de novas ferramentas semânticas,
- capazes de recuperar e organizar dados distribuídos apoiadas, em sua grande
- parte, por Aplicações Web 
+ capazes de recuperar e organizar dados distribuídos, apoiadas, em sua grande
+ parte, por aplicações web 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "Serique2012"
@@ -920,23 +957,40 @@ key "Serique2012"
 \end_inset
 
 .
- Nos campos de medicina como: radiologia e oncologia, as duas ontologias
- mas conhecidas, usadas são o FMA e o 
+ Nos campos de medicina, como radiologia e oncologia, as duas ontologias
+ mais conhecidas e usadas são o FMA e o 
 \emph on
 RadLex
 \emph default
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Cade a ref dizendo que são as mais usadas?
+\end_layout
+
+\end_inset
+
 .
  
 \end_layout
 
 \begin_layout Subsection
-Foundational Model of Anatomy – FMA 
+
+\lang english
+Foundational Model of Anatomy
+\lang brazilian
+ – FMA 
 \end_layout
 
 \begin_layout Standard
-Uma bio\SpecialChar \nobreakdash-
-ontologia importante no escopo deste estudo é a Foundational Model
- of Anatomy (FMA
+Uma bio\SpecialChar nobreakdash
+ontologia importante, no escopo deste trabalho, é a 
+\lang english
+Foundational Model of Anatomy
+\lang brazilian
+ (FMA
 \begin_inset CommandInset nomenclature
 LatexCommand nomenclature
 symbol "FMA"
@@ -952,13 +1006,13 @@ key "Serique2012"
 
 \end_inset
 
- a anatomia é o estudo das estruturas físicas dos organismos biológicos.
- Por tanto, descrever e capturar de forma computável as terminologias e
- ontologias que envolvem entidades anatômicas é uma tarefa não trivial.
+, a anatomia é o estudo das estruturas físicas dos organismos biológicos.
+ Descrever e capturar de forma computável as terminologias e ontologias
+ que envolvem entidades anatômicas é uma tarefa não trivial.
  A falta de uma representação generalizada da anatomia levou os desenvolvedores
- de terminologias e ontologias, a representar a anatomia a partir dos seus
+ de terminologias e ontologias a representar a anatomia a partir dos seus
  próprios pontos de vista.
- Tanto na área de medicina clínica quanto de biologia isso gera um obstáculo
+ Tanto na área de medicina clínica, quanto de biologia, isso gera um obstáculo
  para correlacionar os termos anatômicos entre si, devido a heterogeneidade
  das representações anatômicas
 \begin_inset CommandInset citation
@@ -971,6 +1025,16 @@ key "Serique2012"
 \end_layout
 
 \begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Qual a conexão? A FMA resolve esse problema? O que ela tem haver com o que
+ você afirmou?
+\end_layout
+
+\end_inset
+
 A estrutura ontológica da FMA fornece um modelo de inferência, permitindo
  que ferramentas computacionais possam inferir informações sobre dados anatômico
 s.
@@ -1001,8 +1065,8 @@ RadLex
 \end_layout
 
 \begin_layout Standard
-O RadLex é a mais importante bio\SpecialChar \nobreakdash-
-ontologia do escopo deste trabalho.
+O RadLex é a mais importante bio\SpecialChar nobreakdash
+ontologia no escopo deste trabalho.
  Ela surgiu da necessidade de disseminar o conhecimento radiológico entre
  radiologistas.
  De forma geral, os radiologistas utilizam constantemente imagens médicas,
@@ -1054,11 +1118,30 @@ Como o Índice ACR possui apenas milhares de índices, fica fácil para as
 
 \begin_layout Standard
 Com o surgimento do mundo digital, a necessidade de criar sistemas de indexação
- informatizados levou a RSNA a desenvolver a ontologia RadLex (RNSA, 2012),
- como resposta as lacunas encontradas em outras terminologias radiológicas,
+ informatizados levou a Radiological Society of North America (RSNA)
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Vc já tinha se referido a RSNA antes?
+\end_layout
+
+\end_inset
+
+ a desenvolver a ontologia RadLex (RNSA, 2012)
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Isso é uma ref?
+\end_layout
+
+\end_inset
+
+, como resposta as lacunas encontradas em outras terminologias radiológicas,
  criando assim uma única e completa terminologia.
- O RadLex é uma forma unificada de reunir os termos usados em radiologia;
- ela é projetada para atender às necessidade dos radiologistas 
+ O RadLex é uma forma unificada de reunir os termos usados em radiologia
+ e atender às necessidade dos radiologistas 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "Curtis2006"
@@ -1066,12 +1149,6 @@ key "Curtis2006"
 \end_inset
 
 .
-\end_layout
-
-\begin_layout Standard
-Ferramentas como ePAD tentan atender às necessidades dos radiologistas,
- essa ferramenta utiliza o Radlex como a terminologia para descrever imagens
- em forma de anotações e a sua vez a infraestrutura de tipo AIM.
 \end_layout
 
 \begin_layout Standard
@@ -1090,10 +1167,17 @@ http://bioportal.bioontology.org/ontologies/40885
 \end_inset
 
 .
+ Ferramentas, como ePAD, utilizam o Radlex como a terminologia para descrever
+ imagens em forma de anotações e a infraestrutura AIM para compartilhar
+ essas anotações.
 \end_layout
 
 \begin_layout Section
-Annotation Imaging Markup(AIM)
+
+\lang english
+Annotation Imaging Markup
+\lang brazilian
+ (AIM)
 \begin_inset CommandInset label
 LatexCommand label
 name "sec:Annotation-Imaging-Markup(AIM)"
@@ -1105,7 +1189,17 @@ name "sec:Annotation-Imaging-Markup(AIM)"
 
 \begin_layout Standard
 As modernas imagens médicas contêm uma vasta quantidade de informação no
- formato padrão DICOM.
+ formato padrão DICOM
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Em algum lugar, no cap anterior, voce explica DICOM? Acho que não.
+\end_layout
+
+\end_inset
+
+.
  No entanto, essas informações são relacionadas apenas a metadados sobre
  as imagens.
  As informações mais importantes relacionadas as imagens ficam codificadas
@@ -1146,9 +1240,9 @@ key "Rubin2008"
  As anotações e marcações de imagens são consideradas como um objeto de
  informação da imagem, porém não estão ligadas fisicamente as mesmas.
  Esse modelo de informação, no entanto, é compatível com outros formatos
- de imagens além do DICOM.
+ de imagens, além do DICOM.
  O modelo AIM não cria nenhuma nova ontologia para descrever anotações,
- ele usa termos do RadLex para descrever, lesões e junta a eles informações
+ ele usa termos do RadLex para descrever lesões e junta a eles informações
  numéricas, como volume ou diâmetro.
 \end_layout
 
@@ -1160,7 +1254,7 @@ key "Rubin2008,Rubin2014"
 
 \end_inset
 
- usando um diagrama de classe UML.
+ usando um diagrama de classes UML.
  O modelo é usado para expressar a captura de informações contidas nas imagens
  médicas através de anotações e marcações de informações relevantes.
  Uma anotação pode ser explicativa ou uma descrição de informação, gerada
@@ -1186,8 +1280,8 @@ AIM e ePad
 \end_layout
 
 \begin_layout Standard
-A ferramenta ePAD usa um vocabulário controlado radiológico como RadLex
- para definir observações, e impõe a descrição completa dos aspectos necessários
+A ferramenta ePAD usa um vocabulário controlado radiológico, como RadLex,
+ para definir observações e impõe a descrição completa dos aspectos necessários
  da lesão visualizada 
 \begin_inset CommandInset citation
 LatexCommand citep
@@ -1196,7 +1290,7 @@ key "Gimenez2011"
 \end_inset
 
 .
- Para estudos do câncer, as observações incluem indentificação da imagem,
+ Para estudos do câncer, as observações incluem identificação da imagem,
  momento de obtenção de imagem, nome da lesão, localização anatômica, tipo
  de lesão, comprimento do segmento de marcação visual da lesão na imagem.
  Na figura 
@@ -1206,8 +1300,8 @@ reference "fig:AIMandEpad"
 
 \end_inset
 
- podemos ver os dados de uma anotação(observação) AIM que a ferramenta ePAD
- armazena normalmente.
+, podemos ver os dados de uma anotação (observação) AIM que a ferramenta
+ ePAD armazena normalmente.
 \end_layout
 
 \begin_layout Standard
@@ -1230,9 +1324,8 @@ name "fig:AIMandEpad"
 
 \end_inset
 
-AIM.
- Anotações de imagem que descreve, localizações anatômicas, medidas e tipos
- de lesões
+Anotações AIM de uma imagem que descrevem localizações anatômicas, medidas
+ e tipos de lesões
 \end_layout
 
 \end_inset
@@ -1253,7 +1346,7 @@ AIM.
 
 \begin_layout Plain Layout
 \begin_inset ERT
-status open
+status collapsed
 
 \begin_layout Plain Layout
 
@@ -1277,8 +1370,8 @@ fadaptada{HAGE2014}
 \end_layout
 
 \begin_layout Standard
-Para garantir que as informações sob marcação mínimas são recolhidos, ePAD
- usa um mecanismo chamado "
+Para garantir que as informações mínimas necessárias para uma anotação sejam
+ recolhidas, o ePAD usa um mecanismo chamado "
 \emph on
 AIM templates
 \emph default
@@ -1287,26 +1380,35 @@ AIM templates
 \emph on
 templates
 \emph default
- especifica um formulário de coleta de dados eletrônicos, análogo a um formulári
-o eletrônico de relatório do caso, contendo elementos de dados cujos valores
- são especificados pelo usuário durante a visualização das imagens.
- Os elementos de dados em 
+ especificam um formulário de coleta de dados eletrônico
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+ análogo a um formulário eletrônico de relatório do caso???
+\end_layout
+
+\end_inset
+
+ contendo os elementos cujos valores devem ser obrigatoriamente especificados
+ pelo usuário durante a visualização das imagens.
+ Uma 
 \emph on
 AIM templates
 \emph default
- especifica os tipos de valores válidos, a cardinalidade, e que valores
- são necessários.
+ especifica os elementos obrigatórios, os tipos de valores válidos, sua
+ cardinalidade e que valores são necessários.
  Cada 
 \emph on
 template
 \emph default
- é usado para garantir que o mínimo exigido de dados são coletados para
- um determinado tipo de anotação.
+ é usada para garantir que o mínimo exigido de informações seja coletado
+ para um determinado tipo de anotação.
  
 \emph on
-Templates
+Templates,
 \emph default
- como RECIST
+ como, por exemplo, a RECIST
 \begin_inset Foot
 status open
 
@@ -1320,16 +1422,15 @@ http://www.irrecist.com/
 \emph on
 Response Evaluation Criteria In Solid Tumors
 \emph default
-) por exemplo, definem quando pacientes de câncer melhoram, ficam na misma
- ou pioram.
- Atualmente nao existe uma representação ontologica da infraestrutua AIM
- que permita inferir e classificar marcações armazenadas por ferramentas
- como ePAD.
- Alem disso, atualmente não existe o 
+), definem quando pacientes de câncer melhoram, ficam na mesma ou pioram.
+ Antes deste trabalho, não existia uma representação ontológica da infraestrutur
+a AIM que permita inferir e classificar marcações armazenadas por ferramentas,
+ como o ePAD.
+ Além disso, também não existia um 
 \emph on
 template
 \emph default
- general para o sistema de staging
+ para o sistema de staging
 \emph on
  TNM.
  
@@ -1347,16 +1448,15 @@ A fim de melhorar a forma de trabalho na área de saúde, as tecnologias da
 \emph on
 reasoning
 \emph default
-) anotações de imagens médicas.
+) anotações em imagens médicas.
  O AIM vem sendo desenvolvido e elaborado, tanto para ajudar na estruturação
- dos relatórios radiológicos, principalmente imagens, como também para ser
- entendido por máquinas.
+ dos relatórios radiológicos (principalmente imagens), como também para
+ ser entendido por máquinas.
  Esses avanços vem contribuído no entendimento, interoperabilidade e compartilha
 mento de conhecimento biomédico na área de radiologia.
- No caso de radiologia, os padroes como o Radlex e o AIM são utilizados
- por ferramentas como o ePAD para gerar relatorios diretamente processáveis
- por máquinas.
- O próximo capítulo tem como objetivo listar os principales trabalhos que
+ Nessa área, padrões, como o Radlex e o AIM, são utilizados por ferramentas,
+ como o ePAD, para gerar relatórios diretamente processáveis por máquinas.
+ O próximo capítulo tem como objetivo listar os principais trabalhos que
  abordam os conceitos de web semântica na classificação de câncer na área
  de bioinformática.
 \end_layout
