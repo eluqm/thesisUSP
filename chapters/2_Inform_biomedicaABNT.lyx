@@ -176,8 +176,8 @@ a e telecomunicações.
  No entanto, ainda não existe uma definição universal para “Informática”
  nos campos da medicina.
  A Informática Biomédica pode ser considerada como a ciência da informação
- aplicada no estudo do contexto da biomedicina, que surgiu para atender
- as aplicações da TI (Tecnologia da Informação) na área da saúde 
+ aplicada ao estudo do contexto da biomedicina, surgindo para atender as
+ aplicações da TI (Tecnologia da Informação) na área da saúde 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "Bulu"
@@ -200,7 +200,7 @@ key "Serique2012"
 \end_layout
 
 \begin_layout Standard
-Embora em radiologia muitas coisas, incluindo a criação da imagem, sejam
+Embora em radiologia muitas coisas, incluindo a criação de imagens, sejam
  bastante padronizadas, existem muitas maneiras de se descrever o conteúdo
  de uma imagem, incluindo diferentes sinônimos de termos, vários níveis
  de descrição e foco em atores diferentes.
@@ -221,20 +221,25 @@ Atualmente, anotações sobre imagens médicas fornecem apenas algumas informaç
  como, por exemplo, metadados que contém o nome do paciente, idade, médico
  responsável, etc.
  As imagens em si não possuem nenhuma informação semântica, por isso, essas
- anotações não podem ser automaticamente integradas em aplicações médicas,
- tais como sistemas de apoio à decisão clínica.
- Para facilitar o processamento dessas anotações por máquina, é necessário
- adicionar informações semânticas que sejam baseadas em fontes de conhecimento,
- como 
-\lang english
-sistemas de
+ anotações não podem ser automaticamente integradas em aplicações médicas
+ avançadas, tais como aquelas para o apoio à decisão clínica.
+ Para facilitar o processamento dessas anotações por máquinas, é necessário
+ adicionar informações semânticas que sejam baseadas em fontes de conhecimento
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+, como sistemas de 
 \emph on
- staging
-\emph default
-\lang brazilian
+\lang english
+staging
+\end_layout
+
+\end_inset
+
 .
- Além disso, é preciso que essas informações sejam codificadas de forma
- compreensíveis para maquinas, utilizando-se ontologias para facilitar o
+ Além disso, é preciso que essas informações sejam codificadas de formas
+ compreensíveis para máquinas, utilizando-se ontologias para facilitar o
  mapeamento entre conceitos semânticos.
  Assim, será possível a realização de um processamento mais complexo, como
  por exemplo, o uso
@@ -252,16 +257,15 @@ key "Dasmahapatra"
 \end_layout
 
 \begin_layout Standard
-Como o foco deste trabalho é um classificador automático de pacientes com
- câncer por meio de imagens processadas por mecanismos de 
-\emph on
+Como o foco deste trabalho é um sistema de classificação automática de pacientes
+ com câncer, a partir de anotações em imagens, usando 
+\shape italic
 reasoning
-\emph default
- utilizando sistemas de notação como TNM.
- Este capítulo abordará os principais conceitos referentes a Sistemas de
- suporte à decisão assistido por computador, em seguida, na seção 2.2 Informática
- Radiológica, em seguida, na Seção 2.2, Imagens Medicas.
- Na seção 2.3, é discutido o processo de Anotações em imagens.
+\shape default
+, este capítulo abordará os principais conceitos referentes a sistemas de
+ suporte à decisão assistidos por computador.
+ Também serão abordados Informática Radiológica, Imagens Medicas e o processo
+ de Anotações em imagens.
  Por fim, na seção 2.4, serão descritos os sistemas de 
 \emph on
 staging
@@ -271,50 +275,67 @@ staging
 \end_layout
 
 \begin_layout Section
-Informática Biomédica para sistemas de suporte à decisão assistido por computado
-r
+Informática Biomédica para Sistemas de Suporte à Decisão 
 \end_layout
 
 \begin_layout Standard
-Após a decada de 70 diversos sistemas de suporte à decisão foram desenvolvidos
- para auxiliar a médicina.
- Trabalhos como INTERNIST-I 
+Não é que até os anos 70 que os sistemas de suporte à decisão influenciadas
+ pela informática biomédica foram vistos
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Frase sem sentido
+\end_layout
+
+\end_inset
+
+.
+ Trabalhos como 
 \begin_inset CommandInset citation
-LatexCommand citep
+LatexCommand citet
 key "dombal"
 
 \end_inset
 
- e 
+, com seu sistema chamado INTERNIST-I, e 
 \begin_inset CommandInset citation
-LatexCommand citep
+LatexCommand citet
 key "Myers:1987:BII:41526.41543"
 
 \end_inset
 
- desenvolveram sistemas iniciais de informática biomédica 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "pmid23431259"
+, que desenvolveu um sistema baseado em regras para diagnóstico, representam
+ desenvolvimentos iniciais importantes de sistemas para informática biomédica
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+citeonline{pmid23431259}
+\end_layout
 
 \end_inset
 
- baseados en regras para diagnóstico.
+.
  Mais tarde, houve toda uma evolução significativa com grande reconhecimento
- de seu sucesso na melhoria de desempenho destos sistemas, que é descrito
+ de seu sucesso na melhoria de desempenho desses sistemas, o que é descrito
  por 
 \begin_inset CommandInset citation
-LatexCommand citep
+LatexCommand citet
 key "Pearson2009"
 
 \end_inset
 
 .
- Esta evolução permitiu o nascimento de subgêneros específicos de métodos
+ Essa evolução permitiu o nascimento de mais subgêneros específicos de métodos
  de informática biomédica e suas implementações na forma de sistemas de
- diagnóstico assistido por computador.
- Nesse contexto os primeiros sistemas de apoio á decisao na prática radiologica
- começam a aparecer 
+ diagnóstico assistidos por computador.
+ Nesse contexto, o apoio à decisão na prática radiológica clínica faz a
+ sua aparição 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "Stivaros"
@@ -325,14 +346,22 @@ key "Stivaros"
 \end_layout
 
 \begin_layout Standard
-No tratamento de câncer, a informática biomédica começou a desempenhar um
- papel importante na detecção de tumores, muitos estudos aplicam metodos
- como redes neurales e sistemas híbridos através da combinação de informações
- heterogêneas.
- O uso de ferramentas de diagnóstico auxiliado por computador tem potencial
- para reduzir a variabilidade entre as opiniões de especialistas, bem como
- melhorar a precisão diagnóstica para a interpretação do classificação de
- cancer 
+Há uma série de áreas de aplicação na medicina que viram sistemas de apoio
+ à decisão auxiliada por computador implementados.
+ Algumas das principais áreas de aplicação são : Medicina de Emergência
+ e Unidades de Terapia Intensiva, Medicina cardiovascular, Aplicações dentárias,
+ Medicina Pediátrica, Radiologia e Câncer.
+\end_layout
+
+\begin_layout Standard
+No caso de câncer, a informática biomédica começou a desempenhar um papel
+ importante na detecção e tratamento do câncer.
+ Muitos estudos aplicam métodos como redes neurais e sistemas híbridos através
+ da combinação de informações heterogêneas.
+ O uso de ferramentas de diagnóstico auxiliado por computador tem o potencial
+ de reduzir a variabilidade entre as opiniões de especialistas, bem como,
+ melhorar a precisão diagnóstica para a interpretação e classificação de
+ câncer 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "Jiang"
@@ -343,19 +372,20 @@ key "Jiang"
 \end_layout
 
 \begin_layout Standard
-No caso de Radiologia, o processamento de imagem baseado em computador é
- uma área de pesquisa ativa.
- O processamento de imagem combinado com a visualização e aprendizagem de
- maquina para a tomada de decisões tem proporcionado melhorias para aplicações
- clínicas, e mais recentemente com o surgimento de múltiplas tecnologias
- de imagens médicas: como a tomografia computadorizada (CT), raios-X, ressonânci
-a magnética (MRI), ressonância magnética funcional e (FMRI), numerosos métodos
- biomédicos foram concebidos como soluções de aplicações clínicas específicas.
+No caso da radiologia, o processamento de imagens baseado em computador
+ é uma área de pesquisa ativa.
+ O processamento de imagens, combinado com a visualização e aprendizagem
+ de máquina para a tomada de decisões, tem proporcionado uma mais-valia
+ para aplicações clínicas.
+ Mais recentemente, com o surgimento de múltiplas tecnologias de imagens
+ médicas, como CT, raios-X, ressonância magnética (MRI) e ressonância magnética
+ funcional (FMRI), numerosos métodos biomédicos foram concebidos como soluções
+ de aplicações clínicas específicas.
 \end_layout
 
 \begin_layout Standard
-A seguir, descreveremos as características dessas tecnologias de imagens
- e sua aplicação no estudo de pacientes com câncer.
+A seguir, descreveremos as características de algumas dessas tecnologias
+ de imagens e sua aplicação no estudo de pacientes com câncer.
 \end_layout
 
 \begin_layout Section
@@ -365,12 +395,10 @@ Tecnologias para Imagens Médicas
 \begin_layout Standard
 A pesquisa e tratamento do câncer são ambos criticamente dependentes de
  tecnologias de imagens.
- A utilização destas imagens permite verificar se um tumor invadiu tecidos
- vitais, cresceu ou se espalhou para órgãos distantes; permitindo que os
- médicos possam monitorar o progresso do paciente sem a necessidade de biópsias
- ou outros métodos invasivos.
- Além disso, os atuais avanços em reconhecimento de regiões criticas já
- permitem uma precisão notável na detecção de tumores 
+ Avanços em tecnologias de imagem já permitem uma precisão notável em detectar
+ se um tumor invadiu tecidos vitais, cresceu ou se espalhou para órgãos
+ distantes; permitindo que os médicos possam monitorar o progresso do paciente
+ sem a necessidade de biópsias ou outros métodos invasivos 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "Imaging2007"
@@ -381,34 +409,12 @@ key "Imaging2007"
 \end_layout
 
 \begin_layout Standard
-Antes de analisar como a semântica pode ser adicionada no processo de monitorame
-nto do progresso dos pacientes com câncer, é importante compreender as tecnologi
-as de imagem com que trabalhamos em nossa proposta e o que elas fazem.
- Essas tecnologias de imagem abrangem 
-\lang english
-Computed Tomography
-\lang brazilian
- (CT
-\begin_inset CommandInset nomenclature
-LatexCommand nomenclature
-symbol "CT"
-description "Computed Tomography"
-
-\end_inset
-
-) e 
-\lang english
-Positron Emission Tomography
-\lang brazilian
- (PET
-\begin_inset CommandInset nomenclature
-LatexCommand nomenclature
-symbol "PET"
-description "Positron Emission Tomography"
-
-\end_inset
-
-).
+Antes de analisar como é que a semântica pode ser adicionada ao processo
+ de monitoramento do progresso dos pacientes com câncer, é importante compreende
+r as tecnologias de imagem primárias com que iremos trabalhar em nossa proposta
+ e o que elas fazem.
+ Essas tecnologias de imagem abrangem a Tomografia Computadorizada e a Tomografi
+a poe Emissão de Pósitrons.
  
 \end_layout
 
@@ -421,28 +427,37 @@ A tomografia computadorizada, ou
 \lang english
 Computed Tomography
 \lang brazilian
- (CT), usa técnicas de reconstrução intensivas por computador para criar
- imagens 3D do corpo a partir de raios-X.
+ (CT
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "CT"
+description "Computed Tomography"
+
+\end_inset
+
+), usa técnicas de reconstrução intensivas por computador para criar imagens
+ 3D do corpo a partir de raios-X.
  Devido ao uso de computadores, uma gama de densidades mais elevada pode
  ser exibida em comparação com imagens de raios-X convencionais.
- Esse recurso permite a diferenciação entre órgãos e patologias além de
- detectar a presença de materiais específicos, tais como gordura ou cálcio.
- Assim como em imagens convencionais de raios-X, objetos de alta densidade
+ Esse recurso permite a diferenciação entre órgãos e patologias e detecção
+ da presença de materiais específicos, tais como gordura ou cálcio.
+ Assim, como em imagens convencionais de raios-X, objetos de alta densidade
  causam mais atenuação e, portanto, são exibidos como cinza mais claro que
  objetos de baixa densidade.
  
 \end_layout
 
 \begin_layout Standard
-Por exemplo, no CT do peito na Figura 
+Por exemplo, no CT do peito uma vasta gama de densidades de tecido está
+ presente, uma boa imagem das estruturas do mediastino são mostradas em
+ detalhes do pulmão, Figura 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:CT1"
 
 \end_inset
 
- uma vasta gama de densidades de tecido pode ser visualizada em detalhes
- do pulmão.
+.
 \end_layout
 
 \begin_layout Standard
@@ -501,7 +516,7 @@ name "fig:CT1"
 
 \begin_layout Plain Layout
 \begin_inset ERT
-status open
+status collapsed
 
 \begin_layout Plain Layout
 
@@ -521,21 +536,26 @@ fadaptada{Arnold2012}
 \end_layout
 
 \begin_layout Subsection
-
-\lang english
-Tomografia por emissão de positrões
+Tomografia por Emissão de Pósitrons
 \end_layout
 
 \begin_layout Standard
-Os exames de 
+Os exames de Tomografia por Emissão de Pósitrons, ou 
 \lang english
-Tomografia por emissão de positrões
+Positron Emission Tomography
 \lang brazilian
- (PET) fornecem uma ferramenta fundamental na gestão e terapia de câncer
- para muitos tumores comuns.
+ (PET
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "PET"
+description "Positron Emission Tomography"
+
+\end_inset
+
+), fornecem uma ferramenta fundamental na gestão e terapia de câncer para
+ muitos tumores comuns.
  A maioria dos estudos clínicos de PET são realizados para determinar o
- grau de um tumor, a localização e número de metástases que é quando o câncer
- se espalha além do local onde começou para outras partes do corpo.
+ grau de um tumor, a localização e número de metástases.
  
 \end_layout
 
@@ -562,8 +582,8 @@ reference "fig:METASTA"
 
 \end_inset
 
- mostra um paciente com metástases de câncer de cólon, onde a glicose no
- tecido canceroso é facilmente visível.
+ mostra um exemplo de um paciente com metástases de câncer de cólon, onde
+ a glicose no tecido canceroso é facilmente visível.
  Por esse motivo, para muitos tumores comuns, a PET é a técnica mais precisa
  para visualizar a propagação do tumor ou a sua resposta à terapia
 \begin_inset CommandInset citation
@@ -617,7 +637,7 @@ name "fig:METASTA"
 
 \begin_layout Plain Layout
 \begin_inset ERT
-status open
+status collapsed
 
 \begin_layout Plain Layout
 
@@ -637,8 +657,8 @@ fadaptada{ZIEGLER2005679}
 \end_layout
 
 \begin_layout Standard
-É bom notar que, o sistema ePAD no qual vamos desenvolver nossa proposta,
- permite a manipulação de imagens de TC e PET
+É bom notar que, o sistema ePAD, no qual vamos desenvolver nossa proposta,
+ permite a manipulação de imagens de CT e PET
 \begin_inset CommandInset citation
 LatexCommand citep
 key "Rubin2014"
@@ -649,7 +669,7 @@ key "Rubin2014"
 \end_layout
 
 \begin_layout Standard
-Todas as modalidades de análise acima mencionadas fornecem uma visão detalhada
+Todas as modalidades de análise, acima mencionadas, fornecem uma visão detalhada
  sobre a anatomia humana, suas funções e associações a doenças.
  As técnicas avançadas de análise dessas imagens geram parâmetros quantitativos
  adicionais, abrindo assim o caminho para a melhoria da prática clínica
@@ -665,17 +685,13 @@ key "Zillner2013"
 \end_layout
 
 \begin_layout Standard
-Embora imagens não processadas (
-\emph on
-raw images
-\emph default
-) possam ser úteis em algumas aplicações de tratamento de câncer, grande
- parte do conteúdo semântico nas mesmas e nos relatórios radiológicos associados
- a elas, não é explícito ou disponível para computadores.
- Isso dificulta a descoberta de novas informações num grande volume de informaçã
-o.
- Desse modo, as aplicações médicas devem possuir descrições semânticas sobre
- dados clínicos.
+Embora imagens não processadas (raw images) possam ser úteis em algumas
+ aplicações de processamento por computador, grande parte do conteúdo semântico
+ das imagens e dos relatórios radiológicos associados a elas, não é explícito
+ ou disponível para computadores.
+ Isso dificulta a descoberta de novas informações num grande volume de dados.
+ Com base nisso, as aplicações médicas avançadas devem possuir descrições
+ semânticas sobre dados clínicos, como imagens medicas.
 \end_layout
 
 \begin_layout Section
@@ -684,8 +700,8 @@ Anotação de Imagens
 
 \begin_layout Standard
 A necessidade de anotar imagens é reconhecida em uma ampla variedade de
- aplicações diferentes, abrangendo tanto o uso profissional e pessoal de
- dados sobre imagens.
+ aplicações diferentes, abrangendo tanto o uso profissional quanto pessoal
+ de dados sobre imagens.
  Anotação de imagens é uma tarefa complexa, que tem sido amplamente estudada
  nos domínios da visão computacional e recuperação de imagens.
  
@@ -694,19 +710,19 @@ A necessidade de anotar imagens é reconhecida em uma ampla variedade de
 \begin_layout Standard
 No contexto da radiologia, anotar imagens é uma tarefa que pode ser assistida
  por computador.
- No entanto, radiologistas geralmente não gravam suas anotações num formato
+ No entanto, os radiologistas geralmente não gravam suas anotações num formato
  estruturado, que seja acessível por máquina, impedindo assim o bom desempenho
  dos sistemas de decisão sobre diagnósticos.
- O desempenho deste tipo de sistema baseia-se na escolha dos termos que
- estão sendo usados para descrever o conteúdo das imagens.
- Essa escolha é altamente dependente da aplicação, as necessidades e a experiênc
-ia do usuário.
+ O desempenho desse tipo de sistema baseia-se na escolha dos termos que
+ são usados para descrever o conteúdo das imagens.
+ Essa escolha é altamente dependente da aplicação, necessidades e experiência
+ do usuário.
 \end_layout
 
 \begin_layout Standard
 Tais termos podem ser diretamente derivados da terminologia fornecida pelos
- radiologistas em seus relatórios ou automaticamente previsto a partir das
- características das imagens 
+ radiologistas em seus relatórios ou automaticamente previsto, a partir
+ das características das imagens 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "Gimenez2011"
@@ -715,22 +731,15 @@ key "Gimenez2011"
 
 .
  Eles podem ser usados para descrever uma variedade de informações sobre
- o conteúdo de uma imagem por exemplo, a forma da lesão de um tumor canceroso.
+ o conteúdo de uma imagem (por exemplo, a forma da lesão de um tumor canceroso).
  Esses termos podem representar também o conteúdo semântico da imagem, nesse
- caso eles podem ser chamados de anotações semânticas.
+ caso, eles podem ser chamados de anotações semânticas.
  
 \end_layout
 
 \begin_layout Standard
-As anotações semânticas Figura 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "AnnotaimagemCT"
-
-\end_inset
-
- estão diretamente ligadas ao alto nível de compreensão e descrições do
- usuário sobre as características da imagem 
+As anotações semânticas estão diretamente ligadas ao alto nível de compreensão
+ e descrição do usuário sobre as características da imagem 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "Rubin2011"
@@ -745,6 +754,13 @@ key "Rubin2011"
 \begin_inset CommandInset citation
 LatexCommand citep
 key "Ma2010"
+
+\end_inset
+
+, Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "AnnotaimagemCT"
 
 \end_inset
 
@@ -791,7 +807,7 @@ name "AnnotaimagemCT"
 
 \begin_layout Plain Layout
 \begin_inset ERT
-status open
+status collapsed
 
 \begin_layout Plain Layout
 
@@ -824,10 +840,10 @@ key "Nagarajan2006"
 
 , anotação é o processo de associar metadados a recursos como áudio, vídeo,
  texto estruturado, páginas web, imagens, etc.
- Enquanto anotação semântica é o processo de marcar com recursos de metadados
- semânticos.
- No contexto da biomedicina.
- esse processo é conhecido como: anotação semântica de imagens médicas.
+ Enquanto que anotação semântica é o processo de marcar com recursos de
+ metadados semânticos.
+ No contexto da biomedicina, esse processo é conhecido como: anotação semântica
+ de imagens médicas.
  
 \end_layout
 
@@ -843,7 +859,7 @@ key "Depeursinge2014"
 
 .
  É por essa razão que várias abordagens para enfrentar o desafio da anotação
- semântica de imagens médicas já foram estudados.
+ semântica de imagens médicas já foram estudadas.
  Por exemplo, em 
 \begin_inset CommandInset citation
 LatexCommand citet
@@ -874,17 +890,15 @@ description " Digital Imaging and Communications in Medicine"
 \lang english
 Digital Imaging and Communications in Medicine
 \lang brazilian
-) foi apresentada.
-\end_layout
-
-\begin_layout Standard
+) foi apresentada, 
 \begin_inset CommandInset citation
 LatexCommand citet
 key "seifer2009"
 
 \end_inset
 
- introduziram um novo método para a detecção de tecidos específicos na imagen.
+ introduziram um novo método para a análise automática de imagens (em anatomia
+ e com detetores de tecidos específicos).
  Em outra frente, 
 \begin_inset CommandInset citation
 LatexCommand citet
@@ -892,8 +906,8 @@ key "Rubin2008"
 
 \end_inset
 
- integraram a anotação manual de imagens ao fluxo de trabalho dos radiologistas,
- finalmente
+ integraram a anotação manual de imagens ao fluxo de trabalho dos radiologistas
+ e
 \begin_inset CommandInset citation
 LatexCommand citet
 key "Dasmahapatra"
@@ -901,10 +915,10 @@ key "Dasmahapatra"
 \end_inset
 
  introduziram uma abordagem de anotação de imagens para melhorar o diagnóstico
- do câncer de mama.
- Todas essas abordagens fizeram uma contribuição importante para melhorar
+ do câncer da mama.
+ Todas essas abordagens fizeram contribuições importantes para melhorar
  o acesso às informações em imagens médicas, especificando a "semântica''
- das regiões nas imagens.
+ dos achados médicos nas imagens.
  
 \end_layout
 
@@ -914,12 +928,12 @@ Anotação de Imagens Médicas com Vocabulários Estruturados
 
 \begin_layout Standard
 Embora o processo de descrição de imagens médicas utilizando conteúdo semântico
- possa melhorar o acesso à informação médica, ele também pode gerar diferentes
+ possa melhorar o acesso à informação médica, ele pode levar a se ter diferentes
  descrições para uma mesma imagem.
  Isso prejudica o bom desempenho de sistemas baseados nessas descrições,
- como por exemplo os sistemas de apoio à decisão de diagnóstico.
- Para lidar com esse problema, os últimos trabalhos no domínio semântico
- usam vocabulários controlados para anotar as imagens 
+ como, por exemplo, os sistemas de apoio à decisão de diagnóstico.
+ Para lidar com esse problema, trabalhos no domínio semântico usam vocabulários
+ controlados para anotar as imagens 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "Korenblum2011"
@@ -935,7 +949,7 @@ Um vocabulário controlado fornece um conjunto de termos pré-definidos para
  Esses vocabulários podem facilitar a anotação de grandes conjuntos de imagens.
  Trabalhos, como 
 \begin_inset CommandInset citation
-LatexCommand citep
+LatexCommand citet
 key "Napel2010"
 
 \end_inset
@@ -943,29 +957,29 @@ key "Napel2010"
 , investigaram métodos assistidos por computador no apoio ao diagnóstico.
  Os autores utilizaram um banco de dados de imagens onde as imagens foram
  anotadas semanticamente.
- O resultado do estudo indica que as anotações semânticas, produzidas por
- um vocabulário controlado, podem levar a diagnósticos mais precisos.
+ O resultado do estudo indicam que as anotações semânticas, usando um vocabulári
+o controlado, podem levar a diagnósticos mais precisos.
 \end_layout
 
 \begin_layout Section
-Representação do conhecimento
+
 \lang english
-(Medical Background Knowledge)
+Medical Background Knowledge
 \end_layout
 
 \begin_layout Standard
-Embora os vocabulários estruturados podem ser considerados conceitos básicos
- para a inferência na Web Semântica não há uma divisão clara entre o que
+Embora os vocabulários sejam os blocos de construção básicos para a inferência
+ usando técnicas da Web Semântica, não há uma divisão clara entre o que
  é referido como "vocabulários controlados" e "ontologias".
- Considerando que o vocabulário é usado apenas em um sentido muito solto
- quando o formalismo rigoroso não é necessario, podemos dizer que a diferença
- fundamental entre uma ontologia e um vocabulário controlado é nível de
- abstração e relações entre conceitos.
+ Considerando-se que o vocabulário é usado quando o formalismo rigoroso
+ não é necessariamente usado ou apenas em um sentido muito solto, podemos
+ dizer que a diferença fundamental entre uma ontologia e um vocabulário
+ controlado é o nível de abstração e relações entre conceitos.
 \end_layout
 
 \begin_layout Standard
 As ontologias são vocabulários controlados expressos em uma linguagem de
- representação de ontologias como OWL 
+ representação de ontologias (como OWL) 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "browne2004website"
@@ -979,7 +993,7 @@ key "browne2004website"
 Background Knowledge
 \emph default
 \lang brazilian
-) e geralmente são construídas a partir de um consenso entre especialistas
+) e, geralmente, são construídas a partir de um consenso entre especialistas
  de um domínio.
  As ontologias representam uma poderosa forma de estruturar termos semânticos
  pertencentes a uma fonte de conhecimento particular.
@@ -987,16 +1001,16 @@ Background Knowledge
 \end_layout
 
 \begin_layout Standard
-No contexto da medicina, várias ontologias estão sendo desenvolvidas para
- organizar conceitos biomédicos de uma forma abrangente, por exemplo: 
+No contexto da medicina, várias ontologias estão sendo usadas para organizar
+ conceitos biomédicos de uma forma abrangente, por exemplo: 
 \emph on
 \lang english
 Medical Subject Headings (MeSH)
 \emph default
 , 
 \emph on
-International Classification of Diseases (ICD Taxonomy), Systematized Nomenclatu
-re of Medicine – Clinical Terms (SNOMED CT), Unified Language of Radiology
+International Classification of Diseases (ICD), Systematized Nomenclature
+ of Medicine – Clinical Terms (SNOMED CT), Unified Language of Radiology
  Terms (RadLex
 \begin_inset CommandInset nomenclature
 LatexCommand nomenclature
@@ -1037,7 +1051,8 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Um extrato da ontologia RadLex que é uma terminologia controlada em radiologia.
+Um extrato da ontologia RadLex, que é uma terminologia controlada para radiologi
+a.
 \begin_inset CommandInset label
 LatexCommand label
 name "RADLEX1"
@@ -1066,7 +1081,7 @@ name "RADLEX1"
 
 \begin_layout Plain Layout
 \begin_inset ERT
-status open
+status collapsed
 
 \begin_layout Plain Layout
 
@@ -1086,28 +1101,28 @@ fadaptada{Kurtz20141082}
 \end_layout
 
 \begin_layout Standard
-A fim de atingir nosso objetivo de classificar pacientes com câncer é necessário
- representar um conhecimento geral do domínio 
+A fim de atingir nosso objetivo de classificar pacientes com câncer, é necessári
+o representar um conhecimento geral do domínio 
 \emph on
 (background knowledge
 \emph default
 ).
- No caso deste trabalho, esse conhecimento é chamado 
+ No caso deste trabalho, esse conhecimento é chamado sistema de 
 \emph on
 \lang english
-sistema de staging
+staging
 \emph default
 \lang brazilian
 .
- No entanto, ter representações formais das definições de um 
-\lang english
-sistema de
+ No entanto, ter representações formais das definições de um sistema de
+ 
 \emph on
- staging
+\lang english
+staging
 \emph default
 \lang brazilian
- em uma ontologia não é suficiente para fornecer ajuda automática na classificaç
-ão de tumores de câncer.
+ numa ontologia não é suficiente para fornecer ajuda automática na classificação
+ de tumores de câncer.
  Esse conhecimento deve ser representado também em regras e axiomas (
 \lang english
 reasoning
@@ -1117,11 +1132,11 @@ reasoning
 \emph on
 staging
 \emph default
- de cancer como o TNM em ontologias e regras parece uma contribuição desejável
+ de cancer, como o TNM, em ontologias e regras é uma contribuição desejável
  para a realização da classificação automática de tumores em imagens médicas,
- e por conseguinte uma contribuição aos sistemas de apoio à decisão auxiliada
+ e, por conseguinte, uma contribuição aos sistemas de apoio à decisão auxiliada
  por computador.
- Os Conceitos como ontologias, regras e 
+ Os conceitos como ontologias, regras e 
 \emph on
 reasoning
 \emph default
@@ -1139,8 +1154,8 @@ Staging System
 
 \begin_layout Standard
 O estágio do câncer categoriza a progressão de um câncer no corpo, em termos
- da extensão do tumor primário e de se espalhar para alguma região próxima
- da origem do câncer.
+ da extensão do tumor primário e dele ter se espalhar para alguma região
+ próxima da origem do câncer.
  A rotina para determinar o estágio de um câncer (
 \emph on
 \lang english
@@ -1202,7 +1217,7 @@ O Padrão TNM
 \begin_layout Standard
 O 
 \emph on
-cancer st
+câncer st
 \emph default
 aging no padrão 
 \lang english
@@ -1232,7 +1247,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Os critérios de T, N e M para câncer de figado.
+Os critérios de T, N e M para câncer de fígado.
  
 \begin_inset CommandInset label
 LatexCommand label
@@ -1456,8 +1471,22 @@ T3b
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\lang english
 Single tumor or multiple tumors of any size involving a major branch of
  the portal or hepatic vein
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\lang english
+Essa tabela não está com caracteres de tamanho diferentes?
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -1486,6 +1515,8 @@ T4
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\lang english
 Tumor(s) with direct invasion of adjacent organs other than gallbladder
  or with visceral peritoneum
 \end_layout
@@ -1683,7 +1714,7 @@ The cancer has spread to distant sites such as lymph nodes farther than
 
 \begin_layout Plain Layout
 \begin_inset ERT
-status open
+status collapsed
 
 \begin_layout Plain Layout
 
@@ -1943,7 +1974,7 @@ Stage IVA
 
 \begin_layout Plain Layout
 \begin_inset ERT
-status open
+status collapsed
 
 \begin_layout Plain Layout
 
@@ -1967,23 +1998,33 @@ Considerações Finais
 \end_layout
 
 \begin_layout Standard
-Este capítulo forneceu uma base teórica para compreensão de conceitos como
- vocabulários controlados, anotações de imagem, anotação semântica e representaç
-ão do conhecimento.
- Foi mostrado também como esses conceitos podem ser utilizados na área de
- informática biomédica para melhorar processos como a interpretação de imagens
- médicas em câncer.
+Recentemente pode ser visto que houve uma escalada da complexidade na recolação
+ 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+recolação???
+\end_layout
+
+\end_inset
+
+dos dados médicos pelo fato dos avanços em tecnologias relacionadas com
+ aquisição de imagens.
+ Novas tecnologias, como dispositivos médicos e sistemas de medição, geram
+ grandes volumes de imagens como também outros dados por paciente, e tornam
+ difícil para os médicos analisar e fornecer diagnósticos ou prognósticos
+ em tempo hábil.
+ 
 \end_layout
 
 \begin_layout Standard
-Recentemente pode ser visto que houve um aumento da complexidade na recolação
- dos dados médicos pelo fato dos avanços em tecnologias relacionadas com
- aquisição de imagem.
- As novas tecnologias como dispositivos médicos e sistemas de medição, geram
- grandes volumes de imagens como também outros dados por paciente, e torna
- difícil para os médicos analisar e fornecer diagnóstico ou prognósticos
- em curto periodo de tempo.
- 
+Este capítulo forneceu uma base teórica para a compreensão de conceitos
+ como vocabulários controlados, anotações de imagem, anotação semântica
+ e representação do conhecimento.
+ Foi mostrado também como esses conceitos podem ser utilizados na área de
+ informática biomédica para melhorar processos como a interpretação de imagens
+ médicas de câncer.
 \end_layout
 
 \end_body
