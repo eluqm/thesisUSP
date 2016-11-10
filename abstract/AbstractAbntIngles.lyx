@@ -77,7 +77,7 @@
 \end_preamble
 \use_default_options true
 \maintain_unincluded_children false
-\language brazilian
+\language american
 \language_package default
 \inputencoding utf8
 \fontencoding global
@@ -142,43 +142,49 @@
 \begin_body
 
 \begin_layout Standard
-
-\lang english
-Information about cancer stage in a patient is crucial when clinicians assess
- treatment progress.
+Information about cancer staging in a patient is crucial when clinicians
+ assess treatment progress.
  Determining cancer stage is a process that takes into account the description,
  location, characteristics and possible metastasis of cancerous tumors in
  a patient.
- It should follow classification standards, such as TNM Classification of
- Malignant Tumors.
+ It should follow classification standards, such as the TNM Classification
+ of Malignant Tumors.
  However, in clinical practice, the implementation of this process can be
- tedious and error-prone and create uncertainty.
+ tedious, error-prone and create uncertainty.
  In order to alleviate these problems, we intend to assist radiologists
  by providing a second opinion in the evaluation of cancer stage in patients.
  For doing this, Semantic Web technologies, such as ontologies and reasoning,
  were used to automatically classify cancer stages.
- This classification used semantic annotations, made by radiologists using
- the ePAD tool and stored it in the standard AIM format, then these xml
- documents were transformed in AIM4-O ontology individuals, rules and axioms
- representing the TNM standard.
- the TNM classifier was evaluated with real patients cases from The NCI's
- Genomic Data Commons (GDC) in term of presicion and recall, with 84.3% and
- 74.4% respectively,The whole process was validated with users from the Radiology
- Dept.
+ This classification used semantic annotations made by radiologists, using
+ the ePAD tool, and stored using standard AIM format.
+ A TNM based classifier prototype was created.
+ It transforms AIM annotations in AIM4-O ontology individuals and, using
+ axioms and rules (written in OWL-SWRL languages) representing the TNM standard,
+ it automatically calculates patient's liver cancer stage.
+ The AIM4-O ontology was developed, as part of this work, to represent AIM
+ 4 annotations in OWL.
+ This TNM classifier was evaluated, using real patient's radiology reports,
+ from the NCI's Genomic Data Commons (GDC), in term of precision and recall,
+ with 84.3% and 74.4% respective results (when compared to the actual cancer
+ stages from the reports).
+ The whole process was validated with radiologists from the Radiology Dept.
  of the Stanford University.
 \end_layout
 
 \begin_layout Standard
 
 \series bold
-\lang english
 Palavras Chave:
 \series default
  
 \emph on
 OWL, SWRL
 \emph default
-, estagio de câncer, 
+,
+\shape italic
+ cancer staging
+\shape default
+, 
 \emph on
 ePAD,TNM.
 \end_layout

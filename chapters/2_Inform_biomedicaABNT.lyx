@@ -224,20 +224,7 @@ Atualmente, anotações sobre imagens médicas fornecem apenas algumas informaç
  anotações não podem ser automaticamente integradas em aplicações médicas
  avançadas, tais como aquelas para o apoio à decisão clínica.
  Para facilitar o processamento dessas anotações por máquinas, é necessário
- adicionar informações semânticas que sejam baseadas em fontes de conhecimento
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-, como sistemas de 
-\emph on
-\lang english
-staging
-\end_layout
-
-\end_inset
-
-.
+ adicionar informações semânticas que sejam baseadas em fontes de conhecimento.
  Além disso, é preciso que essas informações sejam codificadas de formas
  compreensíveis para máquinas, utilizando-se ontologias para facilitar o
  mapeamento entre conceitos semânticos.
@@ -279,8 +266,8 @@ Informática Biomédica para Sistemas de Suporte à Decisão
 \end_layout
 
 \begin_layout Standard
-Após a decada de 70 diversos sistemas de suporte a decisão foram desenvolvidos
- para auxiliar a médicina.
+A partir dos anos 70, apareceram os primeiros sistemas de suporte à decisão
+ para a área médica.
  Trabalhos como 
 \begin_inset CommandInset citation
 LatexCommand citet
@@ -321,7 +308,7 @@ key "Pearson2009"
 \end_inset
 
 .
- Essa evolução permitiu o nascimento de subgêneros específicos de métodos
+ Essa evolução permitiu o nascimento de mais subgêneros específicos de métodos
  de informática biomédica e suas implementações na forma de sistemas de
  diagnóstico assistidos por computador.
  Nesse contexto, o apoio à decisão na prática radiológica clínica faz a
@@ -399,9 +386,10 @@ key "Imaging2007"
 \end_layout
 
 \begin_layout Standard
-Antes de analisar como a semântica pode ser adicionada ao processo de monitorame
-nto do progresso dos pacientes com câncer, é importante compreender as tecnologi
-as de imagem com que iremos trabalhar em nossa proposta e o que elas fazem.
+Antes de analisar como é que a semântica pode ser adicionada ao processo
+ de monitoramento do progresso dos pacientes com câncer, é importante compreende
+r as tecnologias de imagem primárias com que iremos trabalhar em nossa proposta
+ e o que elas fazem.
  Essas tecnologias de imagem abrangem a Tomografia Computadorizada e a Tomografi
 a por Emissão de Pósitrons.
  
@@ -428,8 +416,8 @@ description "Computed Tomography"
  3D do corpo a partir de raios-X.
  Devido ao uso de computadores, uma gama de densidades mais elevada pode
  ser exibida em comparação com imagens de raios-X convencionais.
- Esse recurso permite a diferenciação entre órgãos e patologias além de
- detectar a presença de materiais específicos, tais como gordura ou cálcio.
+ Esse recurso permite a diferenciação entre órgãos e patologias e detecção
+ da presença de materiais específicos, tais como gordura ou cálcio.
  Assim, como em imagens convencionais de raios-X, objetos de alta densidade
  causam mais atenuação e, portanto, são exibidos como cinza mais claro que
  objetos de baixa densidade.
@@ -437,15 +425,16 @@ description "Computed Tomography"
 \end_layout
 
 \begin_layout Standard
-Por exemplo, no CT do peito, Figura 
+Por exemplo, no CT do peito uma vasta gama de densidades de tecido está
+ presente, uma boa imagem das estruturas do mediastino são mostradas em
+ detalhes do pulmão, Figura 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:CT1"
 
 \end_inset
 
-, uma vasta gama de densidades de tecido está presente, uma boa imagem das
- estruturas do mediastino são mostradas em detalhes do pulmão.
+.
 \end_layout
 
 \begin_layout Standard
@@ -673,13 +662,10 @@ key "Zillner2013"
 \end_layout
 
 \begin_layout Standard
-Embora imagens não processadas (
-\emph on
-raw images
-\emph default
-) possam ser úteis em algumas aplicações de processamento por computador,
- grande parte do conteúdo semântico das imagens e dos relatórios radiológicos
- associados a elas, não é explícito ou disponível para computadores.
+Embora imagens não processadas (raw images) possam ser úteis em algumas
+ aplicações de processamento por computador, grande parte do conteúdo semântico
+ das imagens e dos relatórios radiológicos associados a elas, não é explícito
+ ou disponível para computadores.
  Isso dificulta a descoberta de novas informações num grande volume de dados.
  Com base nisso, as aplicações médicas avançadas devem possuir descrições
  semânticas sobre dados clínicos, como imagens medicas.
@@ -729,15 +715,8 @@ key "Gimenez2011"
 \end_layout
 
 \begin_layout Standard
-As anotações semânticas, Figura 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "AnnotaimagemCT"
-
-\end_inset
-
-, estão diretamente ligadas ao alto nível de compreensão e descrição do
- usuário sobre as características da imagem 
+As anotações semânticas estão diretamente ligadas ao alto nível de compreensão
+ e descrição do usuário sobre as características da imagem 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "Rubin2011"
@@ -752,6 +731,13 @@ key "Rubin2011"
 \begin_inset CommandInset citation
 LatexCommand citep
 key "Ma2010"
+
+\end_inset
+
+, Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "AnnotaimagemCT"
 
 \end_inset
 
@@ -898,7 +884,7 @@ key "Rubin2008"
 \end_inset
 
  integraram a anotação manual de imagens ao fluxo de trabalho dos radiologistas
- e finalmente 
+ e
 \begin_inset CommandInset citation
 LatexCommand citet
 key "Dasmahapatra"
@@ -1112,13 +1098,11 @@ staging
 staging
 \emph default
 \lang brazilian
- em uma ontologia não é suficiente para fornecer ajuda automática na classificaç
-ão de tumores de câncer.
+ numa ontologia não é suficiente para fornecer ajuda automática na classificação
+ de tumores de câncer.
  Esse conhecimento deve ser representado também em regras e axiomas (
-\emph on
 \lang english
 reasoning
-\emph default
 \lang brazilian
 ).
  Portanto, representar o conhecimento dos sistemas de 
@@ -1213,11 +1197,8 @@ O
 câncer st
 \emph default
 aging no padrão 
-\emph on
 \lang english
-TNM Classification of Malignant Tumor
-\emph default
-s
+TNM Classification of Malignant Tumors
 \lang brazilian
  (TNM) é um processo de duas etapas.
  A primeira etapa consiste em dar notas para três conceitos: descrição do
@@ -1288,6 +1269,8 @@ Primary Tumor
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 Tis
 \end_layout
 
@@ -1299,7 +1282,8 @@ Tis
 \begin_layout Plain Layout
 
 \size footnotesize
-Primary tumor cannot be assesment
+\lang english
+Primary tumor cannot be assessed
 \end_layout
 
 \end_inset
@@ -1319,6 +1303,8 @@ Primary tumor cannot be assesment
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 T0
 \end_layout
 
@@ -1330,6 +1316,7 @@ T0
 \begin_layout Plain Layout
 
 \size footnotesize
+\lang english
 No evidence of primary tumor
 \end_layout
 
@@ -1350,6 +1337,8 @@ No evidence of primary tumor
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 T1
 \end_layout
 
@@ -1361,7 +1350,8 @@ T1
 \begin_layout Plain Layout
 
 \size footnotesize
-Solitary tumor (any size) without vascular invasion
+\lang english
+Solitary tumor without vascular invasion
 \end_layout
 
 \end_inset
@@ -1381,6 +1371,8 @@ Solitary tumor (any size) without vascular invasion
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 T2
 \end_layout
 
@@ -1392,8 +1384,8 @@ T2
 \begin_layout Plain Layout
 
 \size footnotesize
-Solitary tumor (any size) with vascular invasion or multiple tumors none
- <5 cm
+\lang english
+Solitary tumor with vascular invasion or multiple tumors, none > 5 cm
 \end_layout
 
 \end_inset
@@ -1413,6 +1405,8 @@ Solitary tumor (any size) with vascular invasion or multiple tumors none
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 T3a
 \end_layout
 
@@ -1424,7 +1418,8 @@ T3a
 \begin_layout Plain Layout
 
 \size footnotesize
-Multiple tumors, with at least one tumor >5 cm
+\lang english
+Multiple tumors > 5 cm
 \end_layout
 
 \end_inset
@@ -1454,7 +1449,6 @@ T3b
 
 \begin_layout Plain Layout
 
-\size footnotesize
 \lang english
 Single tumor or multiple tumors of any size involving a major branch of
  the portal or hepatic vein
@@ -1499,7 +1493,6 @@ T4
 
 \begin_layout Plain Layout
 
-\size footnotesize
 \lang english
 Tumor(s) with direct invasion of adjacent organs other than gallbladder
  or with visceral peritoneum
@@ -1538,7 +1531,6 @@ NX
 
 \begin_layout Plain Layout
 
-\size footnotesize
 \lang english
 Regional lymph nodes cannot be assessed
 \end_layout
@@ -1573,7 +1565,9 @@ N0
 \begin_layout Plain Layout
 
 \size footnotesize
-The cancer has not spread to lymph nodes/No regional lymph node metastasis
+\lang english
+The cancer has not spread to lymph nodes.
+ 
 \end_layout
 
 \end_inset
@@ -1606,8 +1600,9 @@ N1
 \begin_layout Plain Layout
 
 \size footnotesize
+\lang english
 The cancer has metastasized only to lymph nodes on the same side as the
- cancerous liver/Regional lymph node metastasis
+ cancerous liver.
 \end_layout
 
 \end_inset
@@ -1644,7 +1639,8 @@ M0
 \begin_layout Plain Layout
 
 \size footnotesize
-The cancer has not spread to distant sites/No distant metastasis
+\lang english
+The cancer has not spread to distant sites.
 \end_layout
 
 \end_inset
@@ -1677,9 +1673,10 @@ M1
 \begin_layout Plain Layout
 
 \size footnotesize
+\lang english
 The cancer has spread to distant sites such as lymph nodes farther than
  those mentioned in N stages, and other organs or tissues such as the bones,
- or brain/Distant metastasis
+ or brain
 \end_layout
 
 \end_inset
@@ -1775,7 +1772,10 @@ name "stageTNM"
 \begin_inset Text
 
 \begin_layout Plain Layout
-Stage0
+
+\size footnotesize
+\lang english
+Stage 0
 \end_layout
 
 \end_inset
@@ -1797,7 +1797,10 @@ Stage0
 \begin_inset Text
 
 \begin_layout Plain Layout
-StageI
+
+\size footnotesize
+\lang english
+Stage I
 \end_layout
 
 \end_inset
@@ -1819,7 +1822,10 @@ StageI
 \begin_inset Text
 
 \begin_layout Plain Layout
-StageII
+
+\size footnotesize
+\lang english
+Stage I
 \end_layout
 
 \end_inset
@@ -1841,7 +1847,10 @@ StageII
 \begin_inset Text
 
 \begin_layout Plain Layout
-StageIIIA
+
+\size footnotesize
+\lang english
+Stage IIIA
 \end_layout
 
 \end_inset
@@ -1863,7 +1872,10 @@ StageIIIA
 \begin_inset Text
 
 \begin_layout Plain Layout
-StageIIIB
+
+\size footnotesize
+\lang english
+Stage IIIB
 \end_layout
 
 \end_inset
@@ -1909,7 +1921,10 @@ StageIIIC
 \begin_inset Text
 
 \begin_layout Plain Layout
-StageIVA
+
+\size footnotesize
+\lang english
+Stage IVA
 \end_layout
 
 \end_inset
@@ -1960,8 +1975,18 @@ Considerações Finais
 \end_layout
 
 \begin_layout Standard
-Recentemente pode ser visto que houve uma escalada da complexidade na coleção
- dos dados médicos pelo fato dos avanços em tecnologias relacionadas com
+Recentemente pode ser visto que houve uma escalada da complexidade na recolação
+ 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+recolação???
+\end_layout
+
+\end_inset
+
+dos dados médicos pelo fato dos avanços em tecnologias relacionadas com
  aquisição de imagens.
  Novas tecnologias, como dispositivos médicos e sistemas de medição, geram
  grandes volumes de imagens como também outros dados por paciente, e tornam

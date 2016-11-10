@@ -289,7 +289,7 @@ key "Rubin2014"
  em imagens radiológicas.
  Ferramentas, como o ePAD, podem ajudar a reduzir o esforço de se recolher
  informação semântica estruturada sobre imagens.
- No entanto, é necessário fazer inferências sobre essas informacões (lesões
+ No entanto, é necessário fazer inferências sobre essas informações (lesões
  de câncer) usando as relações biológicas e fisiológicas entre as anotações.
 \end_layout
 
@@ -629,18 +629,9 @@ Capítulo 4: Esse capítulo apresenta os trabalhos relacionados, evidenciando
 \end_layout
 
 \begin_layout Standard
-Capítulo 5: Esse capítulo apresenta a metodologia utilizada para a expansão
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Expansão??
-\end_layout
-
-\end_inset
-
- do AIM e a codificação de conhecimento do critério TNM, usando as linguagens
- OWL e SWRL, para permitir o 
+Capítulo 5: Esse capítulo apresenta a metodologia utilizada para a criação
+ da ontologia AIM4-O e a codificação de conhecimento do critério TNM, usando
+ as linguagens OWL e SWRL, para permitir o 
 \emph on
 staging
 \emph default

@@ -1,7 +1,9 @@
-#LyX 2.1 created this file. For more info see http://www.lyx.org/
-\lyxformat 474
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
 \begin_document
 \begin_header
+\save_transient_properties true
+\origin unavailable
 \textclass abntex2
 \begin_preamble
 \usepackage{fncychap}
@@ -79,16 +81,16 @@
 \language_package default
 \inputencoding utf8
 \fontencoding global
-\font_roman default
-\font_sans default
-\font_typewriter default
-\font_math auto
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
 \font_default_family default
 \use_non_tex_fonts false
 \font_sc false
 \font_osf false
-\font_sf_scale 100
-\font_tt_scale 100
+\font_sf_scale 100 100
+\font_tt_scale 100 100
 \graphics default
 \default_output_format default
 \output_sync 0
@@ -140,39 +142,42 @@
 \begin_body
 
 \begin_layout Standard
-Informação sobre o estágio de câncer num paciente é fundamental quando os
- médicos avaliam o progresso individual desse paciente e decidem sobre novas
- medidas de tratamento.
+Informação sobre o estágio de câncer num paciente é fundamental quando médicos
+ avaliam o progresso de seu tratamento.
  A determinação do estágio de câncer (cancer staging) é um processo que
  leva em consideração a descrição, localização, características e possíveis
  metástases dos tumores cancerosos de um paciente.
  Esse processo deve seguir um padrão de classificação como, por exemplo,
  o TNM Classification of Malignant Tumors.
- Porém, na prática clínica, a execução desse processo pode ser tediosa e
- propensa a erros, gerando assim imprecisão na interpretação das imagens
- médicas (com possíveis consequências danosas para os pacientes).
+ Porém, na prática clínica, a execução desse processo pode ser tediosa,
+ propensa a erros e gerar incertezas.
  Com o intuito de amenizar esses problemas, este trabalho tem como objetivo
- auxiliar os radiologistas fornecendo uma segunda opinião na avaliação do
- estágio de câncer de um paciente.
- Para isso, serão usadas tecnologias da Web Semântica, como ontologias e
- 
+ auxiliar radiologistas fornecendo uma segunda opinião na avaliação do estágio
+ de câncer de um paciente.
+ Para isso, tecnologias da Web Semântica, como ontologias e 
 \emph on
-reasoning
+reasoning,
 \emph default
- para classificar automaticamente estágios de câncer.
- Essa classificação vai usar anotações semânticas feitas por radiologistas
- em imagens médicas no programa ePAD e armazenadas no formato AIM e regras
- de uma ontologia representando o padrão TNM.
-
-\emph on
- 
-\emph default
-As anotações em AIM serão convertidas para OWL e uma máquina de inferência
- vai usá-las, juntamente com a ontologia e suas regras, para determinas
- o estágio do câncer num paciente.
- Todo o processo será validado por meio de uma prova de conceito com os
- usuários do Rubin Lab (Radiology Dept.
- -- Stanford University).
+ foram usadas para classificar automaticamente estágios de câncer.
+ Essa classificação usou anotações semânticas feitas por radiologistas,
+ usando a ferramenta ePAD, e armazenadas no formato AIM.
+ Um protótipo de classificador, baseado no padrão TNM, foi criado.
+ Ele transforma anotações AIM em indivíduos da ontologia AIM4-O e, usando
+ axiomas e regras (escritos na linguagens OWL-SWRL) representando o padrão
+ TNM, ele automaticamente calcula o estágio de câncer de fígado de pacientes.
+ A ontologia AIM4-O foi desenvolvida, como parte desse trabalho, para representa
+r anotações AIM 4 em OWL.
+ Esse classificador TNM foi avaliado, usando-se dados reais de relatórios
+ radiológico de pacientes do 
+\lang american
+NCI's Genomic Data Commons (GDC, 
+\lang brazilian
+em termos de precisão e revocação, com resultados respectivos de 84,5% e
+ 74,4% (quando comparado aos valores reais de estágio de câncer dos relatórios).
+ Todo o processo foi validado com radiologistas do 
+\lang american
+Radiology Dept.
+ of the Stanford University.
 \end_layout
 
 \begin_layout Standard
