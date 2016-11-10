@@ -95,7 +95,7 @@ key "Kitchenham07guidelinesfor"
 \end_layout
 
 \begin_layout Standard
-Além dos resultados obtidos ao final da revisão, este capitulo também inclui
+Além dos resultados obtidos ao final da revisão, este capítulo também inclui
  o detalhamento das atividades intermediárias realizadas, sendo elas: o
  planejamento da revisão, a estratégia adotada para selecionar e utilizar
  as máquinas de busca, a seleção de trabalhos, entre outros itens.
@@ -269,9 +269,9 @@ Cada estudo, analisado de acordo com o método estabelecido para a pesquisa
 \end_layout
 
 \begin_layout Standard
-Dessa forma, depois de ler o resumo e conclusões 23 estudos foram pré\SpecialChar nobreakdash
-selecionado
-s, os quais foram lidos e verificados através dos critérios de inclusão
+Dessa forma, depois de ler o resumo e conclusões, 23 estudos foram pré\SpecialChar nobreakdash
+selecionad
+os, os quais foram lidos e verificados através dos critérios de inclusão
  estabelecidos.
 \end_layout
 
@@ -292,8 +292,9 @@ Apresentação e Análise dos Resultados Obtidos no Mapeamento
 \end_layout
 
 \begin_layout Standard
-Nesta seção foi realizada a catalogação bibliográfica dos 11 estudos selecionado
-s no mapeamento sistemático, a qual é apresentada na Tabela 
+Nesta seção será apresentada a catalogação bibliográfica dos 11 estudos
+ selecionados no mapeamento sistemático, a qual é apresentada na Tabela
+ 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "tab:Comparativo-entre-os"
@@ -1318,12 +1319,11 @@ DL
 ), para a tarefa de classificação dos tumores de pulmão.
  Finalmente, as condições dos pacientes são simuladas por instâncias de
  classes para os experimentos.
- Esse trabalho não apresentam resultados explícitos usando conjuntos de
- dados reais.
+ Esse trabalho não apresenta resultados explícitos usando conjuntos de dados
+ reais.
 \end_layout
 
 \begin_layout Itemize
-Em 
 \begin_inset CommandInset citation
 LatexCommand citet
 key "marquet2007"
@@ -1335,8 +1335,17 @@ key "marquet2007"
 Thesaurus, 
 \lang brazilian
 para classificação dos tumores de glioma.
- Neste trabalho o sistema de referência de classificação utilizado foi o
- da 
+ Nesse 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Nesse (trabalho co cara) ou Neste (seu trabalho)?
+\end_layout
+
+\end_inset
+
+trabalho, o sistema de referência de classificação utilizado foi o da 
 \emph on
 World Health Organization
 \emph default
@@ -1357,8 +1366,7 @@ o reasoning
 \lang brazilian
  baseado em classes foi utilizado, o trabalho consegue classificar corretamente
  dez relatórios clínicos simulados dos onze utilizados no teste.
- Finalmente os autores não apresentam resultados explícitos usando dados
- reais.
+ Os autores não apresentam resultados explícitos usando dados reais.
  
 \end_layout
 
@@ -1381,7 +1389,7 @@ Annotation and Image Markup
  Em seguida, um mecanismo de 
 \emph on
 \lang english
-reasoning
+reasoning,
 \emph default
 \lang brazilian
  baseado em OWL e sua linguagem de regras associada SWRL, foi desenvolvido
@@ -1401,15 +1409,15 @@ key "Levy2009"
 
 \end_inset
 
- permite a inferência automatizada de informação semântica sobre lesões
- de câncer em imagens, as tarefas mais complexas como de avaliar automaticamente
- 
+ permita a inferência automatizada de informação semântica sobre lesões
+ de câncer em imagens, as tarefas mais complexas, como a de avaliar automaticame
+nte 
 \emph on
 \lang english
 o staging
 \emph default
 \lang brazilian
- de câncer(a resposta do tumor ao tratamento) não são suportadas.
+ de câncer (a resposta do tumor ao tratamento), não são suportadas.
 \end_layout
 
 \begin_layout Itemize
@@ -1432,7 +1440,7 @@ Nottingham Grading System
 \emph on
 NGS
 \emph default
-), para conceitos de visão computacional: Como, por exemplo, 
+), para conceitos de visão computacional como, por exemplo, 
 \emph on
 \lang english
 Cell Cluster –> union of cells
@@ -1442,16 +1450,16 @@ Cell Cluster –> union of cells
  white compact segments
 \emph default
 \lang brazilian
-).
+.
  Os autores criaram um método baseado em regras para gerar automaticamente
  o 
 \emph on
 NGS
 \emph default
  e modelar todos esses conceitos em OWL usando o Protégé (uma ferramenta
- para a edição de ontologias), com a finalidade de definir regras que são
- utilizadas para a indexação semântica das imagens de pacientes com câncer
- da mama.
+ para a edição de ontologias).
+ A sua finalidade era definir regras que são utilizadas para a indexação
+ semântica das imagens de pacientes com câncer da mama.
  Embora a proposta de 
 \begin_inset CommandInset citation
 LatexCommand cite
@@ -1459,15 +1467,15 @@ key "Tutac2008"
 
 \end_inset
 
- seja desenvolvido no campo da análise de imagens histológicas para a indexação
- e não exatamente para uma classificação d pacientes, a abordagem apresentada
+ seja desenvolvida no campo da análise de imagens histológicas para a indexação
+ e não exatamente para uma classificação de pacientes, a abordagem apresentada
  é importante no desenvolvimento desta proposta, já que descreve claramente
  as regras utilizadas para a classificação do câncer com base num sistema
  de classificação, como 
 \emph on
 o NGS
 \emph default
- similar do TNM.
+ similar ao TNM.
 \end_layout
 
 \begin_layout Itemize
@@ -1478,7 +1486,7 @@ key "zillner:towards"
 
 \end_inset
 
- uma ontologia OWL-DL foi projetada para realizar o 
+, uma ontologia OWL-DL foi projetada para realizar o 
 \emph on
 \lang english
 staging
@@ -1574,7 +1582,7 @@ reasoning
  para classificar automaticamente pacientes com linfoma, com base na posição
  relativa do linfoma.
  A fim de verificar ou falsificar as posições de linfoma, conhecimento baseado
- em oncologia foi utilizado
+ em oncologia, foi utilizado
 \emph on
  
 \lang english
@@ -1680,8 +1688,8 @@ description "Wide Field Markup Language"
 
 \end_inset
 
-), que é um formato em XML específica para o campo de histopatologia.
- Esses arquivos no WFML foram traduzidos em OWL.
+), que é um formato em XML específico para o campo de histopatologia.
+ Esses arquivos no WFML foram traduzidos para OWL.
  Por fim, a linguagem de consulta SPARQL é usado para acessar as informações
  disponíveis no sistema.
  
@@ -1735,7 +1743,6 @@ MEDICO
 \end_layout
 
 \begin_layout Itemize
-Em 
 \begin_inset CommandInset citation
 LatexCommand citet
 key "Kurtz20141082"
@@ -1787,7 +1794,7 @@ key "seifer2009"
 
 \end_inset
 
- ontologias não são usadas para representar um sistema de 
+, ontologias não são usadas para representar um sistema de 
 \emph on
 staging
 \emph default
@@ -1817,8 +1824,8 @@ key "Racoceanu2014"
 
 \end_inset
 
- é descrito um protótipo que tem a função de controlar um protocolo de análise
- de imagens histológicas.
+, é descrito um protótipo que tem a função de controlar um protocolo de
+ análise de imagens histológicas.
  Esse protótipo foi desenvolvido no 
 \emph on
 \lang english
@@ -1870,12 +1877,12 @@ key "Massicano2015AnOF"
 
 \end_inset
 
- desenvolveu-se uma ontologia para representar conceitos e axiomas para
+, desenvolveu-se uma ontologia para representar conceitos e axiomas para
  inferência do 
 \emph on
 staging
 \emph default
- clinico de tumores de um modo generalizado, baseado no 
+ clínico de tumores de um modo generalizado, baseado no 
 \emph on
 International Classification of Diseases for Oncology
 \emph default
@@ -1889,8 +1896,8 @@ staging
 \emph default
 , 
 \series default
-esses arquivos contêm informações como os pares do valores T, N ou M e uma
- topografia (descrição e representação do órgão afetado pelo câncer).
+esses arquivos contêm informações, como os pares do valores T, N ou M, e
+ uma topografia (descrição e representação do órgão afetado pelo câncer).
  Eles criaram manualmente esses arquivos de texto com base nas definições
  TNM.
  Embora 
@@ -1900,15 +1907,15 @@ key "Massicano2015AnOF"
 
 \end_inset
 
- tenta generalizar o sistema de classificaçao como o TNM representado numa
- ontologia, ele faz inferencia so com conceitos de stagio clinico e nao
- da definicacao do cada criterio do TNM, como por exemplo o criterio T que
- é diferente para cada topografia.
+ tentem generalizar o sistema de classificação TNM, representado-o numa
+ ontologia, eles fazem inferência só com conceitos de estágio clínico e
+ não da definição de cada critério do TNM, como, por exemplo, o critério
+ T, que é diferente para cada topografia.
  
 \end_layout
 
 \begin_layout Description
-Ao comparar o trabalho proposto como os trabalho acima, as seguintes diferenca
+Ao comparar o trabalho proposto como os trabalho acima, as seguintes diferenças
  foram evidenciadas:
 \end_layout
 
@@ -1934,19 +1941,22 @@ reasonig
  baseado em classes, que teoricamente é correto, mas, na prática, tem limitações
  como a criação de classes desnecessárias, aumentando a complexidade de
  uma ontologia.
- Acompanhando a limitação acima mencionado aparece outra, chamada Open World
- Assuntion (OWA) que é um fundamento da OWL que os trabalhos solucionam
- evitando o reasoning baseado em individuos.
+ Acompanhando a limitação acima mencionada aparece outra, chamada 
+\lang english
+Open World Assumption
+\lang brazilian
+ (OWA) que é um fundamento da OWL e que os trabalhos solucionam evitando
+ o reasoning baseado em indivíduos.
  No entanto, é possível realizar o 
 \emph on
 reasoning
 \emph default
- baseado em indivíduos, suportados por estruturas de dados que serão descritos
- em mais detalhe na secção seguinte.
+ baseado em indivíduos, suportado por estruturas de dados, que serão descritas
+ em mais detalhe na seção seguinte.
 \end_layout
 
 \begin_layout Standard
-Os trabalhos como 
+Os trabalhos, como 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Tutac2008"
@@ -1967,9 +1977,9 @@ key "zillner:towards"
 
 \end_inset
 
-, eles criam ontologias em OWL-DL para TNM, no entanto a ideia de ter uma
- ontologia para cada tipo de topografia(órgão do corpo) é indesejável como
- no caso dos trabalhos de 
+, criam ontologias em OWL-DL para TNM, no entanto a ideia de ter uma ontologia
+ para cada tipo de topografia (órgão do corpo) é indesejável, como no caso
+ dos trabalhos de 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Tutac2008"
@@ -1984,8 +1994,8 @@ key "zillner:towards"
 \end_inset
 
 .
- Nós acreditamos na abordagem de ter uma ontologia que representa directamentame
-nte as características encontradas em uma imagem (como a ontologia do modelo
+ Nós acreditamos na abordagem de se ter uma ontologia que representa diretamente
+ as características encontradas em uma imagem (como a ontologia do modelo
  AIM) e além disso que o 
 \emph on
 staging 
@@ -1995,7 +2005,7 @@ deve ser guiado apenas por regras e axiomas.
 \end_layout
 
 \begin_layout Standard
-Embora o trabalho de 
+Embora os trabalhos de 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Meriem2012"
@@ -2009,48 +2019,45 @@ key "Tutac2010"
 
 \end_inset
 
- utiliza anotações semânticas em imagens e executa uma classificação baseada
- no NGS utilizando OWL e SWRL, tem um fator limitante que é criar uma nova
- ontologia, dependendo da patologia que deseja analisar.
- Isso entretanto, não ocorre em nossa abordagem que fornece uma ontologia
+ utilizem anotações semânticas em imagens e executem uma classificação baseada
+ no NGS (utilizando OWL e SWRL), eles têm um fator limitante que é criar
+ uma nova ontologia, dependendo da patologia que se deseja analisar.
+ Isso, entretanto, não ocorre em nossa abordagem que fornece uma ontologia
  baseada em um meio padrão de adição de informação e conhecimento para uma
  imagem em um ambiente clínico.
 \end_layout
 
 \begin_layout Standard
-Quanto ao trabalho mais parecido com a nossa proposta 
-\emph on
-é 
-\emph default
-do 
+Quanto ao trabalho mais parecido com a nossa proposta, que é do 
 \begin_inset CommandInset citation
 LatexCommand citet
 key "Zillner2012"
 
 \end_inset
 
-, no entanto ignorando o fato que os dados utilizados não estão disponíveis
- para toda a verificação necessaria, o sistema do 
+, ele não disponibiliza os dados utilizados, o que impede qualquer verificação
+ dos resultados.
+ Além disso, o sistema de 
 \emph on
 staging
 \emph default
- de linfoma que foi implementado
+ de linfoma, que foi implementado,
 \emph on
  
 \emph default
-é relativamente mais simples do que um sistema de classificação(
+é relativamente mais simples do que um sistema de classificação (
 \emph on
 staging
 \emph default
-) mais geral como TNM.
- Por exemplo, pode-se dizer que, 
+) mais geral, como o TNM.
+ Por exemplo, pode-se dizer que 
 \begin_inset CommandInset citation
 LatexCommand citet
 key "Zillner2012"
 
 \end_inset
 
- não considera a dimensão de uma lesão como um factor importante.
+ não considera a dimensão de uma lesão como um fator importante.
  No entanto
 \emph on
 ,
@@ -2059,8 +2066,8 @@ key "Zillner2012"
 \emph on
 staging
 \emph default
- de cancer mais complexos como TNM.
- Alem disso, podemos ver que o processo de alinhamento de todas as ontologias
+ de câncer mais complexos, como o TNM.
+ Podemos verificar também que o processo de alinhamento de todas as ontologias
  geradas em 
 \begin_inset CommandInset citation
 LatexCommand citet
@@ -2068,13 +2075,14 @@ key "Zillner2012"
 
 \end_inset
 
- não são descritos de forma explícita.
- Finalmente, acreditamos que nossa aborgagem pode ser generalizada para
- outros tipos de casos de uso de reasoning baseado em imagem, o uso do modelo
- AIM estabelece um fluxo de trabalho automatizado, onde as anotações da
- imagens produzido por um sistema de imagem(qualquer que gera arquivos AIM),
- são transformandas á OWL, em seguida essas anotações sao utilizadas para
- gerar reasoning necessárias para tarefa de diferentes dominios.
+ não é descritos de forma explícita.
+ Finalmente, acreditamos que nossa abordagem possa ser generalizada para
+ outros tipos de casos de uso de reasoning baseado em imagem.
+ O uso do modelo AIM estabelece um fluxo de trabalho automatizado, onde
+ as anotações da imagens produzidas num sistema de imagem qualquer (que
+ gera arquivos AIM) são transformadas em OWL, em seguida essas anotações
+ podem ser utilizadas para o reasoning necessário em tarefas de diferentes
+ domínios.
  
 \end_layout
 
@@ -2092,7 +2100,7 @@ staging systems
 \lang brazilian
  com base em anotações semânticas de imagens, nas áreas de informática radiológi
 ca e oncologia.
- Foram , descritas as similaridades e divergências entre o trabalho proposto
+ Foram descritas as similaridades e divergências entre o trabalho proposto
  e os 12 trabalhos relacionados que foram escolhidos.
  
 \end_layout
@@ -2108,8 +2116,8 @@ reasoning
 \end_layout
 
 \begin_layout Standard
-Alguns desses estudos também permitem a criação de anotações de imagem no
- formato AIM (na linguagem XML), mas este não é adequados para o raciocínio
+Alguns desses estudos também permitem a criação de anotações em imagem no
+ formato AIM (na linguagem XML), mas AIM não é adequados para o raciocínio
  (
 \emph on
 reasoning
