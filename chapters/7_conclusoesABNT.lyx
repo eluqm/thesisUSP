@@ -76,18 +76,18 @@ Nesta dissertação de mestrado, geramos automaticamente o
 \emph on
  Cancer Staging
 \emph default
-(estágios do câncer) de lesões cancerosas presentes em imagens médicas,
+ (estágios do câncer) de lesões cancerosas presentes em imagens médicas,
  utilizando tecnologias de 
 \emph on
 reasoning
 \emph default
- e web semântica.
+ da web semântica.
  O processo de 
 \emph on
 staging
 \emph default
  em pacientes por análise de imagem é uma tarefa realizada por especialistas,
- como os oncologistas e radiologistas e muitas vezes envolve trabalho intensivo
+ como oncologistas e radiologistas, e, muitas vezes, envolve trabalho intensivo
  que exige precisão na interpretação de lesões de câncer.
  Essa precisão de especialistas é alcançada através do treinamento e da
  experiência, mas as variações na interpretação de imagens são uma limitação
@@ -96,9 +96,9 @@ staging
 \emph on
 staging
 \emph default
- automático (classificador TNM) baseado em metadados da imagen que é uma
- forte necessidade médica dos especialistas á obter uma maior precisão na
- interpretação.
+ automático (classificador TNM), baseada em metadados (anotações) de imagens,
+ que pode ajudar médicos a obter uma maior precisão e padronização na determinaç
+ão de estágios de câncer em pacientes.
 \end_layout
 
 \begin_layout Section
@@ -110,224 +110,88 @@ As principais contribuições deste trabalho são detalhadas a seguir:
 \end_layout
 
 \begin_layout Itemize
-Uma abordagem (ou classificador TNM) para gerar automaticamente o estagio
- de um paciente com câncer, baseado no standard TMN e os metadados da imagen
- a fim de fornecer aos médicos uma maior taxa de precisão na interpretação
- das lesões cancerosas.
+Uma abordagem (ou classificador TNM) para gerar automaticamente o estágio
+ de um paciente com câncer, baseado no standard TNM e anotações em imagens
+ médicas (no formato AIM), a fim de fornecer aos médicos uma maior taxa
+ de precisão e padronização na interpretação de estágio de lesões cancerosas.
 \end_layout
 
 \begin_layout Itemize
-Evidencia, da capacidade do Classificador TNM desenvolvido, através da análise
- quantitativa e discussão
-\lang english
- com especialistas dos cenários 
-\lang brazilian
-reais 
-\lang english
-de 
+Teste da capacidade do classificador TNM desenvolvido, através da análise
+ quantitativa e discussão com especialistas dos cenários reais de 
 \emph on
+\lang english
 cancer staging
 \emph default
 \lang brazilian
- que foram avaliados, nessa discução podemos destacar além dos bons indicadores
- de presição e revocação obtidos pelo classificador ( 84.3% e 74,4%), que
- podem ser detectados casos clínicos especiais com estagio errôneo e por
- conseguinte potenciais erros de tratamento médico podem ser reduzidos.
+ que foram avaliados.
+ Nessa discussão, podemos destacar, além dos bons indicadores de precisão
+ e revocação obtidos pelo classificador ( 84.3% e 74,4%), que podem ser detectado
+s casos clínicos com estagio errôneo e que, por conseguinte, potenciais
+ erros de tratamento médico podem ser reduzidos.
 \end_layout
 
 \begin_layout Itemize
-Um
-\emph on
- AIM template que
-\emph default
- é usado para garantir que o mínimo exigido de informações seja coletado
- para representar o sistema de staging
-\emph on
- 
-\emph default
-TNM
-\emph on
-.
-\end_layout
-
-\begin_layout Itemize
-Uma nova ontologia 
-\series bold
-AIM4-O
-\series default
- baseados no trabalho de 
+Uma nova ontologia AIM4-O, baseada no trabalho de 
 \begin_inset CommandInset citation
 LatexCommand citet
 key "Bulu"
 
 \end_inset
 
-, que fornece uma representação semantica do modelo de dados AIM 4.0.
- 
-\series bold
-AIM4-O
-\series default
- é uma ontologia leve que foi desenvolvido com a intenção de ser adotado
- em uma gama de aplicações o outras disciplinas relacionadas ao processamento
- de metadados de imagem.
- 
-\series bold
-AIM4-O
-\series default
- está de acordo com o perfil 
-\series bold
-OWL-DL
-\series default
-.
- Assim, a ontologia espera para ser usado directamente em aplicações, bem
- como servir como um modelo de referência para a criação de ontologias de
- domínio específico como por exemplo em radiologia.
+, que fornece uma representação semântica do modelo de dados AIM 4.0.
+ AIM4-O é uma ontologia leve que foi desenvolvida com a intenção de poder
+ ser adotada em aplicações em outras disciplinas relacionadas ao processamento
+ de metadados de imagens.
+ AIM4-O está de acordo com o perfil OWL-DL.
+ Ela pode ser usada diretamente em aplicações ou servir como modelo de referênci
+a, para a criação de ontologias de domínio específico, como, por exemplo,
+ em radiologia.
  
 \end_layout
 
 \begin_layout Itemize
-Evidencias, através da análise quantitativa dos resultados das avaliações
- e seus resultados, que, quando as observações da imagem(metadados) no contexto
- do 
-\emph on
-staging
-\emph default
- de câncer são baseados em ontologias como por exemplo em instâncias do
- AIM4-O, as informações podem ser procuradas com maior precisão e revocação
- do que uma busca por palavras-chave.
+Avaliação quantitativa, centrada em tarefa, da ontologia AIM4-O.
+ Buscas semânticas de relatórios sobre imagens médicas, usando a AIM4-O,
+ apresentaram melhor precisão (0.89 x 0.52) e revocação (0.98 x 0.48) que buscas
+ usando palavras-chaves no mesmo conjunto de dados.
 \end_layout
 
 \begin_layout Itemize
-O método de mapeamento para transformar automaticamente as anotações em
- formato AIM-XML para instâncias da ontologia AIM4-O.
- Permitindo assim processar fluxos de documentos XML e preencher uma base
- de conhecimento OWL com o seu conteúdo.
- Além disso, as anotações podem ser obtidos de qualqer ferramenta de marcação
- que usa o AIM padrão, neste trabalho a ferramenta utilizada foi o ePAD
-\begin_inset CommandInset citation
-LatexCommand citet
-key "Rubin2008"
-
-\end_inset
-
-.
+O método de mapeamento para transformar automaticamente anotações, em formato
+ AIM-XML, para instâncias da ontologia AIM4-O.
+ Ele permite processar fluxos de documentos AIM e preencher uma base de
+ conhecimento em OWL com o seu conteúdo.
+ As anotações podem ser obtidos de qualquer ferramenta de marcação que use
+ o AIM padrão.
 \end_layout
 
 \begin_layout Itemize
-Alinhamento do modelo AIM com ontologias médicas como: uma parte do vocabulário
- Radlex
-\begin_inset Foot
-status open
-
-\begin_layout Plain Layout
-https://bioportal.bioontology.org/ontologies/RADLEX
-\end_layout
-
-\end_inset
-
- e Onlira
-\begin_inset Foot
-status open
-
-\begin_layout Plain Layout
-https://bioportal.bioontology.org/ontologies/ONLIRA
-\end_layout
-
-\end_inset
-
-, a fim de faciliar o trabalho de classificação e tratamento dos indivíduos
- da ontologia AIM4-O debido a que estes indivíduos têm terminologias de
- Radlex em sua estrutura.
+Alinhamento do modelo AIM com ontologias médicas, como Radlex e Onlira,
+ a fim de facilitar o trabalho de classificação e tratamento dos indivíduos
+ da ontologia AIM4-O.
  
 \end_layout
 
 \begin_layout Itemize
-Representação formal com base na lógica de primeira ordem de: regras, axiomas
- e procedimentos de 
-\emph on
-reasoning
-\emph default
- automático a fim de automaticamente fazer o 
+Representação formal, com base na lógica de primeira ordem, de regras, axiomas
+ e procedimentos de raciocínio automático a fim de automaticamente fazer
+ 
 \emph on
 cancer staging
 \emph default
  baseado em TNM.
 \end_layout
 
-\begin_layout Itemize
-Destacou-se algumas das limitações da lógica de descrição nas tarefas 
-\emph on
-classificação
-\emph default
-, por exemplo 
-\emph on
-Open World Assumption
-\emph default
-.
- Isso foi parcialmente resolvido usando uma estrutura de dados simples gerado
- no mapeamento dos documentos AIM-XML para instâncias do AIM4-O.
-\end_layout
-
 \begin_layout Standard
-Em suma, O resultado foi o classificador TNM e foi usado em casos reais
- de câncer, nossos experimentos demonstraram a importância de melhorar os
- sistemas de apoio à decisão clínica pelo processamento de imagens e metadados
- na avaliação do câncer de figado com 84,3% de presisão e 74,4% de revocação.
- Além disso, contrastando o resultado de 
+É importante notar que o procedimento de 
 \emph on
 staging
 \emph default
- automatizado de nosso classificador com os relatorios existentes no GDC,
- revelou-se o fato de que existem casos de pacientes com diagnóstico inexato.
- 
-\series bold
-Mas, é importante notar que o procedimento de 
-\emph on
-staging
-\emph default
- automático não dá ao médico novas informações, isto, pode ser visto como
- uma segunda opinião para fins de qualidade no diagnóstico clínico
-\series default
-, portanto a qualidade dos diagnósticos médicos pode ser melhorada.
-\end_layout
-
-\begin_layout Section
-Produção Científica
-\end_layout
-
-\begin_layout Standard
-Este projeto de mestrado resultou na publicação de alguns artigos em eventos
- científicos que são listadas a seguir:
-\end_layout
-
-\begin_layout Itemize
-E.
- F.
- Luque, D.
- L.
- Rubin and D.
- A.
- Moreira, "Automatic Classification of Cancer Tumors Using Image Annotations
- and Ontologies," 2015 IEEE 28th International Symposium on Computer-Based
- Medical Systems, Sao Carlos, 2015, pp.
- 368-369.
- doi: 10.1109/CBMS.2015.83.
-\end_layout
-
-\begin_layout Itemize
-D.
- A.
- Moreira, C.
- Hage, E.
- F.
- Luque, D.
- Willrett and D.
- L.
- Rubin, "3D Markup of Radiological Images in ePAD, a Web-Based Image Annotation
- Tool," 2015 IEEE 28th International Symposium on Computer-Based Medical
- Systems, Sao Carlos, 2015, pp.
- 97-102.
- doi: 10.1109/CBMS.2015.46
+ automático não dá ao médico novas informações.
+ Ele deve ser visto como uma segunda opinião para fins de qualidade no diagnósti
+co clínico, portanto o objetivo final é a melhoria da qualidade e padronização
+ dos diagnósticos médicos.
 \end_layout
 
 \begin_layout Section
@@ -341,9 +205,9 @@ O presente trabalho apresentou algumas dificuldades e limitações durante
 
 \begin_layout Itemize
 Algumas limitações a este trabalho é que nosso conjunto de dados é pequeno.
- Devido que, para fazer uma validação ideal de um paciente suas imagens
- médicas e relatórios clínicos ambas têm que estar presentes.
- 
+ Necessitamos da cooperação de radiologistas, para interpretar os exames
+ e validar resultados, e eles têm muito pouco tempo disponível para essa
+ atividade, 
 \end_layout
 
 \begin_layout Itemize
@@ -351,16 +215,24 @@ Um fator limitante encontrado diz respeito a pouca disponibilidade de tempo
  dos especialistas para realizar os testes.
 \end_layout
 
+\begin_layout Itemize
+A distância dos nossos parceiros radiologistas, do Radiology Dept.
+ da Stanford University, e a barreira linguistica também foram dificuldades
+ para este trabalho.
+ 
+\end_layout
+
 \begin_layout Section
 Trabalhos Futuros
 \end_layout
 
 \begin_layout Standard
-Como trabalhos futuros decorrentes dessa dissertação destacam-se: 
+Como possíveis trabalhos futuros decorrentes dessa dissertação destacam-se:
+ 
 \end_layout
 
 \begin_layout Itemize
-Atualmente, algoritmos automáticos de segmentação de imagem Já são utilizados
+Algoritmos automáticos de segmentação de imagem já são atualmente utilizados
  para detectar lesões em imagens de CT ou MRI (por exemplo 
 \begin_inset CommandInset citation
 LatexCommand citet
@@ -378,40 +250,31 @@ reference "fig:classes-extend"
 
 \end_inset
 
-), grandes partes dos critérios TNM como da anotação de imagens podem ser
- automatizadas e melhoradas nos trabalhos futuros.
+), grande parte das anotações, baseadas no critério TNM, em imagens pode
+ ser automatizada em trabalhos futuros.
  
 \end_layout
 
 \begin_layout Itemize
 Embora não tenhamos realmente feito isso, assumimos que nossa abordagem
  poderia ser aplicada a outros tipos de câncer como cólon, pulmões, e outros
- criterios de classificação como Recist, etc, unicamente modificando as
- regras e axiomas que representam os critérios TNM, evitando assim criar
- uma nova ontologia.
+ critérios de classificação, como o Recist.
+ Seria necessário somente a modificação das regras e axiomas que representam
+ os critérios TNM, evitando assim criar uma nova ontologia.
 \end_layout
 
 \begin_layout Itemize
-A integração de uma DSL ou Linguagens de Domínio Específico, como ferramenta
+A integração de uma DSL, ou Linguagens de Domínio Específico, como ferramenta
  de comunicação entre os médicos e a representação formal dos critérios
  TNM.
 \end_layout
 
-\begin_layout Standard
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Plain Layout
-O trabalho futuro incluirá, conjuntos de dados mais variados para avaliação,
- expansão do classificador para outros locais de tumor e incorporação em
- sistemas de informação existentes.
- O classificador TNM mostra o potencial de ser integrado em sistemas de
- software maiores.
-\end_layout
-
-\end_inset
-
-
+\begin_layout Itemize
+Trabalhos futuros incluirão conjuntos de dados mais variados para avaliação,
+ expansão do classificador para outros órgãos e incorporação em sistemas
+ de informação existentes.
+ O classificador TNM tem potencial para ser integrado a sistemas de software
+ maiores.
 \end_layout
 
 \end_body

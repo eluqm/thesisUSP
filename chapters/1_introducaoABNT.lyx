@@ -77,7 +77,7 @@
 \begin_layout Standard
 Em Biomedicina, especificamente em radiologia e oncologia, avaliar a resposta
  ao tratamento do câncer depende criticamente dos resultados da análise
- de imagens médicas pelos especialistas.
+ de imagens pelos especialistas.
  No entanto, as informações obtidas dessa análise não são facilmente interpretáv
 eis por máquinas.
  
@@ -229,7 +229,7 @@ description "Annotation and Image Markup Project"
 
 ) desenvolvido pelo 
 \lang english
-Cancer Biomedical Informatics Grid
+cancer Biomedical Informatics Grid
 \lang brazilian
  (caBIG
 \begin_inset CommandInset nomenclature
@@ -275,9 +275,9 @@ key "Kundu2009"
 \end_inset
 
 .
- Ela permite a representação, armazenamento e transferência consistentes
+ Ele permite a representação, armazenamento e transferência consistentes
  de significados semânticos sobre imagens.
- Ferramentas, como por exemplo ePAD 
+ Ferramentas, como por exemplo o ePAD 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "Rubin2014"
@@ -299,7 +299,7 @@ Motivação
 
 \begin_layout Standard
 O processo de classificação dos pacientes com câncer, através da análise
- de imagens, é uma tarefa executada por especialistas, tais como oncologistas
+ de imagens, é uma tarefa executada por especialistas, como oncologistas
  e radiologistas, com base na inspeção de imagens e pode ser, muitas vezes,
  um trabalho intensivo que exige precisão na interpretação das lesões.
  A precisão do especialista é obtida através de formação e experiência 
@@ -320,8 +320,7 @@ key "Depeursinge2014"
 Por outro lado, embora sistemas como o ePAD permitam a criação de anotações
  sobre imagens no formato AIM, facilitando assim a manipulação e consulta
  de metadados de imagens em AIM, eles não permitem representar anotações
- em um formato que seja diretamente adequado para o uso de raciocínio logico
- computacional(
+ em um formato que seja diretamente adequado para o raciocínio (
 \emph on
 reasoning
 \emph default
@@ -359,9 +358,9 @@ Podemos ver então que existe uma carência de métodos de
 \emph on
 reasonig
 \emph default
- semântico para fazer inferências sobre lesões cancerosas, a partir de anotações
- semânticas sobre imagens, baseadas em meios padronizados (como AIM) de
- adição de informação e conhecimento sobre uma imagem.
+ semântico para fazer inferências sobre lesões cancerígenas, a partir de
+ anotações semânticas sobre imagens, baseadas em meios padronizados (como
+ AIM) de adição de informação e conhecimento sobre uma imagem.
  Sendo assim, a principal motivação deste trabalho é a possibilidade de
  desenvolver métodos de 
 \emph on
@@ -442,15 +441,8 @@ Representar apropriadamente o critério TNM de classificação (
 staging
 \emph default
 ) de câncer.
- Esse conhecimento teve de ser codificado usando a 
-\emph on
-Web Ontology Language
-\emph default
- (OWL) e regras codificadas na 
-\emph on
-Semantic Web Rule Language
-\emph default
- (SWRL).
+ Esse conhecimento teve de ser codificado usando a Web Ontology Language
+ (OWL) e regras codificadas na Semantic Web Rule Language (SWRL).
 \end_layout
 
 \begin_layout Enumerate
@@ -459,12 +451,9 @@ Encontrar e analisar dados com informações do
 TNM staging
 \emph default
 , como relatórios de diagnóstico clínico com as suas respectivas imagens
- por
-\emph on
- 
+ por 
 \lang english
 Computed Tomography
-\emph default
 \lang brazilian
  (CT).
  Foram usados os repositórios 
@@ -475,7 +464,7 @@ The NCI's Genomic Data Commons
 \emph on
 The Cancer Imaging Archive
 \emph default
-.
+).
 \end_layout
 
 \begin_layout Enumerate
@@ -490,28 +479,82 @@ Usar o protótipo para classificar dados, encontrados no item 3, e comparar
 \end_layout
 
 \begin_layout Section
-Resultados
+Resultados Principais
 \end_layout
 
 \begin_layout Standard
-O resultado foi um classificador TNM avaliado com casos reais de câncer,
- nossos experimentos demonstraram a importância de melhorar os sistemas
- de apoio à decisão clínica pelo processamento de imagens e metadados na
- avaliação do câncer de figado com 84,3% de presisão e 74,4% de revocação.
- Além disso, contrastando o resultado de 
+Os resultados principais deste trabalho de mestrado são:
+\end_layout
+
+\begin_layout Itemize
+Um classificador automático para determinação do estágio de câncer (
 \emph on
-staging
+\lang english
+cancer staging
 \emph default
- automatizado de nosso classificador com os relatorios existentes no repositório
- GDC, revelou-se o fato de que existem casos de pacientes com diagnóstico
- inexato.
- Mas, é importante notar que o procedimento de 
+\lang brazilian
+) de um paciente.
+ Ele é baseado no standard TNM e usa anotações em imagens médicas (no formato
+ AIM).
+ Essas anotações são convertidas para o formato OWL e usadas, em combinação
+ com um conjunto de axiomas e regras, em um 
+\lang english
+reasoner
+\lang brazilian
+ OWL DL e SWRL para calcular estágios de câncer.
+ Esses estágios funcionam como uma segunda opinião médica para melhorar
+ a taxa de precisão e padronização na determinação de estágio de câncer
+ em pacientes.
+ Esse classificador pode ser usado para detectar casos clínicos com estagio
+ errôneo e, por conseguinte, potenciais erros de tratamento médico.
+\end_layout
+
+\begin_layout Itemize
+Teste da precisão e revocação do classificador TNM desenvolvido.
+ O classificador foi testado com relatório médicos reais abertos de 53 pacientes.
+ Os estágios de câncer, calculados pelo classificador, foram comparados
+ com os valores calculados pelos médicos (nosso 
+\shape italic
+golden standard
+\shape default
+).
+ A precisão e revocação obtidos pelo classificador foram 84.3% e 74,4%, respectiv
+amente.
+ Esses são valores muito bons, próximo a valores encontrados quando se compara
+ opiniões de médicos de diferentes instituições.
+ 
+\end_layout
+
+\begin_layout Itemize
+Uma nova ontologia, a AIM4-O, que fornece uma representação semântica do
+ modelo de dados AIM 4.0.
+ AIM4-O é uma ontologia leve que foi desenvolvida com a intenção de poder
+ ser adotada em aplicações em outras disciplinas relacionadas ao processamento
+ de metadados de imagens.
+ 
+\end_layout
+
+\begin_layout Itemize
+Avaliação, centrada em tarefa, da ontologia AIM4-O.
+ Relatórios sobre 
 \emph on
-staging
+image findings
 \emph default
- automático não dá ao médico novas informações, isto, pode ser visto como
- uma segunda opinião para fins de qualidade no diagnóstico clínico, portanto
- a qualidade dos diagnósticos médicos pode ser melhorada.
+ foram descritos como indivíduos da ontologia e recuperados, usando-se a
+ linguagem de consulta, baseada em lógica de descrição, DL query (busca
+ semântica).
+ O mesmo conjunto de relatórios foram usados para recuperação usando-se
+ palavras-chave.
+ Comparando-se os dois métodos, a busca semântica obteve resultados sensivelment
+e melhores que a busca por palavras-chave, com precisão 0.89 x 0.52 e revocação
+ 0.98 x 0.48.
+\end_layout
+
+\begin_layout Standard
+Com os resultados acima alcançados, demostramos que as técnicas propostas
+ podem obter uma boa qualidade na determinação de estágio de câncer em pacientes
+ e, por tanto, podem aumentar a qualidade e uniformidade na interpretação
+ de imagens por especialistas.
 \end_layout
 
 \begin_layout Standard
@@ -586,9 +629,18 @@ Capítulo 4: Esse capítulo apresenta os trabalhos relacionados, evidenciando
 \end_layout
 
 \begin_layout Standard
-Capítulo 5: Esse capítulo apresenta a metodologia utilizada para representar
- ontológicamente o modelo de informação AIM e a codificação de conhecimento
- do critério TNM, usando as linguagens OWL e SWRL, para permitir o 
+Capítulo 5: Esse capítulo apresenta a metodologia utilizada para a expansão
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Expansão??
+\end_layout
+
+\end_inset
+
+ do AIM e a codificação de conhecimento do critério TNM, usando as linguagens
+ OWL e SWRL, para permitir o 
 \emph on
 staging
 \emph default

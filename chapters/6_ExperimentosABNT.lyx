@@ -1131,7 +1131,7 @@ Analisando as quatro consultas podemos ver que a busca semântica tem o maior
  número de documentos relevantes recuperados: 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Description
 Q1: Com a abordagem semântica, 15 relatórios foram recuperados com precisão
  e revocação de 1 (15/15).
  Com a busca através de palavras-chaves, 12 relatórios foram recuperados
@@ -1139,7 +1139,7 @@ Q1: Com a abordagem semântica, 15 relatórios foram recuperados com precisão
  
 \end_layout
 
-\begin_layout Standard
+\begin_layout Description
 Q2: Com a abordagem semântica, 5 relatórios foram recuperados com precisão
  e revocação de 1 (5/5).
  Com a busca através de palavras-chaves, 5 relatórios foram recuperados
@@ -1147,7 +1147,7 @@ Q2: Com a abordagem semântica, 5 relatórios foram recuperados com precisão
  
 \end_layout
 
-\begin_layout Standard
+\begin_layout Description
 Q3: Com a busca semântica, 10 relatórios foram recuperados com uma precisão
  de 0,9 (9/10) e revocação de 0,9 (9/10).
  Com a busca por palavras-chave, não foram obtidos relatórios, porque não
@@ -1156,7 +1156,7 @@ Q3: Com a busca semântica, 10 relatórios foram recuperados com uma precisão
  
 \end_layout
 
-\begin_layout Standard
+\begin_layout Description
 Q4: Com a busca semântica, 15 relatórios foram recuperados com uma precisão
  de 0,67 (10/15) e revocação de 1 (10/10).
  Com a busca de palavras-chave, 7 relatórios foram recuperados com uma precisão
@@ -1165,9 +1165,11 @@ Q4: Com a busca semântica, 15 relatórios foram recuperados com uma precisão
 
 \begin_layout Standard
 A busca semântica obteve melhores resultados, com valores de revocação próximos
- de 1 e sempre melhores do que a busca através de palavras-chaves.
+ de 1 (0,98 em média) e sempre melhores do que a busca através de palavras-chave
+s (),48, em média).
  Além disso, em todos os casos, exceto um, os valores de precisão foram
- melhores para a busca semântica.
+ melhores para a busca semântica (em média 0.89, para semântica, e 0.52, para
+ textual).
  A pesquisa usando palavras-chave teve precisão e revocação 0 para a query
  Q3, o que é um resultado não desejado.
 \end_layout
