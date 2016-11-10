@@ -126,9 +126,9 @@ cancer staging
 \lang brazilian
  que foram avaliados.
  Nessa discussão, podemos destacar, além dos bons indicadores de precisão
- e revocação obtidos pelo classificador ( 84.3% e 74,4%), que podem ser detectado
-s casos clínicos com estagio errôneo e que, por conseguinte, potenciais
- erros de tratamento médico podem ser reduzidos.
+ e revocação obtidos pelo classificador ( 85,7% e 81,0%), que podem ser
+ detectados casos clínicos com estagio errôneo e que, por conseguinte, potenciai
+s erros de tratamento médico podem ser reduzidos.
 \end_layout
 
 \begin_layout Itemize
@@ -153,7 +153,7 @@ a, para a criação de ontologias de domínio específico, como, por exemplo,
 \begin_layout Itemize
 Avaliação quantitativa, centrada em tarefa, da ontologia AIM4-O.
  Buscas semânticas de relatórios sobre imagens médicas, usando a AIM4-O,
- apresentaram melhor precisão (0.89 x 0.52) e revocação (0.98 x 0.48) que buscas
+ apresentaram melhor precisão (89% x 52%) e revocação (98% x 48%) que buscas
  usando palavras-chaves no mesmo conjunto de dados.
 \end_layout
 

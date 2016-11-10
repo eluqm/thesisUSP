@@ -1203,7 +1203,7 @@ TNM Classification of Malignant Tumors
  (TNM) é um processo de duas etapas.
  A primeira etapa consiste em dar notas para três conceitos: descrição do
  tumor (T), difusão em nós linfáticos (N) e possível metástase (M).
- Esses conceitos estão resumidos na Tabela 
+ Para câncer de fígado, esses conceitos são resumidos na Tabela 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "ResumodoprotocoloTNM"
@@ -1970,23 +1970,200 @@ fadaptada{Dameron2006Table}
 
 \end_layout
 
+\begin_layout Standard
+A Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:examploIIIA-1"
+
+\end_inset
+
+ mostra múltiplos tumores de fígado (linhas verdes) com pelo menos um deles
+ > 5 cm.
+ Não houve envolvimento linfonodal regional ou metástase.
+ Este paciente seria classificado no estágio TNM 
+\series bold
+IIIA 
+\series default
+(T3a, N0, M0).
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:examploIIIA-1"
+
+\end_inset
+
+A) Uma imagem axial CT, contrastada, apresenta múltiplos tumores HCC, identifica
+dos e anotados utilizando a ferramenta ePAD; B) O diagrama do 
+\shape italic
+stage
+\shape default
+ IIIA mostra múltiplos HCCs com pelo menos um deles > 5 cm.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename ../figures/exemploIIIA.pdf
+	lyxscale 50
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+fadaptada{Faria2014}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:exampleIIA-1"
+
+\end_inset
+
+ A) Uma imagem axial CT, contrastada, apresenta um tumor HCC, identificado
+ e anotado utilizando a ferramenta ePAD; B) O diagrama do 
+\shape italic
+stage
+\shape default
+ II mostra um tumor HCC solitário com invasão vascular.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename ../figures/exemploII.pdf
+	lyxscale 50
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+fadaptada{Faria2014}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+A figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:exampleIIA-1"
+
+\end_inset
+
+ mostra um único tumor de fígado (linha verde) com micro invasão vascular,
+ sem envolvimento de linfonodos regionais ou metástases.
+ Esse paciente seria classificado no estágio TNM 
+\series bold
+II 
+\series default
+(T2, N0, M0).
+\end_layout
+
+\begin_layout Standard
+Segundo 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Faria2014"
+
+\end_inset
+
+, o sistema de 
+\emph on
+staging
+\emph default
+ TNM tornou-se um dos sistemas de 
+\emph on
+staging
+\emph default
+ patológico mais amplamente utilizados para carcinomas Hepato celular e
+ foi validado para prever resultados pós-cirúrgicos em pacientes.
+ As taxas de sobrevivência por 5 anos de pacientes com câncer de fígado,
+ com base no sistema TNM, foram no stage I, 55%; stage II, 37%; e stage
+ III, 16%.
+ Portanto, podemos ver que existe uma relação entre o estágio clínico e
+ as taxas de sobrevivência.
+ 
+\end_layout
+
 \begin_layout Section
 Considerações Finais 
 \end_layout
 
 \begin_layout Standard
-Recentemente pode ser visto que houve uma escalada da complexidade na recolação
- 
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-recolação???
-\end_layout
-
-\end_inset
-
-dos dados médicos pelo fato dos avanços em tecnologias relacionadas com
+Recentemente pode ser visto que houve uma escalada da complexidade na geração
+ dos dados médicos pelo fato dos avanços em tecnologias relacionadas com
  aquisição de imagens.
  Novas tecnologias, como dispositivos médicos e sistemas de medição, geram
  grandes volumes de imagens como também outros dados por paciente, e tornam

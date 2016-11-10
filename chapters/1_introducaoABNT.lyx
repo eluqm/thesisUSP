@@ -511,7 +511,7 @@ reasoner
 
 \begin_layout Itemize
 Teste da precisão e revocação do classificador TNM desenvolvido.
- O classificador foi testado com relatório médicos reais abertos de 53 pacientes.
+ O classificador foi testado com relatório médicos reais abertos de 52 pacientes.
  Os estágios de câncer, calculados pelo classificador, foram comparados
  com os valores calculados pelos médicos (nosso 
 \shape italic

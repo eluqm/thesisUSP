@@ -690,17 +690,6 @@ key "AMANQUI2014"
 
 \end_inset
 
-
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Essa ref está diferent.
- Está ok?
-\end_layout
-
-\end_inset
-
 , a finalidade dos 
 \emph on
 reasoners na 
@@ -815,17 +804,7 @@ TBox: Armazena um conjunto de afirmações universalmente quantificadas para
  descrever a estrutura de um domínio.
  Além disso, contém frases que descrevem as relações entre conceitos.
  Por exemplo, uma afirmação desse tipo pode se referir a um conceito que
- representa uma especialização de um outro conceito
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Cheque: é isso mesmo que vc quiz dizer?
-\end_layout
-
-\end_inset
-
-:
+ representa uma especialização de um outro conceito:
 \end_layout
 
 \begin_layout Standard
@@ -1106,7 +1085,7 @@ Como o Índice ACR possui apenas milhares de índices, fica fácil para as
 
 \begin_layout Standard
 Com o surgimento do mundo digital, a necessidade de criar sistemas de indexação
- informatizados levou a (RSNA 
+ informatizados levou a RSNA 
 \emph on
 
 \begin_inset CommandInset nomenclature
@@ -1118,9 +1097,9 @@ description "Radiological Society of North America"
 
 
 \emph default
-)
+
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Plain Layout
 Vc já tinha se referido a RSNA antes?
@@ -1361,24 +1340,42 @@ AIM templates
 \emph on
 templates
 \emph default
- especificam um formulário de coleta de dados eletrônico
+ especificam um formulário de coleta de dados eletrônico, 
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Plain Layout
- análogo a um formulário eletrônico de relatório do caso???
+análogo a um formulário eletrônico de relatório do caso consistindo de um
+ conjunto de perguntas e possíveis respostas ao anotar imagens
 \end_layout
 
 \end_inset
 
- análogo a um formulário eletrônico de relatório do caso consistindo de
- um conjunto de perguntas e possíveis respostas ao anotar imagens.
- Uma 
+
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+Uma 
 \emph on
 AIM templates
 \emph default
- especifica os elementos obrigatórios, os tipos de valores válidos, sua
- cardinalidade e que valores são necessários.
+ especifica
+\end_layout
+
+\end_inset
+
+incluindo elementos obrigatórios, tipos de valores válidos e sua cardinalidade
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+ e que valores são necessários
+\end_layout
+
+\end_inset
+
+.
  Cada 
 \emph on
 template

@@ -204,17 +204,18 @@ A avaliação ontológica é o processo de avaliação de uma ontologia com resp
  Neste trabalho, realizamos a avaliação da ontologia AIM4-O do ponto de
  vista funcional.
  Descrevemos a avaliação da ontologia, como uma avaliação centrada em tarefas
- contra suas necessidades ontológicas
+ contrastando suas necessidades ontológicas, tais como questões de competência
+ (CQs) e requisitos de inferência
 \begin_inset Note Note
 status open
 
 \begin_layout Plain Layout
-contra suas necessidades ontológicas ?????
+Checar
 \end_layout
 
 \end_inset
 
-, tais como questões de competência (CQs) e requisitos de inferência.
+.
 \end_layout
 
 \begin_layout Standard
@@ -1188,24 +1189,7 @@ Para avaliar a capacidade de nosso classificador TNM, primeiro criamos um
  template chamado "template TNM" para fornecer ao radiologista um conjunto
  de termos semânticos pré-especificados para anotação de imagens.
  Todas essas anotações de imagem foram armazenadas no formato padrão AIM
- e são compatíveis com o ePAD
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Voce ja fez essa ref? se sim, retire
-\end_layout
-
-\end_inset
-
- 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "Rubin2008"
-
-\end_inset
-
-.
+ e são compatíveis com o ePAD.
  Um exemplo de uma anotação é apresentado na Figura 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -1338,32 +1322,544 @@ cancer stage
 \begin_layout Standard
 Foram classificadas automaticamente todas as anotações de imagens AIM geradas
  com base nos 52 diferentes relatórios clínicos, a fim de analisar a precisão
- da nosso abordagem de 
+ da nossa abordagem de 
 \emph on
 staging
 \emph default
  automático com TNM.
  Os cancer stagings gerados pelo classificador foram comparados aos descritos
  pelos médicos nos relatórios (nosso gold standard).
- Para o cálculo de precisão e revocação, quando o staging automático coincide
- com o dado pelo médico, ele é considerado positivo
+ Um paciente, Subject ID TCGA-DD-A1EJ, foi retirado dessa análise.
+ O especialista considerou que a classificação TNM, reportada pelo médico,
+ estava incorreta (mais informações adiante).
 \end_layout
 
 \begin_layout Standard
-A precisão foi 84,3% e a revocação 74,4%
-\begin_inset Note Note
-status collapsed
+Para o cálculo de precisão e revocação, quando o staging automático coincide
+ com o dado pelo médico, ele é considerado positivo.
+ Na Tabela 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Results"
+
+\end_inset
+
+, é mostrada a Matriz de Confusão com os estágios de câncer calculados pelo
+ classificador versus os valores que os médicos colocaram nos relatórios.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
 
 \begin_layout Plain Layout
-Esses dados levam em consideracao aquele caso que o DAniel decidiu que o
- médico errou o staging? Você o retirou ou simplesmente considerou o staging
- do Daniel?
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="7" columns="7">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+n = 51
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="1" alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Actual Stages
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+I
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+II
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+IIIA
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+IIIB
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+IVA
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="3" alignment="center" valignment="middle" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Predicted Stages
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+I
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+21
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+II
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+9
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+IIIA
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+8
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+IIIB
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+IVA
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Results"
+
+\end_inset
+
+Matriz de Confusão dos estágios de câncer calculados pelo classificador
+ (predicted) versus os valores que os médicos colocaram nos relatórios (actual).
+ 
 \end_layout
 
 \end_inset
 
-.
- Isso significa que, para a precisão, em 84.3% das vezes o sistema concordou
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+A precisão foi 85,7% e a revocação 81,0% (para os 51 pacientes).
+ Isso significa que, para a precisão, em 85.7% das vezes o sistema concordou
  com o 
 \shape italic
 staging
@@ -1373,38 +1869,17 @@ staging
 \shape italic
 stage
 \shape default
- foi informado por um médico, em 74.4% dos casos o sistema concordou com
- ele
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-É isso mesmo?
-\end_layout
-
-\end_inset
-
-.
- É importante salientar que, em todos os casos, a diferença entre os médicos
- e o sistema foi de apenas um estágio
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-CORRETO ????
-\end_layout
-
-\end_inset
-
-.
+ foi informado por um médico, em 81.0% dos casos o sistema concordou com
+ ele.
+ É importante salientar que, mesmo quando o sistema divergiu dos médicos,
+ a diferença máxima entre eles foi de apenas um estágio.
  Discutimos os cenários de 
 \emph on
 staging
 \emph default
  dos pacientes com a ajuda do nosso especialista e parceiro do projeto do
  Radiology Department da Stanford University School of Medicine e ele achou
- os resultados muito bons com precisão e revocação próximo ao que se consegue
- entre médicos de diferentes hospitais.
+ os resultados muito bons.
 \end_layout
 
 \begin_layout Standard
@@ -1423,8 +1898,8 @@ rico.
 \emph on
 stages
 \emph default
- iniciais de câncer, como I, II, IIIA, o número de classificações incorrectas
- (i.e., falsos positivos e falsos negativos) foi muito pequeno.
+ iniciais de câncer, como I, II, IIIA, a porcentagem de classificações incorrect
+as (i.e., falsos positivos e falsos negativos) foi muito pequeno.
  Elas são representadas pela diagonal realçada da matriz (Figura 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -1433,34 +1908,18 @@ reference "fig:matrixconfusion"
 \end_inset
 
 ).
- 
-\shape italic
-Cancer stages
-\shape default
- mais avançados, como IIIB ou IVA, são descritos por conceitos relativamente
- mais complexos.
- Isso pode ser uma explicação para o fato do número de positivos verdadeiros
- no Estágio IIIB é menor que o Estágio IVA, por exemplo podemos ver na Figura
- 
+ Para estágios de câncer mais avançados, como IIIB ou IVA, ela foi maior
+ (Figura 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:histogram"
 
 \end_inset
 
- que, o número de verdadeiros positivos no Estágio IIIB é menor que o Estágio
- IVA
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Nao entendi essa sentença.
- Nao faz sentido com o gráfico.
-\end_layout
-
-\end_inset
-
-.
+).
+ Isso pode ter acontecido pelo fato desses estágios serem descritos por
+ conceitos relativamente mais complexos ou, simplesmente, por termos poucos
+ pacientes nesses estágios.
 \end_layout
 
 \begin_layout Standard
@@ -1480,17 +1939,7 @@ name "fig:matrixconfusion"
 
 \end_inset
 
-Matriz de Confusão da TNM multi-stage.
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-O que as intensidades represntam? precisao ou revocacao?
-\end_layout
-
-\end_inset
-
-
+Matriz de escala de cores para a Matriz de Confusão.
 \end_layout
 
 \end_inset
@@ -1542,7 +1991,10 @@ Stage III
 .
  Como esse foi o único caso em que a diferença entre o estágio dado pelo
  classificador e os médicos diferiu em mais de um nível, o especialista
- quis analisar o relatório e concordou com o estágio dado pelo classificador.
+ quis analisar o relatório e declarou que o estágio dado pelo classificador
+ estava correto.
+ Ele recomendou que não usássemos os dados desse paciente e, por isso, esse
+ relatório foi excluido dessa análise.
 \end_layout
 
 \begin_layout Standard
@@ -1582,8 +2034,8 @@ name "fig:histogram"
 
 \end_inset
 
-Resumo dos Histogramas para cada estágio após da clasificação TNM dos metadados
- dos 52 pacientes 
+Resumo dos Histogramas para cada estágio após da classificação TNM dos metadados
+ dos 51 pacientes 
 \end_layout
 
 \end_inset
@@ -1606,227 +2058,6 @@ Resumo dos Histogramas para cada estágio após da clasificação TNM dos metada
 \end_inset
 
 
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Esse conteúdo, até o item 6.4, deve ser colocado mais cedo.
- Talvez no capitulo 2.
-\end_layout
-
-\end_inset
-
-Segundo 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "Faria2014"
-
-\end_inset
-
-, o sistema de 
-\emph on
-staging
-\emph default
- TNM tornou-se um dos sistemas de 
-\emph on
-staging
-\emph default
- patológico mais amplamente utilizados para carcinomas Hepato celular e
- foi validado para prever resultados pós-cirúrgicos em pacientes.
- As taxas de sobrevivência por 5 anos de pacientes com câncer de fígado,
- com base no sistema TNM, foram no stage I, 55%; stage II, 37%; e stage
- III, 16%
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Isso está certo? Me parecem muito baixas.
-\end_layout
-
-\end_inset
-
-.
- Portanto, podemos ver que existe uma relação entre o estágio clínico e
- as taxas de sobrevivência.
- A seguir são mostrados alguns exemplos, Figuras 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:examploIIIA"
-
-\end_inset
-
- e 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:exampleIIA"
-
-\end_inset
-
-, de classificação correta obtidos pelo classificador TNM que foi desenvolvido.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-placement H
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:examploIIIA"
-
-\end_inset
-
-A) Uma imagem axial CT, contrastada, apresenta múltiplos tumores HCC, identifica
-dos e anotados utilizando a ferramenta ePAD; B) O diagrama do 
-\shape italic
-stage
-\shape default
- IIIA mostra múltiplos HCCs com pelo menos um deles > 5 cm.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename ../figures/exemploIIIA.pdf
-	lyxscale 50
-	scale 50
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-fadaptada{Faria2014}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-A Figura 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:examploIIIA"
-
-\end_inset
-
- mostra múltiplos tumores de HCC (linhas verdes) com pelo menos um deles
- > 5 cm.
- Não houve envolvimento linfonodal regional ou metástase.
- Este paciente foi classificado corretamente no estágio TNM 
-\series bold
-IIIA 
-\series default
-(T3a, N0, M0) pelo classificador.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-placement H
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:exampleIIA"
-
-\end_inset
-
- A) Uma imagem axial CT, contrastada, apresenta um tumor HCC, identificado
- e anotado utilizando a ferramenta ePAD; B) O diagrama do 
-\shape italic
-stage
-\shape default
- II mostra um tumor HCC solitário com invasão vascular.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename ../figures/exemploII.pdf
-	lyxscale 50
-	scale 50
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-fadaptada{Faria2014}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-A figura 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:exampleIIA"
-
-\end_inset
-
- mostra um único tumor de HCC (linha verde) com micro invasão vascular,
- sem envolvimento de linfonodos regionais ou metástases.
- Esse paciente foi classificado corretamente no estágio TNM 
-\series bold
-II 
-\series default
-(T2, N0, M0) pelo classificador.
 \end_layout
 
 \begin_layout Section
@@ -1853,7 +2084,7 @@ Após demonstrar como o uso aa ontologia AIM4-O pode ser benéfico no processo
 \emph default
 testamos o classificador TNM com relatórios de 52 pacientes com câncer de
  fígado.
- Ele obteve resultados de precisão e revocação muito bons ( 84.3% e 74,4%
+ Ele obteve resultados de precisão e revocação muito bons (85.7% e 81,0%
  respetivamente), quando comparamos suas predições de estágios de câncer
  com o que foi reportado por médicos.
  

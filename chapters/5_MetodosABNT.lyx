@@ -212,7 +212,7 @@ key "Rubin2008"
 
 
 \begin_inset Note Note
-status collapsed
+status open
 
 \begin_layout Plain Layout
 Porque só agora uma ref para o epad? Coloque na primeira vez que falar dele
@@ -296,10 +296,6 @@ AIM4-O
 .
 \end_layout
 
-\begin_layout Subsection
-Ontologia AIM4-O
-\end_layout
-
 \begin_layout Standard
 A ontologia 
 \series bold
@@ -315,7 +311,7 @@ reference "fig:aim3hakan"
  e define a codificação OWL2 do modelo de dados AIM 4.0.
  Seu objectivo é apoiar ferramentas de anotação de imagens 
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Plain Layout
 como o ePAD 
@@ -338,7 +334,7 @@ s que constituem a ontologia
 AIM4-O.
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Subsection
 Namespaces
 \end_layout
 
@@ -559,7 +555,7 @@ Basic Terms
 Expanded Terms.
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Subsection
 
 \series bold
 Basic Terms
@@ -574,17 +570,6 @@ Basic
  para imagens.
  Através dessas classes, pode-se descrever explicitamente o tipo de informação
  que se quer coletar com o modelo.
- Essa informação pode ser de várias disciplinas
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-disciplinas?
-\end_layout
-
-\end_inset
-
-.
  O usuário pode estender o modelo para atender suas necessidades, seguindo
  os critérios descritos na documentação do AIM
 \begin_inset Foot
@@ -610,21 +595,6 @@ Basic Term
 \begin_inset CommandInset citation
 LatexCommand citet
 key "Bulu"
-
-\end_inset
-
-.
- Em alguns casos, os nomes das classes (presentes nas versões 4.0 e 
-\emph on
-fundation model
-\emph default
- do AIM) foram mudados, adicionando-se o sufixo "Entity"
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-nenhuma classe abaixo tem entity no nome, esta correto?
-\end_layout
 
 \end_inset
 
@@ -779,559 +749,7 @@ Este diagrama representa as entidades como ovais e retângulos.
 
 \end_layout
 
-\begin_layout Standard
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Plain Layout
-No seguinte exemplo 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "lis:Representação-em-sintaxe"
-
-\end_inset
-
-descreve os recursos envolvidos na criação da uma anotaçao sobre uma imagen.
- O exemplo utiliza apenas termos de tipo 
-\series bold
-Basic
-\series default
- e serve como ponto para começar a elaboração que será descrita em secções
- subsequentes.
- 
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Newpage pagebreak
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset listings
-lstparams "language=XSLT,float,numbers=left,numberstyle={\tiny},basicstyle={\tiny\ttfamily},breaklines=true,showstringspaces=false,tabsize=6,backgroundcolor={\color{yellow!20}},fontadjust=true,frame={topline}"
-inline false
-status open
-
-\begin_layout Plain Layout
-
-@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
- 
-\end_layout
-
-\begin_layout Plain Layout
-
-@prefix aim:  <http://www.w3.org/ns/aim4#> .
- 
-\end_layout
-
-\begin_layout Plain Layout
-
-@prefix :     <http://example.org#> .
-\end_layout
-
-\begin_layout Plain Layout
-
-Individual: 1.2.288.3.2205383238.1512.1207945935.1
-\end_layout
-
-\begin_layout Plain Layout
-
-    Types:                        ImageAnnotation          
-\end_layout
-
-\begin_layout Plain Layout
-
-    Facts:        
-\end_layout
-
-\begin_layout Plain Layout
-
-     aim:hasGeometricShape        :Polyline,      	
-\end_layout
-
-\begin_layout Plain Layout
-
-     aim:hasCalculation           :1.5465798.46468.4566874,      
-\end_layout
-
-\begin_layout Plain Layout
-
-     aim:hasImageReference        :1.3.6.1.4.1.9328.50.1.10607,
-\end_layout
-
-\begin_layout Plain Layout
-
-     aim:hasAnatomicEntity        :Lung,
-\end_layout
-
-\begin_layout Plain Layout
-
-     aim:hasImagingObservation    :Conspicuity,      		
-\end_layout
-
-\begin_layout Plain Layout
-
-     aim:uniqueIdentifier         "1.2.288.3.2205383238.1512.1207945935.1"^^xsd:string,
-      
-\end_layout
-
-\begin_layout Plain Layout
-
-     aim:dateTime                 "2008-04-11T15:32:15"^^xsd:dateTime,
-\end_layout
-
-\begin_layout Plain Layout
-
-.
-\end_layout
-
-\begin_layout Plain Layout
-
-Individual: Polyline
-\end_layout
-
-\begin_layout Plain Layout
-
-    Types:                         GeometricShape
-\end_layout
-
-\begin_layout Plain Layout
-
-.
-\end_layout
-
-\begin_layout Plain Layout
-
-Individual: 1.3.6.1.4.1.9328.50.1.10607
-\end_layout
-
-\begin_layout Plain Layout
-
-    Types:						 ImageReference
-\end_layout
-
-\begin_layout Plain Layout
-
-    Facts:
-\end_layout
-
-\begin_layout Plain Layout
-
-     type                         "DICOMImageReference"^^xsd:string
-\end_layout
-
-\begin_layout Plain Layout
-
-.
-\end_layout
-
-\begin_layout Plain Layout
-
-Individual: 1.5465798.46468.4566874
-\end_layout
-
-\begin_layout Plain Layout
-
-    Types:						Calculation
-\end_layout
-
-\begin_layout Plain Layout
-
-    Facts:
-\end_layout
-
-\begin_layout Plain Layout
-
-     aim:hasCalculationResult     :1.5465798.46468,
-\end_layout
-
-\begin_layout Plain Layout
-
-     aim:description              "Linear Measurement"^^xsd:string,
-\end_layout
-
-\begin_layout Plain Layout
-
-     aim:uid                      "1.5465798.46468.4566874"^^xsd:string,  
-    
-\end_layout
-
-\begin_layout Plain Layout
-
-.
-\end_layout
-
-\begin_layout Plain Layout
-
-Individual: 1.5465798.46468
-\end_layout
-
-\begin_layout Plain Layout
-
-    Types:						ExtendedCalculationResult
-\end_layout
-
-\begin_layout Plain Layout
-
-    Facts:
-\end_layout
-
-\begin_layout Plain Layout
-
-     aim:hasCalculationData       :1.5465798,
-\end_layout
-
-\begin_layout Plain Layout
-
-     aim:type                     "ExtendedCalculationResult"^^xsd:string
-\end_layout
-
-\begin_layout Plain Layout
-
-.
-     
-\end_layout
-
-\begin_layout Plain Layout
-
-Individual: 1.5465798
-\end_layout
-
-\begin_layout Plain Layout
-
-    Types:						CalculationData
-\end_layout
-
-\begin_layout Plain Layout
-
-    Facts:
-\end_layout
-
-\begin_layout Plain Layout
-
-     aim:values                     3.3422492f^^xsd:float,      
-\end_layout
-
-\begin_layout Plain Layout
-
-.
-\end_layout
-
-\begin_layout Plain Layout
-
-Indivual: Lung
-\end_layout
-
-\begin_layout Plain Layout
-
-	Type:						 AnatomicEntity
-\end_layout
-
-\begin_layout Plain Layout
-
-    Facts:
-\end_layout
-
-\begin_layout Plain Layout
-
-     aim:codeMeaning                 "LUNG"^^xsd:string, 
-\end_layout
-
-\begin_layout Plain Layout
-
-     aim:codeValue                   "REX0001"^^xsd:string, 
-\end_layout
-
-\begin_layout Plain Layout
-
-     aim:codingSchemeDesignator      "RADLEX"^^xsd:string,
-\end_layout
-
-\begin_layout Plain Layout
-
-.
-\end_layout
-
-\begin_layout Plain Layout
-
-Indivual: Conspicuity
-\end_layout
-
-\begin_layout Plain Layout
-
-	Type:						 ImagingObservation
-\end_layout
-
-\begin_layout Plain Layout
-
-    Facts:
-\end_layout
-
-\begin_layout Plain Layout
-
-     aim:ImagingObservationCharacteristic :LIDC Soft Tissue
-\end_layout
-
-\begin_layout Plain Layout
-
-	 aim:codeMeaning                   "Conspicuity"^^xsd:string, 
-\end_layout
-
-\begin_layout Plain Layout
-
-	 aim:codeValue                     "REX4001"^^xsd:string, 
-\end_layout
-
-\begin_layout Plain Layout
-
-	 aim:codingSchemeDesignator        "RADLEX"^^xsd:string,
-\end_layout
-
-\begin_layout Plain Layout
-
-.
-\end_layout
-
-\begin_layout Plain Layout
-
-Indivual: LIDC Soft Tissue
-\end_layout
-
-\begin_layout Plain Layout
-
-	Type:						   ImagingObservationCharacteristic
-\end_layout
-
-\begin_layout Plain Layout
-
-    Facts:
-\end_layout
-
-\begin_layout Plain Layout
-
-     aim:codeMeaning                   "LIDC Soft Tissue"^^xsd:string, 
-\end_layout
-
-\begin_layout Plain Layout
-
-     aim:codeValue                     "REX4021"^^xsd:string, 
-\end_layout
-
-\begin_layout Plain Layout
-
-     aim:codingSchemeDesignator        "RADLEX"^^xsd:string,
-\end_layout
-
-\begin_layout Plain Layout
-
-.
-\end_layout
-
-\begin_layout Plain Layout
-
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Representação em sintaxe Manchester do individuo 1.2.288.3..
- que representa uma anotação semântica em uma imagem 
-\begin_inset CommandInset label
-LatexCommand label
-name "lis:Representação-em-sintaxe"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-O exemplo 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "lis:Representação-em-sintaxe"
-
-\end_inset
-
- descreve uma anotação semântica
-\series bold
- 
-\series default
-representado como um individuo 
-\series bold
-
-\begin_inset Quotes eld
-\end_inset
-
-:1.2.288.3...
-\begin_inset Quotes erd
-\end_inset
-
-
-\series default
- da classe
-\series bold
- "AIM:ImageAnnotation"
-\series default
- que captura da imagem; A informação gráfica (coordenadas espaciais), o
- tamanho, a localização e a descrição da anotação feita na imagem, através
- dos indivíduos:
-\series bold
- 
-\begin_inset Quotes eld
-\end_inset
-
-:Polyline
-\begin_inset Quotes erd
-\end_inset
-
-, 
-\begin_inset Quotes eld
-\end_inset
-
-:LUNG
-\begin_inset Quotes erd
-\end_inset
-
-, 
-\begin_inset Quotes eld
-\end_inset
-
-:1.5465798.46468.4566874
-\begin_inset Quotes erd
-\end_inset
-
- cm, 
-\begin_inset Quotes eld
-\end_inset
-
-:Conspicuity,Internal Structure
-\begin_inset Quotes erd
-\end_inset
-
-, 
-\series default
-respectivamente
-\series bold
-.
-
-\series default
- A ilustração na Figura 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:example1aim3"
-
-\end_inset
-
-, mostra como esses indivíduos do exemplo 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:example1aim3"
-
-\end_inset
-
- se relacionam uns com os outros.
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Newpage pagebreak
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Float figure
-placement H
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:example1aim3"
-
-\end_inset
-
-Ilustração gráfica do exemplo 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "lis:Representação-em-sintaxe"
-
-\end_inset
-
- onde as 9 
-\series bold
-classes base
-\series default
- do modelo e seus individuos são mostrados.
- Ovais e retângulos representam entidades e as propriedades são mostrados
- em cor vermelho.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\noindent
-\align center
-\begin_inset Graphics
-	filename ../figures/AIM3example.pdf
-	lyxscale 50
-	scale 21
-	rotateAngle 270
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\paragraph_spacing onehalf
-\noindent
-\align center
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-fautor
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Subsubsection
+\begin_layout Subsection
 
 \series bold
 Expanded Terms
@@ -1342,6 +760,17 @@ Os termos apresentados nesta seção fornecem as classes adicionais que são
  necessárias para representar o modelo "AIM 4.0", esse modelo representa
  explicitamente resultados de lesão e medidas derivadas durante os ensaios
  clínicos.
+ Em alguns casos, os nomes das classes (presentes nas versões 4.0 e 
+\emph on
+fundation model
+\emph default
+ do AIM) foram mudados, adicionando-se o sufixo "Entity".
+ O que significa que essas classes são uma instância da classe abstrata
+ principal 
+\series bold
+AIM:Entity
+\series default
+.
  As classes adicionais encontram-se ilustrados na figura 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -1478,18 +907,6 @@ Entity
 \end_inset
 
 .
- 
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Você nao fala sobre isso no texto.
- Coloque lá tambem.
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \end_inset
@@ -1586,12 +1003,7 @@ Individual: 8ixmtfhbiqujozezrep1r90t1n0po8wxyfy5svzs
 
 \begin_layout Plain Layout
 
-	    aim:hasImageAnnotations     :9gs43xqj1kyl13lmega0zhoenzvgeakkprft8fw8,
-\end_layout
-
-\begin_layout Plain Layout
-
-.
+	    aim:hasImageAnnotations     :9gs43xqj1kyl13lmega0zhoenzvgeakkprft8fw8,.
 \end_layout
 
 \begin_layout Plain Layout
@@ -1653,12 +1065,7 @@ sd:string,
 
 \begin_layout Plain Layout
 
-        aim:name                   "Liver2"^^xsd:string
-\end_layout
-
-\begin_layout Plain Layout
-
-.
+        aim:name                   "Liver2"^^xsd:string.
 \end_layout
 
 \begin_layout Plain Layout
@@ -1684,12 +1091,7 @@ Individual: sj19n9gf050ap9uzkc2h98ye4l3rxd71jac28g3g
 \begin_layout Plain Layout
 
   aim:uniqueIdentifier             "sj19n9gf050ap9uzkc2h98ye4l3rxd71jac28g3g"^^x
-sd:string
-\end_layout
-
-\begin_layout Plain Layout
-
-.
+sd:string.
 \end_layout
 
 \begin_layout Plain Layout
@@ -1725,12 +1127,7 @@ d:string
 
 \begin_layout Plain Layout
 
-  aim:referencedFrameNumber       273
-\end_layout
-
-\begin_layout Plain Layout
-
-.
+  aim:referencedFrameNumber       273.
 \end_layout
 
 \begin_layout Plain Layout
@@ -1767,12 +1164,7 @@ Length,
 \begin_layout Plain Layout
 
       aim:uniqueIdentifier            "a4lpf1nncfbvh5dljf6gfw6r6i3om1ece6270nix"
-^^xsd:string
-\end_layout
-
-\begin_layout Plain Layout
-
-.
+^^xsd:string.
 \end_layout
 
 \begin_layout Plain Layout
@@ -1809,12 +1201,7 @@ ng,
 
 \begin_layout Plain Layout
 
-      aim:values                      1.7432112f
-\end_layout
-
-\begin_layout Plain Layout
-
-.
+      aim:values                      1.7432112f.
 \end_layout
 
 \begin_layout Plain Layout
@@ -1857,12 +1244,7 @@ sd:string,
 \begin_layout Plain Layout
 
       aim:uniqueIdentifier          "hojggsv5f543pzsffj8jbijgp11thm9qdjow4idd"^^
-xsd:string
-\end_layout
-
-\begin_layout Plain Layout
-
-.
+xsd:string.
 \end_layout
 
 \begin_layout Plain Layout
@@ -1915,12 +1297,7 @@ string,
 \begin_layout Plain Layout
 
   	aim:uniqueIdentifier           "g08jnm9ow79tijgj1br3q8wd89nq69epjdnxxo30"^^xs
-d:string
-\end_layout
-
-\begin_layout Plain Layout
-
-.
+d:string.
 \end_layout
 
 \begin_layout Plain Layout
@@ -2217,18 +1594,14 @@ OWL-DL
  de referência para a criação de ontologias de domínio específico como,
  por exemplo, em radiologia.
  Para demonstrar o uso das classes AIM4-O e suas propriedades, este documento
- usa um cenário de exemplos como acima mencionados.
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-??? nao entendi.
- Onde estao esses exemplos?
-\end_layout
+ usa um cenário de exemplos, Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:example1aim4"
 
 \end_inset
 
-
+.
 \end_layout
 
 \begin_layout Section
@@ -2700,7 +2073,7 @@ do câncer utilizando apenas a expressividade OWL (apenas OWL + SWRL).
 O staging de câncer é dividido em duas etapas principais.
  A primeira consiste em criar pontuações
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Plain Layout
 contagem???
@@ -2904,85 +2277,6 @@ parsing
 \emph default
  das anotações de imagem no formato AIM para criar indivíduos da ontologia
  AIM4-O.
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Não é possivel dizer isso e deletar o proximo parágrafo e a figura?
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-utilizou-se uma estrutura de dados como referencia para definir o valor
- de true ou false da propriedade 
-\series bold
-\emph on
-singleLesion
-\series default
-\emph default
-, a estrutura de dados e mostrada na Figura 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:estrutura"
-
-\end_inset
-
-.
- Esta estrutura de dados foi gerado como parte do processo de 
-\emph on
-parsing
-\emph default
- das anotações de imagem no formato XML para criar indivíduos da ontologia
- AIM4-O.
- 
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-placement H
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:estrutura"
-
-\end_inset
-
-é apresentada a definição da estrutura de dados gerado na etapa de 
-\emph on
-parsing 
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\noindent
-\align center
-\begin_inset Graphics
-	filename ../figures/TNM Staging Documentation.pdf
-	scale 70
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Standard
@@ -3182,17 +2476,7 @@ isAdjacentOrgan (OWL ObjectProperty): Indica se a lesão, presente no local
  "X", está perto de órgão "Y".
  De acordo com o critério de classificação TNM do câncer de fígado, considerou-s
 e como órgãos adjacentes ao fígado: o pâncreas, estômago, duodeno, fígado
- e cólon, 
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Nao da para ser etc aqui, sao esses ou nao sao?
-\end_layout
-
-\end_inset
-
- Figura 
+ e cólon, Figura 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:radlex"
