@@ -113,54 +113,54 @@ End
 \begin_body
 
 \begin_layout Standard
-O foco deste trabalho é a construção de classificador TNM que usa 
+O foco deste trabalho é a construção de um classificador TNM que usa 
 \shape italic
 reasoning
 \shape default
  em anotações contidas em imagens médicas.
  Este capítulo ira descrever a metodologia utilizada para alcançar esse
  fim.
- A nossa abordagem é composto por três tarefas: 
+ A nossa abordagem é composta por três tarefas: 
 \end_layout
 
 \begin_layout Itemize
-Na Seção 5.1 
+A transformação do modelo de informação AIM em uma representação ontológica
+ que define um modelo de informação semânticamente equivalente (Seção 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "sec:step1"
 
 \end_inset
 
-A transformação do modelo de informação AIM em uma representação ontológica
- que define um modelo de informação semânticamente equivalente.
+).
  
 \end_layout
 
 \begin_layout Itemize
-A seguir na seção 5.3 
+A criação das condições para implementar o reasoning baseado em regras TNM
+ utilizando instâncias OWL (Seção 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "sec:step3"
 
 \end_inset
 
-, é criado as condições para implementar o reasoning baseado em regras TNM
- que utilizam instâncias OWL(Ontologia Geral).
+,).
 \end_layout
 
 \begin_layout Itemize
-Finalmente, a secao 5.4 
+A representação formal necessária para
+\emph on
+ staging 
+\emph default
+do câncer utilizando apenas a expressividade OWL + SWRL (Seção 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "sec:step4"
 
 \end_inset
 
-, descreve a representação formal necessária para
-\emph on
- staging 
-\emph default
-do câncer utilizando apenas expressividade OWL + SWRL.
+).
 \end_layout
 
 \begin_layout Section
@@ -175,62 +175,32 @@ name "sec:step1"
 \end_layout
 
 \begin_layout Standard
-A fim de executar inferência e classificação a partir de anotações e os
- metadados de marcação de imagem baseados no modelo AIM, nos precisamos
- de uma línguagem equipado com uma semântica formal.
+A fim de executar a inferência e classificação, a partir de anotações e
+ dos metadados de marcação de imagem (baseados no modelo AIM), precisamos
+ de uma linguagem que tenha uma semântica formal.
  Usando essa semântica, as inferências sobre ontologias e seus indivíduos
  podem ser feitas.
- Neste contexto a 
-\emph on
-Web Ontology Language 
-\emph default
-OWL 
-\begin_inset CommandInset nomenclature
-LatexCommand nomenclature
-symbol "OWL"
-description "Ontology Web Languaje"
-
-\end_inset
-
- descreve uma linguagem para construção de uma representação ontológica
- semanticamente equivalente de um modelo de informação, tal como por exemplo
- o modelo de informação 
-\emph on
-Annotation and Image Markup
-\emph default
- AIM 
-\begin_inset CommandInset nomenclature
-LatexCommand nomenclature
-symbol "AIM"
-description "Annotation and Image Markup"
-
-\end_inset
-
-.
- Com base no exposto, neste trabalho transformamos o modelo de dados AIM
- em uma representação ontológica equivalente, usando OWL2.
+ Nesse contexto, a linguagem OWL permite a construção de uma representação
+ ontológica semanticamente equivalente a um modelo de informação, tal como,
+ por exemplo, o modelo de informação usado em AIM.
+ Com base no exposto, optamos neste trabalho por transformar o modelo de
+ dados AIM em uma representação ontológica equivalente em OWL (versão 2).
 \end_layout
 
 \begin_layout Standard
 Essa transformação foi realizada através da criação de classes e propriedades
- no OWL 
-\begin_inset CommandInset nomenclature
-LatexCommand nomenclature
-symbol "OWL"
-description "Ontology Web Languaje"
-
-\end_inset
-
-, resultando assim compreensível pelo usuário e adequado para inferência.
- Nós desenvolvemos uma ontologia com base no trabalho do Hakan Bulu
+ em OWL, resultando em algo compreensível pelo usuário e adequado para inferênci
+a.
+ Desenvolvemos uma ontologia com base no trabalho de Hakan Bulu 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "Bulu"
 
 \end_inset
 
-, ele desenvolveu uma ontologia.
- No entanto, essa ontologia representa a versão 3.0 do AIM.
+.
+ Nesse trabalho, ele desenvolveu uma ontologia para representar a versão
+ 3.0 do AIM.
  Portanto, a fim de representar o modelo AIM na sua versão 4.0, que é a versão
  utilizada para armazenar anotações de imagem gerados por ferramentas como
  ePAD
@@ -240,14 +210,26 @@ key "Rubin2008"
 
 \end_inset
 
-, Nós expandimos a ontologia do Hakan Bulu mostrada na figura 
+
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+Porque só agora uma ref para o epad? Coloque na primeira vez que falar dele
+\end_layout
+
+\end_inset
+
+, modificamos a ontologia de Bulu (Figura 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:aim3hakan"
 
 \end_inset
 
- a seguir:
+).
+ Vale destacar que as versões 3.0 e 4.0 do AIM têm diferenças significativas
+ no modo como representam dados.
 \end_layout
 
 \begin_layout Standard
@@ -269,14 +251,14 @@ name "fig:aim3hakan"
 
 \end_inset
 
-Ontologia do Hakan Bulu 
+Ontologia de 
 \begin_inset CommandInset citation
-LatexCommand citep
+LatexCommand citet
 key "Bulu"
 
 \end_inset
 
- baseada no modelo AIM 3.0
+, baseada no modelo AIM 3.0.
 \end_layout
 
 \end_inset
@@ -297,38 +279,17 @@ key "Bulu"
 
 \end_layout
 
-\begin_layout Plain Layout
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-fautor
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
 \end_inset
 
 
 \end_layout
 
 \begin_layout Standard
-Esta extensão captura lesões e medidas derivadas durante os ensaios clínicos
- com base em imagens e posteriormente converte as anotações para instâncias
- da ontologia 
-\series bold
-AIM4-O
-\series default
-.
- Essas instâncias são necessárias para o análise das anotações com tecnologias
- de Web Semântica.
- A seguir, é descrito em detalhe a ontologia 
+Usando essa nova versão da ontologia (chamada AIM4-O), capturamos lesões
+ e medidas derivadas durante os ensaios clínicos com base em imagens e,
+ posteriormente, as convertemos em instâncias de anotação na ontologia.
+ Essas instâncias são usadas durante a etapa de reasoning.
+ A seguir, é descrita em detalhes a ontologia 
 \series bold
 AIM4-O
 \series default
@@ -344,15 +305,15 @@ A ontologia
 \series bold
 AIM4-O
 \series default
-, foi desenvolvido como uma extensão da ontologia do Hakan Bulu 
+ foi desenvolvida como uma extensão da ontologia de Bulu 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:aim3hakan"
 
 \end_inset
 
- e define a codificação OWL2 do modelo de dados AIM 4.0 com o objectivo de
- apoiar as ferramentas de anotação de imagens 
+ e define a codificação OWL2 do modelo de dados AIM 4.0.
+ Seu objectivo é apoiar ferramentas de anotação de imagens 
 \begin_inset Note Note
 status open
 
@@ -369,9 +330,8 @@ key "Rubin2014"
 
 \end_inset
 
-especificando a semântica das observações feitas por especialistas e por
- conseguinte melhorar a precisão interpretativa dos dados é integrar assistência
- baseado em computador no processo de interpretação de imagens.
+especificando a semântica das observações feitas por especialistas e, desse
+ modo, melhorar a precisão interpretativa dos dados.
  As subseções a seguir descrevem o conjunto de classes, propriedades e restriçõe
 s que constituem a ontologia 
 \series bold
@@ -576,36 +536,20 @@ The AIM4-O namespace
 
 \end_layout
 
-\begin_layout Plain Layout
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-fautor
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
 \end_inset
 
 
 \end_layout
 
 \begin_layout Standard
-Dependendo de suas necessidades e de acordo com a quantidade de detalhes
- que deseja incluir na sua anotação da imagen, o usuário do AIM4-O as vezes
- só pode precisar usar partes de toda a ontologia.
- Por esta razão os termos da ontologia 
+Dependendo das necessidades e de acordo com a quantidade de detalhes que
+ se deseja incluir numa anotação de imagem, o usuário do AIM4-O pode usar
+ apenas partes da ontologia.
+ Por essa razão, os termos da ontologia 
 \series bold
 AIM4-O
 \series default
- (classes e propriedades) são agrupados neste documento em dois categorias
+ (classes e propriedades) são agrupados, neste documento, em duas categorias,
  a fim de fornecer uma descrição incremental: 
 \series bold
 Basic Terms
@@ -626,14 +570,25 @@ As classes
 \series bold
 Basic
 \series default
- fornecem a base para capturar anotaçoes e marcação de informações relevantes
+ fornecem a base para capturar anotações e marcações de informações relevantes
  para imagens.
- Através destas classes pode ser descrita explicitamente o tipo de informação
- que pode coletar o modelo, a informaçào pode ser de várias disciplinas.
- O usuario pode estender o modelo para atender suas necessidades, seguindo
- os critérios descritos no seguinte link 
-\begin_inset Foot
+ Através dessas classes, pode-se descrever explicitamente o tipo de informação
+ que se quer coletar com o modelo.
+ Essa informação pode ser de várias disciplinas
+\begin_inset Note Note
 status open
+
+\begin_layout Plain Layout
+disciplinas?
+\end_layout
+
+\end_inset
+
+.
+ O usuário pode estender o modelo para atender suas necessidades, seguindo
+ os critérios descritos na documentação do AIM
+\begin_inset Foot
+status collapsed
 
 \begin_layout Plain Layout
 https://wiki.nci.nih.gov/display/AIM/Extending+the+AIM+Model#ExtendingtheAIMModel-F
@@ -651,24 +606,34 @@ As classes tipo
 \series bold
 Basic Term
 \series default
- já foram definidas na ontologia fornecida por Hakan Bulu 
+ foram definidas na ontologia de 
 \begin_inset CommandInset citation
-LatexCommand citep
+LatexCommand citet
 key "Bulu"
 
 \end_inset
 
-, em alguns casos, essas classes só mudaram seus nomes adicionando o sufixo
- "Entity" em comparação com as versões 4.0 e 
+.
+ Em alguns casos, os nomes das classes (presentes nas versões 4.0 e 
 \emph on
 fundation model
 \emph default
- do AIM.
+ do AIM) foram mudados, adicionando-se o sufixo "Entity"
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+nenhuma classe abaixo tem entity no nome, esta correto?
+\end_layout
+
+\end_inset
+
+.
 
 \series bold
  
 \series default
-A seguir encontra-se uma descrição mais detalhada destas classes:
+A seguir temos uma descrição mais detalhada dessas classes:
 \end_layout
 
 \begin_layout Enumerate
@@ -676,8 +641,8 @@ A seguir encontra-se uma descrição mais detalhada destas classes:
 \series bold
 AIM:Calculation:
 \series default
- Representa os resultados do cálculo de uma anotação AIM.
- Os resultados dos cálculos podem ser o não ser diretamente associado com
+ representa os resultados do cálculo de uma anotação AIM.
+ Os resultados dos cálculos podem ser ou não diretamente associados com
  símbolos gráficos ou marcações.
 \end_layout
 
@@ -695,7 +660,7 @@ captura informações e representação gráfica para coordenadas espaciais de
 \series bold
 AIM:ImagingObservation: 
 \series default
-é a descrição de coisas que são vistos em uma imagem.
+é a descrição de coisas que são vistas em uma imagem.
 \end_layout
 
 \begin_layout Enumerate
@@ -703,7 +668,7 @@ AIM:ImagingObservation:
 \series bold
 AIM:ImagingObservationCharacteristics: 
 \series default
-a classe contém descritores da classe ImagingObservation.
+a classe contém descritores da classe AIM:ImagingObservation.
 \end_layout
 
 \begin_layout Enumerate
@@ -712,7 +677,7 @@ a classe contém descritores da classe ImagingObservation.
 AIM:Annotation: 
 \series default
 captura o nome, uma descrição geral da anotação AIM, o tipo de anotação
- via terminologia controlada, a data de criação, e uma referência para a
+ via terminologia controlada, a data de criação e uma referência para a
  versão ao modelo AIM usado.
 \end_layout
 
@@ -721,7 +686,7 @@ captura o nome, uma descrição geral da anotação AIM, o tipo de anotação
 \series bold
 AIM:ImageReference: 
 \series default
-representa uma imagem ou uma coleção de imagens que estão sendo anotada.
+representa uma imagem ou uma coleção de imagens que está sendo anotada.
  Os dois tipos possíveis de referências são DICOM e Uniform Resource Identifier
  (URI).
 \end_layout
@@ -732,8 +697,8 @@ representa uma imagem ou uma coleção de imagens que estão sendo anotada.
 AIM:ImageAnnotation:
 \series default
  captura informações sobre o significado da informação do pixel em imagens.
- É usado para anotar uma imagem ou imagens.
- Ele descreve uma única coisa encontrada.
+ É usada para anotar uma imagem ou imagens.
+ Ela descreve uma única coisa encontrada.
 \end_layout
 
 \begin_layout Enumerate
@@ -741,8 +706,8 @@ AIM:ImageAnnotation:
 \series bold
 AIM:CalculationResult: 
 \series default
-classe abstrata contém o tipo de resultado (por exemplo , binário, escalar,
- vetor, histograma, array ou matriz) ,unidade de medida e tipo de dados
+classe abstrata contém o tipo de resultado (por exemplo, binário, escalar,
+ vetor, histograma, array ou matriz), unidade de medida e tipo de dados
  codificados
 \series bold
 .
@@ -753,19 +718,19 @@ classe abstrata contém o tipo de resultado (por exemplo , binário, escalar,
 \series bold
 AIM:CalculationData: 
 \series default
-classe é usada para armazenar um valor de resultado.
+essa classe é usada para armazenar um valor de resultado.
 \end_layout
 
 \begin_layout Standard
 As 9 classes se relacionam entre si utilizando as propriedades mostradas
- na figura 
+ na Figura 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:classes-base"
 
 \end_inset
 
- a seguir:
+.
 \end_layout
 
 \begin_layout Standard
@@ -785,8 +750,8 @@ name "fig:classes-base"
 
 \end_inset
 
-O diagrama representa as entidades como ovais e retângulos.
- As propriedades são mostrados em cor vermelho.
+Este diagrama representa as entidades como ovais e retângulos.
+ As propriedades são mostradas nas setas (em vermelho).
  
 \end_layout
 
@@ -801,21 +766,8 @@ O diagrama representa as entidades como ovais e retângulos.
 \align center
 \begin_inset Graphics
 	filename ../figures/AIM3.pdf
-	lyxscale 40
+	lyxscale 30
 	scale 18
-
-\end_inset
-
-
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-fautor
-\end_layout
 
 \end_inset
 
@@ -1386,12 +1338,6 @@ Expanded Terms
 \end_layout
 
 \begin_layout Standard
-As classes deste tipo são uma extensão que representam explicitamente resultados
- de lesão e medidas derivadas durante os ensaios clínicos com base em imagens,
- as classes nesta categoria estão listados abaixo:
-\end_layout
-
-\begin_layout Standard
 Os termos apresentados nesta seção fornecem as classes adicionais que são
  necessárias para representar o modelo "AIM 4.0", esse modelo representa
  explicitamente resultados de lesão e medidas derivadas durante os ensaios
@@ -1418,10 +1364,10 @@ AIM:Entity:
 \begin_layout Enumerate
 
 \series bold
-AIM:AnnotationCollection: 
+AIM:AnnotationCollection:
 \series default
-que é um conceito abstrato de um recipiente que reúne um tipo de anotações
- como ImageAnnotation ou AnnotationOfAnnotation.
+ é um conceito abstrato de um recipiente que reúne um tipo de anotação,
+ como AIM:ImageAnnotation ou AIM:AnnotationOfAnnotation.
 
 \series bold
  
@@ -1430,9 +1376,9 @@ que é um conceito abstrato de um recipiente que reúne um tipo de anotações
 \begin_layout Enumerate
 
 \series bold
-AIM:imageAnnotationCollection: 
+AIM:ImageAnnotationCollection: 
 \series default
-armazena instâncias de ImagenAnnotation.
+armazena instâncias de AIM:ImagenAnnotation.
  Se associa com a classe Person que contém informação demográfica do paciente.
 \end_layout
 
@@ -1441,23 +1387,24 @@ armazena instâncias de ImagenAnnotation.
 \series bold
 AIM:ImagingPhysicalEntity
 \begin_inset Foot
-status open
+status collapsed
 
 \begin_layout Plain Layout
-A unica clase no modelo que foi alterada em totalidade do seu nome para
- 
+A única classe no modelo que teve seu nome totalmente alterado.
+ Era 
 \series bold
-AnatomicEntity na versao 3.0 do AIM
+AnatomicEntity 
+\series default
+na versao 3.0 do AIM.
 \end_layout
 
 \end_inset
 
 :
 \series default
- a classe armazena uma localização anatômica como um termo codificado (por
- exemplo, RID2662 , fêmur, RadLex ) a partir de um vocabulário controlado
- reconhecido como RadLex®, SNOMED CT®, Sistema Único de linguagem médica
- (UMLS).
+ armazena uma localização anatômica como um termo codificado (por exemplo,
+ RID2662 , fêmur, RadLex ) a partir de um vocabulário controlado reconhecido
+ como RadLex®, SNOMED CT® ou Sistema Único de linguagem médica (UMLS).
 \end_layout
 
 \begin_layout Enumerate
@@ -1465,7 +1412,7 @@ AnatomicEntity na versao 3.0 do AIM
 \series bold
 AIM:ImagingPhysicalCharacteristic: 
 \series default
-descreve ImagingPhysicalEntity tais como termo codificado.
+descreve AIM:ImagingPhysicalEntity tais como termo codificado.
 
 \series bold
  
@@ -1476,20 +1423,20 @@ descreve ImagingPhysicalEntity tais como termo codificado.
 \series bold
 AIM:MarkupEntity: 
 \series default
-captura informações textuais e representação gráfica como DICOM-SR e SCOORD3D
+captura informações textuais e representação gráfica, como DICOM-SR e SCOORD3D,
  para coordenadas espaciais tri e bi-dimensionais.
 \end_layout
 
 \begin_layout Standard
 As novas classes se relacionam entre si utilizando as propriedades mostradas
- na figura 
+ na Figura 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:classes-extend"
 
 \end_inset
 
- a seguir:
+.
 \end_layout
 
 \begin_layout Standard
@@ -1509,16 +1456,16 @@ name "fig:classes-extend"
 
 \end_inset
 
-Neste diagrama descreve-se as classes abstratas como ovais roxas envolvendo
- sua instância (imageAnnotationCollection, ImageAnnotation , geometricShape
+Neste diagrama, descrevemos as classes abstratas como ovais roxas envolvendo
+ sua instância (ImageAnnotationCollection, ImageAnnotation , GeometricShape
  ).
  Pode-se ver que o nome de algumas classes mudaram em comparação com o modelo
  
 \series bold
 basic
 \series default
- e agora eles tem um sufixo "Entity" o que significa que essas classes são
- uma instância da classe abstrata principal 
+ e agora elas têm um sufixo "Entity", o que significa que essas classes
+ são uma instância da classe abstrata principal 
 \series bold
 
 \begin_inset Quotes eld
@@ -1532,6 +1479,17 @@ Entity
 
 .
  
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Você nao fala sobre isso no texto.
+ Coloque lá tambem.
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -1544,27 +1502,8 @@ Entity
 \align center
 \begin_inset Graphics
 	filename ../figures/AIM4.pdf
-	lyxscale 40
+	lyxscale 30
 	scale 18
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\paragraph_spacing onehalf
-\noindent
-\align center
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-fautor
-\end_layout
 
 \end_inset
 
@@ -1577,7 +1516,14 @@ fautor
 \end_layout
 
 \begin_layout Standard
-O exemplo seguinte ilustra os termos 
+O exemplo na Listagem 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "lis:Representação-em-sintaxe-2"
+
+\end_inset
+
+ ilustra os termos 
 \series bold
 
 \begin_inset Quotes eld
@@ -1593,23 +1539,16 @@ Expanded
 \series bold
 OWL 
 \series default
-(em sintaxe Manchester) de um individuo da ontologia 
+(em sintaxe Manchester) de um indivíduo da ontologia 
 \series bold
 AIM4-O
 \series default
- que representa uma anotação sobre uma imagen.
- O exemplo 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "lis:Representação-em-sintaxe-2"
-
-\end_inset
-
- descreve os novos recursos de tipo 
+ representando uma anotação sobre uma imagem.
+ Esse exemplo também mostra os novos recursos, de tipo 
 \series bold
-Expanded Term
+Expanded Term,
 \series default
- usados na criação da uma anotaçao.
+ usados na criação da uma anotação.
  
 \end_layout
 
@@ -1990,8 +1929,8 @@ d:string
 
 \begin_layout Plain Layout
 Representação em sintaxe Manchester de um individuo 8ixmtfhbiqujoz..
- da ontologia AIM4-O, que representa uma anotação semântica em uma imagem
- 
+ da ontologia AIM4-O (indivíduo anônimo, sem URI).
+ Ele representa uma anotação semântica em uma imagem 
 \begin_inset CommandInset label
 LatexCommand label
 name "lis:Representação-em-sintaxe-2"
@@ -2017,47 +1956,37 @@ name "lis:Representação-em-sintaxe-2"
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Plain Layout
-Como no exemplo da seção anterior, 
-\end_layout
+A Listagem 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "lis:Representação-em-sintaxe-2"
 
 \end_inset
 
-Uma anotação e sua representação na forma de individuo
+ mostra uma anotação e sua representação, na forma de indivíduo
 \series bold
  AIM4-O
 \series default
- foi descrita no exemplo acima, mas neste exemplo podemos ver que destaca
- o surgimento de um novo conceito abstrato chamado 
+.
+ Nela podemos ver que se destaca o surgimento de um novo conceito abstrato,
+ chamado 
 \series bold
-"ImageAnnotationCollection
+ImageAnnotationCollection
 \series default
-", ele é um recipiente que armazena instâncias AIM (ImageAnnotations) a
- partir do mesmo estudo de imagem
+.
+ Ele é um recipiente que armazena instâncias AIM (ImageAnnotations) a partir
+ do mesmo estudo de imagem
 \series bold
 .
  
 \series default
-Entre algumas 
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Plain Layout
-outras diferenças em contraste com o exemplo da seção anterior
-\end_layout
-
-\end_inset
-
-características mais salientes podemos citar: o surgimento de dataProperties
- como 
+Entre algumas características mais salientes podemos citar o surgimento
+ de dataProperties, como 
 \series bold
 typeCode
 \series default
-, que é um atributo que pode capturar informações sobre terminologia controloda
- em um esquema de codificação simplificado; (codeSystemName=
+, que é um atributo que pode capturar informações sobre terminologias controlada
+s em um esquema de codificação simplificado (codeSystemName=
 \series bold
 RadLex
 \series default
@@ -2069,30 +1998,30 @@ liver
 \series bold
 RID58
 \series default
-,codeSystemVersion=).
+, codeSystemVersion=).
  
 \end_layout
 
 \begin_layout Standard
-Uma ilustração gráfica do exemplo 
+Uma ilustração gráfica da Listagem 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "lis:Representação-em-sintaxe-2"
 
 \end_inset
 
-, mostra como as classes de tipo
+ mostra como as classes de tipo
 \series bold
  Extended
 \series default
- referem se uma a otra na figura 
+ referem-se umas às outras (Figura 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:example1aim4"
 
 \end_inset
 
-.
+).
 \end_layout
 
 \begin_layout Standard
@@ -2112,22 +2041,23 @@ name "fig:example1aim4"
 
 \end_inset
 
-ilustração gráfica do exemplo 
+Ilustração gráfica da Listagem 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "lis:Representação-em-sintaxe-2"
 
 \end_inset
 
- onde as classes de tipo
+.
+ Classes de tipo
 \series bold
  Extended
 \series default
- e seus individuos são mostrados.
- Ovais e retângulos representam entidades e as propriedades são mostrados
- em cor vermelho.
- A figura mostra entidades ovais cercado por linhas pontilhadas, o que significa
- que estas entidades são classes abstratas de tipo 
+ e seus indivíduos são mostrados.
+ Ovais e retângulos representam entidades e as propriedades são mostradas
+ em setas (cor vermelha).
+ Entidades ovais, cercado por linhas pontilhadas, são classes abstratas
+ de tipo 
 \series bold
 Entity.
 \end_layout
@@ -2142,28 +2072,9 @@ Entity.
 \align center
 \begin_inset Graphics
 	filename ../figures/AIM4example.pdf
-	lyxscale 50
+	lyxscale 30
 	scale 19
 	rotateAngle 270
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\paragraph_spacing onehalf
-\noindent
-\align center
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-fautor
-\end_layout
 
 \end_inset
 
@@ -2176,43 +2087,29 @@ fautor
 \end_layout
 
 \begin_layout Standard
-Neste trabalho, além de adicionar as novas classes, nós também adicionamos
- algumas propriedades de objetos "
-\series bold
-ObjectProperties
-\series default
-" e de dados "
-\series bold
-DataProperties
-\series default
-".
- A fim de conseguir isso, decidimos criar um conjunto de novas relações
- como: 
+Neste trabalho, além de adicionar as novas classes, também foram adicionadas
+ propriedades de objetos (OWL ObjectProperties) e de dados (OWL DataProperties).
+ Foi criado um conjunto de novas relações, como 
 \series bold
 \emph on
 isImageStudyOf; isImageReferenceOf; hasAnnotations
 \series default
-;
 \emph default
- que foram adicionados à ontologia do Hakan Bulu 
+, que foram adicionadas à ontologia de Bulu 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:aim3hakan"
 
 \end_inset
 
- e fazem parte da nova ontologia 
-\series bold
-AIM4-O
-\series default
 .
- O objectivo destas relações é para adicionar à 
+ O objectivo dessas relações é adicionar à 
 \series bold
 AIM4-O
 \series default
- a maior expressividade em tarefas de classificação complexas, tal como
- os critérios do clasificação TNM.
- Cada um de essas relações é uma propriedade inverso funcional das propiedades:
+ uma maior expressividade em tarefas de classificação complexas, tal como
+ os critérios de classificação TNM.
+ Cada uma dessas relações é uma propriedade funcional inversa das propriedades:
  
 \series bold
 hasImageStudy
@@ -2226,19 +2123,19 @@ hasImageReference
  hasPerson
 \series default
  respectivamente, de modo que eles só pode ter um valor.
- Mais formalmente se estabelecermos que: 
+ Mais formalmente, se estabelecermos que 
 \emph on
 hasAnnotations
 \emph default
- é 
+ é uma 
 \emph on
-:inverseFunctionalProperty
+inverseFunctionalProperty
 \emph default
  de 
 \emph on
 hasPerson
 \emph default
- podemos dizer que não pode haver duas pessoas diferentes, com a mesma anotação.
+ não podem haver duas pessoas diferentes com a mesma anotação.
 \end_layout
 
 \begin_layout Standard
@@ -2258,16 +2155,17 @@ name "fig:objectPropertiesAIM4"
 
 \end_inset
 
- A figura mostra as Object Properties adicionadas à ontologia do Hakan Bulu
- e fazem parte da nova ontologia 
+ OWL ObjectProperties adicionadas à ontologia de Bulu e que fazem parte
+ da nova ontologia 
 \series bold
 AIM4-O
 \series default
-, podemos ver na figura o ObjectProperty 
+.
+ Pode-se ver que a OWL ObjectProperty 
 \series bold
 hasAnnotations
 \series default
- como propiedade funcional inversa da propiedade 
+ é uma propriedade funcional inversa da propriedade 
 \series bold
 hasPerson
 \series default
@@ -2284,28 +2182,9 @@ hasPerson
 \align center
 \begin_inset Graphics
 	filename ../figures/inversefunctional.pdf
-	lyxscale 50
+	lyxscale 40
 	scale 22
 	rotateOrigin center
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\paragraph_spacing onehalf
-\noindent
-\align center
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-fautor
-\end_layout
 
 \end_inset
 
@@ -2318,14 +2197,14 @@ fautor
 \end_layout
 
 \begin_layout Standard
-
+A 
 \series bold
 AIM4-O
 \series default
- é uma ontologia leve que foi desenvolvido com a intenção de ser adotado
- em uma gama de aplicações o outras disciplinas relacionadas ao processamento
+ é uma ontologia leve que foi desenvolvida com a intenção de ser adotada
+ em uma gama de aplicações de outras disciplinas relacionadas ao processamento
  de metadados de imagem.
- 
+ A 
 \series bold
 AIM4-O
 \series default
@@ -2334,11 +2213,22 @@ AIM4-O
 OWL-DL
 \series default
 .
- Assim, a ontologia espera para ser usado directamente em aplicações, bem
- como servir como um modelo de referência para a criação de ontologias de
- domínio específico como por exemplo em radiologia.
- Para demonstrar o uso das classes AIM4-O e suas propriedades, esse documento
+ Ela pode ser usada diretamente em aplicações, bem como servir como um modelo
+ de referência para a criação de ontologias de domínio específico como,
+ por exemplo, em radiologia.
+ Para demonstrar o uso das classes AIM4-O e suas propriedades, este documento
  usa um cenário de exemplos como acima mencionados.
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+??? nao entendi.
+ Onde estao esses exemplos?
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section
@@ -2352,38 +2242,27 @@ name "sec:step3"
 
 \end_layout
 
-\begin_layout Subsection
-Desenvolver o mecanismo para transformar as anotações em XML para instâncias
- da ontologia AIM4-O.
-\end_layout
-
 \begin_layout Standard
-O segundo passo foi definir um mecanismo para transformar as anotaçoes no
- formato AIM-XML às suas equivalentes codificados en OWL(individuos da ontologia
- AIM4-O).
+A segunda tarefa, na construção de um classificador TNM, foi definir um
+ mecanismo para transformar anotações no formato AIM-XML às suas equivalentes
+ codificados em OWL (indivíduos da ontologia AIM4-O).
  Para isso, desenvolvemos um script para executar esta tarefa.
- O script usa a linguagem Groovy para mapear automaticamente documentos
+ Esse script usa a linguagem Groovy para mapear automaticamente documentos
  XML para instâncias das classes java
 \series bold
 -AIM
 \series default
 .
- As classes tipo java-AIM representan o conjunto de classes 
+ As classes tipo java-AIM representam o conjunto de classes Java baseadas
+ na representação UML do modeloAIM 4.0.
+ Posteriormente, a OWL-API
 \series bold
-Java
+ 
 \series default
- baseada na representaçao UML do modeloAIM 4.0.
- Posteriormente, o 
-\series bold
-OWL-api 
-\series default
-(o java API e implementação para criar, manipular e serializar Ontologias)
- foi usada para criar instâncias 
-\series bold
-OWL
-\series default
- destes classes Java, permitindo assim ao script processar fluxos de documentos
- XML e preencher uma base de conhecimento OWL com o seu conteúdo 
+(a API java usada para criar, manipular e serializar ontologias) foi usada
+ para criar instâncias OWL dessas classes Java, permitindo assim ao script
+ processar fluxos de documentos XML e preencher uma base de conhecimento
+ OWL com seu conteúdo, Figura 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:aim4individuos"
@@ -2410,7 +2289,7 @@ name "fig:aim4individuos"
 
 \end_inset
 
-Instâncias de anotações(individuos) AIM são mostrados no painel esquerdo,
+Instâncias de anotações (indivíduos) AIM, que são mostrados no painel esquerdo,
  e os detalhes e propriedades de uma instância são mostrados na direita.
 \end_layout
 
@@ -2424,7 +2303,7 @@ Instâncias de anotações(individuos) AIM são mostrados no painel esquerdo,
 \align center
 \begin_inset Graphics
 	filename ../figures/AIM4protegeindividuos.png
-	lyxscale 75
+	lyxscale 60
 	scale 32
 
 \end_inset
@@ -2432,51 +2311,36 @@ Instâncias de anotações(individuos) AIM são mostrados no painel esquerdo,
 
 \end_layout
 
-\begin_layout Plain Layout
-\paragraph_spacing onehalf
-\noindent
-\align center
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-fautor
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
 \end_inset
 
 
 \end_layout
 
 \begin_layout Standard
-O objectivo da representação OWL acima, é ter as condições para desenvolver
- mecanismos de reasoning baseados em regras e trabalhar com anotações do
- AIM.
- Para atingir o objetivo da classificação da lesões de câncer, usamos as
- subclasses, interseção, equivalência e disjunção entre as classes, object
- properties e algumas regras como mecanismos de raciocínio.
- Este processo será descrito na próxima etapa.
+O objetivo da representação OWL, Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:aim4individuos"
+
+\end_inset
+
+, é dar as condições para se desenvolver mecanismos de reasoning, baseados
+ em regras, para trabalhar com anotações AIM.
+ Para atingir o objetivo da classificação da lesões de câncer, usamos relações
+ de subclasse, interseção, equivalência e disjunção entre classes, OWL objectPro
+perties e algumas regras como mecanismos de raciocínio.
+ Este processo será descrito na terceira tarefa.
 \end_layout
 
 \begin_layout Standard
-A fim de fazer automaticamente o staging de um tipo de cancer apartir das
- imagens e suas anotações precisamos ter o apoio de uma ontologia capaz
- de especificar um domínio particular, neste caso o organo baseline afectado
- pelo cancer que vai ser seleccionado de acordo como o tipo de câncer que
- vão avaliar(neste trabalho vai ser o câncer de figado).
- Além disso, considerou-se necessário a inclusão de uma representação em
- OWL de uma parte do vocabulário Radlex, a fim de faciliar o trabalho de
- classificação e tratamento dos indivíduos da ontologya AIM4-O debido a
- que estes indivíduos têm terminologias de Radlex em sua estrutura.
- Finalmente, foi adicionado à ontologia gerada o conjunto de regras baseadas
+A fim de fazer automaticamente o staging de um tipo de câncer, precisamos
+ ter o apoio de uma ontologia capaz de especificar um domínio particular.
+ Neste caso, o órgão baseline afetado pelo câncer neste trabalho é o fígado.
+ Além disso, considerou-se necessário a inclusão de uma representação OWL
+ de parte do vocabulário Radlex, a fim de facilitar o trabalho de classificação
+ e tratamento de indivíduos da ontologia AIM4-O (já que eles usam terminologias
+ Radlex em sua estrutura).
+ Finalmente, foi adicionado à nova ontologia um conjunto de regras baseadas
  no sistema TNM.
  O resultado é uma 
 \series bold
@@ -2485,7 +2349,7 @@ Ontologia geral
 construída a partir das exigências acima mencionadas.
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Subsection
 Ontologia geral
 \end_layout
 
@@ -2494,7 +2358,7 @@ A
 \series bold
 ontologia geral
 \series default
- é dividido em 4 arquivo, como mostra a Figura 
+ é dividida em 4 arquivos, como mostra a Figura 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:ontologiaGeral"
@@ -2502,21 +2366,21 @@ reference "fig:ontologiaGeral"
 \end_inset
 
 .
- Os Arquivos contêm as seguintes informações:
+ Eles contêm as seguintes informações:
 \end_layout
 
 \begin_layout Enumerate
-A ontologia AIM4-O com os individuos obtidos na seção acima.
+A ontologia AIM4-O, com os indivíduos citados na seção acima.
 \end_layout
 
 \begin_layout Enumerate
-Os conceitos gerais do 
+Os conceitos gerais do TNM 
 \series bold
-TNM(
+(
 \series default
 regras SWRL e axiomas
 \series bold
-)
+).
 \end_layout
 
 \begin_layout Enumerate
@@ -2527,7 +2391,7 @@ key "Kokciyan2014"
 
 \end_inset
 
- ) 
+).
 \end_layout
 
 \begin_layout Enumerate
@@ -2541,7 +2405,7 @@ http://bioportal.bioontology.org/ontologies/RADLEX/classes.
 
 \end_inset
 
- 
+.
 \end_layout
 
 \begin_layout Standard
@@ -2561,9 +2425,9 @@ name "fig:ontologiaGeral"
 
 \end_inset
 
- O diagrama da ontologia geral, seus componentes TNM (regras e axiomas)
- e importações necessárias a fim de ter os mecanismos para classificar imagens
- de câncer de figado.
+ O diagrama da Ontologia Geral, seus componentes TNM (regras e axiomas)
+ e importações necessárias a fim de se ter os mecanismos para classificar
+ imagens de câncer de fígado.
 \end_layout
 
 \end_inset
@@ -2576,27 +2440,8 @@ name "fig:ontologiaGeral"
 \align center
 \begin_inset Graphics
 	filename ../figures/ontologiageral2.pdf
-	lyxscale 50
+	lyxscale 20
 	scale 15
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\paragraph_spacing onehalf
-\noindent
-\align center
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-fautor
-\end_layout
 
 \end_inset
 
@@ -2617,8 +2462,8 @@ Ontologia Geral
 .
 \end_layout
 
-\begin_layout Subsubsection
-ONLIRA (Ontologia de figado para Radiologia)
+\begin_layout Subsection
+ONLIRA (Ontologia de fígado para Radiologia)
 \end_layout
 
 \begin_layout Standard
@@ -2640,15 +2485,15 @@ https://bioportal.bioontology.org/ontologies/ONLIRA
 
 \end_inset
 
- visa modelar observações de imagem do domínio do fígado com ênfase em proprieda
-des e as relações entre o fígado, as veias hepáticas e lesões hepáticas.
+ e visa modelar observações de imagem no domínio do fígado com ênfase em
+ propriedades e relações entre o fígado, as veias hepáticas e lesões hepáticas.
  O desenho de ONLIRA baseou-se em sessões de elicitação com radiologistas.
  
 \end_layout
 
 \begin_layout Standard
-Partes desta ontologia foram utilizadas para representar a topografia do
- fígado descrito nas anotações AIM-XML gerado pelo ePAD.
+Partes dessa ontologia foram utilizadas para representar a topografia do
+ fígado, descrita nas anotações AIM-XML geradas pelo ePAD.
 \end_layout
 
 \begin_layout Standard
@@ -2668,7 +2513,7 @@ name "fig:onliraontology"
 
 \end_inset
 
-mostra as relações entre as classes e outros conceitos de ONLIRA utilizados
+Relações entre as classes e outros conceitos da ontologia ONLIRA utilizados
  neste trabalho.
 \end_layout
 
@@ -2690,68 +2535,49 @@ mostra as relações entre as classes e outros conceitos de ONLIRA utilizados
 
 \end_layout
 
-\begin_layout Plain Layout
-\paragraph_spacing onehalf
-\noindent
-\align center
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-fautor
-\end_layout
-
 \end_inset
 
 
 \end_layout
 
-\end_inset
-
-
-\end_layout
-
-\begin_layout Subsubsection
+\begin_layout Subsection
 Terminologia Radlex
 \end_layout
 
 \begin_layout Standard
 AIM fornece um esquema XML que descreve as estruturas anatômicas e observações
  visuais em imagens utilizando a terminologia RadLex.
- Foi usado partes de RadLex para representar essas estruturas anatômicas
- e representar critérios de classificação TNM em OWL.
+ Foram usadas partes do RadLex para representar essas estruturas anatômicas
+ e critérios de classificação TNM em OWL.
 \end_layout
 
 \begin_layout Standard
-Os critérios TNM referem-se a locais de entidades e estruturas anatômicas.
- Em seguida, é importante que a ontologia contém não apenas as estruturas
- anatómicas mencionados nos critérios de staging, mas também as partes ligadas
- direta e indiretamente a eles.
- Por exemplo, a fim de implementar os critérios N e M do TNM, nós adicionamos
- 2 Super classes: 
+Os critérios TNM referem-se a locais de entidades e estruturas anatômicas.É
+ importante que a ontologia contenha, não apenas as estruturas anatômicas
+ mencionados nos critérios de staging, mas também as partes ligadas direta
+ e indiretamente a elas.
+ Por exemplo, a fim de implementar os critérios N e M do TNM, adicionamos
+ duas super classes: 
 \series bold
 adjacentOrganGroup
 \series default
- que descreve o conjunto de órgãos adjacentes a um órgão principal ( neste
- caso o fígado) e 
+, que descreve o conjunto de órgãos adjacentes a um órgão principal (neste
+ caso o fígado), e 
 \series bold
 noadjacentOrganGroup
 \series default
- que descreve órgãos com base nos locais mais comuns de disseminação do
- tumor, conforme ao trabalho do 
+, que descreve órgãos com base nos locais mais comuns de disseminação do
+ tumor, conforme o trabalho de 
 \begin_inset CommandInset citation
-LatexCommand citep
+LatexCommand citet
 key "Faria2014"
 
 \end_inset
 
 .
- Como neste trabalho foi tomado como caso de estudo a classificacao do cancer
- de fígado, incluímos pulmões e ossos como órgãos no adjacentes, isso pode
- ser visto na Figura 
+ Como neste trabalho foi tomado, como caso de estudo, a classificação de
+ câncer de fígado, incluímos pulmões e ossos como órgãos adjacentes, Figura
+ 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:radlexmodule"
@@ -2778,8 +2604,8 @@ name "fig:radlexmodule"
 
 \end_inset
 
-módulo da ontologia Radlex e as classes que representam grupos de órgãos,
- tais como 
+Módulo da ontologia Radlex e classes que representam grupos de órgãos, tais
+ como 
 \series bold
 adjacentOrganGroup
 \series default
@@ -2800,6 +2626,7 @@ noadjacentOrganGroup
 \align center
 \begin_inset Graphics
 	filename ../figures/radlexmodule.pdf
+	lyxscale 60
 	scale 40
 
 \end_inset
@@ -2807,58 +2634,39 @@ noadjacentOrganGroup
 
 \end_layout
 
-\begin_layout Plain Layout
-\paragraph_spacing onehalf
-\noindent
-\align center
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-fautor
-\end_layout
-
 \end_inset
 
 
 \end_layout
 
-\end_inset
-
-
-\end_layout
-
-\begin_layout Subsubsection
-Criando classes do conceitos do sistema TNM 
+\begin_layout Subsection
+Criando Classes para Representar Conceitos do Sistema TNM 
 \end_layout
 
 \begin_layout Standard
 A fim de obter uma representação OWL de cada estágio TNM, precisamos de
  uma interpretação da sua definição.
  Embora não seja mencionado explicitamente, os critérios TNM são exclusivos,
- por isso as classes OWL correspondentes foram feitas disjuntas.
+ por isso as classes OWL correspondentes foram declaradas disjuntas.
  Por exemplo, o critério do staging T2 é representado pela união de duas
  restrições: a primeira, representa um único tumor (de qualquer tamanho)
- que tem crescido em vasos sanguíneos (classe 
+ que tenha crescido em vasos sanguíneos (classe 
 \series bold
 T2_a)
 \series default
-, ea segunda representa um único tumor não maior do que 5 cm (classe 
+, e a segunda, representa um único tumor não maior do que 5 cm (classe 
 \series bold
 T2_b
 \series default
-) respectivamente.
+).
 \end_layout
 
 \begin_layout Section
 Representação Formal do 
 \emph on
-staging
+Staging
 \emph default
- do câncer
+ de Câncer
 \begin_inset CommandInset label
 LatexCommand label
 name "sec:step4"
@@ -2875,49 +2683,51 @@ Nas seções anteriores, várias operações foram necessárias para melhorar
 Ontologia Geral
 \series default
 .
- Em primeiro lugar, nós adicionamos novas classes e propriedades para preencher
- a lacuna entre as características do tumor descritos no modelo AIM-xml
+ Em primeiro lugar, adicionamos novas classes e propriedades para preencher
+ a lacuna entre as características do tumor, descritas no modelo AIM-xml,
  e as classes presentes na ontologia AIM4-O.
- Em segundo lugar, fornecemos definições para: todos os estagios TNM; a
- topografia do órgãos como o fígado; parte da terminologia RadLex, a fim
- de representar os seus conhecimentos em OWL.
- Finalmente esta seção descreve a representação formal necessária para 
+ Em segundo lugar, fornecemos definições para todos os estágios TNM, para
+ a topografia de órgãos como o fígado e para parte da terminologia RadLex,
+ a fim de representar seus conhecimentos em OWL.
+ Esta seção descreve a representação formal necessária para 
 \emph on
 staging 
 \emph default
-do câncer (
-\emph on
-cancer staging
-\emph default
-) utilizando apenas expressividade OWL se possível (apenas OWL + SWRL).
-\end_layout
-
-\begin_layout Section
-Reasoning sobre lesões de câncer
+do câncer utilizando apenas a expressividade OWL (apenas OWL + SWRL).
 \end_layout
 
 \begin_layout Standard
-O staging do câncer é dividido em duas etapas principais: A primeira etapa
- consiste em dar uma contagem a partir da descrição do tumor (T); a propagação
- em gânglios linfáticos (N) e possível metástase (M).
- O segundo passo consiste em determinar o estágio de acordo com as pontuações
+O staging de câncer é dividido em duas etapas principais.
+ A primeira consiste em criar pontuações
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+contagem???
+\end_layout
+
+\end_inset
+
+ a partir da descrição do tumor (T); a propagação em gânglios linfáticos
+ (N) e possível metástase (M).
+ A segunda consiste em determinar o estágio de acordo com as pontuações
  anteriores.
 \end_layout
 
 \begin_layout Standard
 A fim de descobrir os limites da capacidade de OWL e as capacidades fornecidas
  pela adição de regras e axiomas, buscou-se definir formalmente e implementar
- as condições que exige o sistema TNM, usando apenas expressividade OWL
+ as condições que o sistema TNM exige usando-se apenas expressividade OWL
  + SWRL.
 \end_layout
 
 \begin_layout Standard
-Decidimos que as seguintes condições reflectiu um processo de staging desejável:
+Decidimos que as seguintes condições refletem um processo de staging desejável:
 \end_layout
 
 \begin_layout Description
-Condição 1: O staging do câncer deve considerar a existência de tumor solitário
- ou múltiplo no mesmo site.
+Condição 1: O staging deve considerar a existência de tumor solitário ou
+ múltiplo no mesmo site.
 \end_layout
 
 \begin_layout Description
@@ -2926,18 +2736,14 @@ Condição 2: O staging deve considerar se os tumores são maiores ou menores
 \end_layout
 
 \begin_layout Description
-Condição 3 : Staging deve considerar lesões em órgãos adjacentes.
+Condição 3 : O staging deve considerar lesões em órgãos adjacentes.
 \end_layout
 
-\begin_layout Subsubsection
-Representação formal das condições usando OWL
-\end_layout
-
-\begin_layout Subsubsection*
+\begin_layout Subsection
 
 \series bold
-Condição 1: "O staging do câncer deve considerar a existência de tumor solitário
- ou múltiplo no mesmo site"
+Condição 1: O staging deve considerar a existência de tumor solitário ou
+ múltiplo no mesmo site
 \end_layout
 
 \begin_layout Standard
@@ -2946,7 +2752,7 @@ A ontologia
 AIM4-O
 \series default
 , previamente desenvolvida, não tem mecanismos tais como classes, subclasses
- ou propriedades que nos permitem inferir se um paciente tem tumores simples
+ ou propriedades que nos permitam inferir se um paciente tem tumores simples
  ou múltiplos explicitamente.
  No caso de tumores múltiplos, construímos a seguinte regra 
 \series bold
@@ -2969,7 +2775,7 @@ DifferentFrom(?y,?z)\rightarrow MoreThanOneTumor(?x)\\
 \end_layout
 
 \begin_layout Standard
-Esta regra classifica um individuo como membro da classe 
+Essa regra classifica um indivíduo como membro da classe 
 \series bold
 \emph on
 :MorethanOneTumor
@@ -2983,21 +2789,21 @@ X
 \begin_inset Quotes erd
 \end_inset
 
- é referenciado por mais de uma anotaçao da imagem.
- Para classificar algo tão 
+ é referenciado por mais de uma anotação da imagem.
+ Para classificar algo como 
 \series bold
 \emph on
 :MorethanOneTumor
 \series default
 \emph default
-, precisávamos criar um novo conceito chamado: 
+, precisamos criar uma nova propriedade chamada 
 \series bold
 \emph on
 isImageStudyOf
 \series default
 \emph default
 .
- Este conceito é a inversa da Objectproperty 
+ Ela é o inverso da OWL ObjectProperty 
 \series bold
 \emph on
 hasImageStudy
@@ -3028,88 +2834,91 @@ a uma entidade
 \end_layout
 
 \begin_layout Standard
-A fim de classificar os pacientes com exatamente um tumor identificado.
- Nós não conseguimos encontrar axiomas ou regras que satisfazem esta exigência,
- porque 
+A fim de classificar os pacientes com exatamente um tumor identificado,
+ não conseguimos encontrar axiomas ou regras que satisfazem esta exigência,
+ porque OWL
 \series bold
-OWL 
+ 
 \series default
 tem uma pressuposição de mundo aberto
 \series bold
  
 \series default
-ou
-\series bold
- Open World
-\series default
-.
+ou Open World.
  
 \begin_inset Quotes eld
 \end_inset
 
-O mundo aberto significa que só porque nós não dizer algo, isso não significa
- que não é verdade
+O mundo aberto significa que, só porque não se disse que algo existe, isso
+ não significa que esse algo não existe
 \begin_inset Quotes erd
 \end_inset
 
 .
- Por exemplo, pode-se dizer que nós podemos descrever uma lesão de cancer
- em uma imagen usando a entidade de tipo 
+ Por exemplo, pode-se descrever uma lesão de câncer em uma imagem, usando
+ uma entidade de tipo 
 \series bold
 \emph on
 :ImagingObservation
 \series default
 \emph default
- do modelo AIM, mas, a menos que eu diga explicitamente que não há outras
- lesões nessa imagen, presume-se que pode haver outra lesão que eu não mencionei
- explicitamente.
+, mas, a menos que se diga explicitamente que não há outras lesões, presume-se
+ que podem haver outras que não foram mencionadas explicitamente.
 \end_layout
 
 \begin_layout Standard
-Para resolver o problema de mundo aberto(Open World), consideramos algumas
- alternativas como por exemplo: A necessidade de reformular a nossa ontologia
- para modelar 
+Para resolver esse problema de mundo aberto, consideramos algumas alternativas
+ como, por exemplo, reformular a ontologia AIM4-O para modelar 
 \series bold
 :
 \emph on
 hasImagingObservation
 \series default
 \emph default
- como uma classe, e não como uma relação ObjectProperty como actualmente
- na ontologia 
-\series bold
-AIM4-O
-\series default
-.
- Mas, isso não foi intuitivo para nós.
- Em vez disso, decidimos indicar o número de lesões de forma explícita através
- da criação de um novo conceito chamado: 
+ como uma classe e não uma relação.
+ Mas, não achamos essa alternativa intuitiva.
+ Em vez disso, decidimos indicar o número de lesões, de forma explícita,
+ através da criação de um novo conceito, chamado 
 \series bold
 \emph on
 singleLesion
 \series default
 \emph default
-, como uma ObjectProperty da entidade 
+, como uma OWL ObjectProperty de entidades 
 \series bold
 \emph on
 :ImageStudy
 \series default
 \emph default
 .
- Este conceito indica se o estudo descreve apenas uma lesão do câncer na
- imagen.
+ Esse conceito indica se o estudo descreve apenas uma lesão de câncer.
  Assumiu-se que o estudo descreve exatamente uma lesão câncer (
 \series bold
 "singleLesion { true}
 \series default
 "), se ele é referenciado por uma única anotação na imagem.
- Mas, Não foi possível formular o pressuposto acima usando apenas
-\series bold
- OWL
-\series default
-.
- Em vez disso, utilizou-se uma estrutura de dados como referencia para definir
- o valor de true o false da propiedade 
+ Mas, não é possível formular esse axioma usando apenas OWL.
+ Em vez disso, essa informação é gerada como parte do processo de 
+\emph on
+parsing
+\emph default
+ das anotações de imagem no formato AIM para criar indivíduos da ontologia
+ AIM4-O.
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Não é possivel dizer isso e deletar o proximo parágrafo e a figura?
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+utilizou-se uma estrutura de dados como referencia para definir o valor
+ de true ou false da propriedade 
 \series bold
 \emph on
 singleLesion
@@ -3127,7 +2936,7 @@ reference "fig:estrutura"
 \emph on
 parsing
 \emph default
- das anotacoes de imagem no formato XML para criar indivíduos da ontologia
+ das anotações de imagem no formato XML para criar indivíduos da ontologia
  AIM4-O.
  
 \end_layout
@@ -3171,24 +2980,6 @@ parsing
 
 \end_layout
 
-\begin_layout Plain Layout
-\noindent
-\align center
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-fautor
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
 \end_inset
 
 
@@ -3216,17 +3007,18 @@ equal(?val,true)\rightarrow singleTumor(?X)\\
 
 \end_layout
 
-\begin_layout Subsubsection*
-Condição 2: "O staging deve considerar se os tumores são maiores ou menores
- que certos tamanhos "X" em cm"
+\begin_layout Subsection
+Condição 2: O staging deve considerar se os tumores são maiores ou menores
+ que certos tamanhos "X" em cm
 \end_layout
 
 \begin_layout Standard
-Esta condição é facilmente implementado, obtendo o valor da propiedade "
+Esta condição é facilmente implementada, obtendo-se o valor da propriedade
+ 
 \emph on
 values
 \emph default
-" pertenecente à entidade
+ pertenecente à entidades do tipo
 \series bold
  
 \emph on
@@ -3235,13 +3027,13 @@ values
 .
 
 \series default
- Esta entidade está relacionada com outra entidade de tipo 
+ Este tipo de entidade está relacionado com outra entidade, de tipo 
 \series bold
 \emph on
 :ImageAnnotation
 \series default
 \emph default
- através da propriedade 
+, através da propriedade 
 \series bold
 \emph on
 hasCalculationEntity
@@ -3249,7 +3041,7 @@ hasCalculationEntity
 \emph default
 .
  A fim de satisfazer esta condição de medição, formulamos as seguintes regras
- tomando "X=5" cm como tamanho para o TNM do fígado(na notação SWRL): 
+ tomando "X=5" cm como tamanho para o TNM do fígado (na notação SWRL): 
 \begin_inset Separator latexpar
 \end_inset
 
@@ -3306,13 +3098,13 @@ values(?z,?val)\land greaterThan(?val,5)\rightarrow MoreThan5cmTumor(?x)\\
 
 \end_layout
 
-\begin_layout Subsubsection*
-Condição 3 : "Staging deve considerar lesões em órgãos adjacentes"
+\begin_layout Subsection
+Condição 3 : Staging deve considerar lesões em órgãos adjacentes
 \end_layout
 
 \begin_layout Standard
-Para satisfazer o critério mais complicado de classificação tivemos que
- considerar o fato de que uma lesão pode espalhar-se no corpo.
+Para satisfazer este critério, o mais complicado para classificação, tivemos
+ que considerar o fato de que uma lesão pode espalhar-se no corpo.
  Para isso, foi necessário criar um novo conceito baseado na classe 
 \series bold
 \emph on
@@ -3331,33 +3123,34 @@ reference "fig:onliraontology"
 \end_inset
 
 .
- Enquanto a classe 
+ A classe 
 \series bold
 \emph on
 :Lesion
 \series default
 \emph default
- lida com muitas características importantes de uma lesão tais como: a composiçã
-o, densidade, tamanho, forma, etc, infelizmente isso não é suficiente para
- satisfazer os criterios da classificação TNM.
- Por esta razão, foram adicionados 3 propriedades a ele e como resultado
- definimos un novo conceito, a subclasse 
+ lida com muitas características importantes de uma lesão, tais como a composiçã
+o, densidade, tamanho e forma, mas infelizmente isso não é suficiente para
+ satisfazer os critérios da classificação TNM.
+ Por essa razão, foram adicionadas 3 propriedades a ela e, como resultado,
+ definimos um novo conceito, a subclasse 
 \series bold
 \emph on
 :OutsideLesion
 \series default
 \emph default
-, As 3 novas propriedades são:
+.
+ As 3 novas propriedades são:
 \end_layout
 
 \begin_layout Description
-hasLocation (ObjectProperty): Esta propriedade indica a localização das
- lesões com base na taxonomia 
+hasLocation (OWL ObjectProperty): indica a localização das lesões com base
+ na taxonomia 
 \series bold
 Radlex
 \series default
 .
- A propiedade 
+ A propriedade 
 \series bold
 \emph on
 hasLocation
@@ -3369,27 +3162,37 @@ hasLocation
 :Lesion
 \series default
 \emph default
- da Ontologia Onlira aos membros da classe 
+, da Ontologia Onlira, às instâncias da classe 
 \series bold
 \emph on
 :AnatomicalEntity
 \series default
 \emph default
- do modulo Radlex usado neste trabalho.
+, do módulo Radlex (usado neste trabalho).
 \end_layout
 
 \begin_layout Description
-isRegionalLymphNodeAffected (dataProperty): Especifica se uma lesão está
- localizada em algum nódulo linfático.
- Esse conceito foi útil para os critérios de classificação como N0 e N1.
+isRegionalLymphNodeAffected (OWL DataProperty): especifica se uma lesão
+ está localizada em algum nódulo linfático.
+ Esse conceito foi útil para critérios de classificação como N0 e N1.
 \end_layout
 
 \begin_layout Description
-isAdjacentOrgan (ObjectProperty): Indica se a lesão presente no local "X"
- está perto de órgão "Y".
- De acordo com o critério de classificação TNM do cancer de fígado, considerou-s
-e como órgãos adjacentes ao fígado: o pâncreas, estômago, duodeno, fígado,
- cólon, etc como na figura 
+isAdjacentOrgan (OWL ObjectProperty): Indica se a lesão, presente no local
+ "X", está perto de órgão "Y".
+ De acordo com o critério de classificação TNM do câncer de fígado, considerou-s
+e como órgãos adjacentes ao fígado: o pâncreas, estômago, duodeno, fígado
+ e cólon, 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Nao da para ser etc aqui, sao esses ou nao sao?
+\end_layout
+
+\end_inset
+
+ Figura 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:radlex"
@@ -3397,8 +3200,8 @@ reference "fig:radlex"
 \end_inset
 
 .
- Nós agrupamos esses conceitos(usando a taxonomia radlex), criando duas
- novas classes 
+ Agrupamos esses conceitos (usando a taxonomia Radlex), criando duas novas
+ classes 
 \series bold
 "
 \emph on
@@ -3432,10 +3235,10 @@ AdjacentOrganGroup\subseteq RadlexEntity.Organ\\
 \end_layout
 
 \begin_layout Standard
-
+As classes
 \series bold
 \emph on
-:AdjacentOrganGroup
+ :AdjacentOrganGroup
 \series default
 \emph default
  e 
@@ -3444,7 +3247,7 @@ AdjacentOrganGroup\subseteq RadlexEntity.Organ\\
 :NoAdjacentOrganGroup
 \series default
 \emph default
-, indicam se um órgão é considerado adjacente ou não em referência ao órgão
+ indicam se um órgão é considerado adjacente ou não em referência ao órgão
  pai.
  O órgão pai representa o tipo do
 \series bold
@@ -3453,13 +3256,13 @@ AdjacentOrganGroup\subseteq RadlexEntity.Organ\\
 \series default
 staging
 \emph default
- de cancer, para o nosso estudo de caso o órgão pai é o fígado.
+ de câncer, neste trabalho, o órgão pai é o fígado.
  Finalmente, construímos a seguinte regra (em notação SWRL) para classificar
- se uma lesao fora do figado 
+ se uma lesão fora do fígado 
 \series bold
 (
 \series default
-representado pelo conceito
+representada pelo conceito
 \series bold
  
 \emph on
@@ -3490,14 +3293,14 @@ hasLocation(?x,?y)\rightarrow isAdjacentOrgan(?x,true)\\
 \end_layout
 
 \begin_layout Standard
-Neste ponto, uma vez formulados os criterios acima adequadamente usando
- 
+Neste ponto, uma vez que os critérios anteriores foram adequadamente codificados
+, usando 
 \series bold
 OWL e SWRL
 \series default
-, nós usamos eles para construir os seguintes axiomas e regras, a fim de
- ser capaz de classificar automaticamente lesões cancerosas utilizando o
- sistema TNM (ver Tabelas 
+, eles foram usados para construir os axiomas e regras a seguir.
+ Eles foram capazes de classificar automaticamente lesões cancerosas, utilizando
+ o sistema TNM (ver Tabelas 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "tab:Tcriteria"
@@ -3519,12 +3322,13 @@ reference "tab:Mcriteria"
 \end_inset
 
 ).
- Notamos que a maneira que nós modelamos as coisas importava.
- Por exemplo, foi mais fácil para definir 
+ Notamos que a ordem como modelamos as coisas importava.
+ Por exemplo, foi mais fácil definir as regras para os critérios de classificaçã
+o 
 \series bold
 N1a, N0
 \series default
- e reutilizar suas definições para 
+ e reutilizar suas definições para o 
 \series bold
 M0
 \series default
@@ -3532,7 +3336,7 @@ M0
 \series bold
  M0
 \series default
- através da manipulação de closures complexos.
+, através da manipulação de closures complexos.
 \end_layout
 
 \begin_layout Standard
@@ -3552,7 +3356,7 @@ name "fig:radlex"
 
 \end_inset
 
-Hierarquia de subclasses de ontologias estabelecidas como Radlex
+Hierarquia de subclasses da ontologia estabelecidas usando-se Radlex.
 \end_layout
 
 \end_inset
@@ -3565,24 +3369,8 @@ Hierarquia de subclasses de ontologias estabelecidas como Radlex
 \align center
 \begin_inset Graphics
 	filename ../figures/drawingRadlextaxonomyLiver.pdf
-	lyxscale 50
+	lyxscale 30
 	scale 19
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-fautor
-\end_layout
 
 \end_inset
 
@@ -3595,14 +3383,10 @@ fautor
 \end_layout
 
 \begin_layout Standard
-Com a utilização da ontologia 
-\series bold
-AIM4-O
-\series default
-, os conceitos podem ser facilmente relacionados uns com os outros como
- foi demonstrado anteriormente.
- Além disso, os requisitos de integridade e de cardinalidade pode ser especifica
-da e executada com fins de
+Com a utilização da ontologia AIM4-O, os conceitos puderam ser facilmente
+ relacionados uns com os outros.
+ Além disso, os requisitos de integridade e de cardinalidade puderam ser
+ especificados e checados para fins de
 \emph on
  reasoning
 \emph default
@@ -3626,8 +3410,8 @@ name "tab:Tcriteria"
 
 \end_inset
 
-American Joint Committee on Cancer/International Union against cancer TNM
- classification system and formal representation 
+The American Joint Committee on Cancer/International Union against cancer
+ TNM classification system and formal representation.
 \end_layout
 
 \end_inset
@@ -3977,8 +3761,8 @@ name "tab:Ncriteria"
 
 \end_inset
 
-American Joint Committee on Cancer/International Union against cancer TNM
- classification system and formal representation 
+The American Joint Committee on Cancer/International Union against cancer
+ TNM classification system and formal representation.
 \end_layout
 
 \end_inset
@@ -4222,8 +4006,9 @@ name "tab:Mcriteria"
 
 \end_inset
 
-American Joint Committee on Cancer/International Union against cancer TNM
- classification system and formal representation 
+The American Joint Committee on Cancer/International Union against cancer
+ TNM classification system and formal representation.
+ 
 \end_layout
 
 \end_inset
@@ -4402,12 +4187,12 @@ Considerações Finais
 
 \begin_layout Standard
 Neste capitulo, foram descritas as etapas necessárias para alcançar a implementa
-ção de um sistema de classificação de cancer baseado em anotações contidas
- em imagens médicas.
- Para conseguir isso, foi necessário uma representação formal híbrida baseado
- em regras SWRL e exiomas dos criterios de classificação TNM.
- Alem disso, o sistema foi suportado pelas ontologias AIM4-O(extensão do
- trabalho de 
+ção de um sistema de classificação de estágios de câncer baseado em anotações
+ AIM contidas em imagens médicas.
+ Para se conseguir isso, foi necessário uma representação formal híbrida
+ baseada em axiomas OWL dos critérios de classificação TNM e regras SWRL.
+ Além disso, esse sistema foi suportado pelas ontologias AIM4-O (extensão
+ do trabalho de 
 \begin_inset CommandInset citation
 LatexCommand citet
 key "Bulu"
@@ -4415,15 +4200,16 @@ key "Bulu"
 \end_inset
 
 ), ONLIRA e Radlex.
- No processo de implementação foram encontrados problemas como o mundo aberto
- (Open World) , embora houvesse muitas alternativas para resolver o problema,
- nosso grupo de pesqeuisa escolheu por utilizar a mais simple usando uma
- estrutura de dados.
+ No processo de implementação, foram encontrados problemas com a presunção
+ de mundo aberto (Open World) de OWL, embora houvessem muitas alternativas
+ para resolver o problema, escolhemos utilizar a mais simples, usando o
+ mecanismo de parsing de AIM para OWL.
 \end_layout
 
 \begin_layout Standard
-O próximo descreve os resultados obtidos com a implementação do classificador
- TNM, ressaltando as principais contribuições e limitações da pesquisa.
+O próximo capítulo descreve os resultados obtidos com a implementação do
+ classificador TNM, ressaltando as principais contribuições e limitações
+ da pesquisa.
 \end_layout
 
 \end_body

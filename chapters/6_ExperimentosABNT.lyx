@@ -11,7 +11,7 @@
 \end_preamble
 \use_default_options true
 \maintain_unincluded_children false
-\language english
+\language brazilian
 \language_package default
 \inputencoding utf8
 \fontencoding global
@@ -81,20 +81,15 @@ Neste capítulo, serão apresentados os resultados que foram alcançados, em
 \series bold
 AIM4-O
 \series default
-, seguido da avaliação quantitativa da capacidade de nosso classificador
- TNM que é usado para gerar automaticamente 
+, seguido de como nosso classificador é usado para classificar automaticamente
+ as 
 \emph on
-o cancer
+image findings
 \emph default
- 
-\emph on
-staging a partir de
-\emph default
- observações de imagens, para isso usando precisão e revocação.
- 
-\lang brazilian
-Finalmente, todo o processo foi validado pelos usuários do Rubin Lab (Radiology
- Dept.
+ com base nos critérios TNM que é o objetivo deste trabalho.
+ Finalmente, uma avaliação quantitativa do classificador TNM foi feita usando
+ precisão e revocação.
+ Todo o processo foi validado pelos usuários do Rubin Lab (Radiology Dept.
  – Stanford University).
 \end_layout
 
@@ -104,19 +99,7 @@ Dados utilizados
 
 \begin_layout Standard
 Nosso primeiro conjunto de dados é um conjunto de relatórios clínicos de
- pacientes com carcinoma hepatocelular (HCC
-\begin_inset CommandInset nomenclature
-LatexCommand nomenclature
-symbol "HCC"
-description "Hepatocellular Carcinoma"
-
-\end_inset
-
-) do 
-\emph on
-Genomic Data Commons do NCI
-\emph default
- (GDC
+ pacientes com carcinoma hepatocelular (HCC) do
 \begin_inset CommandInset nomenclature
 LatexCommand nomenclature
 symbol "GDC"
@@ -124,7 +107,7 @@ description " NCI Genomic Data Commons"
 
 \end_inset
 
- )
+ (GDC)
 \begin_inset Foot
 status open
 
@@ -136,14 +119,10 @@ https://gdc.cancer.gov/
 
 .
  Neste trabalho todas os experimentos foram apoiados pelos dados do GDC.
- Por outro lado e mais importante para a classificação de metadados de imagem,
- foi a exigência de ter também um conjunto de imagens para validar os resultados
- dos relatórios clínicos do GDC.
- 
-\emph on
-The Cancer Imaging Archive
-\emph default
- (TCIA)
+ Por outro lado e mais importante para a classificação de metadados de imagem
+ foi a exigência de ter um conjunto de dados de imagens para validar os
+ resultados de relatórios clínicos.
+ O The Cancer Imaging Archive (TCIA)
 \begin_inset CommandInset citation
 LatexCommand citep
 key "Clark2013"
@@ -183,9 +162,9 @@ cancer staging
 staging
 \emph default
  de fígado (HCC) por razões de disponibilidade de dados clínicos e de imagens.
- Para um dado paciente "X", a entrada para o classificador consiste em arquivos
- AIM (anotações de imagem) e a saída consistem no estágio de câncer de esse
- paciente.
+ Para um dado paciente, a entrada para o classificador consiste em arquivos
+ AIM (anotações de imagem) e a saída consistem no estágio de câncer para
+ este paciente.
  Neste trabalho, a 7ª edição do TNM tem sido empregada.
 \end_layout
 
@@ -1166,11 +1145,7 @@ na próxima seção, uma vez que avaliamos a nossa ontologia podemos avaliar
 \end_layout
 
 \begin_layout Section
-
-\lang brazilian
-Determinação do estágio de câncer (cancer staging)
-\lang english
- baseado em TNM 
+Determinação do estágio de câncer (cancer staging) baseado em TNM 
 \end_layout
 
 \begin_layout Standard
@@ -1348,17 +1323,13 @@ reference "fig:matrixconfusion"
 \end_inset
 
 .
- Isto representa uma matriz de confusão para uma classificação de 5 stagios
- (
-\emph on
-multiclass
-\emph default
-) de câncer de figado.
- Para os 
+ Isto representa uma matriz de confusão para uma classificação de stage
+ multicêntrico.
+ Para o 
 \emph on
 staging
 \emph default
- iniciais de câncer como I, II, IIIA, o número de classificações incorrectas
+ inicial de câncer como I, II, IIIA, o número de classificações incorrectas
  (i.e., falsos positivos e falsos negativos) foi muito pequeno.
  Ela é representada pela diagonal realçada da matriz na Figura 
 \begin_inset CommandInset ref
@@ -1429,8 +1400,8 @@ Além disso, o classificador revelou o fato de que existem alguns relatorios
  de pacientes particulares: como o paciente com Subject ID TCGA-DD-A1EJ,
  o resultado do nosso classificador TNM foi correta após validação pelo
  nosso especialista.
- O estagio previsto pelo classificador foi "Stage I" em contraste com a
- informação presente em 
+ O stagio previsto pelo classificador foi "Stage I" em contraste com a informaçã
+o presente em 
 \begin_inset Foot
 status open
 
@@ -1440,7 +1411,7 @@ https://gdc-portal.nci.nih.gov/cases/52292ffc-0902-4d97-b461-20723987a177
 
 \end_inset
 
- que foi "Stage III".
+ que foi Stagio III.
  Podemos dezir asim, que as condicões de saúde não foram bem documentadas
  nessos casos ou que a alta do médico chegou a uma conclusão diferente,
  Tais incidentes não são excepcionais, porque o processo de 
@@ -1506,7 +1477,7 @@ Resumo dos Histogramas para cada estágio após da clasificação TNM dos metada
 \end_layout
 
 \begin_layout Standard
-Por outro lado, segundo 
+Segundo 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Faria2014"
@@ -1526,8 +1497,9 @@ staging
  Onde as taxas de sobrevivência de pacientes con câncer de figado a 5 anos,
  com base no sistema TNM, foram no stage I, 55%; stage II, 37%; E stage
  III, 16%.
- Portanto, podemos ver que existe uma relação entre o número de casos clínicos
- e as taxas de sobrevivência, como pode-se ver na Figura 
+ Portanto, podemos ver que existe uma relação entre o número de casos clínicos(c
+linical reports) e as taxas de sobrevivência, como pode-se ver na Figura
+ 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:histogram"
@@ -1600,10 +1572,8 @@ das e anotadas utilizando a ferramenta ePAD; B)O diagrama do stagio IIIA,
 \end_layout
 
 \begin_layout Plain Layout
-
-\lang brazilian
 \begin_inset ERT
-status open
+status collapsed
 
 \begin_layout Plain Layout
 
@@ -1680,10 +1650,8 @@ name "fig:exampleIIA"
 \end_layout
 
 \begin_layout Plain Layout
-
-\lang brazilian
 \begin_inset ERT
-status open
+status collapsed
 
 \begin_layout Plain Layout
 
@@ -1746,12 +1714,9 @@ discutimos com os especialistas os cenários de
 \emph on
 cancer staging
 \emph default
- de 52 pacientes e a capacidade do Classificador TNM, dessa discução 
-\lang brazilian
-p
-\lang english
-odemos destacar além dos bons indicadores de presição e revocação obtidos
- pelo classificador ( 84.3% e 74,4% respetivamente), que podem ser detectados
+ de 52 pacientes e a capacidade do Classificador TNM, dessa discução podemos
+ destacar além dos bons indicadores de presição e revocação obtidos pelo
+ classificador ( 84.3% e 74,4% respetivamente), que podem ser detectados
  casos clínicos especiais com estagio errôneo e por conseguinte potenciais
  erros de tratamento médico podem ser reduzidos.
 \end_layout
