@@ -76,20 +76,19 @@
 \begin_body
 
 \begin_layout Standard
-Neste capítulo, serão apresentados os resultados que foram alcançados, em
- primeiro lugar avaliamos a expressividade da ontologia 
-\series bold
-AIM4-O
-\series default
-, seguido de como nosso classificador é usado para classificar automaticamente
- as 
+Neste capítulo, serão apresentados os resultados que foram alcançados.
+ Em primeiro lugar, avaliamos a expressividade da ontologia AIM4-O.
+ Depois, discutimos como nosso classificador é usado para classificar automatica
+mente 
 \emph on
 image findings
 \emph default
- com base nos critérios TNM que é o objetivo deste trabalho.
+ com base nos critérios TNM.
+ o que é o objetivo principal deste trabalho.
  Finalmente, uma avaliação quantitativa do classificador TNM foi feita usando
  precisão e revocação.
- Todo o processo foi validado pelos usuários do Rubin Lab (Radiology Dept.
+ Todo o processo foi validado por radiologistas, usuários do Rubin Lab (Radiolog
+y Dept.
  – Stanford University).
 \end_layout
 
@@ -99,7 +98,7 @@ Dados utilizados
 
 \begin_layout Standard
 Nosso primeiro conjunto de dados é um conjunto de relatórios clínicos de
- pacientes com carcinoma hepatocelular (HCC) do
+ pacientes com carcinoma hepatocelular (HCC) do Genomic Data Commons
 \begin_inset CommandInset nomenclature
 LatexCommand nomenclature
 symbol "GDC"
@@ -117,12 +116,29 @@ https://gdc.cancer.gov/
 
 \end_inset
 
-.
- Neste trabalho todas os experimentos foram apoiados pelos dados do GDC.
- Por outro lado e mais importante para a classificação de metadados de imagem
- foi a exigência de ter um conjunto de dados de imagens para validar os
- resultados de relatórios clínicos.
- O The Cancer Imaging Archive (TCIA)
+ do National Cancer Institute 
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "NCI"
+description "National Cancer Institute"
+
+\end_inset
+
+(NCI).
+ Neste trabalho, em todos os experimentos foram usados dados abertos e publicame
+nte disponíveis do GDC.
+ Mas mais importante para a classificação de metadados de imagens foi a
+ exigência de se ter um conjunto de dados de imagens para validar os resultados
+ de relatórios clínicos.
+ O The Cancer Imaging Archive 
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "TCIA"
+description "The Cancer Imaging Archive"
+
+\end_inset
+
+(TCIA)
 \begin_inset CommandInset citation
 LatexCommand citep
 key "Clark2013"
@@ -140,15 +156,14 @@ https://public.cancerimagingarchive.net/ncia/login.jsf
 \end_inset
 
  é um serviço que de-identifica e hospeda um grande arquivo de imagens médicas
- de câncer acessível para download público e também está relacionado com
- GDC utilizando um 
+ de câncer, acessível para download público, e que está relacionado com
+ os relatórios clínicos do GDC por meio de um 
 \emph on
 Subject ID.
 
 \emph default
- A modalidade de imagem selecionada foi a tomografia computadorizada (CT),
- em seguida, estas imagens foram carregados para a ferramenta de anotação
- ePAD.
+ A modalidade de imagem selecionada foi a tomografia computadorizada (CT).
+ Essas imagens foram carregadas para a ferramenta de anotação ePAD.
 \end_layout
 
 \begin_layout Standard
@@ -156,16 +171,16 @@ Embora a avaliação do
 \emph on
 cancer staging
 \emph default
- possa ser aplicada a outros tipos de câncer, este trabalho enfoca-se no
- 
+ possa ser aplicada a outros tipos de câncer, este trabalho enfoca o 
 \emph on
 staging
 \emph default
- de fígado (HCC) por razões de disponibilidade de dados clínicos e de imagens.
+ de câncer de fígado (HCC) por razões de disponibilidade de dados clínicos
+ e de imagens.
  Para um dado paciente, a entrada para o classificador consiste em arquivos
- AIM (anotações de imagem) e a saída consistem no estágio de câncer para
- este paciente.
- Neste trabalho, a 7ª edição do TNM tem sido empregada.
+ AIM (anotações de imagem) e a saída consiste no estágio de câncer para
+ esse paciente.
+ Neste trabalho, a 7ª edição do TNM foi empregada.
 \end_layout
 
 \begin_layout Section
@@ -180,7 +195,7 @@ key "Blomqvist2012"
 
 \end_inset
 
- 
+: 
 \emph on
 A avaliação ontológica é o processo de avaliação de uma ontologia com respeito
  a determinados critérios, usando certas medidas
@@ -188,14 +203,23 @@ A avaliação ontológica é o processo de avaliação de uma ontologia com resp
 .
  Neste trabalho, realizamos a avaliação da ontologia AIM4-O do ponto de
  vista funcional.
- Descrevemos a avaliação da ontologia como uma avaliação centrada em tarefas
- contra suas necessidades ontológicas, tais como questões de competência
- (CQs) e requisitos de inferência.
+ Descrevemos a avaliação da ontologia, como uma avaliação centrada em tarefas
+ contra suas necessidades ontológicas
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+contra suas necessidades ontológicas ?????
+\end_layout
+
+\end_inset
+
+, tais como questões de competência (CQs) e requisitos de inferência.
 \end_layout
 
 \begin_layout Standard
 Para avaliar a ontologia AIM4-O, estudamos como poderia ajudar na busca
- de relatorios clínicos que descrevem resultados de análise de imagens (relatos
+ de relatórios clínicos que descrevam resultados de análise de imagens (relatos
  de câncer), para este fim, foram comparadas duas abordagens diferentes:
 \end_layout
 
@@ -217,38 +241,46 @@ key "Kokciyan2014"
 \end_layout
 
 \begin_layout Itemize
-Com base em palavras-chave (busca por palavra-chave ): Relatórios clínicos
+Com base em palavras-chave (busca por palavra-chave): Relatórios clínicos
  de análise de imagens são geralmente escritos em linguagem natural, portanto,
- um método para busca pode ser busca por palavra-chave.
+ um método para busca pode ser a busca por palavra-chave.
 \end_layout
 
 \begin_layout Standard
 Para destacar as diferenças entre essas duas abordagens, descrevemos quatro
- consultas expressas tanto em DL ( DL query) é em palavras-chave como na
- Tabela 
+ consultas expressas tanto em DL (DL query) como em palavras-chave (Tabela
+ 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "tab:queries"
 
 \end_inset
 
-: 
+): 
 \end_layout
 
 \begin_layout Enumerate
+
+\lang english
 Q1 - Find all reports related to an image observation (tumor observation)
 \end_layout
 
 \begin_layout Enumerate
+
+\lang english
 Q2 - Find all reports that describe multiple tumors 
 \end_layout
 
 \begin_layout Enumerate
+
+\lang english
 Q3 - Find all reports that contain a tumor observation that has a size greater
  than 8 cm 
 \end_layout
 
 \begin_layout Enumerate
+
+\lang english
 Q4 - Find all reports that contain a tumor observation with descriptors
  (i.e invasion, mass, vascular) 
 \end_layout
@@ -432,7 +464,8 @@ name "tab:queries"
 
 \end_inset
 
-Description logic e keyword representation das 4 queries
+Queries em Description Logic (DL query) e palavras chaves para as quatro
+ queries usadas na avaliação quantitativa da ontologia AIM4-O.
 \end_layout
 
 \end_inset
@@ -450,9 +483,9 @@ Foram considerados os seguintes pontos, a fim de avaliar as duas abordagens:
 \end_layout
 
 \begin_layout Standard
-• A avaliação baseia-se num conjunto de relatórios clinicos do GDC: Levou
- 15 relatórios radiológicos aleatórios de diferentes pacientes escritos
- em linguagem natural e convertidos em instâncias AIM4-O.
+• A avaliação baseia-se num conjunto de relatórios clínicos do GDC: Foram
+ usados 15 relatórios radiológicos aleatórios, de diferentes pacientes,
+ escritos em linguagem natural e convertidos em instâncias AIM4-O.
 \end_layout
 
 \begin_layout Standard
@@ -461,7 +494,7 @@ Foram considerados os seguintes pontos, a fim de avaliar as duas abordagens:
 \end_layout
 
 \begin_layout Standard
-• Finalmente, comparamos a precisão e revocação com o 
+•Finalmente, comparamos a precisão e revocação com o 
 \emph on
 gold-Standard
 \emph default
@@ -474,15 +507,15 @@ gold-Standard
 \end_layout
 
 \begin_layout Standard
-As quatro consultas com os resultados de precisão e revocação correspondente
- são mostrados na Tabela 
+Os resultados de precisão e revocação para as quatro consultas são mostrados
+ na Tabela 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "tab:prexrecallontology"
 
 \end_inset
 
-: 
+.
 \end_layout
 
 \begin_layout Standard
@@ -1076,7 +1109,7 @@ name "tab:prexrecallontology"
 
 \end_inset
 
-R=recall and P=precision values para as 4 queries 
+Resultados mostrando os valores de R=recall e P=precision para as 4 queries.
 \end_layout
 
 \end_inset
@@ -1099,7 +1132,7 @@ Analisando as quatro consultas podemos ver que a busca semântica tem o maior
 \end_layout
 
 \begin_layout Standard
-Q1: Com a abordagem semântico, 15 relatórios foram recuperados com precisão
+Q1: Com a abordagem semântica, 15 relatórios foram recuperados com precisão
  e revocação de 1 (15/15).
  Com a busca através de palavras-chaves, 12 relatórios foram recuperados
  com uma precisão de 1 (12/12) e revocação de 0,8 (12/15).
@@ -1117,7 +1150,7 @@ Q2: Com a abordagem semântica, 5 relatórios foram recuperados com precisão
 \begin_layout Standard
 Q3: Com a busca semântica, 10 relatórios foram recuperados com uma precisão
  de 0,9 (9/10) e revocação de 0,9 (9/10).
- Com a busca por palavra-chave, não foram obtidos relatórios, porque não
+ Com a busca por palavras-chave, não foram obtidos relatórios, porque não
  havia relatórios que continham todas as palavras da consulta (ou seja,
  tamanho de lesão maior que 8 cm).
  
@@ -1135,13 +1168,13 @@ A busca semântica obteve melhores resultados, com valores de revocação próxi
  de 1 e sempre melhores do que a busca através de palavras-chaves.
  Além disso, em todos os casos, exceto um, os valores de precisão foram
  melhores para a busca semântica.
- A pesquisa de palavra-chave tinha 0 precisão e revocação para a query Q3,
- o que é um resultado não deseado.
+ A pesquisa usando palavras-chave teve precisão e revocação 0 para a query
+ Q3, o que é um resultado não desejado.
 \end_layout
 
 \begin_layout Standard
-na próxima seção, uma vez que avaliamos a nossa ontologia podemos avaliar
- a capacidade do nosso Classificador do TNM com casos clinicos reais.
+Na próxima seção, uma vez que avaliamos a nossa ontologia podemos avaliar
+ a capacidade do nosso Classificador baseado em TNM com casos clínicos reais.
 \end_layout
 
 \begin_layout Section
@@ -1153,7 +1186,17 @@ Para avaliar a capacidade de nosso classificador TNM, primeiro criamos um
  template chamado "template TNM" para fornecer ao radiologista um conjunto
  de termos semânticos pré-especificados para anotação de imagens.
  Todas essas anotações de imagem foram armazenadas no formato padrão AIM
- e são compatíveis com ePAD 
+ e são compatíveis com o ePAD
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Voce ja fez essa ref? se sim, retire
+\end_layout
+
+\end_inset
+
+ 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "Rubin2008"
@@ -1200,8 +1243,9 @@ name "fig:TNMtemplate"
 
 \end_inset
 
-image CT do figado liver anotada utilzando o template TNM (na dereita da
- imagem) 
+Image CT do fígado sendo anotada usando o ePAD e a template TNM (mostrada
+ no apinel à direita da imagem).
+ 
 \end_layout
 
 \end_inset
@@ -1215,107 +1259,155 @@ image CT do figado liver anotada utilzando o template TNM (na dereita da
 \end_layout
 
 \begin_layout Standard
-Subseqüentemente, geramos anotações de imagem em AIM-XML, e classificamos-as
- automaticamente usando os critérios TNM, este processo foi devidamente
- avaliado e corretamente aceito por um radiologista experiente, ele analisou
- visualmente a validade das anotações geradas em termos de semântica.
+Subseqüentemente, geramos anotações de imagem em AIM-XML e as classificamos
+ automaticamente usando o nosso classificador TNM.
+ Esse processo foi devidamente avaliado e considerado válido por um radiologista
+ experiente.
+ Ele analisou visualmente a validade das anotações geradas.
  O processo que seguimos foi o seguinte:
 \end_layout
 
-\begin_layout Itemize
-O conjunto de dados utilizado como mencionado anteriormente, elem foram
- obtidos dos seguintes bancos de dados abertos:
+\begin_layout Enumerate
+O conjunto de dados utilizado foi obtido dos seguintes bancos de dados abertos
+ GDC e TCIA (os mesmos usados para a avaliação da ontologia).
+ O TCIA contém apenas imagens, número de séries e estudos.
+ Para a classificação TNM de câncer de fígado, buscamos por "LIHC - Liver
+ hepatocellular carcinoma" no GDC.
+ Separamos os pacientes com informações disponíveis tanto no GDC como no
+ TCIA (relatórios médicos e imagens, respectivamente), achamos 52.
+ A informação sobre o tamanho do tumor foi obtida por revisão manual dos
+ relatórios médicos (disponíveis no GDC).
 \end_layout
 
-\begin_deeper
-\begin_layout Standard
-- O Genomic Data Commons do NCI (GDC) 
-\begin_inset Foot
-status open
-
-\begin_layout Plain Layout
-https://gdc.cancer.gov/.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-- O Cancer Imaging Archive 
-\begin_inset CommandInset nomenclature
-LatexCommand nomenclature
-symbol "TCIA"
-description "Cancer Imaging Archive"
-
-\end_inset
-
- (TCIA) 
-\begin_inset Foot
-status open
-
-\begin_layout Plain Layout
-https://public.cancerimagingarchive.net/ncia/login.jsf
-\end_layout
-
-\end_inset
-
- (que contém apenas imagens, número de séries e estudos): Enquanto trabalhávamos
- com a classificação TNM do fígado, buscamos "LIHC - Liver hepatocellular
- carcinoma", obtendo 52 pacientes com informação disponível em ambos bancos
- de dados (imagens e relatórios).
- No entanto, a informação sobre o tamanho do tumor foi obtida por revisão
- manual dos relatórios médicos.
- Esses relatórios também estão disponíveis no Genomic Data Commons do NCI.
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-Depois de ler os relatórios médicos, o radiologista foi fornecido com uma
- planilha Excel que forneceu informações sobre os 
+\begin_layout Enumerate
+Depois de lidos os relatórios médicos, foi criada uma planilha Excel que
+ forneceu informações sobre os 
 \emph on
 image findings
 \emph default
- como: tamanho da lesão, invasão vascular e outros.
+ como: tamanho da lesão, invasão vascular entre outros.
 \end_layout
 
-\begin_layout Itemize
-Usando este arquivo excel e dados do GDC, criamos as anotações AIM-XML e
- as integramos em nossa base de conhecimento (como indivíduos da ontologia
+\begin_layout Enumerate
+Usando esse arquivo Excel e dados do GDC, as anotações em AIM foram criadas
+ e integradas à nossa base de conhecimento (como indivíduos da ontologia
  AIM4-O).
 \end_layout
 
-\begin_layout Itemize
-Os arquivos AIM foram usados como entrada do classificador TNM.
- Nós comparamos os resultados do staging com os valores de TNM que os médicos
- relataram.
+\begin_layout Enumerate
+As anotações AIM, sobre cada paciente, foram usadas como entrada do classificado
+r TNM, que calculou o 
+\shape italic
+cancer staging
+\shape default
+ para cada paciente.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Os resultados do classificador TNM foram comparados com os resultados do
+ 
+\shape italic
+cancer staging
+\shape default
+ que os médicos relataram nos relatórios médicos.
 \end_layout
 
 \begin_layout Standard
-Foram classificadas automaticamente todas as anotações de imagens com base
- em 52 diferentes relatórios clínicos, a fim de analisar o potencial de
- nosso abordagem do 
+As anotações em formato AIM para os 52 pacientes foram geradas pelo autor
+ deste trabalho, a partir dos relatórios médicos.
+ Esses relatórios continham as 
+\emph on
+image findings
+\emph default
+ (tamanho da lesão, invasão vascular, etc) e o 
+\shape italic
+cancer stage
+\shape default
+ para cada paciente, em linguagem natural.
+ Para garantir que o autor entendeu corretamente o que estava escrito no
+ texto dos relatórios, um radiologista experiente analisou relatórios médicos
+ e respectivas anotações AIM de cinco pacientes escolhidos aleatoriamente.
+ Em todos os cinco casos, as images findings, reportadas nos relatórios
+ médicos, foram corretamente copiadas para as anotações AIM.
+ 
+\end_layout
+
+\begin_layout Standard
+Foram classificadas automaticamente todas as anotações de imagens AIM geradas
+ com base nos 52 diferentes relatórios clínicos, a fim de analisar a precisão
+ da nosso abordagem de 
 \emph on
 staging
 \emph default
- automático do TNM, discutimos os cenários de 
+ automático com TNM.
+ Os cancer stagings gerados pelo classificador foram comparados aos descritos
+ pelos médicos nos relatórios (nosso gold standard).
+ Para o cálculo de precisão e revocação, quando o staging automático coincide
+ com o dado pelo médico, ele é considerado positivo
+\end_layout
+
+\begin_layout Standard
+A precisão foi 84,3% e a revocação 74,4%
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+Esses dados levam em consideracao aquele caso que o DAniel decidiu que o
+ médico errou o staging? Você o retirou ou simplesmente considerou o staging
+ do Daniel?
+\end_layout
+
+\end_inset
+
+.
+ Isso significa que, para a precisão, em 84.3% das vezes o sistema concordou
+ com o 
+\shape italic
+staging
+\shape default
+ dado pelos médicos.
+ Para a revocação, isso significa que, de todas as vezes que um dado 
+\shape italic
+stage
+\shape default
+ foi informado por um médico, em 74.4% dos casos o sistema concordou com
+ ele
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+É isso mesmo?
+\end_layout
+
+\end_inset
+
+.
+ É importante salientar que, em todos os casos, a diferença entre os médicos
+ e o sistema foi de apenas um estágio
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+CORRETO ????
+\end_layout
+
+\end_inset
+
+.
+ Discutimos os cenários de 
 \emph on
 staging
 \emph default
  dos pacientes com a ajuda do nosso especialista e parceiro do projeto do
- departamento de Radiologia da Universidade de Stanford, a resposta foi
- positiva.
- A precisão foi 84,3% eo revocação 74,4%, O que significa que para a precisão,
- deixando de lado as vezes que os Stages I,II,III,IV foram previstos, o
- 84.3% das vezes o sistema foi de fato correto.
- E para revocação, isso significa que de todas as vezes que os Stages deveriam
- ter sido previstos apenas o 74.4% dos casos foram corretamente previstos.
+ Radiology Department da Stanford University School of Medicine e ele achou
+ os resultados muito bons com precisão e revocação próximo ao que se consegue
+ entre médicos de diferentes hospitais.
 \end_layout
 
 \begin_layout Standard
-Os resultados da avaliação são resumidos na matriz de escala de cores na
- Figura 
+Os resultados da avaliação são resumidos na matriz de escala de cores, Figura
+ 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:matrixconfusion"
@@ -1323,24 +1415,31 @@ reference "fig:matrixconfusion"
 \end_inset
 
 .
- Isto representa uma matriz de confusão para uma classificação de stage
- multicêntrico.
- Para o 
+ Ela representa uma matriz de confusão para uma classificação de stage multicênt
+rico.
+ Para 
 \emph on
-staging
+stages
 \emph default
- inicial de câncer como I, II, IIIA, o número de classificações incorrectas
+ iniciais de câncer, como I, II, IIIA, o número de classificações incorrectas
  (i.e., falsos positivos e falsos negativos) foi muito pequeno.
- Ela é representada pela diagonal realçada da matriz na Figura 
+ Elas são representadas pela diagonal realçada da matriz (Figura 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:matrixconfusion"
 
 \end_inset
 
- Isto porque, os estádios de câncer tais como IIIB ou IVA são descritos
- por conceitos mais complexos relativamente, por exemplo podemos ver na
- Figura 
+).
+ 
+\shape italic
+Cancer stages
+\shape default
+ mais avançados, como IIIB ou IVA, são descritos por conceitos relativamente
+ mais complexos.
+ Isso pode ser uma explicação para o fato do número de positivos verdadeiros
+ no Estágio IIIB é menor que o Estágio IVA, por exemplo podemos ver na Figura
+ 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:histogram"
@@ -1348,7 +1447,18 @@ reference "fig:histogram"
 \end_inset
 
  que, o número de verdadeiros positivos no Estágio IIIB é menor que o Estágio
- IVA.
+ IVA
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Nao entendi essa sentença.
+ Nao faz sentido com o gráfico.
+\end_layout
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
@@ -1368,7 +1478,17 @@ name "fig:matrixconfusion"
 
 \end_inset
 
-Matriz de Confusão da TNM multi-stage
+Matriz de Confusão da TNM multi-stage.
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+O que as intensidades represntam? precisao ou revocacao?
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -1394,16 +1514,18 @@ Matriz de Confusão da TNM multi-stage
 \end_layout
 
 \begin_layout Standard
-Além disso, o classificador revelou o fato de que existem alguns relatorios
- clínicos com diagnósticos que não podem ser avaliados ou eles são imprecisos
- e estão presentes no Genomic Data Common GDC, por exemplo, no contexto
- de pacientes particulares: como o paciente com Subject ID TCGA-DD-A1EJ,
- o resultado do nosso classificador TNM foi correta após validação pelo
- nosso especialista.
- O stagio previsto pelo classificador foi "Stage I" em contraste com a informaçã
-o presente em 
+Além disso, o classificador revelou o fato de que existem alguns relatórios
+ clínicos com estágios que não seguem o padrão do TNM.
+ Por exemplo, no caso do paciente com Subject ID TCGA-DD-A1EJ, o resultado
+ do classificador TNM foi considerado correto, após validação pelo nosso
+ especialista.
+ O estágio previsto pelo classificador foi 
+\shape italic
+Stage I
+\shape default
+, mas a informação presente no relatório médico 
 \begin_inset Foot
-status open
+status collapsed
 
 \begin_layout Plain Layout
 https://gdc-portal.nci.nih.gov/cases/52292ffc-0902-4d97-b461-20723987a177
@@ -1411,10 +1533,18 @@ https://gdc-portal.nci.nih.gov/cases/52292ffc-0902-4d97-b461-20723987a177
 
 \end_inset
 
- que foi Stagio III.
- Podemos dezir asim, que as condicões de saúde não foram bem documentadas
- nessos casos ou que a alta do médico chegou a uma conclusão diferente,
- Tais incidentes não são excepcionais, porque o processo de 
+ indicava 
+\shape italic
+Stage III
+\shape default
+.
+ Como esse foi o único caso em que a diferença entre o estágio dado pelo
+ classificador e os médicos diferiu em mais de um nível, o especialista
+ quis analisar o relatório e concordou com o estágio dado pelo classificador.
+\end_layout
+
+\begin_layout Standard
+Tais incidentes não são excepcionais, porque o processo de 
 \emph on
 staging
 \emph default
@@ -1424,13 +1554,13 @@ staging
 \end_layout
 
 \begin_layout Standard
-Com ajuda de sistemas de suporte à decisão clínica (classificador TNM) baseados
- em metadados de imagens podem ser detectados casos clínicos especiais com
- estagio errôneo e por conseguinte erros de tratamento médico podem ser
- reduzidos.
- Tais exemplos de pacientes como os acima mencionados mostram a importância
- de melhorar essos sistemas de suporte à decisão clínica pelo processamento
- de metadados de imagem na avaliação do câncer.
+Com ajuda de sistemas de suporte à decisão clínica, baseados em metadados
+ de imagens (como classificadores TNM), casos clínicos com estagio errôneo
+ podem ser detectados e, por conseguinte, erros de tratamento médico podem
+ ser reduzidos.
+ Isso mostra a importância de se melhorar sistemas de suporte à decisão
+ clínica, pelo processamento automático de metadados de imagem na avaliação
+ do câncer.
 \end_layout
 
 \begin_layout Standard
@@ -1477,6 +1607,16 @@ Resumo dos Histogramas para cada estágio após da clasificação TNM dos metada
 \end_layout
 
 \begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Esse conteúdo, até o item 6.4, deve ser colocado mais cedo.
+ Talvez no capitulo 2.
+\end_layout
+
+\end_inset
+
 Segundo 
 \begin_inset CommandInset citation
 LatexCommand cite
@@ -1484,7 +1624,7 @@ key "Faria2014"
 
 \end_inset
 
- o sistema de 
+, o sistema de 
 \emph on
 staging
 \emph default
@@ -1492,30 +1632,24 @@ staging
 \emph on
 staging
 \emph default
- patológico mais amplamente utilizados para Hepato celular carcinoma e foi
- validado para prever resultados pós-cirúrgicos em pacientes.
- Onde as taxas de sobrevivência de pacientes con câncer de figado a 5 anos,
- com base no sistema TNM, foram no stage I, 55%; stage II, 37%; E stage
- III, 16%.
- Portanto, podemos ver que existe uma relação entre o número de casos clínicos(c
-linical reports) e as taxas de sobrevivência, como pode-se ver na Figura
- 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:histogram"
+ patológico mais amplamente utilizados para carcinomas Hepato celular e
+ foi validado para prever resultados pós-cirúrgicos em pacientes.
+ As taxas de sobrevivência por 5 anos de pacientes com câncer de fígado,
+ com base no sistema TNM, foram no stage I, 55%; stage II, 37%; e stage
+ III, 16%
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Isso está certo? Me parecem muito baixas.
+\end_layout
 
 \end_inset
 
-, o número de casos clínicos nos 
-\emph on
-stages
-\emph default
- iniciais é maior do que os últimos 
-\emph on
-stages
-\emph default
 .
- A seguir são mostrados alguns exemplos nas Figuras 
+ Portanto, podemos ver que existe uma relação entre o estágio clínico e
+ as taxas de sobrevivência.
+ A seguir são mostrados alguns exemplos, Figuras 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:examploIIIA"
@@ -1529,7 +1663,7 @@ reference "fig:exampleIIA"
 
 \end_inset
 
- de classificação correta obtidos pelo classificador TNM que foi desenvolvido.
+, de classificação correta obtidos pelo classificador TNM que foi desenvolvido.
 \end_layout
 
 \begin_layout Standard
@@ -1550,8 +1684,11 @@ name "fig:examploIIIA"
 \end_inset
 
 A) Uma imagem axial CT, contrastada, apresenta múltiplos tumores HCC, identifica
-das e anotadas utilizando a ferramenta ePAD; B)O diagrama do stagio IIIA,
- mostra múltiplos HCCs; Pelo menos uma > 5 cm.
+dos e anotados utilizando a ferramenta ePAD; B) O diagrama do 
+\shape italic
+stage
+\shape default
+ IIIA mostra múltiplos HCCs com pelo menos um deles > 5 cm.
 \end_layout
 
 \end_inset
@@ -1593,21 +1730,21 @@ fadaptada{Faria2014}
 \end_layout
 
 \begin_layout Standard
-Na Figura 
+A Figura 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:examploIIIA"
 
 \end_inset
 
- se mostra múltiplos tumores de HCC, (linhas verdes); Pelo menos uma delas
+ mostra múltiplos tumores de HCC (linhas verdes) com pelo menos um deles
  > 5 cm.
  Não houve envolvimento linfonodal regional ou metástase.
- Este paciente foi classificado corretamente com estágio TNM 
+ Este paciente foi classificado corretamente no estágio TNM 
 \series bold
 IIIA 
 \series default
-(T3a, N0, M0) pelo nosso classificador.
+(T3a, N0, M0) pelo classificador.
 \end_layout
 
 \begin_layout Standard
@@ -1628,8 +1765,11 @@ name "fig:exampleIIA"
 \end_inset
 
  A) Uma imagem axial CT, contrastada, apresenta um tumor HCC, identificado
- e anotado utilizando a ferramenta ePAD; B) O diagrama do stagio II, mostra
- um tumor HCC solitário com invasão vascular.
+ e anotado utilizando a ferramenta ePAD; B) O diagrama do 
+\shape italic
+stage
+\shape default
+ II mostra um tumor HCC solitário com invasão vascular.
 \end_layout
 
 \end_inset
@@ -1671,20 +1811,20 @@ fadaptada{Faria2014}
 \end_layout
 
 \begin_layout Standard
-Na figura 
+A figura 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:exampleIIA"
 
 \end_inset
 
-, se mostra um único tumor de HCC (linha verde) com micro invasão vascular,
+ mostra um único tumor de HCC (linha verde) com micro invasão vascular,
  sem envolvimento de linfonodos regionais ou metástases.
- Este paciente foi classificado corretamente com estágio TNM 
+ Esse paciente foi classificado corretamente no estágio TNM 
 \series bold
 II 
 \series default
-(T2, N0, M0) pelo nosso classificador.
+(T2, N0, M0) pelo classificador.
 \end_layout
 
 \begin_layout Section
@@ -1693,38 +1833,34 @@ Considerações Finais
 
 \begin_layout Standard
 Neste capítulo foram descritos os resultados obtidos com o desenvolvimento
- do classificador TNM, Inicialmente usamos e comparamos duas abordagens
- como a busca semântica e a busca por palavra-chave para avaliar a ontologia
- AIM4-O, nessa análise nossos resultados mostraram como a busca semântica
- obteve melhores resultados, isto
+ do classificador TNM.
+ Inicialmente usamos e comparamos duas abordagens, a busca semântica e a
+ busca por palavras-chave, para avaliar a ontologia AIM4-O.
+ Nessa análise, nossos resultados mostraram que a busca semântica obteve
+ melhores resultados.
+ Isto se deve ao fato de que em relatórios clínicos baseados em ontologias,
+ máquinas tem acesso a mais informações sobre os dados e assim podem ter
+ mais sucesso, com maior precisão e revocação, em tarefas de busca.
+\end_layout
+
+\begin_layout Standard
+Após demonstrar como o uso aa ontologia AIM4-O pode ser benéfico no processo
+ de buscas por informação,
 \emph on
  
 \emph default
-é devido que quando os relatórios clinicos são baseados em ontologias, as
- informações podem ser procuradas com maior precisão e revocação.
+testamos o classificador TNM com relatórios de 52 pacientes com câncer de
+ fígado.
+ Ele obteve resultados de precisão e revocação muito bons ( 84.3% e 74,4%
+ respetivamente), quando comparamos suas predições de estágios de câncer
+ com o que foi reportado por médicos.
+ 
 \end_layout
 
 \begin_layout Standard
-Após de demonstrar como a ontologia AIM4-O pode ser benéfica para o processament
-o semântico, 
-\emph on
-nós 
-\emph default
-discutimos com os especialistas os cenários de 
-\emph on
-cancer staging
-\emph default
- de 52 pacientes e a capacidade do Classificador TNM, dessa discução podemos
- destacar além dos bons indicadores de presição e revocação obtidos pelo
- classificador ( 84.3% e 74,4% respetivamente), que podem ser detectados
- casos clínicos especiais com estagio errôneo e por conseguinte potenciais
- erros de tratamento médico podem ser reduzidos.
-\end_layout
-
-\begin_layout Standard
-O próximo capítulo conclui a dissertação consolidando os resultados obtidos
- na avaliação, Alem disso, ressalta-se as principais contribuições e limitações
- da pesquisa,  finalizando com o trabalho futuros.
+O próximo capítulo conclui esta dissertação, discutindo os resultados obtidos.
+ Além disso, ressaltam-se as principais contribuições e limitações da pesquisa,
+  finalizando com trabalhos futuros.
 \end_layout
 
 \end_body
