@@ -77,7 +77,7 @@
 \begin_layout Standard
 Em Biomedicina, especificamente em radiologia e oncologia, avaliar a resposta
  ao tratamento do câncer depende criticamente dos resultados da análise
- de imagens pelos especialistas.
+ de imagens médicas pelos especialistas.
  No entanto, as informações obtidas dessa análise não são facilmente interpretáv
 eis por máquinas.
  
@@ -229,7 +229,7 @@ description "Annotation and Image Markup Project"
 
 ) desenvolvido pelo 
 \lang english
-cancer Biomedical Informatics Grid
+Cancer Biomedical Informatics Grid
 \lang brazilian
  (caBIG
 \begin_inset CommandInset nomenclature
@@ -275,9 +275,9 @@ key "Kundu2009"
 \end_inset
 
 .
- Ele permite a representação, armazenamento e transferência consistentes
+ Ela permite a representação, armazenamento e transferência consistentes
  de significados semânticos sobre imagens.
- Ferramentas, como por exemplo o ePAD 
+ Ferramentas, como por exemplo ePAD 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "Rubin2014"
@@ -299,7 +299,7 @@ Motivação
 
 \begin_layout Standard
 O processo de classificação dos pacientes com câncer, através da análise
- de imagens, é uma tarefa executada por especialistas, como oncologistas
+ de imagens, é uma tarefa executada por especialistas, tais como oncologistas
  e radiologistas, com base na inspeção de imagens e pode ser, muitas vezes,
  um trabalho intensivo que exige precisão na interpretação das lesões.
  A precisão do especialista é obtida através de formação e experiência 
@@ -320,7 +320,8 @@ key "Depeursinge2014"
 Por outro lado, embora sistemas como o ePAD permitam a criação de anotações
  sobre imagens no formato AIM, facilitando assim a manipulação e consulta
  de metadados de imagens em AIM, eles não permitem representar anotações
- em um formato que seja diretamente adequado para o raciocínio (
+ em um formato que seja diretamente adequado para o uso de raciocínio logico
+ computacional(
 \emph on
 reasoning
 \emph default
@@ -358,9 +359,9 @@ Podemos ver então que existe uma carência de métodos de
 \emph on
 reasonig
 \emph default
- semântico para fazer inferências sobre lesões cancerígenas, a partir de
- anotações semânticas sobre imagens, baseadas em meios padronizados (como
- AIM) de adição de informação e conhecimento sobre uma imagem.
+ semântico para fazer inferências sobre lesões cancerosas, a partir de anotações
+ semânticas sobre imagens, baseadas em meios padronizados (como AIM) de
+ adição de informação e conhecimento sobre uma imagem.
  Sendo assim, a principal motivação deste trabalho é a possibilidade de
  desenvolver métodos de 
 \emph on
@@ -441,8 +442,15 @@ Representar apropriadamente o critério TNM de classificação (
 staging
 \emph default
 ) de câncer.
- Esse conhecimento teve de ser codificado usando a Web Ontology Language
- (OWL) e regras codificadas na Semantic Web Rule Language (SWRL).
+ Esse conhecimento teve de ser codificado usando a 
+\emph on
+Web Ontology Language
+\emph default
+ (OWL) e regras codificadas na 
+\emph on
+Semantic Web Rule Language
+\emph default
+ (SWRL).
 \end_layout
 
 \begin_layout Enumerate
@@ -451,9 +459,12 @@ Encontrar e analisar dados com informações do
 TNM staging
 \emph default
 , como relatórios de diagnóstico clínico com as suas respectivas imagens
- por 
+ por
+\emph on
+ 
 \lang english
 Computed Tomography
+\emph default
 \lang brazilian
  (CT).
  Foram usados os repositórios 
@@ -464,7 +475,7 @@ The NCI's Genomic Data Commons
 \emph on
 The Cancer Imaging Archive
 \emph default
-).
+.
 \end_layout
 
 \begin_layout Enumerate
@@ -483,24 +494,59 @@ Resultados
 \end_layout
 
 \begin_layout Standard
-
-\series bold
-[COLOQUE UM RESUMO DOS RESULTADOS QUE VOCÊ CONSEGUIU]
+O resultado foi um classificador TNM avaliado com casos reais de câncer,
+ nossos experimentos demonstraram a importância de melhorar os sistemas
+ de apoio à decisão clínica pelo processamento de imagens e metadados na
+ avaliação do câncer de figado com 84,3% de presisão e 74,4% de revocação.
+ Além disso, contrastando o resultado de 
+\emph on
+staging
+\emph default
+ automatizado de nosso classificador com os relatorios existentes no repositório
+ GDC, revelou-se o fato de que existem casos de pacientes com diagnóstico
+ inexato.
+ Mas, é importante notar que o procedimento de 
+\emph on
+staging
+\emph default
+ automático não dá ao médico novas informações, isto, pode ser visto como
+ uma segunda opinião para fins de qualidade no diagnóstico clínico, portanto
+ a qualidade dos diagnósticos médicos pode ser melhorada.
 \end_layout
 
 \begin_layout Standard
-Com os objetivos acima alcançados, demostramos que as técnicas propostas
- podem obter uma boa taxa de precisão na classificação das lesões e, por
- tanto, pode aumentar a qualidade e uniformidade na interpretação de imagens
- por especialistas.
+Este projeto de mestrado resultou na publicação de alguns artigos em eventos
+ científicos que são listadas a seguir:
 \end_layout
 
-\begin_layout Standard
-[
-\series bold
-Produções científicas obtidas com o desenvolvimento do trabalho,
-\series default
-]
+\begin_layout Itemize
+E.
+ F.
+ Luque, D.
+ L.
+ Rubin and D.
+ A.
+ Moreira, "Automatic Classification of Cancer Tumors Using Image Annotations
+ and Ontologies," 2015 IEEE 28th International Symposium on Computer-Based
+ Medical Systems, Sao Carlos, 2015, pp.
+ 368-369.
+ doi: 10.1109/CBMS.2015.83.
+\end_layout
+
+\begin_layout Itemize
+D.
+ A.
+ Moreira, C.
+ Hage, E.
+ F.
+ Luque, D.
+ Willrett and D.
+ L.
+ Rubin, "3D Markup of Radiological Images in ePAD, a Web-Based Image Annotation
+ Tool," 2015 IEEE 28th International Symposium on Computer-Based Medical
+ Systems, Sao Carlos, 2015, pp.
+ 97-102.
+ doi: 10.1109/CBMS.2015.46
 \end_layout
 
 \begin_layout Section
@@ -540,18 +586,9 @@ Capítulo 4: Esse capítulo apresenta os trabalhos relacionados, evidenciando
 \end_layout
 
 \begin_layout Standard
-Capítulo 5: Esse capítulo apresenta a metodologia utilizada para a expansão
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Expansão??
-\end_layout
-
-\end_inset
-
- do AIM e a codificação de conhecimento do critério TNM, usando as linguagens
- OWL e SWRL, para permitir o 
+Capítulo 5: Esse capítulo apresenta a metodologia utilizada para representar
+ ontológicamente o modelo de informação AIM e a codificação de conhecimento
+ do critério TNM, usando as linguagens OWL e SWRL, para permitir o 
 \emph on
 staging
 \emph default

@@ -399,19 +399,8 @@ key "Patel-schneider05buildingthe"
 
 \end_inset
 
-, quanto a representação formal, existem linguagens para representação de
- ontologias
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-frase sem sentido
-\end_layout
-
-\end_inset
-
-.
- Normalmente, usa-se lógica de predicados ou lógica descritiva.
+ existem linguagens para representação de ontologias onde usa-se lógica
+ de predicados ou lógica descritiva.
  Atualmente, as linguagens mais populares para descrever ontologias são
  RDF /RDF-S e OWL.
 \end_layout
@@ -559,19 +548,7 @@ name "sec:Semantic-Web-Rule"
 \end_layout
 
 \begin_layout Standard
-Dado que a interoperabilidade é uma das metas principais da Web Semântica
- e que as regras são uma parte fundamental dessas metas
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-não entendi, como as regras sao parte fundamental?
-\end_layout
-
-\end_inset
-
-, um passo fundamental para dar suporte a interoperabilidade na Web foi
- a criação da linguagem Semantic Web Rule Language (SWRL
+A linguagem de regras de Web Semântica (SWRL
 \begin_inset CommandInset nomenclature
 LatexCommand nomenclature
 symbol "SWRL"
@@ -579,17 +556,20 @@ description "Semantic Web Rule Language"
 
 \end_inset
 
-)
+) emergiu como um primeiro passo para aumentar a interoperabilidade de sistemas
+ baseados em regras a partir da perspectiva da Web Semântica
 \begin_inset Foot
 status open
 
 \begin_layout Plain Layout
-http://www.daml.org/rules/proposal/
+http://www.w3.org/Submission/SWRL/
 \end_layout
 
 \end_inset
 
 .
+ Dado que a interoperabilidade é uma das metas principais da Web Semântica
+ e que as regras são uma parte fundamental dessas metas.
  Essa linguagem foi projetada para ser o idioma de regras da Web Semântica
  
 \begin_inset CommandInset citation
@@ -957,18 +937,26 @@ key "Serique2012"
 \end_inset
 
 .
- Nos campos de medicina, como radiologia e oncologia, as duas ontologias
- mais conhecidas e usadas são o FMA e o 
+ Nos campos de medicina, como radiologia e oncologia, algumas de esas ferramenta
+s de engenharia ontológica são 
+\emph on
+FMA
+\emph default
+ 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Mejino2008"
+
+\end_inset
+
+e 
 \emph on
 RadLex
 \emph default
 
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Cade a ref dizendo que são as mais usadas?
-\end_layout
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Curtis2006"
 
 \end_inset
 
@@ -985,12 +973,14 @@ Foundational Model of Anatomy
 \end_layout
 
 \begin_layout Standard
-Uma bio\SpecialChar nobreakdash
-ontologia importante, no escopo deste trabalho, é a 
-\lang english
-Foundational Model of Anatomy
-\lang brazilian
- (FMA
+Segundo 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Serique2012"
+
+\end_inset
+
+ A FMA
 \begin_inset CommandInset nomenclature
 LatexCommand nomenclature
 symbol "FMA"
@@ -998,43 +988,17 @@ description "Foundational Model of Anatomy"
 
 \end_inset
 
-).
- Segundo 
-\begin_inset CommandInset citation
-LatexCommand citet
-key "Serique2012"
-
-\end_inset
-
-, a anatomia é o estudo das estruturas físicas dos organismos biológicos.
- Descrever e capturar de forma computável as terminologias e ontologias
- que envolvem entidades anatômicas é uma tarefa não trivial.
- A falta de uma representação generalizada da anatomia levou os desenvolvedores
- de terminologias e ontologias a representar a anatomia a partir dos seus
- próprios pontos de vista.
- Tanto na área de medicina clínica, quanto de biologia, isso gera um obstáculo
- para correlacionar os termos anatômicos entre si, devido a heterogeneidade
- das representações anatômicas
-\begin_inset CommandInset citation
-LatexCommand citep
-key "Serique2012"
-
-\end_inset
-
-.
+ nasceu a falta de uma representação generalizada da anatomia (o estudo
+ das estruturas físicas dos organismos biológicos) e tentar correlacionar
+ os termos anatômicos entre si, devido a heterogeneidade das representações
+ anatômicas.
+ A FMA vem sendo desenvolvida para oferecer uma ontologia de referencia,
+ destinada ao uso por qualquer ferramenta computacional que necessite de
+ informações anatômicas.
+ 
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Qual a conexão? A FMA resolve esse problema? O que ela tem haver com o que
- você afirmou?
-\end_layout
-
-\end_inset
-
 A estrutura ontológica da FMA fornece um modelo de inferência, permitindo
  que ferramentas computacionais possam inferir informações sobre dados anatômico
 s.
@@ -1057,6 +1021,30 @@ da
 \emph on
  University of Washington
 \emph default
+.
+\end_layout
+
+\begin_layout Standard
+A FMA é de código aberto e está disponível para download no formato OWL
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+ (http://www.bioontology.org/wiki/index.php/FMAInOwl)
+\end_layout
+
+\end_inset
+
+ e em outros formatos 
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+(http://sig.biostr.washington.edu/projects/fma/release/index.html)
+\end_layout
+
+\end_inset
+
 .
 \end_layout
 
@@ -1118,7 +1106,19 @@ Como o Índice ACR possui apenas milhares de índices, fica fácil para as
 
 \begin_layout Standard
 Com o surgimento do mundo digital, a necessidade de criar sistemas de indexação
- informatizados levou a Radiological Society of North America (RSNA)
+ informatizados levou a (RSNA 
+\emph on
+
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "RSNA"
+description "Radiological Society of North America"
+
+\end_inset
+
+
+\emph default
+)
 \begin_inset Note Note
 status open
 
@@ -1128,27 +1128,17 @@ Vc já tinha se referido a RSNA antes?
 
 \end_inset
 
- a desenvolver a ontologia RadLex (RNSA, 2012)
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Isso é uma ref?
-\end_layout
-
-\end_inset
-
-, como resposta as lacunas encontradas em outras terminologias radiológicas,
- criando assim uma única e completa terminologia.
- O RadLex é uma forma unificada de reunir os termos usados em radiologia
- e atender às necessidade dos radiologistas 
+ a desenvolver a ontologia RadLex
 \begin_inset CommandInset citation
 LatexCommand citep
 key "Curtis2006"
 
 \end_inset
 
-.
+, como resposta as lacunas encontradas em outras terminologias radiológicas,
+ criando assim uma única e completa terminologia.
+ O RadLex é uma forma unificada de reunir os termos usados em radiologia
+ e atender às necessidade dos radiologistas.
 \end_layout
 
 \begin_layout Standard
@@ -1189,17 +1179,8 @@ name "sec:Annotation-Imaging-Markup(AIM)"
 
 \begin_layout Standard
 As modernas imagens médicas contêm uma vasta quantidade de informação no
- formato padrão DICOM
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Em algum lugar, no cap anterior, voce explica DICOM? Acho que não.
-\end_layout
-
-\end_inset
-
-.
+ formato padrão DICOM, que é um conjunto de normas para uniformizar a comunicaçã
+o entre equipamentos que geram essas imagens.
  No entanto, essas informações são relacionadas apenas a metadados sobre
  as imagens.
  As informações mais importantes relacionadas as imagens ficam codificadas
@@ -1390,8 +1371,8 @@ status open
 
 \end_inset
 
- contendo os elementos cujos valores devem ser obrigatoriamente especificados
- pelo usuário durante a visualização das imagens.
+ análogo a um formulário eletrônico de relatório do caso consistindo de
+ um conjunto de perguntas e possíveis respostas ao anotar imagens.
  Uma 
 \emph on
 AIM templates

@@ -76,7 +76,7 @@ Nesta dissertação de mestrado, geramos automaticamente o
 \emph on
  Cancer Staging
 \emph default
-(estágios do câncer) de lesões cancerígenas presentes em imagens médicas,
+(estágios do câncer) de lesões cancerosas presentes em imagens médicas,
  utilizando tecnologias de 
 \emph on
 reasoning
@@ -133,6 +133,21 @@ cancer staging
  de presição e revocação obtidos pelo classificador ( 84.3% e 74,4%), que
  podem ser detectados casos clínicos especiais com estagio errôneo e por
  conseguinte potenciais erros de tratamento médico podem ser reduzidos.
+\end_layout
+
+\begin_layout Itemize
+Um
+\emph on
+ AIM template que
+\emph default
+ é usado para garantir que o mínimo exigido de informações seja coletado
+ para representar o sistema de staging
+\emph on
+ 
+\emph default
+TNM
+\emph on
+.
 \end_layout
 
 \begin_layout Itemize
@@ -228,8 +243,11 @@ https://bioportal.bioontology.org/ontologies/ONLIRA
 
 \begin_layout Itemize
 Representação formal com base na lógica de primeira ordem de: regras, axiomas
- e procedimentos de raciocínio automático a fim de automaticamente fazer
- o 
+ e procedimentos de 
+\emph on
+reasoning
+\emph default
+ automático a fim de automaticamente fazer o 
 \emph on
 cancer staging
 \emph default
@@ -260,7 +278,7 @@ Em suma, O resultado foi o classificador TNM e foi usado em casos reais
 staging
 \emph default
  automatizado de nosso classificador com os relatorios existentes no GDC,
- revelou-se o fato de que existem casos de pacientes com diagnóstico inexacto.
+ revelou-se o fato de que existem casos de pacientes com diagnóstico inexato.
  
 \series bold
 Mas, é importante notar que o procedimento de 
@@ -279,7 +297,7 @@ Produção Científica
 
 \begin_layout Standard
 Este projeto de mestrado resultou na publicação de alguns artigos em eventos
- cien- tíficos que são listadas a seguir:
+ científicos que são listadas a seguir:
 \end_layout
 
 \begin_layout Itemize
@@ -379,12 +397,21 @@ A integração de uma DSL ou Linguagens de Domínio Específico, como ferramenta
  TNM.
 \end_layout
 
-\begin_layout Itemize
+\begin_layout Standard
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
 O trabalho futuro incluirá, conjuntos de dados mais variados para avaliação,
  expansão do classificador para outros locais de tumor e incorporação em
  sistemas de informação existentes.
- O classificador TNM aplicação mostra o potencial de ser integrado em sistemas
- de software maiores.
+ O classificador TNM mostra o potencial de ser integrado em sistemas de
+ software maiores.
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_body
