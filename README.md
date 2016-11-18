@@ -1,4 +1,4 @@
-Qualificação
+Dissertação de mestado USP
 =====
 
 Quali

@@ -13,8 +13,8 @@
    height="456.46008"
    id="svg2"
    version="1.1"
-   inkscape:version="0.48.5 r10040"
-   sodipodi:docname="classhistogram.pdf">
+   inkscape:version="0.91 r"
+   sodipodi:docname="classhistogram.svg">
   <defs
      id="defs4">
     <clipPath
@@ -107,7 +107,7 @@
      inkscape:pageshadow="2"
      inkscape:zoom="1.0076756"
      inkscape:cx="449.19165"
-     inkscape:cy="278.99895"
+     inkscape:cy="210.00532"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -115,11 +115,11 @@
      fit-margin-left="0"
      fit-margin-right="0"
      fit-margin-bottom="0"
-     inkscape:window-width="1567"
-     inkscape:window-height="937"
-     inkscape:window-x="336"
-     inkscape:window-y="16"
-     inkscape:window-maximized="0" />
+     inkscape:window-width="1366"
+     inkscape:window-height="744"
+     inkscape:window-x="0"
+     inkscape:window-y="24"
+     inkscape:window-maximized="1" />
   <metadata
      id="metadata7">
     <rdf:RDF>
@@ -137,481 +137,6 @@
      inkscape:groupmode="layer"
      id="layer1"
      transform="translate(13.723296,-36.434544)">
-    <g
-       style="text-align:left;color:#4b4966"
-       id="g5258"
-       transform="matrix(2.6584201,0,0,2.4966183,68.225242,23.951452)">
-      <g
-         id="g5108"
-         style="text-align:left;color:#4b4966"
-         transform="translate(30,5)">
-        <g
-           id="g5110"
-           style="text-align:left;color:#4b4966"
-           class="left-bar">
-          <rect
-             id="rect5112"
-             style="text-align:left;color:#4b4966;fill:#00b0ff"
-             height="29"
-             width="52"
-             y="4"
-             x="65"
-             class="left-bar-tp" />
-          <rect
-             id="rect5114"
-             style="text-align:left;color:#4b4966;fill:#ffc400"
-             height="29"
-             width="8"
-             y="4"
-             x="117"
-             class="left-bar-fp" />
-          <rect
-             id="rect5116"
-             style="text-align:left;color:#4b4966;fill:#00c853"
-             height="29"
-             width="0"
-             y="4"
-             x="65"
-             class="left-bar-fn" />
-        </g>
-        <g
-           id="g5118"
-           style="text-align:left;color:#4b4966"
-           class="left-bar">
-          <rect
-             id="rect5120"
-             style="text-align:left;color:#4b4966;fill:#00b0ff"
-             height="29"
-             width="24"
-             y="36"
-             x="65"
-             class="left-bar-tp" />
-          <rect
-             id="rect5122"
-             style="text-align:left;color:#4b4966;fill:#ffc400"
-             height="29"
-             width="5"
-             y="36"
-             x="89"
-             class="left-bar-fp" />
-          <rect
-             id="rect5124"
-             style="text-align:left;color:#4b4966;fill:#00c853"
-             height="29"
-             width="8"
-             y="36"
-             x="57"
-             class="left-bar-fn" />
-        </g>
-        <g
-           id="g5126"
-           style="text-align:left;color:#4b4966"
-           class="left-bar">
-          <rect
-             id="rect5128"
-             style="text-align:left;color:#4b4966;fill:#00b0ff"
-             height="29"
-             width="24"
-             y="68"
-             x="65"
-             class="left-bar-tp" />
-          <rect
-             id="rect5130"
-             style="text-align:left;color:#4b4966;fill:#ffc400"
-             height="29"
-             width="8"
-             y="68"
-             x="89"
-             class="left-bar-fp" />
-          <rect
-             id="rect5132"
-             style="text-align:left;color:#4b4966;fill:#00c853"
-             height="29"
-             width="8"
-             y="68"
-             x="57"
-             class="left-bar-fn" />
-        </g>
-        <g
-           id="g5134"
-           style="text-align:left;color:#4b4966"
-           class="left-bar">
-          <rect
-             id="rect5136"
-             style="text-align:left;color:#4b4966;fill:#00b0ff"
-             height="29"
-             width="3"
-             y="100"
-             x="65"
-             class="left-bar-tp" />
-          <rect
-             id="rect5138"
-             style="text-align:left;color:#4b4966;fill:#ffc400"
-             height="29"
-             width="3"
-             y="100"
-             x="68"
-             class="left-bar-fp" />
-          <rect
-             id="rect5140"
-             style="text-align:left;color:#4b4966;fill:#00c853"
-             height="29"
-             width="3"
-             y="100"
-             x="63"
-             class="left-bar-fn" />
-        </g>
-        <g
-           id="g5142"
-           style="text-align:left;color:#4b4966"
-           class="left-bar">
-          <rect
-             id="rect5144"
-             style="text-align:left;color:#4b4966;fill:#00b0ff"
-             height="29"
-             width="5"
-             y="132"
-             x="65"
-             class="left-bar-tp" />
-          <rect
-             id="rect5146"
-             style="text-align:left;color:#4b4966;fill:#ffc400"
-             height="29"
-             width="0"
-             y="132"
-             x="70"
-             class="left-bar-fp" />
-          <rect
-             id="rect5148"
-             style="text-align:left;color:#4b4966;fill:#00c853"
-             height="29"
-             width="5"
-             y="132"
-             x="60"
-             class="left-bar-fn" />
-        </g>
-        <g
-           id="g5150"
-           style="text-align:left;color:#4b4966"
-           transform="translate(0,165)"
-           class="x axis">
-          <g
-             id="g5152"
-             style="text-align:left;color:#4b4966"
-             transform="translate(13,0)"
-             class="tick">
-            <line
-               id="line5154"
-               style="text-align:left;color:#4b4966"
-               x2="0"
-               y2="0.30000001"
-               x1="0"
-               y1="0" />
-            <text
-               id="text5156"
-               style="font-size:8.69999981px;text-align:left;line-height:13.05000019px;text-anchor:middle;color:#4b4966;display:block"
-               x="0"
-               y="3.3"
-               dy="-7.5091626e-26">20</text>
-          </g>
-          <g
-             id="g5158"
-             style="text-align:left;color:#4b4966"
-             transform="translate(39,0)"
-             class="tick">
-            <line
-               id="line5160"
-               style="text-align:left;color:#4b4966"
-               x2="0"
-               y2="0.30000001"
-               x1="0"
-               y1="0" />
-            <text
-               id="text5162"
-               style="font-size:8.69999981px;text-align:left;line-height:13.05000019px;text-anchor:middle;color:#4b4966;display:block"
-               x="0"
-               y="3.3"
-               dy="-7.5091626e-26">10</text>
-          </g>
-          <g
-             id="g5164"
-             style="text-align:left;color:#4b4966"
-             transform="translate(65,0)"
-             class="tick">
-            <line
-               id="line5166"
-               style="text-align:left;color:#4b4966"
-               x2="0"
-               y2="0.30000001"
-               x1="0"
-               y1="0" />
-            <text
-               id="text5168"
-               style="font-size:8.69999981px;text-align:left;line-height:13.05000019px;text-anchor:middle;color:#4b4966;display:block"
-               x="0"
-               y="3.3"
-               dy="-7.5091626e-26">0</text>
-          </g>
-          <g
-             id="g5170"
-             style="text-align:left;color:#4b4966"
-             transform="translate(91,0)"
-             class="tick">
-            <line
-               id="line5172"
-               style="text-align:left;color:#4b4966"
-               x2="0"
-               y2="0.30000001"
-               x1="0"
-               y1="0" />
-            <text
-               id="text5174"
-               style="font-size:8.69999981px;text-align:left;line-height:13.05000019px;text-anchor:middle;color:#4b4966;display:block"
-               x="0"
-               y="3.3"
-               dy="-7.5091626e-26">10</text>
-          </g>
-          <g
-             id="g5176"
-             style="text-align:left;color:#4b4966"
-             transform="translate(117,0)"
-             class="tick">
-            <line
-               id="line5178"
-               style="text-align:left;color:#4b4966"
-               x2="0"
-               y2="0.30000001"
-               x1="0"
-               y1="0" />
-            <text
-               id="text5180"
-               style="font-size:8.69999981px;text-align:left;line-height:13.05000019px;text-anchor:middle;color:#4b4966;display:block"
-               x="0"
-               y="3.3"
-               dy="-7.5091626e-26">20</text>
-          </g>
-          <path
-             id="path5182"
-             style="text-align:left;color:#4b4966"
-             d="M 0,0.3 V 0 h 130.46875 v 0.3"
-             class="domain"
-             inkscape:connector-curvature="0" />
-        </g>
-        <g
-           id="g5184"
-           style="text-align:left;color:#4b4966"
-           class="y axis">
-          <g
-             id="g5186"
-             style="text-align:left;color:#4b4966"
-             transform="translate(0,18.5)"
-             class="tick">
-            <line
-               id="line5188"
-               style="text-align:left;color:#4b4966"
-               y2="0"
-               x2="0"
-               x1="0"
-               y1="0" />
-            <text
-               id="text5190"
-               style="font-size:8.69999981px;text-align:left;line-height:13.05000019px;text-anchor:end;color:#4b4966;display:block"
-               y="0"
-               x="-3"
-               dy="-7.5091626e-26">Stage I</text>
-          </g>
-          <g
-             id="g5192"
-             style="text-align:left;color:#4b4966"
-             transform="translate(0,50.5)"
-             class="tick">
-            <line
-               id="line5194"
-               style="text-align:left;color:#4b4966"
-               y2="0"
-               x2="0"
-               x1="0"
-               y1="0" />
-            <text
-               id="text5196"
-               style="font-size:8.69999981px;text-align:left;line-height:13.05000019px;text-anchor:end;color:#4b4966;display:block"
-               y="0"
-               x="-3"
-               dy="-7.5091626e-26">Stage II</text>
-          </g>
-          <g
-             id="g5198"
-             style="text-align:left;color:#4b4966"
-             transform="translate(0,82.5)"
-             class="tick">
-            <line
-               id="line5200"
-               style="text-align:left;color:#4b4966"
-               y2="0"
-               x2="0"
-               x1="0"
-               y1="0" />
-            <text
-               id="text5202"
-               style="font-size:8.69999981px;text-align:left;line-height:13.05000019px;text-anchor:end;color:#4b4966;display:block"
-               y="0"
-               x="-3"
-               dy="-7.5091626e-26">Stage IIIA</text>
-          </g>
-          <g
-             id="g5204"
-             style="text-align:left;color:#4b4966"
-             transform="translate(0,114.5)"
-             class="tick">
-            <line
-               id="line5206"
-               style="text-align:left;color:#4b4966"
-               y2="0"
-               x2="0"
-               x1="0"
-               y1="0" />
-            <text
-               id="text5208"
-               style="font-size:8.69999981px;text-align:left;line-height:13.05000019px;text-anchor:end;color:#4b4966;display:block"
-               y="0"
-               x="-3"
-               dy="-7.5091626e-26">Stage IIIB</text>
-          </g>
-          <g
-             id="g5210"
-             style="text-align:left;color:#4b4966"
-             transform="translate(0,146.5)"
-             class="tick">
-            <line
-               id="line5212"
-               style="text-align:left;color:#4b4966"
-               y2="0"
-               x2="0"
-               x1="0"
-               y1="0" />
-            <text
-               id="text5214"
-               style="font-size:8.69999981px;text-align:left;line-height:13.05000019px;text-anchor:end;color:#4b4966;display:block"
-               y="0"
-               x="-3"
-               dy="-7.5091626e-26">Stage IVA</text>
-          </g>
-          <path
-             id="path5216"
-             style="text-align:left;color:#4b4966"
-             d="M 0,0 H 0 V 165 H 0"
-             class="domain"
-             inkscape:connector-curvature="0" />
-        </g>
-        <g
-           id="g5218"
-           style="text-align:left;color:#4b4966"
-           transform="translate(65,0)"
-           class="y axis2">
-          <g
-             id="g5220"
-             style="text-align:left;color:#4b4966"
-             transform="translate(0,18.5)"
-             class="tick">
-            <line
-               id="line5222"
-               style="text-align:left;color:#4b4966"
-               y2="0"
-               x2="-0.30000001"
-               x1="0"
-               y1="0" />
-            <text
-               id="text5224"
-               style="font-size:8.69999981px;text-align:left;line-height:13.05000019px;text-anchor:end;color:#4b4966;display:block"
-               y="0"
-               x="-3.3"
-               dy="-7.5091626e-26" />
-          </g>
-          <g
-             id="g5226"
-             style="text-align:left;color:#4b4966"
-             transform="translate(0,50.5)"
-             class="tick">
-            <line
-               id="line5228"
-               style="text-align:left;color:#4b4966"
-               y2="0"
-               x2="-0.30000001"
-               x1="0"
-               y1="0" />
-            <text
-               id="text5230"
-               style="font-size:8.69999981px;text-align:left;line-height:13.05000019px;text-anchor:end;color:#4b4966;display:block"
-               y="0"
-               x="-3.3"
-               dy="-7.5091626e-26" />
-          </g>
-          <g
-             id="g5232"
-             style="text-align:left;color:#4b4966"
-             transform="translate(0,82.5)"
-             class="tick">
-            <line
-               id="line5234"
-               style="text-align:left;color:#4b4966"
-               y2="0"
-               x2="-0.30000001"
-               x1="0"
-               y1="0" />
-            <text
-               id="text5236"
-               style="font-size:8.69999981px;text-align:left;line-height:13.05000019px;text-anchor:end;color:#4b4966;display:block"
-               y="0"
-               x="-3.3"
-               dy="-7.5091626e-26" />
-          </g>
-          <g
-             id="g5238"
-             style="text-align:left;color:#4b4966"
-             transform="translate(0,114.5)"
-             class="tick">
-            <line
-               id="line5240"
-               style="text-align:left;color:#4b4966"
-               y2="0"
-               x2="-0.30000001"
-               x1="0"
-               y1="0" />
-            <text
-               id="text5242"
-               style="font-size:8.69999981px;text-align:left;line-height:13.05000019px;text-anchor:end;color:#4b4966;display:block"
-               y="0"
-               x="-3.3"
-               dy="-7.5091626e-26" />
-          </g>
-          <g
-             id="g5244"
-             style="text-align:left;color:#4b4966"
-             transform="translate(0,146.5)"
-             class="tick">
-            <line
-               id="line5246"
-               style="text-align:left;color:#4b4966"
-               y2="0"
-               x2="-0.30000001"
-               x1="0"
-               y1="0" />
-            <text
-               id="text5248"
-               style="font-size:8.69999981px;text-align:left;line-height:13.05000019px;text-anchor:end;color:#4b4966;display:block"
-               y="0"
-               x="-3.3"
-               dy="-7.5091626e-26" />
-          </g>
-          <path
-             id="path5250"
-             style="text-align:left;color:#4b4966"
-             d="M -0.3,0 H 0 v 165 h -0.3"
-             class="domain"
-             inkscape:connector-curvature="0" />
-        </g>
-      </g>
-    </g>
     <rect
        style="fill:#00b0ff;fill-opacity:1;stroke:none"
        id="rect5332"
@@ -692,5 +217,517 @@
          id="tspan3491"
          x="249.98909"
          y="488.73447">Clinical Reports</tspan></text>
+    <g
+       style="color:#4b4966;font-family:'Josefin Sans', sans-serif;text-align:left"
+       id="g4592"
+       transform="matrix(2.9140807,0,0,2.296251,70.458686,30.017992)">
+      <g
+         id="g4430"
+         style="color:#4b4966;font-family:'Josefin Sans', sans-serif;text-align:left"
+         transform="translate(30,5)">
+        <g
+           id="g4432"
+           style="color:#4b4966;font-family:'Josefin Sans', sans-serif;text-align:left"
+           class="left-bar">
+          <rect
+             id="rect4434"
+             style="color:#4b4966;font-family:'Josefin Sans', sans-serif;text-align:left;fill:#00b0ff"
+             height="29"
+             width="56"
+             y="4"
+             x="70"
+             class="left-bar-tp" />
+          <rect
+             id="rect4436"
+             style="color:#4b4966;font-family:'Josefin Sans', sans-serif;text-align:left;fill:#ffc400"
+             height="29"
+             width="5"
+             y="4"
+             x="126"
+             class="left-bar-fp" />
+          <rect
+             id="rect4438"
+             style="color:#4b4966;font-family:'Josefin Sans', sans-serif;text-align:left;fill:#00c853"
+             height="29"
+             width="0"
+             y="4"
+             x="70"
+             class="left-bar-fn" />
+        </g>
+        <g
+           id="g4440"
+           style="color:#4b4966;font-family:'Josefin Sans', sans-serif;text-align:left"
+           class="left-bar">
+          <rect
+             id="rect4442"
+             style="color:#4b4966;font-family:'Josefin Sans', sans-serif;text-align:left;fill:#00b0ff"
+             height="29"
+             width="23"
+             y="36"
+             x="70"
+             class="left-bar-tp" />
+          <rect
+             id="rect4444"
+             style="color:#4b4966;font-family:'Josefin Sans', sans-serif;text-align:left;fill:#ffc400"
+             height="29"
+             width="5"
+             y="36"
+             x="93"
+             class="left-bar-fp" />
+          <rect
+             id="rect4446"
+             style="color:#4b4966;font-family:'Josefin Sans', sans-serif;text-align:left;fill:#00c853"
+             height="29"
+             width="7"
+             y="36"
+             x="63"
+             class="left-bar-fn" />
+        </g>
+        <g
+           id="g4448"
+           style="color:#4b4966;font-family:'Josefin Sans', sans-serif;text-align:left"
+           class="left-bar">
+          <rect
+             id="rect4450"
+             style="color:#4b4966;font-family:'Josefin Sans', sans-serif;text-align:left;fill:#00b0ff"
+             height="29"
+             width="19"
+             y="68"
+             x="70"
+             class="left-bar-tp" />
+          <rect
+             id="rect4452"
+             style="color:#4b4966;font-family:'Josefin Sans', sans-serif;text-align:left;fill:#ffc400"
+             height="29"
+             width="2"
+             y="68"
+             x="89"
+             class="left-bar-fp" />
+          <rect
+             id="rect4454"
+             style="color:#4b4966;font-family:'Josefin Sans', sans-serif;text-align:left;fill:#00c853"
+             height="29"
+             width="5"
+             y="68"
+             x="65"
+             class="left-bar-fn" />
+        </g>
+        <g
+           id="g4456"
+           style="color:#4b4966;font-family:'Josefin Sans', sans-serif;text-align:left"
+           class="left-bar">
+          <rect
+             id="rect4458"
+             style="color:#4b4966;font-family:'Josefin Sans', sans-serif;text-align:left;fill:#00b0ff"
+             height="29"
+             width="5"
+             y="100"
+             x="70"
+             class="left-bar-tp" />
+          <rect
+             id="rect4460"
+             style="color:#4b4966;font-family:'Josefin Sans', sans-serif;text-align:left;fill:#ffc400"
+             height="29"
+             width="2"
+             y="100"
+             x="75"
+             class="left-bar-fp" />
+          <rect
+             id="rect4462"
+             style="color:#4b4966;font-family:'Josefin Sans', sans-serif;text-align:left;fill:#00c853"
+             height="29"
+             width="0"
+             y="100"
+             x="70"
+             class="left-bar-fn" />
+        </g>
+        <g
+           id="g4464"
+           style="color:#4b4966;font-family:'Josefin Sans', sans-serif;text-align:left"
+           class="left-bar">
+          <rect
+             id="rect4466"
+             style="color:#4b4966;font-family:'Josefin Sans', sans-serif;text-align:left;fill:#00b0ff"
+             height="29"
+             width="2"
+             y="132"
+             x="70"
+             class="left-bar-tp" />
+          <rect
+             id="rect4468"
+             style="color:#4b4966;font-family:'Josefin Sans', sans-serif;text-align:left;fill:#ffc400"
+             height="29"
+             width="0"
+             y="132"
+             x="72"
+             class="left-bar-fp" />
+          <rect
+             id="rect4470"
+             style="color:#4b4966;font-family:'Josefin Sans', sans-serif;text-align:left;fill:#00c853"
+             height="29"
+             width="2"
+             y="132"
+             x="68"
+             class="left-bar-fn" />
+        </g>
+        <g
+           id="g4472"
+           style="color:#4b4966;font-family:'Josefin Sans', sans-serif;text-align:left"
+           transform="translate(0,165)"
+           class="x axis">
+          <g
+             id="g4474"
+             style="color:#4b4966;font-family:'Josefin Sans', sans-serif;text-align:left"
+             class="tick">
+            <line
+               id="line4476"
+               style="color:#4b4966;font-family:'Josefin Sans', sans-serif;text-align:left"
+               x2="0"
+               y2="0.30000001"
+               x1="0"
+               y1="0" />
+            <text
+               id="text4478"
+               style="color:#4b4966;font-size:9px;line-height:13.5px;font-family:'Josefin Sans', sans-serif;text-align:left;text-anchor:middle;white-space:nowrap;display:block"
+               x="0"
+               y="3.3"
+               dy="1.4012985e-45">30</text>
+          </g>
+          <g
+             id="g4480"
+             style="color:#4b4966;font-family:'Josefin Sans', sans-serif;text-align:left"
+             transform="translate(23,0)"
+             class="tick">
+            <line
+               id="line4482"
+               style="color:#4b4966;font-family:'Josefin Sans', sans-serif;text-align:left"
+               x2="0"
+               y2="0.30000001"
+               x1="0"
+               y1="0" />
+            <text
+               id="text4484"
+               style="color:#4b4966;font-size:9px;line-height:13.5px;font-family:'Josefin Sans', sans-serif;text-align:left;text-anchor:middle;white-space:nowrap;display:block"
+               x="0"
+               y="3.3"
+               dy="1.4012985e-45">20</text>
+          </g>
+          <g
+             id="g4486"
+             style="color:#4b4966;font-family:'Josefin Sans', sans-serif;text-align:left"
+             transform="translate(47,0)"
+             class="tick">
+            <line
+               id="line4488"
+               style="color:#4b4966;font-family:'Josefin Sans', sans-serif;text-align:left"
+               x2="0"
+               y2="0.30000001"
+               x1="0"
+               y1="0" />
+            <text
+               id="text4490"
+               style="color:#4b4966;font-size:9px;line-height:13.5px;font-family:'Josefin Sans', sans-serif;text-align:left;text-anchor:middle;white-space:nowrap;display:block"
+               x="0"
+               y="3.3"
+               dy="1.4012985e-45">10</text>
+          </g>
+          <g
+             id="g4492"
+             style="color:#4b4966;font-family:'Josefin Sans', sans-serif;text-align:left"
+             transform="translate(70,0)"
+             class="tick">
+            <line
+               id="line4494"
+               style="color:#4b4966;font-family:'Josefin Sans', sans-serif;text-align:left"
+               x2="0"
+               y2="0.30000001"
+               x1="0"
+               y1="0" />
+            <text
+               id="text4496"
+               style="color:#4b4966;font-size:9px;line-height:13.5px;font-family:'Josefin Sans', sans-serif;text-align:left;text-anchor:middle;white-space:nowrap;display:block"
+               x="0"
+               y="3.3"
+               dy="1.4012985e-45">0</text>
+          </g>
+          <g
+             id="g4498"
+             style="color:#4b4966;font-family:'Josefin Sans', sans-serif;text-align:left"
+             transform="translate(93,0)"
+             class="tick">
+            <line
+               id="line4500"
+               style="color:#4b4966;font-family:'Josefin Sans', sans-serif;text-align:left"
+               x2="0"
+               y2="0.30000001"
+               x1="0"
+               y1="0" />
+            <text
+               id="text4502"
+               style="color:#4b4966;font-size:9px;line-height:13.5px;font-family:'Josefin Sans', sans-serif;text-align:left;text-anchor:middle;white-space:nowrap;display:block"
+               x="0"
+               y="3.3"
+               dy="1.4012985e-45">10</text>
+          </g>
+          <g
+             id="g4504"
+             style="color:#4b4966;font-family:'Josefin Sans', sans-serif;text-align:left"
+             transform="translate(117,0)"
+             class="tick">
+            <line
+               id="line4506"
+               style="color:#4b4966;font-family:'Josefin Sans', sans-serif;text-align:left"
+               x2="0"
+               y2="0.30000001"
+               x1="0"
+               y1="0" />
+            <text
+               id="text4508"
+               style="color:#4b4966;font-size:9px;line-height:13.5px;font-family:'Josefin Sans', sans-serif;text-align:left;text-anchor:middle;white-space:nowrap;display:block"
+               x="0"
+               y="3.3"
+               dy="1.4012985e-45">20</text>
+          </g>
+          <g
+             id="g4510"
+             style="color:#4b4966;font-family:'Josefin Sans', sans-serif;text-align:left"
+             transform="translate(140,0)"
+             class="tick">
+            <line
+               id="line4512"
+               style="color:#4b4966;font-family:'Josefin Sans', sans-serif;text-align:left"
+               x2="0"
+               y2="0.30000001"
+               x1="0"
+               y1="0" />
+            <text
+               id="text4514"
+               style="color:#4b4966;font-size:9px;line-height:13.5px;font-family:'Josefin Sans', sans-serif;text-align:left;text-anchor:middle;white-space:nowrap;display:block"
+               x="0"
+               y="3.3"
+               dy="1.4012985e-45">30</text>
+          </g>
+          <path
+             id="path4516"
+             style="color:#4b4966;font-family:'Josefin Sans', sans-serif;text-align:left"
+             d="M 0,0.3 0,0 l 140,0 0,0.3"
+             class="domain"
+             inkscape:connector-curvature="0" />
+        </g>
+        <g
+           id="g4518"
+           style="color:#4b4966;font-family:'Josefin Sans', sans-serif;text-align:left"
+           class="y axis">
+          <g
+             id="g4520"
+             style="color:#4b4966;font-family:'Josefin Sans', sans-serif;text-align:left"
+             transform="translate(0,18.5)"
+             class="tick">
+            <line
+               id="line4522"
+               style="color:#4b4966;font-family:'Josefin Sans', sans-serif;text-align:left"
+               y2="0"
+               x2="0"
+               x1="0"
+               y1="0" />
+            <text
+               id="text4524"
+               style="color:#4b4966;font-size:9px;line-height:13.5px;font-family:'Josefin Sans', sans-serif;text-align:left;text-anchor:end;white-space:nowrap;display:block"
+               y="0"
+               x="-3"
+               dy="1.4012985e-45">Stage I</text>
+          </g>
+          <g
+             id="g4526"
+             style="color:#4b4966;font-family:'Josefin Sans', sans-serif;text-align:left"
+             transform="translate(0,50.5)"
+             class="tick">
+            <line
+               id="line4528"
+               style="color:#4b4966;font-family:'Josefin Sans', sans-serif;text-align:left"
+               y2="0"
+               x2="0"
+               x1="0"
+               y1="0" />
+            <text
+               id="text4530"
+               style="color:#4b4966;font-size:9px;line-height:13.5px;font-family:'Josefin Sans', sans-serif;text-align:left;text-anchor:end;white-space:nowrap;display:block"
+               y="0"
+               x="-3"
+               dy="1.4012985e-45">Stage II</text>
+          </g>
+          <g
+             id="g4532"
+             style="color:#4b4966;font-family:'Josefin Sans', sans-serif;text-align:left"
+             transform="translate(0,82.5)"
+             class="tick">
+            <line
+               id="line4534"
+               style="color:#4b4966;font-family:'Josefin Sans', sans-serif;text-align:left"
+               y2="0"
+               x2="0"
+               x1="0"
+               y1="0" />
+            <text
+               id="text4536"
+               style="color:#4b4966;font-size:9px;line-height:13.5px;font-family:'Josefin Sans', sans-serif;text-align:left;text-anchor:end;white-space:nowrap;display:block"
+               y="0"
+               x="-3"
+               dy="1.4012985e-45">Stage IIIA</text>
+          </g>
+          <g
+             id="g4538"
+             style="color:#4b4966;font-family:'Josefin Sans', sans-serif;text-align:left"
+             transform="translate(0,114.5)"
+             class="tick">
+            <line
+               id="line4540"
+               style="color:#4b4966;font-family:'Josefin Sans', sans-serif;text-align:left"
+               y2="0"
+               x2="0"
+               x1="0"
+               y1="0" />
+            <text
+               id="text4542"
+               style="color:#4b4966;font-size:9px;line-height:13.5px;font-family:'Josefin Sans', sans-serif;text-align:left;text-anchor:end;white-space:nowrap;display:block"
+               y="0"
+               x="-3"
+               dy="1.4012985e-45">Stage IIIB</text>
+          </g>
+          <g
+             id="g4544"
+             style="color:#4b4966;font-family:'Josefin Sans', sans-serif;text-align:left"
+             transform="translate(0,146.5)"
+             class="tick">
+            <line
+               id="line4546"
+               style="color:#4b4966;font-family:'Josefin Sans', sans-serif;text-align:left"
+               y2="0"
+               x2="0"
+               x1="0"
+               y1="0" />
+            <text
+               id="text4548"
+               style="color:#4b4966;font-size:9px;line-height:13.5px;font-family:'Josefin Sans', sans-serif;text-align:left;text-anchor:end;white-space:nowrap;display:block"
+               y="0"
+               x="-3"
+               dy="1.4012985e-45">Stage IVA</text>
+          </g>
+          <path
+             id="path4550"
+             style="color:#4b4966;font-family:'Josefin Sans', sans-serif;text-align:left"
+             d="m 0,0 0,0 0,165 0,0"
+             class="domain"
+             inkscape:connector-curvature="0" />
+        </g>
+        <g
+           id="g4552"
+           style="color:#4b4966;font-family:'Josefin Sans', sans-serif;text-align:left"
+           transform="translate(70,0)"
+           class="y axis2">
+          <g
+             id="g4554"
+             style="color:#4b4966;font-family:'Josefin Sans', sans-serif;text-align:left"
+             transform="translate(0,18.5)"
+             class="tick">
+            <line
+               id="line4556"
+               style="color:#4b4966;font-family:'Josefin Sans', sans-serif;text-align:left"
+               y2="0"
+               x2="-0.30000001"
+               x1="0"
+               y1="0" />
+            <text
+               id="text4558"
+               style="color:#4b4966;font-size:9px;line-height:13.5px;font-family:'Josefin Sans', sans-serif;text-align:left;text-anchor:end;white-space:nowrap;display:block"
+               y="0"
+               x="-3.3"
+               dy="1.4012985e-45" />
+          </g>
+          <g
+             id="g4560"
+             style="color:#4b4966;font-family:'Josefin Sans', sans-serif;text-align:left"
+             transform="translate(0,50.5)"
+             class="tick">
+            <line
+               id="line4562"
+               style="color:#4b4966;font-family:'Josefin Sans', sans-serif;text-align:left"
+               y2="0"
+               x2="-0.30000001"
+               x1="0"
+               y1="0" />
+            <text
+               id="text4564"
+               style="color:#4b4966;font-size:9px;line-height:13.5px;font-family:'Josefin Sans', sans-serif;text-align:left;text-anchor:end;white-space:nowrap;display:block"
+               y="0"
+               x="-3.3"
+               dy="1.4012985e-45" />
+          </g>
+          <g
+             id="g4566"
+             style="color:#4b4966;font-family:'Josefin Sans', sans-serif;text-align:left"
+             transform="translate(0,82.5)"
+             class="tick">
+            <line
+               id="line4568"
+               style="color:#4b4966;font-family:'Josefin Sans', sans-serif;text-align:left"
+               y2="0"
+               x2="-0.30000001"
+               x1="0"
+               y1="0" />
+            <text
+               id="text4570"
+               style="color:#4b4966;font-size:9px;line-height:13.5px;font-family:'Josefin Sans', sans-serif;text-align:left;text-anchor:end;white-space:nowrap;display:block"
+               y="0"
+               x="-3.3"
+               dy="1.4012985e-45" />
+          </g>
+          <g
+             id="g4572"
+             style="color:#4b4966;font-family:'Josefin Sans', sans-serif;text-align:left"
+             transform="translate(0,114.5)"
+             class="tick">
+            <line
+               id="line4574"
+               style="color:#4b4966;font-family:'Josefin Sans', sans-serif;text-align:left"
+               y2="0"
+               x2="-0.30000001"
+               x1="0"
+               y1="0" />
+            <text
+               id="text4576"
+               style="color:#4b4966;font-size:9px;line-height:13.5px;font-family:'Josefin Sans', sans-serif;text-align:left;text-anchor:end;white-space:nowrap;display:block"
+               y="0"
+               x="-3.3"
+               dy="1.4012985e-45" />
+          </g>
+          <g
+             id="g4578"
+             style="color:#4b4966;font-family:'Josefin Sans', sans-serif;text-align:left"
+             transform="translate(0,146.5)"
+             class="tick">
+            <line
+               id="line4580"
+               style="color:#4b4966;font-family:'Josefin Sans', sans-serif;text-align:left"
+               y2="0"
+               x2="-0.30000001"
+               x1="0"
+               y1="0" />
+            <text
+               id="text4582"
+               style="color:#4b4966;font-size:9px;line-height:13.5px;font-family:'Josefin Sans', sans-serif;text-align:left;text-anchor:end;white-space:nowrap;display:block"
+               y="0"
+               x="-3.3"
+               dy="1.4012985e-45" />
+          </g>
+          <path
+             id="path4584"
+             style="color:#4b4966;font-family:'Josefin Sans', sans-serif;text-align:left"
+             d="M -0.3,0 0,0 0,165 -0.3,165"
+             class="domain"
+             inkscape:connector-curvature="0" />
+        </g>
+      </g>
+    </g>
   </g>
 </svg>

@@ -204,13 +204,6 @@ key "Bulu"
  Portanto, a fim de representar o modelo AIM na sua versão 4.0, que é a versão
  utilizada para armazenar anotações de imagem gerados por ferramentas como
  ePAD
-\begin_inset CommandInset citation
-LatexCommand citep
-key "Rubin2008"
-
-\end_inset
-
-
 \begin_inset Note Note
 status open
 
@@ -311,7 +304,7 @@ reference "fig:aim3hakan"
  e define a codificação OWL2 do modelo de dados AIM 4.0.
  Seu objectivo é apoiar ferramentas de anotação de imagens 
 \begin_inset Note Note
-status collapsed
+status open
 
 \begin_layout Plain Layout
 como o ePAD 
@@ -1018,54 +1011,49 @@ Individual: 9gs43xqj1kyl13lmega0zhoenzvgeakkprft8fw8
 
 \begin_layout Plain Layout
 
-     Facts:        
+     Facts:aim:hasImageReference      :sj19n9gf050ap9uzkc2h98ye4l3rxd71jac28g3g,
 \end_layout
 
 \begin_layout Plain Layout
 
-        aim:hasImageReference      :sj19n9gf050ap9uzkc2h98ye4l3rxd71jac28g3g,
+        	aim:hasMarkupEntity        :jma0x979fa9y3k4cwypqjvtechwitqb3glvdzjyw,
 \end_layout
 
 \begin_layout Plain Layout
 
-        aim:hasMarkupEntity        :jma0x979fa9y3k4cwypqjvtechwitqb3glvdzjyw,
+        	aim:hasCalculationEntity   :a4lpf1nncfbvh5dljf6gfw6r6i3om1ece6270nix,
 \end_layout
 
 \begin_layout Plain Layout
 
-        aim:hasCalculationEntity   :a4lpf1nncfbvh5dljf6gfw6r6i3om1ece6270nix,
+        	aim:hasImagingObservation  :hojggsv5f543pzsffj8jbijgp11thm9qdjow4idd,
 \end_layout
 
 \begin_layout Plain Layout
 
-        aim:hasImagingObservation  :hojggsv5f543pzsffj8jbijgp11thm9qdjow4idd,
+        	aim:hasPhysicalEntity      :g08jnm9ow79tijgj1br3q8wd89nq69epjdnxxo30,
 \end_layout
 
 \begin_layout Plain Layout
 
-        aim:hasPhysicalEntity      :g08jnm9ow79tijgj1br3q8wd89nq69epjdnxxo30,
+        	aim:dateTime               "2014-10-05T22:15:43"^^xsd:dateTime,
 \end_layout
 
 \begin_layout Plain Layout
 
-        aim:dateTime               "2014-10-05T22:15:43"^^xsd:dateTime,
+        	aim:uniqueIdentifier       "9gs43xqj1kyl13lmega0zhoenzvgeakkprft8fw8"^^
+xsd:string,            
 \end_layout
 
 \begin_layout Plain Layout
 
-        aim:uniqueIdentifier       "9gs43xqj1kyl13lmega0zhoenzvgeakkprft8fw8"^^x
-sd:string,            
-\end_layout
-
-\begin_layout Plain Layout
-
-        aim:comment                "CT/THORAX 1.0 B45F/273"^^xsd:string,
+        	aim:comment                "CT/THORAX 1.0 B45F/273"^^xsd:string,
       
 \end_layout
 
 \begin_layout Plain Layout
 
-        aim:name                   "Liver2"^^xsd:string.
+        	aim:name                   "Liver2"^^xsd:string.
 \end_layout
 
 \begin_layout Plain Layout
@@ -1080,18 +1068,14 @@ Individual: sj19n9gf050ap9uzkc2h98ye4l3rxd71jac28g3g
 
 \begin_layout Plain Layout
 
-   Facts:
+   Facts:aim:type                         "DicomImageReferenceEntity"^^xsd:strin
+g,
 \end_layout
 
 \begin_layout Plain Layout
 
-  aim:type                         "DicomImageReferenceEntity"^^xsd:string,
-\end_layout
-
-\begin_layout Plain Layout
-
-  aim:uniqueIdentifier             "sj19n9gf050ap9uzkc2h98ye4l3rxd71jac28g3g"^^x
-sd:string.
+  		aim:uniqueIdentifier             "sj19n9gf050ap9uzkc2h98ye4l3rxd71jac28g3g"^
+^xsd:string.
 \end_layout
 
 \begin_layout Plain Layout
@@ -1106,28 +1090,23 @@ Individual: jma0x979fa9y3k4cwypqjvtechwitqb3glvImageAnnotationCollectiondzjyw
 
 \begin_layout Plain Layout
 
-   Facts:       
+   Facts:  aim:type                        "TwoDimensionMultiPoint"^^xsd:string,
 \end_layout
 
 \begin_layout Plain Layout
 
-  aim:type                        "TwoDimensionMultiPoint"^^xsd:string,
+  		aim:uniqueIdentifier            "jma0x979fa9y3k4cwypqjvtechwitqb3glvdzjyw"^^
+xsd:string
 \end_layout
 
 \begin_layout Plain Layout
 
-  aim:uniqueIdentifier            "jma0x979fa9y3k4cwypqjvtechwitqb3glvdzjyw"^^xs
-d:string
+  		aim:imageReferenceUid           "1.2.826.0.1.3680043"^^xsd:string,      
 \end_layout
 
 \begin_layout Plain Layout
 
-  aim:imageReferenceUid           "1.2.826.0.1.3680043"^^xsd:string,      
-\end_layout
-
-\begin_layout Plain Layout
-
-  aim:referencedFrameNumber       273.
+  		aim:referencedFrameNumber       273.
 \end_layout
 
 \begin_layout Plain Layout
@@ -1142,29 +1121,25 @@ Individual:   a4lpf1nncfbvh5dljf6gfw6r6i3om1ece6270nix
 
 \begin_layout Plain Layout
 
-   Facts:        
+   Facts:  aim:hasCalculationResult        :a4lpf1nncnixExtendedCalculationResul
+t,
 \end_layout
 
 \begin_layout Plain Layout
 
-      aim:hasCalculationResult        :a4lpf1nncnixExtendedCalculationResult,
+      	aim:description                 "LineLength"^^xsd:string,      
 \end_layout
 
 \begin_layout Plain Layout
 
-      aim:description                 "LineLength"^^xsd:string,      
+      	aim:typeCode                    "[{codeSystemName=private, codeSystem=Lin
+eLength,                          
 \end_layout
 
 \begin_layout Plain Layout
 
-      aim:typeCode                    "[{codeSystemName=private, codeSystem=Line
-Length,                          
-\end_layout
-
-\begin_layout Plain Layout
-
-      aim:uniqueIdentifier            "a4lpf1nncfbvh5dljf6gfw6r6i3om1ece6270nix"
-^^xsd:string.
+      	aim:uniqueIdentifier            "a4lpf1nncfbvh5dljf6gfw6r6i3om1ece6270nix
+"^^xsd:string.
 \end_layout
 
 \begin_layout Plain Layout
@@ -1179,29 +1154,24 @@ Individual:   a4lpf1nncnixExtendedCalculationResult
 
 \begin_layout Plain Layout
 
-   Facts:        
+   Facts: aim:dataType                   "[{codeSystemName=, codeSystem}]"^^xsd:
+string, 
 \end_layout
 
 \begin_layout Plain Layout
 
-      aim:dataType                   "[{codeSystemName=, codeSystem}]"^^xsd:stri
-ng, 
-\end_layout
-
-\begin_layout Plain Layout
-
-      aim:type                        "ExtendedCalculationResult"^^xsd:string,
+      	aim:type                        "ExtendedCalculationResult"^^xsd:string,
      
 \end_layout
 
 \begin_layout Plain Layout
 
-      aim:unitOfMeasure               "linear"^^xsd:string,
+      	aim:unitOfMeasure               "linear"^^xsd:string,
 \end_layout
 
 \begin_layout Plain Layout
 
-      aim:values                      1.7432112f.
+      	aim:values                      1.7432112f.
 \end_layout
 
 \begin_layout Plain Layout
@@ -1216,23 +1186,18 @@ Individual:  hojggsv5f543pzsffj8jbijgp11thm9qdjow4idd
 
 \begin_layout Plain Layout
 
-   Facts:        
+   Facts: aim:annotatorConfidence       0.0f,
 \end_layout
 
 \begin_layout Plain Layout
 
-  	aim:annotatorConfidence       0.0f,
+      	aim:label                     "Lesion"^^xsd:string, 
 \end_layout
 
 \begin_layout Plain Layout
 
-      aim:label                     "Lesion"^^xsd:string, 
-\end_layout
-
-\begin_layout Plain Layout
-
-      aim:typeCode                  "{codeSystemName=RECIST-AMS,codeSystem=Lesio
-nBaseline,
+      	aim:typeCode                  "{codeSystemName=RECIST-AMS,codeSystem=Lesi
+onBaseline,
 \end_layout
 
 \begin_layout Plain Layout
@@ -1243,8 +1208,8 @@ sd:string,
 
 \begin_layout Plain Layout
 
-      aim:uniqueIdentifier          "hojggsv5f543pzsffj8jbijgp11thm9qdjow4idd"^^
-xsd:string.
+      	aim:uniqueIdentifier          "hojggsv5f543pzsffj8jbijgp11thm9qdjow4idd"^
+^xsd:string.
 \end_layout
 
 \begin_layout Plain Layout
@@ -1259,22 +1224,17 @@ Individual:  g08jnm9ow79tijgj1br3q8wd89nq69epjdnxxo30
 
 \begin_layout Plain Layout
 
-	Facts:        
+	Facts: aim:annotatorConfidence        0.0f,      
 \end_layout
 
 \begin_layout Plain Layout
 
-  	aim:annotatorConfidence        0.0f,      
+  		aim:label                      "Location"^^xsd:string,      
 \end_layout
 
 \begin_layout Plain Layout
 
-  	aim:label                      "Location"^^xsd:string,      
-\end_layout
-
-\begin_layout Plain Layout
-
-  	aim:typeCode                   "{codeSystemName=RadLex,codeSystem=liver,
+  		aim:typeCode                   "{codeSystemName=RadLex,codeSystem=liver,
 \end_layout
 
 \begin_layout Plain Layout
@@ -1285,7 +1245,7 @@ g,
 
 \begin_layout Plain Layout
 
-  	aim:typeCode                   "{codeSystemName=RadLex.3.10,codeSystem=
+  		aim:typeCode                   "{codeSystemName=RadLex.3.10,codeSystem=
 \end_layout
 
 \begin_layout Plain Layout
@@ -1296,8 +1256,8 @@ string,
 
 \begin_layout Plain Layout
 
-  	aim:uniqueIdentifier           "g08jnm9ow79tijgj1br3q8wd89nq69epjdnxxo30"^^xs
-d:string.
+  		aim:uniqueIdentifier           "g08jnm9ow79tijgj1br3q8wd89nq69epjdnxxo30"^^x
+sd:string.
 \end_layout
 
 \begin_layout Plain Layout
@@ -1403,7 +1363,6 @@ reference "fig:example1aim4"
 
 \begin_layout Standard
 \begin_inset Float figure
-placement H
 wide false
 sideways false
 status open
@@ -1560,7 +1519,7 @@ hasPerson
 \begin_inset Graphics
 	filename ../figures/inversefunctional.pdf
 	lyxscale 40
-	scale 22
+	scale 25
 	rotateOrigin center
 
 \end_inset
@@ -1662,8 +1621,9 @@ name "fig:aim4individuos"
 
 \end_inset
 
-Instâncias de anotações (indivíduos) AIM, que são mostrados no painel esquerdo,
- e os detalhes e propriedades de uma instância são mostrados na direita.
+Instâncias de anotações (indivíduos) AIM4-O, que são mostrados no painel
+ esquerdo, e os detalhes e propriedades de uma instância são mostrados na
+ direita.
 \end_layout
 
 \end_inset
@@ -1675,9 +1635,9 @@ Instâncias de anotações (indivíduos) AIM, que são mostrados no painel esque
 \noindent
 \align center
 \begin_inset Graphics
-	filename ../figures/AIM4protegeindividuos.png
+	filename ../figures/AIM4protegeindividuos.pdf
 	lyxscale 60
-	scale 32
+	scale 25
 
 \end_inset
 
@@ -1814,7 +1774,7 @@ name "fig:ontologiaGeral"
 \begin_inset Graphics
 	filename ../figures/ontologiageral2.pdf
 	lyxscale 20
-	scale 15
+	scale 20
 
 \end_inset
 
@@ -2000,7 +1960,7 @@ noadjacentOrganGroup
 \begin_inset Graphics
 	filename ../figures/radlexmodule.pdf
 	lyxscale 60
-	scale 40
+	scale 45
 
 \end_inset
 
@@ -2368,6 +2328,13 @@ values(?z,?val)\land lessThan(?val,5)\rightarrow lessThan5cmTumor(?x)\\
 \end_layout
 
 \begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 \noindent
 \align center
 
@@ -2654,7 +2621,7 @@ Hierarquia de subclasses da ontologia estabelecidas usando-se Radlex.
 \begin_inset Graphics
 	filename ../figures/drawingRadlextaxonomyLiver.pdf
 	lyxscale 30
-	scale 19
+	scale 23
 
 \end_inset
 

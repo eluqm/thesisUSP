@@ -26,7 +26,7 @@ urlcolor=blue
 %======================================
 %estilo do section, subsection e subsubsection
 %======================================
-
+ 
 \titleformat{\section}
 {\normalfont\fontsize{16pt}{18pt}\selectfont\bfseries}{\thesection}{1em}{}
 \titleformat{\subsection}
@@ -112,22 +112,22 @@ urlcolor=blue
 %Configurações do estilo da pagina
 %==================================
 
-\makepagestyle{ruled}
-\makeoddfoot{ruled}{}{}{}
-\makeevenfoot{ruled}{}{}{}
-\makeheadrule{ruled}{\textwidth}{\normalrulethickness}
-\makeevenhead{ruled}{\thepage}{}{\small\itshape\leftmark}
-\makeoddhead{ruled}{\small\itshape\rightmark}{}{\thepage}
-\makeatletter % because of \@chapapp
-\makepsmarks  {ruled}{
-\nouppercaseheads
-\createmark	{chapter} 	{both} {shownumber}{\@chapapp\ }{. \ }
-\createmark	{section} 	{right} {shownumber}{}		  {. \ }
-\createplainmark {toc}		{both}{\contentsname}
-\createplainmark {bib}		{both}{\bibname}
-}
-\makeatother
-\pagestyle{ruled}
+%\makepagestyle{ruled}
+%\makeoddfoot{ruled}{}{}{}
+%\makeevenfoot{ruled}{}{}{}
+%\makeheadrule{ruled}{\textwidth}{\normalrulethickness}
+%\makeevenhead{ruled}{\thepage}{}{\small\itshape\leftmark}
+%\makeoddhead{ruled}{\small\itshape\rightmark}{}{\thepage}
+%\makeatletter % because of \@chapapp
+%\makepsmarks  {ruled}{
+%\nouppercaseheads
+%\createmark	{chapter} 	{both} {shownumber}{\@chapapp\ }{. \ }
+%\createmark	{section} 	{right} {shownumber}{}		  {. \ }
+%\createplainmark {toc}		{both}{\contentsname}
+%\createplainmark {bib}		{both}{\bibname}
+%}
+%\makeatother
+%\pagestyle{ruled}
 
 %================================================================================
 % Configuração das legendas nas figuras e tabelas

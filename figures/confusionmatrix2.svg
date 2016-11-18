@@ -12,8 +12,8 @@
    height="517.96436"
    version="1.1"
    id="svg2"
-   inkscape:version="0.48.5 r10040"
-   sodipodi:docname="confusionmatrix2.pdf">
+   inkscape:version="0.91 r"
+   sodipodi:docname="confusionmatrix2.svg">
   <metadata
      id="metadata128">
     <rdf:RDF>
@@ -37,8 +37,8 @@
      guidetolerance="10"
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
-     inkscape:window-width="2088"
-     inkscape:window-height="918"
+     inkscape:window-width="1366"
+     inkscape:window-height="744"
      id="namedview124"
      showgrid="false"
      fit-margin-top="0"
@@ -48,402 +48,10 @@
      inkscape:zoom="0.83075146"
      inkscape:cx="206.14104"
      inkscape:cy="233.07791"
-     inkscape:window-x="3"
-     inkscape:window-y="52"
-     inkscape:window-maximized="0"
+     inkscape:window-x="0"
+     inkscape:window-y="24"
+     inkscape:window-maximized="1"
      inkscape:current-layer="svg2" />
-  <g
-     id="g3419"
-     transform="matrix(2.0798956,0,0,1.7528773,140.95038,58.710522)">
-    <g
-       id="g3421"
-       class="feature x axis">
-      <g
-         id="g3423"
-         transform="translate(29,0)"
-         class="tick">
-        <line
-           id="line3425"
-           x2="0"
-           y2="-0.30000001"
-           x1="0"
-           y1="0" />
-        <text
-           id="text3427"
-           style="font-size:9px;line-height:13.5px;text-anchor:middle;display:block"
-           x="0"
-           y="-3.3"
-           dy="-7.5091626e-26">Stage I</text>
-      </g>
-      <g
-         id="g3429"
-         transform="translate(80,0)"
-         class="tick">
-        <line
-           id="line3431"
-           x2="0"
-           y2="-0.30000001"
-           x1="0"
-           y1="0" />
-        <text
-           id="text3433"
-           style="font-size:9px;line-height:13.5px;text-anchor:middle;display:block"
-           x="0"
-           y="-3.3"
-           dy="-7.5091626e-26">Stage II</text>
-      </g>
-      <g
-         id="g3435"
-         transform="translate(131,0)"
-         class="tick">
-        <line
-           id="line3437"
-           x2="0"
-           y2="-0.30000001"
-           x1="0"
-           y1="0" />
-        <text
-           id="text3439"
-           style="font-size:9px;line-height:13.5px;text-anchor:middle;display:block"
-           x="0"
-           y="-3.3"
-           dy="-7.5091626e-26">Stage IIIA</text>
-      </g>
-      <g
-         id="g3441"
-         transform="translate(182,0)"
-         class="tick">
-        <line
-           id="line3443"
-           x2="0"
-           y2="-0.30000001"
-           x1="0"
-           y1="0" />
-        <text
-           id="text3445"
-           style="font-size:9px;line-height:13.5px;text-anchor:middle;display:block"
-           x="0"
-           y="-3.3"
-           dy="-7.5091626e-26">Stage IIIB</text>
-      </g>
-      <g
-         id="g3447"
-         transform="translate(233,0)"
-         class="tick">
-        <line
-           id="line3449"
-           x2="0"
-           y2="-0.30000001"
-           x1="0"
-           y1="0" />
-        <text
-           id="text3451"
-           style="font-size:9px;line-height:13.5px;text-anchor:middle;display:block"
-           x="0"
-           y="-3.3"
-           dy="-7.5091626e-26">Stage IVA</text>
-      </g>
-      <path
-         id="path3453"
-         d="M 0,-0.3 V 0 h 262 v -0.3"
-         class="domain"
-         inkscape:connector-curvature="0" />
-    </g>
-    <g
-       id="g3455"
-       class="feature y axis">
-      <g
-         id="g3457"
-         transform="translate(0,29)"
-         class="tick">
-        <line
-           id="line3459"
-           y2="0"
-           x2="-0.30000001"
-           x1="0"
-           y1="0" />
-        <text
-           id="text3461"
-           style="font-size:9px;line-height:13.5px;text-anchor:end;display:block"
-           y="0"
-           x="-3.3"
-           dy="-7.5091626e-26">Stage I</text>
-      </g>
-      <g
-         id="g3463"
-         transform="translate(0,80)"
-         class="tick">
-        <line
-           id="line3465"
-           y2="0"
-           x2="-0.30000001"
-           x1="0"
-           y1="0" />
-        <text
-           id="text3467"
-           style="font-size:9px;line-height:13.5px;text-anchor:end;display:block"
-           y="0"
-           x="-3.3"
-           dy="-7.5091626e-26">Stage II</text>
-      </g>
-      <g
-         id="g3469"
-         transform="translate(0,131)"
-         class="tick">
-        <line
-           id="line3471"
-           y2="0"
-           x2="-0.30000001"
-           x1="0"
-           y1="0" />
-        <text
-           id="text3473"
-           style="font-size:9px;line-height:13.5px;text-anchor:end;display:block"
-           y="0"
-           x="-3.3"
-           dy="-7.5091626e-26">Stage IIIA</text>
-      </g>
-      <g
-         id="g3475"
-         transform="translate(0,182)"
-         class="tick">
-        <line
-           id="line3477"
-           y2="0"
-           x2="-0.30000001"
-           x1="0"
-           y1="0" />
-        <text
-           id="text3479"
-           style="font-size:9px;line-height:13.5px;text-anchor:end;display:block"
-           y="0"
-           x="-3.3"
-           dy="-7.5091626e-26">Stage IIIB</text>
-      </g>
-      <g
-         id="g3481"
-         transform="translate(0,233)"
-         class="tick">
-        <line
-           id="line3483"
-           y2="0"
-           x2="-0.30000001"
-           x1="0"
-           y1="0" />
-        <text
-           id="text3485"
-           style="font-size:9px;line-height:13.5px;text-anchor:end;display:block"
-           y="0"
-           x="-3.3"
-           dy="-7.5091626e-26">Stage IVA</text>
-      </g>
-      <path
-         id="path3487"
-         d="M -0.3,0 H 0 v 262 h -0.3"
-         class="domain"
-         inkscape:connector-curvature="0" />
-    </g>
-    <rect
-       id="rect3489"
-       style="fill:#312450"
-       height="48"
-       width="48"
-       y="5"
-       x="5"
-       class="cell" />
-    <rect
-       id="rect3491"
-       style="fill:#ffffff"
-       height="48"
-       width="48"
-       y="5"
-       x="56"
-       class="cell" />
-    <rect
-       id="rect3493"
-       style="fill:#ffffff"
-       height="48"
-       width="48"
-       y="5"
-       x="107"
-       class="cell" />
-    <rect
-       id="rect3495"
-       style="fill:#ffffff"
-       height="48"
-       width="48"
-       y="5"
-       x="158"
-       class="cell" />
-    <rect
-       id="rect3497"
-       style="fill:#ffffff"
-       height="48"
-       width="48"
-       y="5"
-       x="209"
-       class="cell" />
-    <rect
-       id="rect3499"
-       style="fill:#e9e7ec"
-       height="48"
-       width="48"
-       y="56"
-       x="5"
-       class="cell" />
-    <rect
-       id="rect3501"
-       style="fill:#9e95ad"
-       height="48"
-       width="48"
-       y="56"
-       x="56"
-       class="cell" />
-    <rect
-       id="rect3503"
-       style="fill:#f4f3f6"
-       height="48"
-       width="48"
-       y="56"
-       x="107"
-       class="cell" />
-    <rect
-       id="rect3505"
-       style="fill:#ffffff"
-       height="48"
-       width="48"
-       y="56"
-       x="158"
-       class="cell" />
-    <rect
-       id="rect3507"
-       style="fill:#ffffff"
-       height="48"
-       width="48"
-       y="56"
-       x="209"
-       class="cell" />
-    <rect
-       id="rect3509"
-       style="fill:#f4f3f6"
-       height="48"
-       width="48"
-       y="107"
-       x="5"
-       class="cell" />
-    <rect
-       id="rect3511"
-       style="fill:#f4f3f6"
-       height="48"
-       width="48"
-       y="107"
-       x="56"
-       class="cell" />
-    <rect
-       id="rect3513"
-       style="fill:#9e95ad"
-       height="48"
-       width="48"
-       y="107"
-       x="107"
-       class="cell" />
-    <rect
-       id="rect3515"
-       style="fill:#f4f3f6"
-       height="48"
-       width="48"
-       y="107"
-       x="158"
-       class="cell" />
-    <rect
-       id="rect3517"
-       style="fill:#ffffff"
-       height="48"
-       width="48"
-       y="107"
-       x="209"
-       class="cell" />
-    <rect
-       id="rect3519"
-       style="fill:#ffffff"
-       height="48"
-       width="48"
-       y="158"
-       x="5"
-       class="cell" />
-    <rect
-       id="rect3521"
-       style="fill:#f4f3f6"
-       height="48"
-       width="48"
-       y="158"
-       x="56"
-       class="cell" />
-    <rect
-       id="rect3523"
-       style="fill:#ffffff"
-       height="48"
-       width="48"
-       y="158"
-       x="107"
-       class="cell" />
-    <rect
-       id="rect3525"
-       style="fill:#f4f3f6"
-       height="48"
-       width="48"
-       y="158"
-       x="158"
-       class="cell" />
-    <rect
-       id="rect3527"
-       style="fill:#ffffff"
-       height="48"
-       width="48"
-       y="158"
-       x="209"
-       class="cell" />
-    <rect
-       id="rect3529"
-       style="fill:#ffffff"
-       height="48"
-       width="48"
-       y="209"
-       x="5"
-       class="cell" />
-    <rect
-       id="rect3531"
-       style="fill:#ffffff"
-       height="48"
-       width="48"
-       y="209"
-       x="56"
-       class="cell" />
-    <rect
-       id="rect3533"
-       style="fill:#e9e7ec"
-       height="48"
-       width="48"
-       y="209"
-       x="107"
-       class="cell" />
-    <rect
-       id="rect3535"
-       style="fill:#ffffff"
-       height="48"
-       width="48"
-       y="209"
-       x="158"
-       class="cell" />
-    <rect
-       id="rect3537"
-       style="fill:#e9e7ec"
-       height="48"
-       width="48"
-       y="209"
-       x="209"
-       class="cell" />
-  </g>
   <text
      xml:space="preserve"
      style="font-size:20.00000026px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans;-inkscape-font-specification:Sans"
@@ -468,4 +76,396 @@
        id="tspan3613"
        x="-396.65787"
        y="13.481513">Actual Stage</tspan></text>
+  <g
+     id="g3745"
+     transform="matrix(1.86859,0,0,1.5912033,134.40669,49.593286)">
+    <g
+       id="g3747"
+       class="feature x axis">
+      <g
+         id="g3749"
+         transform="translate(30.5,0)"
+         class="tick">
+        <line
+           id="line3751"
+           x2="0"
+           y2="-0.30000001"
+           x1="0"
+           y1="0" />
+        <text
+           id="text3753"
+           style="font-size:9px;line-height:13.5px;text-anchor:middle;white-space:nowrap;display:block"
+           x="0"
+           y="-3.3"
+           dy="1.4012985e-45">Stage I</text>
+      </g>
+      <g
+         id="g3755"
+         transform="translate(86.5,0)"
+         class="tick">
+        <line
+           id="line3757"
+           x2="0"
+           y2="-0.30000001"
+           x1="0"
+           y1="0" />
+        <text
+           id="text3759"
+           style="font-size:9px;line-height:13.5px;text-anchor:middle;white-space:nowrap;display:block"
+           x="0"
+           y="-3.3"
+           dy="1.4012985e-45">Stage II</text>
+      </g>
+      <g
+         id="g3761"
+         transform="translate(142.5,0)"
+         class="tick">
+        <line
+           id="line3763"
+           x2="0"
+           y2="-0.30000001"
+           x1="0"
+           y1="0" />
+        <text
+           id="text3765"
+           style="font-size:9px;line-height:13.5px;text-anchor:middle;white-space:nowrap;display:block"
+           x="0"
+           y="-3.3"
+           dy="1.4012985e-45">Stage IIIA</text>
+      </g>
+      <g
+         id="g3767"
+         transform="translate(198.5,0)"
+         class="tick">
+        <line
+           id="line3769"
+           x2="0"
+           y2="-0.30000001"
+           x1="0"
+           y1="0" />
+        <text
+           id="text3771"
+           style="font-size:9px;line-height:13.5px;text-anchor:middle;white-space:nowrap;display:block"
+           x="0"
+           y="-3.3"
+           dy="1.4012985e-45">Stage IIIB</text>
+      </g>
+      <g
+         id="g3773"
+         transform="translate(254.5,0)"
+         class="tick">
+        <line
+           id="line3775"
+           x2="0"
+           y2="-0.30000001"
+           x1="0"
+           y1="0" />
+        <text
+           id="text3777"
+           style="font-size:9px;line-height:13.5px;text-anchor:middle;white-space:nowrap;display:block"
+           x="0"
+           y="-3.3"
+           dy="1.4012985e-45">Stage IVA</text>
+      </g>
+      <path
+         id="path3779"
+         d="m 0,-0.3 0,0.3 285.25,0 0,-0.3"
+         class="domain"
+         inkscape:connector-curvature="0" />
+    </g>
+    <g
+       id="g3781"
+       class="feature y axis">
+      <g
+         id="g3783"
+         transform="translate(0,30.5)"
+         class="tick">
+        <line
+           id="line3785"
+           y2="0"
+           x2="-0.30000001"
+           x1="0"
+           y1="0" />
+        <text
+           id="text3787"
+           style="font-size:9px;line-height:13.5px;text-anchor:end;white-space:nowrap;display:block"
+           y="0"
+           x="-3.3"
+           dy="1.4012985e-45">Stage I</text>
+      </g>
+      <g
+         id="g3789"
+         transform="translate(0,86.5)"
+         class="tick">
+        <line
+           id="line3791"
+           y2="0"
+           x2="-0.30000001"
+           x1="0"
+           y1="0" />
+        <text
+           id="text3793"
+           style="font-size:9px;line-height:13.5px;text-anchor:end;white-space:nowrap;display:block"
+           y="0"
+           x="-3.3"
+           dy="1.4012985e-45">Stage II</text>
+      </g>
+      <g
+         id="g3795"
+         transform="translate(0,142.5)"
+         class="tick">
+        <line
+           id="line3797"
+           y2="0"
+           x2="-0.30000001"
+           x1="0"
+           y1="0" />
+        <text
+           id="text3799"
+           style="font-size:9px;line-height:13.5px;text-anchor:end;white-space:nowrap;display:block"
+           y="0"
+           x="-3.3"
+           dy="1.4012985e-45">Stage IIIA</text>
+      </g>
+      <g
+         id="g3801"
+         transform="translate(0,198.5)"
+         class="tick">
+        <line
+           id="line3803"
+           y2="0"
+           x2="-0.30000001"
+           x1="0"
+           y1="0" />
+        <text
+           id="text3805"
+           style="font-size:9px;line-height:13.5px;text-anchor:end;white-space:nowrap;display:block"
+           y="0"
+           x="-3.3"
+           dy="1.4012985e-45">Stage IIIB</text>
+      </g>
+      <g
+         id="g3807"
+         transform="translate(0,254.5)"
+         class="tick">
+        <line
+           id="line3809"
+           y2="0"
+           x2="-0.30000001"
+           x1="0"
+           y1="0" />
+        <text
+           id="text3811"
+           style="font-size:9px;line-height:13.5px;text-anchor:end;white-space:nowrap;display:block"
+           y="0"
+           x="-3.3"
+           dy="1.4012985e-45">Stage IVA</text>
+      </g>
+      <path
+         id="path3813"
+         d="m -0.3,0 0.3,0 0,285.25 -0.3,0"
+         class="domain"
+         inkscape:connector-curvature="0" />
+    </g>
+    <rect
+       id="rect3815"
+       style="fill:#312450"
+       height="53"
+       width="53"
+       y="4"
+       x="4"
+       class="cell" />
+    <rect
+       id="rect3817"
+       style="fill:#ffffff"
+       height="53"
+       width="53"
+       y="4"
+       x="60"
+       class="cell" />
+    <rect
+       id="rect3819"
+       style="fill:#ffffff"
+       height="53"
+       width="53"
+       y="4"
+       x="116"
+       class="cell" />
+    <rect
+       id="rect3821"
+       style="fill:#ffffff"
+       height="53"
+       width="53"
+       y="4"
+       x="172"
+       class="cell" />
+    <rect
+       id="rect3823"
+       style="fill:#ffffff"
+       height="53"
+       width="53"
+       y="4"
+       x="228"
+       class="cell" />
+    <rect
+       id="rect3825"
+       style="fill:#ecebef"
+       height="53"
+       width="53"
+       y="60"
+       x="4"
+       class="cell" />
+    <rect
+       id="rect3827"
+       style="fill:#a59cb2"
+       height="53"
+       width="53"
+       y="60"
+       x="60"
+       class="cell" />
+    <rect
+       id="rect3829"
+       style="fill:#f6f5f7"
+       height="53"
+       width="53"
+       y="60"
+       x="116"
+       class="cell" />
+    <rect
+       id="rect3831"
+       style="fill:#ffffff"
+       height="53"
+       width="53"
+       y="60"
+       x="172"
+       class="cell" />
+    <rect
+       id="rect3833"
+       style="fill:#ffffff"
+       height="53"
+       width="53"
+       y="60"
+       x="228"
+       class="cell" />
+    <rect
+       id="rect3835"
+       style="fill:#ffffff"
+       height="53"
+       width="53"
+       y="116"
+       x="4"
+       class="cell" />
+    <rect
+       id="rect3837"
+       style="fill:#ecebef"
+       height="53"
+       width="53"
+       y="116"
+       x="60"
+       class="cell" />
+    <rect
+       id="rect3839"
+       style="fill:#b6afc1"
+       height="53"
+       width="53"
+       y="116"
+       x="116"
+       class="cell" />
+    <rect
+       id="rect3841"
+       style="fill:#ffffff"
+       height="53"
+       width="53"
+       y="116"
+       x="172"
+       class="cell" />
+    <rect
+       id="rect3843"
+       style="fill:#ffffff"
+       height="53"
+       width="53"
+       y="116"
+       x="228"
+       class="cell" />
+    <rect
+       id="rect3845"
+       style="fill:#ffffff"
+       height="53"
+       width="53"
+       y="172"
+       x="4"
+       class="cell" />
+    <rect
+       id="rect3847"
+       style="fill:#ffffff"
+       height="53"
+       width="53"
+       y="172"
+       x="60"
+       class="cell" />
+    <rect
+       id="rect3849"
+       style="fill:#ffffff"
+       height="53"
+       width="53"
+       y="172"
+       x="116"
+       class="cell" />
+    <rect
+       id="rect3851"
+       style="fill:#ecebef"
+       height="53"
+       width="53"
+       y="172"
+       x="172"
+       class="cell" />
+    <rect
+       id="rect3853"
+       style="fill:#ffffff"
+       height="53"
+       width="53"
+       y="172"
+       x="228"
+       class="cell" />
+    <rect
+       id="rect3855"
+       style="fill:#ffffff"
+       height="53"
+       width="53"
+       y="228"
+       x="4"
+       class="cell" />
+    <rect
+       id="rect3857"
+       style="fill:#ffffff"
+       height="53"
+       width="53"
+       y="228"
+       x="60"
+       class="cell" />
+    <rect
+       id="rect3859"
+       style="fill:#ffffff"
+       height="53"
+       width="53"
+       y="228"
+       x="116"
+       class="cell" />
+    <rect
+       id="rect3861"
+       style="fill:#f6f5f7"
+       height="53"
+       width="53"
+       y="228"
+       x="172"
+       class="cell" />
+    <rect
+       id="rect3863"
+       style="fill:#f6f5f7"
+       height="53"
+       width="53"
+       y="228"
+       x="228"
+       class="cell" />
+  </g>
 </svg>

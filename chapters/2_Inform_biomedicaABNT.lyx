@@ -484,7 +484,7 @@ name "fig:CT1"
 \align center
 \begin_inset Graphics
 	filename ../figures/CTjoin.png
-	width 70col%
+	width 80col%
 
 \end_inset
 
@@ -1049,7 +1049,7 @@ name "RADLEX1"
 \begin_inset Graphics
 	filename ../figures/RadlexOnto.png
 	lyxscale 80
-	width 100col%
+	scale 85
 
 \end_inset
 
@@ -1280,9 +1280,6 @@ Tis
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
-\lang english
 Primary tumor cannot be assessed
 \end_layout
 
@@ -1303,8 +1300,6 @@ Primary tumor cannot be assessed
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
 T0
 \end_layout
 
@@ -1314,9 +1309,6 @@ T0
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
-\lang english
 No evidence of primary tumor
 \end_layout
 
@@ -1337,8 +1329,6 @@ No evidence of primary tumor
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
 T1
 \end_layout
 
@@ -1348,9 +1338,6 @@ T1
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
-\lang english
 Solitary tumor without vascular invasion
 \end_layout
 
@@ -1371,8 +1358,6 @@ Solitary tumor without vascular invasion
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
 T2
 \end_layout
 
@@ -1382,9 +1367,6 @@ T2
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
-\lang english
 Solitary tumor with vascular invasion or multiple tumors, none > 5 cm
 \end_layout
 
@@ -1405,8 +1387,6 @@ Solitary tumor with vascular invasion or multiple tumors, none > 5 cm
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
 T3a
 \end_layout
 
@@ -1416,9 +1396,6 @@ T3a
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
-\lang english
 Multiple tumors > 5 cm
 \end_layout
 
@@ -1552,8 +1529,6 @@ Regional lymph nodes cannot be assessed
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
 N0
 \end_layout
 
@@ -1563,11 +1538,7 @@ N0
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
-\lang english
-The cancer has not spread to lymph nodes.
- 
+The cancer has not spread to lymph nodes
 \end_layout
 
 \end_inset
@@ -1587,8 +1558,6 @@ The cancer has not spread to lymph nodes.
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
 N1
 \end_layout
 
@@ -1598,9 +1567,6 @@ N1
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
-\lang english
 The cancer has metastasized only to lymph nodes on the same side as the
  cancerous liver.
 \end_layout
@@ -1626,8 +1592,6 @@ Distant Metastasis
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
 M0
 \end_layout
 
@@ -1637,9 +1601,6 @@ M0
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
-\lang english
 The cancer has not spread to distant sites.
 \end_layout
 
@@ -1660,8 +1621,6 @@ The cancer has not spread to distant sites.
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
 M1
 \end_layout
 
@@ -1671,12 +1630,9 @@ M1
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
-\lang english
 The cancer has spread to distant sites such as lymph nodes farther than
- those mentioned in N stages, and other organs or tissues such as the bones,
- or brain
+ those mentioned in N stages, and other organs or tissues such as the lung
+ and colon
 \end_layout
 
 \end_inset

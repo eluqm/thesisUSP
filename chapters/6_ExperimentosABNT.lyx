@@ -1328,7 +1328,11 @@ staging
 \emph default
  automático com TNM.
  Os cancer stagings gerados pelo classificador foram comparados aos descritos
- pelos médicos nos relatórios (nosso gold standard).
+ pelos médicos nos relatórios (nosso 
+\emph on
+gold standard
+\emph default
+).
  Um paciente, Subject ID TCGA-DD-A1EJ, foi retirado dessa análise.
  O especialista considerou que a classificação TNM, reportada pelo médico,
  estava incorreta (mais informações adiante).
@@ -1519,7 +1523,7 @@ I
 \begin_inset Text
 
 \begin_layout Plain Layout
-21
+24
 \end_layout
 
 \end_inset
@@ -1593,7 +1597,7 @@ II
 \begin_inset Text
 
 \begin_layout Plain Layout
-9
+10
 \end_layout
 
 \end_inset
@@ -1848,10 +1852,6 @@ Matriz de Confusão dos estágios de câncer calculados pelo classificador
 
 \end_layout
 
-\begin_layout Plain Layout
-
-\end_layout
-
 \end_inset
 
 
@@ -1894,7 +1894,15 @@ reference "fig:matrixconfusion"
 .
  Ela representa uma matriz de confusão para uma classificação de stage multicênt
 rico.
- Para 
+ A interpretação dos resultados é como se segue: quanto mais preto seja
+ o pixel na diagonal da matriz, foi classificado melhor essa classe.
+ pixels no Grays localizados na horizontal indicam que a classe atual foi
+ confundido pelo classificador com a classe correspondente no seu eixo vertical.
+ 
+\end_layout
+
+\begin_layout Standard
+Para 
 \emph on
 stages
 \emph default
@@ -2077,12 +2085,12 @@ Neste capítulo foram descritos os resultados obtidos com o desenvolvimento
 \end_layout
 
 \begin_layout Standard
-Após demonstrar como o uso aa ontologia AIM4-O pode ser benéfico no processo
+Após demonstrar como o uso da ontologia AIM4-O pode ser benéfico no processo
  de buscas por informação,
 \emph on
  
 \emph default
-testamos o classificador TNM com relatórios de 52 pacientes com câncer de
+testamos o classificador TNM com relatórios de 51 pacientes com câncer de
  fígado.
  Ele obteve resultados de precisão e revocação muito bons (85.7% e 81,0%
  respetivamente), quando comparamos suas predições de estágios de câncer

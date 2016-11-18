@@ -8,6 +8,13 @@
 \begin_preamble
 \input{pagestyle.tex}
 \usepackage{lmodern}
+\newcommand{\blankpage}{
+\newpage
+\thispagestyle{empty}
+\mbox{}
+\newpage
+}
+\setcounter{secnumdepth}{4}
 \end_preamble
 \use_default_options true
 \begin_modules
@@ -110,7 +117,7 @@ EndPreamble
 \quotes_language english
 \papercolumns 1
 \papersides 2
-\paperpagestyle myheadings
+\paperpagestyle default
 \listings_params "frame=tb"
 \tracking_changes false
 \output_changes false
@@ -254,7 +261,7 @@ contentsname}
 \backslash
 createplainmark {bib}		{both}{
 \backslash
-bibname} } 
+bibname}}
 \end_layout
 
 \begin_layout Plain Layout
@@ -304,7 +311,10 @@ pagestyle{ruled}
 \end_layout
 
 \begin_layout Standard
-\begin_inset Newpage cleardoublepage
+\begin_inset External
+	template PDFPages
+	filename capaicmc/fichacataogrfica.pdf
+
 \end_inset
 
 
@@ -408,14 +418,6 @@ filename "abstract/AbstractAbntIngles.lyx"
 \end_layout
 
 \begin_layout Standard
-\begin_inset FloatList figure
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
 \begin_inset Newpage newpage
 \end_inset
 
@@ -423,15 +425,7 @@ filename "abstract/AbstractAbntIngles.lyx"
 \end_layout
 
 \begin_layout Standard
-\begin_inset FloatList table
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset FloatList algorithm
+\begin_inset FloatList figure
 
 \end_inset
 
@@ -463,6 +457,21 @@ lstlistlistingname}{Lista De C{
 \backslash
 'o}digos-Fonte}
 \end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage clearpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FloatList table
 
 \end_inset
 
@@ -507,7 +516,7 @@ set_width "auto"
 \end_layout
 
 \begin_layout Standard
-\begin_inset Newpage newpage
+\begin_inset Newpage clearpage
 \end_inset
 
 
@@ -537,7 +546,7 @@ filename "chapters/1_introducaoABNT.lyx"
 \end_layout
 
 \begin_layout Chapter
-Informática biomédica
+Informática Biomédica
 \end_layout
 
 \begin_layout Standard

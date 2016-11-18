@@ -27,7 +27,7 @@
 \graphics default
 \default_output_format default
 \output_sync 0
-\bibtex_command biber
+\bibtex_command default
 \index_command default
 \paperfontsize default
 \spacing single
@@ -57,8 +57,8 @@
 \shortcut idx
 \color #008000
 \end_index
-\secnumdepth 1
-\tocdepth 1
+\secnumdepth 3
+\tocdepth 3
 \paragraph_separation indent
 \paragraph_indentation default
 \quotes_language english
@@ -511,14 +511,14 @@ reasoner
 
 \begin_layout Itemize
 Teste da precisão e revocação do classificador TNM desenvolvido.
- O classificador foi testado com relatório médicos reais abertos de 52 pacientes.
+ O classificador foi testado com relatório médicos reais abertos de 51 pacientes.
  Os estágios de câncer, calculados pelo classificador, foram comparados
  com os valores calculados pelos médicos (nosso 
 \shape italic
 golden standard
 \shape default
 ).
- A precisão e revocação obtidos pelo classificador foram 84.3% e 74,4%, respectiv
+ A precisão e revocação obtidos pelo classificador foram 85.7% e 81,0%, respectiv
 amente.
  Esses são valores muito bons, próximo a valores encontrados quando se compara
  opiniões de médicos de diferentes instituições.
@@ -546,8 +546,8 @@ image findings
  O mesmo conjunto de relatórios foram usados para recuperação usando-se
  palavras-chave.
  Comparando-se os dois métodos, a busca semântica obteve resultados sensivelment
-e melhores que a busca por palavras-chave, com precisão 0.89 x 0.52 e revocação
- 0.98 x 0.48.
+e melhores que a busca por palavras-chave, com precisão 89.0% x 52.0% e revocação
+ 98.0% x 48.0%.
 \end_layout
 
 \begin_layout Standard

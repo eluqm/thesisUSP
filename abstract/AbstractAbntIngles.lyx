@@ -165,7 +165,7 @@ Information about cancer staging in a patient is crucial when clinicians
  4 annotations in OWL.
  This TNM classifier was evaluated, using real patient's radiology reports,
  from the NCI's Genomic Data Commons (GDC), in term of precision and recall,
- with 84.3% and 74.4% respective results (when compared to the actual cancer
+ with 85.7% and 81.0% respective results (when compared to the actual cancer
  stages from the reports).
  The whole process was validated with radiologists from the Radiology Dept.
  of the Stanford University.
@@ -174,7 +174,7 @@ Information about cancer staging in a patient is crucial when clinicians
 \begin_layout Standard
 
 \series bold
-Palavras Chave:
+Key-words:
 \series default
  
 \emph on
