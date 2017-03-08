@@ -144,11 +144,14 @@
 \begin_layout Standard
 Informação sobre o estágio de câncer num paciente é fundamental quando médicos
  avaliam o progresso de seu tratamento.
- A determinação do estágio de câncer (cancer staging) é um processo que
- leva em consideração a descrição, localização, características e possíveis
- metástases dos tumores cancerosos de um paciente.
+ A determinação do estágio de câncer (
+\emph on
+cancer staging
+\emph default
+) é um processo que leva em consideração a descrição, localização, característic
+as e possíveis metástases dos tumores cancerosos de um paciente.
  Esse processo deve seguir um padrão de classificação como, por exemplo,
- o TNM Classification of Malignant Tumors.
+ o padrão TNM.
  Porém, na prática clínica, a execução desse processo pode ser tediosa,
  propensa a erros e gerar incertezas.
  Com o intuito de amenizar esses problemas, este trabalho tem como objetivo
@@ -168,9 +171,13 @@ reasoning,
  A ontologia AIM4-O foi desenvolvida, como parte desse trabalho, para representa
 r anotações AIM 4 em OWL.
  Esse classificador TNM foi avaliado, usando-se dados reais de relatórios
- radiológico de pacientes do 
+ radiológicos de pacientes do 
 \lang american
-NCI's Genomic Data Commons (GDC, 
+NCI's 
+\emph on
+Genomic Data Commons
+\emph default
+ (GDC), 
 \lang brazilian
 em termos de precisão e revocação, com resultados respectivos de 85,7% e
  81,0% (quando comparado aos valores reais de estágio de câncer dos relatórios).
@@ -183,7 +190,7 @@ Radiology Dept.
 \begin_layout Standard
 
 \series bold
-Palavras Chave:
+Palavras-chave:
 \series default
  
 \emph on

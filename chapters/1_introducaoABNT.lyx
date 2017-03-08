@@ -115,7 +115,7 @@ key "Levy2009"
 
 .
  Desse modo, um número considerável de aplicações, baseadas em imagens,
- têm sido desenvolvidas para área medica.
+ têm sido desenvolvidas para área médica.
  Grande parte dessas aplicações estão focadas na extração de características
  visuais com a ajuda de algoritmos de processamento de imagem.
 \end_layout
@@ -164,13 +164,65 @@ key "Zillner2013"
 
 \begin_layout Standard
 No fluxo de trabalho para avaliar o progresso individual de um paciente
- com câncer, o radiologista identifica as lesões cancerosas, por meio de
- imagens, e grava medições detalhadas sobre essas lesões utilizando anotações
- em texto.
+ com câncer (ilustrada na Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:fLuxo"
+
+\end_inset
+
+), o radiologista identifica as lesões cancerosas, por meio de imagens,
+ e grava medições detalhadas sobre essas lesões utilizando anotações em
+ texto.
  Em seguida, o oncologista analisa e extrai as informações sobre a localização
  e o tamanho das lesões tumorais, a partir das anotações feitas pelo radiologist
 a, e registra as informações em uma folha de fluxo.
  
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:fLuxo"
+
+\end_inset
+
+Fluxo de trabalho para avaliar o progresso individual de um paciente com
+ câncer
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename ../figures/fluxo1.pdf
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -216,8 +268,10 @@ key "Serique2012"
 
 .
  O projeto 
+\emph on
 \lang english
 Annotation and Image Markup
+\emph default
 \lang brazilian
  (AIM
 \begin_inset CommandInset nomenclature
@@ -228,8 +282,10 @@ description "Annotation and Image Markup Project"
 \end_inset
 
 ) desenvolvido pelo 
+\emph on
 \lang english
 cancer Biomedical Informatics Grid
+\emph default
 \lang brazilian
  (caBIG
 \begin_inset CommandInset nomenclature
@@ -240,8 +296,10 @@ description "cancer Biomedical Informatics Grid"
 \end_inset
 
 ), uma iniciativa do 
+\emph on
 \lang english
 National Cancer Institute
+\emph default
 \lang brazilian
  (NCI
 \begin_inset CommandInset nomenclature
@@ -277,7 +335,19 @@ key "Kundu2009"
 .
  Ele permite a representação, armazenamento e transferência consistentes
  de significados semânticos sobre imagens.
- Ferramentas, como por exemplo o ePAD 
+ Ferramentas, como por exemplo a 
+\emph on
+electronic Imaging Physician Annotation Device
+\emph default
+ (ePAD
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "ePAD"
+description "electronic Imaging Physician Annotation Device"
+
+\end_inset
+
+)
 \begin_inset CommandInset citation
 LatexCommand citep
 key "Rubin2014"
@@ -317,10 +387,18 @@ key "Depeursinge2014"
 \end_layout
 
 \begin_layout Standard
-Por outro lado, embora sistemas como o ePAD permitam a criação de anotações
- sobre imagens no formato AIM, facilitando assim a manipulação e consulta
- de metadados de imagens em AIM, eles não permitem representar anotações
- em um formato que seja diretamente adequado para o raciocínio (
+Por outro lado, embora sistemas como o ePAD
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "ePAD"
+description "electronic Imaging Physician Annotation Device"
+
+\end_inset
+
+ permitam a criação de anotações sobre imagens no formato AIM, facilitando
+ assim a manipulação e consulta de metadados de imagens em AIM, eles não
+ permitem representar anotações em um formato que seja diretamente adequado
+ para o raciocínio (
 \emph on
 reasoning
 \emph default
@@ -339,11 +417,25 @@ key "Levy2009"
 \end_inset
 
 .
- Outros sistemas, tais como mint Lesion (MintMedical GmbH, Dossenheim, Germany)
- and syngo.via (Siemens Healthcare, Malvern), são softwares proprietários,
- ou seja, todos os dados sobre imagens que estão armazenados internamente
- estão em um formato proprietário que não pode ser acessado por terceiros
- 
+ Outros sistemas, tais como 
+\emph on
+mint Lesion
+\emph default
+ (
+\emph on
+Mint Medical GmbH, Dossenheim, Germany)
+\emph default
+ e 
+\emph on
+syngo
+\emph default
+.via (
+\emph on
+Siemens Healthcare, Malvern, PA
+\emph default
+) são softwares proprietários, ou seja, todos os dados sobre imagens que
+ estão armazenados internamente estão em um formato proprietário que não
+ pode ser acessado por terceiros 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "Rubin2014"
@@ -401,10 +493,10 @@ Este trabalho tem como objetivo gerar automaticamente, utilizando tecnologias
 Cancer Staging
 \emph default
 \lang brazilian
- (estágios do câncer) de lesões cancerosas a partir de anotações (metadados
- no padrão AIM) sobre essas lesões, presentes em imagens médicas.
- Essas anotações, feitas por radiologistas, descrevem observações visuais
- e a estrutura anatômica das lesões, utilizando a ontologia Radlex.
+ (estágios do câncer) de lesões cancerosas a partir de anotações (padrão
+ AIM) em imagens feitas por radiologistas.
+ Essas anotações descrevem observações visuais e a estrutura anatômica das
+ lesões, utilizando a ontologia Radlex.
  
 \end_layout
 
@@ -441,8 +533,15 @@ Representar apropriadamente o critério TNM de classificação (
 staging
 \emph default
 ) de câncer.
- Esse conhecimento teve de ser codificado usando a Web Ontology Language
- (OWL) e regras codificadas na Semantic Web Rule Language (SWRL).
+ Esse conhecimento teve de ser codificado usando a 
+\emph on
+Web Ontology Language
+\emph default
+ (OWL) e regras codificadas na 
+\emph on
+Semantic Web Rule Language
+\emph default
+ (SWRL).
 \end_layout
 
 \begin_layout Enumerate
@@ -452,8 +551,10 @@ TNM staging
 \emph default
 , como relatórios de diagnóstico clínico com as suas respectivas imagens
  por 
+\emph on
 \lang english
 Computed Tomography
+\emph default
 \lang brazilian
  (CT).
  Foram usados os repositórios 
@@ -475,7 +576,11 @@ Criar um protótipo do sistema de classificação automática de estágio de
 \begin_layout Enumerate
 Usar o protótipo para classificar dados, encontrados no item 3, e comparar
  os resultados da classificação com a classificação feita pelos médicos,
- com a ajuda de radiologistas da Stanford University School of Medicine.
+ com a ajuda de radiologistas da 
+\emph on
+Stanford University School of Medicine
+\emph default
+.
 \end_layout
 
 \begin_layout Section
@@ -511,7 +616,8 @@ reasoner
 
 \begin_layout Itemize
 Teste da precisão e revocação do classificador TNM desenvolvido.
- O classificador foi testado com relatório médicos reais abertos de 51 pacientes.
+ O classificador foi testado com relatórios médicos reais abertos de 51
+ pacientes.
  Os estágios de câncer, calculados pelo classificador, foram comparados
  com os valores calculados pelos médicos (nosso 
 \shape italic

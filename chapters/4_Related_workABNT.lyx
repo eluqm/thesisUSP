@@ -130,7 +130,10 @@ staging cancer", "semantic image annotations" e ''Image metadata reasoning
 O método utilizado para o levantamento de fontes primárias compreendeu a
  realização de buscas em bibliotecas digitais, como 
 \lang english
-ACM Digital Library
+ACM 
+\emph on
+Digital Library
+\emph default
 \lang brazilian
 
 \begin_inset Foot
@@ -144,7 +147,10 @@ http://dl.acm.org/
 
 ,
 \lang english
- IEEE Xplore Digital Library
+ IEEE 
+\emph on
+Xplore Digital Library
+\emph default
 \lang brazilian
 
 \begin_inset Foot
@@ -157,8 +163,10 @@ http://ieeexplore.ieee.org/
 \end_inset
 
 , SciELO (
+\emph on
 \lang english
 Scientific Electronic Library Online
+\emph default
 \lang brazilian
 )
 \begin_inset Foot
@@ -171,8 +179,10 @@ http://www.scielo.org/
 \end_inset
 
 , DBLP (
+\emph on
 \lang english
 Computer Science Bibliography
+\emph default
 \lang brazilian
 )
 \begin_inset Foot
@@ -194,7 +204,11 @@ http://www.lbd.dcc.ufmg.br/bdbcomp/
 
 \end_inset
 
-, Google Acadêmico (Scholars), Springer
+, Google Acadêmico (
+\emph on
+Scholars
+\emph default
+), Springer
 \begin_inset Foot
 status open
 
@@ -205,8 +219,10 @@ http://www.springer.com/gp/
 \end_inset
 
 , PubMed(
+\emph on
 \lang english
 US National Library of Medicine National Institutes of Health
+\emph default
 \lang brazilian
 )
 \begin_inset Foot
@@ -242,8 +258,10 @@ Os estudos devem estar disponíveis na web;
 
 \begin_layout Enumerate
 Os estudos devem apresentar alguma das 
+\emph on
 \lang english
 strings
+\emph default
 \lang brazilian
  de busca em seu título, resumo/abstract ou palavras-chave; 
 \end_layout
@@ -304,12 +322,16 @@ reference "tab:Comparativo-entre-os"
 .
  Os artigos foram classificados de acordo com: quais tipos de câncer são
  considerados (
+\emph on
 \lang english
 Cancer Type
+\emph default
 \lang brazilian
 ), os dados de entrada utilizados (
+\emph on
 \lang english
 Data Input
+\emph default
 \lang brazilian
 ), método de classificação (
 \emph on
@@ -318,8 +340,10 @@ Staging or Grading
 \emph default
 \lang brazilian
 ) e se os trabalhos têm resultados explícitos (
+\emph on
 \lang english
 Results
+\emph default
 \lang brazilian
 ).
 \end_layout
@@ -1294,8 +1318,10 @@ key "Dameron2006Table"
  usando OWL-DL.
  Ele concentra-se na classificação dos tumores de pulmão.
  Os autores usam a ontologia 
+\emph on
 \lang english
 Foundational Model of Anatomy
+\emph default
 \lang brazilian
  (FMA
 \begin_inset CommandInset nomenclature
@@ -1590,11 +1616,11 @@ key "Moller2013"
 .
  
 \emph default
-Em seguida, os autores estabelecem alinhamentos entre conceitos do 
+Em seguida, os autores estabelecem alinhamentos entre conceitos do RADLEX
 \emph on
-RADLEX e FMA
+ e 
 \emph default
- a fim de criar a 
+FMA a fim de criar a 
 \emph on
 \lang english
 Patient-ontology
@@ -1669,7 +1695,10 @@ key "Tutac2008"
  Mais tarde, a fim de descrever as imagens histopatológicas usando anotações
  semânticas, os autores usaram 
 \lang english
-o formato Wide Field Markup Language
+o 
+\emph on
+formato Wide Field Markup Language
+\emph default
 \lang brazilian
  (WFML
 \begin_inset CommandInset nomenclature
@@ -1906,7 +1935,7 @@ key "Massicano2015AnOF"
 \end_layout
 
 \begin_layout Description
-Ao comparar o trabalho proposto como os trabalho acima, as seguintes diferenças
+Ao comparar o trabalho proposto com os trabalhos acima, as seguintes diferenças
  foram evidenciadas:
 \end_layout
 
@@ -1933,8 +1962,10 @@ reasonig
  como a criação de classes desnecessárias, aumentando a complexidade de
  uma ontologia.
  Acompanhando a limitação acima mencionada aparece outra, chamada 
+\emph on
 \lang english
 Open World Assumption
+\emph default
 \lang brazilian
  (OWA) que é um fundamento da OWL e que os trabalhos solucionam evitando
  o reasoning baseado em indivíduos.
@@ -2097,9 +2128,9 @@ ca e oncologia.
 \end_layout
 
 \begin_layout Standard
-Na literatura, encontraram-se sistemas semelhantes onde as anotações semânticas
- são armazenados em diferentes formatos que não permitem a integração das
- mesmas para processos de 
+Na literatura, encontraram-se sistemas semelhantes nos quais as anotações
+ semânticas são armazenadas em diferentes formatos que não permitem a integração
+ das mesmas para processos de 
 \emph on
 reasoning
 \emph default
@@ -2108,7 +2139,7 @@ reasoning
 
 \begin_layout Standard
 Alguns desses estudos também permitem a criação de anotações em imagem no
- formato AIM (na linguagem XML), mas AIM não é adequados para o raciocínio
+ formato AIM (na linguagem XML), mas AIM não é adequado para o raciocínio
  (
 \emph on
 reasoning

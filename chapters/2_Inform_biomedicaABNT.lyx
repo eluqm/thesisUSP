@@ -200,10 +200,10 @@ key "Serique2012"
 \end_layout
 
 \begin_layout Standard
-Embora em radiologia muitas coisas, incluindo a criação de imagens, sejam
- bastante padronizadas, existem muitas maneiras de se descrever o conteúdo
- de uma imagem, incluindo diferentes sinônimos de termos, vários níveis
- de descrição e foco em atores diferentes.
+Embora em radiologia muitas das coisas, incluindo a criação de imagens,
+ sejam bastante padronizadas, existem muitas maneiras de se descrever o
+ conteúdo de uma imagem, incluindo diferentes sinônimos de termos, vários
+ níveis de descrição e foco em atores diferentes.
  Nesse contexto, o uso de terminologias visuais e estruturadas para anotações
  em imagens é uma abordagem promissora, pois permite a definição precisa
  de imagens médicas utilizando a semântica fornecida pelas anotações 
@@ -401,8 +401,10 @@ Tomografia Computadorizada
 
 \begin_layout Standard
 A tomografia computadorizada, ou 
+\emph on
 \lang english
 Computed Tomography
+\emph default
 \lang brazilian
  (CT
 \begin_inset CommandInset nomenclature
@@ -518,8 +520,10 @@ Tomografia por Emissão de Pósitrons
 
 \begin_layout Standard
 Os exames de Tomografia por Emissão de Pósitrons, ou 
+\emph on
 \lang english
 Positron Emission Tomography
+\emph default
 \lang brazilian
  (PET
 \begin_inset CommandInset nomenclature
@@ -539,8 +543,11 @@ description "Positron Emission Tomography"
 \begin_layout Standard
 Nesses estudos oncológicos PET, o paciente recebe uma injecção do açúcar
  radioactivo que pode ajudar na localização de um tumor, porque as células
- cancerosas  utilizam o açúcar (glicose) mais avidamente do que outros tecidos
- no corpo
+ cancerosas  utilizam o açúcar (
+\emph on
+glicose
+\emph default
+) mais avidamente do que outros tecidos no corpo
 \begin_inset CommandInset citation
 LatexCommand citep
 key "ZIEGLER2005679"
@@ -864,8 +871,10 @@ description " Digital Imaging and Communications in Medicine"
 \end_inset
 
  (
+\emph on
 \lang english
 Digital Imaging and Communications in Medicine
+\emph default
 \lang brazilian
 ) foi apresentada, 
 \begin_inset CommandInset citation
@@ -1047,9 +1056,9 @@ name "RADLEX1"
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename ../figures/RadlexOnto.png
+	filename ../figures/radlex.png
 	lyxscale 80
-	scale 85
+	scale 30
 
 \end_inset
 
@@ -1101,8 +1110,10 @@ staging
  numa ontologia não é suficiente para fornecer ajuda automática na classificação
  de tumores de câncer.
  Esse conhecimento deve ser representado também em regras e axiomas (
+\emph on
 \lang english
 reasoning
+\emph default
 \lang brazilian
 ).
  Portanto, representar o conhecimento dos sistemas de 
@@ -1198,7 +1209,10 @@ câncer st
 \emph default
 aging no padrão 
 \lang english
-TNM Classification of Malignant Tumors
+TNM 
+\emph on
+Classification of Malignant Tumors
+\emph default
 \lang brazilian
  (TNM) é um processo de duas etapas.
  A primeira etapa consiste em dar notas para três conceitos: descrição do
@@ -2071,7 +2085,7 @@ fadaptada{Faria2014}
 \end_layout
 
 \begin_layout Standard
-A figura 
+A Figura 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:exampleIIA-1"

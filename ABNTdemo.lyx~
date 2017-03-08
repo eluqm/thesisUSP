@@ -5,14 +5,23 @@
 \textclass abntex2
 \begin_preamble
 \usepackage{indentfirst}
+\usepackage{float}
+%\usepackage{helvet}
+%\usepackage[scaled]{uarial}
+\usepackage{titlesec}
 \usepackage{tikz, blindtext}
 \usetikzlibrary{shapes.multipart}
 \usepackage{calc,soul,fourier}
 \usepackage{color, colortbl}
 \usepackage{graphicx}
 \usepackage[brazil]{babel}
+\usepackage[brazilian,hyperpageref]{backref} 
+\setlength{\parindent}{48pt}
+%\usepackage{fontspec}
+%\setmainfont{Arial}
 %\usepackage[style=authoryear,natbib=true,backend=biber]{biblatex}
 \usepackage[alf]{abntex2cite}
+%\usepackage[num]{abntex2cite}  
 %\addbibresource{/Applications/thesisUSP/references/refsabnt.bib}
 %\usepackage[backend=biber]{biblatex}
 %\usepackage[backend=biber, style=abnt]{biblatex}
@@ -21,11 +30,22 @@
 \hypersetup{%     
 pdfborder = {0 0 0},     
 colorlinks,     
-citecolor=red,     
-filecolor=Darkgreen,     
+citecolor=blue,     
+filecolor=blue,     
 linkcolor=blue,     
 urlcolor=cyan!50!black!90 
 }
+
+
+\titleformat{\section}
+  {\normalfont\fontsize{16pt}{18pt}\selectfont\bfseries}{\thesection}{1em}{}
+\titleformat{\subsection}
+  {\normalfont\fontsize{14pt}{16pt}\selectfont\bfseries}{\thesubsection}{1em}{}
+
+
+
+
+
 \def\mystrut{\vrule height 1cm depth 1.5cm width 0pt} 
 \tikzset{
  state/.style={
@@ -40,6 +60,118 @@ urlcolor=cyan!50!black!90
        text centered,
        }
 }
+
+%================================================================================
+
+%\renewcommand{\familydefault}{\sfdefault}
+\renewcommand*\familydefault{\sfdefault} 
+%======================================
+%Pacotesdecitações 
+%======================================
+\renewcommand*{\backref}[1]{} 
+\renewcommand*{\backrefalt}[4]{     
+\ifcase #1 (No citado.)           
+\or (Citado na página~#2.)           
+\else (Citado nas páginas #2.)     
+\fi% 
+} 
+\renewcommand*{\backrefsep}{, } 
+\renewcommand*{\backreftwosep}{e~} 
+\renewcommand*{\backreflastsep}{e~}
+%================================================================================ 
+% Configuração dos Estilo dos Capítulo 
+%================================================================================
+
+\makechapterstyle{box}{   
+
+\renewcommand{\chapterheadstart}{}         
+% Secao secundaria (Section) Caixa baixa, Negrito     
+\renewcommand*{\cftsectionfont}{\bfseries}     
+% Secao terciaria (Subsection) Caixa baixa, Negrito, italico     
+\renewcommand*{\cftsubsectionfont}{\itshape\bfseries}     
+% Secao quaternaria (Subsubsection) Caixa baixa, italico     
+\renewcommand*{\cftsubsubsectionfont}{\itshape}     
+% Secao quinquenária (Subsubsubsection) Caixa baixa     
+\renewcommand*{\cftparagraphfont}{\normalsize}
+
+% tamanhos de fontes de chapter e part	    
+\ifthenelse{\equal{\ABNTEXisarticle}{true}}{%      
+ \setlength\beforechapskip{\baselineskip}      
+ \renewcommand{\chaptitlefont}{\ABNTEXsectionfont\ABNTEXsectionfontsize}    
+}{%else      
+ \setlength{\beforechapskip}{0pt}      
+ \renewcommand{\ABNTEXchapterfontsize}{\LARGE}          
+%\renewcommand{\ABNTEXchapterfont}{\sffamily\bfseries}  
+%alteração da fonte dos capítulos, seções e subseções     
+ \renewcommand{\chaptitlefont}{\ABNTEXchapterfont\bfseries\ABNTEXchapterfontsize}    
+}
+
+\renewcommand{\chapnumfont}{\chaptitlefont}   
+\renewcommand{\parttitlefont}{\ABNTEXpartfont\ABNTEXpartfontsize}   
+\renewcommand{\partnumfont}{\ABNTEXpartfont\ABNTEXpartfontsize}   
+\renewcommand{\partnamefont}{\ABNTEXpartfont\ABNTEXpartfontsize}      
+
+
+
+
+
+
+
+\renewcommand*{\printchaptername}{}  
+\renewcommand*{\chapnumfont}{\normalfont\sffamily\huge\bfseries}   
+\renewcommand*{\printchapternum}{     
+\hrulefill{\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{|c|}
+ \rowcolor{black}\color{white}\normalsize\ABNTEXchapterfont\MakeTextUppercase{\chaptername}\\
+ \vspace{-1.5ex}\\
+ \resizebox{!}{1.1cm}{\ABNTEXchapterfont\thechapter}
+ \\[2.5ex]
+ \hline
+\end{tabular}
+}
+}
+\renewcommand*{\chaptitlefont}{\normalfont\sffamily\Huge\bfseries}   
+\renewcommand*{\printchaptertitle}[1]{
+\flushright\chaptitlefont##1
+\vskip -0.6ex\hfill\rule{.8\textwidth}{0.5pt} \\         
+\vskip -2.8ex\hfill\rule{.8\textwidth}{2pt}\\         
+\vskip 1.5ex
+} 
+}
+%\vskip 4.3ex \flushright\chaptitlefont\bfseries\ABNTEXchapterupperifneeded{##1} \\         
+\chapterstyle{box}
+
+%=================================
+%Configurações do estilo da pagina
+%==================================
+
+\makepagestyle{ruled}
+\makeoddfoot{ruled}{}{}{}  
+\makeevenfoot{ruled}{}{}{}  
+\makeheadrule{ruled}{\textwidth}{\normalrulethickness}  
+\makeevenhead{ruled}{\thepage}{}{\small\itshape\leftmark}  
+\makeoddhead{ruled}{\small\itshape\rightmark}{}{\thepage}
+\makeatletter % because of \@chapapp     
+\makepsmarks  {ruled}{ 
+\nouppercaseheads
+\createmark	{chapter} 	{both} {shownumber}{\@chapapp\ }{. \ }
+\createmark	{section} 	{right} {shownumber}{}		  {. \ }
+\createplainmark {toc}		{both}{\contentsname}
+}
+\makeatother
+\pagestyle{ruled}
+%================================================================================
+% Configuração da fonte utilizada na capa exigida pelo ICMC
+%================================================================================
+
+%\newcommand{\@icmcFont}[2][]{\fontsize{#2}{#2}\ifthenelse{\isempty{#1}}{}{\fontspec[Mapping = tex-text, Path = packages/fonts/]{#1}}}
+
+% Legendas utilizadas em Figuras / Tabelas / Etc.
+% Legendas utilizadas em Figuras / Tabelas / Etc.
+\newcommand{\fautor}{\legend{Fonte: Elaborada pelo autor.}}
+\newcommand{\fadaptada}[2][]{\legend{Fonte: Adaptada de \citeonline[#1]{#2}.}}
+\newcommand{\fdireta}[2][]{\legend{Fonte: \citeonline[#1]{#2}.}}
+\newcommand{\fdadospesquisa}{\legend{Fonte: Dados da pesquisa.}}
 \end_preamble
 \use_default_options true
 \begin_modules
@@ -79,11 +211,11 @@ EndPreamble
 \language_package default
 \inputencoding utf8
 \fontencoding global
-\font_roman lmodern
+\font_roman default
 \font_sans default
 \font_typewriter default
 \font_math auto
-\font_default_family rmdefault
+\font_default_family default
 \use_non_tex_fonts false
 \font_sc false
 \font_osf false
@@ -92,13 +224,13 @@ EndPreamble
 \graphics default
 \default_output_format default
 \output_sync 0
-\bibtex_command biber
+\bibtex_command default
 \index_command default
 \paperfontsize 12
 \spacing onehalf
 \use_hyperref false
 \papersize custom
-\use_geometry false
+\use_geometry true
 \use_package amsmath 1
 \use_package amssymb 1
 \use_package cancel 1
@@ -109,9 +241,9 @@ EndPreamble
 \use_package stackrel 1
 \use_package stmaryrd 1
 \use_package undertilde 1
-\cite_engine natbib
-\cite_engine_type authoryear
-\biblio_style plain
+\cite_engine basic
+\cite_engine_type default
+\biblio_style abnt
 \use_bibtopic false
 \use_indices false
 \paperorientation portrait
@@ -122,6 +254,10 @@ EndPreamble
 \shortcut idx
 \color #008000
 \end_index
+\leftmargin 3cm
+\topmargin 3cm
+\rightmargin 2cm
+\bottommargin 2cm
 \secnumdepth 3
 \tocdepth 3
 \paragraph_separation indent
@@ -140,711 +276,138 @@ EndPreamble
 \begin_body
 
 \begin_layout Standard
-\begin_inset ERT
-status open
+\begin_inset External
+	template PDFPages
+	filename /Users/edson/Documents/rosto1.pdf
 
-\begin_layout Plain Layout
+\end_inset
 
-%
-\backslash
-makechapterstyle{box}{ 
-\end_layout
-
-\begin_layout Plain Layout
-
-%
-\backslash
-renewcommand{
-\backslash
-chapterheadstart}{} 
-\end_layout
-
-\begin_layout Plain Layout
-
-% impressao do titulo do capitulo   
-\end_layout
-
-\begin_layout Plain Layout
-
-%
-\backslash
-renewcommand*{
-\backslash
-printchaptername}{}   
-\end_layout
-
-\begin_layout Plain Layout
-
-%
-\backslash
-def
-\backslash
-printchaptertitle##1{%          
-\end_layout
-
-\begin_layout Plain Layout
-
-     
-\end_layout
-
-\begin_layout Plain Layout
-
-%
-\backslash
-flushright      
-\end_layout
-
-\begin_layout Plain Layout
-
-%
-\backslash
-begin{tikzpicture}        
-\end_layout
-
-\begin_layout Plain Layout
-
-%	
-\backslash
-node[state]{
-\backslash
-color{white}{
-\backslash
-chaptername}
-\backslash
-nodepart{two}
-\backslash
-vspace{-1.5ex}
-\backslash
-resizebox{!}{1.5cm}{
-\backslash
-thechapter}}; 
-\end_layout
-
-\begin_layout Plain Layout
-
-%
-\backslash
-end{tikzpicture}  
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-%
-\backslash
-vskip 4.3ex 
-\backslash
-flushright
-\backslash
-chaptitlefont
-\backslash
-bfseries
-\backslash
-ABNTEXchapterupperifneeded{##1}     
-\end_layout
-
-\begin_layout Plain Layout
-
-%
-\backslash
-vskip -0.6ex
-\backslash
-hfill
-\backslash
-rule{.8
-\backslash
-textwidth}{0.5pt}      
-\end_layout
-
-\begin_layout Plain Layout
-
-%
-\backslash
-vskip -2.8ex
-\backslash
-hfill
-\backslash
-rule{.8
-\backslash
-textwidth}{2pt}     
-\end_layout
-
-\begin_layout Plain Layout
-
-%
-\backslash
-vskip 1.5ex          
-\end_layout
-
-\begin_layout Plain Layout
-
-%}
-\end_layout
-
-\begin_layout Plain Layout
-
-%}
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-makechapterstyle{box}{   
-\end_layout
-
-\begin_layout Plain Layout
-
-%
-\backslash
-def
-\backslash
-printchaptertitle##1{
-\backslash
-hrulefill{
-\backslash
-renewcommand{
-\backslash
-arraystretch}{2}
-\end_layout
-
-\begin_layout Plain Layout
-
-%
-\backslash
-begin{tabular}{|c|}
-\end_layout
-
-\begin_layout Plain Layout
-
-%
-\backslash
-rowcolor{black}
-\backslash
-color{white}
-\backslash
-normalsize
-\backslash
-ABNTEXchapterfont
-\backslash
-MakeTextUppercase{
-\backslash
-chaptername}
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-%
-\backslash
-vspace{-1.5ex}
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-%
-\backslash
-resizebox{!}{1.1cm}{
-\backslash
-ABNTEXchapterfont
-\backslash
-thechapter}
-\end_layout
-
-\begin_layout Plain Layout
-
-%
-\backslash
-
-\backslash
-[2.5ex]
-\end_layout
-
-\begin_layout Plain Layout
-
-%
-\backslash
-hline
-\end_layout
-
-\begin_layout Plain Layout
-
-%
-\backslash
-end{tabular}
-\end_layout
-
-\begin_layout Plain Layout
-
-%}}
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-renewcommand*{
-\backslash
-printchaptername}{}  
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-renewcommand*{
-\backslash
-chapnumfont}{
-\backslash
-normalfont
-\backslash
-sffamily
-\backslash
-huge
-\backslash
-bfseries}   
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-renewcommand*{
-\backslash
-printchapternum}{     
-\end_layout
-
-\begin_layout Plain Layout
-
-%
-\backslash
-flushright     
-\end_layout
 
-\begin_layout Plain Layout
-
-%
-\backslash
-begin{tikzpicture}       
-\end_layout
-
-\begin_layout Plain Layout
-
-%
-\backslash
-draw[fill,color=white,draw=black] (0,0) rectangle (2cm,2cm);       
-\end_layout
-
-\begin_layout Plain Layout
-
-%
-\backslash
-draw[color=black] (1cm,1cm) node { 
-\backslash
-chapnumfont
-\backslash
-thechapter };     
-\end_layout
-
-\begin_layout Plain Layout
-
-%
-\backslash
-end{tikzpicture}   
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-hrulefill{
-\backslash
-renewcommand{
-\backslash
-arraystretch}{1.5}
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-begin{tabular}{|c|}
-\end_layout
-
-\begin_layout Plain Layout
-
- 
-\backslash
-rowcolor{black}
-\backslash
-color{white}
-\backslash
-normalsize
-\backslash
-ABNTEXchapterfont
-\backslash
-MakeTextUppercase{
-\backslash
-chaptername}
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
- 
-\backslash
-vspace{-1.5ex}
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
- 
-\backslash
-resizebox{!}{1.1cm}{
-\backslash
-ABNTEXchapterfont
-\backslash
-thechapter}
-\end_layout
-
-\begin_layout Plain Layout
-
- 
-\backslash
-
-\backslash
-[2.5ex]
-\end_layout
-
-\begin_layout Plain Layout
-
- 
-\backslash
-hline
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-end{tabular}
-\end_layout
-
-\begin_layout Plain Layout
-
-}
-\end_layout
-
-\begin_layout Plain Layout
-
-}
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-renewcommand*{
-\backslash
-chaptitlefont}{
-\backslash
-normalfont
-\backslash
-sffamily
-\backslash
-Huge
-\backslash
-bfseries}   
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-renewcommand*{
-\backslash
-printchaptertitle}[1]{
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-flushright
-\backslash
-chaptitlefont##1
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-vskip -0.6ex
-\backslash
-hfill
-\backslash
-rule{.8
-\backslash
-textwidth}{0.5pt} 
-\backslash
-
-\backslash
-         
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-vskip -2.8ex
-\backslash
-hfill
-\backslash
-rule{.8
-\backslash
-textwidth}{2pt}
-\backslash
-
-\backslash
-         
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-vskip 1.5ex
-\end_layout
-
-\begin_layout Plain Layout
-
-} 
-\end_layout
-
-\begin_layout Plain Layout
-
 \end_layout
 
-\begin_layout Plain Layout
+\begin_layout Standard
+\begin_inset Newpage cleardoublepage
+\end_inset
 
-}
-\end_layout
 
-\begin_layout Plain Layout
-
-%
-\backslash
-vskip 4.3ex 
-\backslash
-flushright
-\backslash
-chaptitlefont
-\backslash
-bfseries
-\backslash
-ABNTEXchapterupperifneeded{##1} 
-\backslash
-
-\backslash
-         
 \end_layout
 
-\begin_layout Plain Layout
+\begin_layout Standard
+\begin_inset External
+	template PDFPages
+	filename /Users/edson/Documents/rosto2.pdf
 
+\end_inset
 
-\backslash
-chapterstyle{box}
-\end_layout
 
-\begin_layout Plain Layout
-
 \end_layout
-
-\begin_layout Plain Layout
 
-%
-\backslash
-chapterstyle{veelo}
-\end_layout
+\begin_layout Standard
+\begin_inset Newpage cleardoublepage
+\end_inset
 
-\begin_layout Plain Layout
 
 \end_layout
 
-\begin_layout Plain Layout
+\begin_layout Standard
+\begin_inset External
+	template PDFPages
+	filename /Users/edson/Documents/epigrafe.pdf
 
-\end_layout
+\end_inset
 
-\begin_layout Plain Layout
 
 \end_layout
 
-\begin_layout Plain Layout
+\begin_layout Standard
+\begin_inset Newpage cleardoublepage
+\end_inset
 
 
-\backslash
-makepagestyle{ruled}
 \end_layout
-
-\begin_layout Plain Layout
 
+\begin_layout Standard
+\begin_inset External
+	template PDFPages
+	filename /Users/edson/Documents/afterepigrafe.pdf
 
-\backslash
-makeoddfoot{ruled}{}{}{}  
-\end_layout
+\end_inset
 
-\begin_layout Plain Layout
 
-
-\backslash
-makeevenfoot{ruled}{}{}{}  
 \end_layout
-
-\begin_layout Plain Layout
 
+\begin_layout Standard
+\begin_inset Newpage cleardoublepage
+\end_inset
 
-\backslash
-makeheadrule{ruled}{
-\backslash
-textwidth}{
-\backslash
-normalrulethickness}  
-\end_layout
 
-\begin_layout Plain Layout
-
-
-\backslash
-makeevenhead{ruled}{
-\backslash
-thepage}{}{
-\backslash
-small
-\backslash
-itshape
-\backslash
-leftmark}  
 \end_layout
 
-\begin_layout Plain Layout
-
-
-\backslash
-makeoddhead{ruled}{
-\backslash
-small
-\backslash
-itshape
-\backslash
-rightmark}{}{
-\backslash
-thepage}
-\end_layout
+\begin_layout Standard
+\begin_inset External
+	template PDFPages
+	filename /Users/edson/Documents/dedicatoria.pdf
 
-\begin_layout Plain Layout
+\end_inset
 
 
-\backslash
-makeatletter % because of 
-\backslash
-@chapapp     
 \end_layout
 
-\begin_layout Plain Layout
+\begin_layout Standard
+\begin_inset Newpage cleardoublepage
+\end_inset
 
 
-\backslash
-makepsmarks  {ruled}{ 
 \end_layout
 
-\begin_layout Plain Layout
+\begin_layout Standard
+\begin_inset External
+	template PDFPages
+	filename /Users/edson/Documents/agradecimiento.pdf
 
+\end_inset
 
-\backslash
-nouppercaseheads
-\end_layout
 
-\begin_layout Plain Layout
-
-
-\backslash
-createmark	{chapter} 	{both} {shownumber}{
-\backslash
-@chapapp
-\backslash
- }{.
- 
-\backslash
- }
 \end_layout
 
-\begin_layout Plain Layout
+\begin_layout Standard
+\begin_inset Newpage cleardoublepage
+\end_inset
 
 
-\backslash
-createmark	{section} 	{right} {shownumber}{}		  {.
- 
-\backslash
- }
 \end_layout
 
-\begin_layout Plain Layout
+\begin_layout Resumo
+\begin_inset CommandInset include
+LatexCommand input
+filename "abstract/AbstractAbnt.lyx"
 
+\end_inset
 
-\backslash
-createplainmark {toc}		{both}{
-\backslash
-contentsname}
-\end_layout
 
-\begin_layout Plain Layout
-
-}
 \end_layout
 
-\begin_layout Plain Layout
+\begin_layout Standard
+\begin_inset Newpage cleardoublepage
+\end_inset
 
 
-\backslash
-makeatother
 \end_layout
 
-\begin_layout Plain Layout
+\begin_layout Resumo
 
+\lang english
+\begin_inset CommandInset include
+LatexCommand input
+filename "abstract/AbstractAbntIngles.lyx"
 
-\backslash
-pagestyle{ruled}
-\end_layout
+\end_inset
 
-\begin_layout Plain Layout
 
 \end_layout
 
+\begin_layout Standard
+\begin_inset Newpage cleardoublepage
 \end_inset
 
 
@@ -860,45 +423,6 @@ status open
 \backslash
 frontmatter
 \end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset CommandInset include
-LatexCommand input
-filename "abstract/AbstractAbnt.lyx"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-clearpage
-\backslash
-null
-\backslash
-newpage
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset CommandInset toc
-LatexCommand tableofcontents
 
 \end_inset
 
@@ -969,91 +493,20 @@ status open
 
 
 \backslash
-mainmatter
+clearpage
+\backslash
+null
+\backslash
+newpage
 \end_layout
 
 \end_inset
 
 
-\end_layout
-
-\begin_layout Chapter
-conasdasasd
 \end_layout
 
 \begin_layout Standard
-\begin_inset CommandInset include
-LatexCommand input
-filename "/Users/edson/Documents/introducao.lyx"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Chapter
-Informatica biomedica
-\end_layout
-
-\begin_layout Standard
-\begin_inset CommandInset include
-LatexCommand input
-filename "/Users/edson/Documents/marco.lyx"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Chapter
-Listas
-\end_layout
-
-\begin_layout Standard
-\begin_inset CommandInset include
-LatexCommand input
-filename "/Users/edson/Documents/abreviaturas.lyx"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Chapter
-metodologia
-\end_layout
-
-\begin_layout Standard
-\begin_inset CommandInset include
-LatexCommand input
-filename "chapters/metodos_abnt.lyx"
-
-\end_inset
-
-
-\begin_inset Note Comment
-status open
-
-\begin_layout Plain Layout
-\begin_inset CommandInset bibtex
-LatexCommand bibtex
-btprint "btPrintCited"
-bibfiles "references/refsabnt"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Bibliography
-\begin_inset CommandInset bibitem
-LatexCommand bibitem
-key "key-4"
+\begin_inset FloatList algorithm
 
 \end_inset
 
@@ -1068,12 +521,226 @@ status open
 
 
 \backslash
-nocite{*}
+clearpage
+\backslash
+null
+\backslash
+newpage
 \end_layout
 
 \begin_layout Plain Layout
 
+
+\backslash
+renewcommand{
+\backslash
+lstlistingname}{C{
+\backslash
+'o}digo-fonte}
 \end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+renewcommand{
+\backslash
+lstlistlistingname}{Lista De C{
+\backslash
+'o}digos-Fonte}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset toc
+LatexCommand lstlistoflistings
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+clearpage
+\backslash
+null
+\backslash
+newpage
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+renewcommand{
+\backslash
+nomname}{Lista De Abreviaturas e Siglas}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset nomencl_print
+LatexCommand printnomenclature
+set_width "auto"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+clearpage
+\backslash
+null
+\backslash
+newpage
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mainmatter
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter
+Introdução
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand input
+filename "chapters/introducao.lyx"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter
+Informatica biomedica
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand input
+filename "chapters/marco.lyx"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter
+Web Semântica
+\end_layout
+
+\begin_layout Chapter
+Trabalhos Relacionados
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand input
+filename "chapters/4_Related_workABNT.lyx"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter
+Listas
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand input
+filename "chapters/abreviaturas.lyx"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter
+Metodologia
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand input
+filename "chapters/metodos_abnt.lyx"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter
+probando
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand input
+filename "chapters/temp.lyx"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset bibtex
+LatexCommand bibtex
+bibfiles "references/refsabnt"
+options "abntex2-alf"
 
 \end_inset
 

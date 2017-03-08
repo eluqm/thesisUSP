@@ -137,8 +137,11 @@ reference "sec:step1"
 \end_layout
 
 \begin_layout Itemize
-A criação das condições para implementar o reasoning baseado em regras TNM
- utilizando instâncias OWL (Seção 
+A criação das condições para implementar o 
+\emph on
+reasoning
+\emph default
+ baseado em regras TNM utilizando instâncias OWL (Seção 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "sec:step3"
@@ -265,7 +268,7 @@ key "Bulu"
 \begin_inset Graphics
 	filename ../figures/hakanontology.png
 	lyxscale 80
-	scale 60
+	scale 70
 
 \end_inset
 
@@ -346,7 +349,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Prefijos e Namespaces usados na ontologia 
+Prefixos e Namespaces usados na ontologia 
 \series bold
 AIM4-O
 \series default
@@ -541,11 +544,16 @@ AIM4-O
  (classes e propriedades) são agrupados, neste documento, em duas categorias,
  a fim de fornecer uma descrição incremental: 
 \series bold
+\emph on
 Basic Terms
 \series default
+\emph default
  e 
 \series bold
-Expanded Terms.
+\emph on
+Expanded Terms
+\emph default
+.
 \end_layout
 
 \begin_layout Subsection
@@ -650,7 +658,10 @@ captura o nome, uma descrição geral da anotação AIM, o tipo de anotação
 AIM:ImageReference: 
 \series default
 representa uma imagem ou uma coleção de imagens que está sendo anotada.
- Os dois tipos possíveis de referências são DICOM e Uniform Resource Identifier
+ Os dois tipos possíveis de referências são DICOM e 
+\emph on
+Uniform Resource Identifier
+\emph default
  (URI).
 \end_layout
 
@@ -3440,7 +3451,7 @@ Considerações Finais
 Neste capitulo, foram descritas as etapas necessárias para alcançar a implementa
 ção de um sistema de classificação de estágios de câncer baseado em anotações
  AIM contidas em imagens médicas.
- Para se conseguir isso, foi necessário uma representação formal híbrida
+ Para se conseguir isso, foi necessária uma representação formal híbrida
  baseada em axiomas OWL dos critérios de classificação TNM e regras SWRL.
  Além disso, esse sistema foi suportado pelas ontologias AIM4-O (extensão
  do trabalho de 

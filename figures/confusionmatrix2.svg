@@ -8,8 +8,8 @@
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    class="svg-confMat"
-   width="685.88306"
-   height="517.96436"
+   width="766.47101"
+   height="617.22406"
    version="1.1"
    id="svg2"
    inkscape:version="0.91 r"
@@ -46,39 +46,39 @@
      fit-margin-right="0"
      fit-margin-bottom="0"
      inkscape:zoom="0.83075146"
-     inkscape:cx="206.14104"
-     inkscape:cy="233.07791"
+     inkscape:cx="214.21789"
+     inkscape:cy="323.56959"
      inkscape:window-x="0"
      inkscape:window-y="24"
      inkscape:window-maximized="1"
      inkscape:current-layer="svg2" />
   <text
      xml:space="preserve"
-     style="font-size:20.00000026px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans;-inkscape-font-specification:Sans"
-     x="269.55176"
-     y="22.777155"
+     style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:30px;line-height:125%;font-family:Roboto;-inkscape-font-specification:'Roboto, Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none"
+     x="287.41907"
+     y="22.5"
      id="text3605"
      sodipodi:linespacing="125%"
-     transform="scale(1.0661259,0.9379755)"><tspan
+     transform="scale(1.0661259,0.93797552)"><tspan
        sodipodi:role="line"
        id="tspan3607"
-       x="269.55176"
-       y="22.777155">Predicted Stage</tspan></text>
+       x="287.41907"
+       y="22.5">Predicted Stage</tspan></text>
   <text
      sodipodi:linespacing="125%"
      id="text3609"
-     y="13.481513"
-     x="-396.65787"
-     style="font-size:19.99999991px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans;-inkscape-font-specification:Sans"
+     y="9.8197241"
+     x="-483.73026"
+     style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:30px;line-height:125%;font-family:Roboto;-inkscape-font-specification:'Roboto, Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none"
      xml:space="preserve"
      transform="matrix(-0.03388908,-0.93750149,1.0655872,-0.02981555,0,0)"><tspan
        sodipodi:role="line"
        id="tspan3613"
-       x="-396.65787"
-       y="13.481513">Actual Stage</tspan></text>
+       x="-483.73026"
+       y="9.8197241">Actual Stage</tspan></text>
   <g
      id="g3745"
-     transform="matrix(1.86859,0,0,1.5912033,134.40669,49.593286)">
+     transform="matrix(2.1705078,0,0,1.9299211,147.33368,66.714073)">
     <g
        id="g3747"
        class="feature x axis">
