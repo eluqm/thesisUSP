@@ -252,7 +252,7 @@ Although these algorithms can help physicians to process image findings
  in the context of cancer patient classification.
  For example, when an oncologist wants to know if a tumor is at an advanced
  stage and it expanded to some region near the origin of cancer but not
- for other parts of the body
+ for other parts of the body 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Wennerberg2011155"
@@ -286,7 +286,7 @@ key "Zillner2013"
  such as size and location of tumor on the body.
  This classification process can be automated in order to optimize the work
  of the physicians, that may become cumbersome and error prone as the number
- of patients is considerably large
+ of patients is considerably large 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Zillner2010"
@@ -307,8 +307,15 @@ key "Rubin2014"
 \end_inset
 
 .
- The project Annotation and Image Markup (AIM) developed by the cancer Biomedica
-l Informatics Grid (caBIG) 
+ The Annotation and Image Markup(AIM) 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "channin2009annotation,Channin2010"
+
+\end_inset
+
+ project that was developed by the cancer Biomedical Informatics Grid(caBIG)
+ 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Rubin2008"
@@ -348,17 +355,8 @@ Image metadata in AIM format, does not allow represent information about
  about cancerous lesions from semantic annotations of images, based on standard
  format such as AIM.
  Thus, in this work we developed reasoning approach based on staging systems
- such as the 
-\series bold
-\emph on
-Classification of Malignant Tumors
-\series default
-\emph default
- (
-\series bold
-TNM
-\series default
-; stages definitions and examples can be found in 
+ such as the Tumor-Node-Metastasis(TNM) classification (stages definitions
+ and examples can be found in 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Faria2014"
@@ -372,10 +370,29 @@ reference "fig:A)TNMexamplefigure"
 
 \end_inset
 
- respectively).
+ respectively)
+\series bold
+\emph on
+, 
+\series default
+\emph default
+published by the Union for International Cancer Control(UICC)
+\series bold
+\emph on
+.
+
+\series default
+\emph default
  In order to automatically staging cancer patients and finally incorporate
- these methods to the requirements met by an image annotation systems as
- ePAD.
+ these methods to the requirements met by a semantic image annotation tool
+ as the electronic Physician’s Annotation Device(ePAD) 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Rubin2008"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Section
@@ -390,7 +407,7 @@ The objective of this work is to automatically determine the cancer stage
  technologies to process semantic annotations made by experts to provide
  clinicians a second opinion on the classification of their patients.
  These semantic annotations are made using tools that use XML schema to
- describe and save image findings as the AIM format(ePad).
+ describe and save image findings as the AIM format (used by the ePad tool).
  Automatic cancer staging can increase the efficiency of radiologists and
  oncologists and improve the quality and uniformity of image interpretation
  by experts.
@@ -403,10 +420,10 @@ This paper is organized as follows.
  In Section 3 presents related approaches.
  Section 4 describes our methodology composed of three main components:
  the ontological representation of AIM 4.0 model, the conditions to implement
- the TNM classifier(General Ontology) and the formal representation of cancer
- staging.
+ the TNM classifier (General Ontology) and the formal representation of
+ cancer staging.
  Section 5 gathers experiments enabling to assess our TNM classifier relevance.
- Conclusions will be found in Section 6.
+ Conclusions are found in Section 6.
 \end_layout
 
 \begin_layout Section
@@ -446,11 +463,24 @@ key "marquet2007"
 
 \end_inset
 
- perform reasoning based on classification systems such as TNM and WHO using
- ontology class-based reasoning approach.
+ perform reasoning based on classification systems such as TNM and WHO 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "kleihues2000world"
+
+\end_inset
+
+ using ontology class-based reasoning approach.
  However, this approach often leads to an underlying drawback: the creation
  of unnecessary classes, increasing the complexity of the ontology.
- In addition, the Open World Assumption (OWA).
+ In addition, the Open World Assumption(OWA) paradigm 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "keet2013open"
+
+\end_inset
+
+.
  The OWA was solved by these studies avoiding the reasoning based on instances.
  However, it is possible to perform reasoning based on instances supported
  by data structures.
@@ -461,35 +491,7 @@ key "marquet2007"
 In 
 \begin_inset CommandInset citation
 LatexCommand cite
-key "Tutac2008"
-
-\end_inset
-
-,
-\begin_inset CommandInset citation
-LatexCommand cite
-key "Tutac2010"
-
-\end_inset
-
-, 
-\begin_inset CommandInset citation
-LatexCommand citet
-key "Massicano2015AnOF"
-
-\end_inset
-
-, 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "franca2015"
-
-\end_inset
-
- and 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "zillner:towards"
+key "Tutac2008,Tutac2010,Massicano2015AnOF,franca2015,zillner:towards"
 
 \end_inset
 
@@ -520,48 +522,27 @@ key "Tutac2008"
 Although in 
 \begin_inset CommandInset citation
 LatexCommand cite
-key "Meriem2012"
+key "Meriem2012,Racoceanu20152,Tutac2010"
 
 \end_inset
 
-, 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "Racoceanu20152"
-
-\end_inset
-
- and 
-\begin_inset CommandInset citation
-LatexCommand citet
-key "Tutac2010"
-
-\end_inset
-
- the authors used semantic image annotations and perform a classification
- based on Nottingham grading System(NGS) supported by OWL and SWRL.
+, the authors used semantic image annotations and perform a classification
+ based on the Nottingham grading System(NGS) supported by OWL and SWRL.
  The fact of creating a new ontology depending on the condition you want
  to analyze it is a limiting factor.
- That fact, however, does not occur in our approach, which provides an ontology
- based on a standard such AIM.
+ However, does not occur in our approach, which provides an ontology based
+ on a standard such AIM.
 \end_layout
 
 \begin_layout Standard
 In 
 \begin_inset CommandInset citation
 LatexCommand cite
-key "Moller2013"
+key "Moller2013,Zillner2013"
 
 \end_inset
 
-,
-\begin_inset CommandInset citation
-LatexCommand cite
-key "Zillner2012"
-
-\end_inset
-
- can be found the closest approach to our proposal.
+, can be found the closest approach to our proposal.
  However, ignoring the fact that the data used are not available for all
  the necessary analysis, the lymphoma staging system that has been implemented
  in this study is relatively simpler than TNM staging system.
@@ -580,16 +561,16 @@ key "Zillner2012"
 \end_layout
 
 \begin_layout Standard
-Recent works using ePAD 
+Recent works are using the ePAD tool 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Gimenez2011,Kurtz20141082"
 
 \end_inset
 
- propose an image retrieval framework based on semantic annotations.
+, they propose an image retrieval framework based on semantic annotations.
  This framework incorporates the semantic correlations between terms used
- to describe these images.
+ to describe medical image findings.
  This automated approach provides real-time support for radiologists, showing
  them images associated with similar diagnoses.
 \end_layout
@@ -621,12 +602,12 @@ In this section, we describe our methodology which comprises three main
  tasks:
 \end_layout
 
-\begin_layout Itemize
+\begin_layout Enumerate
 Ontological representation of AIM 4.0 model.
  
 \end_layout
 
-\begin_layout Itemize
+\begin_layout Enumerate
 \begin_inset Note Note
 status open
 
@@ -640,7 +621,7 @@ Creating conditions to implement reasoning based on TNM rules using OWL
  instances.
 \end_layout
 
-\begin_layout Itemize
+\begin_layout Enumerate
 Formal Representation of Cancer Staging.
 \end_layout
 
@@ -650,14 +631,13 @@ Ontological representation of AIM model.
 \end_layout
 
 \begin_layout Standard
-In order to perform inference and classify image annotations based on Annotation
- and Image Markup (AIM) standard, we needed a language equipped with formal
- semantic.
+In order to perform inference and classify image annotations based on the
+ AIM standard, we needed a language equipped with formal semantic.
  Using this semantic, inferences about an ontology together with a set of
  individual instances of classes can be made.
- In this context the Web Ontology Language (OWL) that describes a language
- for building ontological representation semantically equivalent of an informati
-on model was used.
+ In this context the Web Ontology Language(OWL), which describes a language
+ for building the ontological representation of an information model, was
+ used.
  In our work, we transformed the AIM data model into an equivalent ontological
  representation, using OWL2.
  This transformation was performed by creating classes and properties in
@@ -665,16 +645,17 @@ on model was used.
 \end_layout
 
 \begin_layout Standard
-We developed an OWL model based on the ontology provides by 
+We developed an OWL model based on the ontology provides by Bulu, Hakan
+ and Rubin, Daniel L, 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Bulu"
 
 \end_inset
 
- Hakan Bulu, this ontology represents an older version of AIM.
+, this ontology represents an older version of AIM.
  Therefore, in order to represent the AIM 4.0 model, which is the version
- used to store image annotations generated by tools such as ePAD
+ used to store image annotations generated by tools such as ePAD 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Rubin2011"
@@ -704,8 +685,8 @@ AIM4-O
 AIM4-O ontology
 \end_layout
 
-\begin_layout Description
-Classes
+\begin_layout Subsubsection*
+AIM4-O Classes
 \end_layout
 
 \begin_layout Standard
@@ -799,9 +780,9 @@ in AIM 3.0 version
 
 :
 \series default
- This class stores an anatomical location as a coded term ( RID2662, femur,
- RadLex ) based on controlled vocabularies such as RadLex®, SNOMED CT®,
- Unified Medical Language System (UMLS).
+ This class stores an anatomical location as a coded term (RID2662, femur,
+ RadLex) based on controlled vocabularies such as RadLex®, SNOMED CT®, Unified
+ Medical Language System(UMLS).
 \end_layout
 
 \begin_layout Enumerate
@@ -836,7 +817,7 @@ This class captures textual information and graphical representation as
  DICOM-SR and SCOORD3D, for tridimensional and bidimensional spatial coordinates.
 \end_layout
 
-\begin_layout Description
+\begin_layout Subsubsection*
 Relationships 
 \end_layout
 
@@ -994,6 +975,24 @@ placement H
 wide false
 sideways false
 status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:sample-of-Image"
+
+\end_inset
+
+Sample of Image Annotations in XML and OWL format.
+\end_layout
+
+\end_inset
+
+
+\end_layout
 
 \begin_layout Plain Layout
 \align center
@@ -1278,24 +1277,6 @@ Individual: f3fftpf6wsinx4o17il
 
 \end_layout
 
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-\begin_inset CommandInset label
-LatexCommand label
-name "tab:sample-of-Image"
-
-\end_inset
-
-Sample of Image Annotations in XML and OWL format
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
 \end_inset
 
 
@@ -1310,8 +1291,8 @@ reference "tab:sample-of-Image"
 \end_inset
 
  including OWL representation of an AIM 4.0 instance and its usual relationships.
- This example shows semantically equivalent concepts between XML(serialization
- format) and OWL(data model) that were used in this work.
+ This example shows semantically equivalent concepts between XML (serialization
+ format) and OWL (data model) that were used in this work.
  Hence, for example, an AIM 
 \family typewriter
 \series bold
@@ -1337,7 +1318,7 @@ uniqueIdentifier:f3fftpf6wsinx4o17il
 \series default
 \emph default
  can be represented and suitable for reasoning purposes.
- Similarly, we can see, in the table 
+ Similarly, we can see, in the Table 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "tab:sample-of-Image"
@@ -1422,6 +1403,24 @@ placement H
 wide false
 sideways false
 status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Sample-of-AIM"
+
+\end_inset
+
+Sample of AIM PhysicalEntity in XML and OWL format.
+\end_layout
+
+\end_inset
+
+
+\end_layout
 
 \begin_layout Plain Layout
 \align center
@@ -1616,24 +1615,6 @@ Individual:  1a5gzinzftm1oxc45sho8go
 \end_layout
 
 \begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-\begin_inset CommandInset label
-LatexCommand label
-name "tab:Sample-of-AIM"
-
-\end_inset
-
-Sample of AIM PhysicalEntity in XML and OWL format
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
 
 \end_layout
 
@@ -1650,8 +1631,9 @@ Creating conditions to implement reasoning based on TNM rules using OWL
 \begin_layout Standard
 The second step is to define a mechanism to transform existing AIM-XML documents
  to their equivalent encoded using OWL ( AIM4-O individuals).
- To achieve this we developed groovy scripts in order to automatically map
- XML documents to AIM Java classes based on AIM UML model (see Figure 
+ To achieve this, we developed groovy scripts in order to automatically
+ map XML documents to AIM Java classes based on AIM UML model (see Figure
+ 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:xmltoowl"
@@ -1722,8 +1704,15 @@ In order to stage automatically cancer, our approach must have the support
  and has its own TNM system).
  In this work, this organ was the liver.
  Furthermore, it is considered necessary to include an OWL representation
- of Radlex vocabulary in order to facilitate handling AIM4-O individuals,
- because these individuals have terminology Radlex in its structure.
+ of RadLex® 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Radlex"
+
+\end_inset
+
+ vocabulary in order to facilitate handling AIM4-O individuals, because
+ these individuals have terminology Radlex in its structure.
  Finally, it was added to the ontology the set of rules based on the TNM
  liver system.
  The result was the 
@@ -1749,7 +1738,8 @@ reference "fig:generalOntology"
 \end_layout
 
 \begin_layout Itemize
-The AIM4-O ontology with individuals (obtained using the above processes).
+The AIM4-O ontology with individuals (this ontology was obtained using the
+ above processes).
 \end_layout
 
 \begin_layout Itemize
@@ -1810,7 +1800,7 @@ name "fig:generalOntology"
 
 \end_inset
 
-The General Ontology and imports needed(TNM rules, axioms, moduleRadlex.owl
+The General Ontology and imports needed (TNM rules, axioms, moduleRadlex.owl
  and Onlira.owl) in order to classify liver cancer.
 \end_layout
 
@@ -1834,7 +1824,7 @@ General Ontology
 \end_layout
 
 \begin_layout Subsubsection
-ONLIRA (Ontology of the Liver for Radiology)
+Ontology of the Liver for Radiology(ONLIRA) 
 \end_layout
 
 \begin_layout Standard
@@ -1852,8 +1842,8 @@ https://bioportal.bioontology.org/ontologies/ONLIRA
  It aims to model imaging observations of the liver domain with an emphasis
  on properties and relations between the liver, hepatic veins, and liver
  lesions.
- The work presented in this paper used the ontology to enable a feasible
- ontological representation of liver and its topological features.
+ We used this ontology to enable a feasible ontological representation of
+ liver and its topological features.
 \end_layout
 
 \begin_layout Subsubsection
@@ -1865,12 +1855,13 @@ The AIM model provides an XML schema that describes anatomical structures,
  visual observations and other information relevant to images using RadLex
  terminology.
  We extracted a module from the Radlex lexicon to represent all this information.
- Then, this radlex module was used by our ontology(General ontology) to
+ Then, this radlex module was used by our ontology (General ontology) to
  permit a formal representation (in OWL) of TNM criteria.
  The TNM criteria are based on knowledge about the way cancer develops and
- its dissemination, for this reason, it is important that our ontology(General
- ontology) collects not only the anatomical entities mentioned in TNM but
- also the various direct and indirect parts of these entities.
+ its dissemination, for this reason, it is important that General ontology
+ collects not only the anatomical entities mentioned in TNM but also the
+ various direct and indirect anatomical entities to consider the relative
+ proximity between them.
  For example, to the 
 \family typewriter
 N
@@ -1897,6 +1888,7 @@ noadjacentOrganGroup
 \series default
 \emph default
  that describes organs based on the most common sites of tumor dissemination
+ 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Faria2014"
@@ -1971,21 +1963,433 @@ In the previous sections, several operations were necessary to enhance the
  gap between the tumor features and the AIM4-0 classes definitions.
  Second, we provided formal definitions for the TNM stages, liver's topological
  features and RadLex terminology, in order to represent them in OWL.
- Finally, we defined formal mechanisms of reasoning ( using only OWL and
+ Finally, we defined formal mechanisms of reasoning (using only OWL and
  SWRL expressivity) such as subclasses, intersections, equivalences, disjunction
 s between classes and a set of rules in order to classify cancer patients
  from image annotations.
  This last step will be described below.
 \end_layout
 
-\begin_layout Description
+\begin_layout Standard
 In order to discover the limits of the OWL, rules SWRL, and axioms, we attempted
  to formally define and implement the conditions which TNM system demands.
  The TNM cancer staging is divided into two main steps.
  The first step consists in giving a score starting from the description
  of the tumor (T), the spreading into lymphatic nodes (N) and possible metastasi
-s (M); the second step consists in determining the stage according to the
- previous scores (see Figure 
+s (M) see Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:American-Joint-Committee"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:American-Joint-Committee"
+
+\end_inset
+
+American Joint Committee on Cancer/International Union against cancer TNM
+ classification system.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="15" columns="2">
+<features booktabs="true" tabularvalignment="middle">
+<column alignment="left" valignment="top" width="0cm">
+<column alignment="left" valignment="top" width="7cm">
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+Primary tumor (T)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+TX 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+Primary tumor cannot be assessed 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+T0 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+No evidence of primary tumor 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+T1 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+Solitary tumor (any size) without vascular invasion 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+T2 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+Solitary tumor (any size) with vascular invasion or multiple tumors none
+ <5 cm
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+T3a
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+Multiple tumors, with at least one tumor >5 cm 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+T3b
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+Single tumor or multiple tumors of any size involving a major branch of
+ the portal vein or hepatic vein 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+T4
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+Tumors with direct invasion of adjacent organs other than the gallbladder
+ or with perforation of visceral peritoneum 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+Regional lymph nodes (N)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+NX
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+Regional lymph nodes cannot be assessed 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+N0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+No regional lymph node metastasis 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+N1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+Regional lymph node metastasis
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+Distant metastasis (M)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+M0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+No distant metastasis 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+N0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+Distant metastasis 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The second step consists in determining the stage according to the previous
+ scores (see Figure 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:A)TNMexamplefigure"
@@ -2043,7 +2447,7 @@ A) Axial, contrasted CT image shows multiple HCC tumors (green lines), identifie
 d and annotated using the ePAD tool, There was no regional lymph node involvemen
 t or metastasis.
  B) The diagram shows multiple HCCs with at least one was > 5 cm.
- This patient was classified as having TNM stageIIIA(T3a,N0,M0).
+ This patient was classified as having TNM stageIIIA (T3a,N0,M0).
  Adapted from 
 \begin_inset CommandInset citation
 LatexCommand cite
@@ -2185,8 +2589,8 @@ entity.
 
 \begin_layout Standard
 In the scenario of classifying patients with an exactly solitary tumor.
- We could not find axioms or rules that satisfied this requirement, due
- to that OWL works under the Open World Assumption.
+ First, we did not find axioms or rules that satisfied this requirement,
+ due to that OWL works under the Open World Assumption.
  Open world means that, just because we do not say something it does not
  mean that it is not true.
  For example, I can say that the patient annotation describes a cancer lesion
@@ -2349,7 +2753,7 @@ hasCalculationEntity
 \emph default
  object property.
  In order to satisfy this condition, we assert the following rules taking
- 5 centimeters as the longest dimension of the target liver lesion(in SWRL
+ 5 centimeters as the longest dimension of the target liver lesion (in SWRL
  notation): 
 \end_layout
 
@@ -2426,7 +2830,7 @@ Lesion
 \family default
 \series default
 \emph default
- class from the Onlira ontology
+ class from the Onlira ontology 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Kokciyan2014"
@@ -2445,11 +2849,11 @@ Lesion
  class handles important characteristics of a lesion, such as composition,
  density, size, shape, etc, unfortunately, this is not enough for TNM classifica
 tion and reasoning.
- For this reason, we added 3 properties to it and created the subclass 
+ For this reason, we added 3 properties to it and created the subclass
 \family typewriter
 \series bold
 \emph on
-OutsideLesion
+ OutsideLesion
 \family default
 \series default
 \emph default
@@ -2485,7 +2889,7 @@ name "fig:properties"
 \end_inset
 
  General Ontology adds 2 properties defined as necessary for the TNM representat
-ion
+ion.
 \end_layout
 
 \end_inset
@@ -2511,7 +2915,7 @@ hasLocation
 \family default
 \series default
 \emph default
-(object property): This property indicates the lesions location based on
+ (object property): This property indicates the lesions location based on
  Radlex taxonomy.
  This property relates Onlira 
 \family typewriter
@@ -2549,7 +2953,7 @@ isRegionalLymphNodeAffected
 \family default
 \series default
 \emph default
-(data property): This property denotes whether a lesion is found in some
+ (data property): This property denotes whether a lesion is found in some
  lymph node.
  It was useful to enable classification criteria such as N0 and N1 (see
  Figure 
@@ -2594,14 +2998,14 @@ hasLocation
 .
  In accordance with the TNM liver classification criterion, which is the
  case of study in this work, we considered as adjacent organs to the liver
+ 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Faria2014"
 
 \end_inset
 
-; the pancreas, duodenum, liver, colon etc.
- (see Figure 
+; the pancreas, duodenum, liver and colon (see Figure 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:radlexclass"
@@ -2773,7 +3177,7 @@ Getting the subclass-hierarchy from Radlex.
 \series bold
 \emph on
 \lang brazilian
-AdjacentOrganGroup(Pancreas, Spleen, Stomach, Gallblader, Colon)
+AdjacentOrganGroup (Pancreas, Spleen, Stomach, Gallblader,and Colon)
 \family default
 \series default
 \emph default
@@ -2781,7 +3185,7 @@ AdjacentOrganGroup(Pancreas, Spleen, Stomach, Gallblader, Colon)
 \family typewriter
 \series bold
 \emph on
-NoAdjacentOrganGroup(Lymph nodes, Lung) 
+NoAdjacentOrganGroup (Lymph nodes, Lung) 
 \family default
 \series default
 \emph default
@@ -2817,12 +3221,12 @@ Datasets
 \end_layout
 
 \begin_layout Standard
-Our first dataset is a set of real clinical reports of hepatocellular carcinoma
- (HCC) patients from The NCI's Genomic Data Commons (GDC).
+Our first dataset is a set of real clinical reports of Hepatocellular Carcinoma(
+HCC) patients from The NCI's Genomic Data Commons(GDC).
  In this work, all experiments were supported by the GDC data.
  An important requirement to enable a feasible clinical evaluation, was
  to have an image dataset to validate the results of GDC clinical reports.
- To cover this requirement we used the TCIA database
+ To cover this requirement we used the TCIA database 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Clark2013"
@@ -2845,10 +3249,10 @@ subject ID
 
 \begin_layout Standard
 While the staging could be applied to other types cancer, this work focuses
- on staging liver cancer (HCC) consequently to the availability of clinical
- data and images.
- For a given patient, the input to the system consists of AIM files(image
- annotations ) and the output, consist of the Cancer Staging for this patient.
+ on staging liver cancer consequently to the availability of clinical data
+ and images.
+ For a given patient, the input to the system consists of AIM files (image
+ annotations) and the output, consist of the Cancer Staging for this patient.
 \end_layout
 
 \begin_layout Subsection
@@ -2856,7 +3260,8 @@ Quantitative assessment of AIM4-O ontology
 \end_layout
 
 \begin_layout Standard
-According to Blomqvist et.al.,
+According to Blomqvist et.al.
+ 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Blomqvist2012"
@@ -2871,9 +3276,8 @@ the ontological evaluation is the process of assessing an ontology with
 ".
  In this work, we undertook the evaluation of the AIM4-O ontology from the
  functional point of view.
- To achieve this, we carried out a task-focused assessment against their
- ontological requirements such as competency questions (CQs) and inference
- requirements
+ To achieve this, we carried out a task-focused assessment and inference
+ requirements 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Kokciyan2014"
@@ -2886,13 +3290,13 @@ key "Kokciyan2014"
 \begin_layout Standard
 In order to evaluate the AIM4-O ontology, we studied and evaluated how it
  could help in searching clinical reports that describe image findings (reports
- about cancer ), for this purpose, were compared two different approaches:
+ about cancer), for this purpose, were compared two different approaches:
 \end_layout
 
 \begin_layout Itemize
 Ontology-based (semantic search): If the clinical reports are described
  as AIM4-O individuals, these reports can be searched using description
- logic query languages(DL query).
+ logic query languages (DL query).
 \end_layout
 
 \begin_layout Itemize
@@ -2903,7 +3307,7 @@ Natural Language process-based (keyword search): Clinical reports and image
 
 \begin_layout Standard
 In order to highlight the differences between these two approaches, we describe
- four queries expressed both in DL (DL query) and keywords(see Table 
+ four queries expressed both in DL (DL query) and keywords (see Table 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "tab:queries"
@@ -2937,6 +3341,24 @@ placement H
 wide false
 sideways false
 status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:queries"
+
+\end_inset
+
+Description logic and keyword representation for four queries.
+\end_layout
+
+\end_inset
+
+
+\end_layout
 
 \begin_layout Plain Layout
 \align center
@@ -3101,24 +3523,6 @@ Vascular tumor invasion mass
 \end_layout
 
 \begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-\begin_inset CommandInset label
-LatexCommand label
-name "tab:queries"
-
-\end_inset
-
-Description logic and keyword representation for four queries
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
 
 \end_layout
 
@@ -3165,6 +3569,24 @@ placement H
 wide false
 sideways false
 status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:prexrecallontology"
+
+\end_inset
+
+Recall and Precision values for the four queries.
+\end_layout
+
+\end_inset
+
+
+\end_layout
 
 \begin_layout Plain Layout
 \align center
@@ -3515,24 +3937,6 @@ Q4
 </cell>
 </row>
 </lyxtabular>
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-\begin_inset CommandInset label
-LatexCommand label
-name "tab:prexrecallontology"
-
-\end_inset
-
-Recall and Precision values for the four queries 
-\end_layout
 
 \end_inset
 
@@ -4308,7 +4712,7 @@ Automatic TNM clinical stage
 In this section, we calculated the classification rate of the TNM classifier.
  At first, we created a template named "TNM template" in order to provide
  to the radiologist with a pre-specified set of semantic terms for image
- annotation.
+ annotations.
  These image annotations, which are compatible with the ePAD tool, were
  stored in the AIM format.
  An example of an annotated image is presented in Figure 
@@ -4350,7 +4754,8 @@ name "fig:TNMtemplate"
 \end_inset
 
 A CT image of the liver annotated with TNM template on the right of the
- image 
+ image.
+ 
 \end_layout
 
 \end_inset
@@ -4368,11 +4773,11 @@ A CT image of the liver annotated with TNM template on the right of the
 \end_layout
 
 \begin_layout Standard
-After, the generated image annotations(in AIM-XML format) were classified
- automatically using the TNM criteria.
+After, the generated image annotations (denoted in AIM-XML format) were
+ classified automatically using the TNM criteria.
  This process was duly evaluated and correctly accepted by an experienced
- radiologist, he visually analyzed the accuracy of the generated annotations
- in terms of semantic.
+ radiologist, he analyzed the accuracy of the generated annotations in terms
+ of semantic.
  The process we followed was:
 \end_layout
 
@@ -4382,7 +4787,7 @@ The data set used came from the following open databases:
 
 \begin_deeper
 \begin_layout Itemize
-The NCI's Genomic Data Commons (GDC)
+The NCI's Genomic Data Commons(GDC)
 \begin_inset Foot
 status open
 
@@ -4392,11 +4797,11 @@ https://gdc.cancer.gov/
 
 \end_inset
 
- .
+.
 \end_layout
 
 \begin_layout Itemize
-The Cancer Imaging Archive (TCIA)
+The Cancer Imaging Archive(TCIA)
 \begin_inset Foot
 status open
 
@@ -4423,8 +4828,9 @@ After reading the medical reports, the radiologist was provided with an
 \end_layout
 
 \begin_layout Itemize
-Based on the excel file and the GDC data, we created the AIM XML annotations,
- then, integrated them into our knowledge base (as AIM4-O ontology individuals).
+Based on the aforementioned excel file and the GDC data, we created the
+ AIM XML annotations and later we integrated them into our knowledge base
+ (as AIM4-O ontology individuals).
 \end_layout
 
 \begin_layout Itemize
@@ -4433,17 +4839,17 @@ The AIM files were used as input of our TNM classifier.
 \end_layout
 
 \begin_layout Standard
-In this paper, the 7th edition
+In this paper, the 7th edition of TNM 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Faria2014"
 
 \end_inset
 
- of TNM has been employed.
+ has been employed.
  The AIM image annotations were generated based on 52 different clinical
  reports.
- Our automatic staging approach was evaluated by using precision-recall
+ Our automatic staging approach was evaluated by using precision and recall
  values.
  The cancer stages generated by our TNM classifier were compared to those
  described by the doctors in the clinical reports (our gold standard).
@@ -4461,9 +4867,34 @@ sideways false
 status open
 
 \begin_layout Plain Layout
-\align center
+
+\lang american
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
 
 \lang brazilian
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Results"
+
+\end_inset
+
+
+\lang american
+Confusion Matrix of cancer stages predicted by the TNM classifier versus
+ the values of the doctors placed in the reports.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+
+\lang american
 \begin_inset Tabular
 <lyxtabular version="3" rows="7" columns="7">
 <features booktabs="true" tabularvalignment="middle">
@@ -4480,7 +4911,7 @@ status open
 
 \begin_layout Plain Layout
 
-\lang brazilian
+\lang american
 n = 51
 \end_layout
 
@@ -4500,7 +4931,7 @@ n = 51
 
 \begin_layout Plain Layout
 
-\lang brazilian
+\lang american
 Actual Stages
 \end_layout
 
@@ -4567,7 +4998,7 @@ Actual Stages
 
 \begin_layout Plain Layout
 
-\lang brazilian
+\lang american
 I
 \end_layout
 
@@ -4578,7 +5009,7 @@ I
 
 \begin_layout Plain Layout
 
-\lang brazilian
+\lang american
 II
 \end_layout
 
@@ -4589,7 +5020,7 @@ II
 
 \begin_layout Plain Layout
 
-\lang brazilian
+\lang american
 IIIA
 \end_layout
 
@@ -4600,7 +5031,7 @@ IIIA
 
 \begin_layout Plain Layout
 
-\lang brazilian
+\lang american
 IIIB
 \end_layout
 
@@ -4611,7 +5042,7 @@ IIIB
 
 \begin_layout Plain Layout
 
-\lang brazilian
+\lang american
 IVA
 \end_layout
 
@@ -4624,7 +5055,7 @@ IVA
 
 \begin_layout Plain Layout
 
-\lang brazilian
+\lang american
 Predicted Stages
 \end_layout
 
@@ -4635,7 +5066,7 @@ Predicted Stages
 
 \begin_layout Plain Layout
 
-\lang brazilian
+\lang american
 I
 \end_layout
 
@@ -4646,7 +5077,7 @@ I
 
 \begin_layout Plain Layout
 
-\lang brazilian
+\lang american
 24
 \end_layout
 
@@ -4657,7 +5088,7 @@ I
 
 \begin_layout Plain Layout
 
-\lang brazilian
+\lang american
 2
 \end_layout
 
@@ -4668,7 +5099,7 @@ I
 
 \begin_layout Plain Layout
 
-\lang brazilian
+\lang american
 0
 \end_layout
 
@@ -4679,7 +5110,7 @@ I
 
 \begin_layout Plain Layout
 
-\lang brazilian
+\lang american
 0
 \end_layout
 
@@ -4690,7 +5121,7 @@ I
 
 \begin_layout Plain Layout
 
-\lang brazilian
+\lang american
 0
 \end_layout
 
@@ -4712,7 +5143,7 @@ I
 
 \begin_layout Plain Layout
 
-\lang brazilian
+\lang american
 II
 \end_layout
 
@@ -4723,7 +5154,7 @@ II
 
 \begin_layout Plain Layout
 
-\lang brazilian
+\lang american
 0
 \end_layout
 
@@ -4734,7 +5165,7 @@ II
 
 \begin_layout Plain Layout
 
-\lang brazilian
+\lang american
 10
 \end_layout
 
@@ -4745,7 +5176,7 @@ II
 
 \begin_layout Plain Layout
 
-\lang brazilian
+\lang american
 2
 \end_layout
 
@@ -4756,7 +5187,7 @@ II
 
 \begin_layout Plain Layout
 
-\lang brazilian
+\lang american
 0
 \end_layout
 
@@ -4767,7 +5198,7 @@ II
 
 \begin_layout Plain Layout
 
-\lang brazilian
+\lang american
 0
 \end_layout
 
@@ -4789,7 +5220,7 @@ II
 
 \begin_layout Plain Layout
 
-\lang brazilian
+\lang american
 IIIA
 \end_layout
 
@@ -4800,7 +5231,7 @@ IIIA
 
 \begin_layout Plain Layout
 
-\lang brazilian
+\lang american
 0
 \end_layout
 
@@ -4811,7 +5242,7 @@ IIIA
 
 \begin_layout Plain Layout
 
-\lang brazilian
+\lang american
 1
 \end_layout
 
@@ -4822,7 +5253,7 @@ IIIA
 
 \begin_layout Plain Layout
 
-\lang brazilian
+\lang american
 8
 \end_layout
 
@@ -4833,7 +5264,7 @@ IIIA
 
 \begin_layout Plain Layout
 
-\lang brazilian
+\lang american
 0
 \end_layout
 
@@ -4844,7 +5275,7 @@ IIIA
 
 \begin_layout Plain Layout
 
-\lang brazilian
+\lang american
 0
 \end_layout
 
@@ -4866,7 +5297,7 @@ IIIA
 
 \begin_layout Plain Layout
 
-\lang brazilian
+\lang american
 IIIB
 \end_layout
 
@@ -4877,7 +5308,7 @@ IIIB
 
 \begin_layout Plain Layout
 
-\lang brazilian
+\lang american
 0
 \end_layout
 
@@ -4888,7 +5319,7 @@ IIIB
 
 \begin_layout Plain Layout
 
-\lang brazilian
+\lang american
 0
 \end_layout
 
@@ -4899,7 +5330,7 @@ IIIB
 
 \begin_layout Plain Layout
 
-\lang brazilian
+\lang american
 0
 \end_layout
 
@@ -4910,7 +5341,7 @@ IIIB
 
 \begin_layout Plain Layout
 
-\lang brazilian
+\lang american
 2
 \end_layout
 
@@ -4921,7 +5352,7 @@ IIIB
 
 \begin_layout Plain Layout
 
-\lang brazilian
+\lang american
 1
 \end_layout
 
@@ -4943,7 +5374,7 @@ IIIB
 
 \begin_layout Plain Layout
 
-\lang brazilian
+\lang american
 IVA
 \end_layout
 
@@ -4954,7 +5385,7 @@ IVA
 
 \begin_layout Plain Layout
 
-\lang brazilian
+\lang american
 0
 \end_layout
 
@@ -4965,7 +5396,7 @@ IVA
 
 \begin_layout Plain Layout
 
-\lang brazilian
+\lang american
 0
 \end_layout
 
@@ -4976,7 +5407,7 @@ IVA
 
 \begin_layout Plain Layout
 
-\lang brazilian
+\lang american
 0
 \end_layout
 
@@ -4987,7 +5418,7 @@ IVA
 
 \begin_layout Plain Layout
 
-\lang brazilian
+\lang american
 0
 \end_layout
 
@@ -4998,7 +5429,7 @@ IVA
 
 \begin_layout Plain Layout
 
-\lang brazilian
+\lang american
 1
 \end_layout
 
@@ -5006,30 +5437,6 @@ IVA
 </cell>
 </row>
 </lyxtabular>
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\lang brazilian
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-
-\lang brazilian
-\begin_inset CommandInset label
-LatexCommand label
-name "tab:Results"
-
-\end_inset
-
-Confusion Matrix of cancer stages predicted by the TNM classifier versus
-\lang english
- the values that the doctors placed in the reports.
-\end_layout
 
 \end_inset
 
@@ -5068,15 +5475,14 @@ Precision was 85.7% and recall 81.0% (for 51 patients).
 \end_layout
 
 \begin_layout Standard
-The results of the evaluation are summarized in the color scale matrix,
- Figure 
+In Figure 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:matrixconfusion"
 
 \end_inset
 
-.
+ we show the results of the evaluation summarized in the color scale matrix.
  It represents a matrix of confusion for a multi-stage classification.
  The interpretation of the results is as follows: the darker the pixel on
  the diagonal of the matrix, this class was classified better.
@@ -5139,7 +5545,7 @@ reference "fig:matrixconfusion"
 
 ).
  For more advanced stages of cancer, such as IIIB or IVA, it was larger
- (Figure 
+ (see Figure 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:histogram"
@@ -5198,9 +5604,9 @@ Besides, our classifier revealed the fact that there are clinical reports
  with the staging diagnosis entirely inaccurate.
  An example of this situation was the clinical case with subject ID "TCGA-DD-A1E
 J".
- Where the result of the classifier was considered correct by our expert.
- The stage predicted was the Stage I, but, the stage described by the medical
- report was the Stage III
+ The result of the classifier was considered correct by our expert.
+ The stage predicted was the Stage I, however, the stage described by the
+ medical report was the Stage III
 \begin_inset Foot
 status open
 
@@ -5211,14 +5617,15 @@ https://gdc-portal.nci.nih.gov/cases/52292ffc-0902-4d97-b461-20723987a177
 \end_inset
 
 .
- As this was the only case in which the difference between the classifier's
+ As it was the only case in which the difference between the classifier's
  stage and the physicians differed by more than one level, the specialist
  wanted to analyze the report and stated that the classifier's stage was
  correct.
  He recommended us do not use this patient's data, so this report was excluded
  from testing analysis.
  Examples like these can serve to warrant the importance of improving clinical
- decision support systems(through the use of image metadata in cancer treatment).
+ decision support systems (through the use of image metadata in cancer treatment
+).
 \end_layout
 
 \begin_layout Section
@@ -5227,9 +5634,9 @@ Conclusion
 
 \begin_layout Standard
 Cancer staging entails an intensive work, this often requires an accurate
- interpretation of the cancer findings in images by medical experts(oncologist
+ interpretation of the cancer findings in images by medical experts (oncologist
  and radiologist).
- Expert accuracy is achieved through training and experience
+ Expert accuracy is achieved through training and experience 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "Depeursinge2014"
@@ -5263,40 +5670,20 @@ The final result was a TNM classifier, which was evaluated with real cancer
  decision support systems by the use of semantic metadata in cancer assessment
  with 85.1% precision and 71.0% recall.
  Besides, the analysis of real patient reports performed in this work, in
- contrast to the automated staging result revealed us that there are patient
+ contrast to the automated staging result, revealed us that there are patient
  cases with inconsistencies in their diagnosis.
- But, it is important to note that the automatic staging procedure does
- not give the clinician new information, as it was said above, it can be
- seen as a second opinion for the purposes of quality in clinical diagnosis.
+ However, it is important to note that the automatic staging procedure does
+ not give to the clinician new information, it is merely a second opinion
+ for the purposes of quality in clinical diagnosis.
 \end_layout
 
 \begin_layout Standard
 We also highlighted some limitations of description logics such as the OWA.
  The OWA was addressed by using a simple data structure.
  Although we haven't actually done it yet, we assume that our approach could
- be applied to other kinds of cancer such liver, lungs, etc by modifying
+ be applied to other kinds of cancer such as lungs, colon, by modifying
  only the rules and axioms that represent the TNM criteria avoiding create
  an entirely new ontology for each type of cancer.
-\end_layout
-
-\begin_layout Standard
-Some limitations to this work are that our dataset is small.
- Because both medical images(CT) and clinical reports have to be present
- for the same patient for optimal validation.
-\end_layout
-
-\begin_layout Standard
-Other systems, such as mint Lesion (MintMedical GmbH, Dossenheim, Germany)
- and syngo.via (Siemens Healthcare, Malvern) are proprietary software, i.e.,
- all data images are stored internally in a proprietary format which cannot
- be accessed by third parties
-\begin_inset CommandInset citation
-LatexCommand cite
-key "Rubin2011"
-
-\end_inset
-
-.
 \end_layout
 
 \begin_layout Standard
@@ -5306,6 +5693,34 @@ We believe that our approach can be generalized in order to enable different
  produced by imaging systems (whatever that generates AIM files) are transformed
  into OWL instances.
  These instances will be used for reasoning procedures in different fields.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Future work:
+\series default
+ will include more varied data sets for evaluation, expansion of the classifier
+ to other bodies, and incorporation into existing information systems.
+ The TNM classifier has the potential to be integrated into larger software
+ systems.
+ The developed of an Specific Domain Language(DSL), as a communication tool
+ between physicians and the formal representation of the TNM criteria (axioms
+ and SWRL rules).
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Some limitations:
+\series default
+ to this work are that our dataset is small.
+ Because both medical images (CT) and clinical reports have to be present
+ for the same patient for optimal validation.
+\end_layout
+
+\begin_layout Standard
+
 \end_layout
 
 \begin_layout Standard
