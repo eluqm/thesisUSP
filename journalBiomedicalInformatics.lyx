@@ -130,8 +130,8 @@ status open
 
 
 \backslash
-title{Automatic Classification of Cancer Tumors using Image Annotations
- and Ontologies}
+title{Automatic Stagging of Cancer Tumors using AIM Image Annotations and
+ Ontologies}
 \end_layout
 
 \begin_layout Plain Layout
@@ -150,10 +150,9 @@ begin{abstract}
 Information about cancer stage in a patient is crucial when clinicians assess
  treatment progress.
  Determining cancer stage is a process that takes into account the description,
- location, characteristics and possible metastasis of cancerous tumors in
- a patient.
- It should follow classification standards, such as TNM Classification of
- Malignant Tumors.
+ location, characteristics and possible metastasis of tumors in a patient.
+ It should follow classification standards, such as the TNM Classification
+ of Malignant Tumors.
  However, in clinical practice, the implementation of this process can be
  tedious and error-prone and create uncertainty.
  In order to alleviate these problems, we intend to assist radiologists
@@ -164,19 +163,21 @@ Information about cancer stage in a patient is crucial when clinicians assess
  the ePAD tool, and stored using standard AIM format.
  A TNM based classifier prototype was created.
  It transforms AIM annotations in AIM-O ontology individuals and, using
- axioms and rules(written in OWL-SWRL languages) representing the TNM standard,
- it automatically calculates patient's liver cancer stage.
+ axioms and rules (written in the OWL-SWRL languages) representing the TNM
+ standard, and it automatically calculates patient's liver cancer stage.
  The AIM4-O ontology was developed, as part of this work, to represent AIM4
  annotations in OWL.
- This TNM classifier was evaluated using real patient's radiology reports
- from The NCI's Genomic Data Commons(GDC), in terms of precision and recall,
- with 85.7
+ This TNM classifier was evaluated using 51 actual patient’s radiology reports
+ with staging data from The NCI’s Genomic Data Commons(GDC).
+ When compared to the stages attributed by physicians, the classifier stages
+ had a precision of 85.7
 \backslash
-% and 81.0
+% and recall of 81.0
 \backslash
-% respective results(when compared to the real cancer stages from the reports).
- The whole process was validated with radiologists from the Radiology Dept.
- of the Stanford University.
+%.
+ Such kind of classifier can be integrated into larger AIM aware imaging
+ tools, such as ePAD, and offer a second opnion about staging as part of
+ the cancer treatment workflow.
 \end_layout
 
 \begin_layout Plain Layout
@@ -243,7 +244,6 @@ key "Levy2009"
  Thus, a considerable number of computer applications have been developed.
  Most of them are focused on extracting visual features with the help of
  image processing algorithms.
- 
 \end_layout
 
 \begin_layout Standard
@@ -261,18 +261,18 @@ key "Wennerberg2011155"
 
 .
  There are difficulties during image interpretation, because the semantic
- information implicit in the image reports, is not accessible to these algorithm
-s.
+ information, implicit in the image reports, is not accessible to these
+ algorithms.
  
 \end_layout
 
 \begin_layout Standard
 Although medical images and reports provide a significant amount of information
- to physicians, this information it's not easily integrated into advanced
- medical applications such as clinical decision support systems to treat
+ to physicians, this information is not easily integrated into advanced
+ medical applications, such as clinical decision support systems to treat
  patients with cancer.
- Specifically, when physicians will assess individual progress of a cancer
- patient to decide new treatment measures 
+ Specifically, when physicians assess individual progress of a cancer patient
+ to decide new treatment measures 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Zillner2013"
@@ -280,13 +280,13 @@ key "Zillner2013"
 \end_inset
 
 .
- An appropriate treatment options is supported by the information about
- cancer staging.
- The cancer staging is a classification process based on characteristics
- such as size and location of tumor on the body.
+ Appropriate treatment options are supported by information about cancer
+ staging.
+ Cancer staging is a classification process based on characteristics such
+ as tumor size and location in the body.
  This classification process can be automated in order to optimize the work
- of the physicians, that may become cumbersome and error prone as the number
- of patients is considerably large 
+ of physicians, which may become cumbersome and error prone as the number
+ of patients increases 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Zillner2010"
@@ -297,9 +297,8 @@ key "Zillner2010"
 \end_layout
 
 \begin_layout Standard
-Otherwise, there are few tools that allow radiologists to easily capture
- semantic structured information as part of their routine research workflow
- 
+There are few tools that allow radiologists to easily capture semantic structure
+d information as part of their routine research workflow 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Rubin2014"
@@ -307,23 +306,22 @@ key "Rubin2014"
 \end_inset
 
 .
- The Annotation and Image Markup(AIM) 
+ The Annotation and Image Markup (AIM) 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "channin2009annotation,Channin2010"
 
 \end_inset
 
- project that was developed by the cancer Biomedical Informatics Grid(caBIG)
- 
+ project, from the cancer Biomedical Informatics Grid (caBIG) 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Rubin2008"
 
 \end_inset
 
-, provides an XML schema to describe the anatomical structure and visual
- observations images using the RadLex ontology 
+, provides a XML schema to describe the anatomical structure and visual
+ observations about images using the RadLex ontology 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Kundu2009"
@@ -331,31 +329,30 @@ key "Kundu2009"
 \end_inset
 
 .
- It allows a representation, storage, and consistent transfer of semantic
- meanings of images.
- Tools such as the ePAD 
+ It allows the representation, storage, and consistent transfer of semantic
+ meanings in images.
+ Tools using the AIM format, such as the ePAD 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Rubin2014"
 
 \end_inset
 
-, using AIM format can help to reduce the effort to collect structured semantic
- information about images.
- However, it is necessary to make inferences about this information (cancer
- lesions) using biological and physiological relationships between image
- metadata.
+ tool, can help to reduce the effort to collect structured semantic information
+ about images.
+ It also permits making inferences about this information (cancer lesions)
+ using biological and physiological relationships between image metadata.
 \end_layout
 
 \begin_layout Standard
-Image metadata in AIM format, does not allow represent information about
- image findings in a format that is directly suitable for reasoning.
+Image metadata, in AIM format, does not allow the representation of information
+ about image findings in a format that is directly suitable for reasoning.
  AIM provides only a format for data transfer and storage.
  We can see then that there is a lack of semantic methods to make inferences
  about cancerous lesions from semantic annotations of images, based on standard
- format such as AIM.
- Thus, in this work we developed reasoning approach based on staging systems
- such as the Tumor-Node-Metastasis(TNM) classification (stages definitions
+ formats (such as AIM).
+ Thus, in this work we developed a reasoning approach based on a staging
+ system: the Tumor-Node-Metastasis (TNM) classification (stages definitions
  and examples can be found in 
 \begin_inset CommandInset citation
 LatexCommand cite
@@ -383,9 +380,14 @@ published by the Union for International Cancer Control(UICC)
 
 \series default
 \emph default
- In order to automatically staging cancer patients and finally incorporate
- these methods to the requirements met by a semantic image annotation tool
- as the electronic Physician’s Annotation Device(ePAD) 
+ This TNM classifier was evaluated using 51 actual patient’s radiology reports
+ (from The NCI’s Genomic Data Commons).
+ When compared to the stages attributed by physicians, the classifier had
+ a precision of 85.7% and recall of 81.0%.
+ Our ultimate goal is to automatically staging cancer patients and meet
+ the requirements to incorporate this method into semantic annotation tools
+ for medical images, such as the electronic Physician’s Annotation Device
+ (ePAD) 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Rubin2008"
@@ -404,39 +406,53 @@ Objective
 \begin_layout Standard
 The objective of this work is to automatically determine the cancer stage
  of lesions present in medical images, using semantic web and reasoning
- technologies to process semantic annotations made by experts to provide
- clinicians a second opinion on the classification of their patients.
- These semantic annotations are made using tools that use XML schema to
- describe and save image findings as the AIM format (used by the ePad tool).
+ technologies, to process semantic annotations made by experts and provide
+ clinicians with a second opinion on the classification of their patients.
+ These semantic annotations are made using tools that use the AIM format
+ (used by the ePad tool) to describe and save image findings.
  Automatic cancer staging can increase the efficiency of radiologists and
  oncologists and improve the quality and uniformity of image interpretation
  by experts.
- It's important to mention our work focuses on staging liver cancer due
- to data availability.
+ It is important to mention that our work focuses on staging liver cancer
+ due to data availability.
 \end_layout
 
 \begin_layout Standard
 This paper is organized as follows.
- In Section 3 presents related approaches.
+ Section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Related-work"
+
+\end_inset
+
+ presents related approaches.
  Section 4 describes our methodology composed of three main components:
  the ontological representation of AIM 4.0 model, the conditions to implement
  the TNM classifier (General Ontology) and the formal representation of
  cancer staging.
- Section 5 gathers experiments enabling to assess our TNM classifier relevance.
+ Section 5 analyses experimental data to assess our TNM classifier relevance.
  Conclusions are found in Section 6.
 \end_layout
 
 \begin_layout Section
 Related work
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Related-work"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-In clinical research currently, there are similar cancer staging systems.
- The Cancer staging is a classification process to determine how much cancer
- there are on the whole body and where it is located.
- Former researchers for tumor staging based on a formal representation of
- classification system, such as TNM have been used semantic annotations
- from a controlled vocabulary for discovering implicit knowledge.
+Currently, in clinical research, there are similar cancer staging systems.
+ Cancer staging is a classification process to determine how much cancer
+ there is on the whole body and where it is located.
+ Some efforts on Tumor staging, based on a formal representation of a classifica
+tion system (such as TNM), have been using semantic annotations from a controlle
+d vocabulary for discovering implicit knowledge.
  However, they are not open source and their classification methods cannot
  be analyzed or reused openly 
 \begin_inset CommandInset citation
@@ -449,7 +465,7 @@ key "Rubin2014"
 \end_layout
 
 \begin_layout Standard
-Among the proposed approaches 
+Among the proposed approaches, 
 \begin_inset CommandInset citation
 LatexCommand citet
 key "Dameron2006Table"
@@ -463,25 +479,27 @@ key "marquet2007"
 
 \end_inset
 
- perform reasoning based on classification systems such as TNM and WHO 
+ perform reasoning based on classification systems, such as TNM and WHO
+ 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "kleihues2000world"
 
 \end_inset
 
- using ontology class-based reasoning approach.
+, using an ontology class-based reasoning approach.
  However, this approach often leads to an underlying drawback: the creation
  of unnecessary classes, increasing the complexity of the ontology.
- In addition, the Open World Assumption(OWA) paradigm 
+ In addition to the aforementioned, they performed closed-world based reasoning
+ in a context of Open World Assumption (OWA) 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "keet2013open"
 
 \end_inset
 
-.
- The OWA was solved by these studies avoiding the reasoning based on instances.
+ by modeling patient conditions using classes, avoiding the reasoning based
+ on instances.
  However, it is possible to perform reasoning based on instances supported
  by data structures.
  It will be described in detail at following sections.
@@ -497,7 +515,7 @@ key "Tutac2008,Tutac2010,Massicano2015AnOF,franca2015,zillner:towards"
 
 , the authors create ontologies in OWL-DL for TNM.
  However, the idea of having an ontology for each type of body organ is
- undesirable as in the case of 
+ undesirable, as in the case of 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "zillner:towards"
@@ -513,9 +531,9 @@ key "Tutac2008"
 
 .
  We believe in the approach of having an ontology representing directly
- image findings (such as the ontology model of AIM) and besides that, the
- classification tasks as cancer staging should be guided only by rules and
- axioms.
+ image findings (such as the ontology model of AIM) and, besides that, the
+ classification tasks for cancer staging should be guided only by rules
+ and axioms.
 \end_layout
 
 \begin_layout Standard
@@ -527,26 +545,25 @@ key "Meriem2012,Racoceanu20152,Tutac2010"
 \end_inset
 
 , the authors used semantic image annotations and perform a classification
- based on the Nottingham grading System(NGS) supported by OWL and SWRL.
- The fact of creating a new ontology depending on the condition you want
- to analyze it is a limiting factor.
- However, does not occur in our approach, which provides an ontology based
- on a standard such AIM.
+ based on the Nottingham Grading System (NGS) supported by OWL and SWRL.
+ The fact of creating a new ontology, depending on the conditions you want
+ to analyze, is a limiting factor.
+ It does not occur in our approach, which provides an ontology based on
+ the AIM standard.
 \end_layout
 
 \begin_layout Standard
-In 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Moller2013,Zillner2013"
 
 \end_inset
 
-, can be found the closest approach to our proposal.
+, use the closest approach to our proposal.
  However, ignoring the fact that the data used are not available for all
  the necessary analysis, the lymphoma staging system that has been implemented
  in this study is relatively simpler than TNM staging system.
- For example, we can see in 
+ For example, we can see that 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Zillner2012"
@@ -554,43 +571,42 @@ key "Zillner2012"
 \end_inset
 
  does not consider the size of a lesion as an important factor.
- However, this fact is very important in staging systems as TNM of liver,
- lung, etc.
+ However, this fact is very important in staging systems such as TNM for
+ liver, lung, etc.
  Moreover, we can see that the process of aligning all ontologies generated
- in this study are not described explicitly.
+ in this study is not described explicitly.
 \end_layout
 
 \begin_layout Standard
-Recent works are using the ePAD tool 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Gimenez2011,Kurtz20141082"
 
 \end_inset
 
-, they propose an image retrieval framework based on semantic annotations.
- This framework incorporates the semantic correlations between terms used
- to describe medical image findings.
- This automated approach provides real-time support for radiologists, showing
- them images associated with similar diagnoses.
+ are recent works that use the ePAD tool.
+ The authors used semantic correlations based on semantic terms that are
+ used to describe medical image findings.
+ This automated approach helps radiologists by showing them images associated
+ with a similar diagnosis.
 \end_layout
 
 \begin_layout Standard
 In the literature, we found similar systems where semantic annotations are
  stored in different formats that do not allow their integration for reasoning
  processes.
- Often these formats are also proprietary.
- Some of these studies also allow creating image annotations in AIM format
- (in XML), but these are not suitable for reasoning.
- AIM format provides only a transfer and storage format.
+ Often, these formats are also proprietary.
+ Some of these studies also allow the creation of image annotations in AIM
+ format, but these are not suitable for reasoning.
+ AIM provides only a transfer and storage format.
 \end_layout
 
 \begin_layout Standard
 Our work is focused on helping cancer specialists in automatic patient classific
 ation (staging) using semantic annotations in images.
- The classification shall be made ​using semantic reasoning on annotations
- encoded in AIM, these annotations, made by radiologists, describe lesions
- in images.
+ The classification are made using semantic reasoning on annotations encoded
+ in AIM, and these annotations, made by radiologists, describe lesions in
+ images.
 \end_layout
 
 \begin_layout Section
@@ -598,8 +614,8 @@ Method description
 \end_layout
 
 \begin_layout Standard
-In this section, we describe our methodology which comprises three main
- tasks:
+In this section, we describe our methodology.
+ It is comprised by three main tasks:
 \end_layout
 
 \begin_layout Enumerate
@@ -617,7 +633,7 @@ Generate conditions to implement the TNM classifier(General Ontology)
 
 \end_inset
 
-Creating conditions to implement reasoning based on TNM rules using OWL
+Creating conditions to implement reasoning based on TNM rules, using OWL
  instances.
 \end_layout
 
@@ -632,20 +648,19 @@ Ontological representation of AIM model.
 
 \begin_layout Standard
 In order to perform inference and classify image annotations based on the
- AIM standard, we needed a language equipped with formal semantic.
+ AIM standard, we need a language equipped with formal semantic.
  Using this semantic, inferences about an ontology together with a set of
  individual instances of classes can be made.
- In this context the Web Ontology Language(OWL), which describes a language
- for building the ontological representation of an information model, was
- used.
+ In this context, the Web Ontology Language(OWL), a language for building
+ ontological representations of information models, was used.
  In our work, we transformed the AIM data model into an equivalent ontological
  representation, using OWL2.
  This transformation was performed by creating classes and properties in
- OWL that are user-understandable and suitable for inference.
+ OWL that are user understandable and suitable for inference.
 \end_layout
 
 \begin_layout Standard
-We developed an OWL model based on the ontology provides by Bulu, Hakan
+We developed an OWL model, based on the ontology provides by Bulu, Hakan
  and Rubin, Daniel L, 
 \begin_inset CommandInset citation
 LatexCommand cite
@@ -653,17 +668,7 @@ key "Bulu"
 
 \end_inset
 
-, this ontology represents an older version of AIM.
- Therefore, in order to represent the AIM 4.0 model, which is the version
- used to store image annotations generated by tools such as ePAD 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "Rubin2011"
 
-\end_inset
-
-, we expanded the Hakan Bulu ontology based on AIM 4.0 model schema, which
- is available online
 \begin_inset Foot
 status open
 
@@ -673,8 +678,17 @@ https://wiki.nci.nih.gov/display/AIM/Extending+the+AIM+Model
 
 \end_inset
 
-.
- Finally, our ontology was called 
+, which represented an older version of AIM.
+ Therefore, in order to represent the AIM 4.0 model, which is the version
+ used to store image annotations generated using tools (such as ePAD 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Rubin2011"
+
+\end_inset
+
+), we modified Bulu’s ontology to represent AIM 4.0 model concepts.
+ Our ontology is called 
 \series bold
 AIM4-O
 \series default
@@ -691,10 +705,10 @@ AIM4-O Classes
 
 \begin_layout Standard
 In general, the AIM 4.0 model is an extension of the AIM Foundation model.
- There are nine new classes that capture lesion results and measurements
- derived during image-based clinical trial.
- In this work, we only considered the following six classes as sufficient
- to achieve our goal:
+ There are nine classes that capture lesion results and measurements derived
+ during image-based clinical analysis.
+ In this work, we considered the following six classes sufficient to achieve
+ our goal:
 \end_layout
 
 \begin_layout Enumerate
@@ -761,24 +775,7 @@ Person
 \begin_layout Enumerate
 
 \series bold
-AIM:ImagingPhysicalEntity
-\begin_inset Foot
-status open
-
-\begin_layout Plain Layout
-The only class in the model that has been changed the entire name to 
-\emph on
-:AnatomicEntity
-\series bold
-\emph default
- 
-\series default
-in AIM 3.0 version
-\end_layout
-
-\end_inset
-
-:
+AIM:ImagingPhysicalEntity:
 \series default
  This class stores an anatomical location as a coded term (RID2662, femur,
  RadLex) based on controlled vocabularies such as RadLex®, SNOMED CT®, Unified
@@ -842,7 +839,7 @@ Observation
 \family default
 \shape default
 entity that describes a lesion.
- These relationships in our ontology enabled the semantic reasoning, which
+ These relationships in our ontology enable the semantic reasoning, which
  is a prerequisite for semantic classification and searching.
  
 \end_layout
@@ -856,9 +853,10 @@ ImageAnnotation
 \family default
 \series default
 \shape default
- entity, this concept allow us to describe data properties of an image annotatio
-n in OWL, such as comments, name, date and time of its creation; e.g., the
- following statement:
+ entity.
+ It allows us to describe data properties of an image annotation in OWL,
+ such as comments, name, date and time of its creation.
+ For instance, the statement
 \family typewriter
 \series bold
 \shape italic
@@ -874,25 +872,27 @@ imageAnnotation1
 \family default
 \series default
 \shape default
- and was created at 
+, was created at 
 \family typewriter
 \series bold
 \shape italic
+
+\begin_inset Newline newline
+\end_inset
+
 2014-09-26T17:07:58
 \family default
 \series default
 \shape default
 .
  There are more 
-\family typewriter
 \series bold
-\shape italic
+\emph on
 ImageAnnotation
-\family default
 \series default
-\shape default
+\emph default
  entity relationships to other concepts, such as physical location and observati
-ons on lesions found, they were also specified using relationships in OWL.
+ons on lesions found.
  These relations can be seen in Figure 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -933,26 +933,21 @@ name "fig:AIM4example"
 
 
 \lang brazilian
-The diagram describes abstract classes as purple oval involving your instance
- (
-\family typewriter
-\shape italic
-imageAnnotationCollection
-\family default
-\shape default
-, 
-\family typewriter
-\shape italic
-ImageAnnotation
-\family default
-\shape default
-, 
-\family typewriter
-\shape italic
-geometricShape
-\family default
-\shape default
-) and relationships as red arrows.
+This diagram describes the 
+\series bold
+AIM4-O
+\series default
+ ontology with the six classes modified from Bulu's ontology.
+ The dotted ovals represent the instances of 
+\series bold
+AIM:Entity
+\series default
+ abstract class, purple ovals are the extended abstract classes from 
+\series bold
+AIM:Entity
+\series default
+, and the relationships are represented as red arrows.
+ 
 \end_layout
 
 \end_inset
@@ -986,7 +981,7 @@ name "tab:sample-of-Image"
 
 \end_inset
 
-Sample of Image Annotations in XML and OWL format.
+Sample of Image Annotations using AIM-XML and OWL Manchester serialization.
 \end_layout
 
 \end_inset
@@ -1005,7 +1000,7 @@ Sample of Image Annotations in XML and OWL format.
 \begin_inset Text
 
 \begin_layout Plain Layout
-XML 
+AIM-XML 
 \end_layout
 
 \end_inset
@@ -1185,7 +1180,7 @@ Individual: 8ixmtfhbiqujozezrep1r90t1n0po8wxyfy5svzs
 
 \begin_layout Plain Layout
 
-Individual: f3fftpf6wsinx4o17il
+Individual: "f3fftpf6wsinx4o17il"
 \end_layout
 
 \begin_layout Plain Layout
@@ -1224,7 +1219,7 @@ Individual: f3fftpf6wsinx4o17il
 
 \begin_layout Plain Layout
 
-    AIM:HASPHYSICALENTITY      :1A5GZINZFTM1OXC45SHO8GO,
+    AIM:HASPHYSICALENTITY      :"1A5GZINZFTM1OXC45SHO8GO",
 \end_layout
 
 \begin_layout Plain Layout
@@ -1244,12 +1239,12 @@ Individual: f3fftpf6wsinx4o17il
 
 \begin_layout Plain Layout
 
-    aim:comment                ``CT / RECON 2: LIVER 2 
+    aim:comment                "CT / RECON 2: LIVER 2 PHASE (AP) / 37"
 \end_layout
 
 \begin_layout Plain Layout
 
-                                PHASE (AP) / 37''^^xsd:string,      
+                                ^^xsd:string,      
 \end_layout
 
 \begin_layout Plain Layout
@@ -1283,17 +1278,22 @@ Individual: f3fftpf6wsinx4o17il
 \end_layout
 
 \begin_layout Standard
-A small example is given in Table 
+These relations can also be specified using OWL relationships.
+ A small example is given in Table 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "tab:sample-of-Image"
 
 \end_inset
 
- including OWL representation of an AIM 4.0 instance and its usual relationships.
- This example shows semantically equivalent concepts between XML (serialization
- format) and OWL (data model) that were used in this work.
- Hence, for example, an AIM 
+.
+ It includes an OWL representation of an AIM 4.0 individual and its usual
+ relationships.
+ This example shows semantically equivalent concepts between AIM-XML format
+ and OWL model (Manchester serialization format) that were used in this
+ work.
+ For example.
+ an AIM 
 \family typewriter
 \series bold
 \emph on
@@ -1301,7 +1301,7 @@ ImageAnnotation
 \family default
 \series default
 \emph default
- instance with an identifier value 
+ instance with the identifier value 
 \family typewriter
 \series bold
 \emph on
@@ -1317,25 +1317,32 @@ uniqueIdentifier:f3fftpf6wsinx4o17il
 \family default
 \series default
 \emph default
- can be represented and suitable for reasoning purposes.
- Similarly, we can see, in the Table 
+ can be represented in OWL and used for reasoning purposes.
+ Similarly, Table 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "tab:sample-of-Image"
 
 \end_inset
 
-, the concept of 
+ shows that the concept
 \family typewriter
 \series bold
 \emph on
-PhysicalEntity
+ PhysicalEntity
 \family default
 \series default
 \emph default
- with an identifier value 
+, with the identifier value
 \family typewriter
 \series bold
+\shape italic
+
+\begin_inset Newline newline
+\end_inset
+
+
+\shape default
 \emph on
 
 \begin_inset Quotes eld
@@ -1351,18 +1358,26 @@ uniqueIdentifier
 \begin_inset Quotes erd
 \end_inset
 
-,
-\family default
+ 
 \emph default
+is
+\family default
  related to the 
 \family typewriter
 \series bold
+\shape italic
+
+\begin_inset Newline newline
+\end_inset
+
+
+\shape default
 \emph on
 ImageAnnotation
 \family default
 \series default
 \emph default
- by 
+ instance by the 
 \family typewriter
 \series bold
 \emph on
@@ -1386,15 +1401,8 @@ PhysicalEntity
 \family default
 \series default
 \emph default
- instance in AIM 4.0 XML and the OWL manchester syntax of the same 
-\family typewriter
-\series bold
-\emph on
-PhysicalEntity
-\family default
-\series default
-\emph default
- instance.
+ instance in AIM 4.0 XML and the equivalent OWL Manchester syntax for the
+ same instance.
 \end_layout
 
 \begin_layout Standard
@@ -1414,7 +1422,8 @@ name "tab:Sample-of-AIM"
 
 \end_inset
 
-Sample of AIM PhysicalEntity in XML and OWL format.
+Sample of AIM PhysicalEntity in AIM-XML and OWL Manchester serialization
+ format.
 \end_layout
 
 \end_inset
@@ -1433,7 +1442,7 @@ Sample of AIM PhysicalEntity in XML and OWL format.
 \begin_inset Text
 
 \begin_layout Plain Layout
-XML
+AIM-XML
 \end_layout
 
 \end_inset
@@ -1629,11 +1638,36 @@ Creating conditions to implement reasoning based on TNM rules using OWL
 \end_layout
 
 \begin_layout Standard
-The second step is to define a mechanism to transform existing AIM-XML documents
- to their equivalent encoded using OWL ( AIM4-O individuals).
- To achieve this, we developed groovy scripts in order to automatically
- map XML documents to AIM Java classes based on AIM UML model (see Figure
- 
+The second step is to transform existing AIM-XML documents to their equivalent
+ in OWL (using the 
+\series bold
+AIM4-O
+\series default
+ ontology).
+ To achieve this, we developed scripts, in the Groovy language
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+http://groovy-lang.org/
+\end_layout
+
+\end_inset
+
+.
+ First, we automatically map AIM-XML entities to AIM Java classes, based
+ on the AIM UML
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+https://wiki.nci.nih.gov/display/AIM/Extending+the+AIM+Model#ExtendingtheAIMModel-A
+IMUMLModeling
+\end_layout
+
+\end_inset
+
+ model (Figure 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:xmltoowl"
@@ -1641,13 +1675,11 @@ reference "fig:xmltoowl"
 \end_inset
 
 ).
- Later, we used the OWL API that is a Java API for creating, manipulating
- and serializing OWL ontologies to create OWL Instances from those AIM Java
- classes.
- Therefore, successfully populate semantic web knowledge bases, such as
- AIM4-O.
- In this way, we create suitable conditions for classification-based and
- rule-based inference.
+ We then create instances of the AIM4-O ontology from these AIM Java classes,
+ using the OWL API, a Java API for creating, manipulating and serializing
+ OWL ontologies.
+ Finally, these instances populate a semantic web knowledge base.
+ This base is suitable for classification-based and rule-based inference.
 \end_layout
 
 \begin_layout Standard
@@ -1697,29 +1729,30 @@ Mechanism to transform AIM-XML documents to encoded AIM4-O individuals using
 \end_layout
 
 \begin_layout Standard
-In order to stage automatically cancer, our approach must have the support
- of capable ontology to specify the semantics of image observations of a
- particular domain, in this case, this ontology should be able to represent
- the topology of a human body organ (the organ in which cancer starts growing
- and has its own TNM system).
- In this work, this organ was the liver.
- Furthermore, it is considered necessary to include an OWL representation
- of RadLex® 
+In order to automatically stage cancer, our approach must have the support
+ of an ontology to specify the semantics of image observations in a particular
+ domain.
+ In this case, this ontology should be able to represent the topology of
+ a human body organ (the organ in which cancer starts growing and that has
+ its own TNM system).
+ In this work, the organ used was the liver.
+ Furthermore, it is necessary to include an OWL representation of the RadLex®
+ vocabulary 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Radlex"
 
 \end_inset
 
- vocabulary in order to facilitate handling AIM4-O individuals, because
- these individuals have terminology Radlex in its structure.
- Finally, it was added to the ontology the set of rules based on the TNM
- liver system.
- The result was the 
+ in order to facilitate the representation of AIM4-O individuals, because
+ these individuals use the Radlex terminology in their structure.
+ Finally, a set of rules to do the actual staging, based on the TNM liver
+ system, was added to the ontology.
+ The final result was the 
 \series bold
 General Ontology
 \series default
- constructed from the above-mentioned requirements.
+.
 \end_layout
 
 \begin_layout Subsubsection
@@ -5717,10 +5750,6 @@ Some limitations:
  to this work are that our dataset is small.
  Because both medical images (CT) and clinical reports have to be present
  for the same patient for optimal validation.
-\end_layout
-
-\begin_layout Standard
-
 \end_layout
 
 \begin_layout Standard
