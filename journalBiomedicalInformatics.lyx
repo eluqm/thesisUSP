@@ -509,7 +509,7 @@ key "keet2013open"
 In 
 \begin_inset CommandInset citation
 LatexCommand cite
-key "Tutac2008,Tutac2010,Massicano2015AnOF,franca2015,zillner:towards"
+key "Tutac2008,Tutac2010,Massicano2015AnOF,franca2015,zillner:towards,Boeker2016"
 
 \end_inset
 
@@ -697,6 +697,13 @@ AIM4-O
 
 \begin_layout Subsubsection
 AIM4-O ontology
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:AIM4-O-ontology"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsubsection*
@@ -1760,7 +1767,7 @@ General Ontology
 \end_layout
 
 \begin_layout Standard
-The ontology is divided in 4 files, as seen on Figure 
+The General Ontology is divided in 4 files, as seen on Figure 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:generalOntology"
@@ -1771,8 +1778,14 @@ reference "fig:generalOntology"
 \end_layout
 
 \begin_layout Itemize
-The AIM4-O ontology with individuals (this ontology was obtained using the
- above processes).
+The AIM4-O ontology with individuals (Section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "subsec:AIM4-O-ontology"
+
+\end_inset
+
+).
 \end_layout
 
 \begin_layout Itemize
@@ -1787,7 +1800,7 @@ key "Kokciyan2014"
 \end_layout
 
 \begin_layout Itemize
-ModuleRadlex.owl: Radlex lexicon module
+Radlex lexicon module (ModuleRadlex.owl)
 \begin_inset Foot
 status open
 
@@ -1802,7 +1815,7 @@ http://bioportal.bioontology.org/ontologies/RADLEX/classes
 \end_layout
 
 \begin_layout Itemize
-General concepts of TNM (axioms and rules SWRL).
+General concepts of TNM (axioms and SWRL rules).
 \end_layout
 
 \begin_layout Standard
@@ -1833,8 +1846,8 @@ name "fig:generalOntology"
 
 \end_inset
 
-The General Ontology and imports needed (TNM rules, axioms, moduleRadlex.owl
- and Onlira.owl) in order to classify liver cancer.
+ The General Ontology imports (TNM rules, axioms, moduleRadlex.owl and Onlira.owl)
+ needed in order to classify liver cancer.
 \end_layout
 
 \end_inset
@@ -1849,19 +1862,23 @@ The General Ontology and imports needed (TNM rules, axioms, moduleRadlex.owl
 
 \begin_layout Standard
 The following sections give a description of the ontologies used as part
- of the 
+ of the
 \series bold
-General Ontology
+ General Ontology
 \series default
 .
 \end_layout
 
 \begin_layout Subsubsection
-Ontology of the Liver for Radiology(ONLIRA) 
+Ontology of the Liver for Radiology (
+\emph on
+ONLIRA
+\emph default
+) 
 \end_layout
 
 \begin_layout Standard
-The ONLIRA
+The ONLIRA ontology
 \begin_inset Foot
 status open
 
@@ -1871,12 +1888,12 @@ https://bioportal.bioontology.org/ontologies/ONLIRA
 
 \end_inset
 
- ontology was developed as part of the CaReRa project.
+ was developed as part of the CaReRa project.
  It aims to model imaging observations of the liver domain with an emphasis
  on properties and relations between the liver, hepatic veins, and liver
  lesions.
- We used this ontology to enable a feasible ontological representation of
- liver and its topological features.
+ This ontology is used as an ontological representation of the liver and
+ its topological features.
 \end_layout
 
 \begin_layout Subsubsection
@@ -1885,34 +1902,28 @@ Radlex terminology
 
 \begin_layout Standard
 The AIM model provides an XML schema that describes anatomical structures,
- visual observations and other information relevant to images using RadLex
- terminology.
- We extracted a module from the Radlex lexicon to represent all this information.
- Then, this radlex module was used by our ontology (General ontology) to
- permit a formal representation (in OWL) of TNM criteria.
+ visual observations and other information relevant to images using the
+ RadLex terminology.
+ We extracted a module from the Radlex lexicon to represent this information.
+ This radlex module is used by the General ontology to permit a formal represent
+ation (in OWL) of TNM criteria.
  The TNM criteria are based on knowledge about the way cancer develops and
- its dissemination, for this reason, it is important that General ontology
- collects not only the anatomical entities mentioned in TNM but also the
- various direct and indirect anatomical entities to consider the relative
- proximity between them.
- For example, to the 
-\family typewriter
-N
-\family default
- and 
-\family typewriter
-M
-\family default
- criteria we added 2 super classes, such as 
+ disseminates.
+ For this reason, it is important that General ontology represents not only
+ the anatomical entities mentioned in TNM but also other direct and indirect
+ related anatomical entities to consider the relative proximity between
+ them.
+ For example, to the N and M criteria (in TNM) we added 2 super classes,
+ the
 \family typewriter
 \series bold
 \emph on
-adjacentOrganGroup
+ adjacentOrganGroup,
 \family default
 \series default
 \emph default
- that describes the set of organs adjacent to a main organ (e.g., the liver)
- and 
+ which describes the set of organs adjacent to a main organ (e.g., the liver)
+ and the 
 \family typewriter
 \series bold
 \emph on
@@ -1920,7 +1931,7 @@ noadjacentOrganGroup
 \family default
 \series default
 \emph default
- that describes organs based on the most common sites of tumor dissemination
+, which describes organs based on the most common sites of tumor dissemination
  
 \begin_inset CommandInset citation
 LatexCommand cite
@@ -1945,28 +1956,24 @@ Classes to Represent TNM System Concepts
 \end_layout
 
 \begin_layout Standard
-In order to get OWL representation of each TNM stages, we have needed an
- interpretation of its definition.
+In order to create an OWL representation for each TNM stage, we had to interpret
+ each stage definition.
  Although it is not mentioned explicitly, the TNM criteria are exclusive,
  so the corresponding OWL classes were made disjoint.
  For example, the 
-\family typewriter
 \series bold
 \emph on
 T2
-\family default
 \series default
 \emph default
- stage is represented by two constraints that come together to define a
- single tumor (any size) that has grown into blood vessels (
-\family typewriter
+ stage is represented by two constraints: a single tumor (of any size) that
+ has grown into blood vessels concept (
 \series bold
 \emph on
 T2_a
-\family default
 \series default
 \emph default
- class) concept and a single tumor no larger than 
+ class) and a single tumor no larger than 
 \begin_inset Quotes eld
 \end_inset
 
@@ -1974,15 +1981,13 @@ x
 \begin_inset Quotes erd
 \end_inset
 
- cm (
-\family typewriter
+ cm concept (
 \series bold
 \emph on
 T2_b
-\family default
 \series default
 \emph default
- class) respectively.
+ class).
 \end_layout
 
 \begin_layout Subsection
@@ -1990,26 +1995,27 @@ Formal Representation of TNM Cancer Staging
 \end_layout
 
 \begin_layout Standard
-In the previous sections, several operations were necessary to enhance the
- General ontology or TNM classifier.
- At first, we created classes and properties in order to fill the semantic
+In the previous sections, several steps were necessary to create the General
+ ontology for a TNM classifier.
+ First, we created classes and properties in order to fill the semantic
  gap between the tumor features and the AIM4-0 classes definitions.
- Second, we provided formal definitions for the TNM stages, liver's topological
+ Then, we provided formal definitions for the TNM stages, liver’s topological
  features and RadLex terminology, in order to represent them in OWL.
- Finally, we defined formal mechanisms of reasoning (using only OWL and
- SWRL expressivity) such as subclasses, intersections, equivalences, disjunction
-s between classes and a set of rules in order to classify cancer patients
+ Finally, we defined formal mechanisms for reasoning (using only OWL and
+ SWRL expressivity) such as OWL classes, intersections, equivalences, disjunctio
+ns between classes and a set of rules in order to determine cancer stage
  from image annotations.
  This last step will be described below.
 \end_layout
 
 \begin_layout Standard
-In order to discover the limits of the OWL, rules SWRL, and axioms, we attempted
- to formally define and implement the conditions which TNM system demands.
- The TNM cancer staging is divided into two main steps.
- The first step consists in giving a score starting from the description
- of the tumor (T), the spreading into lymphatic nodes (N) and possible metastasi
-s (M) see Table 
+In order to discover the limits of the OWL concepts and SWRL rules, we attempted
+ to formally define and implement the conditions that TNM staging demands.
+ TNM cancer staging is divided in two main steps.
+ The first consists in giving a score starting from the description of the
+ tumor (T), its spreading into lymphatic nodes (N) and possible metastasis
+ (M).
+ See Table 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "tab:American-Joint-Committee"
@@ -2152,7 +2158,7 @@ Solitary tumor (any size) without vascular invasion
 \begin_layout Plain Layout
 
 \size footnotesize
-T2 
+T2 = T2_a or T2_b
 \end_layout
 
 \end_inset
@@ -2431,7 +2437,7 @@ reference "fig:A)TNMexamplefigure"
 
 ).
  To make the aforementioned tasks possible, we decided that the following
- conditions reflected desirable staging process:
+ conditions reflecting desirable staging process:
 \end_layout
 
 \begin_layout Itemize
@@ -2621,12 +2627,12 @@ entity.
 \end_layout
 
 \begin_layout Standard
-In the scenario of classifying patients with an exactly solitary tumor.
- First, we did not find axioms or rules that satisfied this requirement,
- due to that OWL works under the Open World Assumption.
- Open world means that, just because we do not say something it does not
- mean that it is not true.
- For example, I can say that the patient annotation describes a cancer lesion
+In the scenario of classifying patients with exactly one solitary tumor,
+ we did not find axioms or rules that satisfied this requirement, due to
+ the fact that OWL works under the Open World Assumption.
+ Open world means that just because something is not said it does not mean
+ that it is not true.
+ For example, I can say that the patient annotation describes a cancer lesion,
  using the 
 \family typewriter
 \series bold
@@ -2641,7 +2647,7 @@ ImagingObservation
 \end_layout
 
 \begin_layout Standard
-We have tried to solve the problem of the open world assumption by considering
+We have tried to solve this problem (the open world assumption) by considering
  some alternatives such as modeling again our AIM4-O ontology (e.g., setting
  the 
 \family typewriter
@@ -2671,7 +2677,7 @@ ImageStudy
 \series default
 \emph default
  entity.
- Here, this domain concept denotes if an 
+ This concept denotes if an 
 \family typewriter
 \series bold
 \emph on
@@ -2679,7 +2685,7 @@ ImageStudy
 \family default
 \series default
 \emph default
- describes an exactly solitary tumor.
+ describes an exactly one solitary tumor.
  We assumed that an 
 \family typewriter
 \series bold
@@ -2688,7 +2694,7 @@ ImageStudy
 \family default
 \series default
 \emph default
- entity describes only a tumor (
+ entity describes only one tumor (
 \family typewriter
 \series bold
 \emph on
@@ -2705,10 +2711,10 @@ mageAnnotation
 \series default
 \emph default
  entity.
- However, it was not possible to formulate with the only OWL.
+ However, it was not possible to formulate this using only OWL.
  Instead, this information was provided by a data structure that was generated
- as part of the process of parsing the XML image annotations to create AIM4-O
- individuals.
+ as part of the process of parsing the AIM-XML image annotations to create
+ AIM4-O individuals.
  Finally, to classify annotations that describe a single lesion, we constructed
  the rule 
 \family typewriter
@@ -2743,15 +2749,15 @@ Condition 2: Staging should consider if tumors are either bigger or minor
 
 \begin_layout Standard
 This condition was easily implemented by getting the value from the data
- property 
+ property
 \family typewriter
 \series bold
 \emph on
-values
+ values
 \family default
 \series default
 \emph default
- on the 
+ in the 
 \family typewriter
 \series bold
 \emph on
@@ -2760,15 +2766,7 @@ CalculationResult
 \series default
 \emph default
  entity.
- The 
-\family typewriter
-\series bold
-\emph on
-CalculationResult
-\family default
-\series default
-\emph default
- is related to the 
+ This entity is related to the 
 \family typewriter
 \series bold
 \emph on
@@ -2853,9 +2851,10 @@ Condition 3: Staging should consider lesions in adjacent organs.
 \end_layout
 
 \begin_layout Standard
-To satisfy the more complicated criterion of classification, we have to
- consider the fact that a cancerous tumor can spread in the body.
- For that, we needed to create one new concept based on the 
+To satisfy this condition, the most complicated criterion of classification,
+ we had to consider the fact that a cancerous tumor can spread through out
+ the body.
+ For that, we needed to create one new concept, based on the 
 \family typewriter
 \series bold
 \emph on
@@ -2871,7 +2870,7 @@ key "Kokciyan2014"
 \end_inset
 
 .
- While 
+ The 
 \family typewriter
 \series bold
 \emph on
@@ -2880,8 +2879,8 @@ Lesion
 \series default
 \emph default
  class handles important characteristics of a lesion, such as composition,
- density, size, shape, etc, unfortunately, this is not enough for TNM classifica
-tion and reasoning.
+ density, size, shape, etc., But, unfortunately, they are not enough for
+ TNM classification and reasoning.
  For this reason, we added 3 properties to it and created the subclass
 \family typewriter
 \series bold
@@ -2921,8 +2920,11 @@ name "fig:properties"
 
 \end_inset
 
- General Ontology adds 2 properties defined as necessary for the TNM representat
-ion.
+ General Ontology adds to the 
+\series bold
+Onlira:Lesion
+\series default
+ class, 2 properties defined as necessary for the TNM representation.
 \end_layout
 
 \end_inset
@@ -2958,7 +2960,7 @@ Lesion
 \family default
 \series default
 \emph default
- class members to the Radlex 
+ class instances to Radlex 
 \family typewriter
 \series bold
 \emph on
@@ -2966,7 +2968,7 @@ AnatomicalEntity
 \family default
 \series default
 \emph default
- class members (see Figure 
+ class instances (see Figure 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:properties"
@@ -3029,9 +3031,8 @@ hasLocation
 \family default
 \emph default
 .
- In accordance with the TNM liver classification criterion, which is the
- case of study in this work, we considered as adjacent organs to the liver
- 
+ In accordance with the TNM liver classification criterion, we considered
+ as adjacent organs to the liver 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Faria2014"
@@ -3047,7 +3048,7 @@ reference "fig:radlexclass"
 
 ).
  Furthermore, we grouped these concepts as organs in radlex representation,
- creating two new classes such as, 
+ creating new classes: 
 \family typewriter
 \series bold
 \emph on
@@ -3101,10 +3102,10 @@ NoAdjacentOrganGroup
 \family default
 \series default
 \emph default
-classes indicate whether a body organ is considered adjacent or not regarding
- the organ where the primary tumor was located.
- The primary organ defines the type of staging system to use, in our case
- of study, this organ was the liver.
+classes indicate whether a body organ is considered adjacent or not to the
+ organ where the primary tumor was located.
+ The primary organ defines the type of staging system to use, in our case,
+ this organ was the liver.
  Finally, we constructed the following rule (in SWRL notation) to indicates
  whether an 
 \family typewriter
@@ -3137,9 +3138,9 @@ hasLocation(?x,?y)\rightarrow isAdjacentOrgan(?x,true)\\
 \begin_layout Standard
 
 \lang brazilian
-At this point, once we covered the above requirements adequately using OWL
- and SWRL, we constructed the axioms and rules in order to be able to automatica
-lly classify cancer lesions based on the TNM system.
+Once the above requirements adequately covered using OWL and SWRL rules,
+ we constructed the axioms and rules in order to be able to automatically
+ classify cancer lesions, based on the TNM system.
  We noticed that the way we modeled things mattered.
  For example, it was easier to define 
 \family typewriter
@@ -3147,13 +3148,13 @@ lly classify cancer lesions based on the TNM system.
 N1a
 \family default
 \emph default
-, 
+ and 
 \family typewriter
 \emph on
 N0
 \family default
 \emph default
- and reuse their definitions for 
+ criteria and reuse their definitions for 
 \family typewriter
 \emph on
 M0
@@ -3165,11 +3166,10 @@ M0
 M0
 \family default
 \emph default
- handling complex closures.
+ and end up handling complex closures.
  With the use of the AIM4-O ontology, anatomical concepts can easily be
  related to each other as demonstrated previously.
- Moreover, formal requirements such as the integrity and the cardinality
- can be asserted for reasoning purposes.
+ 
 \end_layout
 
 \begin_layout Standard
@@ -3204,7 +3204,7 @@ name "fig:radlexclass"
 
 \end_inset
 
-Getting the subclass-hierarchy from Radlex.
+Getting the anatomy subclass-hierarchy from Radlex.
  
 \family typewriter
 \series bold
@@ -3222,8 +3222,8 @@ NoAdjacentOrganGroup (Lymph nodes, Lung)
 \family default
 \series default
 \emph default
-classes are distributed regarding the organ where the primary tumor was
- located.
+classes are created regarding the organ where the primary tumor was located
+ (in this case, the liver).
 \end_layout
 
 \end_inset
@@ -3241,11 +3241,11 @@ Experimental Study and Results
 \end_layout
 
 \begin_layout Standard
-In this section, at first, we evaluated the expressivity of the AIM4-O ontology,
- followed by the calculation of the classification rate of our TNM classifier
- for semantic image findings based on TNM criteria, which is the objective
- of this work.
- Finally, the quantitative evaluation of TNM classifier was made using precision
+In this section, we first describe our experimental datasets, based on actual
+ medical images and reports.
+ Then, we evaluate the expressivity of the AIM4-O ontology.
+ Finally, we present a quantitative evaluation of our TNM classifier for
+ semantic image findings, which is the objective of this work, using precision
  and recall.
 \end_layout
 
@@ -3254,20 +3254,21 @@ Datasets
 \end_layout
 
 \begin_layout Standard
-Our first dataset is a set of real clinical reports of Hepatocellular Carcinoma(
-HCC) patients from The NCI's Genomic Data Commons(GDC).
- In this work, all experiments were supported by the GDC data.
- An important requirement to enable a feasible clinical evaluation, was
- to have an image dataset to validate the results of GDC clinical reports.
- To cover this requirement we used the TCIA database 
+Our first dataset is a set of real clinical reports of Hepatocellular Carcinoma
+ (HCC) patients from the NCI’s Genomic Data Commons (GDC).
+ In this work, all experiments were supported by GDC data.
+ An important requirement to enable a feasible clinical evaluation was to
+ have an image dataset to validate the results of the GDC clinical reports.
+ To cover this requirement, we used the TCIA database 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Clark2013"
 
 \end_inset
 
- that hosts a large archive of medical images about cancer, it is accessible
- for public download and also it is related to the GDC by a patient 
+.
+ It hosts a large archive of medical images about cancer, it is accessible
+ for public download and it is related to GDC records by a patient 
 \family typewriter
 \series bold
 \emph on
@@ -3276,16 +3277,17 @@ subject ID
 \series default
 \emph default
 .
- The imaging modality selected was computed tomography (CT), then, these
- images were loaded into the annotation tool ePAD.
+ The imaging modality selected was computed tomography (CT).
+ The downloaded images were loaded into the ePAD annotation tool and annotated.
 \end_layout
 
 \begin_layout Standard
-While the staging could be applied to other types cancer, this work focuses
- on staging liver cancer consequently to the availability of clinical data
- and images.
- For a given patient, the input to the system consists of AIM files (image
- annotations) and the output, consist of the Cancer Staging for this patient.
+While TNM staging could be applied to other types of cancer, this work focuses
+ on staging liver.
+ One reason is the availability of clinical data and images.
+ For a given patient, the input to our TNM classifier consists of AIM files
+ (image annotations) and the output consists of the Cancer Staging for this
+ patient.
 \end_layout
 
 \begin_layout Subsection
@@ -3323,17 +3325,18 @@ key "Kokciyan2014"
 \begin_layout Standard
 In order to evaluate the AIM4-O ontology, we studied and evaluated how it
  could help in searching clinical reports that describe image findings (reports
- about cancer), for this purpose, were compared two different approaches:
+ about cancer).
+ For this purpose, we compared two different approaches:
 \end_layout
 
 \begin_layout Itemize
-Ontology-based (semantic search): If the clinical reports are described
+Ontology-based (semantic) search: If the clinical reports are described
  as AIM4-O individuals, these reports can be searched using description
  logic query languages (DL query).
 \end_layout
 
 \begin_layout Itemize
-Natural Language process-based (keyword search): Clinical reports and image
+Natural Language process-based (keyword) search: Clinical reports and image
  findings are usually written in natural language, therefore, a method for
  searching can be keyword search.
 \end_layout
@@ -3569,7 +3572,7 @@ We have considered the following points in order to evaluate both approaches:
 \end_layout
 
 \begin_layout Itemize
-The evaluation was based on GDC reports: We took 15 random radiology reports
+The evaluation was based on GDC reports: We randomly took 15 radiology reports
  of different patients written in natural language and converted them into
  AIM4-O instances.
 \end_layout
@@ -4028,8 +4031,8 @@ Q4: With the semantic search, 15 reports were retrieved with a precision
 \end_layout
 
 \begin_layout Standard
-Semantic search approach performance was better, with recall values close
- to 1 and always better than the keyword search.
+The semantic search approach performance was better, with recall values
+ close to 1 and always better than the keyword search.
  Also, in all but one case, precision values were better for the semantic
  search.
  The keyword search had 0 precision and recall for the query 3, which is
@@ -4743,11 +4746,11 @@ Automatic TNM clinical stage
 
 \begin_layout Standard
 In this section, we calculated the classification rate of the TNM classifier.
- At first, we created a template named "TNM template" in order to provide
- to the radiologist with a pre-specified set of semantic terms for image
- annotations.
+ At first, we created an ePAD template named "TNM template" in order to
+ provide to the radiologist with a pre-specified set of semantic terms for
+ image annotations.
  These image annotations, which are compatible with the ePAD tool, were
- stored in the AIM format.
+ stored in the AIM-XML format.
  An example of an annotated image is presented in Figure 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -4786,8 +4789,8 @@ name "fig:TNMtemplate"
 
 \end_inset
 
-A CT image of the liver annotated with TNM template on the right of the
- image.
+A CT image of the liver annotated using the TNM template (on the right of
+ the image).
  
 \end_layout
 
@@ -4806,11 +4809,10 @@ A CT image of the liver annotated with TNM template on the right of the
 \end_layout
 
 \begin_layout Standard
-After, the generated image annotations (denoted in AIM-XML format) were
- classified automatically using the TNM criteria.
- This process was duly evaluated and correctly accepted by an experienced
- radiologist, he analyzed the accuracy of the generated annotations in terms
- of semantic.
+After, the generated image annotations (in AIM-XML format) were classified
+ automatically using the TNM criteria.
+ This process was evaluated and correctly accepted by an experienced radiologist
+, he analyzed the accuracy of the generated annotations in terms of semantic.
  The process we followed was:
 \end_layout
 
@@ -4856,18 +4858,17 @@ lular carcinoma" obtaining 52 patients with information available in both
 \end_deeper
 \begin_layout Itemize
 After reading the medical reports, the radiologist was provided with an
- excel spreadsheet that provided information about medical findings as lesion
- size, vascular invasion, and others.
+ excel spreadsheet that provided information about medical findings, such
+ as lesion size, vascular invasion, and others.
 \end_layout
 
 \begin_layout Itemize
-Based on the aforementioned excel file and the GDC data, we created the
- AIM XML annotations and later we integrated them into our knowledge base
- (as AIM4-O ontology individuals).
+Based on this excel file and GDC data, we created the AIM-XML annotations
+ and integrated them into our knowledge base (as AIM4-O ontology individuals).
 \end_layout
 
 \begin_layout Itemize
-The AIM files were used as input of our TNM classifier.
+The AIM files were used as inputs for our TNM classifier.
  The produced output was compared with the TNM values that physicians reported.
 \end_layout
 
@@ -4885,7 +4886,8 @@ key "Faria2014"
  Our automatic staging approach was evaluated by using precision and recall
  values.
  The cancer stages generated by our TNM classifier were compared to those
- described by the doctors in the clinical reports (our gold standard).
+ described by the physicians who created the original clinical reports (our
+ gold standard).
  One patient, with a subject ID "TCGA-DD-A1EJ", was removed from this analysis.
  The specialist considered that the TNM classification reported by the physician
  in his respective clinical report was incorrect (more information below).
@@ -5482,8 +5484,9 @@ IVA
 \end_layout
 
 \begin_layout Standard
-For the calculation of precision and recall, when automatic staging coincides
- with that given by the physician, it is considered positive.
+For the calculation of precision and recall, the result is considered positive
+ when the automatic staging coincides with the stage given by physicians
+ who created the original clinical report.
  See Table 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -5497,14 +5500,14 @@ reference "tab:Results"
 \begin_layout Standard
 Precision was 85.7% and recall 81.0% (for 51 patients).
  This means that, for precision, at 85.7% of the time the system agreed with
- the staging given by doctors.
+ the staging given by physicians.
  For the recall, this means that, of all the times that a given stage was
  reported by a physician, in 81.0% of cases the system agreed with him.
- It is important to note that even when the system diverged from physicians,
+ It is important to note that, even when the system diverged from physicians,
  the maximum difference between them was only one stage.
- We discussed these patient staging scenarios with the help of our expert
- collaborator and project partner from the Radiology Department of Stanford
- University School of Medicine, finding it very good results.
+ We discussed these patient staging results with a physician (DR) from the
+ Radiology Department of Stanford University School of Medicine, who found
+ this results very good.
 \end_layout
 
 \begin_layout Standard
@@ -5516,11 +5519,12 @@ reference "fig:matrixconfusion"
 \end_inset
 
  we show the results of the evaluation summarized in the color scale matrix.
- It represents a matrix of confusion for a multi-stage classification.
- The interpretation of the results is as follows: the darker the pixel on
- the diagonal of the matrix, this class was classified better.
- The pixel in grays located horizontally indicates the class was confused
- by the classifier with the corresponding class on its vertical axis.
+ It represents our confusion matrix for a multi-stage classification.
+ The darker the square in the diagonal of the matrix means that the respective
+ class was better classified.
+ The other squares in grays, outside of the diagonal, indicates that the
+ class in the vertical axis was confused by the classifier with the correspondin
+g class on the vertical axis.
 \end_layout
 
 \begin_layout Standard
@@ -5552,7 +5556,8 @@ name "fig:matrixconfusion"
 
 \end_inset
 
-Confusion matrix for TNM multi-stage classification
+Color scale matrix for the confusion matrix for the TNM multi-stage classificati
+on
 \end_layout
 
 \end_inset
@@ -5568,7 +5573,7 @@ Confusion matrix for TNM multi-stage classification
 \begin_layout Standard
 For early stages of cancer, such as I, II, IIIA, the percentage of misclassifica
 tions (e.g., false positives and false negatives) was very small.
- They are represented by the highlighted diagonal of the matrix (see Figure
+ They are represented by the highlighted diagonal of the matrix (Figure
  
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -5578,7 +5583,7 @@ reference "fig:matrixconfusion"
 
 ).
  For more advanced stages of cancer, such as IIIB or IVA, it was larger
- (see Figure 
+ (Figure 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:histogram"
@@ -5586,8 +5591,8 @@ reference "fig:histogram"
 \end_inset
 
 ).
- This may have happened because these stages are described by relatively
- more complex concepts or simply because we have few patients at these stages.
+ This may have happened simply because we had few patients at these stages
+ or because these stages are described by relatively more complex concepts.
 \end_layout
 
 \begin_layout Standard
@@ -5618,8 +5623,9 @@ name "fig:histogram"
 
 \end_inset
 
-Summary of Histograms for each class-stage, before automatic TNM classification
- of image metadata of 51 reports
+Summary of Histograms for each TNM stage from the Confusion Matrix (51 reports):
+ FN - False Negatives, FP - False Positives and TP - True Positives.
+ 
 \end_layout
 
 \end_inset
@@ -5633,8 +5639,8 @@ Summary of Histograms for each class-stage, before automatic TNM classification
 \end_layout
 
 \begin_layout Standard
-Besides, our classifier revealed the fact that there are clinical reports
- with the staging diagnosis entirely inaccurate.
+Our classifier also revealed the fact that there are clinical reports with
+ inaccurate staging diagnosis.
  An example of this situation was the clinical case with subject ID "TCGA-DD-A1E
 J".
  The result of the classifier was considered correct by our expert.
@@ -5650,13 +5656,13 @@ https://gdc-portal.nci.nih.gov/cases/52292ffc-0902-4d97-b461-20723987a177
 \end_inset
 
 .
- As it was the only case in which the difference between the classifier's
- stage and the physicians differed by more than one level, the specialist
- wanted to analyze the report and stated that the classifier's stage was
- correct.
- He recommended us do not use this patient's data, so this report was excluded
- from testing analysis.
- Examples like these can serve to warrant the importance of improving clinical
+ As it was the only case in which the difference between the classifier’s
+ stage and the physician’s evaluation differed by more than one level, our
+ expert decided to analyze the report and concluded that the classifier’s
+ stage was correct.
+ He recommended us to not use this patient’s data, so this report was excluded
+ from the analysis.
+ Examples, like this, serve to warrant the importance of improving clinical
  decision support systems (through the use of image metadata in cancer treatment
 ).
 \end_layout
@@ -5667,8 +5673,8 @@ Conclusion
 
 \begin_layout Standard
 Cancer staging entails an intensive work, this often requires an accurate
- interpretation of the cancer findings in images by medical experts (oncologist
- and radiologist).
+ interpretation of the cancer findings in images by medical experts (oncologists
+ and radiologists).
  Expert accuracy is achieved through training and experience 
 \begin_inset CommandInset citation
 LatexCommand citep
@@ -5676,56 +5682,62 @@ key "Depeursinge2014"
 
 \end_inset
 
-, but, variations in image interpretation is a human observer limitation.
- In this context, we developed an automatic staging approach (TNM classifier)
- that is a strong medical need.
- This can help the experts to obtain a higher accuracy rate for image interpreta
-tion.
+, but variations in image interpretation is a human observer limitation.
+ In this context, we developed an automatic staging approach (a TNM classifier).
+ It can help physicians to obtain a higher accuracy rate for image interpretatio
+n.
  
 \end_layout
 
 \begin_layout Standard
-To achieve this, initially, the AIM4-O ontology was developed and validated
- using concrete clinical cases, this ontology represents the basis for more
- complex tasks such as cancer staging by semantic image annotations using
- the AIM format.
- Subsequently, were developed the necessary conditions to make it possible
- the cancer staging, these conditions were based on formal representation
- (rules, axioms, and automatic reasoning procedure) of how different AIM
- concepts should interact with other knowledge bases such as Radlex and
- Onlira.
+To achieve this, first an ontology to represent AIM4 annotations, called
+ AIM4-O, was developed and validated using a task-focused assessment of
+ actual clinical cases.
+ Using the ontology to semantically search reports, we got much higher precision
+ and recall values when compared to key-word (no semantics) search.
+ Subsequently, the General ontology, integrating the AIM4, and Onlira ontologies
+ , a subset of the Radlex vocabulary and SWRL rules for TNM staging, was
+ developed and used to develop a TNM classifier using the Groovy language.
 \end_layout
 
 \begin_layout Standard
-The final result was a TNM classifier, which was evaluated with real cancer
- cases.
- The experimental process demonstrated the importance of improving clinical
- decision support systems by the use of semantic metadata in cancer assessment
- with 85.1% precision and 71.0% recall.
- Besides, the analysis of real patient reports performed in this work, in
- contrast to the automated staging result, revealed us that there are patient
- cases with inconsistencies in their diagnosis.
- However, it is important to note that the automatic staging procedure does
- not give to the clinician new information, it is merely a second opinion
- for the purposes of quality in clinical diagnosis.
+This TNM classifier was evaluated using actual cancer cases.
+ Our experimental data showed that, when compared to 51 staging values given
+ in actual physician reports, the classifier generated results had 85.1%
+ precision and 81.0% recall.
+ When the classifier stages differed from physician’s reported stages, that
+ difference was, at most, of 1 stage.
 \end_layout
 
 \begin_layout Standard
-We also highlighted some limitations of description logics such as the OWA.
- The OWA was addressed by using a simple data structure.
- Although we haven't actually done it yet, we assume that our approach could
- be applied to other kinds of cancer such as lungs, colon, by modifying
- only the rules and axioms that represent the TNM criteria avoiding create
- an entirely new ontology for each type of cancer.
+The TNM classifier revealed one patient report with inconsistencies in the
+ diagnostics.
+ It is important to note that this automatic staging procedure does not
+ give clinicians new information.
+ It is merely a second opinion for the purposes of quality in clinical diagnosis.
+ We also highlighted some limitations of description logics, such as the
+ Open World Assumption.
+ 
 \end_layout
 
 \begin_layout Standard
-We believe that our approach can be generalized in order to enable different
- reasoning process based on image findings, using the AIM model.
- Thus, allowing automated workflows where the image annotations that are
- produced by imaging systems (whatever that generates AIM files) are transformed
- into OWL instances.
- These instances will be used for reasoning procedures in different fields.
+Our TNM classifier can be used in automated clinical workflows, where AIM
+ based image annotations are produced by imaging systems.
+ Automatic TNM staging can be as easy as pushing a button in such systems.
+\end_layout
+
+\begin_layout Standard
+We believe that our approach could be also applied to other kinds of cancer
+ such as lungs or colon, by modifying only the rules and axioms that represent
+ the TNM criteria.
+ That can be done avoiding the creation of an entirely new ontology for
+ each type of cancer.
+\end_layout
+
+\begin_layout Standard
+Besides cancer staging, other tasks, such as RECIST cancer criteria can
+ also be automated using this combination of AIM, OWL ontologies and SWRL
+ rules.
 \end_layout
 
 \begin_layout Standard
@@ -5734,22 +5746,24 @@ We believe that our approach can be generalized in order to enable different
 Future work:
 \series default
  will include more varied data sets for evaluation, expansion of the classifier
- to other bodies, and incorporation into existing information systems.
+ to other organs, and incorporation into existing information systems.
  The TNM classifier has the potential to be integrated into larger software
  systems.
- The developed of an Specific Domain Language(DSL), as a communication tool
- between physicians and the formal representation of the TNM criteria (axioms
- and SWRL rules).
+ The Specific Domain Language(DSL), as a communication tool between physicians
+ and the formal representation of the TNM criteria (axioms and SWRL rules),
+ would allow physicians to modify the system themselves.
 \end_layout
 
 \begin_layout Standard
 
 \series bold
-Some limitations:
+A limitation
 \series default
- to this work are that our dataset is small.
- Because both medical images (CT) and clinical reports have to be present
- for the same patient for optimal validation.
+ to this work is that a relatively small dataset was used in our evaluation.
+ One reason is the requirement that both medical images (CT) and clinical
+ reports have to be present for the same patient for optimal validation.
+ Another is the time constraint for radiologists and it is difficult to
+ get them to review large datasets.
 \end_layout
 
 \begin_layout Standard
