@@ -18,12 +18,12 @@
 %in up more than one line while formatting.}
 %\author[rvt]{E.F.~Luque\corref{cor1}\fnref{fn1}}
 %\ead{edluquem@usp.br.com}
-\author[rvt]{E.F.~Luque\corref{cor1}}
+\author[rvt,rvt2]{E.F.~Luque}
 \ead{edluquem@usp.br.com}
-\author[rvt]{D.~Moreira\corref{cor1}}
-\ead{edluquem@usp.br.com}
-\author[focal]{D.~Rubin}
-\ead{.....com}
+\author[focal]{D.L.~Rubin}
+\ead{dlrubin@stanford.edu}
+\author[rvt]{D.A.~Moreira}
+\ead{dilvan@gmail.com}
 
 
 %\ead[url]{http://www.elsevier.com}
@@ -36,8 +36,8 @@
 %any number of author footnotes.}
 
 \address[rvt]{Department of Computer Science\\ University of São Paulo\\ São Carlos, Brazil}
+\address[rvt2]{Department of Computer Science\\ National University of San Agustin\\ Arequipa, Peru}
 \address[focal]{Department of Radiology\\ Stanford University\\ Stanford, USA\\}
-%\address[els]{Department of Computer Science\\ University of São Paulo\\ São Carlos, Brazil}
 \end_preamble
 \use_default_options true
 \maintain_unincluded_children false
@@ -130,7 +130,7 @@ status open
 
 
 \backslash
-title{Automatic Stagging of Cancer Tumors using AIM Image Annotations and
+title{Automatic Staging of Cancer Tumors using AIM Image Annotations and
  Ontologies}
 \end_layout
 
@@ -162,9 +162,9 @@ Information about cancer stage in a patient is crucial when clinicians assess
  This classification used semantic annotations made by radiologists, using
  the ePAD tool, and stored using standard AIM format.
  A TNM based classifier prototype was created.
- It transforms AIM annotations in AIM-O ontology individuals and, using
- axioms and rules (written in the OWL-SWRL languages) representing the TNM
- standard, and it automatically calculates patient's liver cancer stage.
+ It transforms AIM annotations in AIM-O ontology individuals, using axioms
+ and rules (written in the OWL-SWRL languages) representing the TNM standard,
+ and it automatically calculates patient's liver cancer stage.
  The AIM4-O ontology was developed, as part of this work, to represent AIM4
  annotations in OWL.
  This TNM classifier was evaluated using 51 actual patient’s radiology reports
@@ -176,7 +176,7 @@ Information about cancer stage in a patient is crucial when clinicians assess
 \backslash
 %.
  Such kind of classifier can be integrated into larger AIM aware imaging
- tools, such as ePAD, and offer a second opnion about staging as part of
+ tools, such as ePAD, and offer a second opinion about staging as part of
  the cancer treatment workflow.
 \end_layout
 
@@ -201,7 +201,7 @@ Reasoning,
 
 \begin_layout Plain Layout
 
-Image Annotations, Cancer Staging, ePAD, OWl, SWRL, TNM
+Image Annotations, Cancer Staging, ePAD, SWRL, TNM
 \end_layout
 
 \begin_layout Plain Layout
@@ -373,7 +373,7 @@ reference "fig:A)TNMexamplefigure"
 , 
 \series default
 \emph default
-published by the Union for International Cancer Control(UICC)
+published by the Union for International Cancer Control (UICC)
 \series bold
 \emph on
 .
@@ -384,8 +384,8 @@ published by the Union for International Cancer Control(UICC)
  (from The NCI’s Genomic Data Commons).
  When compared to the stages attributed by physicians, the classifier had
  a precision of 85.7% and recall of 81.0%.
- Our ultimate goal is to automatically staging cancer patients and meet
- the requirements to incorporate this method into semantic annotation tools
+ Our ultimate goal is to automatically stage cancer patients and meet the
+ requirements to incorporate this method into semantic annotation tools
  for medical images, such as the electronic Physician’s Annotation Device
  (ePAD) 
 \begin_inset CommandInset citation
@@ -398,8 +398,6 @@ key "Rubin2008"
 \end_layout
 
 \begin_layout Section
-
-\lang american
 Objective
 \end_layout
 
@@ -409,7 +407,7 @@ The objective of this work is to automatically determine the cancer stage
  technologies, to process semantic annotations made by experts and provide
  clinicians with a second opinion on the classification of their patients.
  These semantic annotations are made using tools that use the AIM format
- (used by the ePad tool) to describe and save image findings.
+ (used by the ePAD tool) to describe and save image findings.
  Automatic cancer staging can increase the efficiency of radiologists and
  oncologists and improve the quality and uniformity of image interpretation
  by experts.
@@ -428,7 +426,7 @@ reference "sec:Related-work"
 
  presents related approaches.
  Section 4 describes our methodology composed of three main components:
- the ontological representation of AIM 4.0 model, the conditions to implement
+ the ontological representation of the AIM 4.0 model, the conditions to implement
  the TNM classifier (General Ontology) and the formal representation of
  cancer staging.
  Section 5 analyses experimental data to assess our TNM classifier relevance.
@@ -465,21 +463,21 @@ key "Rubin2014"
 \end_layout
 
 \begin_layout Standard
-Among the proposed approaches, 
+Among the proposed approaches, Dameron et al.
 \begin_inset CommandInset citation
 LatexCommand citet
 key "Dameron2006Table"
 
 \end_inset
 
- and 
+ and Marquet et al.
 \begin_inset CommandInset citation
 LatexCommand citet
 key "marquet2007"
 
 \end_inset
 
- perform reasoning based on classification systems, such as TNM and WHO
+, perform reasoning based on classification systems, such as TNM and WHO
  
 \begin_inset CommandInset citation
 LatexCommand cite
@@ -487,11 +485,11 @@ key "kleihues2000world"
 
 \end_inset
 
-, using an ontology class-based reasoning approach.
+, using an ontology class based reasoning approach.
  However, this approach often leads to an underlying drawback: the creation
  of unnecessary classes, increasing the complexity of the ontology.
- In addition to the aforementioned, they performed closed-world based reasoning
- in a context of Open World Assumption (OWA) 
+ In addition, they performed closed-world based reasoning in a context of
+ Open World Assumption (OWA) 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "keet2013open"
@@ -501,28 +499,27 @@ key "keet2013open"
  by modeling patient conditions using classes, avoiding the reasoning based
  on instances.
  However, it is possible to perform reasoning based on instances supported
- by data structures.
- It will be described in detail at following sections.
+ by data structures (that will be described in detail in following sections).
 \end_layout
 
 \begin_layout Standard
-In 
+Some authors create ontologies in OWL-DL for TNM 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Tutac2008,Tutac2010,Massicano2015AnOF,franca2015,zillner:towards,Boeker2016"
 
 \end_inset
 
-, the authors create ontologies in OWL-DL for TNM.
+.
  However, the idea of having an ontology for each type of body organ is
- undesirable, as in the case of 
+ undesirable, as in the case of Ziller et al.
 \begin_inset CommandInset citation
 LatexCommand cite
 key "zillner:towards"
 
 \end_inset
 
- and 
+ and Tutac et al.
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Tutac2008"
@@ -537,7 +534,7 @@ key "Tutac2008"
 \end_layout
 
 \begin_layout Standard
-Although in 
+In three articles 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Meriem2012,Racoceanu20152,Tutac2010"
@@ -553,9 +550,17 @@ key "Meriem2012,Racoceanu20152,Tutac2010"
 \end_layout
 
 \begin_layout Standard
+Möller et al.
 \begin_inset CommandInset citation
 LatexCommand cite
-key "Moller2013,Zillner2013"
+key "Moller2013"
+
+\end_inset
+
+ and Ziller et al.
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Zillner2013"
 
 \end_inset
 
@@ -563,7 +568,7 @@ key "Moller2013,Zillner2013"
  However, ignoring the fact that the data used are not available for all
  the necessary analysis, the lymphoma staging system that has been implemented
  in this study is relatively simpler than TNM staging system.
- For example, we can see that 
+ For example, we can see that Zillner et al.
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Zillner2012"
@@ -578,16 +583,25 @@ key "Zillner2012"
 \end_layout
 
 \begin_layout Standard
+Gimenez et al.
 \begin_inset CommandInset citation
 LatexCommand cite
-key "Gimenez2011,Kurtz20141082"
+key "Gimenez2011"
 
 \end_inset
 
- are recent works that use the ePAD tool.
- The authors used semantic correlations based on semantic terms that are
- used to describe medical image findings.
- This automated approach helps radiologists by showing them images associated
+ and Kurtz et al.
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Kurtz20141082"
+
+\end_inset
+
+, are recent works that use the ePAD tool.
+ The authors propose an image retrieval framework based on semantic annotations.
+ They used semantic correlations based on semantic terms that are used to
+ describe medical image findings.
+ Their automated approach helps radiologists by showing them images associated
  with a similar diagnosis.
 \end_layout
 
@@ -604,8 +618,8 @@ In the literature, we found similar systems where semantic annotations are
 \begin_layout Standard
 Our work is focused on helping cancer specialists in automatic patient classific
 ation (staging) using semantic annotations in images.
- The classification are made using semantic reasoning on annotations encoded
- in AIM, and these annotations, made by radiologists, describe lesions in
+ The classification is made using semantic reasoning on annotations encoded
+ in AIM and these annotations, made by radiologists, describe lesions in
  images.
 \end_layout
 
@@ -619,7 +633,7 @@ In this section, we describe our methodology.
 \end_layout
 
 \begin_layout Enumerate
-Ontological representation of AIM 4.0 model.
+Ontological representation of the AIM 4.0 model.
  
 \end_layout
 
@@ -651,7 +665,7 @@ In order to perform inference and classify image annotations based on the
  AIM standard, we need a language equipped with formal semantic.
  Using this semantic, inferences about an ontology together with a set of
  individual instances of classes can be made.
- In this context, the Web Ontology Language(OWL), a language for building
+ In this context, the Web Ontology Language (OWL), a language for building
  ontological representations of information models, was used.
  In our work, we transformed the AIM data model into an equivalent ontological
  representation, using OWL2.
@@ -724,7 +738,7 @@ In general, the AIM 4.0 model is an extension of the AIM Foundation model.
 AIM:Entity:
 \series default
  It is an abstract class that represents the existence of a thing, concept,
- observation, calculation, measurement and graphic design on AIM.
+ observation, calculation, measurement and graphic design in AIM.
 \end_layout
 
 \begin_layout Enumerate
@@ -784,9 +798,9 @@ Person
 \series bold
 AIM:ImagingPhysicalEntity:
 \series default
- This class stores an anatomical location as a coded term (RID2662, femur,
- RadLex) based on controlled vocabularies such as RadLex®, SNOMED CT®, Unified
- Medical Language System(UMLS).
+ This class stores an anatomical location as a coded term (i.e.
+ RID2662, femur, RadLex) based on controlled vocabularies such as RadLex®,
+ SNOMED CT®, or Unified Medical Language System (UMLS).
 \end_layout
 
 \begin_layout Enumerate
@@ -806,7 +820,7 @@ ImagingPhysicalEntity
 \family default
 \series default
 \shape default
- as coded term.
+ as a coded term.
 
 \series bold
  
@@ -852,7 +866,7 @@ entity that describes a lesion.
 \end_layout
 
 \begin_layout Standard
-One of the basic concepts in our AIM4-O ontology is the 
+One of the basic concepts in the AIM4-O ontology is the 
 \family typewriter
 \series bold
 \shape italic
@@ -871,7 +885,7 @@ ImageAnnotation
 \family default
 \series default
 \shape default
-, states that an annotation was referred to as 
+, says that an annotation, referred to as 
 \family typewriter
 \series bold
 \shape italic
@@ -938,22 +952,27 @@ name "fig:AIM4example"
 
 \end_inset
 
-
-\lang brazilian
-This diagram describes the 
+This diagram shows the 
 \series bold
 AIM4-O
 \series default
- ontology with the six classes modified from Bulu's ontology.
- The dotted ovals represent the instances of 
+ ontology including the six classes modified from Bulu's ontology
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Bulu"
+
+\end_inset
+
+.
+ Purple ovals represent extended abstract classes from 
 \series bold
 AIM:Entity
 \series default
- abstract class, purple ovals are the extended abstract classes from 
+, dashed ovals represent instances of 
 \series bold
 AIM:Entity
 \series default
-, and the relationships are represented as red arrows.
+ abstract class, and the relationships are represented as red arrows.
  
 \end_layout
 
@@ -1294,13 +1313,12 @@ reference "tab:sample-of-Image"
 \end_inset
 
 .
- It includes an OWL representation of an AIM 4.0 individual and its usual
- relationships.
+ It includes an OWL representation of an AIM 4.0 instance and its usual relations
+hips.
  This example shows semantically equivalent concepts between AIM-XML format
  and OWL model (Manchester serialization format) that were used in this
  work.
- For example.
- an AIM 
+ For example, an AIM 
 \family typewriter
 \series bold
 \emph on
@@ -1365,7 +1383,7 @@ uniqueIdentifier
 \begin_inset Quotes erd
 \end_inset
 
- 
+, 
 \emph default
 is
 \family default
@@ -1646,11 +1664,7 @@ Creating conditions to implement reasoning based on TNM rules using OWL
 
 \begin_layout Standard
 The second step is to transform existing AIM-XML documents to their equivalent
- in OWL (using the 
-\series bold
-AIM4-O
-\series default
- ontology).
+ in OWL (using the AIM4-O ontology).
  To achieve this, we developed scripts, in the Groovy language
 \begin_inset Foot
 status open
@@ -1737,22 +1751,22 @@ Mechanism to transform AIM-XML documents to encoded AIM4-O individuals using
 
 \begin_layout Standard
 In order to automatically stage cancer, our approach must have the support
- of an ontology to specify the semantics of image observations in a particular
+ of an ontology to specify the semantics of image observations from a particular
  domain.
  In this case, this ontology should be able to represent the topology of
- a human body organ (the organ in which cancer starts growing and that has
- its own TNM system).
- In this work, the organ used was the liver.
- Furthermore, it is necessary to include an OWL representation of the RadLex®
- vocabulary 
+ a human body organ (the organ in which cancer starts growing and has its
+ own TNM system).
+ In this work, this organ was the liver.
+ Furthermore, it is considered necessary to include an OWL representation
+ of RadLex® 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Radlex"
 
 \end_inset
 
- in order to facilitate the representation of AIM4-O individuals, because
- these individuals use the Radlex terminology in their structure.
+ vocabulary in order to facilitate handling AIM4-O individuals, because
+ these individuals have Radlex terminology in their structure.
  Finally, a set of rules to do the actual staging, based on the TNM liver
  system, was added to the ontology.
  The final result was the 
@@ -1767,7 +1781,7 @@ General Ontology
 \end_layout
 
 \begin_layout Standard
-The General Ontology is divided in 4 files, as seen on Figure 
+The General ontology is divided in 4 files, as seen in Figure 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:generalOntology"
@@ -1800,7 +1814,7 @@ key "Kokciyan2014"
 \end_layout
 
 \begin_layout Itemize
-Radlex lexicon module (ModuleRadlex.owl)
+Radlex lexicon module (ModuleRadlex.owl
 \begin_inset Foot
 status open
 
@@ -1810,7 +1824,7 @@ http://bioportal.bioontology.org/ontologies/RADLEX/classes
 
 \end_inset
 
-.
+).
  
 \end_layout
 
@@ -1870,9 +1884,9 @@ The following sections give a description of the ontologies used as part
 \end_layout
 
 \begin_layout Subsubsection
-Ontology of the Liver for Radiology (
+Ontology of the Liver for Radiology 
 \emph on
-ONLIRA
+(ONLIRA
 \emph default
 ) 
 \end_layout
@@ -1903,16 +1917,16 @@ Radlex terminology
 \begin_layout Standard
 The AIM model provides an XML schema that describes anatomical structures,
  visual observations and other information relevant to images using the
- RadLex terminology.
+ Radlex terminology.
  We extracted a module from the Radlex lexicon to represent this information.
- This radlex module is used by the General ontology to permit a formal represent
-ation (in OWL) of TNM criteria.
+ The Radlex module is used by the General ontology to permit a formal representa
+tion (in OWL) of TNM criteria.
  The TNM criteria are based on knowledge about the way cancer develops and
  disseminates.
- For this reason, it is important that General ontology represents not only
- the anatomical entities mentioned in TNM but also other direct and indirect
- related anatomical entities to consider the relative proximity between
- them.
+ For this reason, it is important that the General ontology represents not
+ only the anatomical entities mentioned in TNM but also other direct and
+ indirect related anatomical entities to consider the relative proximity
+ between them.
  For example, to the N and M criteria (in TNM) we added 2 super classes,
  the
 \family typewriter
@@ -2000,7 +2014,7 @@ In the previous sections, several steps were necessary to create the General
  First, we created classes and properties in order to fill the semantic
  gap between the tumor features and the AIM4-0 classes definitions.
  Then, we provided formal definitions for the TNM stages, liver’s topological
- features and RadLex terminology, in order to represent them in OWL.
+ features and Radlex terminology, in order to represent them in OWL.
  Finally, we defined formal mechanisms for reasoning (using only OWL and
  SWRL expressivity) such as OWL classes, intersections, equivalences, disjunctio
 ns between classes and a set of rules in order to determine cancer stage
@@ -2012,9 +2026,9 @@ ns between classes and a set of rules in order to determine cancer stage
 In order to discover the limits of the OWL concepts and SWRL rules, we attempted
  to formally define and implement the conditions that TNM staging demands.
  TNM cancer staging is divided in two main steps.
- The first consists in giving a score starting from the description of the
- tumor (T), its spreading into lymphatic nodes (N) and possible metastasis
- (M).
+ The first step consists in giving a score starting from the description
+ of the tumor (T), its spreading into lymphatic nodes (N) and possible metastasi
+s (M).
  See Table 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -2437,7 +2451,7 @@ reference "fig:A)TNMexamplefigure"
 
 ).
  To make the aforementioned tasks possible, we decided that the following
- conditions reflecting desirable staging process:
+ conditions reflect a desirable staging process:
 \end_layout
 
 \begin_layout Itemize
@@ -2541,8 +2555,6 @@ MoreThanOneTumor
 \end_layout
 
 \begin_layout Standard
-
-\lang brazilian
 \begin_inset Formula 
 \begin{gather*}
 \hline ImageStudy(?X)\land isImageStudyOf(?x,?y)\land isImageStudyOf(?x,?z)\land\\
@@ -2627,9 +2639,9 @@ entity.
 \end_layout
 
 \begin_layout Standard
-In the scenario of classifying patients with exactly one solitary tumor,
- we did not find axioms or rules that satisfied this requirement, due to
- the fact that OWL works under the Open World Assumption.
+In the scenario of classifying patients with one solitary tumor, we did
+ not find axioms or rules that satisfied this requirement, due to the fact
+ that OWL works under the Open World Assumption.
  Open world means that just because something is not said it does not mean
  that it is not true.
  For example, I can say that the patient annotation describes a cancer lesion,
@@ -2685,7 +2697,7 @@ ImageStudy
 \family default
 \series default
 \emph default
- describes an exactly one solitary tumor.
+ describes exactly one solitary tumor.
  We assumed that an 
 \family typewriter
 \series bold
@@ -2728,8 +2740,6 @@ SingleTumor
 \end_layout
 
 \begin_layout Standard
-
-\lang brazilian
 \begin_inset Formula 
 \begin{gather*}
 \hline ImageStudy(?X)\land singleLesion(?X,?val)\land\\
@@ -2757,7 +2767,7 @@ This condition was easily implemented by getting the value from the data
 \family default
 \series default
 \emph default
- in the 
+ on the 
 \family typewriter
 \series bold
 \emph on
@@ -2793,7 +2803,6 @@ hasCalculationEntity
 \align center
 
 \series bold
-\lang brazilian
 LessThan5cmTumor:
 \series default
  
@@ -2802,8 +2811,6 @@ LessThan5cmTumor:
 \begin_layout Standard
 \noindent
 \align center
-
-\lang brazilian
 \begin_inset Formula 
 \begin{gather*}
 \hline ImageAnnotation(?x)\land hasCalculationEntity(?x,?y)\land\\
@@ -2822,7 +2829,6 @@ values(?z,?val)\land lessThan(?val,5)\rightarrow lessThan5cmTumor(?x)\\
 \align center
 
 \series bold
-\lang brazilian
 MoreThan5cmTumor:
 \series default
  
@@ -2831,8 +2837,6 @@ MoreThan5cmTumor:
 \begin_layout Standard
 \noindent
 \align center
-
-\lang brazilian
 \begin_inset Formula 
 \begin{gather*}
 \hline ImageAnnotation(?x)\land hasCalculationEntity(?x,?y)\land\\
@@ -2879,8 +2883,8 @@ Lesion
 \series default
 \emph default
  class handles important characteristics of a lesion, such as composition,
- density, size, shape, etc., But, unfortunately, they are not enough for
- TNM classification and reasoning.
+ density, size, shape, etc.
+ But, unfortunately, they are not enough for TNM classification and reasoning.
  For this reason, we added 3 properties to it and created the subclass
 \family typewriter
 \series bold
@@ -2924,7 +2928,7 @@ name "fig:properties"
 \series bold
 Onlira:Lesion
 \series default
- class, 2 properties defined as necessary for the TNM representation.
+ class 2 properties defined as necessary for the TNM representation.
 \end_layout
 
 \end_inset
@@ -3024,22 +3028,21 @@ hasLocation
 "X"
 \family default
 \emph default
- it's close to the organ 
+ is close to any adjacent orga
 \family typewriter
-\emph on
-"Y"
+n
 \family default
-\emph default
 .
- In accordance with the TNM liver classification criterion, we considered
- as adjacent organs to the liver 
+ In accordance with the TNM liver classification criterion, which is the
+ case of study in this work, we considered as adjacent organs to the liver
+ 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Faria2014"
 
 \end_inset
 
-; the pancreas, duodenum, liver and colon (see Figure 
+; the pancreas, duodenum and colon (see Figure 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:radlexclass"
@@ -3048,7 +3051,7 @@ reference "fig:radlexclass"
 
 ).
  Furthermore, we grouped these concepts as organs in radlex representation,
- creating new classes: 
+ creating two new classes, 
 \family typewriter
 \series bold
 \emph on
@@ -3070,8 +3073,6 @@ NoAdjacentOrganGroup
 \begin_layout Standard
 \noindent
 \align center
-
-\lang brazilian
 \begin_inset Formula 
 \begin{gather*}
 \hline NoAdjacentOrganGroup\subseteq RadlexEntity.Organ\\
@@ -3089,7 +3090,6 @@ AdjacentOrganGroup\subseteq RadlexEntity.Organ\\
 \family typewriter
 \series bold
 \emph on
-\lang brazilian
 AdjacentOrganGroup
 \family default
 \series default
@@ -3121,8 +3121,6 @@ is located in an adjacent organ:
 \begin_layout Standard
 \noindent
 \align center
-
-\lang brazilian
 \begin_inset Formula 
 \begin{gather*}
 \hline Lesion(?x)\land adjacentOrganGroup(?y)\land\\
@@ -3136,9 +3134,7 @@ hasLocation(?x,?y)\rightarrow isAdjacentOrgan(?x,true)\\
 \end_layout
 
 \begin_layout Standard
-
-\lang brazilian
-Once the above requirements adequately covered using OWL and SWRL rules,
+Once the above requirements were adequately covered using OWL and SWRL rules,
  we constructed the axioms and rules in order to be able to automatically
  classify cancer lesions, based on the TNM system.
  We noticed that the way we modeled things mattered.
@@ -3173,8 +3169,6 @@ M0
 \end_layout
 
 \begin_layout Standard
-
-\lang brazilian
 \begin_inset Float figure
 wide false
 sideways false
@@ -3193,8 +3187,6 @@ status open
 \end_layout
 
 \begin_layout Plain Layout
-
-\lang brazilian
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
@@ -3204,12 +3196,11 @@ name "fig:radlexclass"
 
 \end_inset
 
-Getting the anatomy subclass-hierarchy from Radlex.
+Getting the subclass-hierarchy from Radlex.
  
 \family typewriter
 \series bold
 \emph on
-\lang brazilian
 AdjacentOrganGroup (Pancreas, Spleen, Stomach, Gallblader,and Colon)
 \family default
 \series default
@@ -3255,8 +3246,8 @@ Datasets
 
 \begin_layout Standard
 Our first dataset is a set of real clinical reports of Hepatocellular Carcinoma
- (HCC) patients from the NCI’s Genomic Data Commons (GDC).
- In this work, all experiments were supported by GDC data.
+ (HCC) patients from The NCI’s Genomic Data Commons (GDC).
+ In this work, all experiments were supported by the GDC data.
  An important requirement to enable a feasible clinical evaluation was to
  have an image dataset to validate the results of the GDC clinical reports.
  To cover this requirement, we used the TCIA database 
@@ -3278,7 +3269,8 @@ subject ID
 \emph default
 .
  The imaging modality selected was computed tomography (CT).
- The downloaded images were loaded into the ePAD annotation tool and annotated.
+ The downloaded images were loaded into the ePAD annotation tool and were
+ annotated.
 \end_layout
 
 \begin_layout Standard
@@ -3295,7 +3287,7 @@ Quantitative assessment of AIM4-O ontology
 \end_layout
 
 \begin_layout Standard
-According to Blomqvist et.al.
+According to Blomqvist et al.
  
 \begin_inset CommandInset citation
 LatexCommand cite
@@ -3626,8 +3618,6 @@ Recall and Precision values for the four queries.
 
 \begin_layout Plain Layout
 \align center
-
-\lang brazilian
 \begin_inset Tabular
 <lyxtabular version="3" rows="6" columns="5">
 <features booktabs="true" tabularvalignment="middle">
@@ -3641,8 +3631,6 @@ Recall and Precision values for the four queries.
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang brazilian
 Query ID
 \end_layout
 
@@ -3652,8 +3640,6 @@ Query ID
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang brazilian
 Semantic search- DL
 \end_layout
 
@@ -3672,8 +3658,6 @@ Semantic search- DL
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang brazilian
 Keyword search
 \end_layout
 
@@ -3703,8 +3687,6 @@ Keyword search
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang brazilian
 Precision
 \end_layout
 
@@ -3714,8 +3696,6 @@ Precision
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang brazilian
 Recall
 \end_layout
 
@@ -3725,8 +3705,6 @@ Recall
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang brazilian
 Presicion
 \end_layout
 
@@ -3736,8 +3714,6 @@ Presicion
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang brazilian
 Recall
 \end_layout
 
@@ -3749,8 +3725,6 @@ Recall
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang brazilian
 Q1
 \end_layout
 
@@ -3760,8 +3734,6 @@ Q1
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang brazilian
 1
 \end_layout
 
@@ -3771,8 +3743,6 @@ Q1
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang brazilian
 1
 \end_layout
 
@@ -3782,8 +3752,6 @@ Q1
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang brazilian
 1
 \end_layout
 
@@ -3793,8 +3761,6 @@ Q1
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang brazilian
 0.8
 \end_layout
 
@@ -3806,8 +3772,6 @@ Q1
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang brazilian
 Q2
 \end_layout
 
@@ -3817,8 +3781,6 @@ Q2
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang brazilian
 1
 \end_layout
 
@@ -3828,8 +3790,6 @@ Q2
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang brazilian
 1
 \end_layout
 
@@ -3839,8 +3799,6 @@ Q2
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang brazilian
 0.4
 \end_layout
 
@@ -3850,8 +3808,6 @@ Q2
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang brazilian
 0.4
 \end_layout
 
@@ -3863,8 +3819,6 @@ Q2
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang brazilian
 Q3
 \end_layout
 
@@ -3874,8 +3828,6 @@ Q3
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang brazilian
 0.9
 \end_layout
 
@@ -3885,8 +3837,6 @@ Q3
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang brazilian
 0.9
 \end_layout
 
@@ -3896,8 +3846,6 @@ Q3
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang brazilian
 0
 \end_layout
 
@@ -3907,8 +3855,6 @@ Q3
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang brazilian
 0
 \end_layout
 
@@ -3920,8 +3866,6 @@ Q3
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang brazilian
 Q4
 \end_layout
 
@@ -3931,8 +3875,6 @@ Q4
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang brazilian
 0.67
 \end_layout
 
@@ -3942,8 +3884,6 @@ Q4
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang brazilian
 1
 \end_layout
 
@@ -3953,8 +3893,6 @@ Q4
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang brazilian
 1
 \end_layout
 
@@ -3964,8 +3902,6 @@ Q4
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang brazilian
 0.7
 \end_layout
 
@@ -4799,10 +4735,6 @@ A CT image of the liver annotated using the TNM template (on the right of
 
 \end_layout
 
-\begin_layout Plain Layout
-
-\end_layout
-
 \end_inset
 
 
@@ -4811,8 +4743,9 @@ A CT image of the liver annotated using the TNM template (on the right of
 \begin_layout Standard
 After, the generated image annotations (in AIM-XML format) were classified
  automatically using the TNM criteria.
- This process was evaluated and correctly accepted by an experienced radiologist
-, he analyzed the accuracy of the generated annotations in terms of semantic.
+ This process was duly evaluated and correctly accepted by an experienced
+ radiologist, he analyzed the accuracy of the generated annotations in terms
+ of semantic.
  The process we followed was:
 \end_layout
 
@@ -4822,7 +4755,7 @@ The data set used came from the following open databases:
 
 \begin_deeper
 \begin_layout Itemize
-The NCI's Genomic Data Commons(GDC)
+The NCI's Genomic Data Commons (GDC)
 \begin_inset Foot
 status open
 
@@ -4836,7 +4769,7 @@ https://gdc.cancer.gov/
 \end_layout
 
 \begin_layout Itemize
-The Cancer Imaging Archive(TCIA)
+The Cancer Imaging Archive (TCIA)
 \begin_inset Foot
 status open
 
@@ -4863,7 +4796,7 @@ After reading the medical reports, the radiologist was provided with an
 \end_layout
 
 \begin_layout Itemize
-Based on this excel file and GDC data, we created the AIM-XML annotations
+Based on this excel file and the GDC data, we created the AIM-XML annotations
  and integrated them into our knowledge base (as AIM4-O ontology individuals).
 \end_layout
 
@@ -4894,29 +4827,21 @@ key "Faria2014"
 \end_layout
 
 \begin_layout Standard
-
-\lang brazilian
 \begin_inset Float table
 wide false
 sideways false
 status open
 
 \begin_layout Plain Layout
-
-\lang american
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-
-\lang brazilian
 \begin_inset CommandInset label
 LatexCommand label
 name "tab:Results"
 
 \end_inset
 
-
-\lang american
 Confusion Matrix of cancer stages predicted by the TNM classifier versus
  the values of the doctors placed in the reports.
 \end_layout
@@ -4928,8 +4853,6 @@ Confusion Matrix of cancer stages predicted by the TNM classifier versus
 
 \begin_layout Plain Layout
 \align center
-
-\lang american
 \begin_inset Tabular
 <lyxtabular version="3" rows="7" columns="7">
 <features booktabs="true" tabularvalignment="middle">
@@ -4945,8 +4868,6 @@ Confusion Matrix of cancer stages predicted by the TNM classifier versus
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang american
 n = 51
 \end_layout
 
@@ -4965,8 +4886,6 @@ n = 51
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang american
 Actual Stages
 \end_layout
 
@@ -5032,8 +4951,6 @@ Actual Stages
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang american
 I
 \end_layout
 
@@ -5043,8 +4960,6 @@ I
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang american
 II
 \end_layout
 
@@ -5054,8 +4969,6 @@ II
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang american
 IIIA
 \end_layout
 
@@ -5065,8 +4978,6 @@ IIIA
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang american
 IIIB
 \end_layout
 
@@ -5076,8 +4987,6 @@ IIIB
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang american
 IVA
 \end_layout
 
@@ -5089,8 +4998,6 @@ IVA
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang american
 Predicted Stages
 \end_layout
 
@@ -5100,8 +5007,6 @@ Predicted Stages
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang american
 I
 \end_layout
 
@@ -5111,8 +5016,6 @@ I
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang american
 24
 \end_layout
 
@@ -5122,8 +5025,6 @@ I
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang american
 2
 \end_layout
 
@@ -5133,8 +5034,6 @@ I
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang american
 0
 \end_layout
 
@@ -5144,8 +5043,6 @@ I
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang american
 0
 \end_layout
 
@@ -5155,8 +5052,6 @@ I
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang american
 0
 \end_layout
 
@@ -5177,8 +5072,6 @@ I
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang american
 II
 \end_layout
 
@@ -5188,8 +5081,6 @@ II
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang american
 0
 \end_layout
 
@@ -5199,8 +5090,6 @@ II
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang american
 10
 \end_layout
 
@@ -5210,8 +5099,6 @@ II
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang american
 2
 \end_layout
 
@@ -5221,8 +5108,6 @@ II
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang american
 0
 \end_layout
 
@@ -5232,8 +5117,6 @@ II
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang american
 0
 \end_layout
 
@@ -5254,8 +5137,6 @@ II
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang american
 IIIA
 \end_layout
 
@@ -5265,8 +5146,6 @@ IIIA
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang american
 0
 \end_layout
 
@@ -5276,8 +5155,6 @@ IIIA
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang american
 1
 \end_layout
 
@@ -5287,8 +5164,6 @@ IIIA
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang american
 8
 \end_layout
 
@@ -5298,8 +5173,6 @@ IIIA
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang american
 0
 \end_layout
 
@@ -5309,8 +5182,6 @@ IIIA
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang american
 0
 \end_layout
 
@@ -5331,8 +5202,6 @@ IIIA
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang american
 IIIB
 \end_layout
 
@@ -5342,8 +5211,6 @@ IIIB
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang american
 0
 \end_layout
 
@@ -5353,8 +5220,6 @@ IIIB
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang american
 0
 \end_layout
 
@@ -5364,8 +5229,6 @@ IIIB
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang american
 0
 \end_layout
 
@@ -5375,8 +5238,6 @@ IIIB
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang american
 2
 \end_layout
 
@@ -5386,8 +5247,6 @@ IIIB
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang american
 1
 \end_layout
 
@@ -5408,8 +5267,6 @@ IIIB
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang american
 IVA
 \end_layout
 
@@ -5419,8 +5276,6 @@ IVA
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang american
 0
 \end_layout
 
@@ -5430,8 +5285,6 @@ IVA
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang american
 0
 \end_layout
 
@@ -5441,8 +5294,6 @@ IVA
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang american
 0
 \end_layout
 
@@ -5452,8 +5303,6 @@ IVA
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang american
 0
 \end_layout
 
@@ -5463,8 +5312,6 @@ IVA
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang american
 1
 \end_layout
 
@@ -5502,12 +5349,22 @@ Precision was 85.7% and recall 81.0% (for 51 patients).
  This means that, for precision, at 85.7% of the time the system agreed with
  the staging given by physicians.
  For the recall, this means that, of all the times that a given stage was
- reported by a physician, in 81.0% of cases the system agreed with him.
+ reported by a physician, in 81.0% of cases the system agreed with him/her.
  It is important to note that, even when the system diverged from physicians,
  the maximum difference between them was only one stage.
- We discussed these patient staging results with a physician (DR) from the
+ 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+We discussed these patient staging results with a physician (DR) from the
  Radiology Department of Stanford University School of Medicine, who found
  this results very good.
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -5556,8 +5413,7 @@ name "fig:matrixconfusion"
 
 \end_inset
 
-Color scale matrix for the confusion matrix for the TNM multi-stage classificati
-on
+Confusion matrix for TNM multi-stage classification
 \end_layout
 
 \end_inset
@@ -5695,9 +5551,9 @@ To achieve this, first an ontology to represent AIM4 annotations, called
  actual clinical cases.
  Using the ontology to semantically search reports, we got much higher precision
  and recall values when compared to key-word (no semantics) search.
- Subsequently, the General ontology, integrating the AIM4, and Onlira ontologies
- , a subset of the Radlex vocabulary and SWRL rules for TNM staging, was
- developed and used to develop a TNM classifier using the Groovy language.
+ Subsequently, the General ontology, integrating the AIM4 ontology, Onlira
+ ontology (a subset of the Radlex vocabulary) and SWRL rules for TNM staging,
+ was developed and used to develop a TNM classifier using the Groovy language.
 \end_layout
 
 \begin_layout Standard
@@ -5749,7 +5605,7 @@ Future work:
  to other organs, and incorporation into existing information systems.
  The TNM classifier has the potential to be integrated into larger software
  systems.
- The Specific Domain Language(DSL), as a communication tool between physicians
+ The Specific Domain Language (DSL), as a communication tool between physicians
  and the formal representation of the TNM criteria (axioms and SWRL rules),
  would allow physicians to modify the system themselves.
 \end_layout
