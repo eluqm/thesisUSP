@@ -405,8 +405,6 @@ filename "abstract/AbstractAbnt.lyx"
 \end_layout
 
 \begin_layout Resumo
-
-\lang english
 \begin_inset CommandInset include
 LatexCommand input
 filename "abstract/AbstractAbntIngles.lyx"
